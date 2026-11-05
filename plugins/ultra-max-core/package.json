@@ -1,0 +1,10 @@
+{
+  "name": "@ultra-max/core",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node ../../scripts/build.mjs",
+    "package": "node ../../scripts/package.mjs"
+  },
+  "files": ["ultra-max-core.php", "build"]
+}

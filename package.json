@@ -1,0 +1,28 @@
+{
+  "name": "ultra-max-wordpress",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WordPress theme and plugin development monorepo",
+  "engines": { "node": ">=22", "npm": ">=10" },
+  "workspaces": ["themes/*", "plugins/*"],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev": "node scripts/build.mjs --watch",
+    "lint": "eslint . && npm run lint:php",
+    "lint:js": "eslint .",
+    "lint:php": "node scripts/lint-php.mjs",
+    "package": "npm run build && npm run package --workspaces --if-present",
+    "wp:start": "wp-env start",
+    "wp:stop": "wp-env stop",
+    "wp": "wp-env",
+    "wp:activate": "wp-env run cli theme activate ultra-max && wp-env run cli plugin activate ultra-max-core"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@wordpress/env": "10.0.0",
+    "archiver": "^7.0.1",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.39.0",
+    "globals": "^16.0.0"
+  }
+}

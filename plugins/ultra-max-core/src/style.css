@@ -1,0 +1,6 @@
+.ultra-max-hello {
+  padding-block: 1rem;
+  padding-inline: 1.25rem;
+  border-inline-start: 4px solid currentColor;
+  border-radius: 0.25rem;
+}

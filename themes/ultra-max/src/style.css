@@ -1,0 +1,14 @@
+/* Use logical properties so the same stylesheet supports LTR and RTL. */
+body {
+  margin: 0;
+}
+
+.wp-site-blocks > main {
+  min-block-size: 60vh;
+  padding-block: 2rem;
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
