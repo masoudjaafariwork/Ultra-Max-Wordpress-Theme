@@ -1,0 +1,55 @@
+# Ultra Max: instructions for Claude
+
+## What this project is
+
+A monorepo for Ultra Max, a Digikala-style Persian WooCommerce theme with companion plugins. It will be sold on Rtl-theme and Zhaket. The product documents are the source of truth:
+
+- `docs/ROADMAP.fa.md`: goal, positioning, architecture, phases, definition of done, open decisions.
+- `docs/FEATURES.fa.md`: the feature catalog. Every feature has an ID such as `PDP-11`, a priority and a source.
+- `docs/MARKET.fa.md`: competitor data, market gaps and marketplace rules.
+
+Current status: phase 0. No code has been written yet. Update this line when a phase changes.
+
+## Hard rules
+
+- Everything in this repository is authored by Claude from scratch. Never copy files, code or decisions from the previous v0.2 work that existed before 2026-11-09. It is outside the project and must not be referenced, restored or pushed.
+- The references in `D:\Wordpress\Assets` are feature checklists only. Never copy code, CSS, JS, images or fonts from the Woodmart backup or from Digits, and never decode Digits' protected files.
+- Never use Digikala's name, logo, images or brand colors in the product or the demos.
+- Every demo image and font must be owned or openly licensed, with its provenance recorded.
+- No ionCube or other code encoding. Only the per-marketplace license module is added at build time.
+- Rtl-theme rules apply to every feature:
+  - Every date shown on the front end uses the Jalali calendar.
+  - No personal links or contact details in the product, demos or help.
+  - Each demo ships as a Duplicator package.
+  - A Persian `help.pdf` ships with the package.
+
+## Architecture
+
+- `themes/ultra-max` is a classic theme, not a block theme, and holds presentation only. `themes/ultra-max-child` is its child theme.
+- `plugins/ultra-max-core` holds the Elementor layout builder, widgets, store modules and the demo importer.
+- `plugins/ultra-max-auth` holds OTP login, SMS gateways and notifications.
+- `plugins/ultra-max-invoice` holds invoices, labels and order documents, and later the Moadian integration.
+- Shared code lives in `packages/` and is namespace-prefixed at build time.
+- Each feature has one renderer, shared by the default templates, the Elementor widgets and the shortcodes.
+- Every module has an on/off switch. A disabled module loads no assets and runs no queries.
+- WooCommerce template overrides stay minimal. Everything must work with HPOS and with block cart and checkout.
+- Source strings are English, with a full `fa_IR` translation. Support PHP 8.1 and later.
+- Elementor Free must be enough for every demo. Elementor Pro is optional and must stay compatible.
+
+## How to work
+
+- Work phase by phase as the roadmap defines. Cite feature IDs in commit messages.
+- A feature is done only when it meets the definition of done in the roadmap. Mark it done in the catalog.
+- Any scope change goes into `docs/FEATURES.fa.md` first.
+- The user is the product owner, not a developer. Talk to them in Persian, in short plain sentences. Always say exactly which files changed, and never leave unexplained changes in the working tree.
+- Project documents are written in Persian.
+
+## Environment
+
+- Windows 11. The Bash tool fails here with an fnm profile error, so use PowerShell.
+- Node 24 and npm 11 are installed. There is no PHP on PATH. Docker Desktop is not running by default.
+- The remote is `origin` on GitHub. `main` is the working branch.
+
+## Commands
+
+None yet. Phase 1 adds the build, test and packaging commands here.
