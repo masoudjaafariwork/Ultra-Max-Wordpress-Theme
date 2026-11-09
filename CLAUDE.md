@@ -7,8 +7,10 @@ A monorepo for Ultra Max, a Digikala-style Persian WooCommerce theme with compan
 - `docs/ROADMAP.fa.md`: goal, positioning, architecture, phases, definition of done, open decisions.
 - `docs/FEATURES.fa.md`: the feature catalog. Every feature has an ID such as `PDP-11`, a priority and a source.
 - `docs/MARKET.fa.md`: competitor data, market gaps and marketplace rules.
+- `docs/PROGRESS.fa.md`: phase status, finished slices, open questions and the next step.
+- `docs/PROMPTS.fa.md`: the prompts the user sends to start or continue each phase.
 
-Current status: phase 0. No code has been written yet. Update this line when a phase changes.
+Current status: phase 0, not started. No code has been written yet. Update this line when a phase changes.
 
 ## Hard rules
 
@@ -35,6 +37,15 @@ Current status: phase 0. No code has been written yet. Update this line when a p
 - WooCommerce template overrides stay minimal. Everything must work with HPOS and with block cart and checkout.
 - Source strings are English, with a full `fa_IR` translation. Support PHP 8.1 and later.
 - Elementor Free must be enough for every demo. Elementor Pro is optional and must stay compatible.
+
+## Session workflow
+
+1. At the start of every session, read `docs/PROGRESS.fa.md` and the current phase in `docs/ROADMAP.fa.md`.
+2. Work only on the feature IDs of the current phase, in small slices.
+3. After each slice, run lint and tests, commit with the feature IDs in the message, and update `docs/PROGRESS.fa.md`.
+4. When a step needs a decision, an account or data from the user, finish everything that does not depend on it. Record the question in `docs/PROGRESS.fa.md` and ask all questions together at the end of the session.
+5. At the end of the session, push `main` to `origin`. Then report in Persian which files changed, what was verified, what is next, and the open questions.
+6. A phase closes only after the user approves its visible output and every exit criterion is checked. Then update the status here and in `docs/PROGRESS.fa.md`.
 
 ## How to work
 
