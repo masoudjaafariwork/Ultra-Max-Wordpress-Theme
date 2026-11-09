@@ -10,7 +10,7 @@ A monorepo for Ultra Max, a Digikala-style Persian WooCommerce theme with compan
 - `docs/PROGRESS.fa.md`: phase status, finished slices, open questions and the next step.
 - `docs/PROMPTS.fa.md`: the prompts the user sends to start or continue each phase.
 
-Current status: phase 0 closed on 2026-11-09; phase 1 (engineering infrastructure) is next. The HTML prototypes in `design/` are the approved visual reference (see `design/README.fa.md`). Market, brand and logo decisions are deferred until before phase 11; keep the internal code name `ultra-max` and read the display name and logo from one setting. No product code has been written yet. Update this line when a phase changes.
+Current status: phase 0 closed on 2026-11-09. Phase 1 (engineering infrastructure) was built on 2026-11-09 and is waiting for the owner's approval of its visible output. The HTML prototypes in `design/` are the approved visual reference (see `design/README.fa.md`). Market, brand and logo decisions are deferred until before phase 11; keep the internal code name `ultra-max` and read the display name and logo from one setting. Update this line when a phase changes.
 
 ## Hard rules
 
@@ -63,9 +63,37 @@ Current status: phase 0 closed on 2026-11-09; phase 1 (engineering infrastructur
 ## Environment
 
 - Windows 11. The Bash tool fails here with an fnm profile error, so use PowerShell.
-- Node 24 and npm 11 are installed. There is no PHP on PATH. Docker Desktop is not running by default.
-- The remote is `origin` on GitHub. `main` is the working branch.
+- Node 24 and npm 11 are installed. There is no PHP on PATH; PHP and Composer run in Docker (`composer:2.8`, `wordpress:cli-php8.1`). Docker Desktop must be running for the site, PHP tools and packaging.
+- The remote is `origin` on GitHub. `main` is the working branch. CI runs on every push (`.github/workflows/ci.yml`); watch it with `gh run watch`.
+- Network limits on this machine (Iran): repo.packagist.org, deb.debian.org and Playwright's browser download are blocked; Docker Hub, npm, GitHub and wordpress.org work. So:
+  - The site uses Docker Compose with official images, not wp-env (wp-env builds images with apt from Debian).
+  - Playwright uses the installed Microsoft Edge locally (`channel: msedge`); CI uses Playwright's Chromium.
+  - `composer install` for the PHP dev tools (PHPCS, PHPStan, PHPUnit) does not work locally until the owner decides how to reach Packagist; CI runs those checks. Never point Composer at a mirror without the owner's approval.
+- Admin screens bundle React 19 (shadcn/ui needs it); WordPress 7.1 still ships React 18.
 
 ## Commands
 
-None yet. Phase 1 adds the build, test and packaging commands here.
+All commands run from the repository root. `npm ci` once after cloning.
+
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | One command for a working environment: build everything, start the Docker site, print the URLs. |
+| `npm run build` | Copy shared PHP packages into each product under its namespace, refresh autoloaders, build JS/CSS (RTL + generated LTR) into each product's `assets/build`. `--dev` keeps source maps. |
+| `npm run watch` | Rebuild on every change. |
+| `npm run env:start` / `env:stop` / `env:reset` | Start (and prepare on first run), stop, or wipe and recreate the site at http://localhost:8888 (admin / password). |
+| `npm run wp -- <args>` | WP-CLI on the site, for example `npm run wp -- plugin list`. |
+| `npm run env:logs` | Follow the PHP debug log. |
+| `npm run lint` | ESLint, Stylelint, library boundary rule, PHPCS (WordPress standards) and PHPStan level 9. |
+| `npm run typecheck` | TypeScript, no emit. |
+| `npm run test:unit` | Vitest unit tests of the build scripts. |
+| `npm run test:php` | PHPUnit on real WordPress in the Docker site (needs `composer install`). |
+| `npm run test:e2e` | All Playwright suites; needs the site. Single suite: `npx playwright test --project=e2e` (also `acceptance`, `components-desktop`, `components-mobile`). |
+| `npm run test:visual` | Component tests with screenshot comparison in Playwright's Linux image. `test:visual:update` approves the current look. |
+| `npm run check:wp` | Plugin Check on each plugin and Theme Check on the theme. |
+| `npm run i18n` | Extract `.pot`, merge into `fa_IR.po`, compile `.mo`, `.l10n.php` and `.json`. Needs the site. Translators edit only `languages/*.po`. |
+| `npm run help:pdf` | Build `dist/help.pdf` from `docs/help/fa`. |
+| `npm run package` | Build one bundle per marketplace in `dist/<market>/` (`-- --market=zhaket` for one). |
+| `npm run test:package` | Install a built package on a fresh throwaway site and check it (`-- --market=rtl-theme`). |
+| `npm run screenshot` | Regenerate the theme's `screenshot.png`. |
+
+Live component catalog (dev-only plugin `tools/catalog`, never shipped): storefront at http://localhost:8888/?um-catalog, admin at Tools > Ultra Max components.
