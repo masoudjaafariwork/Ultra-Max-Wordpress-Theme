@@ -34,6 +34,7 @@
     "test:unit": "vitest run",
     "test:php": "docker compose run --rm cli php wp-content/ultra-max-dev/vendor/bin/phpunit -c wp-content/ultra-max-dev/phpunit.xml.dist",
     "test:e2e": "playwright test",
+    "test:visual": "node scripts/playwright-docker.mjs",
     "test:visual:update": "node scripts/playwright-docker.mjs --update-snapshots",
     "check:wp": "node scripts/wp-checks.mjs",
     "i18n": "node scripts/i18n.mjs",

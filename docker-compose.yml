@@ -56,8 +56,9 @@ services:
         define( 'SCRIPT_DEBUG', true );
         define( 'WP_ENVIRONMENT_TYPE', 'local' );
         define( 'FS_METHOD', 'direct' );
-        define( 'WP_HOME', 'http://localhost:${WP_PORT:-8888}' );
-        define( 'WP_SITEURL', 'http://localhost:${WP_PORT:-8888}' );
+        $$um_host = isset( $$_SERVER['HTTP_HOST'] ) ? $$_SERVER['HTTP_HOST'] : 'localhost:${WP_PORT:-8888}';
+        define( 'WP_HOME', 'http://' . $$um_host );
+        define( 'WP_SITEURL', 'http://' . $$um_host );
     volumes: *mounts
     healthcheck:
       test: [ "CMD", "test", "-f", "/var/www/html/wp-includes/version.php" ]

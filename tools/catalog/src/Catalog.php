@@ -105,8 +105,6 @@ final class Catalog {
 		$buttons[] = UI::button( array( 'disabled' => true, 'children' => 'غیرفعال' ) );
 		$buttons[] = UI::button( array( 'href' => home_url( '/' ), 'variant' => 'outline', 'children' => 'پیوند' ) );
 
-		$form = Html::trusted( '<label class="flex flex-col gap-1">نام<input id="dialog-name" type="text"></label>' );
-
 		return Html::trusted(
 			sprintf(
 				'<div class="mx-auto max-w-(--um-container) px-4 py-6" data-testid="catalog"><h1 class="mb-6">کاتالوگ اجزا</h1>%s</div>',
@@ -122,7 +120,7 @@ final class Catalog {
 									array(
 										'id'       => 'demo-dialog',
 										'title'    => 'ثبت دیدگاه',
-										'children' => array( Html::trusted( '<p>دیدگاه شما پس از بررسی نمایش داده می‌شود.</p>' ), $form ),
+										'children' => Html::trusted( '<p>دیدگاه شما پس از بررسی نمایش داده می‌شود.</p>' ),
 										'footer'   => array(
 											UI::button( array( 'variant' => 'neutral', 'children' => 'انصراف', 'attrs' => array( 'data-um-close' => true ) ) ),
 											UI::button( array( 'children' => 'ثبت', 'attrs' => array( 'data-um-close' => true ) ) ),
