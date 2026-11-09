@@ -1,0 +1,165 @@
+/*
+ * Ultra Max design tokens (CORE-05, CORE-06), shared by the storefront and the admin.
+ * Components use the semantic roles through the Tailwind theme in theme.css,
+ * never raw values. Phase 2 maps these variables onto the settings panel.
+ */
+
+@font-face {
+  font-family: Vazirmatn;
+  src: url("./fonts/vazirmatn/Vazirmatn-Variable.woff2") format("woff2-variations"),
+       url("./fonts/vazirmatn/Vazirmatn-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Brand ramp, preset "indigo" (default). Presets below override only this ramp. */
+  --um-brand-50: #efefff;
+  --um-brand-100: #e1e0fe;
+  --um-brand-200: #c4c1fb;
+  --um-brand-400: #7f78f0;
+  --um-brand-500: #6158e6;
+  --um-brand-600: #4c42d3;
+  --um-brand-700: #3d34ad;
+  --um-brand-800: #2e2783;
+
+  /* Accent ramp: deals, countdowns and highlights. */
+  --um-accent-50: #fff6e8;
+  --um-accent-100: #ffe8c2;
+  --um-accent-400: #ffb347;
+  --um-accent-500: #ff9a1f;
+  --um-accent-600: #eb8200;
+  --um-accent-700: #b86400;
+
+  /* Neutral ramp. */
+  --um-gray-0: #fff;
+  --um-gray-25: #fafafb;
+  --um-gray-50: #f4f5f7;
+  --um-gray-100: #ecedf1;
+  --um-gray-200: #dfe1e7;
+  --um-gray-300: #c5c8d1;
+  --um-gray-400: #9a9eab;
+  --um-gray-500: #6f7381;
+  --um-gray-600: #4f5361;
+  --um-gray-700: #373a46;
+  --um-gray-800: #24262f;
+  --um-gray-900: #15161c;
+
+  /* Status colours. Always paired with an icon and a label. */
+  --um-success: #0e9f6e;
+  --um-success-50: #e7f7f0;
+  --um-warning: #c98a00;
+  --um-warning-50: #fff7e0;
+  --um-danger: #d6334a;
+  --um-danger-50: #fdecee;
+  --um-info: #1c74d0;
+  --um-info-50: #e8f2fc;
+  --um-rating: #f2a900;
+
+  /* Semantic roles. Components use these, never the ramps directly. */
+  --um-bg: var(--um-gray-50);
+  --um-surface: var(--um-gray-0);
+  --um-surface-2: var(--um-gray-25);
+  --um-surface-3: var(--um-gray-50);
+  --um-text: var(--um-gray-900);
+  --um-text-2: var(--um-gray-600);
+  --um-text-3: var(--um-gray-500);
+  --um-border: var(--um-gray-200);
+  --um-border-strong: var(--um-gray-300);
+  --um-primary: var(--um-brand-600);
+  --um-primary-hover: var(--um-brand-700);
+  --um-primary-soft: var(--um-brand-50);
+  --um-primary-soft-2: var(--um-brand-100);
+  --um-on-primary: #fff;
+  --um-link: var(--um-brand-600);
+  --um-discount: var(--um-brand-600);
+  --um-deal: var(--um-accent-500);
+  --um-deal-gradient: linear-gradient(120deg, var(--um-brand-800) 0%, var(--um-brand-600) 55%, var(--um-brand-500) 100%);
+  --um-focus: 0 0 0 3px color-mix(in srgb, var(--um-primary) 28%, transparent);
+
+  /* Typography. Separate families for headings, body and numbers (CORE-05). */
+  --um-font-body: "Vazirmatn", Tahoma, "Segoe UI", sans-serif;
+  --um-font-heading: var(--um-font-body);
+  --um-font-num: var(--um-font-body);
+  --um-fs-2xs: 11px;
+  --um-fs-xs: 12px;
+  --um-fs-sm: 13px;
+  --um-fs-md: 14px;
+  --um-fs-lg: 16px;
+  --um-fs-xl: 18px;
+  --um-fs-2xl: 20px;
+  --um-fs-3xl: 24px;
+  --um-fs-4xl: 32px;
+  --um-lh-body: 1.85;
+  --um-lh-tight: 1.5;
+  --um-fw-regular: 400;
+  --um-fw-medium: 500;
+  --um-fw-bold: 700;
+  --um-fw-heavy: 800;
+
+  /* Spacing on a 4px grid. */
+  --um-space-1: 4px;
+  --um-space-2: 8px;
+  --um-space-3: 12px;
+  --um-space-4: 16px;
+  --um-space-5: 20px;
+  --um-space-6: 24px;
+  --um-space-8: 32px;
+  --um-space-10: 40px;
+  --um-space-12: 48px;
+  --um-space-16: 64px;
+
+  /* Corners. */
+  --um-radius-xs: 4px;
+  --um-radius-sm: 6px;
+  --um-radius-md: 10px;
+  --um-radius-lg: 14px;
+  --um-radius-xl: 20px;
+  --um-radius-pill: 999px;
+
+  /* Shadows. */
+  --um-shadow-xs: 0 1px 2px rgb(21 22 28 / 6%);
+  --um-shadow-sm: 0 1px 3px rgb(21 22 28 / 8%), 0 1px 2px rgb(21 22 28 / 4%);
+  --um-shadow-md: 0 6px 20px rgb(21 22 28 / 9%);
+  --um-shadow-lg: 0 16px 48px rgb(21 22 28 / 16%);
+
+  /* Layout. */
+  --um-container: 1336px;
+  --um-gutter: 16px;
+  --um-sidebar: 280px;
+  --um-header-h: 120px;
+  --um-bottom-nav-h: 64px;
+
+  /* Motion. */
+  --um-ease: cubic-bezier(.2, .7, .2, 1);
+  --um-dur: 180ms;
+
+  /* Layers. */
+  --um-z-header: 50;
+  --um-z-sticky: 60;
+  --um-z-drawer: 90;
+  --um-z-modal: 100;
+  --um-z-toast: 110;
+}
+
+/* Colour presets. The buyer picks one in the setup wizard or sets a custom colour. */
+[data-preset="ocean"] {
+  --um-brand-50: #eaf3ff; --um-brand-100: #d3e6ff; --um-brand-200: #a8ccff; --um-brand-400: #4e93f2;
+  --um-brand-500: #2c7be5; --um-brand-600: #1a64cc; --um-brand-700: #154fa3; --um-brand-800: #103c7a;
+}
+
+[data-preset="teal"] {
+  --um-brand-50: #e6f6f6; --um-brand-100: #c9ecec; --um-brand-200: #96d9d9; --um-brand-400: #35aeb0;
+  --um-brand-500: #149a9c; --um-brand-600: #0e7f82; --um-brand-700: #0c6668; --um-brand-800: #0a4f51;
+}
+
+[data-preset="emerald"] {
+  --um-brand-50: #e8f7ef; --um-brand-100: #cbeedb; --um-brand-200: #9bddb9; --um-brand-400: #3db77a;
+  --um-brand-500: #1ea263; --um-brand-600: #168550; --um-brand-700: #126a41; --um-brand-800: #0e5233;
+}
+
+[data-preset="graphite"] {
+  --um-brand-50: #f0f1f4; --um-brand-100: #e1e3e9; --um-brand-200: #c3c7d2; --um-brand-400: #6b7286;
+  --um-brand-500: #4b5266; --um-brand-600: #353b4d; --um-brand-700: #272c3b; --um-brand-800: #1b1f2a;
+}

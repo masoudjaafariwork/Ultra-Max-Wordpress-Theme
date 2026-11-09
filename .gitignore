@@ -1,0 +1,17 @@
+node_modules/
+vendor/
+vendor-prefixed/
+dist/
+build/
+test-results/
+playwright-report/
+blob-report/
+.cache/
+*.log
+.DS_Store
+Thumbs.db
+.wp-env.override.json
+# Generated assets inside products; produced by `npm run build`.
+themes/*/assets/build/
+plugins/*/assets/build/
+tools/*/assets/build/

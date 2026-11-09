@@ -1,0 +1,30 @@
+# PHPStan at level 9 with WordPress and WooCommerce stubs.
+# Shared packages are analysed in packages/; products see their generated,
+# namespaced copies in vendor-prefixed/ (scanned, not analysed).
+parameters:
+    level: 9
+    phpVersion: 80100
+    treatPhpDocTypesAsCertain: false
+    bootstrapFiles:
+        - tests/phpstan-bootstrap.php
+    paths:
+        - packages/ui/src
+        - packages/ui/components
+        - packages/foundation/src
+        - packages/license/src
+        - packages/license/markets/dev
+        - themes/ultra-max/src
+        - themes/ultra-max-child/functions.php
+        - plugins/ultra-max-core/src
+        - plugins/ultra-max-auth/src
+        - plugins/ultra-max-invoice/src
+        - plugins/ultra-max-seo/src
+        - tools/catalog/src
+    scanDirectories:
+        - themes/ultra-max/vendor-prefixed
+        - plugins/ultra-max-core/vendor-prefixed
+        - plugins/ultra-max-auth/vendor-prefixed
+        - plugins/ultra-max-invoice/vendor-prefixed
+        - plugins/ultra-max-seo/vendor-prefixed
+    scanFiles:
+        - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php

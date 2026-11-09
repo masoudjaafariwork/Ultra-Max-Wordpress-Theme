@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>آزمون پذیرش Flowbite</title>
+<link rel="stylesheet" href="../../../../build/acceptance/flowbite.css">
+<script defer src="../../../../build/acceptance/flowbite.js"></script>
+</head>
+<body class="bg-white text-gray-900 p-6">
+<main>
+<h1 class="text-xl font-bold mb-4">آزمون پذیرش Flowbite</h1>
+
+<section id="s-modal" class="mb-6">
+	<h2 class="font-bold mb-2">پنجره</h2>
+	<button id="modal-trigger" data-modal-target="modal" data-modal-toggle="modal" class="text-white bg-blue-800 rounded-lg px-4 py-2" type="button">باز کردن پنجره</button>
+	<div id="modal" tabindex="-1" aria-hidden="true" aria-labelledby="modal-title" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+		<div class="relative p-4 w-full max-w-md max-h-full">
+			<div class="relative bg-white rounded-lg shadow-sm p-4">
+				<h3 id="modal-title" class="text-lg font-semibold">عنوان پنجره</h3>
+				<p class="my-3">متن پنجره.</p>
+				<label class="block mb-3">نام <input id="modal-input" class="border border-gray-500 rounded p-1" type="text"></label>
+				<button id="modal-close" data-modal-hide="modal" type="button" class="text-white bg-blue-800 rounded-lg px-4 py-2">بستن</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="s-drawer" class="mb-6">
+	<h2 class="font-bold mb-2">کشو</h2>
+	<button id="drawer-trigger" data-drawer-target="drawer" data-drawer-show="drawer" data-drawer-placement="right" aria-controls="drawer" class="text-white bg-blue-800 rounded-lg px-4 py-2" type="button">باز کردن کشو</button>
+	<div id="drawer" class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80" tabindex="-1" aria-labelledby="drawer-title">
+		<h3 id="drawer-title" class="font-semibold mb-3">عنوان کشو</h3>
+		<a id="drawer-link" href="#s-drawer" class="underline text-blue-800">پیوند داخل کشو</a>
+		<button id="drawer-close" type="button" data-drawer-hide="drawer" aria-controls="drawer" class="block mt-3 text-white bg-blue-800 rounded-lg px-4 py-2">بستن</button>
+	</div>
+</section>
+
+<section id="s-dropdown" class="mb-6">
+	<h2 class="font-bold mb-2">منوی بازشو</h2>
+	<button id="dropdown-trigger" data-dropdown-toggle="dropdown" data-dropdown-placement="bottom-end" class="text-white bg-blue-800 rounded-lg px-4 py-2" type="button">حساب من</button>
+	<div id="dropdown" class="z-10 hidden bg-white border border-gray-300 rounded-lg shadow-sm w-44">
+		<ul class="py-2 text-sm" aria-labelledby="dropdown-trigger">
+			<li><a id="dropdown-first" href="#s-dropdown" class="block px-4 py-2 hover:bg-gray-100">سفارش‌ها</a></li>
+			<li><a href="#s-dropdown" class="block px-4 py-2 hover:bg-gray-100">نشانی‌ها</a></li>
+			<li><a href="#s-dropdown" class="block px-4 py-2 hover:bg-gray-100">خروج</a></li>
+		</ul>
+	</div>
+</section>
+
+<section id="s-tabs" class="mb-6">
+	<h2 class="font-bold mb-2">زبانه‌ها</h2>
+	<ul class="flex gap-4 border-b border-gray-300" id="tabs" data-tabs-toggle="#tabs-content" role="tablist">
+		<li role="presentation"><button class="p-2" id="tab-1" data-tabs-target="#panel-1" type="button" role="tab" aria-controls="panel-1" aria-selected="true">معرفی</button></li>
+		<li role="presentation"><button class="p-2" id="tab-2" data-tabs-target="#panel-2" type="button" role="tab" aria-controls="panel-2" aria-selected="false">مشخصات</button></li>
+		<li role="presentation"><button class="p-2" id="tab-3" data-tabs-target="#panel-3" type="button" role="tab" aria-controls="panel-3" aria-selected="false">دیدگاه‌ها</button></li>
+	</ul>
+	<div id="tabs-content">
+		<div class="p-2" id="panel-1" role="tabpanel" aria-labelledby="tab-1">متن معرفی.</div>
+		<div class="hidden p-2" id="panel-2" role="tabpanel" aria-labelledby="tab-2">جدول مشخصات.</div>
+		<div class="hidden p-2" id="panel-3" role="tabpanel" aria-labelledby="tab-3">فهرست دیدگاه‌ها.</div>
+	</div>
+</section>
+
+<section id="s-accordion" class="mb-6">
+	<h2 class="font-bold mb-2">آکاردئون</h2>
+	<div id="accordion" data-accordion="collapse">
+		<h3 id="acc-1-head"><button id="acc-1" type="button" class="w-full text-start p-2 border border-gray-300" data-accordion-target="#acc-1-body" aria-expanded="false" aria-controls="acc-1-body">ارسال چقدر طول می‌کشد؟</button></h3>
+		<div id="acc-1-body" class="hidden p-2" aria-labelledby="acc-1-head">دو تا چهار روز کاری.</div>
+		<h3 id="acc-2-head"><button id="acc-2" type="button" class="w-full text-start p-2 border border-gray-300" data-accordion-target="#acc-2-body" aria-expanded="false" aria-controls="acc-2-body">بازگشت کالا چطور است؟</button></h3>
+		<div id="acc-2-body" class="hidden p-2" aria-labelledby="acc-2-head">تا هفت روز.</div>
+	</div>
+</section>
+
+<section id="s-tooltip" class="mb-6">
+	<h2 class="font-bold mb-2">راهنمای کوچک</h2>
+	<button id="tooltip-trigger" data-tooltip-target="tooltip" type="button" class="text-white bg-blue-800 rounded-lg px-4 py-2">مقایسه</button>
+	<div id="tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm text-white bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip">افزودن به فهرست مقایسه<div class="tooltip-arrow" data-popper-arrow></div></div>
+</section>
+
+<section id="s-dismiss" class="mb-6">
+	<h2 class="font-bold mb-2">پیام شناور</h2>
+	<div id="toast" class="flex items-center w-full max-w-xs p-4 text-gray-900 bg-white border border-gray-300 rounded-lg" role="status">
+		<div class="ms-3 text-sm">به سبد اضافه شد.</div>
+		<button id="toast-close" type="button" class="ms-auto p-1" data-dismiss-target="#toast" aria-label="بستن">×</button>
+	</div>
+</section>
+
+<section id="s-carousel" class="mb-6">
+	<h2 class="font-bold mb-2">اسلایدر</h2>
+	<div id="carousel" class="relative w-full max-w-md" data-carousel="static">
+		<div class="relative h-32 overflow-hidden rounded-lg">
+			<div class="hidden duration-700 ease-in-out bg-blue-100" data-carousel-item="active"><p class="p-6">اسلاید یک</p></div>
+			<div class="hidden duration-700 ease-in-out bg-green-100" data-carousel-item><p class="p-6">اسلاید دو</p></div>
+			<div class="hidden duration-700 ease-in-out bg-yellow-100" data-carousel-item><p class="p-6">اسلاید سه</p></div>
+		</div>
+		<button id="carousel-prev" type="button" class="absolute top-0 start-0 z-30 h-full px-4" data-carousel-prev aria-label="قبلی">‹</button>
+		<button id="carousel-next" type="button" class="absolute top-0 end-0 z-30 h-full px-4" data-carousel-next aria-label="بعدی">›</button>
+	</div>
+</section>
+</main>
+</body>
+</html>

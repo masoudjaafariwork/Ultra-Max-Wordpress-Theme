@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- Runs inside the Docker "cli" container against a real WordPress: npm run test:php -->
+<phpunit
+	bootstrap="tests/php/bootstrap.php"
+	colors="true"
+	beStrictAboutTestsThatDoNotTestAnything="true"
+	failOnRisky="true"
+	failOnWarning="true"
+	convertDeprecationsToExceptions="true"
+>
+	<testsuites>
+		<testsuite name="ultra-max">
+			<directory suffix="Test.php">tests/php</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>

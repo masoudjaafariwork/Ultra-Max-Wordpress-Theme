@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<ruleset name="Ultra Max">
+	<description>WordPress Coding Standards and PHP 8.1+ compatibility for every Ultra Max product.</description>
+
+	<file>themes</file>
+	<file>plugins</file>
+	<file>packages</file>
+	<file>tools</file>
+	<file>tests/php</file>
+
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/vendor-prefixed/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/assets/build/*</exclude-pattern>
+	<exclude-pattern>*/languages/*</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="parallel" value="8"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<config name="testVersion" value="8.1-"/>
+	<config name="minimum_wp_version" value="6.9"/>
+
+	<rule ref="WordPress">
+		<!-- Classes follow PSR-4 file names such as Button.php, as the roadmap requires. -->
+		<exclude name="WordPress.Files.FileName"/>
+	</rule>
+	<rule ref="PHPCompatibilityWP"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="ultra-max"/>
+				<element value="ultra-max-child"/>
+				<element value="ultra-max-core"/>
+				<element value="ultra-max-auth"/>
+				<element value="ultra-max-invoice"/>
+				<element value="ultra-max-seo"/>
+				<element value="ultra-max-ui"/>
+				<element value="ultra-max-foundation"/>
+				<element value="ultra-max-license"/>
+				<element value="ultra-max-catalog"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="ultra_max"/>
+				<element value="UltraMax"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Test files are not loaded by WordPress. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<exclude-pattern>tests/php/*</exclude-pattern>
+	</rule>
+</ruleset>

@@ -1,0 +1,8 @@
+/* Flowbite acceptance fixture: Flowbite's own default theme, unchanged. */
+@import "tailwindcss" source(none);
+@import "flowbite/src/themes/default";
+
+@plugin "flowbite/plugin";
+
+@source "./fixture.html";
+@source "../../../../node_modules/flowbite/lib/esm";

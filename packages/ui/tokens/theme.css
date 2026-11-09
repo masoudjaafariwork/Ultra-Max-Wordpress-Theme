@@ -1,0 +1,98 @@
+/*
+ * Tailwind theme built only from our tokens. The default palette, font
+ * sizes, radii and shadows are removed so a component cannot use a value
+ * that is not a token. `inline` keeps the var() references, so a colour
+ * preset or a buyer's custom colour changes every component at runtime.
+ */
+@theme inline {
+	--color-*: initial;
+	--color-transparent: transparent;
+	--color-current: currentcolor;
+	--color-white: #fff;
+	--color-page: var(--um-bg);
+	--color-surface: var(--um-surface);
+	--color-surface-2: var(--um-surface-2);
+	--color-surface-3: var(--um-surface-3);
+	--color-fg: var(--um-text);
+	--color-fg-2: var(--um-text-2);
+	--color-fg-3: var(--um-text-3);
+	--color-border: var(--um-border);
+	--color-border-strong: var(--um-border-strong);
+	--color-primary: var(--um-primary);
+	--color-primary-hover: var(--um-primary-hover);
+	--color-primary-soft: var(--um-primary-soft);
+	--color-primary-soft-2: var(--um-primary-soft-2);
+	--color-on-primary: var(--um-on-primary);
+	--color-link: var(--um-link);
+	--color-accent: var(--um-accent-500);
+	--color-accent-hover: var(--um-accent-400);
+	--color-accent-soft: var(--um-accent-100);
+	--color-on-accent: #1f1300;
+	--color-success: var(--um-success);
+	--color-success-soft: var(--um-success-50);
+	--color-warning: var(--um-warning);
+	--color-warning-soft: var(--um-warning-50);
+	--color-danger: var(--um-danger);
+	--color-danger-soft: var(--um-danger-50);
+	--color-info: var(--um-info);
+	--color-info-soft: var(--um-info-50);
+	--color-rating: var(--um-rating);
+	--color-tooltip: var(--um-gray-800);
+	--color-overlay: rgb(21 22 28 / 48%);
+
+	--font-*: initial;
+	--font-sans: var(--um-font-body);
+	--font-heading: var(--um-font-heading);
+	--font-num: var(--um-font-num);
+
+	--text-*: initial;
+	--text-2xs: var(--um-fs-2xs);
+	--text-xs: var(--um-fs-xs);
+	--text-sm: var(--um-fs-sm);
+	--text-md: var(--um-fs-md);
+	--text-lg: var(--um-fs-lg);
+	--text-xl: var(--um-fs-xl);
+	--text-2xl: var(--um-fs-2xl);
+	--text-3xl: var(--um-fs-3xl);
+	--text-4xl: var(--um-fs-4xl);
+
+	--font-weight-*: initial;
+	--font-weight-regular: var(--um-fw-regular);
+	--font-weight-medium: var(--um-fw-medium);
+	--font-weight-bold: var(--um-fw-bold);
+	--font-weight-heavy: var(--um-fw-heavy);
+
+	--leading-*: initial;
+	--leading-body: var(--um-lh-body);
+	--leading-tight: var(--um-lh-tight);
+
+	--spacing: 4px;
+
+	--radius-*: initial;
+	--radius-xs: var(--um-radius-xs);
+	--radius-sm: var(--um-radius-sm);
+	--radius-md: var(--um-radius-md);
+	--radius-lg: var(--um-radius-lg);
+	--radius-xl: var(--um-radius-xl);
+	--radius-pill: var(--um-radius-pill);
+
+	--shadow-*: initial;
+	--shadow-xs: var(--um-shadow-xs);
+	--shadow-sm: var(--um-shadow-sm);
+	--shadow-md: var(--um-shadow-md);
+	--shadow-lg: var(--um-shadow-lg);
+
+	--ease-um: var(--um-ease);
+	--container-page: var(--um-container);
+}
+
+/* Base type and focus ring inside our regions. */
+@layer base {
+	:where(.um-scope) {
+		font-family: var(--um-font-body);
+		font-size: var(--um-fs-md);
+		line-height: var(--um-lh-body);
+		color: var(--um-text);
+		-webkit-font-smoothing: antialiased;
+	}
+}

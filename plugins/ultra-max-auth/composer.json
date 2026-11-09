@@ -1,0 +1,23 @@
+{
+  "name": "ultra-max/ultra-max-auth",
+  "description": "One-time password login, SMS gateways and customer notifications.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "UltraMax\\Auth\\": "src/"
+    },
+    "classmap": [
+      "vendor-prefixed/"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "8.1.0"
+    }
+  }
+}

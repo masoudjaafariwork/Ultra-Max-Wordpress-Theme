@@ -1,0 +1,11 @@
+{
+  "name": "@ultra-max/ui",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ultra Max component library: storefront components on Tailwind CSS 4 and Flowbite, admin components on shadcn/ui.",
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "dependencies": {
+    "flowbite": "4.0.2"
+  }
+}

@@ -1,0 +1,32 @@
+/* Drawer: backdrop and slide-in, mirrored by writing direction. */
+.um-drawer::backdrop {
+	background: var(--color-overlay);
+}
+
+.um-drawer-start[open] {
+	animation: um-drawer-from-start 260ms var(--um-ease);
+}
+
+.um-drawer-end[open] {
+	animation: um-drawer-from-end 260ms var(--um-ease);
+}
+
+/* Authored for RTL: the start edge is on the right. rtlcss flips these for LTR. */
+@keyframes um-drawer-from-start {
+	from {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes um-drawer-from-end {
+	from {
+		transform: translateX(-100%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.um-drawer-start[open],
+	.um-drawer-end[open] {
+		animation: none;
+	}
+}

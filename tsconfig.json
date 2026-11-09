@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": [ "ES2023", "DOM", "DOM.Iterable" ],
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "allowJs": true,
+    "noEmit": true,
+    "types": [ "node" ],
+    "paths": {
+      "@ultra-max/ui/admin": [ "./packages/ui/admin/index.ts" ],
+      "@ultra-max/ui/admin/*": [ "./packages/ui/admin/*" ]
+    }
+  },
+  "include": [ "packages/ui/**/*.ts", "packages/ui/**/*.tsx", "tools/**/*.tsx", "tests/**/*.ts", "plugins/*/assets/src/**/*.ts", "plugins/*/assets/src/**/*.tsx", "playwright.config.ts", "vitest.config.ts" ],
+  "exclude": [ "**/node_modules", "**/build", "**/vendor" ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ultra-max/ultra-max-seo",
+  "description": "Meta tags, sitemaps, structured data, redirects and SEO analysis that coexist with Yoast and Rank Math.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "UltraMax\\Seo\\": "src/"
+    },
+    "classmap": [
+      "vendor-prefixed/"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "8.1.0"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/*
+ * Storefront stylesheet: Tailwind CSS 4 with our tokens. The reset applies
+ * only inside `.um-scope`. Component looks live in the components; this
+ * file only wires the layers and lists where classes are used.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "../../../build/generated/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../tokens/tokens.css";
+@import "../tokens/theme.css";
+@import "../components/dialog/dialog.css";
+@import "../components/drawer/drawer.css";
+@import "../components/tooltip/tooltip.css";
+
+@source "../src";
+@source "../components";
+@source "../../../themes";
+@source "../../../plugins";
+@source "../../../tools/catalog/src";
+
+/* Classes that Flowbite adds from JavaScript. */
+@source inline("hidden block flex visible invisible opacity-0 opacity-100");

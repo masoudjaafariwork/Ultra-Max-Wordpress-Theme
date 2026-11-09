@@ -1,0 +1,34 @@
+/* Tooltip arrow, positioned by Popper through data-popper-arrow. */
+.um-tooltip-arrow,
+.um-tooltip-arrow::before {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background: inherit;
+}
+
+.um-tooltip-arrow {
+	visibility: hidden;
+}
+
+.um-tooltip-arrow::before {
+	content: "";
+	visibility: visible;
+	transform: rotate(45deg);
+}
+
+.um-tooltip[data-popper-placement^="top"] > .um-tooltip-arrow {
+	bottom: -4px;
+}
+
+.um-tooltip[data-popper-placement^="bottom"] > .um-tooltip-arrow {
+	top: -4px;
+}
+
+.um-tooltip[data-popper-placement^="left"] > .um-tooltip-arrow {
+	right: -4px;
+}
+
+.um-tooltip[data-popper-placement^="right"] > .um-tooltip-arrow {
+	left: -4px;
+}
