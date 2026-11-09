@@ -21,6 +21,8 @@
     "env:logs": "node scripts/env.mjs logs",
     "wp": "node scripts/env.mjs cli",
     "composer": "node scripts/composer.mjs",
+    "verify": "node scripts/verify.mjs",
+    "verify:quick": "node scripts/verify.mjs --quick",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:boundaries && npm run lint:php && npm run analyse:php",
     "lint:js": "eslint .",
     "lint:css": "stylelint \"**/*.css\"",

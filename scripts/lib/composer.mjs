@@ -31,7 +31,12 @@ export function composer( args, options = {} ) {
 	if ( hasHostComposer() ) {
 		return run( 'composer', [ `--working-dir=${ dir }`, ...args ], { allowFail } );
 	}
-	return docker( [ 'composer', `--working-dir=${ dir }`, ...args ], { allowFail } );
+	// Composer stops a download after max(default_socket_timeout, 300) seconds;
+	// the 30 MB PHPStan archive takes longer than that over a slow VPN.
+	return docker(
+		[ 'php', '-d', 'default_socket_timeout=3600', '/usr/bin/composer', `--working-dir=${ dir }`, ...args ],
+		{ allowFail }
+	);
 }
 
 /**

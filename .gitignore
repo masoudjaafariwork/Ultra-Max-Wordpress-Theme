@@ -15,3 +15,5 @@ Thumbs.db
 themes/*/assets/build/
 plugins/*/assets/build/
 tools/*/assets/build/
+# PHPUnit run cache
+.phpunit.result.cache
