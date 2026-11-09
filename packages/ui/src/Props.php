@@ -23,20 +23,21 @@ final class Props {
 	 * Reads a prop that must be one of a fixed list.
 	 *
 	 * @template T of string
-	 * @param string             $component Component name for the message.
-	 * @param array<string, mixed> $props   Props.
-	 * @param string             $key       Prop name.
-	 * @param non-empty-list<T>  $allowed   Allowed values; the first is the default.
+	 * @param string $component Component name for the message.
+	 * @param array  $props     Props.
+	 * @param string $key       Prop name.
+	 * @param array  $allowed   Allowed values; the first is the default.
+	 * @phpstan-param array<string, mixed> $props
+	 * @phpstan-param non-empty-list<T> $allowed
 	 * @return T
 	 */
 	public static function one_of( string $component, array $props, string $key, array $allowed ): string {
 		if ( ! array_key_exists( $key, $props ) ) {
 			return $allowed[0];
 		}
-		$value = $props[ $key ];
-		if ( in_array( $value, $allowed, true ) ) {
-			/** @var T $value */
-			return $value;
+		$index = array_search( $props[ $key ], $allowed, true );
+		if ( false !== $index ) {
+			return $allowed[ $index ];
 		}
 		self::invalid( $component, $key, sprintf( 'expected one of %s', implode( ', ', $allowed ) ) );
 		return $allowed[0];
@@ -45,9 +46,10 @@ final class Props {
 	/**
 	 * Reads a required, non-empty string prop that is used as an HTML id.
 	 *
-	 * @param string             $component Component name for the message.
-	 * @param array<string, mixed> $props   Props.
-	 * @param string             $key       Prop name.
+	 * @param string $component Component name for the message.
+	 * @param array  $props     Props.
+	 * @param string $key       Prop name.
+	 * @phpstan-param array<string, mixed> $props
 	 */
 	public static function id( string $component, array $props, string $key = 'id' ): string {
 		$value = $props[ $key ] ?? '';

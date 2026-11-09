@@ -28,7 +28,8 @@ final class Tooltip {
 	/**
 	 * Renders the tooltip.
 	 *
-	 * @param TooltipProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param TooltipProps $props
 	 */
 	public static function render( array $props ): Html {
 		$id        = Props::id( 'Tooltip', $props );
@@ -39,10 +40,10 @@ final class Tooltip {
 				'<span%1$s>%2$s<span id="%3$s" role="tooltip" class="um-tooltip invisible absolute z-(--um-z-toast) inline-block max-w-60 rounded-sm bg-tooltip px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-sm transition-opacity duration-150">%4$s<span class="um-tooltip-arrow" data-popper-arrow></span></span></span>',
 				Attributes::render(
 					array(
-						'class'                   => Attributes::classes( 'um-scope inline-flex', $props['class'] ?? null ),
-						'data-um-component'       => 'tooltip',
-						'data-um-tooltip'         => $id,
-						'data-um-placement'       => $placement,
+						'class'             => Attributes::classes( 'um-scope inline-flex', $props['class'] ?? null ),
+						'data-um-component' => 'tooltip',
+						'data-um-tooltip'   => $id,
+						'data-um-placement' => $placement,
 					)
 				),
 				Html::from( $props['children'] ),

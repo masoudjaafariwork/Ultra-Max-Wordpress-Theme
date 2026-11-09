@@ -70,9 +70,10 @@ final class Catalog {
 	/**
 	 * Wraps one catalog section.
 	 *
-	 * @param string            $slug    Section id.
-	 * @param string            $title   Heading.
-	 * @param array<int, Html>  $examples Rendered examples.
+	 * @param string $slug     Section id.
+	 * @param string $title    Heading.
+	 * @param array  $examples Rendered examples.
+	 * @phpstan-param array<int, Html> $examples
 	 */
 	private static function section( string $slug, string $title, array $examples ): Html {
 		return Html::trusted(
@@ -86,12 +87,11 @@ final class Catalog {
 	}
 
 	/**
-	 * The storefront catalog.
+	 * Every button variant and size.
 	 */
-	private static function storefront(): Html {
-		$variants = array( 'primary', 'outline', 'soft', 'ghost', 'neutral', 'accent', 'danger' );
-		$buttons  = array();
-		foreach ( $variants as $variant ) {
+	private static function buttons(): Html {
+		$buttons = array();
+		foreach ( array( 'primary', 'outline', 'soft', 'ghost', 'neutral', 'accent', 'danger' ) as $variant ) {
 			$buttons[] = UI::button(
 				array(
 					'variant'  => $variant,
@@ -100,116 +100,225 @@ final class Catalog {
 				)
 			);
 		}
-		$buttons[] = UI::button( array( 'size' => 'sm', 'children' => 'کوچک' ) );
-		$buttons[] = UI::button( array( 'size' => 'lg', 'children' => 'بزرگ' ) );
-		$buttons[] = UI::button( array( 'disabled' => true, 'children' => 'غیرفعال' ) );
-		$buttons[] = UI::button( array( 'href' => home_url( '/' ), 'variant' => 'outline', 'children' => 'پیوند' ) );
+		$buttons[] = UI::button(
+			array(
+				'size'     => 'sm',
+				'children' => 'کوچک',
+			)
+		);
+		$buttons[] = UI::button(
+			array(
+				'size'     => 'lg',
+				'children' => 'بزرگ',
+			)
+		);
+		$buttons[] = UI::button(
+			array(
+				'disabled' => true,
+				'children' => 'غیرفعال',
+			)
+		);
+		$buttons[] = UI::button(
+			array(
+				'href'     => home_url( '/' ),
+				'variant'  => 'outline',
+				'children' => 'پیوند',
+			)
+		);
+		return self::section( 'button', 'دکمه', $buttons );
+	}
 
-		return Html::trusted(
-			sprintf(
-				'<div class="mx-auto max-w-(--um-container) px-4 py-6" data-testid="catalog"><h1 class="mb-6">کاتالوگ اجزا</h1>%s</div>',
-				Html::from(
+	/**
+	 * Dialog with its trigger.
+	 */
+	private static function dialog(): Html {
+		return self::section(
+			'dialog',
+			'پنجره',
+			array(
+				UI::button(
 					array(
-						self::section( 'button', 'دکمه', $buttons ),
-						self::section(
-							'dialog',
-							'پنجره',
+						'id'       => 'dialog-trigger',
+						'opens'    => 'demo-dialog',
+						'children' => 'باز کردن پنجره',
+					)
+				),
+				UI::dialog(
+					array(
+						'id'       => 'demo-dialog',
+						'title'    => 'ثبت دیدگاه',
+						'children' => Html::trusted( '<p>دیدگاه شما پس از بررسی نمایش داده می‌شود.</p>' ),
+						'footer'   => array(
+							UI::button(
+								array(
+									'variant'  => 'neutral',
+									'children' => 'انصراف',
+									'attrs'    => array( 'data-um-close' => true ),
+								)
+							),
+							UI::button(
+								array(
+									'children' => 'ثبت',
+									'attrs'    => array( 'data-um-close' => true ),
+								)
+							),
+						),
+					)
+				),
+			)
+		);
+	}
+
+	/**
+	 * Drawer with its trigger.
+	 */
+	private static function drawer(): Html {
+		return self::section(
+			'drawer',
+			'کشو',
+			array(
+				UI::button(
+					array(
+						'id'       => 'drawer-trigger',
+						'opens'    => 'demo-drawer',
+						'children' => 'سبد خرید',
+					)
+				),
+				UI::drawer(
+					array(
+						'id'       => 'demo-drawer',
+						'title'    => 'سبد خرید',
+						'children' => Html::trusted( '<p>سبد شما خالی است.</p><a id="drawer-link" href="#c-drawer">ادامه خرید</a>' ),
+						'footer'   => UI::button(
 							array(
-								UI::button( array( 'opens' => 'demo-dialog', 'children' => 'باز کردن پنجره', 'id' => 'dialog-trigger' ) ),
-								UI::dialog(
-									array(
-										'id'       => 'demo-dialog',
-										'title'    => 'ثبت دیدگاه',
-										'children' => Html::trusted( '<p>دیدگاه شما پس از بررسی نمایش داده می‌شود.</p>' ),
-										'footer'   => array(
-											UI::button( array( 'variant' => 'neutral', 'children' => 'انصراف', 'attrs' => array( 'data-um-close' => true ) ) ),
-											UI::button( array( 'children' => 'ثبت', 'attrs' => array( 'data-um-close' => true ) ) ),
-										),
-									)
+								'block'    => true,
+								'children' => 'تسویه حساب',
+							)
+						),
+					)
+				),
+			)
+		);
+	}
+
+	/**
+	 * Tabs, accordion, dropdown and tooltip.
+	 */
+	private static function disclosures(): Html {
+		return Html::from(
+			array(
+				self::section(
+					'tabs',
+					'زبانه',
+					array(
+						UI::tabs(
+							array(
+								'id'    => 'demo-tabs',
+								'label' => 'اطلاعات محصول',
+								'class' => 'w-full',
+								'items' => array(
+									self::item( 'معرفی', 'متن معرفی محصول.' ),
+									self::item( 'مشخصات', 'جدول مشخصات فنی.' ),
+									self::item( 'دیدگاه‌ها', 'دیدگاه خریداران.' ),
 								),
 							)
 						),
-						self::section(
-							'drawer',
-							'کشو',
+					)
+				),
+				self::section(
+					'accordion',
+					'آکاردئون',
+					array(
+						UI::accordion(
 							array(
-								UI::button( array( 'opens' => 'demo-drawer', 'children' => 'سبد خرید', 'id' => 'drawer-trigger' ) ),
-								UI::drawer(
+								'id'    => 'demo-accordion',
+								'class' => 'w-full',
+								'items' => array(
 									array(
-										'id'       => 'demo-drawer',
-										'title'    => 'سبد خرید',
-										'children' => Html::trusted( '<p>سبد شما خالی است.</p><a id="drawer-link" href="#c-drawer">ادامه خرید</a>' ),
-										'footer'   => UI::button( array( 'block' => true, 'children' => 'تسویه حساب' ) ),
-									)
+										'title'   => 'ارسال چقدر طول می‌کشد؟',
+										'content' => 'دو تا چهار روز کاری.',
+									),
+									array(
+										'title'   => 'بازگشت کالا چطور است؟',
+										'content' => 'تا هفت روز پس از تحویل.',
+									),
 								),
 							)
 						),
-						self::section(
-							'tabs',
-							'زبانه',
+					)
+				),
+				self::section(
+					'dropdown',
+					'منوی بازشو',
+					array(
+						UI::dropdown(
 							array(
-								UI::tabs(
+								'id'    => 'demo-dropdown',
+								'label' => 'حساب من',
+								'items' => array(
 									array(
-										'id'    => 'demo-tabs',
-										'label' => 'اطلاعات محصول',
-										'class' => 'w-full',
-										'items' => array(
-											array( 'label' => 'معرفی', 'content' => 'متن معرفی محصول.' ),
-											array( 'label' => 'مشخصات', 'content' => 'جدول مشخصات فنی.' ),
-											array( 'label' => 'دیدگاه‌ها', 'content' => 'دیدگاه خریداران.' ),
-										),
-									)
+										'label'   => 'سفارش‌ها',
+										'href'    => '#c-dropdown',
+										'current' => true,
+									),
+									array(
+										'label' => 'نشانی‌ها',
+										'href'  => '#c-dropdown',
+									),
+									array(
+										'label' => 'خروج',
+										'href'  => '#c-dropdown',
+									),
 								),
 							)
 						),
-						self::section(
-							'accordion',
-							'آکاردئون',
+					)
+				),
+				self::section(
+					'tooltip',
+					'راهنمای کوچک',
+					array(
+						UI::tooltip(
 							array(
-								UI::accordion(
+								'id'       => 'demo-tooltip',
+								'text'     => 'افزودن به فهرست مقایسه',
+								'children' => UI::button(
 									array(
-										'id'    => 'demo-accordion',
-										'class' => 'w-full',
-										'items' => array(
-											array( 'title' => 'ارسال چقدر طول می‌کشد؟', 'content' => 'دو تا چهار روز کاری.' ),
-											array( 'title' => 'بازگشت کالا چطور است؟', 'content' => 'تا هفت روز پس از تحویل.' ),
-										),
-									)
-								),
-							)
-						),
-						self::section(
-							'dropdown',
-							'منوی بازشو',
-							array(
-								UI::dropdown(
-									array(
-										'id'    => 'demo-dropdown',
-										'label' => 'حساب من',
-										'items' => array(
-											array( 'label' => 'سفارش‌ها', 'href' => '#c-dropdown', 'current' => true ),
-											array( 'label' => 'نشانی‌ها', 'href' => '#c-dropdown' ),
-											array( 'label' => 'خروج', 'href' => '#c-dropdown' ),
-										),
-									)
-								),
-							)
-						),
-						self::section(
-							'tooltip',
-							'راهنمای کوچک',
-							array(
-								UI::tooltip(
-									array(
-										'id'       => 'demo-tooltip',
-										'text'     => 'افزودن به فهرست مقایسه',
-										'children' => UI::button( array( 'variant' => 'neutral', 'children' => 'مقایسه', 'id' => 'tooltip-trigger' ) ),
+										'id'       => 'tooltip-trigger',
+										'variant'  => 'neutral',
+										'children' => 'مقایسه',
 									)
 								),
 							)
 						),
 					)
-				)
+				),
+			)
+		);
+	}
+
+	/**
+	 * One tab item.
+	 *
+	 * @param string $label   Tab label.
+	 * @param string $content Panel content.
+	 * @return array{label: string, content: string}
+	 */
+	private static function item( string $label, string $content ): array {
+		return array(
+			'label'   => $label,
+			'content' => $content,
+		);
+	}
+
+	/**
+	 * The storefront catalog.
+	 */
+	private static function storefront(): Html {
+		return Html::trusted(
+			sprintf(
+				'<div class="mx-auto max-w-(--um-container) px-4 py-6" data-testid="catalog"><h1 class="mb-6">کاتالوگ اجزا</h1>%s</div>',
+				Html::from( array( self::buttons(), self::dialog(), self::drawer(), self::disclosures() ) )
 			)
 		);
 	}
@@ -228,17 +337,41 @@ final class Catalog {
 				if ( $current !== $hook ) {
 					return;
 				}
-				$dir      = plugin_dir_path( self::$file ) . 'assets/build';
-				$url      = plugins_url( 'assets/build', self::$file );
-				/** @var array{dependencies: list<string>, version: string}|null $manifest */
-				$manifest = is_readable( $dir . '/catalog/admin.asset.php' ) ? require $dir . '/catalog/admin.asset.php' : null;
-				if ( ! is_array( $manifest ) ) {
+				$manifest = self::manifest( 'catalog/admin' );
+				if ( null === $manifest ) {
 					return;
 				}
 				Assets::enqueue_admin();
-				wp_enqueue_script( 'ultra-max-catalog-admin', $url . '/catalog/admin.js', $manifest['dependencies'], $manifest['version'], true );
+				wp_enqueue_script(
+					'ultra-max-catalog-admin',
+					plugins_url( 'assets/build/catalog/admin.js', self::$file ),
+					$manifest['dependencies'],
+					$manifest['version'],
+					true
+				);
 			},
 			20
+		);
+	}
+
+	/**
+	 * Reads the build manifest of one of the catalog's own entries.
+	 *
+	 * @param string $entry Entry inside assets/build.
+	 * @return array{dependencies: list<string>, version: string}|null
+	 */
+	private static function manifest( string $entry ): ?array {
+		$file = plugin_dir_path( self::$file ) . 'assets/build/' . $entry . '.asset.php';
+		if ( ! is_readable( $file ) ) {
+			return null;
+		}
+		$data = require $file;
+		if ( ! is_array( $data ) || ! is_string( $data['version'] ?? null ) || ! is_array( $data['dependencies'] ?? null ) ) {
+			return null;
+		}
+		return array(
+			'dependencies' => array_values( array_filter( $data['dependencies'], 'is_string' ) ),
+			'version'      => $data['version'],
 		);
 	}
 

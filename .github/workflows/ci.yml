@@ -50,13 +50,21 @@ jobs:
           path: composer.lock
       - run: npm run build
       - run: npm run lint:js
+        if: ${{ !cancelled() }}
       - run: npm run lint:css
+        if: ${{ !cancelled() }}
       - run: npm run lint:boundaries
+        if: ${{ !cancelled() }}
       - run: npm run typecheck
+        if: ${{ !cancelled() }}
       - run: npx tsc --noEmit -p packages/ui/tsconfig.json
+        if: ${{ !cancelled() }}
       - run: npm run test:unit
+        if: ${{ !cancelled() }}
       - run: npm run lint:php
+        if: ${{ !cancelled() }}
       - run: npm run analyse:php
+        if: ${{ !cancelled() }}
 
   wordpress:
     name: WordPress tests (PHP ${{ matrix.php }})

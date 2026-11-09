@@ -31,7 +31,8 @@ final class UI {
 	/**
 	 * Button.
 	 *
-	 * @param ButtonProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param ButtonProps $props
 	 */
 	public static function button( array $props ): Html {
 		return Button::render( $props );
@@ -40,7 +41,8 @@ final class UI {
 	/**
 	 * Modal dialog.
 	 *
-	 * @param DialogProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param DialogProps $props
 	 */
 	public static function dialog( array $props ): Html {
 		return Dialog::render( $props );
@@ -49,7 +51,8 @@ final class UI {
 	/**
 	 * Side drawer.
 	 *
-	 * @param DrawerProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param DrawerProps $props
 	 */
 	public static function drawer( array $props ): Html {
 		return Drawer::render( $props );
@@ -58,7 +61,8 @@ final class UI {
 	/**
 	 * Tabs.
 	 *
-	 * @param TabsProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param TabsProps $props
 	 */
 	public static function tabs( array $props ): Html {
 		return Tabs::render( $props );
@@ -67,7 +71,8 @@ final class UI {
 	/**
 	 * Accordion.
 	 *
-	 * @param AccordionProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param AccordionProps $props
 	 */
 	public static function accordion( array $props ): Html {
 		return Accordion::render( $props );
@@ -76,7 +81,8 @@ final class UI {
 	/**
 	 * Dropdown list of links.
 	 *
-	 * @param DropdownProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param DropdownProps $props
 	 */
 	public static function dropdown( array $props ): Html {
 		return Dropdown::render( $props );
@@ -85,7 +91,8 @@ final class UI {
 	/**
 	 * Tooltip around a trigger.
 	 *
-	 * @param TooltipProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param TooltipProps $props
 	 */
 	public static function tooltip( array $props ): Html {
 		return Tooltip::render( $props );
@@ -94,10 +101,10 @@ final class UI {
 	/**
 	 * Decorative icon.
 	 *
-	 * @param 'close'|'chevron-down'|'menu' $name  Icon name.
-	 * @param string                         $class Size classes.
+	 * @param 'close'|'chevron-down'|'menu' $name    Icon name.
+	 * @param string                        $classes Size classes.
 	 */
-	public static function icon( string $name, string $class = 'size-5' ): Html {
-		return Icon::render( $name, $class );
+	public static function icon( string $name, string $classes = 'size-5' ): Html {
+		return Icon::render( $name, $classes );
 	}
 }

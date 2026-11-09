@@ -37,7 +37,8 @@ final class Dialog {
 	/**
 	 * Renders the dialog.
 	 *
-	 * @param DialogProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param DialogProps $props
 	 */
 	public static function render( array $props ): Html {
 		$id   = Props::id( 'Dialog', $props );

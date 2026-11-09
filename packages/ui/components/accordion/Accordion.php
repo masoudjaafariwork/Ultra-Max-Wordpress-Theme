@@ -27,7 +27,8 @@ final class Accordion {
 	/**
 	 * Renders the accordion.
 	 *
-	 * @param AccordionProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param AccordionProps $props
 	 */
 	public static function render( array $props ): Html {
 		$id      = Props::id( 'Accordion', $props );

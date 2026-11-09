@@ -27,15 +27,15 @@ final class Icon {
 	/**
 	 * Renders an icon.
 	 *
-	 * @param 'close'|'chevron-down'|'menu' $name Icon name.
-	 * @param string                         $class Extra classes for size.
+	 * @param 'close'|'chevron-down'|'menu' $name    Icon name.
+	 * @param string                        $classes Extra classes for size.
 	 */
-	public static function render( string $name, string $class = 'size-5' ): Html {
+	public static function render( string $name, string $classes = 'size-5' ): Html {
 		$path = self::PATHS[ $name ] ?? self::PATHS['close'];
 		return Html::trusted(
 			sprintf(
 				'<svg class="%s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="%s"/></svg>',
-				esc_attr( Attributes::classes( 'shrink-0', $class ) ),
+				esc_attr( Attributes::classes( 'shrink-0', $classes ) ),
 				esc_attr( $path )
 			)
 		);

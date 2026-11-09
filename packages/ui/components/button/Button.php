@@ -53,7 +53,8 @@ final class Button {
 	/**
 	 * Renders the button.
 	 *
-	 * @param ButtonProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param ButtonProps $props
 	 */
 	public static function render( array $props ): Html {
 		$variant  = Props::one_of( 'Button', $props, 'variant', self::VARIANTS );
@@ -79,9 +80,9 @@ final class Button {
 			$attributes['href']          = $disabled ? null : esc_url( $href );
 			$attributes['aria-disabled'] = $disabled ? 'true' : null;
 		} else {
-			$tag                     = 'button';
-			$attributes['type']      = Props::one_of( 'Button', $props, 'type', array( 'button', 'submit', 'reset' ) );
-			$attributes['disabled']  = $disabled;
+			$tag                         = 'button';
+			$attributes['type']          = Props::one_of( 'Button', $props, 'type', array( 'button', 'submit', 'reset' ) );
+			$attributes['disabled']      = $disabled;
 			$attributes['aria-haspopup'] = isset( $props['opens'] ) ? 'dialog' : null;
 		}
 

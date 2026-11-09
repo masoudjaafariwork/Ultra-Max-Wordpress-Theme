@@ -54,8 +54,19 @@
 		</properties>
 	</rule>
 
-	<!-- Test files are not loaded by WordPress. -->
+	<!-- Test files are not loaded by WordPress; test names describe themselves. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<exclude-pattern>tests/php/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.FunctionComment.Missing">
+		<exclude-pattern>tests/php/*</exclude-pattern>
+	</rule>
+	<rule ref="Generic.Commenting.DocComment.MissingShort">
+		<exclude-pattern>tests/php/*</exclude-pattern>
+	</rule>
+
+	<!-- Each market has its own MarketLicense; the packager copies exactly one. -->
+	<rule ref="Generic.Classes.DuplicateClassName">
+		<exclude-pattern>packages/license/markets/*</exclude-pattern>
 	</rule>
 </ruleset>

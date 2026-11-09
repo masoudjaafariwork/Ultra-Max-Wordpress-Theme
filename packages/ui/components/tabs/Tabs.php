@@ -28,7 +28,8 @@ final class Tabs {
 	/**
 	 * Renders the tabs.
 	 *
-	 * @param TabsProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param TabsProps $props
 	 */
 	public static function render( array $props ): Html {
 		$id       = Props::id( 'Tabs', $props );

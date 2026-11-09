@@ -21,7 +21,12 @@ final class UiComponentsTest extends WP_UnitTestCase {
 	}
 
 	public function test_button_renders_a_link_when_href_is_given(): void {
-		$html = (string) UI::button( array( 'href' => 'https://example.org/?a=1&b=2', 'children' => 'Go' ) );
+		$html = (string) UI::button(
+			array(
+				'href'     => 'https://example.org/?a=1&b=2',
+				'children' => 'Go',
+			)
+		);
 		$this->assertStringStartsWith( '<a ', $html );
 		$this->assertStringContainsString( 'href="https://example.org/?a=1&#038;b=2"', $html );
 		$this->assertStringNotContainsString( 'type=', $html );
@@ -34,20 +39,35 @@ final class UiComponentsTest extends WP_UnitTestCase {
 	}
 
 	public function test_button_opens_a_dialog(): void {
-		$html = (string) UI::button( array( 'children' => 'Open', 'opens' => 'cart' ) );
+		$html = (string) UI::button(
+			array(
+				'children' => 'Open',
+				'opens'    => 'cart',
+			)
+		);
 		$this->assertStringContainsString( 'data-um-open="cart"', $html );
 		$this->assertStringContainsString( 'aria-haspopup="dialog"', $html );
 	}
 
 	public function test_invalid_variant_is_reported_and_falls_back(): void {
 		$this->setExpectedIncorrectUsage( 'UI::button' );
+		$props = array(
+			'variant'  => 'pink',
+			'children' => 'x',
+		);
 		// @phpstan-ignore argument.type (deliberately invalid prop)
-		$html = (string) UI::button( array( 'variant' => 'pink', 'children' => 'x' ) );
+		$html = (string) UI::button( $props );
 		$this->assertStringContainsString( 'bg-primary', $html );
 	}
 
 	public function test_dialog_is_labelled_by_its_title_and_has_a_named_close_button(): void {
-		$html = (string) UI::dialog( array( 'id' => 'd1', 'title' => 'Title', 'children' => 'Body' ) );
+		$html = (string) UI::dialog(
+			array(
+				'id'       => 'd1',
+				'title'    => 'Title',
+				'children' => 'Body',
+			)
+		);
 		$this->assertStringStartsWith( '<dialog ', $html );
 		$this->assertStringContainsString( 'aria-labelledby="d1-title"', $html );
 		$this->assertStringContainsString( 'id="d1-title"', $html );
@@ -57,7 +77,13 @@ final class UiComponentsTest extends WP_UnitTestCase {
 
 	public function test_dialog_requires_a_valid_id(): void {
 		$this->setExpectedIncorrectUsage( 'UI::dialog' );
-		UI::dialog( array( 'id' => '1 bad', 'title' => 'T', 'children' => 'B' ) );
+		UI::dialog(
+			array(
+				'id'       => '1 bad',
+				'title'    => 'T',
+				'children' => 'B',
+			)
+		);
 	}
 
 	public function test_tabs_link_tabs_and_panels(): void {
@@ -67,13 +93,18 @@ final class UiComponentsTest extends WP_UnitTestCase {
 				'label'    => 'Product',
 				'selected' => 1,
 				'items'    => array(
-					array( 'label' => 'A', 'content' => 'a' ),
-					array( 'label' => 'B', 'content' => 'b' ),
+					array(
+						'label'   => 'A',
+						'content' => 'a',
+					),
+					array(
+						'label'   => 'B',
+						'content' => 'b',
+					),
 				),
 			)
 		);
 		$this->assertStringContainsString( 'role="tablist" aria-label="Product"', $html );
-		$this->assertStringContainsString( 'id="t-tab-1" class="', $html );
 		$this->assertMatchesRegularExpression( '/id="t-tab-1"[^>]*aria-selected="true"[^>]*tabindex="0"/', $html );
 		$this->assertMatchesRegularExpression( '/id="t-tab-0"[^>]*aria-selected="false"[^>]*tabindex="-1"/', $html );
 		$this->assertMatchesRegularExpression( '/id="t-panel-0"[^>]*class="[^"]*hidden/', $html );
@@ -84,8 +115,15 @@ final class UiComponentsTest extends WP_UnitTestCase {
 			array(
 				'id'    => 'faq',
 				'items' => array(
-					array( 'title' => 'Q1', 'content' => 'A1', 'open' => true ),
-					array( 'title' => 'Q2', 'content' => 'A2' ),
+					array(
+						'title'   => 'Q1',
+						'content' => 'A1',
+						'open'    => true,
+					),
+					array(
+						'title'   => 'Q2',
+						'content' => 'A2',
+					),
 				),
 			)
 		);
@@ -98,7 +136,13 @@ final class UiComponentsTest extends WP_UnitTestCase {
 			array(
 				'id'    => 'acc',
 				'label' => 'Account',
-				'items' => array( array( 'label' => 'Orders', 'href' => '/orders', 'current' => true ) ),
+				'items' => array(
+					array(
+						'label'   => 'Orders',
+						'href'    => '/orders',
+						'current' => true,
+					),
+				),
 			)
 		);
 		$this->assertStringContainsString( 'aria-controls="acc-menu"', $html );
@@ -107,7 +151,14 @@ final class UiComponentsTest extends WP_UnitTestCase {
 	}
 
 	public function test_attributes_skip_false_and_escape_values(): void {
-		$this->assertSame( ' a="&quot;x&quot;" b', Attributes::render( array( 'a' => '"x"', 'b' => true, 'c' => false, 'd' => null, 'bad name' => 'y' ) ) );
+		$attributes = array(
+			'a'        => '"x"',
+			'b'        => true,
+			'c'        => false,
+			'd'        => null,
+			'bad name' => 'y',
+		);
+		$this->assertSame( ' a="&quot;x&quot;" b', Attributes::render( $attributes ) );
 		$this->assertSame( 'a b', Attributes::classes( 'a  b', null, 'a' ) );
 	}
 

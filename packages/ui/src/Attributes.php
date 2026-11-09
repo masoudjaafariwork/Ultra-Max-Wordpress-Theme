@@ -46,7 +46,8 @@ final class Attributes {
 	public static function classes( ?string ...$classes ): string {
 		$list = array();
 		foreach ( $classes as $class ) {
-			foreach ( preg_split( '/\s+/', (string) $class, -1, PREG_SPLIT_NO_EMPTY ) ?: array() as $name ) {
+			$names = preg_split( '/\s+/', (string) $class, -1, PREG_SPLIT_NO_EMPTY );
+			foreach ( false === $names ? array() : $names as $name ) {
 				$list[ $name ] = true;
 			}
 		}

@@ -29,7 +29,8 @@ final class Dropdown {
 	/**
 	 * Renders the dropdown.
 	 *
-	 * @param DropdownProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param DropdownProps $props
 	 */
 	public static function render( array $props ): Html {
 		$id      = Props::id( 'Dropdown', $props );

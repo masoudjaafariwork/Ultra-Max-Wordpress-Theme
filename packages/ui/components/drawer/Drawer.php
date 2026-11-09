@@ -32,7 +32,8 @@ final class Drawer {
 	/**
 	 * Renders the drawer.
 	 *
-	 * @param DrawerProps $props Props.
+	 * @param array $props Props.
+	 * @phpstan-param DrawerProps $props
 	 */
 	public static function render( array $props ): Html {
 		$id   = Props::id( 'Drawer', $props );
