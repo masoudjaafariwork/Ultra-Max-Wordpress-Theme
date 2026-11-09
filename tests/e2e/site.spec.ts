@@ -78,6 +78,12 @@ test.describe( 'storefront', () => {
 		expect( errors ).toEqual( [] );
 	} );
 
+	test( 'uses the Persian translations shipped with the products', async ( { page } ) => {
+		await page.goto( '/?um-catalog' );
+		await expect( page.locator( '#demo-dialog [data-um-close]' ).first() ).toHaveAttribute( 'aria-label', 'بستن' );
+		await expect( page.locator( '.um-skip-link' ) ).toHaveText( 'رفتن به محتوا' );
+	} );
+
 	test( 'shop page renders under the theme', async ( { page } ) => {
 		const errors = collectErrors( page );
 		const response = await page.goto( '/?post_type=product' );
@@ -93,10 +99,11 @@ test.describe( 'admin', () => {
 	test( 'lists the four plugins as active', async ( { page } ) => {
 		await page.goto( '/wp-admin/plugins.php' );
 		for ( const slug of [ 'ultra-max-core', 'ultra-max-auth', 'ultra-max-invoice', 'ultra-max-seo' ] ) {
-			await expect( page.locator( `tr[data-slug="${ slug }"]` ) ).toHaveClass( /\bactive\b/ );
+			await expect( page.locator( `tr[data-plugin="${ slug }/${ slug }.php"]` ) ).toHaveClass( /\bactive\b/ );
 		}
 		// Other plugins keep hidden, empty notice templates; only ours matter.
-		await expect( page.locator( '.notice-error', { hasText: /Ultra Max|ultra-max/i } ) ).toHaveCount( 0 );
+		await expect( page.locator( '.notice-error', { hasText: /Ultra Max|ultra-max|الترا مکس/i } ) ).toHaveCount( 0 );
+		await expect( page.locator( 'tr[data-plugin="ultra-max-core/ultra-max-core.php"] .plugin-title strong' ) ).toHaveText( 'هسته الترا مکس' );
 	} );
 
 	test( 'shows the theme as active and offers the child theme', async ( { page } ) => {

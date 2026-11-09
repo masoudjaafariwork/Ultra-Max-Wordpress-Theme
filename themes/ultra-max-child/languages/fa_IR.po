@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ultra Max Child 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ultra-max-child\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-09T12:28:01+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: ultra-max-child\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Ultra Max Child"
+msgstr "الترا مکس (قالب فرزند)"
+
+#. Description of the theme
+#: style.css
+msgid "Child theme for Ultra Max. Put your own changes here so theme updates never overwrite them."
+msgstr "قالب فرزند الترا مکس. تغییرهای خودتان را اینجا بگذارید تا با به‌روزرسانی قالب از بین نروند."
+
+#. Author of the theme
+#: style.css
+msgid "Ultra Max"
+msgstr "الترا مکس"

@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ultra Max Core 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ultra-max-core\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-09T12:27:07+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: ultra-max-core\n"
+
+#. Plugin Name of the plugin
+#: ultra-max-core.php
+msgid "Ultra Max Core"
+msgstr "هسته الترا مکس"
+
+#. Description of the plugin
+#: ultra-max-core.php
+msgid "Layout builder, Elementor widgets, store modules and demo importer for the Ultra Max theme."
+msgstr "سازنده چیدمان، ابزارک‌های المنتور، ماژول‌های فروشگاه و درون‌ریز دمو برای قالب الترا مکس."
+
+#. Author of the plugin
+#: ultra-max-core.php
+msgid "Ultra Max"
+msgstr "الترا مکس"
+
+#: ultra-max-core.php:31
+msgid "This plugin is missing its build files. Run \"npm run build\" in the development repository, or install the release package."
+msgstr "فایل‌های ساخته‌شده این افزونه پیدا نشد. در مخزن توسعه \"npm run build\" را اجرا کنید یا بسته انتشار را نصب کنید."
+
+#. translators: 1: product name, 2: required PHP version, 3: current PHP version.
+#: vendor-prefixed/foundation/Requirements.php:46
+#, php-format
+msgid "%1$s needs PHP %2$s or later. This site runs PHP %3$s."
+msgstr "%1$s به PHP نسخه %2$s یا بالاتر نیاز دارد. این سایت PHP نسخه %3$s دارد."
+
+#. translators: 1: product name, 2: required WordPress version, 3: current WordPress version.
+#: vendor-prefixed/foundation/Requirements.php:57
+#, php-format
+msgid "%1$s needs WordPress %2$s or later. This site runs WordPress %3$s."
+msgstr "%1$s به وردپرس نسخه %2$s یا بالاتر نیاز دارد. این سایت وردپرس نسخه %3$s دارد."
+
+#: vendor-prefixed/ui/components/dialog/Overlay.php:58
+msgid "Close"
+msgstr "بستن"

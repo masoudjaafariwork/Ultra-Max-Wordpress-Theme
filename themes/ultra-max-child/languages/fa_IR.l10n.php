@@ -1,0 +1,2 @@
+<?php
+return ['domain'=>'ultra-max-child','plural-forms'=>'nplurals=2; plural=(n > 1);','language'=>'fa_IR','project-id-version'=>'Ultra Max Child 0.1.0','pot-creation-date'=>'2026-11-09T12:28:01+00:00','po-revision-date'=>'YEAR-MO-DA HO:MI+ZONE','x-generator'=>'WP-CLI 2.12.0','messages'=>['Ultra Max Child'=>'الترا مکس (قالب فرزند)','Child theme for Ultra Max. Put your own changes here so theme updates never overwrite them.'=>'قالب فرزند الترا مکس. تغییرهای خودتان را اینجا بگذارید تا با به‌روزرسانی قالب از بین نروند.','Ultra Max'=>'الترا مکس']];

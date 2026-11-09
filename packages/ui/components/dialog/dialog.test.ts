@@ -26,7 +26,7 @@ test( 'closes with Escape and returns focus to the trigger', async ( { page } ) 
 
 test( 'closes from its close button and from a backdrop click', async ( { page } ) => {
 	await page.click( '#dialog-trigger' );
-	await page.locator( '#demo-dialog' ).getByRole( 'button', { name: 'Close' } ).click();
+	await page.locator( '#demo-dialog' ).getByRole( 'button', { name: /^(Close|بستن)$/ } ).click();
 	await expect( page.locator( '#demo-dialog' ) ).toBeHidden();
 	await page.click( '#dialog-trigger' );
 	await page.mouse.click( 2, 2 );

@@ -38,6 +38,7 @@ final class Plugin {
 	public function boot(): void {
 		WooCompat::declare( ULTRA_MAX_SEO_FILE );
 		add_action( 'plugins_loaded', array( $this, 'init' ) );
+		add_action( 'init', array( $this, 'load_textdomain' ) );
 	}
 
 	/**
@@ -59,6 +60,17 @@ final class Plugin {
 		 * @param Plugin $plugin The plugin instance.
 		 */
 		do_action( 'ultra_max_seo_loaded', $this );
+	}
+
+	/**
+	 * Loads the translations shipped in the plugin's languages folder.
+	 *
+	 * Plugin Check discourages this for WordPress.org plugins, which get
+	 * language packs. Marketplace plugins ship their own translations, and
+	 * WordPress only finds them in the plugin folder when told where.
+	 */
+	public function load_textdomain(): void {
+		load_plugin_textdomain( 'ultra-max-seo', false, dirname( plugin_basename( ULTRA_MAX_SEO_FILE ) ) . '/languages' );
 	}
 
 	/**
