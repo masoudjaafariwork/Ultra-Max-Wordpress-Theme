@@ -130,7 +130,9 @@ async function buildEntry( entry ) {
 }
 
 /** Static files copied as they are: [source folder, folder inside build]. */
-const copies = [ [ 'packages/ui/fonts', 'ui/fonts' ] ];
+// Fonts sit next to the ui/ folder because Tailwind rebases url() from
+// packages/ui/<entry>/ to the output, which lives one level down too.
+const copies = [ [ 'packages/ui/fonts', 'fonts' ] ];
 
 /**
  * Copies built files into the products that serve them.
