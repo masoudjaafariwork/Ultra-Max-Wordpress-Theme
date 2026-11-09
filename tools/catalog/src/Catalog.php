@@ -358,7 +358,7 @@ final class Catalog {
 	 * Reads the build manifest of one of the catalog's own entries.
 	 *
 	 * @param string $entry Entry inside assets/build.
-	 * @return array{dependencies: list<string>, version: string}|null
+	 * @return array{dependencies: list<non-empty-string>, version: string}|null
 	 */
 	private static function manifest( string $entry ): ?array {
 		$file = plugin_dir_path( self::$file ) . 'assets/build/' . $entry . '.asset.php';
@@ -370,7 +370,7 @@ final class Catalog {
 			return null;
 		}
 		return array(
-			'dependencies' => array_values( array_filter( $data['dependencies'], 'is_string' ) ),
+			'dependencies' => \UltraMax\Core\Lib\Foundation\Assets::handles( $data['dependencies'] ),
 			'version'      => $data['version'],
 		);
 	}
