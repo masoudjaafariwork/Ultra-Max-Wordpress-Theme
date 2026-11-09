@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ماژول‌های الترا مکس | پیشخوان</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-page" data-shell="admin" data-admin="modules">
+<div data-wp-chrome>
+  <div class="ump">
+    <div class="ump-head">
+      <span id="logo"></span>
+      <div><h1>ماژول‌ها</h1><span class="ump-head__ver">هر ماژول خاموش هیچ فایل CSS یا JS و هیچ کوئری اضافه‌ای بار نمی‌کند.</span></div>
+      <div class="ump-head__actions">
+        <div class="segmented" id="mod-filter"><button class="is-active" data-f="all">همه <span class="num">(۱۶)</span></button><button data-f="on">فعال</button><button data-f="off">غیرفعال</button></div>
+      </div>
+    </div>
+
+    <div class="alert"><svg class="i"><use href="#i-zap"/></svg><p>با ماژول‌های فعال فعلی، حجم CSS صفحه اصلی <b class="num">۴۲ کیلوبایت</b> و JS آن <b class="num">۲۸ کیلوبایت</b> است. با خاموش کردن هر ماژول، عدد کنار آن از این مجموع کم می‌شود.</p></div>
+
+    <div class="mods" id="mods"></div>
+  </div>
+</div>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/shell.js"></script>
+<script src="../assets/js/admin.js"></script>
+<script>
+  (function () {
+    var UM = window.UM, ic = UM.icon;
+    document.getElementById('logo').innerHTML = UM.logo().replace('<span class="logo__text">الترا<b>مکس</b></span>', '');
+    var mods = [
+      ['layers', 'سازنده چیدمان', 'سربرگ، پابرگ و ۱۴ نوع صفحه با المنتور رایگان.', 'BLD-01', 1, '۶'],
+      ['search', 'جستجوی زنده', 'نتیجه فوری محصول، دسته و برند با یکسان‌سازی ی و ک.', 'SRCH-01', 1, '۴'],
+      ['filter', 'فیلتر ایجکس', 'فیلتر قیمت، برند و ویژگی بدون بارگذاری دوباره صفحه.', 'PLP-01', 1, '۷'],
+      ['cart', 'سبد کناری', 'سبد کشویی با تغییر تعداد و نوار ارسال رایگان.', 'CART-01', 1, '۳'],
+      ['heart', 'علاقه‌مندی', 'برای مهمان و کاربر، با ادغام پس از ورود.', 'SAVE-01', 1, '۲'],
+      ['compare', 'مقایسه کالا', 'مقایسه تا ۴ کالا از یک دسته.', 'SAVE-02', 0, '۳'],
+      ['eye', 'نمایش سریع', 'پنجره جزئیات محصول بدون ترک صفحه.', 'SAVE-04', 1, '۲'],
+      ['fire', 'شگفت‌انگیز', 'پیشنهاد زمان‌دار با سهمیه تعداد و شمارش معکوس.', 'MERCH-01', 1, '۲'],
+      ['activity', 'نمودار قیمت', 'تاریخچه قیمت و کمترین قیمت ۳۰ روز.', 'PDP-11', 1, '۳'],
+      ['chat', 'دیدگاه و پرسش پیشرفته', 'نقاط قوت و ضعف، دیدگاه تصویری و پرسش و پاسخ.', 'PDP-08', 1, '۴'],
+      ['bell', 'خبرم کن', 'اطلاع موجود شدن و ارزان شدن با پیامک و ایمیل.', 'PDP-12', 1, '۱'],
+      ['mobile', 'ورود پیامکی', 'ورود و ثبت‌نام با کد یک‌بارمصرف. افزونه ورود.', 'AUTH-01', 1, '۳'],
+      ['receipt', 'فاکتور و برچسب', 'فاکتور رسمی، برچسب پستی و چاپ گروهی. افزونه فاکتور.', 'INV-01', 1, '۰'],
+      ['history', 'یادآوری سبد رهاشده', 'پیامک و ایمیل یادآوری با کد تخفیف.', 'ENG-01', 0, '۰'],
+      ['headset', 'دکمه‌های تماس شناور', 'واتساپ، تلگرام، ایتا، بله و تلفن.', 'CORE-11', 1, '۱'],
+      ['percent', 'تخفیف پلکانی', 'قیمت کمتر برای خرید تعداد بیشتر.', 'MERCH-02', 0, '۱']
+    ];
+    var box = document.getElementById('mods');
+    box.innerHTML = mods.map(function (m) {
+      return '<article class="mod' + (m[4] ? '' : ' is-off') + '" data-on="' + m[4] + '"><div class="mod__top"><span class="mod__ic">' + ic(m[0], 'i--lg') + '</span><div class="grow"><b>' + m[1] + '</b><small>' + (m[4] ? 'فعال' : 'غیرفعال') + '</small></div><label class="switch"><input type="checkbox"' + (m[4] ? ' checked' : '') + ' aria-label="روشن یا خاموش کردن ' + m[1] + '"></label></div>' +
+        '<p>' + m[2] + '</p><div class="mod__foot"><a class="link" href="settings.html">تنظیمات</a><span class="ids">' + m[3] + '</span><span class="mod__weight num">' + m[5] + ' کیلوبایت</span></div></article>';
+    }).join('');
+    box.addEventListener('change', function (e) {
+      var card = e.target.closest('.mod'); var on = e.target.checked;
+      card.classList.toggle('is-off', !on); card.setAttribute('data-on', on ? 1 : 0);
+      card.querySelector('small').textContent = on ? 'فعال' : 'غیرفعال';
+      UM.toast(on ? 'ماژول فعال شد' : 'ماژول غیرفعال شد');
+    });
+    document.getElementById('mod-filter').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-f]'); if (!b) return;
+      this.querySelectorAll('button').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      var f = b.getAttribute('data-f');
+      box.querySelectorAll('.mod').forEach(function (c) { var on = c.getAttribute('data-on') === '1'; c.hidden = f === 'on' ? !on : f === 'off' ? on : false; });
+    });
+  })();
+</script>
+</body>
+</html>

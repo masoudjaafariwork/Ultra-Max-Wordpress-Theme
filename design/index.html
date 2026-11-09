@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نمونه‌های طراحی | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<style>
+  .hub { max-width: 1100px; margin: 0 auto; padding: var(--um-space-10) var(--um-gutter) var(--um-space-16); }
+  .hub__head { display: flex; align-items: center; gap: var(--um-space-4); flex-wrap: wrap; margin-bottom: var(--um-space-6); }
+  .hub__head h1 { font-size: var(--um-fs-3xl); }
+  .hub__head p { margin: 4px 0 0; color: var(--um-text-2); }
+  .hub__note { margin-bottom: var(--um-space-8); }
+  .hub h2 { font-size: var(--um-fs-lg); margin: var(--um-space-8) 0 var(--um-space-3); display: flex; align-items: center; gap: 8px; }
+  .hub h2 .i { color: var(--um-primary); }
+  .pages { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--um-space-3); }
+  .pg { background: var(--um-surface); border: 1px solid var(--um-border); border-radius: var(--um-radius-lg); padding: var(--um-space-4); display: flex; flex-direction: column; gap: 10px; }
+  .pg__top { display: flex; align-items: flex-start; gap: var(--um-space-3); }
+  .pg__ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--um-primary-soft); color: var(--um-primary); flex: none; }
+  .pg b { display: block; }
+  .pg p { margin: 2px 0 0; font-size: var(--um-fs-xs); color: var(--um-text-2); line-height: 1.9; }
+  .pg__ids { font-size: 10px; color: var(--um-text-3); direction: ltr; text-align: right; line-height: 1.7; }
+  .pg__btns { display: flex; gap: var(--um-space-2); margin-top: auto; }
+  .pg__btns .btn { flex: 1; }
+</style>
+</head>
+<body data-shell="hub">
+<main class="hub">
+  <div class="hub__head"><span id="logo"></span><div><h1>نمونه‌های طراحی</h1><p>فاز ۰ · بخش طراحی · ۱۸ آبان ۱۴۰۵</p></div></div>
+  <div class="alert hub__note"><svg class="i"><use href="#i-info"/></svg><p>«دسکتاپ» صفحه را کامل باز می‌کند. «موبایل» همان صفحه را در قاب گوشی با عرض ۳۹۰ پیکسل نشان می‌دهد. همه داده‌ها، نام‌ها و برندها ساختگی‌اند. منشأ فونت و تصاویر در فایل <b>ASSETS.fa.md</b> ثبت شده است.</p></div>
+  <div id="groups"></div>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/shell.js"></script>
+<script>
+  (function () {
+    var UM = window.UM, ic = UM.icon;
+    document.getElementById('logo').innerHTML = UM.logo();
+    var groups = [
+      ['palette', 'سیستم طراحی', [
+        ['design-system.html', 'palette', 'سیستم طراحی', 'رنگ‌ها و پیش‌تنظیم‌ها، تایپوگرافی، فاصله‌ها، آیکون‌ها، همه اجزا و شش طرح کارت محصول.', 'CORE-05 CORE-06 PLP-07']
+      ]],
+      ['store', 'فروشگاه', [
+        ['home.html', 'home', 'صفحه اصلی', 'استوری، اسلایدر، شگفت‌انگیز، بنرها، دسته‌ها، تب محصولات، سوپرمارکت، پرفروش‌ها، برندها، وبلاگ.', 'HOME-01…11 HDR-05 HDR-07 HDR-10 HDR-11'],
+        ['plp.html', 'grid', 'فهرست محصولات', 'زیردسته‌ها، فیلتر کامل، مرتب‌سازی، نمای شبکه و فهرست، کشوی فیلتر موبایل، توضیح سئو.', 'PLP-01…12 SRCH-04'],
+        ['pdp.html', 'box', 'صفحه محصول', 'گالری، جعبه خرید، نمودار قیمت، خرید همراه، مشخصات، دیدگاه‌ها، پرسش‌ها، دکمه خرید چسبان.', 'PDP-01…24 PDP-34'],
+        ['cart.html', 'cart', 'سبد خرید', 'سبد و خرید بعدی، سود شما، ارسال رایگان، حداقل سفارش، پیش‌فاکتور، سبد خالی.', 'CART-01…06 CART-10'],
+        ['checkout.html', 'card', 'تسویه حساب', 'دو مرحله ارسال و پرداخت، تأیید موبایل، دفترچه آدرس، حقیقی و حقوقی، روش ارسال.', 'CHK-01…09 SHIP-01 SHIP-02']
+      ]],
+      ['user', 'حساب و ورود', [
+        ['login.html', 'lock', 'ورود و ثبت‌نام', 'ورود با کد، رمز، فراموشی رمز و پیگیری سفارش بدون ورود. همه حالت‌ها از نوار بالا.', 'AUTH-01…03 AUTH-08 ACC-09'],
+        ['account.html', 'user', 'داشبورد حساب', 'سفارش‌ها به تفکیک وضعیت، لیست‌ها، بازدیدهای اخیر، اطلاعات و تغییر شماره.', 'ACC-01 ACC-04 ACC-07 ACC-08'],
+        ['order.html', 'truck', 'جزئیات سفارش', 'مراحل پیشرفت، کد رهگیری، کالاها، پرداخت و دانلود فاکتور.', 'ACC-02 ACC-03 SHIP-03']
+      ]],
+      ['receipt', 'اسناد سفارش', [
+        ['invoice.html', 'receipt', 'فاکتور رسمی A4', 'صورتحساب فروش با تفکیک ارزش افزوده، مبلغ به حروف، مهر، QR و واترمارک. آماده چاپ.', 'INV-01 INV-02 INV-05 INV-10…12'],
+        ['label.html', 'print', 'برچسب پستی ۱۰×۱۵', 'برچسب حرارتی با کد پستی درشت، بارکد سفارش و QR پیگیری. آماده چاپ.', 'INV-03 INV-04 INV-05']
+      ]],
+      ['gauge', 'پنل مدیریت', [
+        ['admin/dashboard.html', 'gauge', 'داشبورد قالب', 'لایسنس، به‌روزرسانی، سلامت سایت، نمودار ورود پیامکی، وضعیت سیستم و تغییرات.', 'ADM-04 ADM-05 ADM-10 AUTH-16'],
+        ['admin/settings.html', 'sliders', 'تنظیمات', 'جستجو در همه تنظیمات، رنگ و فونت با پیش‌نمایش زنده، برون‌بری و درون‌ریزی.', 'ADM-01 ADM-02 CORE-04…06 CORE-13'],
+        ['admin/modules.html', 'puzzle', 'ماژول‌ها', 'روشن و خاموش کردن هر ماژول با نمایش حجم آن.', 'ADM-07'],
+        ['admin/wizard.html', 'sparkles', 'جادوی راه‌اندازی', 'افزونه‌های لازم، انتخاب پنج دمو، درون‌ریزی با نوار پیشرفت، لوگو و رنگ.', 'ADM-03 DEMO-01 DEMO-02 DEMO-04']
+      ]]
+    ];
+    document.getElementById('groups').innerHTML = groups.map(function (g) {
+      return '<h2>' + ic(g[0]) + g[1] + '</h2><div class="pages">' + g[2].map(function (p) {
+        return '<article class="pg"><div class="pg__top"><span class="pg__ic">' + ic(p[1], 'i--lg') + '</span><div><b>' + p[2] + '</b><p>' + p[3] + '</p></div></div>' +
+          '<div class="pg__ids">' + p[4] + '</div>' +
+          '<div class="pg__btns"><a class="btn btn--sm" href="' + p[0] + '">' + ic('globe', 'i--sm') + 'دسکتاپ</a><a class="btn btn--neutral btn--sm" href="viewer.html#' + p[0] + '">' + ic('mobile', 'i--sm') + 'موبایل</a></div></article>';
+      }).join('') + '</div>';
+    }).join('');
+  })();
+</script>
+</body>
+</html>

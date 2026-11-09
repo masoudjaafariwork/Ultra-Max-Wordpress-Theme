@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>جادوی راه‌اندازی | الترا مکس</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="wizard-page" data-shell="admin">
+<main class="wiz">
+  <div class="wiz__top"><span id="logo"></span><a class="link small" href="dashboard.html">بعداً انجام می‌دهم</a></div>
+
+  <div class="wiz__card">
+    <div class="wiz__steps">
+      <div class="steps" id="wsteps">
+        <button class="steps__item" data-step="0"><span class="steps__dot"><svg class="i"><use href="#i-sparkles"/></svg></span><strong>خوش‌آمد</strong></button>
+        <button class="steps__item" data-step="1"><span class="steps__dot"><svg class="i"><use href="#i-puzzle"/></svg></span><strong>افزونه‌های لازم</strong></button>
+        <button class="steps__item" data-step="2"><span class="steps__dot"><svg class="i"><use href="#i-layers"/></svg></span><strong>انتخاب دمو</strong></button>
+        <button class="steps__item" data-step="3"><span class="steps__dot"><svg class="i"><use href="#i-palette"/></svg></span><strong>لوگو و رنگ</strong></button>
+        <button class="steps__item" data-step="4"><span class="steps__dot"><svg class="i"><use href="#i-check"/></svg></span><strong>پایان</strong></button>
+      </div>
+    </div>
+
+    <div class="wiz__body">
+      <!-- 0. Welcome -->
+      <section data-pane="0">
+        <h2>به الترا مکس خوش آمدید</h2>
+        <p class="muted">در چند دقیقه فروشگاه شما مثل دمو آماده می‌شود. هر مرحله را می‌توانید رد کنید و بعداً از داشبورد ادامه دهید.</p>
+        <ul class="plugins">
+          <li><svg class="i ok"><use href="#i-check"/></svg><div><b class="small">بدون رمزگذاری کد</b><small>به ionCube نیاز ندارید و روی هر هاست معمولی نصب می‌شود.</small></div></li>
+          <li><svg class="i ok"><use href="#i-check"/></svg><div><b class="small">المنتور رایگان کافی است</b><small>همه دموها بدون المنتور پرو ساخته شده‌اند.</small></div></li>
+          <li><svg class="i ok"><use href="#i-check"/></svg><div><b class="small">پشتیبان خودکار</b><small>پیش از هر تغییر بزرگ از تنظیمات فعلی پشتیبان گرفته می‌شود.</small></div></li>
+        </ul>
+      </section>
+
+      <!-- 1. Required plugins -->
+      <section data-pane="1" hidden>
+        <h2>افزونه‌های لازم</h2>
+        <p class="muted">این افزونه‌ها نصب و فعال می‌شوند.</p>
+        <ul class="plugins">
+          <li><svg class="i ok"><use href="#i-check"/></svg><div class="grow"><b class="small">ووکامرس</b><small>نصب و فعال است.</small></div><span class="badge badge--success">آماده</span></li>
+          <li><svg class="i ok"><use href="#i-check"/></svg><div class="grow"><b class="small">المنتور</b><small>نسخه رایگان.</small></div><span class="badge badge--success">آماده</span></li>
+          <li><svg class="i warn"><use href="#i-download"/></svg><div class="grow"><b class="small">الترا مکس: هسته</b><small>سازنده چیدمان، ویجت‌ها و ماژول‌های فروشگاه.</small></div><span class="badge badge--warning">نصب می‌شود</span></li>
+          <li><svg class="i warn"><use href="#i-download"/></svg><div class="grow"><b class="small">الترا مکس: ورود پیامکی</b><small>اختیاری، ولی پیشنهاد می‌شود.</small></div><label class="switch"><input type="checkbox" checked aria-label="نصب ورود پیامکی"></label></li>
+          <li><svg class="i warn"><use href="#i-download"/></svg><div class="grow"><b class="small">الترا مکس: فاکتور و برچسب</b><small>اختیاری.</small></div><label class="switch"><input type="checkbox" checked aria-label="نصب فاکتور"></label></li>
+        </ul>
+      </section>
+
+      <!-- 2. Demo (DEMO-01, DEMO-02, DEMO-04) -->
+      <section data-pane="2" hidden>
+        <h2>یک دمو انتخاب کنید</h2>
+        <p class="muted">همه دموها با المنتور رایگان ساخته شده‌اند و تصاویرشان مجوز روشن دارد.</p>
+        <div class="demos" id="demos"></div>
+        <div class="row row--wrap" style="margin-top:20px;gap:16px">
+          <span class="small bold">نوع درون‌ریزی:</span>
+          <label class="radio small"><input type="radio" name="imp" checked>کامل: محتوا، تنظیمات و چیدمان‌ها</label>
+          <label class="radio small"><input type="radio" name="imp">فقط تنظیمات و چیدمان‌ها</label>
+          <label class="radio small"><input type="radio" name="imp">فقط صفحه اصلی</label>
+        </div>
+        <div id="import" hidden>
+          <div class="progress" style="margin-top:20px;height:10px"><i id="imp-bar" style="width:0"></i></div>
+          <ul class="import-log" id="imp-log"></ul>
+        </div>
+      </section>
+
+      <!-- 3. Logo and colour -->
+      <section data-pane="3" hidden>
+        <h2>لوگو و رنگ فروشگاه</h2>
+        <p class="muted">می‌توانید بعداً همه این‌ها را از تنظیمات عوض کنید.</p>
+        <div class="ck-grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <div class="field"><label class="field__label">نام فروشگاه</label><input class="input" value="فروشگاه نمونه"></div>
+          <div class="field"><label class="field__label">لوگو</label><button class="btn btn--neutral"><svg class="i"><use href="#i-upload"/></svg>بارگذاری لوگو</button></div>
+          <div class="field ck-grid__full"><label class="field__label">رنگ اصلی</label>
+            <div class="color-row" data-chip-group>
+              <button class="chip is-active" data-p=""><span class="swatch swatch--sm" style="background:#4c42d3"></span>نیلی</button>
+              <button class="chip" data-p="ocean"><span class="swatch swatch--sm" style="background:#1a64cc"></span>اقیانوسی</button>
+              <button class="chip" data-p="teal"><span class="swatch swatch--sm" style="background:#0e7f82"></span>فیروزه‌ای</button>
+              <button class="chip" data-p="emerald"><span class="swatch swatch--sm" style="background:#168550"></span>زمردی</button>
+              <button class="chip" data-p="graphite"><span class="swatch swatch--sm" style="background:#353b4d"></span>گرافیتی</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Done -->
+      <section data-pane="4" hidden style="text-align:center">
+        <div class="done-art"><svg class="i"><use href="#i-check"/></svg></div>
+        <h2>فروشگاه شما آماده است!</h2>
+        <p class="muted">دموی «فروشگاه جامع» درون‌ریزی شد. حالا محصولات خودتان را اضافه کنید.</p>
+        <div class="row" style="justify-content:center;margin-top:20px"><a class="btn" href="../home.html">دیدن فروشگاه</a><a class="btn btn--neutral" href="dashboard.html">رفتن به داشبورد</a></div>
+      </section>
+    </div>
+
+    <div class="wiz__foot">
+      <button class="btn btn--ghost" id="w-back">قبلی</button>
+      <span class="grow"></span>
+      <button class="btn btn--ghost" id="w-skip">رد کردن این مرحله</button>
+      <button class="btn" id="w-next">شروع</button>
+    </div>
+  </div>
+</main>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/shell.js"></script>
+<script>
+  (function () {
+    var UM = window.UM;
+    document.getElementById('logo').innerHTML = UM.logo();
+    var demos = [
+      ['فروشگاه جامع', 'همه‌کاره، مثل نمونه‌های این طرح', '#eef0ff', '#3d34ad', '#7f78f0', 'phone'],
+      ['موبایل و دیجیتال', 'گوشی، لپ‌تاپ و لوازم جانبی', '#e8f2fc', '#103c7a', '#4e93f2', 'headphones'],
+      ['مد و پوشاک', 'رنگ و سایز روی کارت', '#fff3ea', '#b86400', '#ffb347', 'tshirt'],
+      ['آرایشی و بهداشتی', 'برند، رایحه و نوع پوست', '#fdeef5', '#9a4a7c', '#f7c1d9', 'perfume'],
+      ['سوپرمارکت', 'خرید سریع با کارت فشرده', '#e8f7ef', '#0e5233', '#3db77a', 'juice']
+    ];
+    var box = document.getElementById('demos');
+    box.innerHTML = demos.map(function (d, i) {
+      return '<button type="button" class="demo' + (i === 0 ? ' is-active' : '') + '" style="--bg:' + d[2] + ';--a:' + d[3] + ';--b:' + d[4] + '"><div class="demo__shot"><span class="bar"></span><span class="hero"><img src="' + UM.img(d[5]) + '" alt=""></span><span class="row3"><i></i><i></i><i></i><i></i></span></div>' +
+        '<div class="demo__info"><span><b>' + d[0] + '</b><small>' + d[1] + '</small></span><span class="badge badge--outline">پیش‌نمایش</span></div></button>';
+    }).join('');
+    box.addEventListener('click', function (e) { var d = e.target.closest('.demo'); if (!d) return; box.querySelectorAll('.demo').forEach(function (x) { x.classList.toggle('is-active', x === d); }); });
+
+    document.querySelectorAll('[data-p]').forEach(function (b) { b.addEventListener('click', function () { var v = b.getAttribute('data-p'); if (v) document.documentElement.setAttribute('data-preset', v); else document.documentElement.removeAttribute('data-preset'); }); });
+
+    var step = 0, imported = false;
+    var labels = ['شروع', 'نصب و ادامه', 'درون‌ریزی دمو', 'ذخیره و ادامه', 'پایان'];
+    function go(n) {
+      step = Math.max(0, Math.min(4, n));
+      document.querySelectorAll('[data-pane]').forEach(function (p) { p.hidden = Number(p.getAttribute('data-pane')) !== step; });
+      document.querySelectorAll('#wsteps .steps__item').forEach(function (s, i) { s.className = 'steps__item' + (i < step ? ' is-done' : i === step ? ' is-current' : ''); });
+      document.getElementById('w-next').textContent = step === 2 && imported ? 'ادامه' : labels[step];
+      document.getElementById('w-back').hidden = step === 0;
+      document.getElementById('w-skip').hidden = step === 0 || step === 4;
+      document.getElementById('w-next').hidden = step === 4;
+    }
+    function runImport() {
+      var steps = ['دریافت بسته دمو', 'درون‌ریزی تصاویر (۸۴ فایل)', 'درون‌ریزی محصولات (۶۰ محصول)', 'ساخت چیدمان‌ها و منوها', 'اعمال تنظیمات'];
+      document.getElementById('import').hidden = false;
+      var log = document.getElementById('imp-log'), bar = document.getElementById('imp-bar'), i = 0;
+      log.innerHTML = '';
+      var t = setInterval(function () {
+        log.insertAdjacentHTML('beforeend', '<li><svg class="i i--sm ok"><use href="#i-check"/></svg>' + steps[i] + '</li>');
+        i++; bar.style.width = (i / steps.length * 100) + '%';
+        if (i === steps.length) { clearInterval(t); imported = true; go(2); }
+      }, 500);
+    }
+    document.getElementById('w-next').addEventListener('click', function () { if (step === 2 && !imported) runImport(); else go(step + 1); });
+    document.getElementById('w-back').addEventListener('click', function () { go(step - 1); });
+    document.getElementById('w-skip').addEventListener('click', function () { go(step + 1); });
+    document.getElementById('wsteps').addEventListener('click', function (e) { var s = e.target.closest('[data-step]'); if (s) go(Number(s.getAttribute('data-step'))); });
+    go(location.hash === '#demo' ? 2 : 0);
+  })();
+</script>
+</body>
+</html>

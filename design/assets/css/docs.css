@@ -6,7 +6,7 @@
 .doc-bar__in h1 { font-size: var(--um-fs-md); }
 .doc-bar__tools { display: flex; gap: var(--um-space-2); margin-inline-start: auto; flex-wrap: wrap; }
 .doc-stage { padding: var(--um-space-8) var(--um-gutter); display: flex; justify-content: center; }
-.paper { background: #fff; color: #111; box-shadow: var(--um-shadow-lg); position: relative; overflow: hidden; font-size: 11px; line-height: 1.7; }
+.paper { flex: none; background: #fff; color: #111; box-shadow: var(--um-shadow-lg); position: relative; overflow: hidden; font-size: 11px; line-height: 1.7; }
 .paper--a4 { width: 210mm; min-height: 297mm; padding: 12mm; }
 .paper--label { width: 100mm; height: 150mm; padding: 4mm; font-size: 10px; }
 .doc-note { text-align: center; font-size: var(--um-fs-xs); color: var(--um-text-2); margin-top: var(--um-space-4); }

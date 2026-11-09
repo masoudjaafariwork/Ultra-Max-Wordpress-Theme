@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>داشبورد الترا مکس | پیشخوان</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-page" data-shell="admin" data-admin="dashboard">
+<div data-wp-chrome>
+  <div class="ump">
+    <!-- Header (ADM-04) -->
+    <div class="ump-head">
+      <span id="logo"></span>
+      <div><h1>داشبورد</h1><span class="ump-head__ver">نسخه <span class="num">۱.۰.۰</span> · قالب و ۳ افزونه همراه</span></div>
+      <div class="ump-head__actions">
+        <a class="btn btn--neutral btn--sm" href="wizard.html"><svg class="i i--sm"><use href="#i-sparkles"/></svg>جادوی راه‌اندازی</a>
+        <a class="btn btn--neutral btn--sm" href="wizard.html"><svg class="i i--sm"><use href="#i-download"/></svg>درون‌ریزی دمو</a>
+        <a class="btn btn--soft btn--sm" href="#"><svg class="i i--sm"><use href="#i-help"/></svg>راهنما</a>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <!-- License (ADM-04, REL-01) -->
+      <section class="card">
+        <div class="card__head"><h2><svg class="i"><use href="#i-key"/></svg>لایسنس</h2><span class="badge badge--success"><svg class="i i--sm"><use href="#i-check"/></svg>فعال</span></div>
+        <dl class="kv"><dt>مارکت</dt><dd>راست‌چین</dd><dt>کد لایسنس</dt><dd class="ltr" style="text-align:right">RTL-••••-••••-7F3A</dd><dt>دامنه</dt><dd class="ltr" style="text-align:right">shop.example.ir</dd><dt>پشتیبانی تا</dt><dd>۱۸ آبان ۱۴۰۶</dd></dl>
+      </section>
+      <!-- Updates (REL-02, ADM-10) -->
+      <section class="card">
+        <div class="card__head"><h2><svg class="i"><use href="#i-download"/></svg>به‌روزرسانی</h2><span class="badge badge--info">نسخه تازه</span></div>
+        <p class="small">نسخه <b class="num">۱.۰.۱</b> آماده نصب است. همه افزونه‌های فعال با آن سازگارند.</p>
+        <div class="alert alert--success" style="margin-bottom:12px"><svg class="i"><use href="#i-shield"/></svg><p>پیش از به‌روزرسانی، از تنظیمات پشتیبان خودکار گرفته می‌شود.</p></div>
+        <div class="row"><button class="btn btn--sm" data-toast="به‌روزرسانی انجام شد">به‌روزرسانی</button><a class="link small" href="#changelog">تغییرات این نسخه</a></div>
+      </section>
+      <!-- Health summary (ADM-05) -->
+      <section class="card">
+        <div class="card__head"><h2><svg class="i"><use href="#i-activity"/></svg>سلامت سایت</h2><span class="badge badge--warning">۲ هشدار</span></div>
+        <div class="row" style="gap:16px;margin-bottom:8px"><span class="status-dot ok num">۱۲ مورد سالم</span><span class="status-dot warn num">۲ هشدار</span><span class="status-dot bad num">۰ خطا</span></div>
+        <div class="progress progress--success" style="margin-bottom:12px"><i style="width:86%"></i></div>
+        <a class="link small" href="#status">مشاهده وضعیت سیستم<svg class="i i--sm"><use href="#i-chev-left"/></svg></a>
+      </section>
+    </div>
+
+    <div class="grid-2">
+      <!-- OTP logins chart (AUTH-16, SMS-09) -->
+      <section class="card">
+        <div class="card__head"><h2><svg class="i"><use href="#i-chat"/></svg>ورود با کد یک‌بارمصرف در ۱۴ روز گذشته</h2><a class="link small" href="#">گزارش کامل</a></div>
+        <div class="tiles">
+          <div class="tile"><small>ورود موفق امروز</small><b class="num">۱۴۸</b><em class="num">+۱۲٪</em></div>
+          <div class="tile"><small>اعتبار پنل پیامک</small><b class="num">۸۴۲٬۰۰۰</b><small>تومان · حدود ۶٬۰۰۰ پیامک</small></div>
+          <div class="tile"><small>نرخ تحویل پیامک</small><b class="num">۹۸.۶٪</b><small>درگاه اصلی + پشتیبان</small></div>
+        </div>
+        <div class="bars" id="bars"></div>
+        <details style="margin-top:8px"><summary class="link small">نمایش جدول داده</summary><table class="health" id="bars-table"></table></details>
+      </section>
+
+      <!-- Changelog (ADM-10) -->
+      <section class="card" id="changelog">
+        <div class="card__head"><h2><svg class="i"><use href="#i-history"/></svg>تغییرات اخیر</h2></div>
+        <ul class="changelog">
+          <li><b><span class="badge badge--info num">۱.۰.۱</span>۱۶ آبان ۱۴۰۵</b><p>رفع مشکل نمایش تاریخ شمسی در ایمیل سفارش. افزودن درگاه پیامک تازه.</p></li>
+          <li><b><span class="badge num">۱.۰.۰</span>۱ آبان ۱۴۰۵</b><p>انتشار اول: قالب، سازنده چیدمان، ورود پیامکی و فاکتور.</p></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- System status (ADM-05) -->
+    <section class="card" id="status">
+      <div class="card__head"><h2><svg class="i"><use href="#i-server"/></svg>وضعیت سیستم</h2><button class="btn btn--neutral btn--sm" data-toast="گزارش برای پشتیبانی کپی شد"><svg class="i i--sm"><use href="#i-copy"/></svg>کپی گزارش برای پشتیبانی</button></div>
+      <table class="health">
+        <tr><td><svg class="i ok"><use href="#i-check"/></svg></td><td>نسخه PHP<small>حداقل ۸.۱ لازم است.</small></td><td>8.3.12</td></tr>
+        <tr><td><svg class="i ok"><use href="#i-check"/></svg></td><td>وردپرس و ووکامرس<small>دو نسخه آخر وردپرس و سه نسخه آخر ووکامرس پشتیبانی می‌شوند.</small></td><td>WP 7.0 · WC 10.3</td></tr>
+        <tr><td><svg class="i ok"><use href="#i-check"/></svg></td><td>ذخیره‌سازی سفارش با کارایی بالا (HPOS)<small>فعال است و همه ماژول‌ها سازگارند.</small></td><td>HPOS</td></tr>
+        <tr><td><svg class="i ok"><use href="#i-check"/></svg></td><td>المنتور<small>نسخه رایگان کافی است. المنتور پرو هم سازگار است.</small></td><td>Elementor 3.30</td></tr>
+        <tr><td><svg class="i warn"><use href="#i-alert"/></svg></td><td>حداکثر زمان اجرا<small>برای درون‌ریزی دمو دست‌کم ۱۲۰ ثانیه پیشنهاد می‌شود. از میزبان هاست بخواهید آن را بیشتر کند.</small></td><td class="warn">30s</td></tr>
+        <tr><td><svg class="i warn"><use href="#i-alert"/></svg></td><td>افزونه هم‌پوشان: ووکامرس فارسی<small>حالت هم‌زیستی فعال شد. تاریخ شمسی و استان‌ها از ماژول الترا مکس خوانده می‌شود.</small></td><td class="warn">هم‌زیستی</td></tr>
+        <tr><td><svg class="i ok"><use href="#i-check"/></svg></td><td>قالب‌های قدیمی ووکامرس در قالب فرزند<small>هیچ قالب override قدیمی پیدا نشد.</small></td><td>0</td></tr>
+        <tr><td><svg class="i ok"><use href="#i-check"/></svg></td><td>حافظه PHP</td><td>512M</td></tr>
+      </table>
+    </section>
+  </div>
+</div>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/shell.js"></script>
+<script src="../assets/js/admin.js"></script>
+<script>
+  (function () {
+    var UM = window.UM;
+    document.getElementById('logo').innerHTML = UM.logo().replace('<span class="logo__text">الترا<b>مکس</b></span>', '');
+    /* Single-series bar chart with per-bar hover tooltip and a table view. */
+    var vals = [92, 104, 98, 121, 87, 76, 110, 126, 133, 118, 141, 97, 132, 148];
+    function day(i) { return UM.fa(5 + i) + ' آبان'; }
+    var W = 640, H = 200, P = { t: 10, r: 36, b: 24, l: 4 }, max = 160;
+    var bw = (W - P.l - P.r) / vals.length;
+    var grid = [0, 40, 80, 120, 160].map(function (v) { var y = P.t + (H - P.t - P.b) * (1 - v / max); return '<line class="bars__grid" x1="' + P.l + '" x2="' + (W - P.r) + '" y1="' + y + '" y2="' + y + '"/><text class="bars__lbl" x="' + (W - P.r + 6) + '" y="' + (y + 3) + '">' + UM.fa(v) + '</text>'; }).join('');
+    var bars = vals.map(function (v, i) {
+      var h = (H - P.t - P.b) * v / max, x = W - P.r - (i + 1) * bw + 3, y = H - P.b - h;
+      return '<path class="bars__bar" data-i="' + i + '" d="M' + x + ' ' + (H - P.b) + 'V' + (y + 4) + 'q0 -4 4 -4h' + (bw - 14) + 'q4 0 4 4V' + (H - P.b) + 'Z"/>' +
+        (i % 3 === 0 || i === 13 ? '<text class="bars__lbl" text-anchor="middle" x="' + (x + (bw - 6) / 2) + '" y="' + (H - 6) + '">' + day(i) + '</text>' : '') +
+        '<rect data-i="' + i + '" x="' + (x - 2) + '" y="' + P.t + '" width="' + bw + '" height="' + (H - P.t - P.b) + '" fill="transparent"/>';
+    }).join('');
+    var box = document.getElementById('bars');
+    box.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="ورود موفق با کد یک‌بارمصرف در ۱۴ روز گذشته، از ۷۶ تا ۱۴۸ ورود در روز">' + grid + bars + '</svg><div class="bars__tip" hidden></div>';
+    var tip = box.querySelector('.bars__tip');
+    box.addEventListener('mousemove', function (e) {
+      var t = e.target.closest('[data-i]');
+      box.querySelectorAll('.bars__bar').forEach(function (b) { b.classList.toggle('is-dim', !!t && b.getAttribute('data-i') !== (t && t.getAttribute('data-i'))); });
+      if (!t) { tip.hidden = true; return; }
+      var i = Number(t.getAttribute('data-i'));
+      var bar = box.querySelector('.bars__bar[data-i="' + i + '"]').getBoundingClientRect(), r = box.getBoundingClientRect();
+      tip.hidden = false;
+      tip.innerHTML = day(i) + '<br><b class="num">' + UM.fa(vals[i]) + ' ورود</b>';
+      tip.style.left = (bar.left - r.left + bar.width / 2) + 'px'; tip.style.top = (bar.top - r.top) + 'px';
+    });
+    box.addEventListener('mouseleave', function () { tip.hidden = true; box.querySelectorAll('.bars__bar').forEach(function (b) { b.classList.remove('is-dim'); }); });
+    document.getElementById('bars-table').innerHTML = vals.map(function (v, i) { return '<tr><td></td><td>' + day(i) + ' ۱۴۰۵</td><td class="num">' + UM.fa(v) + '</td></tr>'; }).join('');
+  })();
+</script>
+</body>
+</html>

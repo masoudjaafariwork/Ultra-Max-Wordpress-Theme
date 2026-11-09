@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نمایش موبایل | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<style>
+  body { background: #2a2c36; min-height: 100vh; color: #fff; }
+  .vbar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 10px 16px; background: #1d1f27; }
+  .vbar a { color: #c4c1fb; }
+  .vbar .select { width: auto; min-height: 38px; background-color: #2f3240; color: #fff; }
+  .vbar .segmented { background: #2f3240; }
+  .vbar .segmented button { color: #c5c8d1; }
+  .vbar .segmented button.is-active { background: #4c42d3; color: #fff; }
+  .vstage { display: flex; justify-content: center; padding: 24px 12px 48px; }
+  .device { background: #0c0d11; border-radius: 44px; padding: 14px; box-shadow: 0 30px 80px rgb(0 0 0 / 50%); transition: width 200ms; }
+  .device.is-wide { border-radius: 16px; padding: 8px; }
+  .device iframe { display: block; border: 0; border-radius: 32px; background: #fff; width: 100%; height: calc(100vh - 140px); min-height: 640px; max-height: 900px; }
+  .device.is-wide iframe { border-radius: 10px; }
+</style>
+</head>
+<body>
+<div class="vbar">
+  <a href="index.html">← همه صفحات</a>
+  <select class="select" id="page" aria-label="صفحه">
+    <option value="home.html">صفحه اصلی</option><option value="plp.html">فهرست محصولات</option><option value="pdp.html">صفحه محصول</option>
+    <option value="cart.html">سبد خرید</option><option value="checkout.html">تسویه حساب</option><option value="login.html">ورود</option>
+    <option value="account.html">داشبورد حساب</option><option value="order.html">جزئیات سفارش</option><option value="invoice.html">فاکتور رسمی</option>
+    <option value="label.html">برچسب پستی</option><option value="design-system.html">سیستم طراحی</option>
+    <option value="admin/dashboard.html">مدیریت: داشبورد</option><option value="admin/settings.html">مدیریت: تنظیمات</option><option value="admin/modules.html">مدیریت: ماژول‌ها</option><option value="admin/wizard.html">مدیریت: جادوی راه‌اندازی</option>
+  </select>
+  <div class="segmented" id="widths"><button class="is-active" data-w="390">گوشی ۳۹۰</button><button data-w="360">گوشی کوچک ۳۶۰</button><button data-w="768">تبلت ۷۶۸</button></div>
+  <a id="open" href="home.html" target="_blank">باز کردن در زبانه جدید</a>
+</div>
+<div class="vstage"><div class="device" id="device" style="width:418px"><iframe id="frame" title="پیش‌نمایش صفحه" src="about:blank"></iframe></div></div>
+<script>
+  (function () {
+    var sel = document.getElementById('page'), frame = document.getElementById('frame'), dev = document.getElementById('device'), open = document.getElementById('open');
+    function load(p) { sel.value = p; frame.src = p; open.href = p; if (location.hash.slice(1) !== p) history.replaceState(null, '', '#' + p); }
+    sel.addEventListener('change', function () { load(sel.value); });
+    document.getElementById('widths').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-w]'); if (!b) return;
+      this.querySelectorAll('button').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      var w = Number(b.getAttribute('data-w'));
+      dev.classList.toggle('is-wide', w > 500);
+      dev.style.width = (w + (w > 500 ? 16 : 28)) + 'px';
+    });
+    load(decodeURIComponent(location.hash.slice(1)) || 'home.html');
+  })();
+</script>
+</body>
+</html>

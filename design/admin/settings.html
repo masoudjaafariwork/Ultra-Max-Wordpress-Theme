@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تنظیمات الترا مکس | پیشخوان</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-page" data-shell="admin" data-admin="settings">
+<div data-wp-chrome>
+  <div class="ump">
+    <!-- Header with settings search (ADM-01) and import/export (ADM-02) -->
+    <div class="ump-head">
+      <span id="logo"></span>
+      <h1>تنظیمات</h1>
+      <div class="ump-search">
+        <svg class="i"><use href="#i-search"/></svg>
+        <input class="input" id="s-search" placeholder="جستجو در همه تنظیمات… مثلاً «فونت» یا «سبد»" aria-label="جستجو در تنظیمات">
+        <kbd>Ctrl K</kbd>
+        <div class="ump-results" id="s-results" hidden></div>
+      </div>
+      <div class="ump-head__actions">
+        <button class="btn btn--neutral btn--sm" data-toast="فایل تنظیمات دریافت شد"><svg class="i i--sm"><use href="#i-download"/></svg>برون‌بری</button>
+        <button class="btn btn--neutral btn--sm"><svg class="i i--sm"><use href="#i-upload"/></svg>درون‌ریزی</button>
+      </div>
+    </div>
+
+    <div class="settings">
+      <nav class="snav" aria-label="بخش‌های تنظیمات">
+        <a href="#"><svg class="i"><use href="#i-sliders"/></svg>عمومی</a>
+        <a href="#" class="is-active"><svg class="i"><use href="#i-palette"/></svg>رنگ و تایپوگرافی</a>
+        <a href="#"><svg class="i"><use href="#i-layers"/></svg>چیدمان و سربرگ</a>
+        <a href="#"><svg class="i"><use href="#i-store"/></svg>فروشگاه و فهرست</a>
+        <a href="#"><svg class="i"><use href="#i-box"/></svg>صفحه محصول</a>
+        <a href="#"><svg class="i"><use href="#i-cart"/></svg>سبد و تسویه</a>
+        <a href="#"><svg class="i"><use href="#i-truck"/></svg>ارسال</a>
+        <span class="snav__sep"></span>
+        <a href="#"><svg class="i"><use href="#i-mobile"/></svg>ورود و پیامک</a>
+        <a href="#"><svg class="i"><use href="#i-receipt"/></svg>فاکتور و برچسب</a>
+        <span class="snav__sep"></span>
+        <a href="#"><svg class="i"><use href="#i-zap"/></svg>کارایی</a>
+        <a href="#"><svg class="i"><use href="#i-code"/></svg>کد سفارشی</a>
+        <a href="#"><svg class="i"><use href="#i-history"/></svg>پشتیبان و بازنشانی</a>
+      </nav>
+
+      <div class="stack" style="margin:0">
+        <section class="card">
+          <div class="card__head"><h2><svg class="i"><use href="#i-palette"/></svg>رنگ و تایپوگرافی</h2><span class="xsmall faint">CORE-04 · CORE-05 · CORE-06</span></div>
+
+          <div class="sgroup">
+            <div class="sgroup__label"><b>رنگ اصلی</b><small>دکمه‌ها، پیوندها، برچسب تخفیف و نوار پیشرفت از این رنگ ساخته می‌شوند. طیف روشن و تیره خودکار ساخته می‌شود.</small></div>
+            <div class="sgroup__ctl">
+              <div class="color-row" data-chip-group>
+                <button class="chip is-active" data-preset=""><span class="swatch swatch--sm" style="background:#4c42d3"></span>نیلی</button>
+                <button class="chip" data-preset="ocean"><span class="swatch swatch--sm" style="background:#1a64cc"></span>اقیانوسی</button>
+                <button class="chip" data-preset="teal"><span class="swatch swatch--sm" style="background:#0e7f82"></span>فیروزه‌ای</button>
+                <button class="chip" data-preset="emerald"><span class="swatch swatch--sm" style="background:#168550"></span>زمردی</button>
+                <button class="chip" data-preset="graphite"><span class="swatch swatch--sm" style="background:#353b4d"></span>گرافیتی</button>
+              </div>
+              <div class="color-row"><input type="color" id="c-primary" value="#4c42d3" aria-label="رنگ اصلی دلخواه"><input class="input input--ltr" id="c-hex" value="#4C42D3" aria-label="کد رنگ"><span class="small muted">یا رنگ دلخواه برند خودتان</span></div>
+              <div class="alert alert--success" id="contrast"><svg class="i"><use href="#i-check"/></svg><p>کنتراست متن سفید روی این رنگ مناسب است.</p></div>
+            </div>
+          </div>
+
+          <div class="sgroup">
+            <div class="sgroup__label"><b>رنگ تأکیدی</b><small>برای پیشنهاد شگفت‌انگیز، شمارش معکوس و دکمه‌های ویژه.</small></div>
+            <div class="sgroup__ctl"><div class="color-row"><input type="color" value="#ff9a1f" aria-label="رنگ تأکیدی"><input class="input input--ltr" value="#FF9A1F" aria-label="کد رنگ تأکیدی"></div></div>
+          </div>
+
+          <div class="sgroup">
+            <div class="sgroup__label"><b>فونت‌ها</b><small>وزیرمتن پیش‌فرض است. می‌توانید فونت خود را بارگذاری کنید. فونت‌ها محلی بارگذاری می‌شوند و به سرویس بیرونی وصل نمی‌شوند.</small></div>
+            <div class="sgroup__ctl">
+              <div class="ck-grid" style="margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+                <div class="field"><label class="field__label">عنوان‌ها</label><select class="select"><option>وزیرمتن</option><option>استعداد</option><option>فونت بارگذاری‌شده</option></select></div>
+                <div class="field"><label class="field__label">متن</label><select class="select"><option>وزیرمتن</option><option>استعداد</option></select></div>
+                <div class="field"><label class="field__label">اعداد و قیمت</label><select class="select"><option>وزیرمتن</option><option>استعداد</option></select></div>
+              </div>
+              <button class="btn btn--neutral btn--sm" style="align-self:flex-start"><svg class="i i--sm"><use href="#i-upload"/></svg>بارگذاری فونت (woff2)</button>
+            </div>
+          </div>
+
+          <div class="sgroup">
+            <div class="sgroup__label"><b>نمایش ارقام</b><small>ارقام قیمت، تاریخ و شماره سفارش در فرانت.</small></div>
+            <div class="sgroup__ctl"><div class="segmented"><button class="is-active">فارسی ۱۲۳</button><button>انگلیسی 123</button></div></div>
+          </div>
+
+          <div class="sgroup">
+            <div class="sgroup__label"><b>گردی گوشه‌ها</b><small>روی کارت‌ها، دکمه‌ها و پنجره‌ها اعمال می‌شود.</small><code>--um-radius-lg</code></div>
+            <div class="sgroup__ctl"><div class="range-row"><input type="range" min="0" max="24" value="14" id="radius" aria-label="گردی گوشه"><output class="num" id="radius-out">۱۴px</output></div></div>
+          </div>
+
+          <div class="sgroup">
+            <div class="sgroup__label"><b>پیش‌نمایش زنده</b><small>تغییرات بالا را پیش از ذخیره اینجا ببینید.</small></div>
+            <div class="sgroup__ctl">
+              <div class="preview" id="preview">
+                <span class="preview__label">پیش‌نمایش</span>
+                <div class="row row--wrap" style="gap:12px;align-items:stretch">
+                  <div style="width:200px" data-products="3" data-variant="hover"></div>
+                  <div class="stack" style="flex:1;min-width:200px">
+                    <button class="btn">افزودن به سبد</button><button class="btn btn--outline">مشاهده همه</button>
+                    <div class="row"><span class="badge badge--off num">۱۶٪</span><span class="chip is-active">مرتبط‌ترین</span><label class="switch"><input type="checkbox" checked></label></div>
+                    <div class="progress"><i style="width:64%"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card__head"><h2><svg class="i"><use href="#i-layers"/></svg>نمایش بر اساس دستگاه</h2><span class="xsmall faint">CORE-13</span></div>
+          <div class="sgroup">
+            <div class="sgroup__label"><b>نوار اطلاع‌رسانی بالای سایت</b><small>متن، دکمه و بازه زمانی نمایش. ۱۸ تا ۲۵ آبان ۱۴۰۵.</small></div>
+            <div class="sgroup__ctl"><div class="row row--wrap"><label class="check"><input type="checkbox" checked>دسکتاپ</label><label class="check"><input type="checkbox" checked>تبلت</label><label class="check"><input type="checkbox" checked>موبایل</label></div></div>
+          </div>
+          <div class="sgroup">
+            <div class="sgroup__label"><b>دکمه‌های تماس شناور</b><small>واتساپ، تلگرام، ایتا، بله و تلفن. ترتیب را با کشیدن عوض کنید.</small></div>
+            <div class="sgroup__ctl"><div class="row row--wrap"><label class="check"><input type="checkbox" checked>دسکتاپ</label><label class="check"><input type="checkbox">تبلت</label><label class="check"><input type="checkbox" checked>موبایل</label></div></div>
+          </div>
+        </section>
+
+        <div class="savebar">
+          <span class="savebar__msg"><svg class="i i--sm"><use href="#i-info"/></svg>۲ تغییر ذخیره نشده</span>
+          <span class="grow"></span>
+          <button class="btn btn--ghost btn--sm">بازنشانی این بخش</button>
+          <button class="btn" data-toast="تنظیمات ذخیره شد">ذخیره تغییرات</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/shell.js"></script>
+<script src="../assets/js/admin.js"></script>
+<script>
+  (function () {
+    var UM = window.UM;
+    document.getElementById('logo').innerHTML = UM.logo().replace('<span class="logo__text">الترا<b>مکس</b></span>', '');
+    UM.renderProducts();
+    var root = document.documentElement;
+
+    /* Presets */
+    document.querySelectorAll('[data-preset]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var v = b.getAttribute('data-preset');
+        root.style.cssText = '';
+        if (v) root.setAttribute('data-preset', v); else root.removeAttribute('data-preset');
+      });
+    });
+    /* Custom colour: derive the ramp roughly with color-mix so the preview follows. */
+    function setCustom(hex) {
+      root.removeAttribute('data-preset');
+      var mix = function (c, p) { return 'color-mix(in srgb, ' + hex + ' ' + p + '%, ' + c + ')'; };
+      root.style.setProperty('--um-brand-50', mix('white', 8));
+      root.style.setProperty('--um-brand-100', mix('white', 16));
+      root.style.setProperty('--um-brand-500', mix('white', 85));
+      root.style.setProperty('--um-brand-600', hex);
+      root.style.setProperty('--um-brand-700', mix('black', 80));
+      root.style.setProperty('--um-brand-800', mix('black', 62));
+      document.getElementById('c-hex').value = hex.toUpperCase();
+      /* WCAG contrast of white on the colour. */
+      var r = parseInt(hex.substr(1, 2), 16) / 255, g = parseInt(hex.substr(3, 2), 16) / 255, b = parseInt(hex.substr(5, 2), 16) / 255;
+      var lin = function (c) { return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+      var L = 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+      var ratio = 1.05 / (L + 0.05);
+      var box = document.getElementById('contrast');
+      var ok = ratio >= 4.5;
+      box.className = 'alert ' + (ok ? 'alert--success' : 'alert--warning');
+      box.innerHTML = '<svg class="i"><use href="#i-' + (ok ? 'check' : 'alert') + '"/></svg><p>' + (ok ? 'کنتراست متن سفید روی این رنگ مناسب است' : 'کنتراست متن سفید روی این رنگ کم است و خوانایی دکمه‌ها پایین می‌آید') + ' (نسبت <span class="num">' + UM.fa(ratio.toFixed(1)) + '</span> به ۱).</p>';
+    }
+    document.getElementById('c-primary').addEventListener('input', function () { setCustom(this.value); });
+
+    var radius = document.getElementById('radius');
+    radius.addEventListener('input', function () {
+      var v = Number(this.value);
+      root.style.setProperty('--um-radius-lg', v + 'px');
+      root.style.setProperty('--um-radius-md', Math.round(v * 0.7) + 'px');
+      document.getElementById('radius-out').textContent = UM.fa(v) + 'px';
+    });
+
+    /* Settings search (ADM-01): searches every section, not only the open one. */
+    var index = [['فونت عنوان‌ها', 'رنگ و تایپوگرافی'], ['فونت اعداد و قیمت', 'رنگ و تایپوگرافی'], ['بارگذاری فونت دلخواه', 'رنگ و تایپوگرافی'], ['رنگ اصلی', 'رنگ و تایپوگرافی'], ['نوار ارسال رایگان در سبد', 'سبد و تسویه'], ['حداقل مبلغ سفارش', 'سبد و تسویه'], ['سبد کناری', 'سبد و تسویه'], ['تسویه یک‌صفحه‌ای یا چندمرحله‌ای', 'سبد و تسویه'], ['طرح کارت محصول', 'فروشگاه و فهرست'], ['تعداد ستون فهرست', 'فروشگاه و فهرست'], ['سربرگ چسبان', 'چیدمان و سربرگ'], ['درگاه پیامک', 'ورود و پیامک'], ['شماره‌گذاری فاکتور', 'فاکتور و برچسب'], ['CSS سفارشی', 'کد سفارشی']];
+    var input = document.getElementById('s-search'), out = document.getElementById('s-results');
+    input.addEventListener('input', function () {
+      var q = this.value.trim().replace(/ي/g, 'ی').replace(/ك/g, 'ک');
+      if (!q) { out.hidden = true; return; }
+      var hits = index.filter(function (it) { return it[0].indexOf(q) > -1 || it[1].indexOf(q) > -1; });
+      out.hidden = false;
+      out.innerHTML = hits.length ? hits.map(function (h) { return '<a href="#"><span>' + h[0].replace(q, '<mark>' + q + '</mark>') + '</span><small>' + h[1] + '</small></a>'; }).join('') : '<a><small>نتیجه‌ای پیدا نشد.</small></a>';
+    });
+    document.addEventListener('keydown', function (e) { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); input.focus(); } });
+    input.addEventListener('blur', function () { setTimeout(function () { out.hidden = true; }, 150); });
+  })();
+</script>
+</body>
+</html>

@@ -371,7 +371,7 @@
 .pchart { position: relative; }
 .pchart svg { width: 100%; height: auto; overflow: visible; }
 .pchart__grid { stroke: var(--um-gray-100); stroke-width: 1; }
-.pchart__lbl { font-size: 11px; fill: var(--um-text-3); font-family: var(--um-font-body); }
+.pchart__lbl { direction: ltr; font-size: 11px; fill: var(--um-text-3); font-family: var(--um-font-body); }
 .pchart__line { fill: none; stroke: var(--um-primary); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .pchart__area { fill: var(--um-primary); opacity: .08; }
 .pchart__dot { fill: var(--um-primary); stroke: var(--um-surface); stroke-width: 2; }
