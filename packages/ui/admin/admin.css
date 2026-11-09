@@ -1,0 +1,66 @@
+/*
+ * Admin stylesheet: shadcn/ui on Tailwind CSS 4, themed with our tokens.
+ *
+ * - The reset applies only inside `.um-scope`, so the rest of wp-admin and
+ *   other plugins' screens keep their own look.
+ * - Utilities are `!important`: wp-admin's unlayered CSS (for example on
+ *   inputs and buttons) would otherwise beat Tailwind's layered utilities.
+ * - `dark:` only applies inside `.um-dark`, never from the OS setting,
+ *   because wp-admin itself is light.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "../../../build/generated/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities) important source(none);
+@import "tw-animate-css";
+@import "../tokens/tokens.css";
+
+@source "./";
+@source "../../../tools/catalog/assets/src";
+@source "../../../plugins/*/assets/src";
+
+@custom-variant dark (&:where(.um-dark, .um-dark *));
+
+@theme inline {
+	--color-*: initial;
+	--color-transparent: transparent;
+	--color-current: currentcolor;
+	--color-white: #fff;
+	--color-black: #000;
+	--color-background: var(--um-surface);
+	--color-foreground: var(--um-text);
+	--color-card: var(--um-surface);
+	--color-card-foreground: var(--um-text);
+	--color-popover: var(--um-surface);
+	--color-popover-foreground: var(--um-text);
+	--color-primary: var(--um-primary);
+	--color-primary-foreground: var(--um-on-primary);
+	--color-secondary: var(--um-primary-soft);
+	--color-secondary-foreground: var(--um-primary);
+	--color-muted: var(--um-surface-3);
+	--color-muted-foreground: var(--um-text-2);
+	--color-accent: var(--um-surface-3);
+	--color-accent-foreground: var(--um-text);
+
+	/* Darker than --um-danger so text on its 10% tint passes WCAG AA (4.5:1). */
+	--color-destructive: color-mix(in srgb, var(--um-danger) 78%, #000);
+	--color-border: var(--um-border);
+	--color-input: var(--um-border-strong);
+	--color-ring: var(--um-primary);
+	--font-sans: var(--um-font-body);
+	--radius-sm: var(--um-radius-xs);
+	--radius-md: var(--um-radius-sm);
+	--radius-lg: var(--um-radius-md);
+	--radius-xl: var(--um-radius-lg);
+	--radius-2xl: var(--um-radius-xl);
+}
+
+@layer base {
+	:where(.um-scope) {
+		font-family: var(--um-font-body);
+		font-size: var(--um-fs-md);
+		line-height: var(--um-lh-tight);
+		color: var(--um-text);
+	}
+}

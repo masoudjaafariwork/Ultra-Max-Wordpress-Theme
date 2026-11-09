@@ -225,17 +225,22 @@ final class Catalog {
 			return;
 		}
 		add_action(
-			'admin_print_scripts-' . $hook,
-			static function (): void {
+			'admin_enqueue_scripts',
+			static function ( string $current ) use ( $hook ): void {
+				if ( $current !== $hook ) {
+					return;
+				}
 				$dir      = plugin_dir_path( self::$file ) . 'assets/build';
 				$url      = plugins_url( 'assets/build', self::$file );
+				/** @var array{dependencies: list<string>, version: string}|null $manifest */
 				$manifest = is_readable( $dir . '/catalog/admin.asset.php' ) ? require $dir . '/catalog/admin.asset.php' : null;
 				if ( ! is_array( $manifest ) ) {
 					return;
 				}
 				Assets::enqueue_admin();
 				wp_enqueue_script( 'ultra-max-catalog-admin', $url . '/catalog/admin.js', $manifest['dependencies'], $manifest['version'], true );
-			}
+			},
+			20
 		);
 	}
 

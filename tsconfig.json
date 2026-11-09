@@ -17,7 +17,8 @@
     "types": [ "node" ],
     "paths": {
       "@ultra-max/ui/admin": [ "./packages/ui/admin/index.ts" ],
-      "@ultra-max/ui/admin/*": [ "./packages/ui/admin/*" ]
+      "@ultra-max/ui/admin/*": [ "./packages/ui/admin/*" ],
+      "@ui-admin/*": [ "./packages/ui/admin/*" ]
     }
   },
   "include": [ "packages/ui/**/*.ts", "packages/ui/**/*.tsx", "tools/**/*.tsx", "tests/**/*.ts", "plugins/*/assets/src/**/*.ts", "plugins/*/assets/src/**/*.tsx", "playwright.config.ts", "vitest.config.ts" ],

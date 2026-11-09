@@ -41,7 +41,9 @@
     "package": "node scripts/package.mjs"
   },
   "overrides": {
-    "playwright-core": "1.64.1"
+    "playwright-core": "1.64.1",
+    "react": "19.1.10",
+    "react-dom": "19.1.10"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

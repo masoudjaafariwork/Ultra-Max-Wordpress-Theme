@@ -6,6 +6,8 @@ export default {
 		'at-rule-no-unknown': [ true, { ignoreAtRules: [ 'theme', 'source', 'plugin', 'custom-variant', 'utility', 'variant', 'apply', 'reference', 'config' ] } ],
 		'at-rule-no-deprecated': [ true, { ignoreAtRules: [ 'apply' ] } ],
 		'import-notation': 'string',
+		// Tailwind adds import modifiers such as important and source(none).
+		'at-rule-prelude-no-invalid': [ true, { ignoreAtRules: [ 'import' ] } ],
 		'selector-class-pattern': null,
 		'custom-property-pattern': null,
 		'keyframes-name-pattern': null,

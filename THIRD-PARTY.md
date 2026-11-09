@@ -10,6 +10,13 @@
 | Popper.js (وابستگی Flowbite) | 2.11.x | MIT | جای‌گذاری منو و راهنمای کوچک |
 | Tailwind CSS (خروجی CSS) | 4.3.3 | MIT | فقط کلاس‌های به‌کاررفته در CSS ساخته‌شده؛ شامل ریست preflight که به `.um-scope` محدود شده است |
 | فونت وزیرمتن | 33.0.3 | SIL OFL 1.1 | `packages/ui/fonts/vazirmatn` همراه متن مجوز |
+| shadcn/ui (کد اجزا، با ابزار رسمی shadcn 4.22.2 و سبک radix-nova و حالت راست‌چین) | — | MIT | `packages/ui/admin/components/ui`. این فایل‌ها کپی رسمی shadcn هستند و فقط از طریق `packages/ui/admin` استفاده می‌شوند |
+| Radix UI | 1.8.1 | MIT | رفتار و دسترس‌پذیری اجزای پنل |
+| React و React DOM | 19.1.10 | MIT | فقط صفحه‌های پنل ما. وردپرس ۷.۱ هنوز React 18 دارد و اجزای امروزی shadcn به React 19 نیاز دارند، پس React 19 همراه همان صفحه‌ها بسته‌بندی می‌شود |
+| class-variance-authority | 0.7.1 | Apache-2.0 | نسخه‌های ظاهری اجزای shadcn |
+| cn (از نگهدارنده shadcn) | 0.5.0 | MIT | ترکیب کلاس‌ها در اجزای shadcn |
+| lucide-react | 1.61.0 | ISC | آیکون‌های اجزای shadcn |
+| tw-animate-css | 1.4.0 | MIT | انیمیشن باز و بسته شدن اجزای پنل |
 
 ## فقط ابزار توسعه (در بسته خریدار نیست)
 

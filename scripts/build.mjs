@@ -35,12 +35,15 @@ const buildDir = path.join( root, 'build' );
 /**
  * Build entries. `shared` entries are copied into every shipped product.
  *
+ * eact: true takes React from WordPress instead of bundling it.
+ *
  * @type {{name: string, js?: string, css?: string, shared?: boolean, product?: string, react?: boolean}[]}
  */
 export const entries = [
 	{ name: 'ui/storefront', js: 'packages/ui/storefront/index.ts', css: 'packages/ui/storefront/storefront.css', shared: true },
 	{ name: 'ui/admin', css: 'packages/ui/admin/admin.css', shared: true },
-	{ name: 'catalog/admin', js: 'tools/catalog/assets/src/admin.tsx', product: 'tools/catalog', react: true },
+	// Admin screens bundle React 19: shadcn/ui needs it and WordPress 7.1 still ships React 18.
+	{ name: 'catalog/admin', js: 'tools/catalog/assets/src/admin.tsx', product: 'tools/catalog' },
 	{ name: 'acceptance/flowbite', js: 'packages/ui/acceptance/flowbite/fixture.ts', css: 'packages/ui/acceptance/flowbite/fixture.css' },
 ];
 
