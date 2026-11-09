@@ -63,7 +63,22 @@ export function createRuntime( behaviors: Record<string, Behavior> ) {
 		}
 	};
 
+	/**
+	 * Adds a behaviour loaded later, by a module's own script, and mounts it.
+	 *
+	 * @param name     Component name.
+	 * @param behavior Behaviour.
+	 */
+	const define = ( name: string, behavior: Behavior ): void => {
+		behaviors[ name ] = behavior;
+		if ( started ) {
+			mount();
+		}
+	};
+
+	let started = false;
 	const start = (): void => {
+		started = true;
 		document.addEventListener( 'click', onClick );
 		mount();
 	};
@@ -74,5 +89,5 @@ export function createRuntime( behaviors: Record<string, Behavior> ) {
 		start();
 	}
 
-	return { mount, get };
+	return { mount, get, define };
 }

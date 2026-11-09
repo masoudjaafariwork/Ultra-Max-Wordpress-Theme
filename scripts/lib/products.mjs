@@ -31,6 +31,7 @@ export const phpPackages = [
 	{ name: 'UI', domain: 'ultra-max-ui', sources: [ 'packages/ui/src', 'packages/ui/components' ], target: 'ui' },
 	{ name: 'Foundation', domain: 'ultra-max-foundation', sources: [ 'packages/foundation/src' ], target: 'foundation' },
 	{ name: 'License', domain: 'ultra-max-license', sources: [ 'packages/license/src' ], target: 'license' },
+	{ name: 'Settings', domain: 'ultra-max-settings', sources: [ 'packages/settings/src' ], target: 'settings' },
 ];
 
 export const markets = [ 'rtl-theme', 'zhaket' ];

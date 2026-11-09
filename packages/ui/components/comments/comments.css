@@ -1,0 +1,53 @@
+/* Comments: the parts WordPress writes itself (nested lists, reply links, notices). */
+.um-comments ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.um-comments ol.children {
+	padding-inline-start: var(--um-space-12);
+}
+
+.um-comments .comment-reply-link,
+.um-comments #cancel-comment-reply-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	font-size: var(--um-fs-sm);
+	font-weight: var(--um-fw-bold);
+	color: var(--um-primary);
+	text-decoration: none;
+}
+
+.um-comments #cancel-comment-reply-link {
+	margin-inline-start: var(--um-space-3);
+	font-size: var(--um-fs-xs);
+}
+
+.um-comments .comment-reply-link:hover,
+.um-comments #cancel-comment-reply-link:hover {
+	color: var(--um-primary-hover);
+}
+
+.um-comments .logged-in-as {
+	margin: 0;
+	font-size: var(--um-fs-sm);
+	color: var(--um-text-3);
+}
+
+.um-comments .logged-in-as a {
+	color: var(--um-link);
+}
+
+@media (width <= 767px) {
+	.um-comments ol.children {
+		padding-inline-start: var(--um-space-4);
+	}
+}
+
+.um-comments > h2 {
+	margin-block-end: var(--um-space-2);
+	font-size: var(--um-fs-xl);
+	font-weight: var(--um-fw-heavy);
+}

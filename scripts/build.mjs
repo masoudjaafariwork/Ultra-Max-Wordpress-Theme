@@ -42,6 +42,13 @@ const buildDir = path.join( root, 'build' );
 export const entries = [
 	{ name: 'ui/storefront', js: 'packages/ui/storefront/index.ts', css: 'packages/ui/storefront/storefront.css', shared: true },
 	{ name: 'ui/admin', css: 'packages/ui/admin/admin.css', shared: true },
+	// Switchable storefront modules (PERF-02): each loads only when it is on.
+	...[ 'notice-bar', 'contact-buttons', 'back-to-top' ].map( ( module ) => ( {
+		name: `ui/modules/${ module }`,
+		js: `packages/ui/modules/${ module }.ts`,
+		css: `packages/ui/modules/${ module }.css`,
+		shared: true,
+	} ) ),
 	// Admin screens bundle React 19: shadcn/ui needs it and WordPress 7.1 still ships React 18.
 	{ name: 'catalog/admin', js: 'tools/catalog/assets/src/admin.tsx', product: 'tools/catalog' },
 	{ name: 'acceptance/flowbite', js: 'packages/ui/acceptance/flowbite/fixture.ts', css: 'packages/ui/acceptance/flowbite/fixture.css' },

@@ -1,11 +1,13 @@
 <?php
 /**
- * Site header.
+ * Site header: document head, page frame, announcement bar and header.
  *
  * @package UltraMax\Theme
  */
 
 declare(strict_types=1);
+
+use UltraMax\Theme\Template;
 
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
@@ -15,25 +17,13 @@ declare(strict_types=1);
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<a class="um-skip-link screen-reader-text" href="#um-main"><?php esc_html_e( 'Skip to content', 'ultra-max' ); ?></a>
-<header class="um-scope um-site-header">
-	<div class="mx-auto flex max-w-(--um-container) items-center justify-between gap-4 px-4 py-3">
-		<?php
-		if ( has_custom_logo() ) {
-			the_custom_logo();
-		} else {
-			printf( '<a href="%s" rel="home">%s</a>', esc_url( home_url( '/' ) ), esc_html( get_bloginfo( 'name' ) ) );
-		}
-		wp_nav_menu(
-			array(
-				'theme_location' => 'primary',
-				'container'      => 'nav',
-				'fallback_cb'    => false,
-				'depth'          => 1,
-			)
-		);
-		?>
-	</div>
-</header>
-<main id="um-main" class="um-scope">
+<?php
+wp_body_open();
+Template::frame_open();
+
+/**
+ * Fires above the site header, where the announcement bar goes.
+ */
+do_action( 'ultra_max_before_header' );
+
+Template::header();

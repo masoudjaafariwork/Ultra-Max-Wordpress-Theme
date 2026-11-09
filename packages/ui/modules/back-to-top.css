@@ -1,0 +1,12 @@
+/*
+ * Styles of the switchable back-to-top module (PERF-02): loaded only when the
+ * module is on. Built from the component's own classes; the main
+ * storefront stylesheet leaves them out.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../tokens/theme.css";
+
+@source "../components/back-to-top";

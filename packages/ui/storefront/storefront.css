@@ -13,9 +13,15 @@
 @import "../components/dialog/dialog.css";
 @import "../components/drawer/drawer.css";
 @import "../components/tooltip/tooltip.css";
+@import "../components/prose/prose.css";
+@import "../components/comments/comments.css";
+@import "../components/box/widgets.css";
 
 @source "../src";
 @source "../components";
+@source not "../components/notice-bar";
+@source not "../components/contact-buttons";
+@source not "../components/back-to-top";
 @source "../../../themes";
 @source "../../../plugins";
 @source "../../../tools/catalog/src";

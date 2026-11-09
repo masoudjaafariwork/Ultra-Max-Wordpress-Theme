@@ -40,6 +40,7 @@
 				<element value="ultra-max-ui"/>
 				<element value="ultra-max-foundation"/>
 				<element value="ultra-max-license"/>
+				<element value="ultra-max-settings"/>
 				<element value="ultra-max-catalog"/>
 			</property>
 		</properties>

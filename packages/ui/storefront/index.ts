@@ -17,4 +17,11 @@ declare global {
 	}
 }
 
-window.UltraMaxUI ??= createRuntime( { accordion, dialog, drawer, dropdown, tabs, tooltip } );
+window.UltraMaxUI ??= createRuntime( {
+	accordion,
+	dialog,
+	drawer,
+	dropdown,
+	tabs,
+	tooltip,
+} );

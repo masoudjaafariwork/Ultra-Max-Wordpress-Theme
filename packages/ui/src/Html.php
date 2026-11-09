@@ -37,6 +37,18 @@ final class Html implements \Stringable {
 	}
 
 	/**
+	 * Wraps markup that a WordPress function made and filtered itself, such
+	 * as the output of `the_content`, `wp_get_attachment_image()`,
+	 * `get_comment_text()` or a widget. Templates use this to pass such
+	 * markup as `children`; never pass request data or settings through it.
+	 *
+	 * @param string $markup Markup made by WordPress.
+	 */
+	public static function wp( string $markup ): self {
+		return new self( $markup );
+	}
+
+	/**
 	 * Escapes plain text.
 	 *
 	 * @param string $text Plain text.

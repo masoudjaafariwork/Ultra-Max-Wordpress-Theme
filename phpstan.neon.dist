@@ -12,6 +12,7 @@ parameters:
         - packages/ui/components
         - packages/foundation/src
         - packages/license/src
+        - packages/settings/src
         - packages/license/markets/dev
         - themes/ultra-max/src
         - themes/ultra-max-child/functions.php

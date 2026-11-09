@@ -16,11 +16,16 @@ use UltraMax\Foundation\Assets as Registrar;
  *
  * Every product ships the same build. The first product to register wins,
  * so a page that uses the theme and three plugins loads the library once.
+ *
+ * Switchable modules (PERF-02) have their own small stylesheet and script,
+ * registered as `ultra-max-ui-<module>` and enqueued only when the module
+ * is on.
  */
 final class Assets {
 
 	public const STOREFRONT = 'ultra-max-ui';
 	public const ADMIN      = 'ultra-max-ui-admin';
+	public const MODULES    = array( 'notice-bar', 'contact-buttons', 'back-to-top' );
 
 	/**
 	 * Registers the handles from one product's build folder.
@@ -33,6 +38,10 @@ final class Assets {
 		if ( ! wp_style_is( self::STOREFRONT, 'registered' ) ) {
 			$registrar->register_style( self::STOREFRONT, 'ui/storefront' );
 			$registrar->register_script( self::STOREFRONT, 'ui/storefront' );
+			foreach ( self::MODULES as $module ) {
+				$registrar->register_style( self::STOREFRONT . '-' . $module, 'ui/modules/' . $module, array( self::STOREFRONT ) );
+				$registrar->register_script( self::STOREFRONT . '-' . $module, 'ui/modules/' . $module, array( self::STOREFRONT ) );
+			}
 		}
 		if ( ! wp_style_is( self::ADMIN, 'registered' ) ) {
 			$registrar->register_style( self::ADMIN, 'ui/admin' );
@@ -45,6 +54,28 @@ final class Assets {
 	public static function enqueue(): void {
 		wp_enqueue_style( self::STOREFRONT );
 		wp_enqueue_script( self::STOREFRONT );
+	}
+
+	/**
+	 * Enqueues one switchable module's stylesheet and script.
+	 *
+	 * @param string $module Module name, one of MODULES.
+	 */
+	public static function enqueue_module( string $module ): void {
+		if ( in_array( $module, self::MODULES, true ) ) {
+			wp_enqueue_style( self::STOREFRONT . '-' . $module );
+			wp_enqueue_script( self::STOREFRONT . '-' . $module );
+		}
+	}
+
+	/**
+	 * File path of a registered stylesheet, for inlining it.
+	 *
+	 * @param string $build_dir Absolute path of a product's assets/build folder.
+	 * @param string $entry     Entry, such as "ui/storefront".
+	 */
+	public static function css_file( string $build_dir, string $entry ): string {
+		return $build_dir . '/' . $entry . ( is_rtl() ? '' : '-ltr' ) . '.css';
 	}
 
 	/**

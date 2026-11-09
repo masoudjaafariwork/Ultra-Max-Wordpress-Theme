@@ -1,0 +1,216 @@
+/* Prose: content from the editor, styled with tokens only. */
+.um-prose {
+	font-size: var(--um-fs-lg);
+	line-height: var(--um-lh-body);
+	color: var(--um-text);
+	overflow-wrap: break-word;
+}
+
+.um-prose > * + * {
+	margin-block-start: 1.1em;
+}
+
+.um-prose :where(h1, h2, h3, h4, h5, h6) {
+	font-family: var(--um-font-heading);
+	font-weight: var(--um-fw-heavy);
+	line-height: var(--um-lh-tight);
+	color: var(--um-text);
+	margin-block: 1.8em 0.6em;
+	scroll-margin-top: calc(var(--um-header-h) + 16px);
+}
+
+.um-prose h1 { font-size: var(--um-fs-4xl); }
+.um-prose h2 { font-size: var(--um-fs-3xl); }
+.um-prose h3 { font-size: var(--um-fs-2xl); }
+.um-prose h4 { font-size: var(--um-fs-xl); }
+.um-prose :where(h5, h6) { font-size: var(--um-fs-lg); }
+
+.um-prose a {
+	color: var(--um-link);
+	text-decoration: underline;
+	text-decoration-color: color-mix(in srgb, var(--um-link) 40%, transparent);
+	text-underline-offset: 4px;
+}
+
+.um-prose a:hover {
+	text-decoration-color: currentcolor;
+}
+
+.um-prose :where(ul, ol) {
+	padding-inline-start: 1.5em;
+}
+
+.um-prose ul { list-style: disc; }
+.um-prose ol { list-style: decimal; }
+
+.um-prose li + li {
+	margin-block-start: 0.35em;
+}
+
+.um-prose li::marker {
+	color: var(--um-text-3);
+}
+
+.um-prose blockquote {
+	margin-inline: 0;
+	padding: var(--um-space-4) var(--um-space-5);
+	border-inline-start: 4px solid var(--um-primary);
+	background: var(--um-primary-soft);
+	border-radius: var(--um-radius-md);
+	color: var(--um-text-2);
+}
+
+.um-prose blockquote cite {
+	display: block;
+	margin-block-start: var(--um-space-2);
+	font-size: var(--um-fs-sm);
+	font-style: normal;
+	color: var(--um-text-3);
+}
+
+.um-prose :where(code, kbd, samp) {
+	font-family: Consolas, "Courier New", monospace;
+	font-size: 0.875em;
+	background: var(--um-surface-3);
+	padding: 0.1em 0.4em;
+	border-radius: var(--um-radius-xs);
+	direction: ltr;
+	unicode-bidi: isolate;
+}
+
+.um-prose pre {
+	direction: ltr;
+	text-align: start;
+	overflow-x: auto;
+	padding: var(--um-space-4);
+	background: var(--um-gray-900);
+	color: var(--um-gray-100);
+	border-radius: var(--um-radius-md);
+	font-size: var(--um-fs-sm);
+	line-height: 1.7;
+}
+
+.um-prose pre code {
+	background: none;
+	padding: 0;
+	color: inherit;
+}
+
+.um-prose hr {
+	border: 0;
+	border-block-start: 1px solid var(--um-border);
+	margin-block: 2em;
+}
+
+.um-prose :where(img, video, iframe) {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--um-radius-md);
+}
+
+.um-prose figure {
+	margin-inline: 0;
+}
+
+.um-prose :where(figcaption, .wp-caption-text, .wp-element-caption) {
+	margin-block-start: var(--um-space-2);
+	font-size: var(--um-fs-sm);
+	color: var(--um-text-3);
+	text-align: center;
+}
+
+.um-prose table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: var(--um-fs-md);
+}
+
+.um-prose :where(th, td) {
+	padding: var(--um-space-2) var(--um-space-3);
+	border: 1px solid var(--um-border);
+	text-align: start;
+}
+
+.um-prose th {
+	background: var(--um-surface-3);
+	font-weight: var(--um-fw-bold);
+}
+
+.um-prose .wp-block-table {
+	overflow-x: auto;
+}
+
+/*
+ * Editor alignments are physical in both directions. The values sit in
+ * custom properties so the generated left-to-right copy does not flip them.
+ */
+.um-prose .alignleft {
+	--um-align-float: left;
+	--um-align-margin: 0.4em 1.5em 1em 0;
+
+	float: var(--um-align-float);
+	margin: var(--um-align-margin);
+}
+
+.um-prose .alignright {
+	--um-align-float: right;
+	--um-align-margin: 0.4em 0 1em 1.5em;
+
+	float: var(--um-align-float);
+	margin: var(--um-align-margin);
+}
+
+.um-prose .aligncenter {
+	margin-inline: auto;
+	text-align: center;
+}
+
+.um-prose :where(.alignwide, .alignfull) {
+	margin-inline: 0;
+}
+
+.um-prose .wp-block-gallery,
+.um-prose .gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	gap: var(--um-space-3);
+}
+
+.um-prose .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	padding: 0 var(--um-space-5);
+	border-radius: var(--um-radius-md);
+	background: var(--um-primary);
+	color: var(--um-on-primary);
+	font-weight: var(--um-fw-bold);
+	text-decoration: none;
+}
+
+.um-prose .wp-block-button__link:hover {
+	background: var(--um-primary-hover);
+}
+
+.um-prose .wp-block-embed__wrapper iframe,
+.um-prose .wp-embed-aspect-16-9 iframe {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+}
+
+.um-prose::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media (width <= 767px) {
+	.um-prose {
+		font-size: var(--um-fs-md);
+	}
+
+	.um-prose :where(.alignleft, .alignright) {
+		float: none;
+		margin-inline: 0;
+	}
+}
