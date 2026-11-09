@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ورود | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-shell="auth" class="auth-page">
+
+<!-- Prototype-only switcher: lets the reviewer see every state of the form. -->
+<div class="statebar" role="toolbar" aria-label="حالت‌های فرم (فقط در نمونه)">
+  <span class="xsmall faint">حالت نمونه:</span>
+  <div class="segmented" id="states"><button class="is-active" data-s="phone">شماره</button><button data-s="otp">کد تأیید</button><button data-s="pass">رمز عبور</button><button data-s="forgot">فراموشی رمز</button><button data-s="track">پیگیری سفارش</button></div>
+</div>
+
+<main class="auth">
+  <div class="auth__card">
+    <div class="auth__logo" id="auth-logo"></div>
+
+    <!-- Step 1: phone (AUTH-01) -->
+    <section data-step="phone">
+      <h1>ورود | ثبت‌نام</h1>
+      <p class="muted">سلام! لطفاً شماره موبایل یا ایمیل خود را وارد کنید.</p>
+      <div class="field"><input class="input input--ltr num auth__input" value="۰۹۱۲۳۴۵۶۷۸۹" aria-label="شماره موبایل یا ایمیل" autocomplete="tel"></div>
+      <div class="auth__captcha"><span class="auth__captcha-box"><svg class="i"><use href="#i-shield"/></svg></span><span class="small">من ربات نیستم</span><span class="xsmall faint">کپچا</span></div>
+      <button class="btn btn--block btn--lg" data-go="otp">ورود</button>
+      <p class="xsmall faint auth__terms">ورود شما به معنای پذیرش <a class="link" href="#">شرایط فروشگاه</a> و <a class="link" href="#">قوانین حریم خصوصی</a> است.</p>
+    </section>
+
+    <!-- Step 2: OTP (AUTH-01, AUTH-08) -->
+    <section data-step="otp" hidden>
+      <button class="icon-btn auth__back" data-go="phone" aria-label="بازگشت"><svg class="i"><use href="#i-arrow-right"/></svg></button>
+      <h1>کد تأیید را وارد کنید</h1>
+      <p class="muted">کد تأیید برای شماره <b class="num ltr">۰۹۱۲۳۴۵۶۷۸۹</b> پیامک شد.</p>
+      <div class="otp" id="otp"><input inputmode="numeric" autocomplete="one-time-code" maxlength="1" value="۴" aria-label="رقم ۱"><input maxlength="1" value="۸" aria-label="رقم ۲"><input maxlength="1" value="۲" aria-label="رقم ۳"><input maxlength="1" aria-label="رقم ۴"><input maxlength="1" aria-label="رقم ۵"></div>
+      <div class="auth__timer"><svg class="i i--sm"><use href="#i-clock"/></svg><span class="num" id="otp-timer">۰۱:۵۹</span> مانده تا دریافت مجدد کد</div>
+      <button class="btn btn--block btn--lg" onclick="location.href='account.html'">تأیید</button>
+      <div class="auth__links"><button class="link small" data-go="phone"><svg class="i i--sm"><use href="#i-edit"/></svg>ویرایش شماره</button><button class="link small" data-go="pass"><svg class="i i--sm"><use href="#i-lock"/></svg>ورود با رمز عبور</button></div>
+      <p class="xsmall faint">در اندروید و آیفون، کد پیامک خودکار در کادر قرار می‌گیرد.</p>
+    </section>
+
+    <!-- Password login (AUTH-02) -->
+    <section data-step="pass" hidden>
+      <button class="icon-btn auth__back" data-go="phone" aria-label="بازگشت"><svg class="i"><use href="#i-arrow-right"/></svg></button>
+      <h1>رمز عبور را وارد کنید</h1>
+      <p class="muted">برای شماره <b class="num ltr">۰۹۱۲۳۴۵۶۷۸۹</b></p>
+      <div class="field"><div class="input-group"><input class="input input--ltr" type="password" value="password" aria-label="رمز عبور"><button class="icon-btn input-group__addon" aria-label="نمایش رمز"><svg class="i"><use href="#i-eye"/></svg></button></div>
+        <span class="field__error"><svg class="i i--sm"><use href="#i-alert"/></svg>رمز عبور اشتباه است. ۲ تلاش دیگر باقی مانده است.</span></div>
+      <button class="btn btn--block btn--lg">ورود</button>
+      <div class="auth__links"><button class="link small" data-go="otp"><svg class="i i--sm"><use href="#i-chat"/></svg>ورود با کد یک‌بارمصرف</button><button class="link small" data-go="forgot">فراموشی رمز عبور</button></div>
+    </section>
+
+    <!-- Forgot password (AUTH-03) -->
+    <section data-step="forgot" hidden>
+      <button class="icon-btn auth__back" data-go="pass" aria-label="بازگشت"><svg class="i"><use href="#i-arrow-right"/></svg></button>
+      <h1>بازیابی رمز عبور</h1>
+      <p class="muted">روش دریافت کد بازیابی را انتخاب کنید.</p>
+      <div class="ship-opts">
+        <label class="ship-opt"><input type="radio" name="rec" checked><span class="ship-opt__ic"><svg class="i i--lg"><use href="#i-mobile"/></svg></span><span class="grow"><b>پیامک به شماره همراه</b><small class="num">۰۹۱۲***۶۷۸۹</small></span></label>
+        <label class="ship-opt"><input type="radio" name="rec"><span class="ship-opt__ic"><svg class="i i--lg"><use href="#i-mail"/></svg></span><span class="grow"><b>کد به ایمیل</b><small class="ltr">s***@example.com</small></span></label>
+        <label class="ship-opt"><input type="radio" name="rec"><span class="ship-opt__ic"><svg class="i i--lg"><use href="#i-link"/></svg></span><span class="grow"><b>لینک ورود به ایمیل</b><small>بدون نیاز به رمز، با یک کلیک</small></span></label>
+      </div>
+      <button class="btn btn--block btn--lg" data-go="otp">ارسال کد</button>
+    </section>
+
+    <!-- Guest order tracking (ACC-09) -->
+    <section data-step="track" hidden id="track">
+      <h1>پیگیری سفارش</h1>
+      <p class="muted">بدون ورود به حساب، با شماره سفارش و موبایل وضعیت سفارش را ببینید.</p>
+      <div class="field"><label class="field__label">شماره سفارش</label><input class="input input--ltr num" value="UM-۱۴۰۵۰۸۱۲-۰۴۷"></div>
+      <div class="field"><label class="field__label">شماره موبایل ثبت‌شده در سفارش</label><input class="input input--ltr num" value="۰۹۱۲۳۴۵۶۷۸۹"></div>
+      <button class="btn btn--block btn--lg" onclick="location.href='order.html'">پیگیری</button>
+      <p class="xsmall faint">برای امنیت، پس از ارسال یک کد تأیید به همین شماره پیامک می‌شود.</p>
+    </section>
+  </div>
+  <a class="auth__home link small" href="home.html"><svg class="i i--sm"><use href="#i-arrow-right"/></svg>بازگشت به فروشگاه</a>
+</main>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/shell.js"></script>
+<script>
+  (function () {
+    document.getElementById('auth-logo').innerHTML = window.UM.logo();
+    var steps = document.querySelectorAll('[data-step]');
+    var tabs = document.querySelectorAll('#states [data-s]');
+    function show(s) {
+      steps.forEach(function (el) { el.hidden = el.getAttribute('data-step') !== s; });
+      tabs.forEach(function (t) { t.classList.toggle('is-active', t.getAttribute('data-s') === s); });
+      if (s === 'otp') { var i = document.querySelector('#otp input:nth-child(4)'); if (i) i.focus(); }
+    }
+    document.addEventListener('click', function (e) {
+      var g = e.target.closest('[data-go]'); if (g) show(g.getAttribute('data-go'));
+      var t = e.target.closest('#states [data-s]'); if (t) show(t.getAttribute('data-s'));
+    });
+    if (location.hash === '#track') show('track');
+    var left = 119, el = document.getElementById('otp-timer');
+    setInterval(function () { left = Math.max(0, left - 1); el.textContent = window.UM.fa(String(Math.floor(left / 60)).padStart(2, '0') + ':' + String(left % 60).padStart(2, '0')); }, 1000);
+    document.getElementById('otp').addEventListener('input', function (e) { var n = e.target.nextElementSibling; if (e.target.value && n) n.focus(); });
+  })();
+</script>
+</body>
+</html>

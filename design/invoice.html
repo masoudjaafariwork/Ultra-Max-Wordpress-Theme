@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>صورتحساب فروش | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/docs.css">
+<style>@media print { @page { size: A4 portrait; margin: 0; } }</style>
+</head>
+<body data-shell="doc" class="docs-page">
+
+<div class="doc-bar"><div class="container doc-bar__in">
+  <a class="icon-btn" href="order.html" aria-label="بازگشت"><svg class="i"><use href="#i-arrow-right"/></svg></a>
+  <h1>صورتحساب سفارش <span class="num ltr">UM-۱۴۰۵۰۸۱۲-۰۴۷</span></h1>
+  <div class="segmented" id="doc-type"><button class="is-active" data-t="official">فاکتور رسمی</button><button data-t="simple">فاکتور ساده</button><button data-t="pre">پیش‌فاکتور</button></div>
+  <div class="doc-bar__tools">
+    <select class="select" style="min-height:36px;width:auto" aria-label="طرح فاکتور"><option>طرح ۱: رسمی کلاسیک</option><option>طرح ۲: مینیمال</option><option>طرح ۳: رنگی</option></select>
+    <button class="btn btn--neutral btn--sm" onclick="window.print()"><svg class="i i--sm"><use href="#i-print"/></svg>چاپ</button>
+    <button class="btn btn--sm" onclick="window.print()"><svg class="i i--sm"><use href="#i-download"/></svg>دریافت PDF</button>
+  </div>
+</div></div>
+
+<div class="doc-stage">
+  <!-- Official sales invoice (INV-01, INV-05, INV-10, INV-11, INV-12) -->
+  <article class="paper paper--a4" id="paper">
+    <div class="watermark" id="watermark">پرداخت شده</div>
+    <header class="inv-head">
+      <div class="inv-head__brand" id="inv-logo"></div>
+      <div class="inv-head__title"><h2 id="doc-title">صورتحساب فروش کالا و خدمات</h2><small id="doc-sub">نوع اول: با مشخصات خریدار</small></div>
+      <div class="inv-head__meta">
+        <span>شماره فاکتور:</span><b class="num">۱۴۰۵-۰۰۴۷</b>
+        <span>تاریخ:</span><b class="num">۱۸ آبان ۱۴۰۵</b>
+        <span>شماره سفارش:</span><b class="num ltr">UM-۱۴۰۵۰۸۱۲-۰۴۷</b>
+      </div>
+    </header>
+
+    <section class="inv-box">
+      <div class="inv-box__title">مشخصات فروشنده</div>
+      <div class="inv-box__grid">
+        <div class="wide"><span>نام شخص حقیقی / حقوقی:</span><b>فروشگاه الترا مکس (نمونه)</b></div>
+        <div><span>شماره اقتصادی:</span><b class="num">۴۱۱۰۰۰۰۰۰۰۰۰</b></div>
+        <div><span>شناسه ملی:</span><b class="num">۱۴۰۰۰۰۰۰۰۰۰</b></div>
+        <div class="wide"><span>نشانی:</span><b>تهران، نشانی فروشگاه شما</b></div>
+        <div><span>کد پستی:</span><b class="num">۰۰۰۰۰۰۰۰۰۰</b></div>
+        <div><span>تلفن:</span><b>شماره تماس فروشگاه</b></div>
+      </div>
+    </section>
+
+    <section class="inv-box">
+      <div class="inv-box__title">مشخصات خریدار</div>
+      <div class="inv-box__grid" id="buyer-person">
+        <div class="wide"><span>نام شخص حقیقی:</span><b>سارا محمدی</b></div>
+        <div><span>کد ملی:</span><b class="num">۰۰۱۲۳۴۵۶۷۸</b></div>
+        <div><span>موبایل:</span><b class="num">۰۹۱۲۳۴۵۶۷۸۹</b></div>
+        <div class="wide"><span>نشانی:</span><b>تهران، خیابان ولیعصر، کوچه نمونه، پلاک ۱۲، واحد ۴</b></div>
+        <div><span>کد پستی:</span><b class="num">۱۲۳۴۵۶۷۸۹۰</b></div>
+        <div><span>استان / شهر:</span><b>تهران / تهران</b></div>
+      </div>
+    </section>
+
+    <table class="inv-table">
+      <colgroup><col style="width:7mm"><col style="width:15mm"><col style="width:38mm"><col style="width:9mm"><col style="width:9mm"><col style="width:18mm"><col style="width:18mm"><col style="width:17mm"><col style="width:18mm"><col style="width:18mm"><col style="width:19mm"></colgroup>
+      <thead>
+        <tr>
+          <th>ردیف</th><th>شناسه کالا</th><th>شرح کالا یا خدمات</th><th>تعداد</th><th>واحد</th>
+          <th>مبلغ واحد<br>(ریال)</th><th>مبلغ کل<br>(ریال)</th><th>مبلغ تخفیف<br>(ریال)</th><th>مبلغ پس از تخفیف<br>(ریال)</th><th>مالیات و عوارض ارزش افزوده<br>(ریال)</th><th>جمع کل<br>(ریال)</th>
+        </tr>
+      </thead>
+      <tbody id="inv-rows"></tbody>
+      <tfoot id="inv-foot"></tfoot>
+    </table>
+    <div class="inv-words"><span>مبلغ قابل پرداخت به حروف:</span><b id="inv-words"></b></div>
+    <div class="inv-words"><span>شرایط و نحوه فروش:</span><b>نقدی، پرداخت اینترنتی</b><span style="margin-inline-start:auto">نرخ مالیات بر ارزش افزوده:</span><b class="num">۱۰٪</b></div>
+
+    <footer class="inv-foot">
+      <div class="inv-sign"><span>مهر و امضای فروشنده</span><div class="inv-stamp">الترا مکس<br>نمونه مهر</div></div>
+      <div class="inv-sign"><span>امضای خریدار</span></div>
+      <div class="inv-codes"><div id="inv-qr"></div><small>پیگیری سفارش</small><div id="inv-bar"></div></div>
+    </footer>
+    <ul class="inv-terms">
+      <li>مبالغ کالاها با احتساب مالیات بر ارزش افزوده در فروشگاه نمایش داده شده‌اند و در این صورتحساب به تفکیک آمده‌اند.</li>
+      <li>این سند نمونه طراحی است. اطلاعات فروشنده از پنل تنظیمات فاکتور خوانده می‌شود و شماره فاکتور در ابتدای هر سال شمسی از نو شروع می‌شود.</li>
+    </ul>
+  </article>
+</div>
+<p class="doc-note">بارکد و کد QR این نمونه تصویری هستند. نسخه نهایی در فاز ۶ کد واقعی و قابل اسکن می‌سازد.</p>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/docs.js"></script>
+<script>
+  (function () {
+    var UM = window.UM;
+    document.getElementById('inv-logo').innerHTML = UM.logo();
+    /* Prices in the store are VAT-inclusive (toman). The invoice splits them out in rial. */
+    var lines = [
+      { sku: 'NVX-X12-256', id: 1, q: 1, unitIncl: 21900000, paidIncl: 17990000 },
+      { sku: 'LMO-AIR-PRO', id: 3, q: 2, unitIncl: 4600000, paidIncl: 6500000 },
+      { sku: 'ZNT-K20', id: 10, q: 1, unitIncl: 3100000, paidIncl: 2640000 }
+    ];
+    var T = { gross: 0, disc: 0, net: 0, vat: 0, total: 0 };
+    var rows = lines.map(function (l, i) {
+      var p = UM.byId(l.id);
+      var unit = Math.round(l.unitIncl * 10 / 1.1);
+      var gross = unit * l.q;
+      var total = l.paidIncl * 10;
+      var net = Math.round(total / 1.1);
+      var vat = total - net;
+      var disc = gross - net;
+      T.gross += gross; T.disc += disc; T.net += net; T.vat += vat; T.total += total;
+      return '<tr><td class="num">' + UM.fa(i + 1) + '</td><td class="ltr">' + l.sku + '</td><td class="desc">' + p.title + '</td><td class="num">' + UM.fa(l.q) + '</td><td>عدد</td>' +
+        '<td class="num">' + UM.money(unit) + '</td><td class="num">' + UM.money(gross) + '</td><td class="num">' + UM.money(disc) + '</td><td class="num">' + UM.money(net) + '</td><td class="num">' + UM.money(vat) + '</td><td class="num">' + UM.money(total) + '</td></tr>';
+    });
+    rows.push('<tr><td class="num">' + UM.fa(4) + '</td><td>—</td><td class="desc">هزینه ارسال (پست پیشتاز)</td><td class="num">۱</td><td>خدمت</td><td class="num">۰</td><td class="num">۰</td><td class="num">۰</td><td class="num">۰</td><td class="num">۰</td><td class="num">۰</td></tr>');
+    document.getElementById('inv-rows').innerHTML = rows.join('');
+    document.getElementById('inv-foot').innerHTML = '<tr><td colspan="6">جمع کل</td><td class="num">' + UM.money(T.gross) + '</td><td class="num">' + UM.money(T.disc) + '</td><td class="num">' + UM.money(T.net) + '</td><td class="num">' + UM.money(T.vat) + '</td><td class="num">' + UM.money(T.total) + '</td></tr>';
+    document.getElementById('inv-words').textContent = UM.words(T.total) + ' ریال';
+    document.getElementById('inv-qr').innerHTML = UM.qr('UM-14050812-047', 84);
+    document.getElementById('inv-bar').innerHTML = UM.barcode('UM-14050812-047', 140, 30);
+
+    var titles = { official: ['صورتحساب فروش کالا و خدمات', 'نوع اول: با مشخصات خریدار', 'پرداخت شده'], simple: ['فاکتور فروش', 'فاکتور ساده سفارش', 'پرداخت شده'], pre: ['پیش‌فاکتور', 'اعتبار: ۳ روز از تاریخ صدور', 'پیش‌فاکتور'] };
+    document.getElementById('doc-type').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-t]'); if (!b) return;
+      this.querySelectorAll('button').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      var t = titles[b.getAttribute('data-t')];
+      document.getElementById('doc-title').textContent = t[0];
+      document.getElementById('doc-sub').textContent = t[1];
+      document.getElementById('watermark').textContent = t[2];
+    });
+    UM.fitPaper();
+  })();
+</script>
+</body>
+</html>

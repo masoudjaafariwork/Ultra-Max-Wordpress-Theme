@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>برچسب پستی | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/docs.css">
+<style>@media print { @page { size: 100mm 150mm; margin: 0; } }</style>
+</head>
+<body data-shell="doc" class="docs-page">
+
+<div class="doc-bar"><div class="container doc-bar__in">
+  <a class="icon-btn" href="order.html" aria-label="بازگشت"><svg class="i"><use href="#i-arrow-right"/></svg></a>
+  <h1>برچسب پستی سفارش <span class="num ltr">UM-۱۴۰۵۰۸۱۲-۰۴۷</span></h1>
+  <div class="segmented"><button class="is-active">حرارتی ۱۰×۱۵</button><button>A6</button><button>۴ برچسب روی A4</button></div>
+  <div class="doc-bar__tools"><button class="btn btn--sm" onclick="window.print()"><svg class="i i--sm"><use href="#i-print"/></svg>چاپ برچسب</button></div>
+</div></div>
+
+<div class="doc-stage">
+  <!-- Postal label (INV-03, INV-04, INV-05) -->
+  <article class="paper paper--label">
+    <div class="lbl">
+      <div class="lbl__row lbl__top"><span id="lbl-logo"></span><span class="lbl__service">پست پیشتاز</span></div>
+      <div class="lbl__row">
+        <div class="lbl__k">گیرنده</div>
+        <div class="lbl__name">سارا محمدی</div>
+        <div class="lbl__addr">تهران، تهران، خیابان ولیعصر، کوچه نمونه، پلاک ۱۲، واحد ۴</div>
+        <div class="row row--between"><span class="lbl__k">موبایل: <b class="num" style="font-size:12px">۰۹۱۲۳۴۵۶۷۸۹</b></span><span class="lbl__k">کد پستی</span></div>
+        <div class="lbl__postal" id="postal"></div>
+      </div>
+      <div class="lbl__row lbl__grid" style="padding:0">
+        <div><span class="lbl__k">وزن</span><b class="num">۱٫۲ کیلوگرم</b></div>
+        <div><span class="lbl__k">تعداد اقلام</span><b class="num">۴ عدد</b></div>
+        <div><span class="lbl__k">پرداخت</span><b>پرداخت شده</b></div>
+      </div>
+      <div class="lbl__codes">
+        <div class="bar"><div id="lbl-bar"></div><b class="num">UM-14050812-047</b><span class="lbl__k">تاریخ ارسال: ۱۷ آبان ۱۴۰۵</span></div>
+        <div id="lbl-qr"></div>
+      </div>
+      <div class="lbl__row lbl__sender" style="border-bottom:0;border-top:1.5px solid #000">
+        <b>فرستنده:</b> فروشگاه الترا مکس (نمونه)، تهران، نشانی فروشگاه شما · کد پستی <span class="num">۰۰۰۰۰۰۰۰۰۰</span>
+      </div>
+    </div>
+  </article>
+</div>
+<p class="doc-note">اندازه واقعی ۱۰ در ۱۵ سانتی‌متر برای چاپگر حرارتی. بارکد و QR این نمونه تصویری هستند.</p>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/docs.js"></script>
+<script>
+  (function () {
+    var UM = window.UM;
+    document.getElementById('lbl-logo').innerHTML = UM.logo();
+    var code = '1234567890';
+    document.getElementById('postal').innerHTML = code.split('').map(function (d, i) { return (i === 5 ? '<i class="sep">-</i>' : '') + '<i>' + UM.fa(d) + '</i>'; }).join('');
+    document.getElementById('lbl-bar').innerHTML = UM.barcode('UM-14050812-047', 210, 56);
+    document.getElementById('lbl-qr').innerHTML = UM.qr('track-UM-14050812-047', 86);
+    UM.fitPaper();
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>جزئیات سفارش | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-shell="store" data-nav="account">
+<div data-um-header></div>
+
+<main class="container page order">
+  <div class="order__head">
+    <a class="icon-btn" href="account.html" aria-label="بازگشت"><svg class="i"><use href="#i-arrow-right"/></svg></a>
+    <h1>جزئیات سفارش</h1>
+    <span class="grow"></span>
+    <!-- Invoice download (ACC-03) -->
+    <a class="btn btn--neutral btn--sm" href="invoice.html"><svg class="i i--sm"><use href="#i-download"/></svg>فاکتور رسمی</a>
+    <a class="btn btn--ghost btn--sm hide-mobile" href="invoice.html"><svg class="i i--sm"><use href="#i-file"/></svg>پیش‌فاکتور</a>
+  </div>
+
+  <section class="box box--pad">
+    <div class="order__meta">
+      <div><span>کد پیگیری سفارش</span><b class="num ltr">UM-۱۴۰۵۰۸۱۲-۰۴۷</b></div>
+      <div><span>تاریخ ثبت سفارش</span><b>۱۲ آبان ۱۴۰۵، ساعت ۱۸:۲۴</b></div>
+      <div><span>مبلغ پرداختی</span><b class="num">۲۷٬۱۳۰٬۰۰۰ تومان</b></div>
+      <div><span>روش پرداخت</span><b>پرداخت اینترنتی</b></div>
+    </div>
+  </section>
+
+  <!-- Progress (ACC-02) -->
+  <section class="box box--pad">
+    <div class="row row--between row--wrap" style="margin-bottom:20px">
+      <h2 class="ck-title" style="margin:0">مرسوله ۱ از ۱ <span class="badge badge--info"><svg class="i i--sm"><use href="#i-truck"/></svg>ارسال شده</span></h2>
+      <span class="small muted">تحویل تقریبی: <b>۲۰ تا ۲۲ آبان ۱۴۰۵</b></span>
+    </div>
+    <div class="steps order__steps">
+      <div class="steps__item is-done"><span class="steps__dot"><svg class="i"><use href="#i-check"/></svg></span><strong>ثبت سفارش</strong><small>۱۲ آبان</small></div>
+      <div class="steps__item is-done"><span class="steps__dot"><svg class="i"><use href="#i-check"/></svg></span><strong>تأیید پرداخت</strong><small>۱۲ آبان</small></div>
+      <div class="steps__item is-done"><span class="steps__dot"><svg class="i"><use href="#i-check"/></svg></span><strong>آماده‌سازی</strong><small>۱۴ آبان</small></div>
+      <div class="steps__item is-current"><span class="steps__dot"><svg class="i"><use href="#i-truck"/></svg></span><strong>تحویل به پست</strong><small>۱۷ آبان</small></div>
+      <div class="steps__item"><span class="steps__dot"><svg class="i"><use href="#i-home"/></svg></span><strong>تحویل به شما</strong><small>&nbsp;</small></div>
+    </div>
+    <!-- Tracking code (SHIP-03) -->
+    <div class="tracking">
+      <span class="tracking__ic"><svg class="i i--lg"><use href="#i-box"/></svg></span>
+      <div class="grow"><span class="small muted">کد رهگیری پست پیشتاز</span><b class="num ltr">۲۴۸۹۱۰۰۰۷۳۴۲۱۶۵۵۰۱۸۲</b></div>
+      <button class="btn btn--neutral btn--sm" data-toast="کد رهگیری کپی شد"><svg class="i i--sm"><use href="#i-copy"/></svg>کپی</button>
+      <a class="btn btn--soft btn--sm" href="#">پیگیری در سایت پست<svg class="i i--sm"><use href="#i-chev-left"/></svg></a>
+    </div>
+  </section>
+
+  <div class="order__grid">
+    <section class="box box--pad">
+      <h2 class="ck-title">کالاها</h2>
+      <ul id="order-items"></ul>
+    </section>
+    <aside class="stack">
+      <section class="box box--pad">
+        <h2 class="ck-title">گیرنده</h2>
+        <p class="small"><b>سارا محمدی</b> · <span class="num">۰۹۱۲۳۴۵۶۷۸۹</span></p>
+        <p class="small muted">تهران، خیابان ولیعصر، کوچه نمونه، پلاک ۱۲، واحد ۴ · کد پستی <span class="num">۱۲۳۴۵۶۷۸۹۰</span></p>
+      </section>
+      <section class="box box--pad">
+        <h2 class="ck-title">جزئیات پرداخت</h2>
+        <dl class="summary__rows">
+          <dt>قیمت کالاها</dt><dd class="num">۳۴٬۲۰۰٬۰۰۰ تومان</dd>
+          <dt>تخفیف کالاها</dt><dd class="num">۶٬۵۷۰٬۰۰۰ تومان</dd>
+          <dt>کد تخفیف</dt><dd class="num">۵۰۰٬۰۰۰ تومان</dd>
+          <dt>هزینه ارسال</dt><dd>رایگان</dd>
+          <dt class="bold">مبلغ پرداختی</dt><dd class="num bold">۲۷٬۱۳۰٬۰۰۰ تومان</dd>
+        </dl>
+      </section>
+      <section class="box box--pad stack">
+        <a class="btn btn--neutral btn--block" href="label.html"><svg class="i i--sm"><use href="#i-print"/></svg>نمونه برچسب پستی این سفارش</a>
+        <button class="btn btn--ghost btn--block" data-toast="لینک فاکتور به موبایل شما پیامک شد"><svg class="i i--sm"><use href="#i-chat"/></svg>ارسال لینک فاکتور با پیامک</button>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<div data-um-footer></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/shell.js"></script>
+<script>
+  (function () {
+    var UM = window.UM, ic = UM.icon;
+    document.getElementById('order-items').innerHTML = [[1, 1], [3, 2], [10, 1]].map(function (l) {
+      var p = UM.byId(l[0]);
+      return '<li class="oitem"><img src="' + UM.img(p.img) + '" alt=""><div class="grow"><a href="pdp.html" class="small bold">' + p.title + '</a>' +
+        '<div class="xsmall faint">تعداد: ' + UM.fa(l[1]) + ' · گارانتی ۱۸ ماهه</div><b class="num small">' + UM.money(p.price * l[1]) + ' تومان</b></div>' +
+        '<div class="oitem__act"><button class="btn btn--neutral btn--sm">' + ic('star', 'i--sm') + 'ثبت دیدگاه</button><button class="btn btn--ghost btn--sm" data-add-cart>خرید مجدد</button></div></li>';
+    }).join('');
+  })();
+</script>
+</body>
+</html>
