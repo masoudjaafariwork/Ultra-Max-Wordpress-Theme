@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کالای دیجیتال | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-shell="store" data-nav="cats">
+<div data-um-header></div>
+
+<main class="container page plp">
+  <nav class="breadcrumb" aria-label="مسیر"><a href="home.html">الترا مکس</a><span class="sep">/</span><a href="#">کالای دیجیتال</a><span class="sep">/</span><span aria-current="page">صوتی و تصویری</span></nav>
+
+  <div class="plp__intro">
+    <h1>صوتی و تصویری</h1>
+    <!-- Subcategories with image (PLP-09) -->
+    <div class="subcats no-scrollbar">
+      <a href="#" class="subcat"><img src="assets/img/products/headphones.svg" alt="">هدفون</a>
+      <a href="#" class="subcat"><img src="assets/img/products/speaker.svg" alt="">اسپیکر</a>
+      <a href="#" class="subcat"><img src="assets/img/products/watch.svg" alt="">ساعت هوشمند</a>
+      <a href="#" class="subcat"><img src="assets/img/products/camera.svg" alt="">دوربین</a>
+      <a href="#" class="subcat"><img src="assets/img/products/phone.svg" alt="">موبایل</a>
+      <a href="#" class="subcat"><img src="assets/img/products/laptop.svg" alt="">لپ‌تاپ</a>
+    </div>
+  </div>
+
+  <div class="plp__layout">
+    <!-- Filters (PLP-01, PLP-02, PLP-12) -->
+    <aside class="filters hide-mobile hide-tablet" aria-label="فیلترها">
+      <div class="filters__head"><h2>فیلترها</h2><a class="link small" href="#">حذف همه</a></div>
+      <div class="filters__active">
+        <span class="chip chip--remove">نوویکس<svg class="i"><use href="#i-close"/></svg></span>
+        <span class="chip chip--remove">لومو<svg class="i"><use href="#i-close"/></svg></span>
+        <span class="chip chip--remove">فقط موجود<svg class="i"><use href="#i-close"/></svg></span>
+      </div>
+      <div class="filters__group" id="filter-groups"></div>
+    </aside>
+
+    <section class="plp__main">
+      <!-- Sort bar (PLP-03, PLP-05) -->
+      <div class="sortbar hide-mobile">
+        <span class="sortbar__label"><svg class="i"><use href="#i-sort"/></svg>مرتب‌سازی:</span>
+        <div class="sortbar__opts" data-chip-group>
+          <button class="sortbar__opt is-active">مرتبط‌ترین</button><button class="sortbar__opt">پربازدیدترین</button><button class="sortbar__opt">جدیدترین</button><button class="sortbar__opt">پرفروش‌ترین</button><button class="sortbar__opt">ارزان‌ترین</button><button class="sortbar__opt">گران‌ترین</button>
+        </div>
+        <span class="sortbar__count num">۱٬۲۴۸ کالا</span>
+        <div class="segmented" id="view-toggle"><button class="is-active" data-view="grid" aria-label="نمای شبکه"><svg class="i i--sm"><use href="#i-grid"/></svg></button><button data-view="list" aria-label="نمای فهرست"><svg class="i i--sm"><use href="#i-list"/></svg></button></div>
+      </div>
+
+      <!-- Mobile filter/sort bar (PLP-06) -->
+      <div class="mbar hide-desktop hide-tablet">
+        <button class="chip" data-open="sheet-filter"><svg class="i"><use href="#i-filter"/></svg>فیلتر <span class="badge badge--off num">۳</span></button>
+        <button class="chip" data-open="sheet-sort"><svg class="i"><use href="#i-sort"/></svg>مرتبط‌ترین</button>
+        <span class="chip">فقط موجود</span><span class="chip">ارسال امروز</span>
+        <span class="mbar__count num">۱٬۲۴۸ کالا</span>
+      </div>
+      <div class="mbar-tablet hide-desktop hide-mobile">
+        <button class="btn btn--neutral btn--sm" data-open="sheet-filter"><svg class="i i--sm"><use href="#i-filter"/></svg>فیلترها (۳)</button>
+        <button class="btn btn--neutral btn--sm" data-open="sheet-sort"><svg class="i i--sm"><use href="#i-sort"/></svg>مرتبط‌ترین</button>
+      </div>
+
+      <div class="pgrid pgrid--lined plp__grid" id="plp-grid" data-products="1,3,13,4,12,2,11,5,10,8,9,7" data-variant="classic"></div>
+
+      <!-- Load more + pagination (PLP-04) -->
+      <div class="loadmore">
+        <span class="small muted">۱۲ کالا از ۱٬۲۴۸ کالا نمایش داده شد</span>
+        <div class="progress" style="width:200px"><i style="width:10%"></i></div>
+        <button class="btn btn--neutral">نمایش کالاهای بیشتر<svg class="i i--sm"><use href="#i-chev-down"/></svg></button>
+        <nav class="pagination num" aria-label="صفحه‌ها"><span class="is-active">۱</span><a href="#">۲</a><a href="#">۳</a><span>…</span><a href="#">۱۰۴</a><a href="#" aria-label="بعدی"><svg class="i i--sm"><use href="#i-chev-left"/></svg></a></nav>
+      </div>
+
+      <!-- SEO description (PLP-10) -->
+      <article class="seo box box--pad">
+        <h2>خرید هدفون، اسپیکر و لوازم صوتی</h2>
+        <div class="seo__text" id="seo-text">
+          <p>در این دسته انواع هدفون بی‌سیم و باسیم، اسپیکر قابل حمل، ساعت هوشمند و لوازم صوتی را با گارانتی معتبر پیدا می‌کنید. برای انتخاب بهتر، از فیلتر برند، محدوده قیمت و ویژگی‌هایی مثل حذف نویز و زمان پخش استفاده کنید.</p>
+          <p>این متن توضیح پایین دسته است و فروشنده آن را از پیشخوان وردپرس برای هر دسته جدا می‌نویسد. متن بالای دسته کوتاه است و متن پایین می‌تواند بلند باشد. هر دو برای موتورهای جستجو قابل خواندن هستند و کاربر می‌تواند متن بلند را باز و بسته کند.</p>
+          <h3>چه هدفونی بخرم؟</h3>
+          <p>اگر بیشتر در رفت‌وآمد هستید، حذف نویز فعال و باتری بلند اهمیت بیشتری دارد. برای ورزش، مقاومت در برابر عرق و وزن کم را در نظر بگیرید.</p>
+        </div>
+        <button class="link small" type="button" onclick="document.getElementById('seo-text').classList.toggle('is-open');this.textContent=this.textContent==='نمایش بیشتر'?'نمایش کمتر':'نمایش بیشتر'">نمایش بیشتر</button>
+      </article>
+    </section>
+  </div>
+</main>
+
+<!-- Filter sheet for mobile and tablet (PLP-06) -->
+<div class="sheet" id="sheet-filter" role="dialog" aria-label="فیلترها">
+  <div class="drawer__head"><h2>فیلترها</h2><button class="icon-btn" data-close aria-label="بستن"><svg class="i"><use href="#i-close"/></svg></button></div>
+  <div class="drawer__body filters filters--sheet" id="filter-groups-m"></div>
+  <div class="drawer__foot row"><button class="btn grow" data-close>مشاهده ۲۳۸ کالا</button><button class="btn btn--ghost" data-close>حذف فیلترها</button></div>
+</div>
+<div class="sheet" id="sheet-sort" role="dialog" aria-label="مرتب‌سازی">
+  <div class="drawer__head"><h2>مرتب‌سازی بر اساس</h2><button class="icon-btn" data-close aria-label="بستن"><svg class="i"><use href="#i-close"/></svg></button></div>
+  <div class="drawer__body sortlist">
+    <label class="radio"><input type="radio" name="s" checked>مرتبط‌ترین</label><label class="radio"><input type="radio" name="s">پربازدیدترین</label><label class="radio"><input type="radio" name="s">جدیدترین</label>
+    <label class="radio"><input type="radio" name="s">پرفروش‌ترین</label><label class="radio"><input type="radio" name="s">ارزان‌ترین</label><label class="radio"><input type="radio" name="s">گران‌ترین</label>
+  </div>
+</div>
+
+<div data-um-footer></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/shell.js"></script>
+<script>
+  (function () {
+    var ic = window.UM.icon;
+    function group(title, inner, open) { return '<details class="fgroup"' + (open ? ' open' : '') + '><summary>' + title + ic('chev-down', 'i--sm') + '</summary><div class="fgroup__body">' + inner + '</div></details>'; }
+    function checks(items) { return items.map(function (it) { return '<label class="check fcheck"><input type="checkbox"' + (it[2] ? ' checked' : '') + '><span class="grow">' + it[0] + '</span><span class="faint xsmall ltr">' + (it[1] || '') + '</span></label>'; }).join(''); }
+    function toggle(label, on) { return '<label class="switch frow">' + '<span class="grow">' + label + '</span><input type="checkbox"' + (on ? ' checked' : '') + '></label>'; }
+    var html =
+      toggle('فقط کالاهای موجود', true) + toggle('فقط کالاهای تخفیف‌دار', false) + toggle('ارسال رایگان', false) +
+      group('دسته‌بندی', '<ul class="fcats"><li><a href="#">کالای دیجیتال</a><ul><li><a href="#" class="is-active">صوتی و تصویری</a></li><li><a href="#">هدفون</a></li><li><a href="#">اسپیکر</a></li><li><a href="#">ساعت هوشمند</a></li></ul></li></ul>', true) +
+      group('برند', '<div class="input-group" style="margin-bottom:8px">' + ic('search', 'i--sm') + '<input class="input" style="min-height:38px" placeholder="جستجوی نام برند (فارسی یا لاتین)"></div>' +
+        checks([['نوویکس', 'Novix', 1], ['لومو', 'Lumo', 1], ['اوربیس', 'Orbis'], ['زنترا', 'Zentra'], ['کاویرا', 'Kavira']]), true) +
+      group('محدوده قیمت', '<div class="range"><div class="range__track"><i style="right:8%;left:30%"></i><b style="right:8%"></b><b style="left:30%"></b></div><div class="range__vals"><label>از<input class="input input--ltr num" value="۹۸۰٬۰۰۰"></label><label>تا<input class="input input--ltr num" value="۴۵٬۰۰۰٬۰۰۰"></label></div><span class="faint xsmall">تومان</span></div>', true) +
+      group('رنگ', '<div class="fcolors">' + [['#23252e', 'مشکی'], ['#f4f5f7', 'سفید'], ['#6158e6', 'بنفش'], ['#ff9a1f', 'نارنجی'], ['#149a9c', 'فیروزه‌ای'], ['#2c7be5', 'آبی']].map(function (c, i) { return '<label class="fcolor"><span class="swatch' + (i === 0 ? ' is-active' : '') + '" style="background:' + c[0] + '"></span>' + c[1] + '</label>'; }).join('') + '</div>') +
+      group('نوع اتصال', checks([['بی‌سیم'], ['باسیم'], ['هر دو']])) +
+      group('امتیاز خریداران', checks([['۴ ستاره و بالاتر'], ['۳ ستاره و بالاتر']]));
+    document.getElementById('filter-groups').innerHTML = html;
+    document.getElementById('filter-groups-m').innerHTML = html;
+
+    document.getElementById('view-toggle').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-view]');
+      if (!b) return;
+      this.querySelectorAll('button').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      var grid = document.getElementById('plp-grid');
+      var list = b.getAttribute('data-view') === 'list';
+      grid.setAttribute('data-variant', list ? 'list' : 'classic');
+      grid.classList.toggle('pgrid--list', list);
+      window.UM.renderProducts(grid.parentNode);
+    });
+  })();
+</script>
+</body>
+</html>

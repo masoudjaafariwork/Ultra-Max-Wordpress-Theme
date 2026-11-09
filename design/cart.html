@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سبد خرید | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-shell="store" data-nav="cart">
+<div data-um-header></div>
+
+<main class="container page">
+  <!-- Cart / Save for later (CART-02) -->
+  <div class="tabs cart-tabs" data-tabs="cart">
+    <button class="tab is-active" data-tab="cart">سبد خرید <span class="badge badge--off num">۴</span></button>
+    <button class="tab" data-tab="later">خرید بعدی <span class="badge num">۲</span></button>
+    <button class="tab" data-tab="empty">نمونه سبد خالی</button>
+  </div>
+
+  <div class="cart" data-tab-panel="cart:cart">
+    <section class="cart__items">
+      <div class="cart__head"><div><h1>سبد خرید شما</h1><span class="small muted num">۴ کالا</span></div>
+        <button class="btn btn--ghost btn--sm" data-toast="پیش‌فاکتور آماده شد"><svg class="i i--sm"><use href="#i-file"/></svg>دریافت پیش‌فاکتور</button></div>
+
+      <div class="alert alert--warning"><svg class="i"><use href="#i-alert"/></svg><p>حداقل مبلغ سفارش برای پرداخت در محل <b class="num">۵۰۰٬۰۰۰ تومان</b> است. سبد شما این شرط را دارد.</p></div>
+
+      <ul id="cart-lines"></ul>
+    </section>
+
+    <!-- Summary (CART-03, CART-04, CART-10) -->
+    <aside class="summary">
+      <div class="summary__box">
+        <dl class="summary__rows">
+          <dt>قیمت کالاها <span class="num">(۴)</span></dt><dd class="num">۳۴٬۲۰۰٬۰۰۰ تومان</dd>
+          <dt>جمع سبد خرید</dt><dd class="num bold">۲۷٬۶۳۰٬۰۰۰ تومان</dd>
+          <dt class="summary__save">سود شما از این خرید</dt><dd class="summary__save num">(۱۹٪) ۶٬۵۷۰٬۰۰۰ تومان</dd>
+        </dl>
+        <div class="freeship"><div class="freeship__text"><svg class="i i--sm"><use href="#i-truck"/></svg><span>ارسال این سفارش <b>رایگان</b> است</span></div><div class="progress progress--success"><i style="width:100%"></i></div></div>
+        <a class="btn btn--lg btn--block hide-mobile" href="checkout.html">تأیید و تکمیل سفارش</a>
+        <p class="xsmall faint">هزینه ارسال بر اساس آدرس، زمان تحویل، وزن و حجم مرسوله محاسبه می‌شود.</p>
+      </div>
+      <div class="summary__note"><svg class="i"><use href="#i-info"/></svg><span class="small">کالاهای سبد شما ثبت و رزرو نشده‌اند. برای ثبت سفارش مراحل بعدی را تکمیل کنید.</span></div>
+    </aside>
+  </div>
+
+  <div data-tab-panel="cart:later" hidden>
+    <div class="box box--pad"><div class="cart__head"><div><h1>لیست خرید بعدی</h1><span class="small muted">کالاهایی که برای خرید بعدی نگه داشته‌اید</span></div><button class="btn btn--soft btn--sm" data-toast="همه کالاها به سبد منتقل شد">انتقال همه به سبد</button></div>
+      <div class="pgrid" data-products="7,11" data-variant="swatch" style="--cols:4"></div></div>
+  </div>
+
+  <div data-tab-panel="cart:empty" hidden>
+    <div class="box"><div class="empty"><div class="empty__art"><svg class="i"><use href="#i-cart"/></svg></div><h3>سبد خرید شما خالی است!</h3><p class="muted small">می‌توانید برای مشاهده محصولات بیشتر به صفحه‌های زیر بروید:</p><div class="row" style="justify-content:center"><a class="btn btn--soft btn--sm" href="home.html#deals">شگفت‌انگیزها</a><a class="btn btn--soft btn--sm" href="plp.html">پرفروش‌ترین‌ها</a></div></div></div>
+  </div>
+
+  <!-- Suggestions (CART-05) -->
+  <section class="section box box--pad">
+    <div class="section__head"><h2 class="section__title">مکمل خرید شما</h2></div>
+    <div class="carousel"><div class="carousel__track" data-products="11,13,9,8,4" data-variant="hover" data-wrap="slide-card"></div></div>
+  </section>
+</main>
+
+<!-- Mobile sticky checkout bar -->
+<div class="stickybuy hide-desktop hide-tablet">
+  <a class="btn btn--lg" href="checkout.html">تأیید و تکمیل سفارش</a>
+  <div class="price"><small class="xsmall muted">جمع سبد خرید</small><span class="price__now num">۲۷٬۶۳۰٬۰۰۰<span class="price__cur">تومان</span></span></div>
+</div>
+
+<div data-um-footer></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/shell.js"></script>
+<script>
+  (function () {
+    var UM = window.UM, ic = UM.icon;
+    var lines = [[1, 1, 'مشکی', 0], [3, 2, 'نارنجی', 1], [10, 1, '']];
+    document.getElementById('cart-lines').innerHTML = lines.map(function (l) {
+      var p = UM.byId(l[0]), q = l[1];
+      var save = p.old ? (p.old - p.price) * q : 0;
+      return '<li class="cline"><div class="cline__media"><img src="' + UM.img(p.img) + '" alt=""><div class="qty" data-qty><button data-inc aria-label="افزایش">' + ic('plus', 'i--sm') + '</button><output class="num">' + UM.fa(q) + '</output><button data-dec aria-label="کاهش">' + ic(q > 1 ? 'minus' : 'trash', 'i--sm') + '</button></div></div>' +
+        '<div class="cline__body"><a class="cline__title" href="pdp.html">' + p.title + '</a><ul class="cline__attrs">' +
+        (l[2] ? '<li><span class="swatch swatch--sm" style="background:' + p.colors[l[3]] + '"></span>' + l[2] + '</li>' : '') +
+        '<li>' + ic('shield', 'i--sm') + 'گارانتی ۱۸ ماهه</li><li>' + ic('store', 'i--sm') + 'الترا مکس</li><li class="cline__ship">' + ic('truck', 'i--sm') + 'ارسال از ۱ روز کاری آینده</li></ul>' +
+        (save ? '<span class="cline__save num">' + UM.money(save) + ' تومان تخفیف</span>' : '') +
+        '<div class="cline__foot"><b class="num">' + UM.money(p.price * q) + ' <small>تومان</small></b><span class="grow"></span><button class="btn btn--ghost btn--sm" data-toast="کالا به لیست خرید بعدی منتقل شد">' + ic('history', 'i--sm') + 'انتقال به خرید بعدی</button></div></div></li>';
+    }).join('');
+  })();
+</script>
+</body>
+</html>

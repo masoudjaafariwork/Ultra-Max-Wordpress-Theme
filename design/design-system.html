@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سیستم طراحی | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<style>
+  .ds { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: var(--um-space-8); align-items: start; }
+  .ds__toc { position: sticky; top: 80px; display: grid; gap: 2px; font-size: var(--um-fs-sm); }
+  .ds__toc a { padding: 6px 12px; border-radius: var(--um-radius-sm); color: var(--um-text-2); }
+  .ds__toc a:hover { background: var(--um-surface); color: var(--um-primary); }
+  .ds-sec { background: var(--um-surface); border: 1px solid var(--um-border); border-radius: var(--um-radius-lg); padding: var(--um-space-6); margin-bottom: var(--um-space-6); scroll-margin-top: 80px; }
+  .ds-sec > h2 { font-size: var(--um-fs-2xl); margin-bottom: 4px; }
+  .ds-sec > p.lead { color: var(--um-text-2); margin-bottom: var(--um-space-5); font-size: var(--um-fs-sm); }
+  .ds-sec h3 { font-size: var(--um-fs-md); margin: var(--um-space-6) 0 var(--um-space-3); color: var(--um-text-2); }
+  .ds-ids { display: inline-flex; gap: 4px; flex-wrap: wrap; margin-inline-start: 8px; vertical-align: middle; }
+  .ds-ids span { font-size: 10px; font-weight: 700; background: var(--um-surface-3); color: var(--um-text-2); padding: 1px 6px; border-radius: 4px; direction: ltr; }
+  .ramp { display: grid; grid-template-columns: 110px repeat(var(--n, 8), minmax(0, 1fr)); gap: 6px; align-items: center; margin-bottom: 8px; }
+  .ramp__name { font-size: var(--um-fs-sm); font-weight: 700; }
+  .chip-c { height: 56px; border-radius: var(--um-radius-md); position: relative; border: 1px solid rgb(0 0 0 / 6%); }
+  .chip-c span { position: absolute; bottom: 4px; right: 6px; font-size: 10px; font-weight: 700; direction: ltr; }
+  .chip-c small { position: absolute; top: 4px; right: 6px; font-size: 10px; opacity: .8; }
+  .roles { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--um-space-3); }
+  .role { display: flex; align-items: center; gap: 10px; padding: 8px; border: 1px solid var(--um-border); border-radius: var(--um-radius-md); font-size: var(--um-fs-xs); }
+  .role i { width: 32px; height: 32px; border-radius: 8px; flex: none; border: 1px solid rgb(0 0 0 / 8%); }
+  .role code { display: block; direction: ltr; text-align: right; color: var(--um-text-3); font-size: 10px; }
+  .presets { display: flex; gap: var(--um-space-2); flex-wrap: wrap; }
+  .preset { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border: 1px solid var(--um-border); border-radius: var(--um-radius-pill); font-size: var(--um-fs-sm); }
+  .preset i { width: 24px; height: 24px; border-radius: 50%; }
+  .preset.is-active { border-color: var(--um-primary); box-shadow: var(--um-focus); }
+  .type-row { display: grid; grid-template-columns: 140px 1fr; gap: var(--um-space-4); align-items: baseline; padding: 10px 0; border-bottom: 1px dashed var(--um-border); }
+  .type-row code { direction: ltr; font-size: 11px; color: var(--um-text-3); text-align: right; }
+  .spaces { display: grid; gap: 6px; }
+  .space { display: grid; grid-template-columns: 110px 1fr; align-items: center; font-size: var(--um-fs-xs); }
+  .space i { height: 14px; background: var(--um-primary-soft-2); border-inline-start: 2px solid var(--um-primary); }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: var(--um-space-4); }
+  .tile { height: 90px; display: grid; place-items: center; background: var(--um-surface); border: 1px solid var(--um-border); font-size: var(--um-fs-xs); color: var(--um-text-2); text-align: center; }
+  .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 6px; }
+  .icons div { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 4px; border-radius: var(--um-radius-md); font-size: 10px; color: var(--um-text-3); direction: ltr; }
+  .icons div:hover { background: var(--um-surface-3); color: var(--um-text); }
+  .demo-row { display: flex; flex-wrap: wrap; gap: var(--um-space-3); align-items: center; }
+  .demo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--um-space-4); }
+  .cards6 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--um-space-5); }
+  .card-demo { display: flex; flex-direction: column; gap: 10px; }
+  .card-demo__label { display: flex; align-items: baseline; gap: 6px; font-size: var(--um-fs-sm); }
+  .card-demo__label b { width: 22px; height: 22px; border-radius: 50%; background: var(--um-primary); color: #fff; display: inline-grid; place-items: center; font-size: 11px; flex: none; }
+  .card-demo__label small { display: block; color: var(--um-text-3); font-size: var(--um-fs-xs); }
+  .card-demo__stage { background: var(--um-surface-3); border-radius: var(--um-radius-lg); padding: var(--um-space-4); flex: 1; }
+  .card-demo__stage .pc--classic { border-radius: var(--um-radius-md); }
+  .card-demo--wide { grid-column: 1 / -1; }
+  @media (max-width: 1023px) {
+    .ds { grid-template-columns: minmax(0, 1fr); }
+    .ds__toc { position: static; display: flex; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+    .cards6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 767px) {
+    .ds-sec { padding: var(--um-space-4); }
+    .ramp { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .ramp__name { grid-column: 1 / -1; }
+    .type-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .cards6 { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
+</head>
+<body data-shell="ds">
+<div class="dsbar"><div class="container dsbar__in"><a class="link" href="index.html">← همه صفحات</a><b>سیستم طراحی الترا مکس</b><span class="faint xsmall">نسخه نمونه فاز ۰ · ۱۸ آبان ۱۴۰۵</span></div></div>
+
+<main class="container page">
+  <div class="ds">
+    <nav class="ds__toc" aria-label="فهرست">
+      <a href="#colors">رنگ‌ها</a><a href="#type">تایپوگرافی</a><a href="#space">فاصله، گوشه و سایه</a><a href="#icons">آیکون‌ها</a>
+      <a href="#buttons">دکمه‌ها</a><a href="#forms">فرم‌ها</a><a href="#badges">برچسب و تراشه</a><a href="#feedback">پیام‌ها</a>
+      <a href="#nav">ناوبری</a><a href="#commerce">اجزای فروش</a><a href="#cards">شش طرح کارت محصول</a><a href="#states">حالت‌ها</a><a href="#overlays">پنجره‌ها و کشوها</a>
+    </nav>
+
+    <div>
+      <!-- Colours -->
+      <section class="ds-sec" id="colors">
+        <h2>رنگ‌ها <span class="ds-ids"><span>CORE-06</span></span></h2>
+        <p class="lead">رنگ اصلی و رنگ تأکیدی از پنل تنظیمات عوض می‌شوند. هیچ جزئی رنگ را مستقیم نمی‌نویسد و همه از نقش‌های معنایی پایین استفاده می‌کنند. رنگ‌ها عمداً از رنگ‌بندی دیجی‌کالا دور هستند.</p>
+        <h3>پیش‌تنظیم‌های رنگ اصلی (برای امتحان کلیک کنید)</h3>
+        <div class="presets" id="presets">
+          <button class="preset is-active" data-preset-btn=""><i style="background:#4c42d3"></i>نیلی (پیش‌فرض)</button>
+          <button class="preset" data-preset-btn="ocean"><i style="background:#1a64cc"></i>اقیانوسی</button>
+          <button class="preset" data-preset-btn="teal"><i style="background:#0e7f82"></i>فیروزه‌ای</button>
+          <button class="preset" data-preset-btn="emerald"><i style="background:#168550"></i>زمردی</button>
+          <button class="preset" data-preset-btn="graphite"><i style="background:#353b4d"></i>گرافیتی</button>
+        </div>
+        <h3>طیف‌ها</h3>
+        <div id="ramps"></div>
+        <h3>نقش‌های معنایی</h3>
+        <div class="roles" id="roles"></div>
+      </section>
+
+      <!-- Typography -->
+      <section class="ds-sec" id="type">
+        <h2>تایپوگرافی <span class="ds-ids"><span>CORE-05</span></span></h2>
+        <p class="lead">فونت پیش‌فرض وزیرمتن نسخه ۳۳.۰.۳ با مجوز OFL است و به‌صورت محلی و متغیر (وزن ۱۰۰ تا ۹۰۰) بارگذاری می‌شود. خریدار می‌تواند برای عنوان، متن و عدد فونت جدا انتخاب کند. فاصله خطوط متن فارسی ۱.۸۵ است.</p>
+        <div class="type-row"><code>32 / 800 / 1.5</code><div style="font-size:32px;font-weight:800;line-height:1.5">عنوان بزرگ صفحه</div></div>
+        <div class="type-row"><code>24 / 700</code><h1>عنوان صفحه محصول</h1></div>
+        <div class="type-row"><code>20 / 700</code><h2>عنوان بخش</h2></div>
+        <div class="type-row"><code>18 / 800</code><div style="font-size:18px;font-weight:800">عنوان ردیف محصولات</div></div>
+        <div class="type-row"><code>16 / 700</code><h3>عنوان کارت و پنجره</h3></div>
+        <div class="type-row"><code>14 / 400 / 1.85</code><p style="margin:0">متن اصلی. خرید آنلاین باید ساده، سریع و مطمئن باشد. این پاراگراف برای سنجش خوانایی متن بلند فارسی در اندازه پایه نوشته شده است.</p></div>
+        <div class="type-row"><code>13 / 500</code><div class="small" style="font-weight:500">عنوان کارت محصول و متن فرم</div></div>
+        <div class="type-row"><code>12 / 400</code><div class="xsmall muted">توضیح کوچک، تاریخ و متن کمکی</div></div>
+        <div class="type-row"><code>numbers</code><div class="num" style="font-size:20px;font-weight:800">۱۸٬۴۹۰٬۰۰۰ <small class="price__cur">تومان</small> · ۱۸ آبان ۱۴۰۵ · ۰۲:۱۴:۳۳</div></div>
+        <div class="type-row"><code>weights</code><div class="row row--wrap" style="gap:16px"><span style="font-weight:300">نازک ۳۰۰</span><span>معمولی ۴۰۰</span><span style="font-weight:500">متوسط ۵۰۰</span><span style="font-weight:700">ضخیم ۷۰۰</span><span style="font-weight:800">سنگین ۸۰۰</span></div></div>
+      </section>
+
+      <!-- Space -->
+      <section class="ds-sec" id="space">
+        <h2>فاصله، گوشه و سایه <span class="ds-ids"><span>CORE-06</span><span>CORE-07</span></span></h2>
+        <p class="lead">فاصله‌ها روی شبکه ۴ پیکسلی هستند. عرض پیش‌فرض محتوا ۱۳۳۶ پیکسل و فاصله کناری موبایل ۱۶ پیکسل است.</p>
+        <div class="spaces" id="spaces"></div>
+        <h3>گردی گوشه</h3>
+        <div class="tiles">
+          <div class="tile" style="border-radius:4px">xs · ۴</div><div class="tile" style="border-radius:6px">sm · ۶</div><div class="tile" style="border-radius:10px">md · ۱۰</div>
+          <div class="tile" style="border-radius:14px">lg · ۱۴</div><div class="tile" style="border-radius:20px">xl · ۲۰</div><div class="tile" style="border-radius:999px;height:56px">pill</div>
+        </div>
+        <h3>سایه</h3>
+        <div class="tiles">
+          <div class="tile" style="border:0;border-radius:14px;box-shadow:var(--um-shadow-xs)">xs</div><div class="tile" style="border:0;border-radius:14px;box-shadow:var(--um-shadow-sm)">sm</div>
+          <div class="tile" style="border:0;border-radius:14px;box-shadow:var(--um-shadow-md)">md · کارت در هاور</div><div class="tile" style="border:0;border-radius:14px;box-shadow:var(--um-shadow-lg)">lg · پنجره</div>
+        </div>
+      </section>
+
+      <!-- Icons -->
+      <section class="ds-sec" id="icons">
+        <h2>آیکون‌ها</h2>
+        <p class="lead">مجموعه آیکون اختصاصی همین پروژه روی شبکه ۲۴ پیکسلی با خط ۱.۸ پیکسل. همه با رنگ متن هم‌رنگ می‌شوند.</p>
+        <div class="icons" id="icon-list"></div>
+      </section>
+
+      <!-- Buttons -->
+      <section class="ds-sec" id="buttons">
+        <h2>دکمه‌ها</h2>
+        <p class="lead">کمینه ارتفاع دکمه ۴۴ پیکسل است تا روی موبایل راحت لمس شود.</p>
+        <div class="demo-row">
+          <button class="btn">افزودن به سبد</button><button class="btn btn--outline">مشاهده همه</button><button class="btn btn--soft">ادامه خرید</button>
+          <button class="btn btn--neutral">انصراف</button><button class="btn btn--ghost">بیشتر</button><button class="btn btn--accent"><svg class="i"><use href="#i-fire"/></svg>پیشنهاد ویژه</button><button class="btn btn--danger"><svg class="i"><use href="#i-trash"/></svg>حذف</button>
+        </div>
+        <h3>اندازه و حالت</h3>
+        <div class="demo-row">
+          <button class="btn btn--sm">کوچک</button><button class="btn">معمولی</button><button class="btn btn--lg">بزرگ</button>
+          <button class="btn is-loading">در حال ارسال</button><button class="btn" disabled>غیرفعال</button>
+          <button class="icon-btn" aria-label="علاقه‌مندی"><svg class="i"><use href="#i-heart"/></svg></button>
+          <button class="icon-btn icon-btn--round" aria-label="اشتراک"><svg class="i"><use href="#i-share"/></svg></button>
+          <button class="icon-btn" aria-label="سبد"><svg class="i"><use href="#i-cart"/></svg><span class="count num">۳</span></button>
+          <a class="link" href="#">پیوند متنی<svg class="i i--sm"><use href="#i-chev-left"/></svg></a>
+        </div>
+      </section>
+
+      <!-- Forms -->
+      <section class="ds-sec" id="forms">
+        <h2>فرم‌ها <span class="ds-ids"><span>CHK-04</span><span>AUTH-01</span></span></h2>
+        <p class="lead">اعتبارسنجی موبایل، کد ملی و کد پستی هنگام تایپ انجام می‌شود و پیام خطا زیر همان فیلد می‌آید.</p>
+        <div class="demo-grid">
+          <div class="field"><label class="field__label">نام و نام خانوادگی <span class="req">*</span></label><input class="input" value="سارا محمدی"></div>
+          <div class="field"><label class="field__label">شماره موبایل</label><input class="input input--ltr is-valid num" value="۰۹۱۲ ۳۴۵ ۶۷۸۹"><span class="field__hint">کد تأیید به این شماره ارسال می‌شود.</span></div>
+          <div class="field"><label class="field__label">کد ملی</label><input class="input input--ltr is-invalid num" value="۱۲۳۴۵۶۷۸۹۰"><span class="field__error"><svg class="i i--sm"><use href="#i-alert"/></svg>کد ملی معتبر نیست.</span></div>
+          <div class="field"><label class="field__label">استان</label><select class="select"><option>تهران</option><option>اصفهان</option></select></div>
+          <div class="field"><label class="field__label">جستجو</label><div class="input-group"><svg class="i"><use href="#i-search"/></svg><input class="input" placeholder="جستجوی برند"></div></div>
+          <div class="field"><label class="field__label">توضیحات</label><textarea class="textarea" placeholder="نشانی دقیق، پلاک و واحد"></textarea></div>
+        </div>
+        <h3>انتخاب‌ها</h3>
+        <div class="demo-row">
+          <label class="check"><input type="checkbox" checked>فقط کالاهای موجود</label>
+          <label class="check"><input type="checkbox">ارسال فوری</label>
+          <label class="radio"><input type="radio" name="r" checked>حقیقی</label>
+          <label class="radio"><input type="radio" name="r">حقوقی</label>
+          <label class="switch"><input type="checkbox" checked>ماژول فعال است</label>
+          <div class="segmented"><button class="is-active">شبکه</button><button>فهرست</button></div>
+        </div>
+        <h3>کد یک‌بارمصرف</h3>
+        <div class="otp"><input value="۴" aria-label="رقم ۱"><input value="۸" aria-label="رقم ۲"><input value="۲" aria-label="رقم ۳"><input aria-label="رقم ۴"><input aria-label="رقم ۵"></div>
+      </section>
+
+      <!-- Badges -->
+      <section class="ds-sec" id="badges">
+        <h2>برچسب و تراشه <span class="ds-ids"><span>PDP-15</span><span>PLP-12</span><span>PDP-04</span></span></h2>
+        <div class="demo-row">
+          <span class="badge badge--off num">۱۶٪</span><span class="badge badge--hot"><svg class="i i--sm"><use href="#i-fire"/></svg>پرفروش</span><span class="badge badge--new">جدید</span>
+          <span class="badge badge--brand"><svg class="i i--sm"><use href="#i-truck"/></svg>ارسال رایگان</span><span class="badge badge--deal">شگفت‌انگیز</span>
+          <span class="badge badge--success">تحویل شده</span><span class="badge badge--warning">در حال پردازش</span><span class="badge badge--danger">لغو شده</span><span class="badge badge--info">ارسال شده</span><span class="badge">پیش‌نویس</span>
+        </div>
+        <h3>تراشه‌ها و فیلترهای فعال</h3>
+        <div class="demo-row" data-chip-group>
+          <button class="chip is-active">مرتبط‌ترین</button><button class="chip">پربازدیدترین</button><button class="chip">جدیدترین</button><button class="chip">ارزان‌ترین</button>
+        </div>
+        <div class="demo-row" style="margin-top:12px">
+          <span class="chip chip--remove">برند: نوویکس<svg class="i"><use href="#i-close"/></svg></span><span class="chip chip--remove">۲۵۶ گیگابایت<svg class="i"><use href="#i-close"/></svg></span><a class="link small" href="#">حذف همه</a>
+        </div>
+        <h3>نمونه رنگ</h3>
+        <div class="demo-row" data-swatch-group>
+          <button class="swatch is-active" style="background:#23252e" aria-label="مشکی"></button><button class="swatch" style="background:#8c86ff" aria-label="بنفش"></button><button class="swatch" style="background:#e8e3d9" aria-label="کرم"></button><button class="swatch" style="background:#149a9c" aria-label="فیروزه‌ای"></button>
+        </div>
+      </section>
+
+      <!-- Feedback -->
+      <section class="ds-sec" id="feedback">
+        <h2>پیام‌ها <span class="ds-ids"><span>CART-10</span></span></h2>
+        <p class="lead">رنگ وضعیت همیشه با آیکون و متن همراه است و هیچ پیامی فقط با رنگ منتقل نمی‌شود.</p>
+        <div class="stack">
+          <div class="alert"><svg class="i"><use href="#i-info"/></svg><p>ارسال سفارش‌های امروز از فردا ساعت ۱۰ صبح انجام می‌شود.</p></div>
+          <div class="alert alert--success"><svg class="i"><use href="#i-check"/></svg><p>کد تخفیف «پاییز۱۴۰۵» با موفقیت اعمال شد.</p></div>
+          <div class="alert alert--warning"><svg class="i"><use href="#i-alert"/></svg><p>حداقل مبلغ سفارش ۲۰۰٬۰۰۰ تومان است. <b class="num">۴۵٬۰۰۰ تومان</b> دیگر به سبد اضافه کنید.</p></div>
+          <div class="alert alert--danger"><svg class="i"><use href="#i-alert"/></svg><p>موجودی این کالا تمام شد و از سبد شما حذف شد.</p></div>
+          <div><button class="btn btn--neutral btn--sm" data-toast="کالا به سبد خرید اضافه شد">نمایش پیام شناور</button></div>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      <section class="ds-sec" id="nav">
+        <h2>ناوبری <span class="ds-ids"><span>CORE-08</span><span>PLP-04</span><span>CHK-01</span></span></h2>
+        <nav class="breadcrumb" aria-label="مسیر"><a href="#">الترا مکس</a><span class="sep">/</span><a href="#">کالای دیجیتال</a><span class="sep">/</span><a href="#">موبایل</a><span class="sep">/</span><span aria-current="page">گوشی موبایل</span></nav>
+        <h3>زبانه‌ها</h3>
+        <div class="tabs" data-tabs="demo"><button class="tab is-active" data-tab="a">معرفی</button><button class="tab" data-tab="b">مشخصات</button><button class="tab" data-tab="c">دیدگاه‌ها <span class="badge num">۱۲۴۰</span></button><button class="tab" data-tab="d">پرسش‌ها</button></div>
+        <p class="small muted" style="margin-top:12px" data-tab-panel="demo:a">محتوای زبانه معرفی.</p><p class="small muted" style="margin-top:12px" data-tab-panel="demo:b" hidden>محتوای زبانه مشخصات.</p><p class="small muted" style="margin-top:12px" data-tab-panel="demo:c" hidden>محتوای زبانه دیدگاه‌ها.</p><p class="small muted" style="margin-top:12px" data-tab-panel="demo:d" hidden>محتوای زبانه پرسش‌ها.</p>
+        <h3>صفحه‌بندی</h3>
+        <nav class="pagination num" aria-label="صفحه‌ها"><a href="#" aria-label="قبلی"><svg class="i i--sm"><use href="#i-chev-right"/></svg></a><span class="is-active">۱</span><a href="#">۲</a><a href="#">۳</a><span>…</span><a href="#">۲۴</a><a href="#" aria-label="بعدی"><svg class="i i--sm"><use href="#i-chev-left"/></svg></a></nav>
+        <h3>مراحل</h3>
+        <div class="steps">
+          <div class="steps__item is-done"><span class="steps__dot"><svg class="i"><use href="#i-check"/></svg></span><strong>سبد خرید</strong></div>
+          <div class="steps__item is-current"><span class="steps__dot"><svg class="i"><use href="#i-truck"/></svg></span><strong>زمان و نحوه ارسال</strong></div>
+          <div class="steps__item"><span class="steps__dot"><svg class="i"><use href="#i-card"/></svg></span><strong>پرداخت</strong></div>
+        </div>
+      </section>
+
+      <!-- Commerce atoms -->
+      <section class="ds-sec" id="commerce">
+        <h2>اجزای فروش <span class="ds-ids"><span>PDP-05</span><span>PDP-16</span><span>PDP-19</span><span>CART-04</span><span>MERCH-05</span></span></h2>
+        <div class="demo-grid">
+          <div class="box box--pad stack"><span class="small muted">قیمت با تخفیف</span><div class="price price--lg"><div class="price__row"><span class="badge badge--off num">۱۶٪</span><span class="price__now num">۱۸٬۴۹۰٬۰۰۰<span class="price__cur">تومان</span></span></div><del class="price__old num">۲۱٬۹۰۰٬۰۰۰</del></div></div>
+          <div class="box box--pad stack"><span class="small muted">قیمت «تماس بگیرید»</span><div class="row row--between"><span class="price__call"><svg class="i" style="display:inline;vertical-align:middle"><use href="#i-phone"/></svg> برای قیمت تماس بگیرید</span></div></div>
+          <div class="box box--pad stack"><span class="small muted">امتیاز</span><div class="row"><span class="stars"><svg class="i on"><use href="#i-star"/></svg><svg class="i on"><use href="#i-star"/></svg><svg class="i on"><use href="#i-star"/></svg><svg class="i on"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg></span><span class="rating"><svg class="i"><use href="#i-star"/></svg><span class="num">۴.۴</span></span><span class="xsmall faint num">(۱٬۲۴۰)</span></div></div>
+          <div class="box box--pad stack"><span class="small muted">تعداد</span><div class="row"><div class="qty" data-qty><button data-inc aria-label="افزایش"><svg class="i i--sm"><use href="#i-plus"/></svg></button><output class="num">۲</output><button data-dec aria-label="کاهش"><svg class="i i--sm"><use href="#i-minus"/></svg></button></div><div class="qty qty--sm" data-qty><button data-inc aria-label="افزایش"><svg class="i i--sm"><use href="#i-plus"/></svg></button><output class="num">۱</output><button data-dec aria-label="کاهش"><svg class="i i--sm"><use href="#i-trash"/></svg></button></div></div></div>
+          <div class="box box--pad stack"><span class="small muted">شمارش معکوس</span><div class="row"><span class="countdown" data-countdown="9300"></span><span class="countdown countdown--deal countdown--sm" data-countdown="3600"></span></div></div>
+          <div class="box box--pad stack"><span class="small muted">موجودی باقی‌مانده (داده واقعی)</span><div class="progress progress--deal"><i style="width:72%"></i></div><span class="xsmall faint">۷۲٪ فروخته شده · ۱۴ عدد باقی مانده</span></div>
+          <div class="box box--pad"><div class="freeship"><div class="freeship__text"><svg class="i i--sm"><use href="#i-truck"/></svg><span><b class="num">۱۲۰٬۰۰۰ تومان</b> دیگر تا ارسال رایگان</span></div><div class="progress"><i style="width:76%"></i></div></div></div>
+        </div>
+      </section>
+
+      <!-- Six cards -->
+      <section class="ds-sec" id="cards">
+        <h2>شش طرح کارت محصول <span class="ds-ids"><span>PLP-07</span><span>PLP-08</span><span>SAVE-04</span><span>SAVE-05</span></span></h2>
+        <p class="lead">هر شش طرح از یک تابع رندر و یک ساختار داده ساخته می‌شوند. فروشنده طرح را برای هر بخش از پنل یا ویجت المنتور انتخاب می‌کند. نشانگر را روی کارت ۲ نگه دارید تا تصویر دوم و دکمه‌ها ظاهر شوند.</p>
+        <div class="cards6">
+          <div class="card-demo"><div class="card-demo__label"><b>۱</b><span><strong>کلاسیک</strong><small>پیش‌فرض فهرست محصولات، با رنگ‌های موجود و هشدار موجودی</small></span></div><div class="card-demo__stage" data-products="1" data-variant="classic"></div></div>
+          <div class="card-demo"><div class="card-demo__label"><b>۲</b><span><strong>هاور</strong><small>تصویر دوم، علاقه‌مندی، مقایسه، نمایش سریع و خرید سریع</small></span></div><div class="card-demo__stage" data-products="3" data-variant="hover"></div></div>
+          <div class="card-demo"><div class="card-demo__label"><b>۳</b><span><strong>شگفت‌انگیز</strong><small>شمارش معکوس و نوار فروش واقعی</small></span></div><div class="card-demo__stage" data-products="13" data-variant="deal"></div></div>
+          <div class="card-demo"><div class="card-demo__label"><b>۴</b><span><strong>نمونه رنگ</strong><small>انتخاب رنگ و سایز روی کارت، مناسب مد و پوشاک</small></span></div><div class="card-demo__stage" data-products="6" data-variant="swatch"></div></div>
+          <div class="card-demo"><div class="card-demo__label"><b>۶</b><span><strong>فشرده</strong><small>سوپرمارکت؛ دکمه + به شمارنده تعداد تبدیل می‌شود</small></span></div><div class="card-demo__stage" data-products="9" data-variant="mini"></div></div>
+          <div class="card-demo"><div class="card-demo__label"><b>۶</b><span><strong>فشرده (نمونه دوم)</strong><small>کارت با واحد اندازه</small></span></div><div class="card-demo__stage" data-products="14" data-variant="mini"></div></div>
+          <div class="card-demo card-demo--wide"><div class="card-demo__label"><b>۵</b><span><strong>فهرستی</strong><small>نمای فهرست در دسکتاپ و نمای پیش‌فرض فهرست محصولات در موبایل</small></span></div><div class="card-demo__stage" data-products="2" data-variant="list"></div></div>
+        </div>
+      </section>
+
+      <!-- States -->
+      <section class="ds-sec" id="states">
+        <h2>حالت‌ها</h2>
+        <div class="demo-grid">
+          <div class="box"><div class="empty"><div class="empty__art"><svg class="i"><use href="#i-cart"/></svg></div><h3>سبد خرید شما خالی است!</h3><p class="muted small">می‌توانید برای مشاهده محصولات بیشتر به صفحه‌های زیر بروید.</p><a class="btn btn--soft btn--sm" href="home.html">رفتن به فروشگاه</a></div></div>
+          <div class="box box--pad stack"><span class="small muted">در حال بارگذاری</span><div class="skeleton" style="aspect-ratio:1"></div><div class="skeleton" style="height:14px"></div><div class="skeleton" style="height:14px;width:60%"></div><div class="skeleton" style="height:22px;width:45%;margin-inline-start:auto"></div></div>
+          <div class="box"><div class="empty"><div class="empty__art"><svg class="i"><use href="#i-search"/></svg></div><h3>کالایی پیدا نشد</h3><p class="muted small">املای کلمه را بررسی کنید یا فیلترها را کمتر کنید.</p></div></div>
+        </div>
+      </section>
+
+      <!-- Overlays -->
+      <section class="ds-sec" id="overlays">
+        <h2>پنجره‌ها و کشوها <span class="ds-ids"><span>CART-01</span><span>HDR-09</span><span>SRCH-04</span><span>SAVE-04</span></span></h2>
+        <p class="lead">در موبایل، پنجره‌ها از پایین صفحه باز می‌شوند.</p>
+        <div class="demo-row">
+          <button class="btn btn--neutral" data-open="mini-cart"><svg class="i"><use href="#i-cart"/></svg>سبد کناری</button>
+          <button class="btn btn--neutral" data-open="drawer-menu"><svg class="i"><use href="#i-menu"/></svg>منوی موبایل</button>
+          <button class="btn btn--neutral" data-open="search-panel"><svg class="i"><use href="#i-search"/></svg>جستجوی زنده</button>
+          <button class="btn btn--neutral" data-quickview="4"><svg class="i"><use href="#i-eye"/></svg>نمایش سریع</button>
+          <button class="btn btn--neutral" data-open="city-modal"><svg class="i"><use href="#i-pin"/></svg>انتخاب شهر</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/shell.js"></script>
+<script>
+  (function () {
+    var css = getComputedStyle(document.documentElement);
+    var ramps = [
+      ['brand', 'رنگ اصلی', ['50', '100', '200', '400', '500', '600', '700', '800']],
+      ['accent', 'تأکیدی', ['50', '100', '400', '500', '600', '700']],
+      ['gray', 'خنثی', ['0', '50', '100', '200', '300', '400', '500', '600', '700', '900']]
+    ];
+    function drawRamps() {
+      css = getComputedStyle(document.documentElement);
+      document.getElementById('ramps').innerHTML = ramps.map(function (r) {
+        return '<div class="ramp" style="--n:' + r[2].length + '"><span class="ramp__name">' + r[1] + '</span>' + r[2].map(function (s) {
+          var v = css.getPropertyValue('--um-' + r[0] + '-' + s).trim();
+          var dark = ['600', '700', '800', '900', '500'].indexOf(s) > -1 && r[0] !== 'accent' || (r[0] === 'gray' && s === '400');
+          return '<div class="chip-c" style="background:' + v + ';color:' + (dark ? '#fff' : '#15161c') + '"><small>' + s + '</small><span>' + v + '</span></div>';
+        }).join('') + '</div>';
+      }).join('');
+    }
+    var roles = [['primary', 'اصلی'], ['primary-soft', 'زمینه ملایم اصلی'], ['discount', 'برچسب تخفیف'], ['deal', 'پیشنهاد ویژه'], ['text', 'متن'], ['text-2', 'متن دوم'], ['text-3', 'متن کم‌رنگ'], ['border', 'خط'], ['bg', 'زمینه صفحه'], ['surface', 'سطح'], ['success', 'موفق'], ['warning', 'هشدار'], ['danger', 'خطا'], ['info', 'اطلاع'], ['rating', 'ستاره امتیاز']];
+    document.getElementById('roles').innerHTML = roles.map(function (r) {
+      return '<div class="role"><i style="background:var(--um-' + r[0] + ')"></i><span><b>' + r[1] + '</b><code>--um-' + r[0] + '</code></span></div>';
+    }).join('');
+    document.getElementById('spaces').innerHTML = [1, 2, 3, 4, 5, 6, 8, 10, 12, 16].map(function (n) {
+      return '<div class="space"><code class="ltr">--um-space-' + n + ' · ' + n * 4 + 'px</code><i style="width:' + n * 4 * 2 + 'px"></i></div>';
+    }).join('');
+    document.getElementById('icon-list').innerHTML = [].map.call(document.querySelectorAll('symbol'), function (s) {
+      var id = s.id.replace('i-', '');
+      return '<div><svg class="i i--lg"><use href="#' + s.id + '"/></svg>' + id + '</div>';
+    }).join('');
+    drawRamps();
+    document.getElementById('presets').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-preset-btn]');
+      if (!b) return;
+      var v = b.getAttribute('data-preset-btn');
+      if (v) document.documentElement.setAttribute('data-preset', v); else document.documentElement.removeAttribute('data-preset');
+      this.querySelectorAll('.preset').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      drawRamps();
+    });
+  })();
+</script>
+</body>
+</html>

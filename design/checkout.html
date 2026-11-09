@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تکمیل سفارش | الترا مکس</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-shell="checkout">
+<div data-um-header></div>
+
+<main class="container page checkout">
+  <!-- Steps (CHK-01) -->
+  <div class="steps checkout__steps">
+    <div class="steps__item is-done"><span class="steps__dot"><svg class="i"><use href="#i-check"/></svg></span><strong>سبد خرید</strong></div>
+    <div class="steps__item is-current" id="step-ship"><span class="steps__dot"><svg class="i"><use href="#i-truck"/></svg></span><strong>اطلاعات ارسال</strong></div>
+    <div class="steps__item" id="step-pay"><span class="steps__dot"><svg class="i"><use href="#i-card"/></svg></span><strong>پرداخت</strong></div>
+  </div>
+  <div class="row checkout__mode"><span class="xsmall faint">حالت تسویه در پنل:</span><div class="segmented"><button class="is-active">چندمرحله‌ای</button><button>یک‌صفحه‌ای</button></div></div>
+
+  <div class="cart">
+    <div class="checkout__main">
+      <!-- Shipping step -->
+      <div id="pane-ship" class="stack">
+        <!-- Guest mobile verification (CHK-07, AUTH-09) -->
+        <section class="box box--pad verify">
+          <div class="verify__ic"><svg class="i i--lg"><use href="#i-mobile"/></svg></div>
+          <div class="grow">
+            <h2 class="ck-title">تأیید شماره موبایل</h2>
+            <p class="small muted">برای پیگیری سفارش، حساب کاربری شما با همین شماره به‌طور خودکار ساخته می‌شود.</p>
+            <div class="verify__row"><input class="input input--ltr num" value="۰۹۱۲ ۳۴۵ ۶۷۸۹" aria-label="موبایل"><span class="badge badge--success"><svg class="i i--sm"><use href="#i-check"/></svg>تأیید شد</span></div>
+          </div>
+        </section>
+
+        <!-- Address (CHK-02) -->
+        <section class="box box--pad">
+          <div class="row row--between"><h2 class="ck-title">آدرس تحویل سفارش</h2><button class="link small" data-open="address-book">تغییر یا ویرایش آدرس<svg class="i i--sm"><use href="#i-chev-left"/></svg></button></div>
+          <div class="addr is-selected">
+            <svg class="i i--lg"><use href="#i-pin"/></svg>
+            <div><b>تهران، خیابان ولیعصر، کوچه نمونه، پلاک ۱۲، واحد ۴</b><div class="small muted">گیرنده: سارا محمدی · <span class="num">۰۹۱۲۳۴۵۶۷۸۹</span> · کد پستی <span class="num">۱۲۳۴۵۶۷۸۹۰</span></div></div>
+          </div>
+        </section>
+
+        <!-- Customer type (CHK-05) -->
+        <section class="box box--pad">
+          <h2 class="ck-title">نوع خریدار و فاکتور</h2>
+          <div class="segmented" id="buyer-type"><button class="is-active" data-type="person">حقیقی</button><button data-type="company">حقوقی (شرکت)</button></div>
+          <div class="ck-grid" id="person-fields">
+            <div class="field"><label class="field__label">کد ملی <span class="faint">(برای فاکتور رسمی)</span></label><input class="input input--ltr num is-invalid" value="۰۰۱۲۳۴۵۶۷۸"><span class="field__error"><svg class="i i--sm"><use href="#i-alert"/></svg>کد ملی وارد شده معتبر نیست. ارقام را دوباره بررسی کنید.</span></div>
+          </div>
+          <div class="ck-grid" id="company-fields" hidden>
+            <div class="field"><label class="field__label">نام شرکت <span class="req">*</span></label><input class="input" value="شرکت نمونه تجارت"></div>
+            <div class="field"><label class="field__label">شناسه ملی <span class="req">*</span></label><input class="input input--ltr num" value="۱۰۱۰۰۰۰۰۰۰۰"></div>
+            <div class="field"><label class="field__label">کد اقتصادی <span class="req">*</span></label><input class="input input--ltr num" value="۴۱۱۱۱۱۱۱۱۱۱۱"></div>
+            <div class="field"><label class="field__label">شماره ثبت</label><input class="input input--ltr num" value="۱۲۳۴۵"></div>
+          </div>
+        </section>
+
+        <!-- Shipping methods (SHIP-01, SHIP-02, CHK-09) -->
+        <section class="box box--pad">
+          <h2 class="ck-title">روش ارسال</h2>
+          <div class="ship-opts">
+            <label class="ship-opt"><input type="radio" name="ship" checked><span class="ship-opt__ic"><svg class="i i--lg"><use href="#i-truck"/></svg></span><span class="grow"><b>پست پیشتاز</b><small>تحویل ۲ تا ۴ روز کاری · بر اساس وزن و استان</small></span><b class="ship-opt__price">رایگان</b></label>
+            <label class="ship-opt"><input type="radio" name="ship"><span class="ship-opt__ic"><svg class="i i--lg"><use href="#i-zap"/></svg></span><span class="grow"><b>پیک فروشگاه</b><small>فقط تهران · تحویل امروز تا ساعت ۲۱</small></span><b class="ship-opt__price num">۶۵٬۰۰۰ تومان</b></label>
+            <label class="ship-opt is-disabled"><input type="radio" name="ship" disabled><span class="ship-opt__ic"><svg class="i i--lg"><use href="#i-store"/></svg></span><span class="grow"><b>تحویل حضوری از فروشگاه</b><small>برای این آدرس در دسترس نیست</small></span></label>
+          </div>
+          <div class="ck-items">
+            <span class="small muted">مرسوله شما <span class="num">(۴ کالا)</span></span>
+            <div class="ck-items__row">
+              <span class="ck-thumb"><img src="assets/img/products/phone.svg" alt=""></span>
+              <span class="ck-thumb"><img src="assets/img/products/headphones.svg" alt=""><i class="num">۲</i></span>
+              <span class="ck-thumb"><img src="assets/img/products/kettle.svg" alt=""></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="box box--pad stack">
+          <div class="field"><label class="field__label">یادداشت سفارش (اختیاری)</label><textarea class="textarea" placeholder="مثلاً: لطفاً پیش از ارسال تماس بگیرید."></textarea></div>
+          <label class="check small"><input type="checkbox" checked>مایلم از تخفیف‌ها و پیشنهادهای ویژه با پیامک باخبر شوم.</label>
+        </section>
+      </div>
+
+      <!-- Payment step -->
+      <div id="pane-pay" class="stack" hidden>
+        <section class="box box--pad">
+          <h2 class="ck-title">روش پرداخت</h2>
+          <div class="ship-opts">
+            <label class="ship-opt"><input type="radio" name="pay" checked><span class="ship-opt__ic"><svg class="i i--lg"><use href="#i-card"/></svg></span><span class="grow"><b>پرداخت اینترنتی</b><small>با همه کارت‌های عضو شبکه شتاب</small></span></label>
+            <label class="ship-opt"><input type="radio" name="pay"><span class="ship-opt__ic"><svg class="i i--lg"><use href="#i-cash"/></svg></span><span class="grow"><b>پرداخت در محل</b><small>با کارت بانکی هنگام تحویل</small></span></label>
+          </div>
+          <div class="gateways"><span class="gateway is-active">درگاه ۱</span><span class="gateway">درگاه ۲</span><span class="gateway">درگاه ۳</span></div>
+        </section>
+        <section class="box box--pad">
+          <h2 class="ck-title">کد تخفیف</h2>
+          <div class="row"><input class="input grow" value="پاییز۱۴۰۵" aria-label="کد تخفیف"><button class="btn btn--neutral">ثبت</button></div>
+          <div class="alert alert--success" style="margin-top:12px"><svg class="i"><use href="#i-check"/></svg><p>کد تخفیف اعمال شد. <b class="num">۵۰۰٬۰۰۰ تومان</b> از مبلغ سفارش کم شد.</p></div>
+        </section>
+        <section class="box box--pad">
+          <label class="check small"><input type="checkbox" checked>قوانین فروشگاه و حریم خصوصی را می‌پذیرم.</label>
+        </section>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <aside class="summary">
+      <div class="summary__box">
+        <dl class="summary__rows">
+          <dt>قیمت کالاها <span class="num">(۴)</span></dt><dd class="num">۳۴٬۲۰۰٬۰۰۰ تومان</dd>
+          <dt>جمع سبد خرید</dt><dd class="num">۲۷٬۶۳۰٬۰۰۰ تومان</dd>
+          <dt>هزینه ارسال</dt><dd>رایگان</dd>
+          <dt class="summary__save">سود شما از این خرید</dt><dd class="summary__save num">(۱۹٪) ۶٬۵۷۰٬۰۰۰ تومان</dd>
+          <dt class="bold">مبلغ قابل پرداخت</dt><dd class="num bold summary__total">۲۷٬۶۳۰٬۰۰۰ تومان</dd>
+        </dl>
+        <button class="btn btn--lg btn--block hide-mobile" id="next-btn">ادامه و انتخاب روش پرداخت</button>
+        <button class="btn btn--ghost btn--sm btn--block" id="back-btn" hidden>بازگشت به اطلاعات ارسال</button>
+      </div>
+      <div class="summary__note"><svg class="i"><use href="#i-shield"/></svg><span class="small">اطلاعات کارت بانکی فقط در صفحه درگاه وارد می‌شود.</span></div>
+    </aside>
+  </div>
+</main>
+
+<div class="stickybuy hide-desktop hide-tablet" style="bottom:0">
+  <button class="btn btn--lg" id="next-btn-m">ادامه</button>
+  <div class="price"><small class="xsmall muted">مبلغ قابل پرداخت</small><span class="price__now num">۲۷٬۶۳۰٬۰۰۰<span class="price__cur">تومان</span></span></div>
+</div>
+
+<!-- Address book (CHK-02, CHK-03, CHK-04) -->
+<div class="modal" id="address-book" style="--modal-w:620px" role="dialog" aria-label="آدرس‌ها">
+  <div class="drawer__head"><h2>انتخاب آدرس</h2><button class="icon-btn" data-close aria-label="بستن"><svg class="i"><use href="#i-close"/></svg></button></div>
+  <div class="drawer__body stack">
+    <label class="addr is-selected"><input type="radio" name="addr" checked class="sr-only"><svg class="i i--lg"><use href="#i-pin"/></svg><div class="grow"><b>تهران، خیابان ولیعصر، کوچه نمونه، پلاک ۱۲، واحد ۴</b><div class="small muted">سارا محمدی · <span class="num">۰۹۱۲۳۴۵۶۷۸۹</span></div></div><span class="badge badge--brand">انتخاب شده</span></label>
+    <label class="addr"><input type="radio" name="addr" class="sr-only"><svg class="i i--lg"><use href="#i-building"/></svg><div class="grow"><b>اصفهان، خیابان چهارباغ، ساختمان نمونه، طبقه ۳</b><div class="small muted">محل کار · <span class="num">۰۹۱۳۰۰۰۰۰۰۰</span></div></div></label>
+    <details class="newaddr" open>
+      <summary class="btn btn--soft btn--block"><svg class="i"><use href="#i-plus"/></svg>افزودن آدرس جدید</summary>
+      <div class="ck-grid" style="margin-top:16px">
+        <div class="field"><label class="field__label">استان <span class="req">*</span></label><select class="select" id="prov"><option>تهران</option><option>اصفهان</option><option>فارس</option><option>خراسان رضوی</option></select></div>
+        <div class="field"><label class="field__label">شهر <span class="req">*</span></label><select class="select" id="city"></select></div>
+        <div class="field ck-grid__full"><label class="field__label">نشانی پستی <span class="req">*</span></label><input class="input" placeholder="خیابان، کوچه، پلاک"></div>
+        <div class="field"><label class="field__label">کد پستی <span class="req">*</span></label><input class="input input--ltr num is-invalid" value="۱۲۳۴۵"><span class="field__error"><svg class="i i--sm"><use href="#i-alert"/></svg>کد پستی باید ۱۰ رقم و بدون خط تیره باشد.</span></div>
+        <div class="field"><label class="field__label">موبایل گیرنده <span class="req">*</span></label><input class="input input--ltr num is-valid" value="۰۹۱۲۳۴۵۶۷۸۹"></div>
+      </div>
+      <button class="btn btn--block" style="margin-top:16px" data-close data-toast="آدرس ذخیره شد">ثبت آدرس</button>
+    </details>
+  </div>
+</div>
+
+<div data-um-footer></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/shell.js"></script>
+<script>
+  (function () {
+    var cities = { 'تهران': ['تهران', 'شهریار', 'اسلامشهر', 'ورامین'], 'اصفهان': ['اصفهان', 'کاشان', 'نجف‌آباد'], 'فارس': ['شیراز', 'مرودشت', 'کازرون'], 'خراسان رضوی': ['مشهد', 'نیشابور', 'سبزوار'] };
+    var prov = document.getElementById('prov'), city = document.getElementById('city');
+    function fill() { city.innerHTML = cities[prov.value].map(function (c) { return '<option>' + c + '</option>'; }).join(''); }
+    prov.addEventListener('change', fill); fill();
+
+    document.getElementById('buyer-type').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-type]'); if (!b) return;
+      this.querySelectorAll('button').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      var company = b.getAttribute('data-type') === 'company';
+      document.getElementById('company-fields').hidden = !company;
+      document.getElementById('person-fields').hidden = company;
+    });
+
+    var step = 'ship';
+    function go(s) {
+      step = s;
+      document.getElementById('pane-ship').hidden = s !== 'ship';
+      document.getElementById('pane-pay').hidden = s !== 'pay';
+      document.getElementById('step-ship').className = 'steps__item ' + (s === 'ship' ? 'is-current' : 'is-done');
+      document.getElementById('step-pay').className = 'steps__item ' + (s === 'pay' ? 'is-current' : '');
+      document.getElementById('next-btn').textContent = s === 'ship' ? 'ادامه و انتخاب روش پرداخت' : 'پرداخت ۲۷٬۱۳۰٬۰۰۰ تومان';
+      document.getElementById('next-btn-m').textContent = s === 'ship' ? 'ادامه' : 'پرداخت';
+      document.getElementById('back-btn').hidden = s === 'ship';
+      document.querySelector('.summary__total').textContent = s === 'ship' ? '۲۷٬۶۳۰٬۰۰۰ تومان' : '۲۷٬۱۳۰٬۰۰۰ تومان';
+      window.scrollTo({ top: 0 });
+    }
+    function next() { if (step === 'ship') go('pay'); else location.href = 'order.html'; }
+    document.getElementById('next-btn').addEventListener('click', next);
+    document.getElementById('next-btn-m').addEventListener('click', next);
+    document.getElementById('back-btn').addEventListener('click', function () { go('ship'); });
+  })();
+</script>
+</body>
+</html>
