@@ -12,6 +12,10 @@ namespace UltraMax\Core;
 use UltraMax\Core\Lib\Foundation\Requirements;
 use UltraMax\Core\Lib\Foundation\WooCompat;
 use UltraMax\Core\Lib\UI\Assets;
+use UltraMax\Core\Admin\Admin;
+use UltraMax\Core\Admin\Products;
+use UltraMax\Core\Admin\Rest;
+use UltraMax\Core\Admin\Wizard;
 
 /**
  * Boots the plugin once all plugins are loaded.
@@ -37,6 +41,7 @@ final class Plugin {
 	 */
 	public function boot(): void {
 		WooCompat::declare( ULTRA_MAX_CORE_FILE );
+		Options::register();
 		add_action( 'plugins_loaded', array( $this, 'init' ) );
 		add_action( 'init', array( $this, 'load_textdomain' ) );
 	}
@@ -53,6 +58,16 @@ final class Plugin {
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ), 5 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_assets' ), 5 );
+		add_filter( 'upload_mimes', array( $this, 'font_mimes' ) );
+
+		Rest::register();
+		Products::register();
+		CustomCode::register();
+		if ( is_admin() ) {
+			Admin::register();
+			Wizard::register();
+			Duplicate::register();
+		}
 
 		/**
 		 * Fires when Ultra Max Core has booted. Modules hook in here.
@@ -78,6 +93,19 @@ final class Plugin {
 	 */
 	public function register_assets(): void {
 		Assets::register( plugin_dir_path( ULTRA_MAX_CORE_FILE ) . 'assets/build', plugins_url( 'assets/build', ULTRA_MAX_CORE_FILE ) );
+	}
+
+	/**
+	 * Lets administrators upload WOFF2 fonts for the custom font setting (CORE-05).
+	 *
+	 * @param mixed $mimes Allowed types.
+	 * @return mixed
+	 */
+	public function font_mimes( mixed $mimes ): mixed {
+		if ( is_array( $mimes ) && current_user_can( 'edit_theme_options' ) ) {
+			$mimes['woff2'] = 'font/woff2';
+		}
+		return $mimes;
 	}
 
 	/**

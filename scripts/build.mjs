@@ -17,6 +17,7 @@ import * as esbuild from 'esbuild';
 import postcss from 'postcss';
 import tailwind from '@tailwindcss/postcss';
 import rtlcss from 'rtlcss';
+import { marked } from 'marked';
 import { root } from './lib/run.mjs';
 import { products } from './lib/products.mjs';
 import { prefixPackages } from './lib/prefix.mjs';
@@ -51,6 +52,8 @@ export const entries = [
 	} ) ),
 	// Admin screens bundle React 19: shadcn/ui needs it and WordPress 7.1 still ships React 18.
 	{ name: 'catalog/admin', js: 'tools/catalog/assets/src/admin.tsx', product: 'tools/catalog' },
+	// The Ultra Max panel (ADM-01 to ADM-07): React 19 bundled, like the catalog.
+	{ name: 'core/admin', js: 'plugins/ultra-max-core/assets/src/admin/index.tsx', product: 'plugins/ultra-max-core' },
 	{ name: 'acceptance/flowbite', js: 'packages/ui/acceptance/flowbite/fixture.ts', css: 'packages/ui/acceptance/flowbite/fixture.css' },
 ];
 
@@ -170,6 +173,27 @@ function copyToProducts() {
 }
 
 /**
+ * Converts the Persian help (docs/help/fa) into the JSON the dashboard's
+ * help page reads (ADM-06). help.pdf is made from the same files.
+ */
+export function buildHelp() {
+	const source = path.join( root, 'docs', 'help', 'fa' );
+	const articles = fs
+		.readdirSync( source )
+		.filter( ( file ) => file.endsWith( '.md' ) )
+		.sort()
+		.map( ( file ) => {
+			const markdown = fs.readFileSync( path.join( source, file ), 'utf8' );
+			return {
+				id: file.replace( /^\d+-/, '' ).replace( /\.md$/, '' ),
+				title: markdown.match( /^#\s+(.+)$/m )?.[ 1 ]?.trim() ?? file,
+				html: marked.parse( markdown, { async: false } ),
+			};
+		} );
+	write( path.join( root, 'plugins', 'ultra-max-core', 'assets', 'build', 'help', 'fa.json' ), JSON.stringify( articles ) );
+}
+
+/**
  * Prefixes the shared PHP packages and refreshes autoloaders.
  */
 function buildPhp() {
@@ -192,13 +216,14 @@ async function buildAll( withPhp ) {
 	writeScopedPreflight();
 	await Promise.all( entries.map( buildEntry ) );
 	copyToProducts();
+	buildHelp();
 	console.log( `Built in ${ ( ( Date.now() - started ) / 1000 ).toFixed( 1 ) }s${ dev ? ' (development)' : '' }.` );
 }
 
 await buildAll( ! skipPhp );
 
 if ( watch ) {
-	const watched = [ 'packages', 'themes', 'plugins', 'tools' ];
+	const watched = [ 'packages', 'themes', 'plugins', 'tools', 'docs' ];
 	const ignored = /(node_modules|vendor|vendor-prefixed|assets[\\/]build)/;
 	let timer;
 	let phpChanged = false;

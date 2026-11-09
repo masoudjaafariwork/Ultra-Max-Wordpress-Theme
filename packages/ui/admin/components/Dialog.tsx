@@ -18,9 +18,9 @@ import { buttonVariants } from '@ui-admin/components/ui/button';
 export interface DialogProps {
 	title: ReactNode;
 	description?: ReactNode;
-	/** Label of the button that opens the dialog. */
-	trigger: ReactNode;
-	children: ReactNode;
+	/** Label of the button that opens the dialog; leave out for a dialog opened from code. */
+	trigger?: ReactNode;
+	children?: ReactNode;
 	footer?: ReactNode;
 	open?: boolean;
 	onOpenChange?: ( open: boolean ) => void;
@@ -29,8 +29,8 @@ export interface DialogProps {
 export function Dialog( { title, description, trigger, children, footer, open, onOpenChange }: DialogProps ) {
 	return (
 		<ShadDialog open={ open } onOpenChange={ onOpenChange }>
-			<DialogTrigger className={ buttonVariants( { variant: 'default' } ) }>{ trigger }</DialogTrigger>
-			<DialogContent className="um-scope">
+			{ trigger ? <DialogTrigger className={ buttonVariants( { variant: 'default' } ) }>{ trigger }</DialogTrigger> : null }
+			<DialogContent className="um-scope" dir={ document.documentElement.dir === 'rtl' ? 'rtl' : 'ltr' }>
 				<DialogHeader>
 					<DialogTitle>{ title }</DialogTitle>
 					{ description ? <DialogDescription>{ description }</DialogDescription> : null }

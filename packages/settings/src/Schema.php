@@ -29,6 +29,7 @@ namespace UltraMax\Settings;
  * - media: an attachment id; `accept` limits the file type.
  * - repeater: a list of rows, each with the sub-`fields`.
  * - preview: no value; the panel shows a live preview.
+ * - backups: no value; the panel shows export, import, reset and backups.
  *
  * @phpstan-type Option array{value: string, label: string, color?: string, ramp?: array<int, string>}
  * @phpstan-type Field array{
@@ -57,6 +58,11 @@ namespace UltraMax\Settings;
 final class Schema {
 
 	public const FILTER = 'ultra_max_settings_schema';
+
+	/**
+	 * Field types that show something in the panel but hold no value.
+	 */
+	public const DISPLAY_ONLY = array( 'preview', 'backups' );
 
 	/**
 	 * Cached defaults, built once WordPress has loaded the theme.
@@ -113,7 +119,7 @@ final class Schema {
 		foreach ( self::sections() as $section ) {
 			foreach ( $section['groups'] as $group ) {
 				foreach ( $group['fields'] as $field ) {
-					if ( 'preview' !== $field['type'] ) {
+					if ( ! in_array( $field['type'], self::DISPLAY_ONLY, true ) ) {
 						$fields[ $field['id'] ] = $field;
 					}
 				}
@@ -163,7 +169,7 @@ final class Schema {
 			}
 			foreach ( $section['groups'] as $group ) {
 				foreach ( $group['fields'] as $field ) {
-					if ( 'preview' !== $field['type'] ) {
+					if ( ! in_array( $field['type'], self::DISPLAY_ONLY, true ) ) {
 						$ids[] = $field['id'];
 					}
 				}

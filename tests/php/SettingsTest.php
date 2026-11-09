@@ -70,9 +70,24 @@ final class SettingsTest extends WP_UnitTestCase {
 				'tablet'  => false,
 				'mobile'  => true,
 			),
-			Sanitizer::sanitize( array( 'type' => 'devices' ), array( 'desktop' => 'on', 'mobile' => true ) )
+			Sanitizer::sanitize(
+				array( 'type' => 'devices' ),
+				array(
+					'desktop' => 'on',
+					'mobile'  => true,
+				)
+			)
 		);
-		$this->assertSame( 'body{color:red}', Sanitizer::sanitize( array( 'type' => 'code', 'language' => 'css' ), 'body{color:red}</style><script>' ) );
+		$this->assertSame(
+			'body{color:red}',
+			Sanitizer::sanitize(
+				array(
+					'type'     => 'code',
+					'language' => 'css',
+				),
+				'body{color:red}</style><script>'
+			)
+		);
 		$rows = Sanitizer::sanitize(
 			array(
 				'type'   => 'repeater',
@@ -81,7 +96,12 @@ final class SettingsTest extends WP_UnitTestCase {
 						'id'      => 'type',
 						'type'    => 'select',
 						'default' => 'phone',
-						'options' => array( array( 'value' => 'phone', 'label' => 'Phone' ) ),
+						'options' => array(
+							array(
+								'value' => 'phone',
+								'label' => 'Phone',
+							),
+						),
 					),
 					array(
 						'id'   => 'value',

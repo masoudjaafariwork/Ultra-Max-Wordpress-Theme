@@ -36,4 +36,5 @@ if ( ! is_readable( $ultra_max_autoload ) ) {
 require_once $ultra_max_autoload;
 unset( $ultra_max_autoload );
 
+register_activation_hook( __FILE__, array( UltraMax\Core\Admin\Wizard::class, 'activated' ) );
 UltraMax\Core\Plugin::instance()->boot();
