@@ -10,7 +10,7 @@ A monorepo for Ultra Max, a Digikala-style Persian WooCommerce theme with compan
 - `docs/PROGRESS.fa.md`: phase status, finished slices, open questions and the next step.
 - `docs/PROMPTS.fa.md`: the prompts the user sends to start or continue each phase.
 
-Current status: phase 0, not started. No code has been written yet. Update this line when a phase changes.
+Current status: phase 0, in progress. The research part is done; the design part is next. No code has been written yet. Update this line when a phase changes.
 
 ## Hard rules
 
