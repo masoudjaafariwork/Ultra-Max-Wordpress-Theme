@@ -10,6 +10,13 @@ declare(strict_types=1);
 defined( 'ABSPATH' ) || exit;
 
 add_action(
+	'after_setup_theme',
+	static function (): void {
+		load_child_theme_textdomain( 'ultra-max-child', get_stylesheet_directory() . '/languages' );
+	}
+);
+
+add_action(
 	'wp_enqueue_scripts',
 	static function (): void {
 		wp_enqueue_style(

@@ -38,7 +38,9 @@
     "check:wp": "node scripts/wp-checks.mjs",
     "i18n": "node scripts/i18n.mjs",
     "help:pdf": "node scripts/help-pdf.mjs",
-    "package": "node scripts/package.mjs"
+    "package": "node scripts/package.mjs",
+    "test:package": "node scripts/test-package.mjs",
+    "screenshot": "node scripts/screenshot.mjs"
   },
   "overrides": {
     "playwright-core": "1.64.1",
@@ -62,6 +64,7 @@
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3",
     "typescript-eslint": "8.72.1",
-    "vitest": "5.0.5"
+    "vitest": "5.0.5",
+    "yazl": "3.3.1"
   }
 }

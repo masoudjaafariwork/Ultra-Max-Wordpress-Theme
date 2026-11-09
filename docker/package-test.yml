@@ -1,0 +1,60 @@
+# Throwaway site that installs the release zips the way a buyer would.
+# Used by `npm run test:package`; shares nothing with the development site.
+name: ultra-max-package-test
+
+x-db-env: &db-env
+  WORDPRESS_DB_HOST: db
+  WORDPRESS_DB_USER: root
+  WORDPRESS_DB_PASSWORD: password
+  WORDPRESS_DB_NAME: wordpress
+
+services:
+  db:
+    image: mariadb:11.8
+    environment:
+      MARIADB_ROOT_PASSWORD: password
+      MARIADB_DATABASE: wordpress
+    tmpfs: [ /var/lib/mysql ]
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
+      interval: 3s
+      timeout: 5s
+      retries: 40
+
+  wordpress:
+    image: ${WP_IMAGE:-wordpress:php8.1-apache}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8890:80"
+    environment:
+      <<: *db-env
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_DEBUG_LOG', true );
+        define( 'WP_DEBUG_DISPLAY', false );
+        define( 'FS_METHOD', 'direct' );
+    volumes:
+      - site:/var/www/html
+      - ../dist:/dist:ro
+    healthcheck:
+      test: [ "CMD", "test", "-f", "/var/www/html/wp-includes/version.php" ]
+      interval: 2s
+      timeout: 3s
+      retries: 60
+
+  cli:
+    image: ${CLI_IMAGE:-wordpress:cli-php8.1}
+    profiles: [ "tools" ]
+    user: "33:33"
+    environment:
+      <<: *db-env
+      HOME: /tmp
+    volumes:
+      - site:/var/www/html
+      - ../dist:/dist:ro
+    working_dir: /var/www/html
+
+volumes:
+  site:
