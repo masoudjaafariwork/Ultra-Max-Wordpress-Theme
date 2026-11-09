@@ -31,6 +31,8 @@ Current status: phase 0, awaiting owner approval. Research and design are done; 
 - `plugins/ultra-max-core` holds the Elementor layout builder, widgets, store modules and the demo importer.
 - `plugins/ultra-max-auth` holds OTP login, SMS gateways and notifications.
 - `plugins/ultra-max-invoice` holds invoices, labels and order documents, and later the Moadian integration.
+- `plugins/ultra-max-seo` holds meta, sitemaps, structured data, redirects and SEO analysis. It must coexist with Yoast and Rank Math without printing anything twice.
+- Every UI element comes from the central component library in `packages/ui` (CORE-20): PHP renderers with vanilla JS on the storefront, React on Radix in the admin. Pages and widgets never write their own button, form or dialog markup.
 - Shared code lives in `packages/` and is namespace-prefixed at build time.
 - Each feature has one renderer, shared by the default templates, the Elementor widgets and the shortcodes.
 - Every module has an on/off switch. A disabled module loads no assets and runs no queries.
