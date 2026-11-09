@@ -186,4 +186,19 @@ final class ThemeTest extends WP_UnitTestCase {
 		$this->assertStringContainsString( 'href="tel:1"', $buttons );
 		$this->assertStringContainsString( 'target="_blank" rel="noopener"', $buttons );
 	}
+
+	public function test_comment_form_reads_wordpress_commenter_keys(): void {
+		$args = \UltraMax\Theme\Lib\UI\Comments::form_args( wp_get_current_commenter(), true );
+		$this->assertStringContainsString( 'name="author"', $args['fields']['author'] );
+		$args = \UltraMax\Theme\Lib\UI\Comments::form_args(
+			array(
+				'comment_author'       => 'Sara',
+				'comment_author_email' => 'a@b.c',
+				'comment_author_url'   => '',
+			),
+			true
+		);
+		$this->assertStringContainsString( 'value="Sara"', $args['fields']['author'] );
+		$this->assertStringContainsString( ' checked', $args['fields']['cookies'] );
+	}
 }

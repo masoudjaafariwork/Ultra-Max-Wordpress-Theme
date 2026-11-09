@@ -41,7 +41,7 @@ final class Button {
 		'ghost'   => 'bg-transparent text-fg border-transparent hover:bg-surface-3',
 		'neutral' => 'bg-surface text-fg border-border-strong hover:bg-surface-3',
 		'accent'  => 'bg-accent text-on-accent border-transparent hover:bg-accent-hover',
-		'danger'  => 'bg-transparent text-danger border-danger/40 hover:bg-danger-soft',
+		'danger'  => 'bg-transparent text-danger-text border-danger/40 hover:bg-danger-soft',
 	);
 
 	private const SIZE_CLASSES = array(

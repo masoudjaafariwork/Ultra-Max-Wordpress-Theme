@@ -17,6 +17,7 @@ msgstr ""
 #. Theme Name of the theme
 #. Author of the theme
 #: style.css
+#: vendor-prefixed/foundation/Brand.php:31
 msgid "Ultra Max"
 msgstr "الترا مکس"
 
@@ -29,19 +30,16 @@ msgstr "قالب فروشگاهی سریع و فارسی برای ووکامرس
 msgid "The Ultra Max theme is missing its build files. Run \"npm run build\" in the development repository, or install the release package."
 msgstr "فایل‌های ساخته‌شده قالب الترا مکس پیدا نشد. در مخزن توسعه \"npm run build\" را اجرا کنید یا بسته انتشار را نصب کنید."
 
-#: header.php:19
+#: src/Template.php:414
 msgid "Skip to content"
 msgstr "رفتن به محتوا"
 
-#: index.php:37
-msgid "Nothing was found."
-msgstr "چیزی پیدا نشد."
-
-#: src/Theme.php:57
+#: src/Theme.php:88
 msgid "Primary menu"
 msgstr "فهرست اصلی"
 
-#: src/Theme.php:58
+#: src/Template.php:251
+#: src/Theme.php:89
 msgid "Footer menu"
 msgstr "فهرست پابرگ"
 
@@ -60,3 +58,849 @@ msgstr "%1$s به وردپرس نسخه %2$s یا بالاتر نیاز دارد
 #: vendor-prefixed/ui/components/dialog/Overlay.php:58
 msgid "Close"
 msgstr "بستن"
+
+#: 404.php:25
+msgid "Back to the home page"
+msgstr "بازگشت به صفحه اصلی"
+
+#: 404.php:37
+#: src/Options.php:218
+msgid "This page could not be found"
+msgstr "این صفحه پیدا نشد"
+
+#: 404.php:38
+#: src/Options.php:224
+msgid "The link may be broken or the page may have moved. Try searching or go back to the home page."
+msgstr "شاید پیوند خراب باشد یا صفحه جابه‌جا شده باشد. جستجو کنید یا به صفحه اصلی برگردید."
+
+#. translators: %s: number of comments.
+#: comments.php:25
+#: src/Template.php:340
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s دیدگاه"
+msgstr[1] "%s دیدگاه"
+
+#: comments.php:45
+msgid "Comments are closed."
+msgstr "امکان ثبت دیدگاه بسته شده است."
+
+#. translators: %s: search terms.
+#: index.php:19
+#: src/Breadcrumbs.php:93
+#, php-format
+msgid "Search results for \"%s\""
+msgstr "نتیجه جستجوی «%s»"
+
+#: index.php:23
+#: src/Breadcrumbs.php:42
+msgid "Blog"
+msgstr "وبلاگ"
+
+#: index.php:45
+msgid "Nothing matched your search"
+msgstr "چیزی با جستجوی شما پیدا نشد"
+
+#: index.php:45
+msgid "Nothing has been published here yet"
+msgstr "هنوز چیزی اینجا منتشر نشده است"
+
+#: index.php:46
+msgid "Check the spelling or try fewer or more general words."
+msgstr "املای کلمه‌ها را بررسی کنید یا کلمه‌های کمتر و کلی‌تری بنویسید."
+
+#: sidebar.php:16
+#: src/Theme.php:102
+msgid "Sidebar"
+msgstr "ستون کناری"
+
+#: src/Breadcrumbs.php:27
+msgid "Home"
+msgstr "خانه"
+
+#: src/Breadcrumbs.php:98
+msgid "Page not found"
+msgstr "صفحه پیدا نشد"
+
+#: src/ContactLinks.php:29
+msgid "WhatsApp"
+msgstr "واتساپ"
+
+#: src/ContactLinks.php:33
+msgid "Telegram"
+msgstr "تلگرام"
+
+#: src/ContactLinks.php:37
+msgid "Eitaa"
+msgstr "ایتا"
+
+#: src/ContactLinks.php:41
+msgid "Bale"
+msgstr "بله"
+
+#: src/ContactLinks.php:45
+msgid "Call us"
+msgstr "تماس تلفنی"
+
+#: src/ContactLinks.php:49
+msgid "Text message"
+msgstr "پیامک"
+
+#: src/ContactLinks.php:53
+#: vendor-prefixed/ui/components/comments/Comments.php:127
+msgid "Email"
+msgstr "ایمیل"
+
+#: src/ContactLinks.php:57
+#: src/Extras.php:85
+msgid "Contact us"
+msgstr "تماس با ما"
+
+#: src/Content.php:29
+msgid "Pages:"
+msgstr "صفحه‌ها:"
+
+#: src/Extras.php:56
+msgid "Close the announcement"
+msgstr "بستن اعلان"
+
+#: src/Extras.php:99
+msgid "Back to top"
+msgstr "بازگشت به بالا"
+
+#: src/Maintenance.php:87
+msgid "Opening soon"
+msgstr "به‌زودی افتتاح می‌شود"
+
+#: src/Maintenance.php:87
+#: src/Options.php:180
+msgid "We will be back soon"
+msgstr "به‌زودی برمی‌گردیم"
+
+#: src/Maintenance.php:99
+msgid "Our store is getting ready. Please visit us again soon."
+msgstr "فروشگاه ما در حال آماده شدن است. لطفاً به‌زودی دوباره سر بزنید."
+
+#: src/Maintenance.php:100
+msgid "We are improving the store and will be back shortly. Thank you for your patience."
+msgstr "در حال بهتر کردن فروشگاه هستیم و به‌زودی برمی‌گردیم. از صبر شما سپاسگزاریم."
+
+#. translators: %s: Jalali date.
+#: src/Maintenance.php:112
+#, php-format
+msgid "Back on %s"
+msgstr "بازگشت در %s"
+
+#: src/Maintenance.php:127
+msgid "Coming soon mode is on"
+msgstr "حالت «به‌زودی» روشن است"
+
+#: src/Maintenance.php:127
+msgid "Maintenance mode is on"
+msgstr "حالت تعمیر روشن است"
+
+#: src/Options.php:39
+#: src/Options.php:44
+msgid "Right"
+msgstr "راست"
+
+#: src/Options.php:40
+#: src/Options.php:43
+msgid "Left"
+msgstr "چپ"
+
+#: src/Options.php:66
+msgid "No sidebar"
+msgstr "بدون ستون کناری"
+
+#: src/Options.php:82
+msgid "Same as body text"
+msgstr "مثل متن"
+
+#: src/Options.php:115
+msgid "Custom colour"
+msgstr "رنگ دلخواه"
+
+#: src/Options.php:119
+msgid "General"
+msgstr "عمومی"
+
+#: src/Options.php:125
+msgid "Dates and digits"
+msgstr "تاریخ و ارقام"
+
+#: src/Options.php:132
+msgid "Digits"
+msgstr "نمایش ارقام"
+
+#: src/Options.php:133
+msgid "Digits of prices, dates and order numbers on the storefront. Dates always use the Jalali calendar."
+msgstr "ارقام قیمت، تاریخ و شماره سفارش در فروشگاه. تاریخ‌ها همیشه شمسی هستند."
+
+#: src/Options.php:135
+msgid "numbers Persian English Jalali calendar date"
+msgstr "عدد رقم فارسی انگلیسی شمسی تقویم تاریخ"
+
+#: src/Options.php:139
+msgid "Persian ۱۲۳"
+msgstr "فارسی ۱۲۳"
+
+#: src/Options.php:143
+msgid "Latin 123"
+msgstr "انگلیسی 123"
+
+#: src/Options.php:151
+msgid "Maintenance and coming soon"
+msgstr "حالت تعمیر و به‌زودی"
+
+#: src/Options.php:158
+msgid "Site mode"
+msgstr "وضعیت سایت"
+
+#: src/Options.php:159
+msgid "Visitors see a notice page; you and other editors still see the site. Maintenance answers search engines with \"come back later\" (503)."
+msgstr "بازدیدکنندگان یک صفحه اطلاع‌رسانی می‌بینند و شما و دیگر ویرایشگران همچنان سایت را می‌بینید. در حالت تعمیر به موتورهای جستجو گفته می‌شود «بعداً برگرد» (۵۰۳)."
+
+#: src/Options.php:164
+msgid "Open"
+msgstr "باز"
+
+#: src/Options.php:168
+msgid "Maintenance"
+msgstr "تعمیر"
+
+#: src/Options.php:172
+msgid "Coming soon"
+msgstr "به‌زودی"
+
+#: src/Options.php:179
+#: src/Options.php:217
+msgid "Title"
+msgstr "عنوان"
+
+#: src/Options.php:189
+#: src/Options.php:223
+msgid "Message"
+msgstr "پیام"
+
+#: src/Options.php:198
+msgid "Back on"
+msgstr "تاریخ بازگشت"
+
+#: src/Options.php:199
+msgid "Optional. Shown on the page, for example 1405/09/01."
+msgstr "اختیاری. در صفحه نمایش داده می‌شود، مثلاً ۱۴۰۵/۰۹/۰۱."
+
+#: src/Options.php:210
+msgid "Page not found (404)"
+msgstr "صفحه پیدا نشد (۴۰۴)"
+
+#: src/Options.php:229
+msgid "Show the search form"
+msgstr "نمایش فرم جستجو"
+
+#: src/Options.php:238
+msgid "Colours and typography"
+msgstr "رنگ و تایپوگرافی"
+
+#: src/Options.php:244
+msgid "Colours"
+msgstr "رنگ‌ها"
+
+#: src/Options.php:251
+msgid "Main colour"
+msgstr "رنگ اصلی"
+
+#: src/Options.php:252
+msgid "Buttons, links, discount badges and progress bars use this colour. Lighter and darker shades are made automatically."
+msgstr "دکمه‌ها، پیوندها، برچسب تخفیف و نوار پیشرفت از این رنگ ساخته می‌شوند. طیف روشن و تیره خودکار ساخته می‌شود."
+
+#: src/Options.php:255
+msgid "brand primary color theme"
+msgstr "برند رنگ اصلی پوسته"
+
+#: src/Options.php:260
+msgid "Your brand colour"
+msgstr "رنگ برند شما"
+
+#: src/Options.php:271
+msgid "Accent colour"
+msgstr "رنگ تأکیدی"
+
+#: src/Options.php:272
+msgid "For special offers, countdowns and highlighted buttons."
+msgstr "برای پیشنهاد شگفت‌انگیز، شمارش معکوس و دکمه‌های ویژه."
+
+#: src/Options.php:280
+msgid "Fonts"
+msgstr "فونت‌ها"
+
+#: src/Options.php:287
+msgid "Body text"
+msgstr "متن"
+
+#: src/Options.php:288
+msgid "Fonts load from your own site, never from an outside service."
+msgstr "فونت‌ها از سایت خود شما بارگذاری می‌شوند و به سرویس بیرونی وصل نمی‌شوند."
+
+#: src/Options.php:296
+msgid "Headings"
+msgstr "عنوان‌ها"
+
+#: src/Options.php:304
+msgid "Numbers and prices"
+msgstr "اعداد و قیمت"
+
+#: src/Options.php:312
+msgid "Your own font"
+msgstr "فونت خودتان"
+
+#: src/Options.php:313
+msgid "Upload a WOFF2 file, then choose \"Uploaded font\" above. Make sure its licence allows use on websites."
+msgstr "یک فایل WOFF2 بارگذاری کنید و بعد در بالا «فونت بارگذاری‌شده» را انتخاب کنید. مطمئن شوید مجوز فونت استفاده در وب‌سایت را اجازه می‌دهد."
+
+#: src/Options.php:320
+msgid "Corners, shadows and spacing"
+msgstr "گردی گوشه، سایه و فاصله"
+
+#: src/Options.php:327
+msgid "Corner radius"
+msgstr "گردی گوشه‌ها"
+
+#: src/Options.php:328
+msgid "Applies to cards, buttons and windows."
+msgstr "روی کارت‌ها، دکمه‌ها و پنجره‌ها اعمال می‌شود."
+
+#: src/Options.php:339
+msgid "Shadows"
+msgstr "سایه‌ها"
+
+#: src/Options.php:344
+msgid "None"
+msgstr "بدون سایه"
+
+#: src/Options.php:348
+msgid "Soft"
+msgstr "ملایم"
+
+#: src/Options.php:352
+msgid "Strong"
+msgstr "پررنگ"
+
+#: src/Options.php:359
+msgid "Page side spacing"
+msgstr "فاصله کناره صفحه"
+
+#: src/Options.php:370
+msgid "Live preview"
+msgstr "پیش‌نمایش زنده"
+
+#: src/Options.php:371
+msgid "See your changes here before saving."
+msgstr "تغییرات را پیش از ذخیره اینجا ببینید."
+
+#: src/Options.php:379
+msgid "Layout and header"
+msgstr "چیدمان و سربرگ"
+
+#: src/Options.php:385
+msgid "Page layout"
+msgstr "چیدمان صفحه"
+
+#: src/Options.php:392
+msgid "Site width"
+msgstr "عرض سایت"
+
+#: src/Options.php:397
+msgid "Full width"
+msgstr "تمام‌عرض"
+
+#: src/Options.php:401
+msgid "Boxed"
+msgstr "جعبه‌ای"
+
+#: src/Options.php:408
+msgid "Content width"
+msgstr "عرض محتوا"
+
+#: src/Options.php:419
+msgid "Sidebar on blog and archives"
+msgstr "ستون کناری در وبلاگ و بایگانی"
+
+#: src/Options.php:426
+msgid "Sidebar on posts"
+msgstr "ستون کناری در نوشته‌ها"
+
+#: src/Options.php:433
+msgid "Sidebar on pages"
+msgstr "ستون کناری در برگه‌ها"
+
+#: src/Options.php:441
+msgid "Header and scrolling"
+msgstr "سربرگ و پیمایش"
+
+#: src/Options.php:448
+msgid "Sticky header"
+msgstr "سربرگ چسبان"
+
+#: src/Options.php:449
+msgid "The header stays at the top while visitors scroll."
+msgstr "سربرگ هنگام پیمایش بالای صفحه می‌ماند."
+
+#: src/Options.php:455
+msgid "Search field in the header"
+msgstr "جستجو در سربرگ"
+
+#: src/Options.php:461
+msgid "Sticky sidebar"
+msgstr "ستون کناری چسبان"
+
+#: src/Options.php:462
+msgid "On wide screens the sidebar follows the page while it fits on screen."
+msgstr "در صفحه‌های پهن، ستون کناری تا وقتی در صفحه جا شود همراه صفحه می‌آید."
+
+#: src/Options.php:468
+#: src/Options.php:762
+msgid "Back to top button"
+msgstr "دکمه بازگشت به بالا"
+
+#: src/Options.php:479
+msgid "Page title and breadcrumbs"
+msgstr "عنوان صفحه و مسیر راهنما"
+
+#: src/Options.php:486
+msgid "Show the page title"
+msgstr "نمایش عنوان صفحه"
+
+#: src/Options.php:492
+msgid "Title style"
+msgstr "سبک عنوان"
+
+#: src/Options.php:497
+msgid "Plain"
+msgstr "ساده"
+
+#: src/Options.php:501
+msgid "Light band"
+msgstr "نوار روشن"
+
+#: src/Options.php:505
+msgid "Brand colour"
+msgstr "رنگ برند"
+
+#: src/Options.php:512
+msgid "Title alignment"
+msgstr "جای عنوان"
+
+#: src/Options.php:521
+msgid "Centre"
+msgstr "وسط"
+
+#: src/Options.php:528
+#: src/Template.php:281
+msgid "Breadcrumbs"
+msgstr "مسیر راهنما"
+
+#: src/Options.php:529
+msgid "The path from the home page to the current page. Untick every device to hide it."
+msgstr "مسیر صفحه اصلی تا صفحه فعلی. برای پنهان کردن، تیک همه دستگاه‌ها را بردارید."
+
+#: src/Options.php:542
+#: src/Options.php:742
+msgid "Announcement bar"
+msgstr "نوار اطلاع‌رسانی"
+
+#: src/Options.php:548
+msgid "Announcement bar above the site"
+msgstr "نوار اطلاع‌رسانی بالای سایت"
+
+#: src/Options.php:556
+msgid "Text"
+msgstr "متن"
+
+#: src/Options.php:557
+msgid "Leave empty to hide the bar."
+msgstr "برای پنهان کردن نوار خالی بگذارید."
+
+#: src/Options.php:558
+msgid "Free shipping on orders over 500,000 toman"
+msgstr "ارسال رایگان برای سفارش‌های بالای ۵۰۰ هزار تومان"
+
+#: src/Options.php:563
+msgid "Button text"
+msgstr "متن دکمه"
+
+#: src/Options.php:568
+msgid "Button link"
+msgstr "پیوند دکمه"
+
+#: src/Options.php:574
+msgid "Colour"
+msgstr "رنگ"
+
+#: src/Options.php:579
+msgid "Brand"
+msgstr "برند"
+
+#: src/Options.php:583
+msgid "Accent"
+msgstr "تأکیدی"
+
+#: src/Options.php:587
+msgid "Dark"
+msgstr "تیره"
+
+#: src/Options.php:594
+msgid "Show from"
+msgstr "نمایش از"
+
+#: src/Options.php:595
+msgid "Optional Jalali date, for example 1405/08/18."
+msgstr "تاریخ شمسی، اختیاری. مثلاً ۱۴۰۵/۰۸/۱۸."
+
+#: src/Options.php:601
+msgid "Show until"
+msgstr "نمایش تا"
+
+#: src/Options.php:602
+msgid "Optional. The bar hides after the end of this day."
+msgstr "اختیاری. نوار پس از پایان این روز پنهان می‌شود."
+
+#: src/Options.php:608
+msgid "Visitors can close it"
+msgstr "بازدیدکننده بتواند آن را ببندد"
+
+#: src/Options.php:614
+#: src/Options.php:679
+msgid "Show on"
+msgstr "نمایش در"
+
+#: src/Options.php:622
+msgid "Contact buttons"
+msgstr "دکمه‌های تماس"
+
+#: src/Options.php:628
+#: src/Options.php:752
+msgid "Floating contact buttons"
+msgstr "دکمه‌های تماس شناور"
+
+#: src/Options.php:636
+msgid "Buttons"
+msgstr "دکمه‌ها"
+
+#: src/Options.php:637
+msgid "Add as many as you need. Drag to change the order."
+msgstr "هر چند دکمه که لازم دارید اضافه کنید. ترتیب را با دکمه‌های جابه‌جایی عوض کنید."
+
+#: src/Options.php:643
+msgid "Service"
+msgstr "سرویس"
+
+#: src/Options.php:650
+msgid "Number, username or link"
+msgstr "شماره، نام کاربری یا پیوند"
+
+#: src/Options.php:656
+msgid "Label (optional)"
+msgstr "عنوان (اختیاری)"
+
+#: src/Options.php:663
+msgid "Position"
+msgstr "جای دکمه"
+
+#: src/Options.php:687
+msgid "Performance"
+msgstr "کارایی"
+
+#: src/Options.php:693
+msgid "Loading"
+msgstr "بارگذاری"
+
+#: src/Options.php:700
+msgid "Lazy-load images and embeds"
+msgstr "بارگذاری تنبل تصویر و ویدئو"
+
+#: src/Options.php:701
+msgid "Images and videos below the fold load only when visitors scroll to them."
+msgstr "تصویرها و ویدئوهای پایین صفحه فقط وقتی بارگذاری می‌شوند که بازدیدکننده به آن‌ها برسد."
+
+#: src/Options.php:707
+msgid "Preload the main image"
+msgstr "پیش‌بارگذاری تصویر اصلی"
+
+#: src/Options.php:708
+msgid "The featured image at the top of a post loads first, so the page looks ready sooner."
+msgstr "تصویر شاخص بالای نوشته زودتر از همه بارگذاری می‌شود تا صفحه زودتر آماده دیده شود."
+
+#: src/Options.php:714
+msgid "Preload the body font"
+msgstr "پیش‌بارگذاری فونت متن"
+
+#: src/Options.php:720
+msgid "Inline critical CSS"
+msgstr "CSS بحرانی درون صفحه"
+
+#: src/Options.php:721
+msgid "Puts the styles the top of the page needs into the page itself, so it draws without waiting for a file."
+msgstr "استایل‌هایی که بالای صفحه لازم دارد داخل خود صفحه قرار می‌گیرد تا بدون انتظار برای یک فایل نمایش داده شود."
+
+#: src/Options.php:743
+msgid "A bar above the header with a message, a button and optional dates."
+msgstr "نواری بالای سربرگ با پیام، دکمه و بازه زمانی اختیاری."
+
+#: src/Options.php:753
+msgid "WhatsApp, Telegram, Eitaa, Bale and phone buttons in a corner of every page."
+msgstr "دکمه‌های واتساپ، تلگرام، ایتا، بله و تلفن در گوشه همه صفحه‌ها."
+
+#: src/Options.php:763
+msgid "A round button that appears after scrolling and returns to the top."
+msgstr "دکمه گردی که پس از پیمایش ظاهر می‌شود و به بالای صفحه برمی‌گرداند."
+
+#: src/Template.php:157
+#: src/Template.php:176
+#: src/Template.php:177
+msgid "Search"
+msgstr "جستجو"
+
+#: src/Template.php:179
+msgid "Search the store…"
+msgstr "جستجو در فروشگاه…"
+
+#: src/Template.php:192
+msgid "My account"
+msgstr "حساب من"
+
+#: src/Template.php:194
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: src/Template.php:199
+msgid "Menu"
+msgstr "منو"
+
+#: src/Template.php:203
+#: src/Template.php:223
+msgid "Main menu"
+msgstr "منوی اصلی"
+
+#. translators: 1: year, 2: site name.
+#: src/Template.php:259
+#, php-format
+msgid "© %1$s %2$s. All rights reserved."
+msgstr "© %1$s %2$s. همه حقوق محفوظ است."
+
+#: src/Template.php:314
+msgid "Published on"
+msgstr "تاریخ انتشار"
+
+#: src/Template.php:322
+#: vendor-prefixed/ui/components/comments/Comments.php:54
+msgid "Author"
+msgstr "نویسنده"
+
+#: src/Template.php:332
+msgid "Category"
+msgstr "دسته"
+
+#: src/Template.php:360
+msgid "(no title)"
+msgstr "(بدون عنوان)"
+
+#: src/Template.php:365
+msgid "Featured"
+msgstr "ویژه"
+
+#: src/Template.php:381
+msgid "Pages"
+msgstr "صفحه‌ها"
+
+#: src/Template.php:386
+msgid "Previous"
+msgstr "قبلی"
+
+#: src/Template.php:387
+msgid "Next"
+msgstr "بعدی"
+
+#: src/Theme.php:103
+msgid "Shown next to posts, pages and archives when the layout settings allow a sidebar."
+msgstr "کنار نوشته‌ها، برگه‌ها و بایگانی‌ها نمایش داده می‌شود، اگر تنظیمات چیدمان ستون کناری را اجازه دهد."
+
+#. translators: %d: footer column number.
+#: src/Theme.php:114
+#, php-format
+msgid "Footer column %d"
+msgstr "ستون پابرگ %d"
+
+#: src/Tokens.php:41
+msgid "Indigo"
+msgstr "نیلی"
+
+#: src/Tokens.php:54
+msgid "Ocean"
+msgstr "اقیانوسی"
+
+#: src/Tokens.php:67
+msgid "Teal"
+msgstr "فیروزه‌ای"
+
+#: src/Tokens.php:80
+msgid "Emerald"
+msgstr "زمردی"
+
+#: src/Tokens.php:93
+msgid "Graphite"
+msgstr "گرافیتی"
+
+#: src/Tokens.php:117
+msgid "Vazirmatn"
+msgstr "وزیرمتن"
+
+#: src/Tokens.php:121
+msgid "Estedad"
+msgstr "استعداد"
+
+#: src/Tokens.php:126
+msgid "Uploaded font"
+msgstr "فونت بارگذاری‌شده"
+
+#: src/Tokens.php:130
+msgid "Device font (loads nothing)"
+msgstr "فونت دستگاه (بدون بارگذاری)"
+
+#: vendor-prefixed/foundation/Jalali.php:153
+msgid "Farvardin"
+msgstr "فروردین"
+
+#: vendor-prefixed/foundation/Jalali.php:154
+msgid "Ordibehesht"
+msgstr "اردیبهشت"
+
+#: vendor-prefixed/foundation/Jalali.php:155
+msgid "Khordad"
+msgstr "خرداد"
+
+#: vendor-prefixed/foundation/Jalali.php:156
+msgid "Tir"
+msgstr "تیر"
+
+#: vendor-prefixed/foundation/Jalali.php:157
+msgid "Mordad"
+msgstr "مرداد"
+
+#: vendor-prefixed/foundation/Jalali.php:158
+msgid "Shahrivar"
+msgstr "شهریور"
+
+#: vendor-prefixed/foundation/Jalali.php:159
+msgid "Mehr"
+msgstr "مهر"
+
+#: vendor-prefixed/foundation/Jalali.php:160
+msgid "Aban"
+msgstr "آبان"
+
+#: vendor-prefixed/foundation/Jalali.php:161
+msgid "Azar"
+msgstr "آذر"
+
+#: vendor-prefixed/foundation/Jalali.php:162
+msgid "Dey"
+msgstr "دی"
+
+#: vendor-prefixed/foundation/Jalali.php:163
+msgid "Bahman"
+msgstr "بهمن"
+
+#: vendor-prefixed/foundation/Jalali.php:164
+msgid "Esfand"
+msgstr "اسفند"
+
+#: vendor-prefixed/foundation/Jalali.php:175
+msgid "Yekshanbeh"
+msgstr "یکشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:176
+msgid "Doshanbeh"
+msgstr "دوشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:177
+msgid "Seshanbeh"
+msgstr "سه‌شنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:178
+msgid "Chaharshanbeh"
+msgstr "چهارشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:179
+msgid "Panjshanbeh"
+msgstr "پنجشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:180
+msgid "Jomeh"
+msgstr "جمعه"
+
+#: vendor-prefixed/foundation/Jalali.php:181
+msgid "Shanbeh"
+msgstr "شنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "pm"
+msgstr "ب.ظ"
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "am"
+msgstr "ق.ظ"
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "PM"
+msgstr "بعدازظهر"
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "AM"
+msgstr "قبل‌ازظهر"
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting all settings"
+msgstr "پیش از بازنشانی همه تنظیمات"
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting a section"
+msgstr "پیش از بازنشانی یک بخش"
+
+#: vendor-prefixed/settings/Store.php:213
+msgid "Before importing settings"
+msgstr "پیش از درون‌ریزی تنظیمات"
+
+#: vendor-prefixed/settings/Store.php:282
+msgid "Before restoring a backup"
+msgstr "پیش از بازگردانی پشتیبان"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:61
+msgid "Your comment is awaiting moderation."
+msgstr "دیدگاه شما در انتظار بررسی است."
+
+#: vendor-prefixed/ui/components/comments/Comments.php:65
+msgid "Edit"
+msgstr "ویرایش"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:124
+msgid "Your email address will not be published."
+msgstr "نشانی ایمیل شما منتشر نمی‌شود."
+
+#: vendor-prefixed/ui/components/comments/Comments.php:126
+msgid "Name"
+msgstr "نام"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:128
+msgid "Website"
+msgstr "وب‌سایت"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:129
+msgid "Save my name and email in this browser for the next time I comment."
+msgstr "نام و ایمیل من را برای دیدگاه بعدی در این مرورگر نگه دار."
+
+#: vendor-prefixed/ui/components/comments/Comments.php:131
+msgid "Comment"
+msgstr "دیدگاه"

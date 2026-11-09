@@ -136,10 +136,15 @@ export function SettingRow( { htmlFor, label, help, token, children, id, highlig
 		highlighted && 'rounded-lg bg-accent-soft/50 outline-2 outline-offset-4 outline-accent-soft'
 	);
 	if ( group ) {
+		// A legend sits on the fieldset's border whatever the padding, so the
+		// visible label is a plain block and the legend is for screen readers.
 		return (
-			<fieldset id={ id } className={ cn( classes, 'm-0 min-w-0 border-x-0 border-t-0 p-0' ) } aria-describedby={ helpId }>
-				<legend className="float-start p-0">{ head }</legend>
-				<div className="flex min-w-0 flex-col gap-3">{ children }</div>
+			<fieldset id={ id } className={ cn( 'm-0 min-w-0 scroll-mt-28 border-x-0 border-t-0 border-b border-border p-0 py-5 first:pt-0 last:border-b-0 last:pb-0', highlighted && 'rounded-lg bg-accent-soft/50' ) } aria-describedby={ helpId }>
+				<legend className="sr-only">{ label }</legend>
+				<div className="grid gap-6 xl:grid-cols-[260px_minmax(0,1fr)] max-xl:gap-3">
+					<div aria-hidden="true">{ head }</div>
+					<div className="flex min-w-0 flex-col gap-3">{ children }</div>
+				</div>
 			</fieldset>
 		);
 	}

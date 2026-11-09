@@ -62,7 +62,7 @@ final class Admin {
 		$cap  = 'edit_theme_options';
 		$page = array( self::class, 'render' );
 
-		self::$hooks['ultra-max'] = (string) add_menu_page( $name, $name, $cap, 'ultra-max', $page, Brand::menu_icon(), 59 );
+		self::$hooks['ultra-max'] = (string) add_menu_page( $name, $name, $cap, 'ultra-max', $page, self::menu_icon(), 59 );
 		$titles                   = array(
 			'ultra-max'          => __( 'Dashboard', 'ultra-max-core' ),
 			'ultra-max-settings' => __( 'Settings', 'ultra-max-core' ),
@@ -74,6 +74,15 @@ final class Admin {
 			$capability           = in_array( $slug, array( 'ultra-max-modules', 'ultra-max-wizard' ), true ) ? 'manage_options' : $cap;
 			self::$hooks[ $slug ] = (string) add_submenu_page( 'ultra-max', $title . ' ‹ ' . $name, $title, $capability, $slug, $page );
 		}
+	}
+
+	/**
+	 * The brand mark as the base64 data URI WordPress expects for a menu
+	 * icon it can colour.
+	 */
+	private static function menu_icon(): string {
+		// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- Data URI of our own SVG for add_menu_page().
+		return 'data:image/svg+xml;base64,' . base64_encode( Brand::menu_svg() );
 	}
 
 	/**

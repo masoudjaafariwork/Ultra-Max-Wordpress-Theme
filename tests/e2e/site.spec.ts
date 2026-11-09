@@ -53,7 +53,8 @@ test.describe( 'storefront', () => {
 		expect( response?.status() ).toBe( 200 );
 		await expect( page.locator( 'html' ) ).toHaveAttribute( 'dir', 'rtl' );
 		await expect( page.locator( 'html' ) ).toHaveAttribute( 'lang', 'fa-IR' );
-		await expect( page.locator( 'link#ultra-max-ui-css' ) ).toHaveCount( 1 );
+		// The storefront stylesheet is printed inline as critical CSS (PERF-02), or linked when that setting is off.
+		await expect( page.locator( 'link#ultra-max-ui-css, style#ultra-max-ui-css' ) ).toHaveCount( 1 );
 		await expect( page.locator( 'script#ultra-max-ui-js' ) ).toHaveCount( 1 );
 		await expect( page.locator( 'header.um-site-header' ) ).toBeVisible();
 		expect( errors ).toEqual( [] );
@@ -61,9 +62,21 @@ test.describe( 'storefront', () => {
 
 	test( 'loads the right-to-left stylesheet on a Persian site', async ( { page } ) => {
 		await page.goto( '/' );
-		const href = await page.locator( 'link#ultra-max-ui-css' ).getAttribute( 'href' );
-		expect( href ).toMatch( /ui\/storefront\.css/ );
-		expect( href ).not.toMatch( /-ltr\.css/ );
+		const link = page.locator( 'link#ultra-max-ui-css' );
+		if ( await link.count() ) {
+			const href = await link.getAttribute( 'href' );
+			expect( href ).toMatch( /ui\/storefront\.css/ );
+			expect( href ).not.toMatch( /-ltr\.css/ );
+			return;
+		}
+		// Printed inline as critical CSS (PERF-02): it must be the right-to-left build.
+		const inline = ( await page.locator( 'style#ultra-max-ui-css' ).textContent() ) ?? '';
+		const base = '/wp-content/themes/ultra-max/assets/build/ui/';
+		const rtl = await ( await page.request.get( base + 'storefront.css' ) ).text();
+		const ltr = await ( await page.request.get( base + 'storefront-ltr.css' ) ).text();
+		const rtlOnly = rtl.split( '}' ).find( ( rule ) => rule.length > 20 && ! ltr.includes( rule ) && ! rule.includes( 'url(' ) );
+		expect( rtlOnly, 'a rule that differs between the two builds' ).toBeTruthy();
+		expect( inline ).toContain( rtlOnly );
 	} );
 
 	test( 'runs the components next to WooCommerce and Elementor without errors', async ( { page } ) => {
@@ -81,7 +94,7 @@ test.describe( 'storefront', () => {
 	test( 'uses the Persian translations shipped with the products', async ( { page } ) => {
 		await page.goto( '/?um-catalog' );
 		await expect( page.locator( '#demo-dialog [data-um-close]' ).first() ).toHaveAttribute( 'aria-label', 'بستن' );
-		await expect( page.locator( '.um-skip-link' ) ).toHaveText( 'رفتن به محتوا' );
+		await expect( page.locator( 'a[href="#um-main"]' ).first() ).toHaveText( 'رفتن به محتوا' );
 	} );
 
 	test( 'shop page renders under the theme', async ( { page } ) => {

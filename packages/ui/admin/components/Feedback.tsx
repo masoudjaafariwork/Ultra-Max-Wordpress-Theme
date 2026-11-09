@@ -14,10 +14,10 @@ type Tone = 'neutral' | 'brand' | 'success' | 'warning' | 'danger' | 'info';
 const BADGE: Record<Tone, string> = {
 	neutral: 'bg-surface-3 text-fg-2',
 	brand: 'bg-primary-soft text-primary',
-	success: 'bg-success-soft text-success',
+	success: 'bg-success-soft text-success-text',
 	warning: 'bg-warning-soft text-warning',
 	danger: 'bg-danger-soft text-destructive',
-	info: 'bg-info-soft text-info',
+	info: 'bg-info-soft text-info-text',
 };
 
 export interface BadgeProps {

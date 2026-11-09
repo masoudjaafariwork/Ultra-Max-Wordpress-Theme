@@ -80,6 +80,8 @@
 	--color-danger: var(--um-danger);
 	--color-danger-soft: var(--um-danger-50);
 	--color-accent-soft: var(--um-accent-100);
+	--color-success-text: color-mix(in srgb, var(--um-success) 75%, #000);
+	--color-info-text: color-mix(in srgb, var(--um-info) 85%, #000);
 	--color-wp: #f0f0f1;
 	--shadow-um-md: var(--um-shadow-md);
 	--shadow-um-lg: var(--um-shadow-lg);

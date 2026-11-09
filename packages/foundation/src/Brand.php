@@ -46,10 +46,9 @@ final class Brand {
 	}
 
 	/**
-	 * Logo mark as a data URI for the admin menu icon.
+	 * One-colour logo mark for the admin menu icon. The admin colours it.
 	 */
-	public static function menu_icon(): string {
-		// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- Data URI of our own SVG for add_menu_page().
-		return 'data:image/svg+xml;base64,' . base64_encode( '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path fill="black" d="M12 0h16a12 12 0 0 1 12 12v16a12 12 0 0 1-12 12H12A12 12 0 0 1 0 28V12A12 12 0 0 1 12 0zm-2 13v8a10 10 0 0 0 20 0v-8a2 2 0 0 0-4 0v8a6 6 0 0 1-12 0v-8a2 2 0 0 0-4 0z"/></svg>' );
+	public static function menu_svg(): string {
+		return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path fill="black" d="M12 0h16a12 12 0 0 1 12 12v16a12 12 0 0 1-12 12H12A12 12 0 0 1 0 28V12A12 12 0 0 1 12 0zm-2 13v8a10 10 0 0 0 20 0v-8a2 2 0 0 0-4 0v8a6 6 0 0 1-12 0v-8a2 2 0 0 0-4 0z"/></svg>';
 	}
 }

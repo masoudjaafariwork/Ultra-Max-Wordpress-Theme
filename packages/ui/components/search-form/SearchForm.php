@@ -10,7 +10,8 @@ declare(strict_types=1);
 namespace UltraMax\UI;
 
 /**
- * Site search: a labelled search field with a submit button.
+ * Site search: a labelled search field with a submit button. Themes print it
+ * through get_search_form(), so other plugins can still filter the form.
  *
  * `soft` is the filled field of the header; `outline` fits page content,
  * such as the 404 page or an empty search result.
@@ -48,9 +49,16 @@ final class SearchForm {
 
 		return Html::trusted(
 			sprintf(
-				'<form role="search" method="get" action="%1$s" class="%2$s"><label for="%3$s" class="sr-only">%4$s</label><span class="pointer-events-none absolute inset-y-0 start-4 flex items-center text-fg-3">%5$s</span><input id="%3$s" type="search" name="s" value="%6$s" placeholder="%7$s" autocomplete="off" class="%8$s"><button type="submit" class="%9$s">%10$s<span class="sr-only">%11$s</span></button>%12$s</form>',
-				esc_url( $props['action'] ),
-				esc_attr( Attributes::classes( 'relative flex w-full items-center', $props['class'] ?? null ) ),
+				'<form%1$s><label for="%3$s" class="sr-only">%4$s</label><span class="pointer-events-none absolute inset-y-0 start-4 flex items-center text-fg-3">%5$s</span><input id="%3$s" type="search" name="s" value="%6$s" placeholder="%7$s" autocomplete="off" class="%8$s"><button type="submit" class="%9$s">%10$s<span class="sr-only">%11$s</span></button>%12$s</form>',
+				Attributes::render(
+					array(
+						'role'   => 'search',
+						'method' => 'get',
+						'action' => esc_url_raw( $props['action'] ),
+						'class'  => Attributes::classes( 'relative flex w-full items-center', $props['class'] ?? null ),
+					)
+				),
+				'',
 				esc_attr( $id ),
 				esc_html( $props['label'] ),
 				Icon::render( 'search', 'size-5' ),

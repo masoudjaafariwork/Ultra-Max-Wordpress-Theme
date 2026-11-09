@@ -64,7 +64,9 @@
   --um-surface-3: var(--um-gray-50);
   --um-text: var(--um-gray-900);
   --um-text-2: var(--um-gray-600);
-  --um-text-3: var(--um-gray-500);
+
+  /* Darker than gray-500 so small faint text passes WCAG AA (4.5:1) on the page and surface-3 backgrounds. */
+  --um-text-3: #666a77;
   --um-border: var(--um-gray-200);
   --um-border-strong: var(--um-gray-300);
   --um-primary: var(--um-brand-600);

@@ -26,10 +26,10 @@ final class Badge {
 		'neutral' => 'bg-surface-3 text-fg-2',
 		'brand'   => 'bg-primary-soft text-primary',
 		'accent'  => 'bg-accent-soft text-on-accent',
-		'success' => 'bg-success-soft text-success',
-		'warning' => 'bg-warning-soft text-[color-mix(in_srgb,var(--um-warning)_70%,#000)]',
-		'danger'  => 'bg-danger-soft text-danger',
-		'info'    => 'bg-info-soft text-info',
+		'success' => 'bg-success-soft text-success-text',
+		'warning' => 'bg-warning-soft text-warning-text',
+		'danger'  => 'bg-danger-soft text-danger-text',
+		'info'    => 'bg-info-soft text-info-text',
 	);
 
 	/**

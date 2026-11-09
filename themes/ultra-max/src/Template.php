@@ -149,6 +149,26 @@ final class Template {
 	 * @param 'soft'|'outline' $variant Look.
 	 */
 	public static function search_form( string $id, string $variant = 'soft' ): Html {
+		// Through get_search_form() so other plugins can filter the form; Theme::search_form() renders it.
+		return Html::wp(
+			(string) get_search_form(
+				array(
+					'echo'       => false,
+					'aria_label' => __( 'Search', 'ultra-max' ),
+					'um_id'      => $id,
+					'um_variant' => $variant,
+				)
+			)
+		);
+	}
+
+	/**
+	 * Our search form component, for the get_search_form filter.
+	 *
+	 * @param string           $id      Field id.
+	 * @param 'soft'|'outline' $variant Look.
+	 */
+	public static function search_component( string $id, string $variant ): Html {
 		return UI::search_form(
 			array(
 				'id'          => $id,

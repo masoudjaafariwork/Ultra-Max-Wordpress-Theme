@@ -18,6 +18,11 @@ use UltraMax\Core\Lib\Settings\Store;
  */
 final class AdminTest extends WP_UnitTestCase {
 
+	/**
+	 * Id of an administrator.
+	 *
+	 * @var int
+	 */
 	private int $admin;
 
 	public function set_up(): void {

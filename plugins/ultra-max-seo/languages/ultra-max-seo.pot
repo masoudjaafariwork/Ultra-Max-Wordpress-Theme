@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-09T12:31:17+00:00\n"
+"POT-Creation-Date: 2026-11-09T18:54:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ultra-max-seo\n"
@@ -26,11 +26,104 @@ msgstr ""
 
 #. Author of the plugin
 #: ultra-max-seo.php
+#: vendor-prefixed/foundation/Brand.php:31
 msgid "Ultra Max"
 msgstr ""
 
 #: ultra-max-seo.php:30
 msgid "This plugin is missing its build files. Run \"npm run build\" in the development repository, or install the release package."
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:153
+msgid "Farvardin"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:154
+msgid "Ordibehesht"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:155
+msgid "Khordad"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:156
+msgid "Tir"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:157
+msgid "Mordad"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:158
+msgid "Shahrivar"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:159
+msgid "Mehr"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:160
+msgid "Aban"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:161
+msgid "Azar"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:162
+msgid "Dey"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:163
+msgid "Bahman"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:164
+msgid "Esfand"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:175
+msgid "Yekshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:176
+msgid "Doshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:177
+msgid "Seshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:178
+msgid "Chaharshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:179
+msgid "Panjshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:180
+msgid "Jomeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:181
+msgid "Shanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "pm"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "am"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "PM"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "AM"
 msgstr ""
 
 #. translators: 1: product name, 2: required PHP version, 3: current PHP version.
@@ -43,6 +136,58 @@ msgstr ""
 #: vendor-prefixed/foundation/Requirements.php:57
 #, php-format
 msgid "%1$s needs WordPress %2$s or later. This site runs WordPress %3$s."
+msgstr ""
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting all settings"
+msgstr ""
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting a section"
+msgstr ""
+
+#: vendor-prefixed/settings/Store.php:213
+msgid "Before importing settings"
+msgstr ""
+
+#: vendor-prefixed/settings/Store.php:282
+msgid "Before restoring a backup"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:54
+msgid "Author"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:61
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:65
+msgid "Edit"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:124
+msgid "Your email address will not be published."
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:126
+msgid "Name"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:127
+msgid "Email"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:128
+msgid "Website"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:129
+msgid "Save my name and email in this browser for the next time I comment."
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:131
+msgid "Comment"
 msgstr ""
 
 #: vendor-prefixed/ui/components/dialog/Overlay.php:58

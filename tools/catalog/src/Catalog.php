@@ -317,7 +317,7 @@ final class Catalog {
 	private static function storefront(): Html {
 		return Html::trusted(
 			sprintf(
-				'<div class="mx-auto max-w-(--um-container) px-4 py-6" data-testid="catalog"><h1 class="mb-6">کاتالوگ اجزا</h1>%s</div>',
+				'<div class="mx-auto w-full max-w-(--um-container) px-4 py-6" data-testid="catalog"><h1 class="mb-6">کاتالوگ اجزا</h1>%s</div>',
 				Html::from( array( self::buttons(), self::dialog(), self::drawer(), self::disclosures() ) )
 			)
 		);

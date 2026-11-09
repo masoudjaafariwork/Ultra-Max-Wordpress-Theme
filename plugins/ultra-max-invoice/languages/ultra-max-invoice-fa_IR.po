@@ -26,6 +26,7 @@ msgstr "فاکتور، برچسب پستی و اسناد سفارش برای و�
 
 #. Author of the plugin
 #: ultra-max-invoice.php
+#: vendor-prefixed/foundation/Brand.php:31
 msgid "Ultra Max"
 msgstr "الترا مکس"
 
@@ -48,3 +49,147 @@ msgstr "%1$s به وردپرس نسخه %2$s یا بالاتر نیاز دارد
 #: vendor-prefixed/ui/components/dialog/Overlay.php:58
 msgid "Close"
 msgstr "بستن"
+
+#: vendor-prefixed/foundation/Jalali.php:153
+msgid "Farvardin"
+msgstr "فروردین"
+
+#: vendor-prefixed/foundation/Jalali.php:154
+msgid "Ordibehesht"
+msgstr "اردیبهشت"
+
+#: vendor-prefixed/foundation/Jalali.php:155
+msgid "Khordad"
+msgstr "خرداد"
+
+#: vendor-prefixed/foundation/Jalali.php:156
+msgid "Tir"
+msgstr "تیر"
+
+#: vendor-prefixed/foundation/Jalali.php:157
+msgid "Mordad"
+msgstr "مرداد"
+
+#: vendor-prefixed/foundation/Jalali.php:158
+msgid "Shahrivar"
+msgstr "شهریور"
+
+#: vendor-prefixed/foundation/Jalali.php:159
+msgid "Mehr"
+msgstr "مهر"
+
+#: vendor-prefixed/foundation/Jalali.php:160
+msgid "Aban"
+msgstr "آبان"
+
+#: vendor-prefixed/foundation/Jalali.php:161
+msgid "Azar"
+msgstr "آذر"
+
+#: vendor-prefixed/foundation/Jalali.php:162
+msgid "Dey"
+msgstr "دی"
+
+#: vendor-prefixed/foundation/Jalali.php:163
+msgid "Bahman"
+msgstr "بهمن"
+
+#: vendor-prefixed/foundation/Jalali.php:164
+msgid "Esfand"
+msgstr "اسفند"
+
+#: vendor-prefixed/foundation/Jalali.php:175
+msgid "Yekshanbeh"
+msgstr "یکشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:176
+msgid "Doshanbeh"
+msgstr "دوشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:177
+msgid "Seshanbeh"
+msgstr "سه‌شنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:178
+msgid "Chaharshanbeh"
+msgstr "چهارشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:179
+msgid "Panjshanbeh"
+msgstr "پنجشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:180
+msgid "Jomeh"
+msgstr "جمعه"
+
+#: vendor-prefixed/foundation/Jalali.php:181
+msgid "Shanbeh"
+msgstr "شنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "pm"
+msgstr "ب.ظ"
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "am"
+msgstr "ق.ظ"
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "PM"
+msgstr "بعدازظهر"
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "AM"
+msgstr "قبل‌ازظهر"
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting all settings"
+msgstr "پیش از بازنشانی همه تنظیمات"
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting a section"
+msgstr "پیش از بازنشانی یک بخش"
+
+#: vendor-prefixed/settings/Store.php:213
+msgid "Before importing settings"
+msgstr "پیش از درون‌ریزی تنظیمات"
+
+#: vendor-prefixed/settings/Store.php:282
+msgid "Before restoring a backup"
+msgstr "پیش از بازگردانی پشتیبان"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:54
+msgid "Author"
+msgstr "نویسنده"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:61
+msgid "Your comment is awaiting moderation."
+msgstr "دیدگاه شما در انتظار بررسی است."
+
+#: vendor-prefixed/ui/components/comments/Comments.php:65
+msgid "Edit"
+msgstr "ویرایش"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:124
+msgid "Your email address will not be published."
+msgstr "نشانی ایمیل شما منتشر نمی‌شود."
+
+#: vendor-prefixed/ui/components/comments/Comments.php:126
+msgid "Name"
+msgstr "نام"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:127
+msgid "Email"
+msgstr "ایمیل"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:128
+msgid "Website"
+msgstr "وب‌سایت"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:129
+msgid "Save my name and email in this browser for the next time I comment."
+msgstr "نام و ایمیل من را برای دیدگاه بعدی در این مرورگر نگه دار."
+
+#: vendor-prefixed/ui/components/comments/Comments.php:131
+msgid "Comment"
+msgstr "دیدگاه"

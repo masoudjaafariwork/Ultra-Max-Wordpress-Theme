@@ -214,7 +214,7 @@ final class Strings {
 			'wizWelcomeTitle'       => __( 'Welcome to %s', 'ultra-max-core' ),
 			'wizWelcomeText'        => __( 'In a few minutes your store will be ready. You can skip any step and continue later from the dashboard.', 'ultra-max-core' ),
 			'wizNoEncoding'         => __( 'No encoded code', 'ultra-max-core' ),
-			'wizNoEncodingText'     => __( 'No ionCube is needed; it installs on any ordinary host.', 'ultra-max-core' ),
+			'wizNoEncodingText'     => __( 'No decoder or loader is needed; it installs on any ordinary host.', 'ultra-max-core' ),
 			'wizElementorFree'      => __( 'Free Elementor is enough', 'ultra-max-core' ),
 			'wizElementorFreeText'  => __( 'Every demo is built without Elementor Pro.', 'ultra-max-core' ),
 			'wizAutoBackup'         => __( 'Automatic backup', 'ultra-max-core' ),

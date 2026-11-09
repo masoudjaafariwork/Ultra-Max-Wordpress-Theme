@@ -41,7 +41,7 @@ final class Theme {
 		add_action( 'widgets_init', array( $this, 'widgets' ) );
 		add_action( 'wp', array( $this, 'front' ) );
 		add_filter( 'body_class', array( Template::class, 'body_class' ) );
-		add_filter( 'get_search_form', array( $this, 'search_form' ), 10, 0 );
+		add_filter( 'get_search_form', array( $this, 'search_form' ), 10, 2 );
 		add_filter( 'excerpt_length', static fn (): int => 28 );
 		add_filter( 'excerpt_more', static fn (): string => '…' );
 
@@ -132,9 +132,15 @@ final class Theme {
 
 	/**
 	 * Uses our search form wherever WordPress asks for one.
+	 *
+	 * @param mixed $form Form markup.
+	 * @param mixed $args Arguments of get_search_form(); ours add um_id and um_variant.
 	 */
-	public function search_form(): string {
-		return (string) Template::search_form( 'um-search-' . wp_unique_id(), 'outline' );
+	public function search_form( mixed $form, mixed $args = array() ): string {
+		$args    = is_array( $args ) ? $args : array();
+		$id      = is_string( $args['um_id'] ?? null ) ? $args['um_id'] : 'um-search-' . wp_unique_id();
+		$variant = 'soft' === ( $args['um_variant'] ?? '' ) ? 'soft' : 'outline';
+		return (string) Template::search_component( $id, $variant );
 	}
 
 	/**

@@ -67,6 +67,10 @@ final class Dates {
 		if ( ! is_string( $format ) || ! is_int( $timestamp ) || ! self::storefront() || Jalali::is_machine_format( $format ) ) {
 			return $date;
 		}
+		// WordPress's English default reads month-first; Persian dates read day, month, year.
+		if ( 'F j, Y' === $format && str_starts_with( get_locale(), 'fa' ) ) {
+			$format = 'j F Y';
+		}
 		$out = Jalali::format( $format, $timestamp, $timezone instanceof \DateTimeZone ? $timezone : null );
 		return self::persian_digits() ? Digits::to_persian( $out ) : $out;
 	}

@@ -109,11 +109,12 @@ final class Comments {
 	/**
 	 * Arguments for `comment_form()`.
 	 *
-	 * @param array{author: string, email: string, url: string} $commenter Current commenter's saved values.
-	 * @param bool                                              $required  Whether name and email are required.
+	 * @param array<string, mixed> $commenter Saved values from wp_get_current_commenter().
+	 * @param bool                 $required  Whether name and email are required.
 	 * @return array<string, mixed>
 	 */
 	public static function form_args( array $commenter, bool $required ): array {
+		$saved = static fn ( string $key ): string => is_string( $commenter[ $key ] ?? null ) ? $commenter[ $key ] : '';
 		return array(
 			'class_container'      => 'um-comment-respond mt-8',
 			'class_form'           => 'grid gap-4 sm:grid-cols-2 [&>.comment-form-comment]:col-span-full [&>.form-submit]:col-span-full [&>.comment-notes]:col-span-full [&>.logged-in-as]:col-span-full [&>.comment-form-cookies-consent]:col-span-full',
@@ -121,10 +122,10 @@ final class Comments {
 			'title_reply_after'    => '</h2>',
 			'comment_notes_before' => sprintf( '<p class="comment-notes m-0 text-sm text-fg-3">%s</p>', esc_html__( 'Your email address will not be published.', 'ultra-max-ui' ) ),
 			'fields'               => array(
-				'author'  => self::field( 'author', __( 'Name', 'ultra-max-ui' ), 'text', $commenter['author'], $required, 'name' ),
-				'email'   => self::field( 'email', __( 'Email', 'ultra-max-ui' ), 'email', $commenter['email'], $required, 'email' ),
-				'url'     => self::field( 'url', __( 'Website', 'ultra-max-ui' ), 'url', $commenter['url'], false, 'url' ),
-				'cookies' => sprintf( '<p class="comment-form-cookies-consent m-0 flex items-center gap-2 text-sm text-fg-2"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" class="size-4 accent-primary"%s><label for="wp-comment-cookies-consent">%s</label></p>', '' !== $commenter['email'] ? ' checked' : '', esc_html__( 'Save my name and email in this browser for the next time I comment.', 'ultra-max-ui' ) ),
+				'author'  => self::field( 'author', __( 'Name', 'ultra-max-ui' ), 'text', $saved( 'comment_author' ), $required, 'name' ),
+				'email'   => self::field( 'email', __( 'Email', 'ultra-max-ui' ), 'email', $saved( 'comment_author_email' ), $required, 'email' ),
+				'url'     => self::field( 'url', __( 'Website', 'ultra-max-ui' ), 'url', $saved( 'comment_author_url' ), false, 'url' ),
+				'cookies' => sprintf( '<p class="comment-form-cookies-consent m-0 flex items-center gap-2 text-sm text-fg-2"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" class="size-4 accent-primary"%s><label for="wp-comment-cookies-consent">%s</label></p>', '' !== $saved( 'comment_author_email' ) ? ' checked' : '', esc_html__( 'Save my name and email in this browser for the next time I comment.', 'ultra-max-ui' ) ),
 			),
 			'comment_field'        => '<div class="comment-form-comment">' . self::field( 'comment', __( 'Comment', 'ultra-max-ui' ), 'textarea', '', true, 'off' ) . '</div>',
 			'submit_button'        => '<button name="%1$s" type="submit" id="%2$s" class="%3$s inline-flex min-h-11 cursor-pointer items-center justify-center rounded-md border border-transparent bg-primary px-6 text-md font-bold text-on-primary hover:bg-primary-hover focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary/40">%4$s</button>',

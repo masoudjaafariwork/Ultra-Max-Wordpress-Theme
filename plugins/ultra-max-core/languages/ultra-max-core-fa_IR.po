@@ -26,6 +26,7 @@ msgstr "سازنده چیدمان، ابزارک‌های المنتور، ما�
 
 #. Author of the plugin
 #: ultra-max-core.php
+#: vendor-prefixed/foundation/Brand.php:31
 msgid "Ultra Max"
 msgstr "الترا مکس"
 
@@ -48,3 +49,1330 @@ msgstr "%1$s به وردپرس نسخه %2$s یا بالاتر نیاز دارد
 #: vendor-prefixed/ui/components/dialog/Overlay.php:58
 msgid "Close"
 msgstr "بستن"
+
+#: src/Admin/Admin.php:67
+#: src/Admin/Strings.php:133
+msgid "Dashboard"
+msgstr "داشبورد"
+
+#: src/Admin/Admin.php:68
+#: src/Admin/Admin.php:119
+#: src/Admin/Strings.php:53
+#: src/Admin/Strings.php:201
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: src/Admin/Admin.php:69
+#: src/Admin/Strings.php:185
+msgid "Modules"
+msgstr "ماژول‌ها"
+
+#: src/Admin/Admin.php:70
+#: src/Admin/Strings.php:206
+msgid "Setup wizard"
+msgstr "جادوی راه‌اندازی"
+
+#: src/Admin/Admin.php:71
+#: src/Admin/Strings.php:182
+msgid "Help"
+msgstr "راهنما"
+
+#: src/Admin/Admin.php:155
+msgid "Loading…"
+msgstr "در حال بارگذاری…"
+
+#: src/Admin/Admin.php:175
+msgid "Every setting has a short explanation next to it. The help page explains each part of the store step by step, without leaving your dashboard."
+msgstr "کنار هر تنظیم توضیح کوتاهی آمده است. صفحه راهنما هر بخش فروشگاه را قدم‌به‌قدم توضیح می‌دهد، بدون اینکه پیشخوان را ترک کنید."
+
+#: src/Admin/Admin.php:177
+msgid "Open the help page"
+msgstr "باز کردن صفحه راهنما"
+
+#: src/Admin/Products.php:132
+msgid "This is a major update. Take a backup, then update the Ultra Max theme and all Ultra Max plugins together so they keep working with each other."
+msgstr "این یک به‌روزرسانی اصلی است. پشتیبان بگیرید و بعد قالب و همه افزونه‌های الترا مکس را با هم به‌روز کنید تا با هم کار کنند."
+
+#: src/Admin/Rest.php:151
+#: src/Admin/Strings.php:94
+msgid "This file is not an Ultra Max settings export."
+msgstr "این فایل خروجی تنظیمات الترا مکس نیست."
+
+#: src/Admin/Rest.php:189
+msgid "Taken by hand"
+msgstr "گرفته‌شده به دست شما"
+
+#: src/Admin/Rest.php:203
+msgid "That backup no longer exists."
+msgstr "این پشتیبان دیگر وجود ندارد."
+
+#: src/Admin/Rest.php:230
+msgid "Unknown module."
+msgstr "ماژول ناشناخته."
+
+#: src/Admin/Strings.php:27
+msgid "Something went wrong. Please try again."
+msgstr "مشکلی پیش آمد. لطفاً دوباره امتحان کنید."
+
+#: src/Admin/Strings.php:28
+msgid "Cancel"
+msgstr "انصراف"
+
+#: src/Admin/Strings.php:29
+msgid "On"
+msgstr "فعال"
+
+#: src/Admin/Strings.php:30
+#: src/Admin/SystemStatus.php:73
+msgid "Off"
+msgstr "غیرفعال"
+
+#: src/Admin/Strings.php:31
+msgid "inactive"
+msgstr "غیرفعال"
+
+#: src/Admin/Strings.php:32
+msgid "Desktop"
+msgstr "دسکتاپ"
+
+#: src/Admin/Strings.php:33
+msgid "Tablet"
+msgstr "تبلت"
+
+#: src/Admin/Strings.php:34
+msgid "Mobile"
+msgstr "موبایل"
+
+#: src/Admin/Strings.php:35
+msgid "Colour code"
+msgstr "کد رنگ"
+
+#. translators: %s: contrast ratio such as 4.8.
+#: src/Admin/Strings.php:37
+#, php-format
+msgid "White text is easy to read on this colour (ratio %s to 1)."
+msgstr "متن سفید روی این رنگ خوانا است (نسبت %s به ۱)."
+
+#. translators: %s: contrast ratio such as 2.1.
+#: src/Admin/Strings.php:39
+#, php-format
+msgid "White text is hard to read on this colour (ratio %s to 1). Buttons will use dark text instead."
+msgstr "متن سفید روی این رنگ کم‌خوانا است (نسبت %s به ۱). دکمه‌ها متن تیره می‌گیرند."
+
+#: src/Admin/Strings.php:40
+msgid "Write a Jalali date such as 1405/08/18."
+msgstr "یک تاریخ شمسی مثل ۱۴۰۵/۰۸/۱۸ بنویسید."
+
+#: src/Admin/Strings.php:41
+msgid "Choose a file"
+msgstr "انتخاب فایل"
+
+#: src/Admin/Strings.php:42
+msgid "Replace"
+msgstr "عوض کردن"
+
+#: src/Admin/Strings.php:43
+#: src/Admin/Strings.php:46
+msgid "Remove"
+msgstr "حذف"
+
+#: src/Admin/Strings.php:44
+msgid "No file chosen"
+msgstr "فایلی انتخاب نشده"
+
+#: src/Admin/Strings.php:45
+msgid "Add a button"
+msgstr "افزودن دکمه"
+
+#: src/Admin/Strings.php:47
+msgid "Move up"
+msgstr "بالاتر"
+
+#: src/Admin/Strings.php:48
+msgid "Move down"
+msgstr "پایین‌تر"
+
+#. translators: %d: row number.
+#: src/Admin/Strings.php:50
+#, php-format
+msgid "Button %d"
+msgstr "دکمه %d"
+
+#: src/Admin/Strings.php:54
+msgid "Settings sections"
+msgstr "بخش‌های تنظیمات"
+
+#: src/Admin/Strings.php:55
+msgid "Search all settings"
+msgstr "جستجو در همه تنظیمات"
+
+#: src/Admin/Strings.php:56
+msgid "Search all settings… for example \"font\" or \"sidebar\""
+msgstr "جستجو در همه تنظیمات… مثلاً «فونت» یا «ستون کناری»"
+
+#: src/Admin/Strings.php:57
+msgid "Nothing found."
+msgstr "نتیجه‌ای پیدا نشد."
+
+#: src/Admin/Strings.php:58
+#: src/Options.php:97
+#: src/Options.php:103
+msgid "Backup and reset"
+msgstr "پشتیبان و بازنشانی"
+
+#. translators: %s: number of changes.
+#: src/Admin/Strings.php:60
+#, php-format
+msgid "%s unsaved changes"
+msgstr "%s تغییر ذخیره نشده"
+
+#: src/Admin/Strings.php:61
+msgid "All changes are saved"
+msgstr "همه تغییرات ذخیره شده است"
+
+#: src/Admin/Strings.php:62
+msgid "Save changes"
+msgstr "ذخیره تغییرات"
+
+#: src/Admin/Strings.php:63
+msgid "Saving…"
+msgstr "در حال ذخیره…"
+
+#: src/Admin/Strings.php:64
+msgid "Settings saved"
+msgstr "تنظیمات ذخیره شد"
+
+#. translators: %s: list of setting names.
+#: src/Admin/Strings.php:66
+#, php-format
+msgid "Saved, except: %s. Check those values."
+msgstr "ذخیره شد، جز: %s. این مقدارها را بررسی کنید."
+
+#: src/Admin/Strings.php:67
+msgid "Fix the highlighted values first."
+msgstr "اول مقدارهای نادرست را درست کنید."
+
+#: src/Admin/Strings.php:68
+msgid "Discard changes"
+msgstr "لغو تغییرات"
+
+#: src/Admin/Strings.php:69
+msgid "Reset this section"
+msgstr "بازنشانی این بخش"
+
+#. translators: %s: section name.
+#: src/Admin/Strings.php:71
+#, php-format
+msgid "Reset \"%s\" to its defaults?"
+msgstr "بخش «%s» به حالت اول برگردد؟"
+
+#: src/Admin/Strings.php:72
+msgid "The section was reset"
+msgstr "این بخش بازنشانی شد"
+
+#: src/Admin/Strings.php:73
+msgid "A backup of your current settings is taken first, so you can undo this from Backup and reset."
+msgstr "اول از تنظیمات فعلی پشتیبان گرفته می‌شود تا بتوانید از «پشتیبان و بازنشانی» آن را برگردانید."
+
+#: src/Admin/Strings.php:74
+msgid "This module is off, so these settings do nothing on the site."
+msgstr "این ماژول خاموش است و این تنظیمات اثری روی سایت ندارند."
+
+#: src/Admin/Strings.php:75
+msgid "Turn on"
+msgstr "روشن کردن"
+
+#: src/Admin/Strings.php:76
+msgid "Preview"
+msgstr "پیش‌نمایش"
+
+#: src/Admin/Strings.php:77
+msgid "Sample card"
+msgstr "کارت نمونه"
+
+#: src/Admin/Strings.php:78
+msgid "Corners, colours and fonts follow your settings."
+msgstr "گوشه‌ها، رنگ‌ها و فونت از تنظیمات شما پیروی می‌کنند."
+
+#: src/Admin/Strings.php:79
+msgid "Add to cart"
+msgstr "افزودن به سبد"
+
+#: src/Admin/Strings.php:80
+msgid "View all"
+msgstr "مشاهده همه"
+
+#: src/Admin/Strings.php:81
+msgid "Sort"
+msgstr "مرتب‌سازی"
+
+#: src/Admin/Strings.php:82
+msgid "Most relevant"
+msgstr "مرتبط‌ترین"
+
+#: src/Admin/Strings.php:83
+msgid "Newest"
+msgstr "جدیدترین"
+
+#: src/Admin/Strings.php:84
+msgid "Sample switch"
+msgstr "کلید نمونه"
+
+#: src/Admin/Strings.php:87
+msgid "Export"
+msgstr "برون‌بری"
+
+#: src/Admin/Strings.php:88
+msgid "Download every setting as a file, to keep or to move to another site."
+msgstr "همه تنظیمات را به شکل یک فایل دریافت کنید تا نگه دارید یا به سایت دیگری ببرید."
+
+#: src/Admin/Strings.php:89
+msgid "Download settings"
+msgstr "دریافت فایل تنظیمات"
+
+#: src/Admin/Strings.php:90
+msgid "The settings file was downloaded"
+msgstr "فایل تنظیمات دریافت شد"
+
+#: src/Admin/Strings.php:91
+msgid "Import"
+msgstr "درون‌ریزی"
+
+#: src/Admin/Strings.php:92
+msgid "Replace the current settings with a downloaded file."
+msgstr "تنظیمات فعلی را با یک فایل دریافت‌شده جایگزین کنید."
+
+#: src/Admin/Strings.php:93
+msgid "Upload a settings file"
+msgstr "بارگذاری فایل تنظیمات"
+
+#: src/Admin/Strings.php:95
+msgid "Settings imported"
+msgstr "تنظیمات درون‌ریزی شد"
+
+#. translators: %s: number of values.
+#: src/Admin/Strings.php:97
+#, php-format
+msgid "Settings imported; %s values were skipped because they are not valid here."
+msgstr "تنظیمات درون‌ریزی شد؛ %s مقدار چون اینجا معتبر نبود کنار گذاشته شد."
+
+#: src/Admin/Strings.php:98
+msgid "Reset everything"
+msgstr "بازنشانی همه"
+
+#: src/Admin/Strings.php:99
+msgid "Return every setting to its default."
+msgstr "همه تنظیمات به حالت اول برمی‌گردد."
+
+#: src/Admin/Strings.php:100
+msgid "Reset all settings"
+msgstr "بازنشانی همه تنظیمات"
+
+#: src/Admin/Strings.php:101
+msgid "Reset every setting to its default?"
+msgstr "همه تنظیمات به حالت اول برگردد؟"
+
+#: src/Admin/Strings.php:102
+msgid "All settings were reset"
+msgstr "همه تنظیمات بازنشانی شد"
+
+#: src/Admin/Strings.php:103
+msgid "A backup is taken automatically before every reset, import, restore and the setup wizard. The newest ten are kept."
+msgstr "پیش از هر بازنشانی، درون‌ریزی، بازگردانی و جادوی راه‌اندازی خودکار پشتیبان گرفته می‌شود. ده پشتیبان آخر نگه داشته می‌شود."
+
+#: src/Admin/Strings.php:104
+#: src/Options.php:110
+msgid "Backups"
+msgstr "پشتیبان‌ها"
+
+#: src/Admin/Strings.php:105
+msgid "Take a backup now"
+msgstr "گرفتن پشتیبان"
+
+#: src/Admin/Strings.php:106
+msgid "Backup taken"
+msgstr "پشتیبان گرفته شد"
+
+#: src/Admin/Strings.php:107
+msgid "No backup yet."
+msgstr "هنوز پشتیبانی وجود ندارد."
+
+#: src/Admin/Strings.php:108
+msgid "Reason"
+msgstr "دلیل"
+
+#: src/Admin/Strings.php:109
+msgid "Date"
+msgstr "تاریخ"
+
+#: src/Admin/Strings.php:110
+msgid "Changed settings"
+msgstr "تنظیمات تغییرکرده"
+
+#: src/Admin/Strings.php:111
+msgid "Action"
+msgstr "عملیات"
+
+#: src/Admin/Strings.php:112
+msgid "Restore"
+msgstr "بازگردانی"
+
+#: src/Admin/Strings.php:113
+msgid "Restore this backup?"
+msgstr "این پشتیبان بازگردانی شود؟"
+
+#: src/Admin/Strings.php:114
+msgid "Backup restored"
+msgstr "پشتیبان بازگردانی شد"
+
+#: src/Admin/Strings.php:117
+msgid "Sections"
+msgstr "بخش‌ها"
+
+#: src/Admin/Strings.php:118
+msgid "Settings are grouped by part of the store. Pick a section here."
+msgstr "تنظیمات بر اساس بخش‌های فروشگاه دسته‌بندی شده‌اند. از اینجا یک بخش را انتخاب کنید."
+
+#: src/Admin/Strings.php:119
+msgid "Search every setting"
+msgstr "جستجو در همه تنظیمات"
+
+#: src/Admin/Strings.php:120
+msgid "Type part of a name, such as \"colour\", to jump to it. Ctrl+K opens the search from anywhere on this page."
+msgstr "بخشی از نام تنظیم را بنویسید، مثلاً «رنگ»، تا به آن بروید. با Ctrl+K از هر جای این صفحه جستجو باز می‌شود."
+
+#: src/Admin/Strings.php:121
+msgid "Each setting explains itself"
+msgstr "هر تنظیم توضیح خودش را دارد"
+
+#: src/Admin/Strings.php:122
+msgid "Read the short note next to a setting to see what it changes on your store."
+msgstr "یادداشت کوتاه کنار هر تنظیم می‌گوید چه چیزی را در فروشگاه عوض می‌کند."
+
+#: src/Admin/Strings.php:123
+msgid "Save when you are ready"
+msgstr "هر وقت آماده بودید ذخیره کنید"
+
+#: src/Admin/Strings.php:124
+msgid "Changes apply only after you save. You can reset a section; a backup is taken first."
+msgstr "تغییرات فقط پس از ذخیره اعمال می‌شوند. می‌توانید یک بخش را بازنشانی کنید؛ اول پشتیبان گرفته می‌شود."
+
+#: src/Admin/Strings.php:125
+msgid "Next"
+msgstr "بعدی"
+
+#: src/Admin/Strings.php:126
+#: src/Admin/Strings.php:243
+msgid "Back"
+msgstr "قبلی"
+
+#: src/Admin/Strings.php:127
+msgid "Got it"
+msgstr "متوجه شدم"
+
+#: src/Admin/Strings.php:128
+msgid "Skip the tour"
+msgstr "رد کردن راهنما"
+
+#. translators: 1: step number, 2: number of steps.
+#: src/Admin/Strings.php:130
+#, php-format
+msgid "Step %1$s of %2$s"
+msgstr "قدم %1$s از %2$s"
+
+#. translators: 1: version, 2: number of active plugins.
+#: src/Admin/Strings.php:135
+#, php-format
+msgid "Version %1$s · theme and %2$s plugins"
+msgstr "نسخه %1$s · قالب و %2$s افزونه همراه"
+
+#: src/Admin/Strings.php:136
+msgid "Licence"
+msgstr "لایسنس"
+
+#: src/Admin/Strings.php:137
+msgid "Marketplace"
+msgstr "مارکت"
+
+#: src/Admin/Strings.php:138
+msgid "Site"
+msgstr "سایت"
+
+#: src/Admin/Strings.php:139
+msgid "Updates and support follow the licence of the marketplace you bought from."
+msgstr "به‌روزرسانی و پشتیبانی بر اساس لایسنس مارکتی است که از آن خرید کرده‌اید."
+
+#: src/Admin/Strings.php:140
+msgid "Active"
+msgstr "فعال"
+
+#: src/Admin/Strings.php:141
+msgid "Development copy"
+msgstr "نسخه توسعه"
+
+#: src/Admin/Strings.php:142
+msgid "Not activated"
+msgstr "فعال نشده"
+
+#: src/Admin/Strings.php:143
+msgid "Invalid"
+msgstr "نامعتبر"
+
+#: src/Admin/Strings.php:144
+msgid "Unavailable"
+msgstr "در دسترس نیست"
+
+#: src/Admin/Strings.php:145
+msgid "Development"
+msgstr "توسعه"
+
+#: src/Admin/Strings.php:146
+msgid "Rtl-theme"
+msgstr "راست‌چین"
+
+#: src/Admin/Strings.php:147
+msgid "Zhaket"
+msgstr "ژاکت"
+
+#: src/Admin/Strings.php:148
+msgid "Updates"
+msgstr "به‌روزرسانی"
+
+#: src/Admin/Strings.php:149
+msgid "Update available"
+msgstr "نسخه تازه"
+
+#: src/Admin/Strings.php:150
+msgid "Up to date"
+msgstr "به‌روز"
+
+#. translators: %s: product names.
+#: src/Admin/Strings.php:152
+#, php-format
+msgid "After updating, %s would be on a different major version. Update the theme and every Ultra Max plugin together."
+msgstr "پس از به‌روزرسانی، %s روی نسخه اصلی متفاوتی می‌ماند. قالب و همه افزونه‌های الترا مکس را با هم به‌روز کنید."
+
+#: src/Admin/Strings.php:153
+msgid "Take a backup of your settings before every update; Backup and reset keeps the newest ten."
+msgstr "پیش از هر به‌روزرسانی از تنظیمات پشتیبان بگیرید؛ «پشتیبان و بازنشانی» ده پشتیبان آخر را نگه می‌دارد."
+
+#: src/Admin/Strings.php:154
+msgid "Site health"
+msgstr "سلامت سایت"
+
+#. translators: %s: number of warnings.
+#. translators: %s: number of checks.
+#: src/Admin/Strings.php:156
+#: src/Admin/Strings.php:161
+#, php-format
+msgid "%s warnings"
+msgstr "%s هشدار"
+
+#: src/Admin/Strings.php:157
+msgid "All good"
+msgstr "همه چیز سالم است"
+
+#. translators: %s: number of checks.
+#: src/Admin/Strings.php:159
+#, php-format
+msgid "%s healthy"
+msgstr "%s مورد سالم"
+
+#. translators: %s: number of checks.
+#: src/Admin/Strings.php:163
+#, php-format
+msgid "%s errors"
+msgstr "%s خطا"
+
+#: src/Admin/Strings.php:164
+msgid "View system status"
+msgstr "مشاهده وضعیت سیستم"
+
+#: src/Admin/Strings.php:165
+msgid "Your store"
+msgstr "فروشگاه شما"
+
+#: src/Admin/Strings.php:166
+msgid "Published products"
+msgstr "محصول منتشرشده"
+
+#: src/Admin/Strings.php:167
+msgid "Orders in 14 days"
+msgstr "سفارش در ۱۴ روز"
+
+#: src/Admin/Strings.php:168
+msgid "Comments to review"
+msgstr "دیدگاه در انتظار بررسی"
+
+#: src/Admin/Strings.php:169
+msgid "Orders per day in the last 14 days"
+msgstr "سفارش روزانه در ۱۴ روز گذشته"
+
+#. translators: 1: number of orders, 2: date.
+#: src/Admin/Strings.php:171
+#, php-format
+msgid "%1$s orders on %2$s"
+msgstr "%1$s سفارش در %2$s"
+
+#: src/Admin/Strings.php:172
+msgid "Show the data as a table"
+msgstr "نمایش جدول داده"
+
+#: src/Admin/Strings.php:173
+msgid "Order numbers appear here once WooCommerce is active."
+msgstr "وقتی ووکامرس فعال باشد، آمار سفارش‌ها اینجا نمایش داده می‌شود."
+
+#: src/Admin/Strings.php:174
+msgid "Recent changes"
+msgstr "تغییرات اخیر"
+
+#: src/Admin/Strings.php:175
+msgid "System status"
+msgstr "وضعیت سیستم"
+
+#: src/Admin/Strings.php:176
+msgid "Copy report for support"
+msgstr "کپی گزارش برای پشتیبانی"
+
+#: src/Admin/Strings.php:177
+msgid "Report copied. Paste it into your support ticket."
+msgstr "گزارش کپی شد. آن را در تیکت پشتیبانی بچسبانید."
+
+#: src/Admin/Strings.php:178
+msgid "The browser blocked copying. Select the table and copy it by hand."
+msgstr "مرورگر اجازه کپی نداد. جدول را انتخاب کنید و خودتان کپی کنید."
+
+#: src/Admin/Strings.php:179
+msgid "Healthy"
+msgstr "سالم"
+
+#: src/Admin/Strings.php:180
+msgid "Warning"
+msgstr "هشدار"
+
+#: src/Admin/Strings.php:181
+msgid "Error"
+msgstr "خطا"
+
+#: src/Admin/Strings.php:186
+msgid "A module that is off loads no CSS or JS file and runs no extra query."
+msgstr "هر ماژول خاموش هیچ فایل CSS یا JS و هیچ کوئری اضافه‌ای بار نمی‌کند."
+
+#: src/Admin/Strings.php:187
+msgid "Show"
+msgstr "نمایش"
+
+#. translators: %s: number of modules.
+#: src/Admin/Strings.php:189
+#, php-format
+msgid "All (%s)"
+msgstr "همه (%s)"
+
+#. translators: %s: number of modules.
+#: src/Admin/Strings.php:191
+#, php-format
+msgid "On (%s)"
+msgstr "فعال (%s)"
+
+#. translators: %s: number of modules.
+#: src/Admin/Strings.php:193
+#, php-format
+msgid "Off (%s)"
+msgstr "غیرفعال (%s)"
+
+#. translators: %s: size in kilobytes.
+#: src/Admin/Strings.php:195
+#, php-format
+msgid "The modules that are on add %s KB of CSS and JS to the pages that use them. Turning a module off removes its share."
+msgstr "ماژول‌های فعال %s کیلوبایت CSS و JS به صفحه‌هایی که از آن‌ها استفاده می‌کنند اضافه می‌کنند. با خاموش کردن هر ماژول، سهم آن حذف می‌شود."
+
+#. translators: %s: module name.
+#: src/Admin/Strings.php:197
+#, php-format
+msgid "Turn %s on or off"
+msgstr "روشن یا خاموش کردن %s"
+
+#. translators: %s: size in kilobytes.
+#: src/Admin/Strings.php:199
+#, php-format
+msgid "%s KB"
+msgstr "%s کیلوبایت"
+
+#: src/Admin/Strings.php:200
+msgid "No front-end file"
+msgstr "بدون فایل در فروشگاه"
+
+#: src/Admin/Strings.php:202
+msgid "Module turned on"
+msgstr "ماژول فعال شد"
+
+#: src/Admin/Strings.php:203
+msgid "Module turned off"
+msgstr "ماژول غیرفعال شد"
+
+#: src/Admin/Strings.php:207
+msgid "Welcome"
+msgstr "خوش‌آمد"
+
+#: src/Admin/Strings.php:208
+msgid "Required plugins"
+msgstr "افزونه‌های لازم"
+
+#: src/Admin/Strings.php:209
+#: src/Admin/Strings.php:229
+msgid "Choose a demo"
+msgstr "انتخاب دمو"
+
+#: src/Admin/Strings.php:210
+msgid "Logo and colour"
+msgstr "لوگو و رنگ"
+
+#: src/Admin/Strings.php:211
+msgid "Done"
+msgstr "پایان"
+
+#: src/Admin/Strings.php:212
+msgid "I will do this later"
+msgstr "بعداً انجام می‌دهم"
+
+#. translators: %s: product name.
+#: src/Admin/Strings.php:214
+#, php-format
+msgid "Welcome to %s"
+msgstr "به %s خوش آمدید"
+
+#: src/Admin/Strings.php:215
+msgid "In a few minutes your store will be ready. You can skip any step and continue later from the dashboard."
+msgstr "در چند دقیقه فروشگاه شما آماده می‌شود. هر مرحله را می‌توانید رد کنید و بعداً از داشبورد ادامه دهید."
+
+#: src/Admin/Strings.php:216
+msgid "No encoded code"
+msgstr "بدون رمزگذاری کد"
+
+#: src/Admin/Strings.php:217
+msgid "No decoder or loader is needed; it installs on any ordinary host."
+msgstr "به هیچ رمزگشا یا لودری نیاز ندارید و روی هر هاست معمولی نصب می‌شود."
+
+#: src/Admin/Strings.php:218
+msgid "Free Elementor is enough"
+msgstr "المنتور رایگان کافی است"
+
+#: src/Admin/Strings.php:219
+msgid "Every demo is built without Elementor Pro."
+msgstr "همه دموها بدون المنتور پرو ساخته شده‌اند."
+
+#: src/Admin/Strings.php:220
+msgid "Automatic backup"
+msgstr "پشتیبان خودکار"
+
+#: src/Admin/Strings.php:221
+msgid "Your current settings are backed up before every large change."
+msgstr "پیش از هر تغییر بزرگ از تنظیمات فعلی پشتیبان گرفته می‌شود."
+
+#: src/Admin/Strings.php:222
+msgid "These plugins will be installed and activated. The optional ones can stay off."
+msgstr "این افزونه‌ها نصب و فعال می‌شوند. افزونه‌های اختیاری می‌توانند خاموش بمانند."
+
+#: src/Admin/Strings.php:223
+msgid "Installing…"
+msgstr "در حال نصب…"
+
+#: src/Admin/Strings.php:224
+msgid "Ready"
+msgstr "آماده"
+
+#: src/Admin/Strings.php:225
+msgid "Will be installed"
+msgstr "نصب می‌شود"
+
+#: src/Admin/Strings.php:226
+msgid "Will be activated"
+msgstr "فعال می‌شود"
+
+#. translators: %s: plugin name.
+#: src/Admin/Strings.php:228
+#, php-format
+msgid "Install %s"
+msgstr "نصب %s"
+
+#: src/Admin/Strings.php:230
+msgid "Every demo is made with free Elementor and has clearly licensed images."
+msgstr "همه دموها با المنتور رایگان ساخته شده‌اند و تصاویرشان مجوز روشن دارد."
+
+#: src/Admin/Strings.php:231
+msgid "Importing demos arrives with the demo importer in a later version. Your choice is shown here so you can see the styles; continue to set your logo and colour."
+msgstr "درون‌ریزی دمو همراه درون‌ریز دمو در نسخه بعدی می‌آید. فعلاً سبک دموها را اینجا ببینید و برای تنظیم لوگو و رنگ ادامه دهید."
+
+#: src/Admin/Strings.php:232
+msgid "Logo and colour of your store"
+msgstr "لوگو و رنگ فروشگاه"
+
+#: src/Admin/Strings.php:233
+msgid "You can change all of these later in Settings."
+msgstr "می‌توانید بعداً همه این‌ها را از تنظیمات عوض کنید."
+
+#: src/Admin/Strings.php:234
+msgid "Store name"
+msgstr "نام فروشگاه"
+
+#: src/Admin/Strings.php:235
+msgid "Logo"
+msgstr "لوگو"
+
+#: src/Admin/Strings.php:236
+msgid "A PNG or SVG about 320 by 96 pixels works best."
+msgstr "یک PNG یا SVG در حدود ۳۲۰ در ۹۶ پیکسل بهترین نتیجه را دارد."
+
+#: src/Admin/Strings.php:237
+msgid "Main colour"
+msgstr "رنگ اصلی"
+
+#: src/Admin/Strings.php:238
+msgid "Your store is ready!"
+msgstr "فروشگاه شما آماده است!"
+
+#: src/Admin/Strings.php:239
+msgid "Now add your products and menus. You can open this wizard again from the dashboard at any time."
+msgstr "حالا محصولات و منوهای خود را اضافه کنید. هر وقت بخواهید می‌توانید این جادو را دوباره از داشبورد باز کنید."
+
+#: src/Admin/Strings.php:240
+msgid "View the store"
+msgstr "دیدن فروشگاه"
+
+#: src/Admin/Strings.php:241
+msgid "Go to the dashboard"
+msgstr "رفتن به داشبورد"
+
+#: src/Admin/Strings.php:242
+msgid "Build the menus"
+msgstr "ساختن منوها"
+
+#: src/Admin/Strings.php:244
+msgid "Skip this step"
+msgstr "رد کردن این مرحله"
+
+#: src/Admin/Strings.php:245
+msgid "Start"
+msgstr "شروع"
+
+#: src/Admin/Strings.php:246
+msgid "Install and continue"
+msgstr "نصب و ادامه"
+
+#: src/Admin/Strings.php:247
+msgid "Continue"
+msgstr "ادامه"
+
+#: src/Admin/Strings.php:248
+msgid "Save and finish"
+msgstr "ذخیره و پایان"
+
+#: src/Admin/Strings.php:249
+msgid "Please wait…"
+msgstr "لطفاً صبر کنید…"
+
+#: src/Admin/Strings.php:252
+msgid "Step-by-step guides for every part of the store, right here in your dashboard."
+msgstr "راهنمای قدم‌به‌قدم همه بخش‌های فروشگاه، همین‌جا در پیشخوان."
+
+#: src/Admin/Strings.php:253
+msgid "Search the help"
+msgstr "جستجو در راهنما"
+
+#: src/Admin/Strings.php:254
+msgid "Help articles"
+msgstr "مطالب راهنما"
+
+#: src/Admin/Strings.php:255
+msgid "The help articles are missing from this build."
+msgstr "مطالب راهنما در این نسخه پیدا نشد."
+
+#: src/Admin/SystemStatus.php:52
+msgid "PHP version"
+msgstr "نسخه PHP"
+
+#: src/Admin/SystemStatus.php:53
+msgid "PHP 8.1 is the minimum. Ask your host for PHP 8.3 or later: it is faster and still receives security fixes."
+msgstr "حداقل PHP 8.1 لازم است. از میزبان هاست PHP 8.3 یا بالاتر بخواهید؛ سریع‌تر است و هنوز وصله امنیتی می‌گیرد."
+
+#: src/Admin/SystemStatus.php:53
+msgid "At least 8.1 is required."
+msgstr "حداقل ۸.۱ لازم است."
+
+#: src/Admin/SystemStatus.php:61
+msgid "WordPress and WooCommerce"
+msgstr "وردپرس و ووکامرس"
+
+#: src/Admin/SystemStatus.php:62
+msgid "The last two major versions of WordPress and the last three of WooCommerce are supported."
+msgstr "دو نسخه اصلی آخر وردپرس و سه نسخه آخر ووکامرس پشتیبانی می‌شوند."
+
+#: src/Admin/SystemStatus.php:71
+msgid "High-performance order storage (HPOS)"
+msgstr "ذخیره‌سازی سفارش با کارایی بالا (HPOS)"
+
+#: src/Admin/SystemStatus.php:72
+msgid "On, and every Ultra Max module supports it."
+msgstr "فعال است و همه ماژول‌های الترا مکس با آن سازگارند."
+
+#: src/Admin/SystemStatus.php:72
+msgid "Off. Turn it on in WooCommerce > Settings > Advanced > Features for faster orders."
+msgstr "خاموش است. برای سفارش‌های سریع‌تر آن را در ووکامرس > پیکربندی > پیشرفته > ویژگی‌ها روشن کنید."
+
+#: src/Admin/SystemStatus.php:81
+#: src/Admin/Wizard.php:72
+msgid "Elementor"
+msgstr "المنتور"
+
+#: src/Admin/SystemStatus.php:82
+msgid "Not active. The layout builder and demos need the free Elementor."
+msgstr "فعال نیست. سازنده چیدمان و دموها به المنتور رایگان نیاز دارند."
+
+#: src/Admin/SystemStatus.php:82
+msgid "The free version is enough. Elementor Pro also works."
+msgstr "نسخه رایگان کافی است. المنتور پرو هم سازگار است."
+
+#: src/Admin/SystemStatus.php:83
+msgid "Not active"
+msgstr "فعال نیست"
+
+#: src/Admin/SystemStatus.php:90
+msgid "PHP memory"
+msgstr "حافظه PHP"
+
+#: src/Admin/SystemStatus.php:91
+msgid "At least 256 MB is recommended for WooCommerce and Elementor."
+msgstr "برای ووکامرس و المنتور دست‌کم ۲۵۶ مگابایت پیشنهاد می‌شود."
+
+#: src/Admin/SystemStatus.php:99
+msgid "Maximum run time"
+msgstr "حداکثر زمان اجرا"
+
+#: src/Admin/SystemStatus.php:100
+msgid "At least 120 seconds is recommended for importing a demo. Ask your host to raise it."
+msgstr "برای درون‌ریزی دمو دست‌کم ۱۲۰ ثانیه پیشنهاد می‌شود. از میزبان هاست بخواهید آن را بیشتر کند."
+
+#: src/Admin/SystemStatus.php:101
+msgid "Unlimited"
+msgstr "نامحدود"
+
+#: src/Admin/SystemStatus.php:108
+msgid "Largest upload"
+msgstr "بیشترین حجم بارگذاری"
+
+#: src/Admin/SystemStatus.php:109
+msgid "At least 16 MB is recommended for images and demo files."
+msgstr "برای تصویرها و فایل‌های دمو دست‌کم ۱۶ مگابایت پیشنهاد می‌شود."
+
+#: src/Admin/SystemStatus.php:117
+msgid "PHP extensions"
+msgstr "افزونه‌های PHP"
+
+#: src/Admin/SystemStatus.php:118
+msgid "mbstring, intl, zip and curl are present."
+msgstr "mbstring، intl، zip و curl موجودند."
+
+#: src/Admin/SystemStatus.php:118
+msgid "Ask your host to enable the missing extensions; Persian text, packages and updates need them."
+msgstr "از میزبان هاست بخواهید افزونه‌های کم‌شده را فعال کند؛ متن فارسی، بسته‌ها و به‌روزرسانی به آن‌ها نیاز دارند."
+
+#: src/Admin/SystemStatus.php:125
+msgid "Secure connection (HTTPS)"
+msgstr "اتصال امن (HTTPS)"
+
+#: src/Admin/SystemStatus.php:126
+msgid "Payment gateways and browsers expect HTTPS."
+msgstr "درگاه‌های پرداخت و مرورگرها HTTPS را انتظار دارند."
+
+#: src/Admin/SystemStatus.php:134
+msgid "Overlapping plugins"
+msgstr "افزونه‌های هم‌پوشان"
+
+#: src/Admin/SystemStatus.php:135
+msgid "No active plugin does the same job as an Ultra Max module."
+msgstr "هیچ افزونه فعالی کار یکی از ماژول‌های الترا مکس را تکرار نمی‌کند."
+
+#: src/Admin/SystemStatus.php:135
+msgid "These plugins do a job Ultra Max also does. Use one of them for each job to avoid doubled dates, logins or code."
+msgstr "این افزونه‌ها کاری می‌کنند که الترا مکس هم می‌کند. برای هر کار فقط یکی را نگه دارید تا تاریخ، ورود یا کد دو بار اجرا نشود."
+
+#: src/Admin/SystemStatus.php:143
+msgid "Old WooCommerce templates in the theme"
+msgstr "قالب‌های قدیمی ووکامرس در پوسته"
+
+#: src/Admin/SystemStatus.php:144
+msgid "No outdated template override was found."
+msgstr "هیچ قالب override قدیمی پیدا نشد."
+
+#: src/Admin/SystemStatus.php:144
+msgid "Update these copies in your child theme from the newer WooCommerce templates."
+msgstr "این نسخه‌ها را در قالب فرزند از روی قالب‌های تازه ووکامرس به‌روز کنید."
+
+#: src/Admin/SystemStatus.php:152
+msgid "Error display"
+msgstr "نمایش خطا"
+
+#: src/Admin/SystemStatus.php:153
+msgid "PHP errors are shown to visitors. Turn WP_DEBUG_DISPLAY off on a live store."
+msgstr "خطاهای PHP به بازدیدکننده نشان داده می‌شود. در فروشگاه واقعی WP_DEBUG_DISPLAY را خاموش کنید."
+
+#: src/Admin/SystemStatus.php:153
+msgid "Errors are not shown to visitors."
+msgstr "خطاها به بازدیدکننده نشان داده نمی‌شود."
+
+#: src/Admin/SystemStatus.php:154
+msgid "Shown"
+msgstr "نمایش داده می‌شود"
+
+#: src/Admin/SystemStatus.php:154
+msgid "Hidden"
+msgstr "پنهان"
+
+#: src/Admin/Wizard.php:71
+msgid "WooCommerce"
+msgstr "ووکامرس"
+
+#: src/Admin/Wizard.php:71
+msgid "The store itself: products, cart and orders."
+msgstr "خود فروشگاه: محصول، سبد و سفارش."
+
+#: src/Admin/Wizard.php:72
+msgid "The free page builder; enough for every demo."
+msgstr "صفحه‌ساز رایگان؛ برای همه دموها کافی است."
+
+#: src/Admin/Wizard.php:73
+msgid "Ultra Max: SMS login"
+msgstr "الترا مکس: ورود پیامکی"
+
+#: src/Admin/Wizard.php:73
+msgid "Optional, but recommended."
+msgstr "اختیاری، ولی پیشنهاد می‌شود."
+
+#: src/Admin/Wizard.php:74
+msgid "Ultra Max: invoices and labels"
+msgstr "الترا مکس: فاکتور و برچسب"
+
+#: src/Admin/Wizard.php:74
+msgid "Optional."
+msgstr "اختیاری."
+
+#: src/Admin/Wizard.php:75
+msgid "Ultra Max: SEO"
+msgstr "الترا مکس: سئو"
+
+#: src/Admin/Wizard.php:75
+msgid "Optional. Skip it if you already use another SEO plugin."
+msgstr "اختیاری. اگر افزونه سئوی دیگری دارید، از آن بگذرید."
+
+#: src/Admin/Wizard.php:106
+msgid "This plugin is not part of the setup."
+msgstr "این افزونه جزو راه‌اندازی نیست."
+
+#: src/Admin/Wizard.php:110
+msgid "This plugin was not found. Upload it from the Ultra Max package in Plugins > Add New."
+msgstr "این افزونه پیدا نشد. آن را از بسته الترا مکس در افزونه‌ها > افزودن بارگذاری کنید."
+
+#: src/Admin/Wizard.php:113
+msgid "You are not allowed to install plugins."
+msgstr "اجازه نصب افزونه ندارید."
+
+#: src/Admin/Wizard.php:130
+msgid "wordpress.org did not return a download link."
+msgstr "wordpress.org پیوند دریافت را برنگرداند."
+
+#: src/Admin/Wizard.php:138
+msgid "The plugin could not be installed. Check the folder permissions of wp-content/plugins."
+msgstr "افزونه نصب نشد. دسترسی پوشه wp-content/plugins را بررسی کنید."
+
+#: src/Admin/Wizard.php:142
+msgid "You are not allowed to activate plugins."
+msgstr "اجازه فعال کردن افزونه ندارید."
+
+#: src/Admin/Wizard.php:157
+msgid "Before the setup wizard"
+msgstr "پیش از جادوی راه‌اندازی"
+
+#: src/Admin/Wizard.php:188
+msgid "General store"
+msgstr "فروشگاه جامع"
+
+#: src/Admin/Wizard.php:189
+msgid "Everything in one store"
+msgstr "همه‌کاره، همه چیز در یک فروشگاه"
+
+#: src/Admin/Wizard.php:195
+msgid "Mobile and digital"
+msgstr "موبایل و دیجیتال"
+
+#: src/Admin/Wizard.php:196
+msgid "Phones, laptops and accessories"
+msgstr "گوشی، لپ‌تاپ و لوازم جانبی"
+
+#: src/Admin/Wizard.php:202
+msgid "Fashion and clothing"
+msgstr "مد و پوشاک"
+
+#: src/Admin/Wizard.php:203
+msgid "Colours and sizes on every card"
+msgstr "رنگ و سایز روی کارت"
+
+#: src/Admin/Wizard.php:209
+msgid "Beauty and health"
+msgstr "آرایشی و بهداشتی"
+
+#: src/Admin/Wizard.php:210
+msgid "Brand, scent and skin type"
+msgstr "برند، رایحه و نوع پوست"
+
+#: src/Admin/Wizard.php:216
+msgid "Supermarket"
+msgstr "سوپرمارکت"
+
+#: src/Admin/Wizard.php:217
+msgid "Fast shopping with compact cards"
+msgstr "خرید سریع با کارت فشرده"
+
+#: src/CustomCode.php:101
+msgid "Custom code for this page"
+msgstr "کد سفارشی این صفحه"
+
+#: src/CustomCode.php:117
+msgid "CSS"
+msgstr "CSS"
+
+#: src/CustomCode.php:123
+msgid "JavaScript"
+msgstr "جاوااسکریپت"
+
+#: src/CustomCode.php:127
+msgid "Loaded only on this page, after the code for the whole site."
+msgstr "فقط در همین صفحه و پس از کد کل سایت بارگذاری می‌شود."
+
+#. translators: %s: post title.
+#: src/Duplicate.php:82
+#, php-format
+msgid "Duplicate \"%s\""
+msgstr "کپی «%s»"
+
+#: src/Duplicate.php:83
+msgid "Duplicate"
+msgstr "کپی"
+
+#: src/Duplicate.php:96
+msgid "You cannot duplicate this item."
+msgstr "اجازه کپی این مورد را ندارید."
+
+#: src/Duplicate.php:100
+msgid "The copy could not be created."
+msgstr "کپی ساخته نشد."
+
+#. translators: %s: original title.
+#: src/Duplicate.php:122
+#, php-format
+msgid "%s (copy)"
+msgstr "%s (کپی)"
+
+#: src/Options.php:36
+msgid "Only administrators who may post unfiltered HTML can change this."
+msgstr "فقط مدیرانی که اجازه درج HTML بدون فیلتر دارند می‌توانند این را تغییر دهند."
+
+#: src/Options.php:39
+#: src/Options.php:130
+msgid "Custom code"
+msgstr "کد سفارشی"
+
+#: src/Options.php:45
+msgid "Code for the whole site"
+msgstr "کد کل سایت"
+
+#: src/Options.php:49
+msgid "Each post and page also has its own CSS and JavaScript boxes in the editor."
+msgstr "هر نوشته و برگه هم در ویرایشگر کادر CSS و جاوااسکریپت جداگانه دارد."
+
+#: src/Options.php:55
+msgid "Custom CSS"
+msgstr "CSS سفارشی"
+
+#: src/Options.php:56
+msgid "Added to every page after the theme styles."
+msgstr "پس از استایل‌های قالب به همه صفحه‌ها اضافه می‌شود."
+
+#: src/Options.php:64
+msgid "Custom JavaScript"
+msgstr "جاوااسکریپت سفارشی"
+
+#: src/Options.php:65
+msgid "Runs at the end of every page. Write plain JavaScript without a script tag."
+msgstr "در پایان همه صفحه‌ها اجرا می‌شود. جاوااسکریپت را بدون تگ script بنویسید."
+
+#: src/Options.php:73
+msgid "Code in the page head"
+msgstr "کد داخل head صفحه"
+
+#: src/Options.php:74
+msgid "For verification tags and analytics snippets."
+msgstr "برای کدهای تأیید مالکیت و آمار بازدید."
+
+#: src/Options.php:81
+msgid "Code after the opening body tag"
+msgstr "کد پس از شروع body"
+
+#: src/Options.php:88
+msgid "Code before the closing body tag"
+msgstr "کد پیش از پایان body"
+
+#: src/Options.php:131
+msgid "Your own CSS, JavaScript and head or footer code, for the whole site and for each page."
+msgstr "CSS، جاوااسکریپت و کد سربرگ و پابرگ دلخواه، برای کل سایت و هر صفحه."
+
+#: src/Options.php:139
+msgid "Duplicate posts and pages"
+msgstr "کپی نوشته و برگه"
+
+#: src/Options.php:140
+msgid "A \"Duplicate\" link in the lists of posts and pages makes a draft copy with all its settings."
+msgstr "پیوند «کپی» در فهرست نوشته‌ها و برگه‌ها، یک پیش‌نویس با همه تنظیمات می‌سازد."
+
+#: vendor-prefixed/foundation/Jalali.php:153
+msgid "Farvardin"
+msgstr "فروردین"
+
+#: vendor-prefixed/foundation/Jalali.php:154
+msgid "Ordibehesht"
+msgstr "اردیبهشت"
+
+#: vendor-prefixed/foundation/Jalali.php:155
+msgid "Khordad"
+msgstr "خرداد"
+
+#: vendor-prefixed/foundation/Jalali.php:156
+msgid "Tir"
+msgstr "تیر"
+
+#: vendor-prefixed/foundation/Jalali.php:157
+msgid "Mordad"
+msgstr "مرداد"
+
+#: vendor-prefixed/foundation/Jalali.php:158
+msgid "Shahrivar"
+msgstr "شهریور"
+
+#: vendor-prefixed/foundation/Jalali.php:159
+msgid "Mehr"
+msgstr "مهر"
+
+#: vendor-prefixed/foundation/Jalali.php:160
+msgid "Aban"
+msgstr "آبان"
+
+#: vendor-prefixed/foundation/Jalali.php:161
+msgid "Azar"
+msgstr "آذر"
+
+#: vendor-prefixed/foundation/Jalali.php:162
+msgid "Dey"
+msgstr "دی"
+
+#: vendor-prefixed/foundation/Jalali.php:163
+msgid "Bahman"
+msgstr "بهمن"
+
+#: vendor-prefixed/foundation/Jalali.php:164
+msgid "Esfand"
+msgstr "اسفند"
+
+#: vendor-prefixed/foundation/Jalali.php:175
+msgid "Yekshanbeh"
+msgstr "یکشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:176
+msgid "Doshanbeh"
+msgstr "دوشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:177
+msgid "Seshanbeh"
+msgstr "سه‌شنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:178
+msgid "Chaharshanbeh"
+msgstr "چهارشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:179
+msgid "Panjshanbeh"
+msgstr "پنجشنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:180
+msgid "Jomeh"
+msgstr "جمعه"
+
+#: vendor-prefixed/foundation/Jalali.php:181
+msgid "Shanbeh"
+msgstr "شنبه"
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "pm"
+msgstr "ب.ظ"
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "am"
+msgstr "ق.ظ"
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "PM"
+msgstr "بعدازظهر"
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "AM"
+msgstr "قبل‌ازظهر"
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting all settings"
+msgstr "پیش از بازنشانی همه تنظیمات"
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting a section"
+msgstr "پیش از بازنشانی یک بخش"
+
+#: vendor-prefixed/settings/Store.php:213
+msgid "Before importing settings"
+msgstr "پیش از درون‌ریزی تنظیمات"
+
+#: vendor-prefixed/settings/Store.php:282
+msgid "Before restoring a backup"
+msgstr "پیش از بازگردانی پشتیبان"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:54
+msgid "Author"
+msgstr "نویسنده"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:61
+msgid "Your comment is awaiting moderation."
+msgstr "دیدگاه شما در انتظار بررسی است."
+
+#: vendor-prefixed/ui/components/comments/Comments.php:65
+msgid "Edit"
+msgstr "ویرایش"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:124
+msgid "Your email address will not be published."
+msgstr "نشانی ایمیل شما منتشر نمی‌شود."
+
+#: vendor-prefixed/ui/components/comments/Comments.php:126
+msgid "Name"
+msgstr "نام"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:127
+msgid "Email"
+msgstr "ایمیل"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:128
+msgid "Website"
+msgstr "وب‌سایت"
+
+#: vendor-prefixed/ui/components/comments/Comments.php:129
+msgid "Save my name and email in this browser for the next time I comment."
+msgstr "نام و ایمیل من را برای دیدگاه بعدی در این مرورگر نگه دار."
+
+#: vendor-prefixed/ui/components/comments/Comments.php:131
+msgid "Comment"
+msgstr "دیدگاه"

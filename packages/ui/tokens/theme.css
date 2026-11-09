@@ -34,6 +34,12 @@
 	--color-warning-soft: var(--um-warning-50);
 	--color-danger: var(--um-danger);
 	--color-danger-soft: var(--um-danger-50);
+
+	/* Status text on light backgrounds: darkened so small text passes WCAG AA (4.5:1). */
+	--color-danger-text: color-mix(in srgb, var(--um-danger) 85%, #000);
+	--color-success-text: color-mix(in srgb, var(--um-success) 75%, #000);
+	--color-info-text: color-mix(in srgb, var(--um-info) 85%, #000);
+	--color-warning-text: color-mix(in srgb, var(--um-warning) 70%, #000);
 	--color-info: var(--um-info);
 	--color-info-soft: var(--um-info-50);
 	--color-rating: var(--um-rating);

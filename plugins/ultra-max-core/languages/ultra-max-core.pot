@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-09T12:30:35+00:00\n"
+"POT-Creation-Date: 2026-11-09T18:54:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ultra-max-core\n"
@@ -26,11 +26,1287 @@ msgstr ""
 
 #. Author of the plugin
 #: ultra-max-core.php
+#: vendor-prefixed/foundation/Brand.php:31
 msgid "Ultra Max"
+msgstr ""
+
+#: src/Admin/Admin.php:67
+#: src/Admin/Strings.php:133
+msgid "Dashboard"
+msgstr ""
+
+#: src/Admin/Admin.php:68
+#: src/Admin/Admin.php:119
+#: src/Admin/Strings.php:53
+#: src/Admin/Strings.php:201
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/Admin.php:69
+#: src/Admin/Strings.php:185
+msgid "Modules"
+msgstr ""
+
+#: src/Admin/Admin.php:70
+#: src/Admin/Strings.php:206
+msgid "Setup wizard"
+msgstr ""
+
+#: src/Admin/Admin.php:71
+#: src/Admin/Strings.php:182
+msgid "Help"
+msgstr ""
+
+#: src/Admin/Admin.php:155
+msgid "Loading…"
+msgstr ""
+
+#: src/Admin/Admin.php:175
+msgid "Every setting has a short explanation next to it. The help page explains each part of the store step by step, without leaving your dashboard."
+msgstr ""
+
+#: src/Admin/Admin.php:177
+msgid "Open the help page"
+msgstr ""
+
+#: src/Admin/Products.php:132
+msgid "This is a major update. Take a backup, then update the Ultra Max theme and all Ultra Max plugins together so they keep working with each other."
+msgstr ""
+
+#: src/Admin/Rest.php:151
+#: src/Admin/Strings.php:94
+msgid "This file is not an Ultra Max settings export."
+msgstr ""
+
+#: src/Admin/Rest.php:189
+msgid "Taken by hand"
+msgstr ""
+
+#: src/Admin/Rest.php:203
+msgid "That backup no longer exists."
+msgstr ""
+
+#: src/Admin/Rest.php:230
+msgid "Unknown module."
+msgstr ""
+
+#: src/Admin/Strings.php:27
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: src/Admin/Strings.php:28
+msgid "Cancel"
+msgstr ""
+
+#: src/Admin/Strings.php:29
+msgid "On"
+msgstr ""
+
+#: src/Admin/Strings.php:30
+#: src/Admin/SystemStatus.php:73
+msgid "Off"
+msgstr ""
+
+#: src/Admin/Strings.php:31
+msgid "inactive"
+msgstr ""
+
+#: src/Admin/Strings.php:32
+msgid "Desktop"
+msgstr ""
+
+#: src/Admin/Strings.php:33
+msgid "Tablet"
+msgstr ""
+
+#: src/Admin/Strings.php:34
+msgid "Mobile"
+msgstr ""
+
+#: src/Admin/Strings.php:35
+msgid "Colour code"
+msgstr ""
+
+#. translators: %s: contrast ratio such as 4.8.
+#: src/Admin/Strings.php:37
+#, php-format
+msgid "White text is easy to read on this colour (ratio %s to 1)."
+msgstr ""
+
+#. translators: %s: contrast ratio such as 2.1.
+#: src/Admin/Strings.php:39
+#, php-format
+msgid "White text is hard to read on this colour (ratio %s to 1). Buttons will use dark text instead."
+msgstr ""
+
+#: src/Admin/Strings.php:40
+msgid "Write a Jalali date such as 1405/08/18."
+msgstr ""
+
+#: src/Admin/Strings.php:41
+msgid "Choose a file"
+msgstr ""
+
+#: src/Admin/Strings.php:42
+msgid "Replace"
+msgstr ""
+
+#: src/Admin/Strings.php:43
+#: src/Admin/Strings.php:46
+msgid "Remove"
+msgstr ""
+
+#: src/Admin/Strings.php:44
+msgid "No file chosen"
+msgstr ""
+
+#: src/Admin/Strings.php:45
+msgid "Add a button"
+msgstr ""
+
+#: src/Admin/Strings.php:47
+msgid "Move up"
+msgstr ""
+
+#: src/Admin/Strings.php:48
+msgid "Move down"
+msgstr ""
+
+#. translators: %d: row number.
+#: src/Admin/Strings.php:50
+#, php-format
+msgid "Button %d"
+msgstr ""
+
+#: src/Admin/Strings.php:54
+msgid "Settings sections"
+msgstr ""
+
+#: src/Admin/Strings.php:55
+msgid "Search all settings"
+msgstr ""
+
+#: src/Admin/Strings.php:56
+msgid "Search all settings… for example \"font\" or \"sidebar\""
+msgstr ""
+
+#: src/Admin/Strings.php:57
+msgid "Nothing found."
+msgstr ""
+
+#: src/Admin/Strings.php:58
+#: src/Options.php:97
+#: src/Options.php:103
+msgid "Backup and reset"
+msgstr ""
+
+#. translators: %s: number of changes.
+#: src/Admin/Strings.php:60
+#, php-format
+msgid "%s unsaved changes"
+msgstr ""
+
+#: src/Admin/Strings.php:61
+msgid "All changes are saved"
+msgstr ""
+
+#: src/Admin/Strings.php:62
+msgid "Save changes"
+msgstr ""
+
+#: src/Admin/Strings.php:63
+msgid "Saving…"
+msgstr ""
+
+#: src/Admin/Strings.php:64
+msgid "Settings saved"
+msgstr ""
+
+#. translators: %s: list of setting names.
+#: src/Admin/Strings.php:66
+#, php-format
+msgid "Saved, except: %s. Check those values."
+msgstr ""
+
+#: src/Admin/Strings.php:67
+msgid "Fix the highlighted values first."
+msgstr ""
+
+#: src/Admin/Strings.php:68
+msgid "Discard changes"
+msgstr ""
+
+#: src/Admin/Strings.php:69
+msgid "Reset this section"
+msgstr ""
+
+#. translators: %s: section name.
+#: src/Admin/Strings.php:71
+#, php-format
+msgid "Reset \"%s\" to its defaults?"
+msgstr ""
+
+#: src/Admin/Strings.php:72
+msgid "The section was reset"
+msgstr ""
+
+#: src/Admin/Strings.php:73
+msgid "A backup of your current settings is taken first, so you can undo this from Backup and reset."
+msgstr ""
+
+#: src/Admin/Strings.php:74
+msgid "This module is off, so these settings do nothing on the site."
+msgstr ""
+
+#: src/Admin/Strings.php:75
+msgid "Turn on"
+msgstr ""
+
+#: src/Admin/Strings.php:76
+msgid "Preview"
+msgstr ""
+
+#: src/Admin/Strings.php:77
+msgid "Sample card"
+msgstr ""
+
+#: src/Admin/Strings.php:78
+msgid "Corners, colours and fonts follow your settings."
+msgstr ""
+
+#: src/Admin/Strings.php:79
+msgid "Add to cart"
+msgstr ""
+
+#: src/Admin/Strings.php:80
+msgid "View all"
+msgstr ""
+
+#: src/Admin/Strings.php:81
+msgid "Sort"
+msgstr ""
+
+#: src/Admin/Strings.php:82
+msgid "Most relevant"
+msgstr ""
+
+#: src/Admin/Strings.php:83
+msgid "Newest"
+msgstr ""
+
+#: src/Admin/Strings.php:84
+msgid "Sample switch"
+msgstr ""
+
+#: src/Admin/Strings.php:87
+msgid "Export"
+msgstr ""
+
+#: src/Admin/Strings.php:88
+msgid "Download every setting as a file, to keep or to move to another site."
+msgstr ""
+
+#: src/Admin/Strings.php:89
+msgid "Download settings"
+msgstr ""
+
+#: src/Admin/Strings.php:90
+msgid "The settings file was downloaded"
+msgstr ""
+
+#: src/Admin/Strings.php:91
+msgid "Import"
+msgstr ""
+
+#: src/Admin/Strings.php:92
+msgid "Replace the current settings with a downloaded file."
+msgstr ""
+
+#: src/Admin/Strings.php:93
+msgid "Upload a settings file"
+msgstr ""
+
+#: src/Admin/Strings.php:95
+msgid "Settings imported"
+msgstr ""
+
+#. translators: %s: number of values.
+#: src/Admin/Strings.php:97
+#, php-format
+msgid "Settings imported; %s values were skipped because they are not valid here."
+msgstr ""
+
+#: src/Admin/Strings.php:98
+msgid "Reset everything"
+msgstr ""
+
+#: src/Admin/Strings.php:99
+msgid "Return every setting to its default."
+msgstr ""
+
+#: src/Admin/Strings.php:100
+msgid "Reset all settings"
+msgstr ""
+
+#: src/Admin/Strings.php:101
+msgid "Reset every setting to its default?"
+msgstr ""
+
+#: src/Admin/Strings.php:102
+msgid "All settings were reset"
+msgstr ""
+
+#: src/Admin/Strings.php:103
+msgid "A backup is taken automatically before every reset, import, restore and the setup wizard. The newest ten are kept."
+msgstr ""
+
+#: src/Admin/Strings.php:104
+#: src/Options.php:110
+msgid "Backups"
+msgstr ""
+
+#: src/Admin/Strings.php:105
+msgid "Take a backup now"
+msgstr ""
+
+#: src/Admin/Strings.php:106
+msgid "Backup taken"
+msgstr ""
+
+#: src/Admin/Strings.php:107
+msgid "No backup yet."
+msgstr ""
+
+#: src/Admin/Strings.php:108
+msgid "Reason"
+msgstr ""
+
+#: src/Admin/Strings.php:109
+msgid "Date"
+msgstr ""
+
+#: src/Admin/Strings.php:110
+msgid "Changed settings"
+msgstr ""
+
+#: src/Admin/Strings.php:111
+msgid "Action"
+msgstr ""
+
+#: src/Admin/Strings.php:112
+msgid "Restore"
+msgstr ""
+
+#: src/Admin/Strings.php:113
+msgid "Restore this backup?"
+msgstr ""
+
+#: src/Admin/Strings.php:114
+msgid "Backup restored"
+msgstr ""
+
+#: src/Admin/Strings.php:117
+msgid "Sections"
+msgstr ""
+
+#: src/Admin/Strings.php:118
+msgid "Settings are grouped by part of the store. Pick a section here."
+msgstr ""
+
+#: src/Admin/Strings.php:119
+msgid "Search every setting"
+msgstr ""
+
+#: src/Admin/Strings.php:120
+msgid "Type part of a name, such as \"colour\", to jump to it. Ctrl+K opens the search from anywhere on this page."
+msgstr ""
+
+#: src/Admin/Strings.php:121
+msgid "Each setting explains itself"
+msgstr ""
+
+#: src/Admin/Strings.php:122
+msgid "Read the short note next to a setting to see what it changes on your store."
+msgstr ""
+
+#: src/Admin/Strings.php:123
+msgid "Save when you are ready"
+msgstr ""
+
+#: src/Admin/Strings.php:124
+msgid "Changes apply only after you save. You can reset a section; a backup is taken first."
+msgstr ""
+
+#: src/Admin/Strings.php:125
+msgid "Next"
+msgstr ""
+
+#: src/Admin/Strings.php:126
+#: src/Admin/Strings.php:243
+msgid "Back"
+msgstr ""
+
+#: src/Admin/Strings.php:127
+msgid "Got it"
+msgstr ""
+
+#: src/Admin/Strings.php:128
+msgid "Skip the tour"
+msgstr ""
+
+#. translators: 1: step number, 2: number of steps.
+#: src/Admin/Strings.php:130
+#, php-format
+msgid "Step %1$s of %2$s"
+msgstr ""
+
+#. translators: 1: version, 2: number of active plugins.
+#: src/Admin/Strings.php:135
+#, php-format
+msgid "Version %1$s · theme and %2$s plugins"
+msgstr ""
+
+#: src/Admin/Strings.php:136
+msgid "Licence"
+msgstr ""
+
+#: src/Admin/Strings.php:137
+msgid "Marketplace"
+msgstr ""
+
+#: src/Admin/Strings.php:138
+msgid "Site"
+msgstr ""
+
+#: src/Admin/Strings.php:139
+msgid "Updates and support follow the licence of the marketplace you bought from."
+msgstr ""
+
+#: src/Admin/Strings.php:140
+msgid "Active"
+msgstr ""
+
+#: src/Admin/Strings.php:141
+msgid "Development copy"
+msgstr ""
+
+#: src/Admin/Strings.php:142
+msgid "Not activated"
+msgstr ""
+
+#: src/Admin/Strings.php:143
+msgid "Invalid"
+msgstr ""
+
+#: src/Admin/Strings.php:144
+msgid "Unavailable"
+msgstr ""
+
+#: src/Admin/Strings.php:145
+msgid "Development"
+msgstr ""
+
+#: src/Admin/Strings.php:146
+msgid "Rtl-theme"
+msgstr ""
+
+#: src/Admin/Strings.php:147
+msgid "Zhaket"
+msgstr ""
+
+#: src/Admin/Strings.php:148
+msgid "Updates"
+msgstr ""
+
+#: src/Admin/Strings.php:149
+msgid "Update available"
+msgstr ""
+
+#: src/Admin/Strings.php:150
+msgid "Up to date"
+msgstr ""
+
+#. translators: %s: product names.
+#: src/Admin/Strings.php:152
+#, php-format
+msgid "After updating, %s would be on a different major version. Update the theme and every Ultra Max plugin together."
+msgstr ""
+
+#: src/Admin/Strings.php:153
+msgid "Take a backup of your settings before every update; Backup and reset keeps the newest ten."
+msgstr ""
+
+#: src/Admin/Strings.php:154
+msgid "Site health"
+msgstr ""
+
+#. translators: %s: number of warnings.
+#. translators: %s: number of checks.
+#: src/Admin/Strings.php:156
+#: src/Admin/Strings.php:161
+#, php-format
+msgid "%s warnings"
+msgstr ""
+
+#: src/Admin/Strings.php:157
+msgid "All good"
+msgstr ""
+
+#. translators: %s: number of checks.
+#: src/Admin/Strings.php:159
+#, php-format
+msgid "%s healthy"
+msgstr ""
+
+#. translators: %s: number of checks.
+#: src/Admin/Strings.php:163
+#, php-format
+msgid "%s errors"
+msgstr ""
+
+#: src/Admin/Strings.php:164
+msgid "View system status"
+msgstr ""
+
+#: src/Admin/Strings.php:165
+msgid "Your store"
+msgstr ""
+
+#: src/Admin/Strings.php:166
+msgid "Published products"
+msgstr ""
+
+#: src/Admin/Strings.php:167
+msgid "Orders in 14 days"
+msgstr ""
+
+#: src/Admin/Strings.php:168
+msgid "Comments to review"
+msgstr ""
+
+#: src/Admin/Strings.php:169
+msgid "Orders per day in the last 14 days"
+msgstr ""
+
+#. translators: 1: number of orders, 2: date.
+#: src/Admin/Strings.php:171
+#, php-format
+msgid "%1$s orders on %2$s"
+msgstr ""
+
+#: src/Admin/Strings.php:172
+msgid "Show the data as a table"
+msgstr ""
+
+#: src/Admin/Strings.php:173
+msgid "Order numbers appear here once WooCommerce is active."
+msgstr ""
+
+#: src/Admin/Strings.php:174
+msgid "Recent changes"
+msgstr ""
+
+#: src/Admin/Strings.php:175
+msgid "System status"
+msgstr ""
+
+#: src/Admin/Strings.php:176
+msgid "Copy report for support"
+msgstr ""
+
+#: src/Admin/Strings.php:177
+msgid "Report copied. Paste it into your support ticket."
+msgstr ""
+
+#: src/Admin/Strings.php:178
+msgid "The browser blocked copying. Select the table and copy it by hand."
+msgstr ""
+
+#: src/Admin/Strings.php:179
+msgid "Healthy"
+msgstr ""
+
+#: src/Admin/Strings.php:180
+msgid "Warning"
+msgstr ""
+
+#: src/Admin/Strings.php:181
+msgid "Error"
+msgstr ""
+
+#: src/Admin/Strings.php:186
+msgid "A module that is off loads no CSS or JS file and runs no extra query."
+msgstr ""
+
+#: src/Admin/Strings.php:187
+msgid "Show"
+msgstr ""
+
+#. translators: %s: number of modules.
+#: src/Admin/Strings.php:189
+#, php-format
+msgid "All (%s)"
+msgstr ""
+
+#. translators: %s: number of modules.
+#: src/Admin/Strings.php:191
+#, php-format
+msgid "On (%s)"
+msgstr ""
+
+#. translators: %s: number of modules.
+#: src/Admin/Strings.php:193
+#, php-format
+msgid "Off (%s)"
+msgstr ""
+
+#. translators: %s: size in kilobytes.
+#: src/Admin/Strings.php:195
+#, php-format
+msgid "The modules that are on add %s KB of CSS and JS to the pages that use them. Turning a module off removes its share."
+msgstr ""
+
+#. translators: %s: module name.
+#: src/Admin/Strings.php:197
+#, php-format
+msgid "Turn %s on or off"
+msgstr ""
+
+#. translators: %s: size in kilobytes.
+#: src/Admin/Strings.php:199
+#, php-format
+msgid "%s KB"
+msgstr ""
+
+#: src/Admin/Strings.php:200
+msgid "No front-end file"
+msgstr ""
+
+#: src/Admin/Strings.php:202
+msgid "Module turned on"
+msgstr ""
+
+#: src/Admin/Strings.php:203
+msgid "Module turned off"
+msgstr ""
+
+#: src/Admin/Strings.php:207
+msgid "Welcome"
+msgstr ""
+
+#: src/Admin/Strings.php:208
+msgid "Required plugins"
+msgstr ""
+
+#: src/Admin/Strings.php:209
+#: src/Admin/Strings.php:229
+msgid "Choose a demo"
+msgstr ""
+
+#: src/Admin/Strings.php:210
+msgid "Logo and colour"
+msgstr ""
+
+#: src/Admin/Strings.php:211
+msgid "Done"
+msgstr ""
+
+#: src/Admin/Strings.php:212
+msgid "I will do this later"
+msgstr ""
+
+#. translators: %s: product name.
+#: src/Admin/Strings.php:214
+#, php-format
+msgid "Welcome to %s"
+msgstr ""
+
+#: src/Admin/Strings.php:215
+msgid "In a few minutes your store will be ready. You can skip any step and continue later from the dashboard."
+msgstr ""
+
+#: src/Admin/Strings.php:216
+msgid "No encoded code"
+msgstr ""
+
+#: src/Admin/Strings.php:217
+msgid "No decoder or loader is needed; it installs on any ordinary host."
+msgstr ""
+
+#: src/Admin/Strings.php:218
+msgid "Free Elementor is enough"
+msgstr ""
+
+#: src/Admin/Strings.php:219
+msgid "Every demo is built without Elementor Pro."
+msgstr ""
+
+#: src/Admin/Strings.php:220
+msgid "Automatic backup"
+msgstr ""
+
+#: src/Admin/Strings.php:221
+msgid "Your current settings are backed up before every large change."
+msgstr ""
+
+#: src/Admin/Strings.php:222
+msgid "These plugins will be installed and activated. The optional ones can stay off."
+msgstr ""
+
+#: src/Admin/Strings.php:223
+msgid "Installing…"
+msgstr ""
+
+#: src/Admin/Strings.php:224
+msgid "Ready"
+msgstr ""
+
+#: src/Admin/Strings.php:225
+msgid "Will be installed"
+msgstr ""
+
+#: src/Admin/Strings.php:226
+msgid "Will be activated"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: src/Admin/Strings.php:228
+#, php-format
+msgid "Install %s"
+msgstr ""
+
+#: src/Admin/Strings.php:230
+msgid "Every demo is made with free Elementor and has clearly licensed images."
+msgstr ""
+
+#: src/Admin/Strings.php:231
+msgid "Importing demos arrives with the demo importer in a later version. Your choice is shown here so you can see the styles; continue to set your logo and colour."
+msgstr ""
+
+#: src/Admin/Strings.php:232
+msgid "Logo and colour of your store"
+msgstr ""
+
+#: src/Admin/Strings.php:233
+msgid "You can change all of these later in Settings."
+msgstr ""
+
+#: src/Admin/Strings.php:234
+msgid "Store name"
+msgstr ""
+
+#: src/Admin/Strings.php:235
+msgid "Logo"
+msgstr ""
+
+#: src/Admin/Strings.php:236
+msgid "A PNG or SVG about 320 by 96 pixels works best."
+msgstr ""
+
+#: src/Admin/Strings.php:237
+msgid "Main colour"
+msgstr ""
+
+#: src/Admin/Strings.php:238
+msgid "Your store is ready!"
+msgstr ""
+
+#: src/Admin/Strings.php:239
+msgid "Now add your products and menus. You can open this wizard again from the dashboard at any time."
+msgstr ""
+
+#: src/Admin/Strings.php:240
+msgid "View the store"
+msgstr ""
+
+#: src/Admin/Strings.php:241
+msgid "Go to the dashboard"
+msgstr ""
+
+#: src/Admin/Strings.php:242
+msgid "Build the menus"
+msgstr ""
+
+#: src/Admin/Strings.php:244
+msgid "Skip this step"
+msgstr ""
+
+#: src/Admin/Strings.php:245
+msgid "Start"
+msgstr ""
+
+#: src/Admin/Strings.php:246
+msgid "Install and continue"
+msgstr ""
+
+#: src/Admin/Strings.php:247
+msgid "Continue"
+msgstr ""
+
+#: src/Admin/Strings.php:248
+msgid "Save and finish"
+msgstr ""
+
+#: src/Admin/Strings.php:249
+msgid "Please wait…"
+msgstr ""
+
+#: src/Admin/Strings.php:252
+msgid "Step-by-step guides for every part of the store, right here in your dashboard."
+msgstr ""
+
+#: src/Admin/Strings.php:253
+msgid "Search the help"
+msgstr ""
+
+#: src/Admin/Strings.php:254
+msgid "Help articles"
+msgstr ""
+
+#: src/Admin/Strings.php:255
+msgid "The help articles are missing from this build."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:52
+msgid "PHP version"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:53
+msgid "PHP 8.1 is the minimum. Ask your host for PHP 8.3 or later: it is faster and still receives security fixes."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:53
+msgid "At least 8.1 is required."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:61
+msgid "WordPress and WooCommerce"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:62
+msgid "The last two major versions of WordPress and the last three of WooCommerce are supported."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:71
+msgid "High-performance order storage (HPOS)"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:72
+msgid "On, and every Ultra Max module supports it."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:72
+msgid "Off. Turn it on in WooCommerce > Settings > Advanced > Features for faster orders."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:81
+#: src/Admin/Wizard.php:72
+msgid "Elementor"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:82
+msgid "Not active. The layout builder and demos need the free Elementor."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:82
+msgid "The free version is enough. Elementor Pro also works."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:83
+msgid "Not active"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:90
+msgid "PHP memory"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:91
+msgid "At least 256 MB is recommended for WooCommerce and Elementor."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:99
+msgid "Maximum run time"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:100
+msgid "At least 120 seconds is recommended for importing a demo. Ask your host to raise it."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:101
+msgid "Unlimited"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:108
+msgid "Largest upload"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:109
+msgid "At least 16 MB is recommended for images and demo files."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:117
+msgid "PHP extensions"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:118
+msgid "mbstring, intl, zip and curl are present."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:118
+msgid "Ask your host to enable the missing extensions; Persian text, packages and updates need them."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:125
+msgid "Secure connection (HTTPS)"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:126
+msgid "Payment gateways and browsers expect HTTPS."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:134
+msgid "Overlapping plugins"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:135
+msgid "No active plugin does the same job as an Ultra Max module."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:135
+msgid "These plugins do a job Ultra Max also does. Use one of them for each job to avoid doubled dates, logins or code."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:143
+msgid "Old WooCommerce templates in the theme"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:144
+msgid "No outdated template override was found."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:144
+msgid "Update these copies in your child theme from the newer WooCommerce templates."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:152
+msgid "Error display"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:153
+msgid "PHP errors are shown to visitors. Turn WP_DEBUG_DISPLAY off on a live store."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:153
+msgid "Errors are not shown to visitors."
+msgstr ""
+
+#: src/Admin/SystemStatus.php:154
+msgid "Shown"
+msgstr ""
+
+#: src/Admin/SystemStatus.php:154
+msgid "Hidden"
+msgstr ""
+
+#: src/Admin/Wizard.php:71
+msgid "WooCommerce"
+msgstr ""
+
+#: src/Admin/Wizard.php:71
+msgid "The store itself: products, cart and orders."
+msgstr ""
+
+#: src/Admin/Wizard.php:72
+msgid "The free page builder; enough for every demo."
+msgstr ""
+
+#: src/Admin/Wizard.php:73
+msgid "Ultra Max: SMS login"
+msgstr ""
+
+#: src/Admin/Wizard.php:73
+msgid "Optional, but recommended."
+msgstr ""
+
+#: src/Admin/Wizard.php:74
+msgid "Ultra Max: invoices and labels"
+msgstr ""
+
+#: src/Admin/Wizard.php:74
+msgid "Optional."
+msgstr ""
+
+#: src/Admin/Wizard.php:75
+msgid "Ultra Max: SEO"
+msgstr ""
+
+#: src/Admin/Wizard.php:75
+msgid "Optional. Skip it if you already use another SEO plugin."
+msgstr ""
+
+#: src/Admin/Wizard.php:106
+msgid "This plugin is not part of the setup."
+msgstr ""
+
+#: src/Admin/Wizard.php:110
+msgid "This plugin was not found. Upload it from the Ultra Max package in Plugins > Add New."
+msgstr ""
+
+#: src/Admin/Wizard.php:113
+msgid "You are not allowed to install plugins."
+msgstr ""
+
+#: src/Admin/Wizard.php:130
+msgid "wordpress.org did not return a download link."
+msgstr ""
+
+#: src/Admin/Wizard.php:138
+msgid "The plugin could not be installed. Check the folder permissions of wp-content/plugins."
+msgstr ""
+
+#: src/Admin/Wizard.php:142
+msgid "You are not allowed to activate plugins."
+msgstr ""
+
+#: src/Admin/Wizard.php:157
+msgid "Before the setup wizard"
+msgstr ""
+
+#: src/Admin/Wizard.php:188
+msgid "General store"
+msgstr ""
+
+#: src/Admin/Wizard.php:189
+msgid "Everything in one store"
+msgstr ""
+
+#: src/Admin/Wizard.php:195
+msgid "Mobile and digital"
+msgstr ""
+
+#: src/Admin/Wizard.php:196
+msgid "Phones, laptops and accessories"
+msgstr ""
+
+#: src/Admin/Wizard.php:202
+msgid "Fashion and clothing"
+msgstr ""
+
+#: src/Admin/Wizard.php:203
+msgid "Colours and sizes on every card"
+msgstr ""
+
+#: src/Admin/Wizard.php:209
+msgid "Beauty and health"
+msgstr ""
+
+#: src/Admin/Wizard.php:210
+msgid "Brand, scent and skin type"
+msgstr ""
+
+#: src/Admin/Wizard.php:216
+msgid "Supermarket"
+msgstr ""
+
+#: src/Admin/Wizard.php:217
+msgid "Fast shopping with compact cards"
+msgstr ""
+
+#: src/CustomCode.php:101
+msgid "Custom code for this page"
+msgstr ""
+
+#: src/CustomCode.php:117
+msgid "CSS"
+msgstr ""
+
+#: src/CustomCode.php:123
+msgid "JavaScript"
+msgstr ""
+
+#: src/CustomCode.php:127
+msgid "Loaded only on this page, after the code for the whole site."
+msgstr ""
+
+#. translators: %s: post title.
+#: src/Duplicate.php:82
+#, php-format
+msgid "Duplicate \"%s\""
+msgstr ""
+
+#: src/Duplicate.php:83
+msgid "Duplicate"
+msgstr ""
+
+#: src/Duplicate.php:96
+msgid "You cannot duplicate this item."
+msgstr ""
+
+#: src/Duplicate.php:100
+msgid "The copy could not be created."
+msgstr ""
+
+#. translators: %s: original title.
+#: src/Duplicate.php:122
+#, php-format
+msgid "%s (copy)"
+msgstr ""
+
+#: src/Options.php:36
+msgid "Only administrators who may post unfiltered HTML can change this."
+msgstr ""
+
+#: src/Options.php:39
+#: src/Options.php:130
+msgid "Custom code"
+msgstr ""
+
+#: src/Options.php:45
+msgid "Code for the whole site"
+msgstr ""
+
+#: src/Options.php:49
+msgid "Each post and page also has its own CSS and JavaScript boxes in the editor."
+msgstr ""
+
+#: src/Options.php:55
+msgid "Custom CSS"
+msgstr ""
+
+#: src/Options.php:56
+msgid "Added to every page after the theme styles."
+msgstr ""
+
+#: src/Options.php:64
+msgid "Custom JavaScript"
+msgstr ""
+
+#: src/Options.php:65
+msgid "Runs at the end of every page. Write plain JavaScript without a script tag."
+msgstr ""
+
+#: src/Options.php:73
+msgid "Code in the page head"
+msgstr ""
+
+#: src/Options.php:74
+msgid "For verification tags and analytics snippets."
+msgstr ""
+
+#: src/Options.php:81
+msgid "Code after the opening body tag"
+msgstr ""
+
+#: src/Options.php:88
+msgid "Code before the closing body tag"
+msgstr ""
+
+#: src/Options.php:131
+msgid "Your own CSS, JavaScript and head or footer code, for the whole site and for each page."
+msgstr ""
+
+#: src/Options.php:139
+msgid "Duplicate posts and pages"
+msgstr ""
+
+#: src/Options.php:140
+msgid "A \"Duplicate\" link in the lists of posts and pages makes a draft copy with all its settings."
 msgstr ""
 
 #: ultra-max-core.php:31
 msgid "This plugin is missing its build files. Run \"npm run build\" in the development repository, or install the release package."
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:153
+msgid "Farvardin"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:154
+msgid "Ordibehesht"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:155
+msgid "Khordad"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:156
+msgid "Tir"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:157
+msgid "Mordad"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:158
+msgid "Shahrivar"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:159
+msgid "Mehr"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:160
+msgid "Aban"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:161
+msgid "Azar"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:162
+msgid "Dey"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:163
+msgid "Bahman"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:164
+msgid "Esfand"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:175
+msgid "Yekshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:176
+msgid "Doshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:177
+msgid "Seshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:178
+msgid "Chaharshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:179
+msgid "Panjshanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:180
+msgid "Jomeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:181
+msgid "Shanbeh"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "pm"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:233
+msgid "am"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "PM"
+msgstr ""
+
+#: vendor-prefixed/foundation/Jalali.php:234
+msgid "AM"
 msgstr ""
 
 #. translators: 1: product name, 2: required PHP version, 3: current PHP version.
@@ -43,6 +1319,58 @@ msgstr ""
 #: vendor-prefixed/foundation/Requirements.php:57
 #, php-format
 msgid "%1$s needs WordPress %2$s or later. This site runs WordPress %3$s."
+msgstr ""
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting all settings"
+msgstr ""
+
+#: vendor-prefixed/settings/Store.php:176
+msgid "Before resetting a section"
+msgstr ""
+
+#: vendor-prefixed/settings/Store.php:213
+msgid "Before importing settings"
+msgstr ""
+
+#: vendor-prefixed/settings/Store.php:282
+msgid "Before restoring a backup"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:54
+msgid "Author"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:61
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:65
+msgid "Edit"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:124
+msgid "Your email address will not be published."
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:126
+msgid "Name"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:127
+msgid "Email"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:128
+msgid "Website"
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:129
+msgid "Save my name and email in this browser for the next time I comment."
+msgstr ""
+
+#: vendor-prefixed/ui/components/comments/Comments.php:131
+msgid "Comment"
 msgstr ""
 
 #: vendor-prefixed/ui/components/dialog/Overlay.php:58
