@@ -10,7 +10,7 @@
   if (!slot) return;
 
   var wpMenu = [['gauge', 'پیشخوان'], ['file', 'نوشته‌ها'], ['image', 'رسانه'], ['file', 'برگه‌ها'], ['chat', 'دیدگاه‌ها'], ['store', 'ووکامرس'], ['box', 'محصولات'], ['chart', 'تجزیه و تحلیل']];
-  var umMenu = [['dashboard', 'داشبورد', 'dashboard.html'], ['settings', 'تنظیمات', 'settings.html'], ['modules', 'ماژول‌ها', 'modules.html'], ['layouts', 'چیدمان‌ها', '#'], ['auth', 'ورود و پیامک', '#'], ['invoice', 'فاکتور و برچسب', '#'], ['wizard', 'جادوی راه‌اندازی', 'wizard.html'], ['help', 'راهنما', '#']];
+  var umMenu = [['dashboard', 'داشبورد', 'dashboard.html'], ['settings', 'تنظیمات', 'settings.html'], ['modules', 'ماژول‌ها', 'modules.html'], ['layouts', 'چیدمان‌ها', '#'], ['auth', 'ورود و پیامک', '#'], ['invoice', 'فاکتور و برچسب', '#'], ['seo', 'سئو', 'seo.html'],['wizard', 'جادوی راه‌اندازی', 'wizard.html'], ['help', 'راهنما', '#']];
   var after = [['palette', 'نمایش'], ['puzzle', 'افزونه‌ها'], ['users', 'کاربران'], ['wrench', 'ابزارها'], ['sliders', 'تنظیمات']];
 
   function item(i) { return '<li><a href="#">' + ic(i[0], 'i--sm') + '<span>' + i[1] + '</span></a></li>'; }

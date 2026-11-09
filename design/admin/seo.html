@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سئو | الترا مکس</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/shell.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-page" data-shell="admin" data-admin="seo">
+<div data-wp-chrome>
+  <div class="ump">
+    <div class="ump-head">
+      <span id="logo"></span>
+      <div><h1>سئو</h1><span class="ump-head__ver">افزونه الترا مکس: سئو · بدون نیاز به افزونه سئوی دیگر</span></div>
+      <div class="ump-head__actions">
+        <a class="btn btn--neutral btn--sm" href="seo-editor.html"><svg class="i i--sm"><use href="#i-edit"/></svg>نمونه جعبه سئوی محصول</a>
+        <button class="btn btn--sm" data-tab-go="tools"><svg class="i i--sm"><use href="#i-download"/></svg>درون‌ریزی از Yoast یا Rank Math</button>
+      </div>
+    </div>
+
+    <!-- Site audit (SEO-16, SEO-17) -->
+    <div class="grid-2">
+      <section class="card">
+        <div class="card__head"><h2><svg class="i"><use href="#i-activity"/></svg>سلامت سئوی سایت</h2><button class="btn btn--neutral btn--sm" data-toast="بررسی دوباره انجام شد"><svg class="i i--sm"><use href="#i-return"/></svg>بررسی دوباره</button></div>
+        <div class="seo-score">
+          <div class="ring" style="--p:86"><b class="num">۸۶</b></div>
+          <ul class="issues grow" style="width:100%">
+            <li><svg class="i warn"><use href="#i-alert"/></svg><span class="grow"><b class="num">۱۲</b> محصول توضیح متای اختصاصی ندارند و از الگو استفاده می‌کنند.</span><a class="link small" href="#">مشاهده</a></li>
+            <li><svg class="i bad"><use href="#i-alert"/></svg><span class="grow"><b class="num">۳</b> صفحه عنوان سئوی تکراری دارند.</span><a class="link small" href="#">اصلاح</a></li>
+            <li><svg class="i warn"><use href="#i-image"/></svg><span class="grow"><b class="num">۲۸</b> تصویر محصول متن جایگزین ندارند.</span><button class="btn btn--soft btn--sm" data-toast="متن جایگزین ۲۸ تصویر از نام محصول ساخته شد">ساخت خودکار</button></li>
+            <li><svg class="i bad"><use href="#i-link"/></svg><span class="grow"><b class="num">۲</b> لینک داخلی شکسته پیدا شد.</span><a class="link small" href="#">مشاهده</a></li>
+            <li><svg class="i ok"><use href="#i-check"/></svg><span class="grow">همه صفحه‌های مهم قابل ایندکس هستند.</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card__head"><h2><svg class="i"><use href="#i-globe"/></svg>وضعیت دیده‌شدن</h2></div>
+        <dl class="kv">
+          <dt>نقشه سایت</dt><dd><span class="status-dot ok">فعال · ۸۴۲ نشانی</span></dd>
+          <dt>داده ساختاریافته</dt><dd><span class="status-dot ok">معتبر در ۴ نوع صفحه</span></dd>
+          <dt>IndexNow</dt><dd><span class="status-dot ok">فعال · آخرین ارسال ۱۰ دقیقه پیش</span></dd>
+          <dt>llms.txt</dt><dd><span class="status-dot ok">فعال</span></dd>
+          <dt>افزونه سئوی دیگر</dt><dd><span class="status-dot ok">پیدا نشد</span></dd>
+        </dl>
+      </section>
+    </div>
+
+    <div class="card">
+      <div class="tabs" data-tabs="seo" style="margin-bottom:20px">
+        <button class="tab is-active" data-tab="meta">عنوان و متا</button>
+        <button class="tab" data-tab="index">ایندکس</button>
+        <button class="tab" data-tab="sitemap">نقشه سایت</button>
+        <button class="tab" data-tab="schema">داده ساختاریافته</button>
+        <button class="tab" data-tab="ai">هوش مصنوعی و ربات‌ها</button>
+        <button class="tab" data-tab="redirects">تغییر مسیرها</button>
+        <button class="tab" data-tab="404">خطاهای ۴۰۴ <span class="badge badge--warning num">۷</span></button>
+        <button class="tab" data-tab="tools">درون‌ریزی و هم‌زیستی</button>
+      </div>
+
+      <!-- Title and meta templates (SEO-01, SEO-08) -->
+      <div data-tab-panel="seo:meta">
+        <div class="sgroup">
+          <div class="sgroup__label"><b>الگوی عنوان محصول</b><small>هر محصولی که عنوان اختصاصی ندارد از این الگو استفاده می‌کند. روی متغیر کلیک کنید تا اضافه شود.</small></div>
+          <div class="sgroup__ctl">
+            <div class="tpl"><span class="var">عنوان محصول</span><span class="var">جداکننده</span><span>خرید با بهترین قیمت</span><span class="var">جداکننده</span><span class="var">نام سایت</span></div>
+            <div class="vars"><span class="var">+ دسته اصلی</span><span class="var">+ برند</span><span class="var">+ قیمت</span><span class="var">+ تخفیف</span><span class="var">+ سال شمسی</span><span class="var">+ نام سایت</span></div>
+            <div><div class="lenbar lenbar--ok"><i style="width:78%"></i></div><div class="lenmeta"><span>طول نمونه: ۵۶ نویسه</span><span>مناسب</span></div></div>
+          </div>
+        </div>
+        <div class="sgroup">
+          <div class="sgroup__label"><b>الگوی توضیح متای محصول</b><small>اگر توضیح کوتاه محصول باشد از آن استفاده می‌شود.</small></div>
+          <div class="sgroup__ctl">
+            <div class="tpl"><span>خرید</span><span class="var">عنوان محصول</span><span>با</span><span class="var">گارانتی</span><span>و ارسال سریع از</span><span class="var">نام سایت</span><span>.</span><span class="var">توضیح کوتاه</span></div>
+          </div>
+        </div>
+        <div class="sgroup">
+          <div class="sgroup__label"><b>جداکننده عنوان</b></div>
+          <div class="sgroup__ctl"><div class="row" data-chip-group><button class="chip is-active">|</button><button class="chip">-</button><button class="chip">–</button><button class="chip">«»</button><button class="chip">•</button></div></div>
+        </div>
+        <div class="sgroup">
+          <div class="sgroup__label"><b>پیش‌نمایش در گوگل</b><small>نمونه یک محصول با الگوی بالا.</small></div>
+          <div class="sgroup__ctl" id="serp-slot"></div>
+        </div>
+        <div class="sgroup">
+          <div class="sgroup__label"><b>تصویر پیش‌فرض اشتراک‌گذاری</b><small>برای صفحه‌هایی که تصویر شاخص ندارند (Open Graph و X).</small></div>
+          <div class="sgroup__ctl"><button class="btn btn--neutral btn--sm" style="align-self:flex-start"><svg class="i i--sm"><use href="#i-upload"/></svg>انتخاب تصویر ۱۲۰۰×۶۳۰</button></div>
+        </div>
+      </div>
+
+      <!-- Index control (SEO-02, SEO-03, SEO-14) -->
+      <div data-tab-panel="seo:index" hidden>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>نوع صفحه</th><th>نمایش در نتایج</th><th>دنبال کردن پیوندها</th><th>توضیح</th></tr>
+          <tr><td>محصولات</td><td><label class="switch"><input type="checkbox" checked aria-label="ایندکس محصولات"></label></td><td><label class="switch"><input type="checkbox" checked aria-label="دنبال کردن"></label></td><td class="small muted">پیش‌فرض</td></tr>
+          <tr><td>دسته‌های محصول</td><td><label class="switch"><input type="checkbox" checked aria-label="ایندکس دسته‌ها"></label></td><td><label class="switch"><input type="checkbox" checked aria-label="دنبال کردن"></label></td><td class="small muted">پیش‌فرض</td></tr>
+          <tr><td>برندها</td><td><label class="switch"><input type="checkbox" checked aria-label="ایندکس برندها"></label></td><td><label class="switch"><input type="checkbox" checked aria-label="دنبال کردن"></label></td><td class="small muted">پیش‌فرض</td></tr>
+          <tr><td>برچسب‌های محصول</td><td><label class="switch"><input type="checkbox" aria-label="ایندکس برچسب‌ها"></label></td><td><label class="switch"><input type="checkbox" checked aria-label="دنبال کردن"></label></td><td class="small muted">معمولاً محتوای تکراری می‌سازند</td></tr>
+          <tr><td>ترکیب فیلترها</td><td><span class="badge">فقط فیلترهای انتخاب‌شده</span></td><td><label class="switch"><input type="checkbox" checked aria-label="دنبال کردن"></label></td><td class="small muted">PLP-13</td></tr>
+          <tr><td>سبد، تسویه، حساب، جستجو</td><td><span class="badge badge--info"><svg class="i i--sm"><use href="#i-lock"/></svg>همیشه پنهان</span></td><td>—</td><td class="small muted">خودکار، برای جلوگیری از هدر رفتن خزش</td></tr>
+          <tr><td>صفحه پیوست رسانه</td><td><span class="badge badge--info">تغییر مسیر به خود فایل</span></td><td>—</td><td class="small muted">پیش‌فرض</td></tr>
+        </table></div>
+        <div class="sgroup" style="margin-top:20px">
+          <div class="sgroup__label"><b>بهینه‌سازی خزش</b><small>خروجی‌هایی که برای موتور جستجو بی‌ارزش‌اند حذف می‌شوند.</small></div>
+          <div class="sgroup__ctl">
+            <label class="check small"><input type="checkbox" checked>حذف پیوندهای زائد سربرگ وردپرس (shortlink، RSD، oEmbed)</label>
+            <label class="check small"><input type="checkbox" checked>حذف فید دیدگاه‌ها و فیدهای بی‌مصرف</label>
+            <label class="check small"><input type="checkbox" checked>حذف پارامترهای ردیابی مثل utm از نشانی متعارف</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sitemaps (SEO-04) -->
+      <div data-tab-panel="seo:sitemap" hidden>
+        <div class="row row--between row--wrap" style="margin-bottom:12px"><a class="link ltr" href="#">/sitemap_index.xml</a><label class="switch small">تصاویر در نقشه سایت<input type="checkbox" checked></label></div>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>نقشه</th><th>تعداد نشانی</th><th>آخرین تغییر</th><th></th></tr>
+          <tr><td>محصولات <span class="faint xsmall">(۲ تکه)</span></td><td class="num">۶۱۲</td><td>۱۸ آبان ۱۴۰۵</td><td><a class="link small" href="#">باز کردن</a></td></tr>
+          <tr><td>دسته‌های محصول</td><td class="num">۴۸</td><td>۱۶ آبان ۱۴۰۵</td><td><a class="link small" href="#">باز کردن</a></td></tr>
+          <tr><td>برندها</td><td class="num">۲۲</td><td>۱۲ آبان ۱۴۰۵</td><td><a class="link small" href="#">باز کردن</a></td></tr>
+          <tr><td>نوشته‌ها</td><td class="num">۱۴۶</td><td>۱۷ آبان ۱۴۰۵</td><td><a class="link small" href="#">باز کردن</a></td></tr>
+          <tr><td>برگه‌ها</td><td class="num">۱۴</td><td>۲ آبان ۱۴۰۵</td><td><a class="link small" href="#">باز کردن</a></td></tr>
+        </table></div>
+        <p class="xsmall faint" style="margin-top:10px">صفحه‌های پنهان از نتایج خودکار از نقشه حذف می‌شوند. هر تکه حداکثر ۵۰۰ نشانی دارد و نقشه کش می‌شود تا فروشگاه بزرگ کند نشود. تاریخ‌ها در فایل XML به قالب استاندارد بین‌المللی نوشته می‌شوند.</p>
+      </div>
+
+      <!-- Structured data (SEO-05, SEO-06, SEO-07) -->
+      <div data-tab-panel="seo:schema" hidden>
+        <div class="sgroup">
+          <div class="sgroup__label"><b>هویت فروشگاه</b><small>در گراف داده ساختاریافته همه صفحه‌ها به کار می‌رود.</small></div>
+          <div class="sgroup__ctl"><div class="ck-grid" style="margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+            <div class="field"><label class="field__label">نوع</label><select class="select"><option>فروشگاه آنلاین</option><option>سازمان</option><option>کسب‌وکار محلی</option></select></div>
+            <div class="field"><label class="field__label">نام رسمی</label><input class="input" value="فروشگاه نمونه"></div>
+          </div></div>
+        </div>
+        <div class="sgroup">
+          <div class="sgroup__label"><b>اطلاعات فروش برای نتایج فروشگاهی</b><small>هزینه ارسال و سیاست مرجوعی در داده محصول می‌آید تا گوگل آن را کنار قیمت نشان دهد.</small></div>
+          <div class="sgroup__ctl">
+            <label class="check small"><input type="checkbox" checked>هزینه و زمان ارسال از تنظیمات حمل و نقل خوانده شود</label>
+            <div class="row small">مهلت مرجوعی:<input class="input num" style="width:80px;min-height:38px" value="۷"> روز</div>
+            <label class="check small"><input type="checkbox" checked>فیلدهای GTIN و MPN در ویرایشگر محصول و هر تنوع نمایش داده شود</label>
+          </div>
+        </div>
+        <div class="sgroup">
+          <div class="sgroup__label"><b>آخرین اعتبارسنجی</b></div>
+          <div class="sgroup__ctl">
+            <ul class="checks">
+              <li class="is-good"><span class="dot"></span><span>صفحه محصول: Product، Offer، AggregateRating، Review، BreadcrumbList<small>معتبر · ۱۸ آبان ۱۴۰۵</small></span></li>
+              <li class="is-good"><span class="dot"></span><span>صفحه اصلی: OnlineStore، WebSite با جعبه جستجو<small>معتبر</small></span></li>
+              <li class="is-good"><span class="dot"></span><span>آرشیو دسته: CollectionPage، ItemList، BreadcrumbList<small>معتبر</small></span></li>
+              <li class="is-ok"><span class="dot"></span><span>۹ محصول کد GTIN ندارند<small>اختیاری است، ولی نمایش در نتایج فروشگاهی را بهتر می‌کند</small></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI and bots (SEO-11, SEO-12, SEO-13) -->
+      <div data-tab-panel="seo:ai" hidden>
+        <div class="alert" style="margin-bottom:16px"><svg class="i"><use href="#i-info"/></svg><p>ربات «جستجو و پاسخ» صفحه‌ها را برای نمایش در نتایج و پاسخ‌های هوش مصنوعی می‌خواند. ربات «آموزش مدل» محتوا را برای آموزش مدل جمع می‌کند. بستن آموزش، نمایش در جستجو را کم نمی‌کند.</p></div>
+        <div class="tbl-wrap"><table class="bots">
+          <tr><th>سرویس</th><th>جستجو و پاسخ</th><th>آموزش مدل</th></tr>
+          <tr><td>گوگل<small>جستجو و پاسخ‌های هوش مصنوعی گوگل</small></td><td><label class="switch"><input type="checkbox" checked aria-label="Googlebot"></label> <code>Googlebot</code></td><td><label class="switch"><input type="checkbox" checked aria-label="Google-Extended"></label> <code>Google-Extended</code></td></tr>
+          <tr><td>مایکروسافت<small>بینگ و Copilot</small></td><td><label class="switch"><input type="checkbox" checked aria-label="Bingbot"></label> <code>Bingbot</code></td><td>—</td></tr>
+          <tr><td>OpenAI<small>ChatGPT</small></td><td><label class="switch"><input type="checkbox" checked aria-label="OAI-SearchBot"></label> <code>OAI-SearchBot</code></td><td><label class="switch"><input type="checkbox" checked aria-label="GPTBot"></label> <code>GPTBot</code></td></tr>
+          <tr><td>Anthropic<small>Claude</small></td><td><label class="switch"><input type="checkbox" checked aria-label="Claude-SearchBot"></label> <code>Claude-SearchBot</code></td><td><label class="switch"><input type="checkbox" checked aria-label="ClaudeBot"></label> <code>ClaudeBot</code></td></tr>
+          <tr><td>Perplexity</td><td><label class="switch"><input type="checkbox" checked aria-label="PerplexityBot"></label> <code>PerplexityBot</code></td><td>—</td></tr>
+          <tr><td>Apple</td><td><label class="switch"><input type="checkbox" checked aria-label="Applebot"></label> <code>Applebot</code></td><td><label class="switch"><input type="checkbox" checked aria-label="Applebot-Extended"></label> <code>Applebot-Extended</code></td></tr>
+          <tr><td>Common Crawl<small>مجموعه‌داده عمومی</small></td><td>—</td><td><label class="switch"><input type="checkbox" checked aria-label="CCBot"></label> <code>CCBot</code></td></tr>
+        </table></div>
+        <div class="sgroup" style="margin-top:20px">
+          <div class="sgroup__label"><b>robots.txt</b><small>از تنظیمات بالا ساخته می‌شود. می‌توانید خط دلخواه اضافه کنید.</small></div>
+          <div class="sgroup__ctl"><span class="code">User-agent: *
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /?s=
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://shop.example.ir/sitemap_index.xml</span></div>
+        </div>
+        <div class="sgroup">
+          <div class="sgroup__label"><b>llms.txt</b><small>خلاصه‌ای از فروشگاه و پیوند صفحه‌ها و دسته‌های کلیدی برای مدل‌های زبانی. هنوز استاندارد رسمی نیست.</small></div>
+          <div class="sgroup__ctl"><label class="switch">فعال<input type="checkbox" checked></label><a class="link small ltr" href="#">/llms.txt</a></div>
+        </div>
+        <div class="sgroup">
+          <div class="sgroup__label"><b>IndexNow</b><small>انتشار، حذف و تغییر قیمت هر محصول فوری به موتورهای پشتیبان خبر داده می‌شود.</small></div>
+          <div class="sgroup__ctl"><label class="switch">فعال<input type="checkbox" checked></label><span class="small muted">امروز <b class="num">۲۴</b> نشانی ارسال شد. کلید ساخته و در سایت قرار گرفت.</span></div>
+        </div>
+      </div>
+
+      <!-- Redirects (SEO-09) -->
+      <div data-tab-panel="seo:redirects" hidden>
+        <div class="alert alert--warning" style="margin-bottom:16px"><svg class="i"><use href="#i-alert"/></svg><p>نامک <b>۲</b> محصول عوض شده است. برای آن‌ها تغییر مسیر ۳۰۱ پیشنهاد شد. <a class="link" href="#">بررسی و تأیید</a></p></div>
+        <div class="row row--wrap" style="margin-bottom:12px">
+          <input class="input input--ltr" style="flex:1;min-width:160px" placeholder="/old-url" aria-label="نشانی قدیم">
+          <input class="input input--ltr" style="flex:1;min-width:160px" placeholder="/new-url" aria-label="نشانی جدید">
+          <select class="select" style="width:auto" aria-label="نوع"><option>۳۰۱ دائمی</option><option>۳۰۲ موقت</option><option>۴۱۰ حذف‌شده</option></select>
+          <label class="check small"><input type="checkbox">الگو</label>
+          <button class="btn btn--sm" data-toast="تغییر مسیر اضافه شد">افزودن</button>
+        </div>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>از</th><th>به</th><th>نوع</th><th>بازدید</th><th>تاریخ</th></tr>
+          <tr><td class="ltr">/product/novix-x11</td><td class="ltr">/product/novix-x12</td><td><span class="badge num">۳۰۱</span></td><td class="num">۲۱۴</td><td>۱۰ آبان ۱۴۰۵</td></tr>
+          <tr><td class="ltr">/category/headphone/*</td><td class="ltr">/category/audio/headphones/$1</td><td><span class="badge num">۳۰۱</span> <span class="badge badge--info">الگو</span></td><td class="num">۸۹</td><td>۲ آبان ۱۴۰۵</td></tr>
+          <tr><td class="ltr">/product/old-kettle</td><td>—</td><td><span class="badge badge--danger num">۴۱۰</span></td><td class="num">۱۲</td><td>۲۸ مهر ۱۴۰۵</td></tr>
+        </table></div>
+      </div>
+
+      <!-- 404 monitor (SEO-10) -->
+      <div data-tab-panel="seo:404" hidden>
+        <div class="tbl-wrap"><table class="tbl">
+          <tr><th>نشانی</th><th>دفعات</th><th>آخرین بار</th><th>از کجا آمده</th><th></th></tr>
+          <tr><td class="ltr">/product/lumo-air</td><td class="num">۴۶</td><td>۱۸ آبان ۱۴۰۵</td><td class="small muted">گوگل</td><td><button class="btn btn--soft btn--sm" data-toast="تغییر مسیر ساخته شد">ساخت تغییر مسیر</button></td></tr>
+          <tr><td class="ltr">/blog/phone-guide-1404</td><td class="num">۱۳</td><td>۱۷ آبان ۱۴۰۵</td><td class="small muted">پیوند داخلی</td><td><button class="btn btn--soft btn--sm" data-toast="تغییر مسیر ساخته شد">ساخت تغییر مسیر</button></td></tr>
+          <tr><td class="ltr">/wp-login.php.bak</td><td class="num">۹</td><td>۱۸ آبان ۱۴۰۵</td><td class="small muted">ربات ناشناس</td><td><button class="btn btn--ghost btn--sm">نادیده گرفتن</button></td></tr>
+        </table></div>
+      </div>
+
+      <!-- Import and coexistence (SEO-18, SEO-19) -->
+      <div data-tab-panel="seo:tools" hidden>
+        <div class="import-cards">
+          <div class="import-card"><b>درون‌ریزی از Yoast SEO</b><ul><li>عنوان، توضیح و کلمه کلیدی هر صفحه</li><li>تنظیمات ایندکس و نشانی متعارف</li><li>تغییر مسیرهای نسخه Premium</li><li>تصویرهای اشتراک‌گذاری</li></ul><button class="btn btn--neutral btn--sm" data-toast="درون‌ریزی انجام شد">شروع درون‌ریزی</button></div>
+          <div class="import-card"><b>درون‌ریزی از Rank Math</b><ul><li>عنوان، توضیح و کلمه‌های کلیدی</li><li>تنظیمات ایندکس و نشانی متعارف</li><li>تغییر مسیرها و گزارش ۴۰۴</li><li>تنظیمات داده ساختاریافته</li></ul><button class="btn btn--neutral btn--sm" data-toast="درون‌ریزی انجام شد">شروع درون‌ریزی</button></div>
+        </div>
+        <div class="alert" style="margin-top:16px"><svg class="i"><use href="#i-shield"/></svg><p><b>هم‌زیستی:</b> اگر Yoast یا Rank Math فعال بماند، الترا مکس متا، داده ساختاریافته و نقشه سایت خودش را خاموش می‌کند تا هیچ چیزی دو بار چاپ نشود. ابزارهای دیگر مثل ممیزی و کنترل ربات‌ها فعال می‌مانند.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/shell.js"></script>
+<script src="../assets/js/admin.js"></script>
+<script src="../assets/js/seo.js"></script>
+<script>
+  (function () {
+    var UM = window.UM;
+    document.getElementById('logo').innerHTML = UM.logo().replace('<span class="logo__text">الترا<b>مکس</b></span>', '');
+    document.getElementById('serp-slot').innerHTML = UM.serp({ title: 'گوشی موبایل نوویکس مدل X12 ظرفیت ۲۵۶ گیگابایت | خرید با بهترین قیمت | فروشگاه نمونه', desc: 'خرید گوشی موبایل نوویکس مدل X12 با گارانتی ۱۸ ماهه و ارسال سریع از فروشگاه نمونه. صفحه AMOLED ۶.۷ اینچی، باتری ۵۰۰۰ میلی‌آمپر و دوربین ۵۰ مگاپیکسل.' });
+    document.addEventListener('click', function (e) {
+      var g = e.target.closest('[data-tab-go]'); if (!g) return;
+      var t = document.querySelector('[data-tabs="seo"] [data-tab="' + g.getAttribute('data-tab-go') + '"]'); if (t) { t.click(); t.scrollIntoView({ block: 'center' }); }
+    });
+  })();
+</script>
+</body>
+</html>

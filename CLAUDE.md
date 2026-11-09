@@ -15,6 +15,7 @@ Current status: phase 0, awaiting owner approval. Research and design are done; 
 ## Hard rules
 
 - Everything in this repository is authored by Claude from scratch. Never copy files, code or decisions from the previous v0.2 work that existed before 2026-11-09. It is outside the project and must not be referenced, restored or pushed.
+- One exception, approved by the owner on 2026-11-09: well-known, tested open-source libraries such as shadcn/ui, Radix UI and Bootstrap, installed through their official package or CLI. Their licenses must be GPL-compatible, their versions pinned, and each one recorded in `THIRD-PARTY.md`. Never build from scratch a base component that one of these libraries already provides.
 - The references in `D:\Wordpress\Assets` are feature checklists only. Never copy code, CSS, JS, images or fonts from the Woodmart backup or from Digits, and never decode Digits' protected files.
 - Never use Digikala's name, logo, images or brand colors in the product or the demos.
 - Every demo image and font must be owned or openly licensed, with its provenance recorded.
@@ -32,7 +33,7 @@ Current status: phase 0, awaiting owner approval. Research and design are done; 
 - `plugins/ultra-max-auth` holds OTP login, SMS gateways and notifications.
 - `plugins/ultra-max-invoice` holds invoices, labels and order documents, and later the Moadian integration.
 - `plugins/ultra-max-seo` holds meta, sitemaps, structured data, redirects and SEO analysis. It must coexist with Yoast and Rank Math without printing anything twice.
-- Every UI element comes from the central component library in `packages/ui` (CORE-20): PHP renderers with vanilla JS on the storefront, React on Radix in the admin. Pages and widgets never write their own button, form or dialog markup.
+- Every UI element comes from the central component library in `packages/ui` (CORE-20): shadcn/ui (Radix) in the admin and Bootstrap 5 on the storefront, both restyled with our design tokens. Storefront HTML is rendered by PHP; only commerce-specific pieces such as the product card are ours, composed from library parts. Pages and widgets never write their own button, form or dialog markup.
 - Shared code lives in `packages/` and is namespace-prefixed at build time.
 - Each feature has one renderer, shared by the default templates, the Elementor widgets and the shortcodes.
 - Every module has an on/off switch. A disabled module loads no assets and runs no queries.
