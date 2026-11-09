@@ -10,7 +10,7 @@ A monorepo for Ultra Max, a Digikala-style Persian WooCommerce theme with compan
 - `docs/PROGRESS.fa.md`: phase status, finished slices, open questions and the next step.
 - `docs/PROMPTS.fa.md`: the prompts the user sends to start or continue each phase.
 
-Current status: phase 0, awaiting owner approval. Research and design are done; the HTML prototypes in `design/` are the visual reference for later phases (see `design/README.fa.md`). No product code has been written yet. Update this line when a phase changes.
+Current status: phase 0 closed on 2026-11-09; phase 1 (engineering infrastructure) is next. The HTML prototypes in `design/` are the approved visual reference (see `design/README.fa.md`). Market, brand and logo decisions are deferred until before phase 11; keep the internal code name `ultra-max` and read the display name and logo from one setting. No product code has been written yet. Update this line when a phase changes.
 
 ## Hard rules
 
