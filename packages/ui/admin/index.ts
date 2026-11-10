@@ -15,3 +15,5 @@ export { Select, Segmented, ChoiceCards, PresetPicker, ColorField, RangeField, D
 export { Badge, Alert, Progress, Toaster, notify, StatusList, BarChart, Steps, type StatusItem } from './components/Feedback';
 export { SearchBox, ModuleCard, MediaField, Repeater, DataTable, Tour, type SearchResult, type TourStep } from './components/Advanced';
 export { ramp, mix, contrast, on as textOn, normalize as normalizeColor } from './lib/color';
+export { MultiSelect, type MultiSelectProps, type MultiSelectOption } from './components/MultiSelect';
+export { ItemList, ItemRow, PickerCard, PickerGrid, FieldGroup, Inset, Note, type ItemRowProps, type PickerCardProps, type FieldGroupProps } from './components/Lists';

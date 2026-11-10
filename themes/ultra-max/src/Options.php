@@ -683,6 +683,52 @@ final class Options {
 			),
 		);
 
+		$sections['bottom_nav'] = array(
+			'title'  => __( 'Bottom bar', 'ultra-max' ),
+			'icon'   => 'grid',
+			'order'  => 47,
+			'groups' => array(
+				array(
+					'id'          => 'bottom_nav',
+					'title'       => __( 'App-like bottom bar on phones', 'ultra-max' ),
+					'icon'        => 'grid',
+					'features'    => array( 'HDR-10' ),
+					'module'      => 'bottom-nav',
+					'description' => __( 'A row of icons fixed at the bottom of phones and tablets, like a shopping app.', 'ultra-max' ),
+					'fields'      => array(
+						array(
+							'id'       => 'bottom_nav_items',
+							'type'     => 'repeater',
+							'label'    => __( 'Items', 'ultra-max' ),
+							'help'     => __( 'Up to six. Drag to change the order.', 'ultra-max' ),
+							'max_rows' => 6,
+							'default'  => BottomNav::defaults(),
+							'fields'   => array(
+								array(
+									'id'      => 'type',
+									'type'    => 'select',
+									'label'   => __( 'Item', 'ultra-max' ),
+									'default' => 'home',
+									'options' => BottomNav::kinds(),
+								),
+								array(
+									'id'    => 'label',
+									'type'  => 'text',
+									'label' => __( 'Label (optional)', 'ultra-max' ),
+								),
+								array(
+									'id'          => 'url',
+									'type'        => 'url',
+									'label'       => __( 'Link (for wishlist or another link)', 'ultra-max' ),
+									'placeholder' => 'https://',
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+
 		$sections['performance'] = array(
 			'title'  => __( 'Performance', 'ultra-max' ),
 			'icon'   => 'zap',
@@ -756,6 +802,16 @@ final class Options {
 			'default'     => true,
 			'section'     => 'contact',
 			'assets'      => array( 'ui/modules/contact-buttons' ),
+			'product'     => 'ultra-max',
+		);
+		$modules['bottom-nav']      = array(
+			'title'       => __( 'Bottom bar on phones', 'ultra-max' ),
+			'description' => __( 'An app-like row of icons at the bottom of phones: home, categories, cart, wishlist and account.', 'ultra-max' ),
+			'icon'        => 'grid',
+			'features'    => array( 'HDR-10' ),
+			'default'     => true,
+			'section'     => 'bottom_nav',
+			'assets'      => array( 'ui/modules/bottom-nav' ),
 			'product'     => 'ultra-max',
 		);
 		$modules['back-to-top']     = array(

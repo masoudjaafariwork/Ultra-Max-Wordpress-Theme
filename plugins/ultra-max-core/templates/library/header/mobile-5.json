@@ -1,0 +1,171 @@
+{
+	"title": "Phone: brand coloured",
+	"description": "The first phone header on your brand colour.",
+	"devices": {
+		"desktop": false,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "202cb96",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 4,
+					"column": "4",
+					"row": "4"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "12",
+					"bottom": "4",
+					"left": "12",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"__globals__": {
+					"background_color": "globals/colors?id=primary"
+				},
+				"_css_classes": "um-on-brand"
+			},
+			"elements": [
+				{
+					"id": "07e1cd7",
+					"elType": "widget",
+					"widgetType": "um-menu-toggle",
+					"settings": {
+						"source": "categories",
+						"heading": "Product categories",
+						"account": "yes",
+						"quick": [
+							{
+								"_id": "2b44928",
+								"label": "Offers",
+								"icon": "fire",
+								"link": {
+									"url": "#deals",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "c45147d",
+								"label": "Discounts",
+								"icon": "percent",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "eb160de",
+								"label": "Best sellers",
+								"icon": "star",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "5ef0599",
+								"label": "Track order",
+								"icon": "box",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							}
+						]
+					},
+					"elements": []
+				},
+				{
+					"id": "da4fb5c",
+					"elType": "widget",
+					"widgetType": "um-logo",
+					"settings": {
+						"size": "md"
+					},
+					"elements": []
+				},
+				{
+					"id": "4c56ff4",
+					"elType": "widget",
+					"widgetType": "um-spacer",
+					"settings": {
+						"grow": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "a0a080f",
+					"elType": "widget",
+					"widgetType": "um-cart",
+					"settings": {
+						"look": "icon",
+						"text": "Cart"
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "3def184",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "4",
+					"right": "12",
+					"bottom": "10",
+					"left": "12",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"__globals__": {
+					"background_color": "globals/colors?id=primary"
+				},
+				"_css_classes": "um-on-brand"
+			},
+			"elements": [
+				{
+					"id": "c8ffe9a",
+					"elType": "widget",
+					"widgetType": "um-search",
+					"settings": {
+						"layout": "field",
+						"placeholder": "Search the store",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

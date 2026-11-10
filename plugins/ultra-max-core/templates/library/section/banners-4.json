@@ -1,0 +1,120 @@
+{
+	"title": "Four banners",
+	"description": "Four small promotional banners in a row.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "eda80a3",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "f766406",
+					"elType": "widget",
+					"widgetType": "um-banners",
+					"settings": {
+						"columns": "4",
+						"banners": [
+							{
+								"_id": "36660e5",
+								"title": "Up to 12% off",
+								"kicker": "Work laptops",
+								"from": "#e1e0fe",
+								"to": "#c4c1fb",
+								"image": {
+									"id": 0,
+									"url": "{library}/laptop.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"button": "",
+								"light": ""
+							},
+							{
+								"_id": "8c19f57",
+								"title": "Buy in instalments",
+								"kicker": "Smart watches",
+								"from": "#ffe8c2",
+								"to": "#ffb347",
+								"image": {
+									"id": 0,
+									"url": "{library}/watch.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"button": "",
+								"light": ""
+							},
+							{
+								"_id": "d6baf65",
+								"title": "Buy 2, get 1 free",
+								"kicker": "Skin care",
+								"from": "#cbeedb",
+								"to": "#9bddb9",
+								"image": {
+									"id": 0,
+									"url": "{library}/cream.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"button": "",
+								"light": ""
+							},
+							{
+								"_id": "e56954b",
+								"title": "The newest models",
+								"kicker": "Cameras and accessories",
+								"from": "#d3e6ff",
+								"to": "#a8ccff",
+								"image": {
+									"id": 0,
+									"url": "{library}/camera.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"button": "",
+								"light": ""
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

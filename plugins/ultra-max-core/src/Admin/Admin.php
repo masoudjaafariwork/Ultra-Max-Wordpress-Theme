@@ -16,6 +16,12 @@ use UltraMax\Core\Lib\Settings\Modules;
 use UltraMax\Core\Lib\Settings\Schema;
 use UltraMax\Core\Lib\Settings\Store;
 use UltraMax\Core\Lib\UI\Assets as UiAssets;
+use UltraMax\Core\Builder\Builder;
+use UltraMax\Core\Builder\Library;
+use UltraMax\Core\Builder\Rest as LayoutsRest;
+use UltraMax\Core\Builder\Rules;
+use UltraMax\Core\Builder\Types;
+use UltraMax\Core\Elementor\Data as ElementorData;
 
 /**
  * Adds the menu and renders each page as a mount point for the React
@@ -32,6 +38,7 @@ final class Admin {
 	public const PAGES = array(
 		'ultra-max'          => 'dashboard',
 		'ultra-max-settings' => 'settings',
+		'ultra-max-layouts'  => 'layouts',
 		'ultra-max-modules'  => 'modules',
 		'ultra-max-wizard'   => 'wizard',
 		'ultra-max-help'     => 'help',
@@ -66,10 +73,14 @@ final class Admin {
 		$titles                   = array(
 			'ultra-max'          => __( 'Dashboard', 'ultra-max-core' ),
 			'ultra-max-settings' => __( 'Settings', 'ultra-max-core' ),
+			'ultra-max-layouts'  => __( 'Layouts', 'ultra-max-core' ),
 			'ultra-max-modules'  => __( 'Modules', 'ultra-max-core' ),
 			'ultra-max-wizard'   => __( 'Setup wizard', 'ultra-max-core' ),
 			'ultra-max-help'     => __( 'Help', 'ultra-max-core' ),
 		);
+		if ( ! Builder::enabled() ) {
+			unset( $titles['ultra-max-layouts'] );
+		}
 		foreach ( $titles as $slug => $title ) {
 			$capability           = in_array( $slug, array( 'ultra-max-modules', 'ultra-max-wizard' ), true ) ? 'manage_options' : $cap;
 			self::$hooks[ $slug ] = (string) add_submenu_page( 'ultra-max', $title . ' ‹ ' . $name, $title, $capability, $slug, $page );
@@ -266,6 +277,7 @@ final class Admin {
 			'urls'    => array(
 				'dashboard' => admin_url( 'admin.php?page=ultra-max' ),
 				'settings'  => admin_url( 'admin.php?page=ultra-max-settings' ),
+				'layouts'   => admin_url( 'admin.php?page=ultra-max-layouts' ),
 				'modules'   => admin_url( 'admin.php?page=ultra-max-modules' ),
 				'wizard'    => admin_url( 'admin.php?page=ultra-max-wizard' ),
 				'help'      => admin_url( 'admin.php?page=ultra-max-help' ),
@@ -327,7 +339,51 @@ final class Admin {
 		if ( 'help' === $page ) {
 			$data['help'] = Help::articles();
 		}
+		if ( 'layouts' === $page && Builder::enabled() ) {
+			$data['layouts'] = self::layouts();
+		}
 		return $data;
+	}
+
+	/**
+	 * What the layouts page needs (BLD-01, BLD-02).
+	 *
+	 * @return array<string, mixed>
+	 */
+	private static function layouts(): array {
+		$types = array();
+		foreach ( Types::ready() as $id => $type ) {
+			$types[] = array_merge( array( 'id' => $id ), $type );
+		}
+		$targets = array();
+		foreach ( Rules::targets() as $id => $target ) {
+			$targets[] = array(
+				'id'     => $id,
+				'label'  => $target['label'],
+				'group'  => $target['group'],
+				'values' => $target['values'],
+			);
+		}
+		$roles = array(
+			array(
+				'value' => 'guest',
+				'label' => __( 'Visitors who are not logged in', 'ultra-max-core' ),
+			),
+		);
+		foreach ( wp_roles()->get_names() as $role => $name ) {
+			$roles[] = array(
+				'value' => (string) $role,
+				'label' => translate_user_role( $name ),
+			);
+		}
+		return array(
+			'types'     => $types,
+			'items'     => LayoutsRest::rows(),
+			'targets'   => $targets,
+			'roles'     => $roles,
+			'templates' => Library::all(),
+			'elementor' => ElementorData::active(),
+		);
 	}
 
 	/**

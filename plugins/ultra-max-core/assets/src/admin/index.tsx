@@ -9,11 +9,13 @@ import { DashboardPage } from './pages/DashboardPage';
 import { ModulesPage } from './pages/ModulesPage';
 import { WizardPage } from './pages/WizardPage';
 import { HelpPage } from './pages/HelpPage';
+import { LayoutsPage } from './pages/LayoutsPage';
 import { SettingsPage } from './settings/SettingsPage';
 
 const PAGES = {
 	dashboard: DashboardPage,
 	settings: SettingsPage,
+	layouts: LayoutsPage,
 	modules: ModulesPage,
 	wizard: WizardPage,
 	help: HelpPage,

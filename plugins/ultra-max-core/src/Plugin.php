@@ -16,6 +16,9 @@ use UltraMax\Core\Admin\Admin;
 use UltraMax\Core\Admin\Products;
 use UltraMax\Core\Admin\Rest;
 use UltraMax\Core\Admin\Wizard;
+use UltraMax\Core\Builder\Builder;
+use UltraMax\Core\Elementor\Integration;
+use UltraMax\Core\Widgets\Widgets;
 
 /**
  * Boots the plugin once all plugins are loaded.
@@ -63,6 +66,9 @@ final class Plugin {
 		Rest::register();
 		Products::register();
 		CustomCode::register();
+		Builder::register();
+		Widgets::register();
+		Integration::register();
 		if ( is_admin() ) {
 			Admin::register();
 			Wizard::register();

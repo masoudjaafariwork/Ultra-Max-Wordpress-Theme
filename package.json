@@ -42,7 +42,9 @@
     "help:pdf": "node scripts/help-pdf.mjs",
     "package": "node scripts/package.mjs",
     "test:package": "node scripts/test-package.mjs",
-    "screenshot": "node scripts/screenshot.mjs"
+    "screenshot": "node scripts/screenshot.mjs",
+    "seed": "node scripts/seed.mjs",
+    "library": "node scripts/library.mjs"
   },
   "overrides": {
     "playwright-core": "1.64.1",

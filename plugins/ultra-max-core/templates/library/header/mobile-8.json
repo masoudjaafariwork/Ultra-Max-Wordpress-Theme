@@ -1,0 +1,81 @@
+{
+	"title": "Phone: app-like",
+	"description": "A search field and labelled icons, like a shopping app. Pairs with the bottom bar.",
+	"devices": {
+		"desktop": false,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "a8f15ed",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 6,
+					"column": "6",
+					"row": "6"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "12",
+					"bottom": "8",
+					"left": "12",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff",
+				"box_shadow_box_shadow_type": "yes",
+				"box_shadow_box_shadow": {
+					"horizontal": 0,
+					"vertical": 1,
+					"blur": 0,
+					"spread": 0,
+					"color": "rgba(21,22,28,0.08)"
+				}
+			},
+			"elements": [
+				{
+					"id": "47d1e99",
+					"elType": "widget",
+					"widgetType": "um-search",
+					"settings": {
+						"layout": "field",
+						"placeholder": "Search the store",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "f221706",
+					"elType": "widget",
+					"widgetType": "um-wishlist",
+					"settings": {
+						"look": "stacked",
+						"text": "Wishlist"
+					},
+					"elements": []
+				},
+				{
+					"id": "7ef605f",
+					"elType": "widget",
+					"widgetType": "um-cart",
+					"settings": {
+						"look": "stacked",
+						"text": "Cart"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

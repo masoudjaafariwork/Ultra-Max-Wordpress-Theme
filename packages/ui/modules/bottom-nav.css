@@ -1,0 +1,24 @@
+/*
+ * Styles of the switchable bottom bar module (HDR-10): loaded only when the
+ * module is on. Built from the component's own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../tokens/theme.css";
+
+@source "../components/bottom-nav";
+@source "../widgets/header/HeaderAction.php";
+
+/* Room for the bar under the page, and floating buttons lifted above it. */
+@media (width < 1024px) {
+	body.um-has-bottom-nav {
+		padding-bottom: calc(var(--um-bottom-nav-h) + env(safe-area-inset-bottom));
+	}
+
+	body.um-has-bottom-nav [data-um-component="contact-buttons"],
+	body.um-has-bottom-nav [data-um-component="back-to-top"] {
+		bottom: calc(var(--um-bottom-nav-h) + env(safe-area-inset-bottom) + 16px);
+	}
+}

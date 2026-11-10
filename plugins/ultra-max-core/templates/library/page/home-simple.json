@@ -1,0 +1,441 @@
+{
+	"title": "Simple store home page",
+	"description": "Hero slider, advantages, categories, products and reviews.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "05049e9",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "cf004fd",
+					"elType": "widget",
+					"widgetType": "um-hero-slider",
+					"settings": {
+						"height": "md",
+						"autoplay": 5,
+						"slides": [
+							{
+								"_id": "0266e33",
+								"title": "New phones with up to 25% off",
+								"kicker": "Autumn festival",
+								"text": "Instalments without a down payment and free delivery",
+								"button": "Shop now",
+								"from": "#3d34ad",
+								"to": "#7f78f0",
+								"image": {
+									"id": 0,
+									"url": "{library}/phone.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"photo": {
+									"id": 0,
+									"url": ""
+								},
+								"photo_mobile": {
+									"id": 0,
+									"url": ""
+								},
+								"dark": ""
+							},
+							{
+								"_id": "38db3ae",
+								"title": "Headphones and speakers from 990,000 toman",
+								"kicker": "Pure sound",
+								"text": "18-month warranty on every item",
+								"button": "View",
+								"from": "#0a4f51",
+								"to": "#35aeb0",
+								"image": {
+									"id": 0,
+									"url": "{library}/headphones.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"photo": {
+									"id": 0,
+									"url": ""
+								},
+								"photo_mobile": {
+									"id": 0,
+									"url": ""
+								},
+								"dark": ""
+							},
+							{
+								"_id": "3cec07e",
+								"title": "Weekly groceries delivered the same day",
+								"kicker": "Supermarket",
+								"text": "Fresh, fast and always discounted",
+								"button": "Order now",
+								"from": "#b86400",
+								"to": "#ffb347",
+								"image": {
+									"id": 0,
+									"url": "{library}/juice.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"photo": {
+									"id": 0,
+									"url": ""
+								},
+								"photo_mobile": {
+									"id": 0,
+									"url": ""
+								},
+								"dark": ""
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "0c74b7f",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"flex_wrap": "wrap",
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "d709f38",
+					"elType": "widget",
+					"widgetType": "um-icon-box",
+					"settings": {
+						"icon": "truck",
+						"title": "Fast delivery",
+						"text": "Orders placed before 2 pm leave the same day.",
+						"layout": "inline",
+						"framed": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "41f1f19",
+					"elType": "widget",
+					"widgetType": "um-icon-box",
+					"settings": {
+						"icon": "shield",
+						"title": "Secure payment",
+						"text": "Pay with any Shetab card through a bank gateway.",
+						"layout": "inline",
+						"framed": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "24b16fe",
+					"elType": "widget",
+					"widgetType": "um-icon-box",
+					"settings": {
+						"icon": "return",
+						"title": "Easy returns",
+						"text": "Seven days to return what you do not like.",
+						"layout": "inline",
+						"framed": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "ffd52f3",
+					"elType": "widget",
+					"widgetType": "um-icon-box",
+					"settings": {
+						"icon": "headset",
+						"title": "Real support",
+						"text": "People who answer, every day of the week.",
+						"layout": "inline",
+						"framed": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "ad972f1",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "f61d694",
+					"elType": "widget",
+					"widgetType": "um-category-circles",
+					"settings": {
+						"title": "Shop by category",
+						"count": 8,
+						"layout": "grid",
+						"shape": "circle",
+						"more_link": {
+							"url": "",
+							"is_external": "",
+							"nofollow": ""
+						}
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "142949d",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "d34ab16",
+					"elType": "widget",
+					"widgetType": "um-product-tabs",
+					"settings": {
+						"title": "Recommended for you",
+						"boxed": "yes",
+						"count": 10,
+						"design": "hover",
+						"layout": "carousel",
+						"tabs": [
+							{
+								"_id": "3905972",
+								"label": "Newest",
+								"source": "recent"
+							},
+							{
+								"_id": "7f100b7",
+								"label": "Best selling",
+								"source": "best_selling"
+							},
+							{
+								"_id": "7a614fd",
+								"label": "On sale",
+								"source": "sale"
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "8bf1211",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "a02ffd9",
+					"elType": "widget",
+					"widgetType": "um-heading",
+					"settings": {
+						"title": "What our customers say",
+						"level": "2",
+						"align": "center"
+					},
+					"elements": []
+				},
+				{
+					"id": "bca82e4",
+					"elType": "widget",
+					"widgetType": "um-testimonials",
+					"settings": {
+						"per_view": 3,
+						"items": [
+							{
+								"_id": "8e98d81",
+								"quote": "My order arrived quickly and well packed. I will buy again.",
+								"name": "A customer from Tehran",
+								"role": "",
+								"rating": 5
+							},
+							{
+								"_id": "a8c88a0",
+								"quote": "The support team answered all my questions patiently.",
+								"name": "A customer from Isfahan",
+								"role": "",
+								"rating": 5
+							},
+							{
+								"_id": "eddea82",
+								"quote": "Prices are fair and the products are genuine.",
+								"name": "A customer from Shiraz",
+								"role": "",
+								"rating": 5
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "00ec53c",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "4f6ffe1",
+					"elType": "widget",
+					"widgetType": "um-heading",
+					"settings": {
+						"title": "Common questions",
+						"level": "2",
+						"align": "start"
+					},
+					"elements": []
+				},
+				{
+					"id": "beed136",
+					"elType": "widget",
+					"widgetType": "um-accordion",
+					"settings": {
+						"first_open": "yes",
+						"items": [
+							{
+								"_id": "34ed066",
+								"title": "How long does delivery take?",
+								"content": "<p>Orders reach most cities in two to four working days.</p>"
+							},
+							{
+								"_id": "577bcc9",
+								"title": "Can I pay on delivery?",
+								"content": "<p>Yes, in the cities shown at checkout.</p>"
+							},
+							{
+								"_id": "11b9842",
+								"title": "How do I return an item?",
+								"content": "<p>Ask for a return from your account within seven days of delivery.</p>"
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

@@ -46,6 +46,7 @@ namespace UltraMax\UI;
  * @phpstan-import-type ContactButtonsProps from ContactButtons
  * @phpstan-import-type BackToTopProps from BackToTop
  * @phpstan-import-type MediaProps from Media
+ * @phpstan-import-type LayoutRegionProps from LayoutRegion
  */
 final class UI {
 
@@ -326,6 +327,16 @@ final class UI {
 	 */
 	public static function media( array $props ): Html {
 		return Media::render( $props );
+	}
+
+	/**
+	 * Frame of a layout made with the layout builder.
+	 *
+	 * @param array $props Props.
+	 * @phpstan-param LayoutRegionProps $props
+	 */
+	public static function layout_region( array $props ): Html {
+		return LayoutRegion::render( $props );
 	}
 
 	/**

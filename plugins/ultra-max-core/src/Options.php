@@ -126,7 +126,7 @@ final class Options {
 	public static function modules( mixed $modules ): array {
 		$modules = is_array( $modules ) ? $modules : array();
 
-		$modules['custom-code'] = array(
+		$modules['custom-code']    = array(
 			'title'       => __( 'Custom code', 'ultra-max-core' ),
 			'description' => __( 'Your own CSS, JavaScript and head or footer code, for the whole site and for each page.', 'ultra-max-core' ),
 			'icon'        => 'code',
@@ -135,7 +135,23 @@ final class Options {
 			'section'     => 'code',
 			'product'     => 'ultra-max-core',
 		);
-		$modules['duplicate']   = array(
+		$modules['layout-builder'] = array(
+			'title'       => __( 'Layout builder', 'ultra-max-core' ),
+			'description' => __( 'Design the header, footer and reusable blocks with Elementor, and choose where each one shows.', 'ultra-max-core' ),
+			'icon'        => 'layers',
+			'features'    => array( 'BLD-01', 'BLD-02', 'BLD-03', 'BLD-09', 'HDR-01', 'HDR-04' ),
+			'default'     => true,
+			'product'     => 'ultra-max-core',
+		);
+		$modules['widgets']        = array(
+			'title'       => __( 'Store widgets', 'ultra-max-core' ),
+			'description' => __( 'Header, home page and general widgets for Elementor, also usable as shortcodes. Each widget loads its files only on pages that use it.', 'ultra-max-core' ),
+			'icon'        => 'grid',
+			'features'    => array( 'HDR-02', 'HOME-01', 'HOME-12', 'BLD-08', 'BLD-10', 'BLD-12' ),
+			'default'     => true,
+			'product'     => 'ultra-max-core',
+		);
+		$modules['duplicate']      = array(
 			'title'       => __( 'Duplicate posts and pages', 'ultra-max-core' ),
 			'description' => __( 'A "Duplicate" link in the lists of posts and pages makes a draft copy with all its settings.', 'ultra-max-core' ),
 			'icon'        => 'copy',

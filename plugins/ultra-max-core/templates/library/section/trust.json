@@ -1,0 +1,66 @@
+{
+	"title": "Trust badges",
+	"description": "Secure payment text with trust and payment badges.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "6883966",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "53c3bce",
+					"elType": "widget",
+					"widgetType": "um-trust-marks",
+					"settings": {
+						"title": "Secure payment with every Shetab card",
+						"text": "Add your trust badges and payment gateways in the widget settings.",
+						"marks": [
+							{
+								"_id": "839ab46",
+								"label": "Payment gateway 1"
+							},
+							{
+								"_id": "f90f2ac",
+								"label": "Payment gateway 2"
+							},
+							{
+								"_id": "9c838d2",
+								"label": "Trust badge"
+							},
+							{
+								"_id": "1700002",
+								"label": "Shetab network"
+							}
+						],
+						"perks": []
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

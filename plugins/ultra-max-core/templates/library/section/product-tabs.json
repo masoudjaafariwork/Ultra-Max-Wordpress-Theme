@@ -1,0 +1,67 @@
+{
+	"title": "Product tabs",
+	"description": "Newest, best selling and discounted products in tabs.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "d947bf0",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "4734ba6",
+					"elType": "widget",
+					"widgetType": "um-product-tabs",
+					"settings": {
+						"title": "Recommended for you",
+						"boxed": "yes",
+						"count": 10,
+						"design": "hover",
+						"layout": "carousel",
+						"tabs": [
+							{
+								"_id": "3905972",
+								"label": "Newest",
+								"source": "recent"
+							},
+							{
+								"_id": "7f100b7",
+								"label": "Best selling",
+								"source": "best_selling"
+							},
+							{
+								"_id": "7a614fd",
+								"label": "On sale",
+								"source": "sale"
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

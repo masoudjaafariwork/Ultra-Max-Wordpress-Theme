@@ -1,0 +1,163 @@
+{
+	"title": "Centred logo",
+	"description": "Menu on one side, logo in the middle, actions on the other.",
+	"devices": {
+		"desktop": true,
+		"tablet": false,
+		"mobile": false
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "1f0e3da",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "space-between",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "14",
+					"right": "0",
+					"bottom": "14",
+					"left": "0",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff"
+			},
+			"elements": [
+				{
+					"id": "c20ad4d",
+					"elType": "widget",
+					"widgetType": "um-search",
+					"settings": {
+						"layout": "icon",
+						"placeholder": "Search the store"
+					},
+					"elements": []
+				},
+				{
+					"id": "c51ce41",
+					"elType": "widget",
+					"widgetType": "um-spacer",
+					"settings": {
+						"grow": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "aab3238",
+					"elType": "widget",
+					"widgetType": "um-logo",
+					"settings": {
+						"size": "lg"
+					},
+					"elements": []
+				},
+				{
+					"id": "9bf31c7",
+					"elType": "widget",
+					"widgetType": "um-spacer",
+					"settings": {
+						"grow": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "c74d97b",
+					"elType": "widget",
+					"widgetType": "um-account",
+					"settings": {
+						"look": "icon",
+						"guest_text": "Log in | Sign up",
+						"user_text": "My account"
+					},
+					"elements": []
+				},
+				{
+					"id": "70efdf2",
+					"elType": "widget",
+					"widgetType": "um-wishlist",
+					"settings": {
+						"look": "icon",
+						"text": "Wishlist"
+					},
+					"elements": []
+				},
+				{
+					"id": "6f4922f",
+					"elType": "widget",
+					"widgetType": "um-cart",
+					"settings": {
+						"look": "icon",
+						"text": "Cart"
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "3c59dc0",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "center",
+				"flex_gap": {
+					"unit": "px",
+					"size": 20,
+					"column": "20",
+					"row": "20"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff",
+				"box_shadow_box_shadow_type": "yes",
+				"box_shadow_box_shadow": {
+					"horizontal": 0,
+					"vertical": 1,
+					"blur": 0,
+					"spread": 0,
+					"color": "rgba(21,22,28,0.08)"
+				}
+			},
+			"elements": [
+				{
+					"id": "98f1370",
+					"elType": "widget",
+					"widgetType": "um-nav-menu",
+					"settings": {
+						"menu": "",
+						"align": "center",
+						"size": "sm",
+						"label": "Main menu",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

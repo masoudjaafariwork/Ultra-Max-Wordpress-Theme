@@ -22,9 +22,24 @@
 @source not "../components/notice-bar";
 @source not "../components/contact-buttons";
 @source not "../components/back-to-top";
+@source not "../components/bottom-nav";
 @source "../../../themes";
 @source "../../../plugins";
 @source "../../../tools/catalog/src";
 
 /* Classes that Flowbite adds from JavaScript. */
 @source inline("hidden block flex visible invisible opacity-0 opacity-100");
+
+/*
+ * Elementor's frontend styles are not in a cascade layer, so its
+ * `.elementor img` reset (no radius, no border, automatic height) would
+ * beat our layered utilities. Inside our components, images take our
+ * styles again.
+ */
+.elementor :is([class*="um-"]) img {
+	height: revert-layer;
+	max-width: revert-layer;
+	border: revert-layer;
+	border-radius: revert-layer;
+	box-shadow: revert-layer;
+}

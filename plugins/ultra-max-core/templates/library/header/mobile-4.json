@@ -1,0 +1,153 @@
+{
+	"title": "Phone: centred logo",
+	"description": "Menu at the start, logo in the middle, account and cart at the end.",
+	"devices": {
+		"desktop": false,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "5fd0b37",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "space-between",
+				"flex_gap": {
+					"unit": "px",
+					"size": 4,
+					"column": "4",
+					"row": "4"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "12",
+					"bottom": "8",
+					"left": "12",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff",
+				"box_shadow_box_shadow_type": "yes",
+				"box_shadow_box_shadow": {
+					"horizontal": 0,
+					"vertical": 1,
+					"blur": 0,
+					"spread": 0,
+					"color": "rgba(21,22,28,0.08)"
+				}
+			},
+			"elements": [
+				{
+					"id": "a3c65c2",
+					"elType": "widget",
+					"widgetType": "um-menu-toggle",
+					"settings": {
+						"source": "categories",
+						"heading": "Product categories",
+						"account": "yes",
+						"quick": [
+							{
+								"_id": "c9e1074",
+								"label": "Offers",
+								"icon": "fire",
+								"link": {
+									"url": "#deals",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "65b9eea",
+								"label": "Discounts",
+								"icon": "percent",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "f0935e4",
+								"label": "Best sellers",
+								"icon": "star",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "a97da62",
+								"label": "Track order",
+								"icon": "box",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							}
+						]
+					},
+					"elements": []
+				},
+				{
+					"id": "2723d09",
+					"elType": "widget",
+					"widgetType": "um-spacer",
+					"settings": {
+						"grow": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "5f93f98",
+					"elType": "widget",
+					"widgetType": "um-logo",
+					"settings": {
+						"size": "md"
+					},
+					"elements": []
+				},
+				{
+					"id": "698d51a",
+					"elType": "widget",
+					"widgetType": "um-spacer",
+					"settings": {
+						"grow": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "7f6ffaa",
+					"elType": "widget",
+					"widgetType": "um-account",
+					"settings": {
+						"look": "icon",
+						"guest_text": "Log in | Sign up",
+						"user_text": "My account"
+					},
+					"elements": []
+				},
+				{
+					"id": "73278a4",
+					"elType": "widget",
+					"widgetType": "um-cart",
+					"settings": {
+						"look": "icon",
+						"text": "Cart"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,136 @@
+{
+	"title": "Three plans",
+	"description": "Three pricing tables side by side, the middle one highlighted.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "f2fc990",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "stretch",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"flex_wrap": "wrap",
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "ad13a2a",
+					"elType": "widget",
+					"widgetType": "um-pricing-table",
+					"settings": {
+						"title": "Basic",
+						"price": 0,
+						"period": "month",
+						"featured": "",
+						"ribbon": "",
+						"button": "Choose this plan",
+						"features": [
+							{
+								"_id": "950a415",
+								"text": "Free delivery",
+								"included": "yes"
+							},
+							{
+								"_id": "158f306",
+								"text": "Early access to offers",
+								"included": ""
+							},
+							{
+								"_id": "7588749",
+								"text": "Priority support",
+								"included": ""
+							}
+						],
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "8d3bba7",
+					"elType": "widget",
+					"widgetType": "um-pricing-table",
+					"settings": {
+						"title": "Gold",
+						"price": 490000,
+						"period": "month",
+						"featured": "yes",
+						"ribbon": "Most popular",
+						"button": "Choose this plan",
+						"features": [
+							{
+								"_id": "3fe94a0",
+								"text": "Free delivery",
+								"included": "yes"
+							},
+							{
+								"_id": "5b8add2",
+								"text": "Early access to offers",
+								"included": "yes"
+							},
+							{
+								"_id": "432aca3",
+								"text": "Priority support",
+								"included": ""
+							}
+						],
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "bc6dc48",
+					"elType": "widget",
+					"widgetType": "um-pricing-table",
+					"settings": {
+						"title": "Diamond",
+						"price": 990000,
+						"period": "month",
+						"featured": "",
+						"ribbon": "",
+						"button": "Choose this plan",
+						"features": [
+							{
+								"_id": "3207225",
+								"text": "Free delivery",
+								"included": "yes"
+							},
+							{
+								"_id": "caf1a3d",
+								"text": "Early access to offers",
+								"included": "yes"
+							},
+							{
+								"_id": "5737c6e",
+								"text": "Priority support",
+								"included": "yes"
+							}
+						],
+						"_flex_size": "grow"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

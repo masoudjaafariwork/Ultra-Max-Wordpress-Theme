@@ -1,0 +1,417 @@
+{
+	"title": "Compact footer",
+	"description": "Logo and short text, three link columns, social links and copyright.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "d1c38a0",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "flex-start",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 32,
+					"column": "32",
+					"row": "32"
+				},
+				"flex_wrap": "wrap",
+				"padding": {
+					"unit": "px",
+					"top": "32",
+					"right": "0",
+					"bottom": "32",
+					"left": "0",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff"
+			},
+			"elements": [
+				{
+					"id": "7eabe3a",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 30
+						}
+					},
+					"elements": [
+						{
+							"id": "84d9ee4",
+							"elType": "widget",
+							"widgetType": "um-logo",
+							"settings": {
+								"size": "md"
+							},
+							"elements": []
+						},
+						{
+							"id": "3644a68",
+							"elType": "widget",
+							"widgetType": "um-text",
+							"settings": {
+								"content": "Write a sentence about your store here."
+							},
+							"elements": []
+						},
+						{
+							"id": "eae27d7",
+							"elType": "widget",
+							"widgetType": "um-social",
+							"settings": {
+								"size": "sm",
+								"items": [
+									{
+										"_id": "757b505",
+										"network": "instagram",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "854d6fa",
+										"network": "telegram",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "e2c0be2",
+										"network": "whatsapp",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "274ad47",
+										"network": "aparat",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									}
+								]
+							},
+							"elements": []
+						}
+					]
+				},
+				{
+					"id": "1534b76",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 18
+						}
+					},
+					"elements": [
+						{
+							"id": "eb16372",
+							"elType": "widget",
+							"widgetType": "um-icon-list",
+							"settings": {
+								"title": "Shopping guide",
+								"layout": "column",
+								"items": [
+									{
+										"_id": "69adc1e",
+										"text": "How to order",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "091d584",
+										"text": "Delivery",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "b1d10e7",
+										"text": "Payment methods",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "6f3ef77",
+										"text": "Track your order",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									}
+								]
+							},
+							"elements": []
+						}
+					]
+				},
+				{
+					"id": "e96ed47",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 18
+						}
+					},
+					"elements": [
+						{
+							"id": "63dc7ed",
+							"elType": "widget",
+							"widgetType": "um-icon-list",
+							"settings": {
+								"title": "Customer service",
+								"layout": "column",
+								"items": [
+									{
+										"_id": "979d472",
+										"text": "Frequently asked questions",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "ca46c1b",
+										"text": "Returns",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "3b8a614",
+										"text": "Terms of use",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "45fbc6d",
+										"text": "Privacy",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									}
+								]
+							},
+							"elements": []
+						}
+					]
+				},
+				{
+					"id": "13fe9d8",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 18
+						}
+					},
+					"elements": [
+						{
+							"id": "115f895",
+							"elType": "widget",
+							"widgetType": "um-icon-list",
+							"settings": {
+								"title": "About us",
+								"layout": "column",
+								"items": [
+									{
+										"_id": "c0e190d",
+										"text": "About the store",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "ec8ce6a",
+										"text": "Contact us",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "060ad92",
+										"text": "Blog",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "bcbe336",
+										"text": "Work with us",
+										"icon": "",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									}
+								]
+							},
+							"elements": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "705f217",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "full",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 0,
+					"column": "0",
+					"row": "0"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "9cfdf10",
+					"elType": "widget",
+					"widgetType": "um-copyright",
+					"settings": {
+						"text": "All rights reserved for {site}. {year}",
+						"top": "yes"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

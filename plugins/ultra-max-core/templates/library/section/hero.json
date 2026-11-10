@@ -1,0 +1,130 @@
+{
+	"title": "Hero slider",
+	"description": "Three large slides with text, a button and a product image.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "077e29b",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "621bf66",
+					"elType": "widget",
+					"widgetType": "um-hero-slider",
+					"settings": {
+						"height": "md",
+						"autoplay": 5,
+						"slides": [
+							{
+								"_id": "0266e33",
+								"title": "New phones with up to 25% off",
+								"kicker": "Autumn festival",
+								"text": "Instalments without a down payment and free delivery",
+								"button": "Shop now",
+								"from": "#3d34ad",
+								"to": "#7f78f0",
+								"image": {
+									"id": 0,
+									"url": "{library}/phone.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"photo": {
+									"id": 0,
+									"url": ""
+								},
+								"photo_mobile": {
+									"id": 0,
+									"url": ""
+								},
+								"dark": ""
+							},
+							{
+								"_id": "38db3ae",
+								"title": "Headphones and speakers from 990,000 toman",
+								"kicker": "Pure sound",
+								"text": "18-month warranty on every item",
+								"button": "View",
+								"from": "#0a4f51",
+								"to": "#35aeb0",
+								"image": {
+									"id": 0,
+									"url": "{library}/headphones.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"photo": {
+									"id": 0,
+									"url": ""
+								},
+								"photo_mobile": {
+									"id": 0,
+									"url": ""
+								},
+								"dark": ""
+							},
+							{
+								"_id": "3cec07e",
+								"title": "Weekly groceries delivered the same day",
+								"kicker": "Supermarket",
+								"text": "Fresh, fast and always discounted",
+								"button": "Order now",
+								"from": "#b86400",
+								"to": "#ffb347",
+								"image": {
+									"id": 0,
+									"url": "{library}/juice.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"photo": {
+									"id": 0,
+									"url": ""
+								},
+								"photo_mobile": {
+									"id": 0,
+									"url": ""
+								},
+								"dark": ""
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

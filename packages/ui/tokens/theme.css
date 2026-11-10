@@ -27,6 +27,10 @@
 	--color-accent: var(--um-accent-500);
 	--color-accent-hover: var(--um-accent-400);
 	--color-accent-soft: var(--um-accent-100);
+	--color-accent-strong: var(--um-accent-700);
+	--color-accent-faint: var(--um-accent-50);
+	--color-brand-strong: var(--um-brand-800);
+	--color-brand-soft: var(--um-brand-100);
 	--color-on-accent: #1f1300;
 	--color-success: var(--um-success);
 	--color-success-soft: var(--um-success-50);

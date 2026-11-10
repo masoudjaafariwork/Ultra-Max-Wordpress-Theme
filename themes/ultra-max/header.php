@@ -26,4 +26,8 @@ Template::frame_open();
  */
 do_action( 'ultra_max_before_header' );
 
-Template::header();
+$ultra_max_devices = Template::location( 'header' );
+if ( Template::any( $ultra_max_devices ) ) {
+	Template::header( $ultra_max_devices );
+}
+unset( $ultra_max_devices );

@@ -1,0 +1,153 @@
+{
+	"title": "Phone: all icons",
+	"description": "Menu, logo, then search, account and cart icons.",
+	"devices": {
+		"desktop": false,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "42a0e18",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 2,
+					"column": "2",
+					"row": "2"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "12",
+					"bottom": "8",
+					"left": "12",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff",
+				"box_shadow_box_shadow_type": "yes",
+				"box_shadow_box_shadow": {
+					"horizontal": 0,
+					"vertical": 1,
+					"blur": 0,
+					"spread": 0,
+					"color": "rgba(21,22,28,0.08)"
+				}
+			},
+			"elements": [
+				{
+					"id": "9b86192",
+					"elType": "widget",
+					"widgetType": "um-menu-toggle",
+					"settings": {
+						"source": "categories",
+						"heading": "Product categories",
+						"account": "yes",
+						"quick": [
+							{
+								"_id": "069059b",
+								"label": "Offers",
+								"icon": "fire",
+								"link": {
+									"url": "#deals",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "ec5decc",
+								"label": "Discounts",
+								"icon": "percent",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "76dc611",
+								"label": "Best sellers",
+								"icon": "star",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "d1f491a",
+								"label": "Track order",
+								"icon": "box",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							}
+						]
+					},
+					"elements": []
+				},
+				{
+					"id": "1afa34a",
+					"elType": "widget",
+					"widgetType": "um-logo",
+					"settings": {
+						"size": "md"
+					},
+					"elements": []
+				},
+				{
+					"id": "65ded53",
+					"elType": "widget",
+					"widgetType": "um-spacer",
+					"settings": {
+						"grow": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "9fc3d71",
+					"elType": "widget",
+					"widgetType": "um-search",
+					"settings": {
+						"layout": "icon",
+						"placeholder": "Search the store"
+					},
+					"elements": []
+				},
+				{
+					"id": "02522a2",
+					"elType": "widget",
+					"widgetType": "um-account",
+					"settings": {
+						"look": "icon",
+						"guest_text": "Log in | Sign up",
+						"user_text": "My account"
+					},
+					"elements": []
+				},
+				{
+					"id": "7f1de29",
+					"elType": "widget",
+					"widgetType": "um-cart",
+					"settings": {
+						"look": "icon",
+						"text": "Cart"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

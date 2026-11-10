@@ -1,0 +1,609 @@
+{
+	"title": "Full store footer",
+	"description": "Advantages, link columns, newsletter, social links, trust badges, app links and copyright.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "084b6fb",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 28,
+					"column": "28",
+					"row": "28"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "32",
+					"right": "0",
+					"bottom": "8",
+					"left": "0",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff",
+				"border_border": "solid",
+				"border_width": {
+					"unit": "px",
+					"top": "1",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"isLinked": false
+				},
+				"border_color": "#dfe1e7"
+			},
+			"elements": [
+				{
+					"id": "1c9ac01",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "row",
+						"flex_align_items": "center",
+						"flex_justify_content": "space-between",
+						"flex_gap": {
+							"unit": "px",
+							"size": 16,
+							"column": "16",
+							"row": "16"
+						},
+						"flex_wrap": "wrap",
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "37a749d",
+							"elType": "widget",
+							"widgetType": "um-logo",
+							"settings": {
+								"size": "md"
+							},
+							"elements": []
+						},
+						{
+							"id": "2a79ea2",
+							"elType": "widget",
+							"widgetType": "um-icon-list",
+							"settings": {
+								"layout": "row",
+								"items": [
+									{
+										"_id": "b3e3e39",
+										"text": "Support: your store phone number",
+										"icon": "headset",
+										"link": {
+											"url": "",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "1d7f7ab",
+										"text": "Every day from 9 to 21",
+										"icon": "clock",
+										"link": {
+											"url": "",
+											"is_external": "",
+											"nofollow": ""
+										}
+									}
+								]
+							},
+							"elements": []
+						}
+					]
+				},
+				{
+					"id": "82aa4b0",
+					"elType": "widget",
+					"widgetType": "um-perks",
+					"settings": {
+						"perks": [
+							{
+								"_id": "6c4b761",
+								"icon": "truck",
+								"title": "Fast delivery",
+								"text": "All over the country"
+							},
+							{
+								"_id": "0640966",
+								"icon": "cash",
+								"title": "Cash on delivery",
+								"text": "In selected cities"
+							},
+							{
+								"_id": "140f696",
+								"icon": "return",
+								"title": "7-day returns",
+								"text": "No questions asked"
+							},
+							{
+								"_id": "b73ce39",
+								"icon": "verified",
+								"title": "Genuine products",
+								"text": "From the brand or its agent"
+							},
+							{
+								"_id": "bd4c9ab",
+								"icon": "headset",
+								"title": "Support 7 days a week",
+								"text": "By phone and chat"
+							}
+						]
+					},
+					"elements": []
+				},
+				{
+					"id": "9dcb88e",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "row",
+						"flex_align_items": "flex-start",
+						"flex_justify_content": "flex-start",
+						"flex_gap": {
+							"unit": "px",
+							"size": 32,
+							"column": "32",
+							"row": "32"
+						},
+						"flex_wrap": "wrap",
+						"padding": {
+							"unit": "px",
+							"top": "24",
+							"right": "0",
+							"bottom": "24",
+							"left": "0",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "006f52e",
+							"elType": "container",
+							"isInner": true,
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "column",
+								"flex_gap": {
+									"unit": "px",
+									"size": 12,
+									"column": "12",
+									"row": "12"
+								},
+								"padding": {
+									"unit": "px",
+									"top": "0",
+									"right": "0",
+									"bottom": "0",
+									"left": "0",
+									"isLinked": false
+								},
+								"width": {
+									"unit": "%",
+									"size": 18
+								}
+							},
+							"elements": [
+								{
+									"id": "5878a7a",
+									"elType": "widget",
+									"widgetType": "um-icon-list",
+									"settings": {
+										"title": "Shopping guide",
+										"layout": "column",
+										"items": [
+											{
+												"_id": "0777d5c",
+												"text": "How to order",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "fa7cdfa",
+												"text": "Delivery",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "9766527",
+												"text": "Payment methods",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "7e7757b",
+												"text": "Track your order",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											}
+										]
+									},
+									"elements": []
+								}
+							]
+						},
+						{
+							"id": "bf82296",
+							"elType": "container",
+							"isInner": true,
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "column",
+								"flex_gap": {
+									"unit": "px",
+									"size": 12,
+									"column": "12",
+									"row": "12"
+								},
+								"padding": {
+									"unit": "px",
+									"top": "0",
+									"right": "0",
+									"bottom": "0",
+									"left": "0",
+									"isLinked": false
+								},
+								"width": {
+									"unit": "%",
+									"size": 18
+								}
+							},
+							"elements": [
+								{
+									"id": "f7e6c85",
+									"elType": "widget",
+									"widgetType": "um-icon-list",
+									"settings": {
+										"title": "Customer service",
+										"layout": "column",
+										"items": [
+											{
+												"_id": "3636638",
+												"text": "Frequently asked questions",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "149e967",
+												"text": "Returns",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "a4a042c",
+												"text": "Terms of use",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "1ff8a7b",
+												"text": "Privacy",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											}
+										]
+									},
+									"elements": []
+								}
+							]
+						},
+						{
+							"id": "045117b",
+							"elType": "container",
+							"isInner": true,
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "column",
+								"flex_gap": {
+									"unit": "px",
+									"size": 12,
+									"column": "12",
+									"row": "12"
+								},
+								"padding": {
+									"unit": "px",
+									"top": "0",
+									"right": "0",
+									"bottom": "0",
+									"left": "0",
+									"isLinked": false
+								},
+								"width": {
+									"unit": "%",
+									"size": 18
+								}
+							},
+							"elements": [
+								{
+									"id": "8f53295",
+									"elType": "widget",
+									"widgetType": "um-icon-list",
+									"settings": {
+										"title": "About us",
+										"layout": "column",
+										"items": [
+											{
+												"_id": "8216124",
+												"text": "About the store",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "38af861",
+												"text": "Contact us",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "96da2f5",
+												"text": "Blog",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "8f85517",
+												"text": "Work with us",
+												"icon": "",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											}
+										]
+									},
+									"elements": []
+								}
+							]
+						},
+						{
+							"id": "31fefc0",
+							"elType": "container",
+							"isInner": true,
+							"settings": {
+								"content_width": "full",
+								"flex_direction": "column",
+								"flex_gap": {
+									"unit": "px",
+									"size": 16,
+									"column": "16",
+									"row": "16"
+								},
+								"padding": {
+									"unit": "px",
+									"top": "0",
+									"right": "0",
+									"bottom": "0",
+									"left": "0",
+									"isLinked": false
+								},
+								"width": {
+									"unit": "%",
+									"size": 36
+								}
+							},
+							"elements": [
+								{
+									"id": "fc22130",
+									"elType": "widget",
+									"widgetType": "um-newsletter",
+									"settings": {
+										"title": "Hear about offers and new arrivals first",
+										"placeholder": "Email or mobile number",
+										"button": "Join"
+									},
+									"elements": []
+								},
+								{
+									"id": "9872ed9",
+									"elType": "widget",
+									"widgetType": "um-social",
+									"settings": {
+										"size": "md",
+										"items": [
+											{
+												"_id": "4c5bde7",
+												"network": "instagram",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "cedebb6",
+												"network": "telegram",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "6cdd60e",
+												"network": "whatsapp",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											},
+											{
+												"_id": "eecca5b",
+												"network": "aparat",
+												"link": {
+													"url": "#",
+													"is_external": "",
+													"nofollow": ""
+												}
+											}
+										]
+									},
+									"elements": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "58a2fc6",
+					"elType": "widget",
+					"widgetType": "um-trust-marks",
+					"settings": {
+						"title": "About the store",
+						"text": "Write a short description of your store, its guarantees and delivery here. Search engines read it too.",
+						"marks": [
+							{
+								"_id": "a2557a7",
+								"label": "e-Namad trust badge"
+							},
+							{
+								"_id": "cfecdb2",
+								"label": "National registration"
+							},
+							{
+								"_id": "0aa1883",
+								"label": "Business licence"
+							}
+						],
+						"perks": []
+					},
+					"elements": []
+				},
+				{
+					"id": "0336dcb",
+					"elType": "widget",
+					"widgetType": "um-app-links",
+					"settings": {
+						"label": "Store app:",
+						"items": [
+							{
+								"_id": "bd686fd",
+								"label": "Add to home screen",
+								"icon": "mobile",
+								"link": {
+									"url": "#",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "a597e50",
+								"label": "Direct download",
+								"icon": "download",
+								"link": {
+									"url": "#",
+									"is_external": "",
+									"nofollow": ""
+								}
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "0e65972",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "full",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 0,
+					"column": "0",
+					"row": "0"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "85d8ce5",
+					"elType": "widget",
+					"widgetType": "um-copyright",
+					"settings": {
+						"text": "All rights reserved for {site}. {year}",
+						"top": "yes"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

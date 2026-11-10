@@ -1,0 +1,99 @@
+{
+	"title": "Minimal footer",
+	"description": "One line with the copyright and social links.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "289dff0",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "space-between",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"flex_wrap": "wrap",
+				"padding": {
+					"unit": "px",
+					"top": "14",
+					"right": "0",
+					"bottom": "14",
+					"left": "0",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff"
+			},
+			"elements": [
+				{
+					"id": "74db120",
+					"elType": "widget",
+					"widgetType": "um-copyright",
+					"settings": {
+						"text": "All rights reserved for {site}. {year}",
+						"top": ""
+					},
+					"elements": []
+				},
+				{
+					"id": "e165421",
+					"elType": "widget",
+					"widgetType": "um-social",
+					"settings": {
+						"size": "sm",
+						"items": [
+							{
+								"_id": "57aeee3",
+								"network": "instagram",
+								"link": {
+									"url": "#",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "6da9003",
+								"network": "telegram",
+								"link": {
+									"url": "#",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "9b04d15",
+								"network": "whatsapp",
+								"link": {
+									"url": "#",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "be83ab3",
+								"network": "aparat",
+								"link": {
+									"url": "#",
+									"is_external": "",
+									"nofollow": ""
+								}
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,89 @@
+{
+	"title": "Minimal",
+	"description": "Just the logo, search and cart, for small stores.",
+	"devices": {
+		"desktop": true,
+		"tablet": false,
+		"mobile": false
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "ad61ab1",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 24,
+					"column": "24",
+					"row": "24"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "14",
+					"right": "0",
+					"bottom": "14",
+					"left": "0",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff",
+				"box_shadow_box_shadow_type": "yes",
+				"box_shadow_box_shadow": {
+					"horizontal": 0,
+					"vertical": 1,
+					"blur": 0,
+					"spread": 0,
+					"color": "rgba(21,22,28,0.08)"
+				}
+			},
+			"elements": [
+				{
+					"id": "7cbbc40",
+					"elType": "widget",
+					"widgetType": "um-logo",
+					"settings": {
+						"size": "md"
+					},
+					"elements": []
+				},
+				{
+					"id": "e2c420d",
+					"elType": "widget",
+					"widgetType": "um-spacer",
+					"settings": {
+						"grow": "yes",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "32bb90e",
+					"elType": "widget",
+					"widgetType": "um-search",
+					"settings": {
+						"layout": "field",
+						"placeholder": "Search the store"
+					},
+					"elements": []
+				},
+				{
+					"id": "d2ddea1",
+					"elType": "widget",
+					"widgetType": "um-cart",
+					"settings": {
+						"look": "button",
+						"text": "Cart"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

@@ -40,6 +40,7 @@ final class Theme {
 		add_action( 'after_setup_theme', array( $this, 'setup' ) );
 		add_action( 'widgets_init', array( $this, 'widgets' ) );
 		add_action( 'wp', array( $this, 'front' ) );
+		add_action( 'elementor/theme/register_locations', array( $this, 'elementor_locations' ) );
 		add_filter( 'body_class', array( Template::class, 'body_class' ) );
 		add_filter( 'get_search_form', array( $this, 'search_form' ), 10, 2 );
 		add_filter( 'excerpt_length', static fn (): int => 28 );
@@ -128,6 +129,19 @@ final class Theme {
 		}
 		Maintenance::register();
 		Extras::register();
+		BottomNav::register();
+	}
+
+	/**
+	 * Tells Elementor Pro's Theme Builder that the header, footer, single
+	 * and archive locations are printed by Template::location() (BLD-09).
+	 *
+	 * @param mixed $manager Elementor Pro's locations manager.
+	 */
+	public function elementor_locations( mixed $manager ): void {
+		if ( is_object( $manager ) && method_exists( $manager, 'register_all_core_location' ) ) {
+			$manager->register_all_core_location();
+		}
 	}
 
 	/**

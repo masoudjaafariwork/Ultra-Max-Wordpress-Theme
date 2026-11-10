@@ -10,6 +10,7 @@ parameters:
     paths:
         - packages/ui/src
         - packages/ui/components
+        - packages/ui/widgets
         - packages/foundation/src
         - packages/license/src
         - packages/settings/src
@@ -29,3 +30,4 @@ parameters:
         - plugins/ultra-max-seo/vendor-prefixed
     scanFiles:
         - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
+        - tests/stubs/elementor.php

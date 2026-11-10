@@ -1,0 +1,103 @@
+{
+	"title": "One row",
+	"description": "Logo, menu and icons in a single compact row.",
+	"devices": {
+		"desktop": true,
+		"tablet": false,
+		"mobile": false
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "02e74f1",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 20,
+					"column": "20",
+					"row": "20"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "10",
+					"right": "0",
+					"bottom": "10",
+					"left": "0",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff",
+				"box_shadow_box_shadow_type": "yes",
+				"box_shadow_box_shadow": {
+					"horizontal": 0,
+					"vertical": 1,
+					"blur": 0,
+					"spread": 0,
+					"color": "rgba(21,22,28,0.08)"
+				}
+			},
+			"elements": [
+				{
+					"id": "b6d767d",
+					"elType": "widget",
+					"widgetType": "um-logo",
+					"settings": {
+						"size": "md"
+					},
+					"elements": []
+				},
+				{
+					"id": "37693cf",
+					"elType": "widget",
+					"widgetType": "um-nav-menu",
+					"settings": {
+						"menu": "",
+						"align": "start",
+						"size": "sm",
+						"label": "Main menu",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "1ff1de7",
+					"elType": "widget",
+					"widgetType": "um-search",
+					"settings": {
+						"layout": "icon",
+						"placeholder": "Search the store"
+					},
+					"elements": []
+				},
+				{
+					"id": "8e296a0",
+					"elType": "widget",
+					"widgetType": "um-account",
+					"settings": {
+						"look": "icon",
+						"guest_text": "Log in | Sign up",
+						"user_text": "My account"
+					},
+					"elements": []
+				},
+				{
+					"id": "4e732ce",
+					"elType": "widget",
+					"widgetType": "um-cart",
+					"settings": {
+						"look": "icon",
+						"text": "Cart"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

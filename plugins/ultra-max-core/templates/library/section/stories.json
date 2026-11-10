@@ -1,0 +1,192 @@
+{
+	"title": "Stories",
+	"description": "Round covers that open full-screen stories.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "9188905",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "4",
+					"right": "0",
+					"bottom": "4",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "cb70ab3",
+					"elType": "widget",
+					"widgetType": "um-stories",
+					"settings": {
+						"duration": 5,
+						"stories": [
+							{
+								"_id": "577ef11",
+								"title": "Wireless sound",
+								"cover": {
+									"id": 0,
+									"url": "{library}/headphones.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/headphones.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "01161aa",
+								"title": "Autumn scents",
+								"cover": {
+									"id": 0,
+									"url": "{library}/perfume.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/perfume.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "539fd53",
+								"title": "Comfortable shoes",
+								"cover": {
+									"id": 0,
+									"url": "{library}/sneaker.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/sneaker.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "ac1dd20",
+								"title": "Smart watches",
+								"cover": {
+									"id": 0,
+									"url": "{library}/watch.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/watch.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "555d670",
+								"title": "Fresh coffee",
+								"cover": {
+									"id": 0,
+									"url": "{library}/coffee.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/coffee.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "335f535",
+								"title": "Kitchen",
+								"cover": {
+									"id": 0,
+									"url": "{library}/kettle.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/kettle.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "f340f1b",
+								"title": "Photography",
+								"cover": {
+									"id": 0,
+									"url": "{library}/camera.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/camera.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "e4a6222",
+								"title": "Back to school",
+								"cover": {
+									"id": 0,
+									"url": "{library}/backpack.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/backpack.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

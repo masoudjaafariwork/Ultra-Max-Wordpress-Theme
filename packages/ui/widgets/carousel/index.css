@@ -1,0 +1,28 @@
+/*
+ * Styles of the carousel widget asset (BLD-12): loaded only on pages that
+ * show a widget using it. Built from its components' own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../carousel";
+
+/* Dots are made by the behaviour, so their look lives here. */
+.um-carousel-dot {
+	width: 8px;
+	height: 8px;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	background: rgb(255 255 255 / 55%);
+	cursor: pointer;
+	transition: width var(--um-dur) var(--um-ease);
+}
+
+.um-carousel-dot[aria-current] {
+	width: 24px;
+	background: #fff;
+}

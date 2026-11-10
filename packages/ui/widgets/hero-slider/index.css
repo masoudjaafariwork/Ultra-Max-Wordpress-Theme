@@ -1,0 +1,11 @@
+/*
+ * Styles of the hero-slider widget asset (BLD-12): loaded only on pages that
+ * show a widget using it. Built from its components' own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../hero-slider";

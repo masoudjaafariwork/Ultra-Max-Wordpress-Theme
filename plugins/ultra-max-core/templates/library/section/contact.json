@@ -1,0 +1,206 @@
+{
+	"title": "Contact",
+	"description": "Contact details beside a contact form.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "819f46e",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "flex-start",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 32,
+					"column": "32",
+					"row": "32"
+				},
+				"flex_wrap": "wrap",
+				"padding": {
+					"unit": "px",
+					"top": "24",
+					"right": "0",
+					"bottom": "24",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "f9b902f",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 16,
+							"column": "16",
+							"row": "16"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 40
+						}
+					},
+					"elements": [
+						{
+							"id": "89f0fd5",
+							"elType": "widget",
+							"widgetType": "um-heading",
+							"settings": {
+								"title": "Get in touch",
+								"level": "2"
+							},
+							"elements": []
+						},
+						{
+							"id": "6faa804",
+							"elType": "widget",
+							"widgetType": "um-icon-list",
+							"settings": {
+								"layout": "column",
+								"items": [
+									{
+										"_id": "a666587",
+										"icon": "headset",
+										"text": "Your store phone number",
+										"link": {
+											"url": "",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "b83aac2",
+										"icon": "mail",
+										"text": "Your store email",
+										"link": {
+											"url": "",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "cd00692",
+										"icon": "pin",
+										"text": "Your store address",
+										"link": {
+											"url": "",
+											"is_external": "",
+											"nofollow": ""
+										}
+									}
+								]
+							},
+							"elements": []
+						},
+						{
+							"id": "2f2b265",
+							"elType": "widget",
+							"widgetType": "um-social",
+							"settings": {
+								"size": "md",
+								"items": [
+									{
+										"_id": "fe73f68",
+										"network": "instagram",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "6da37dd",
+										"network": "telegram",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "c042f4d",
+										"network": "whatsapp",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									},
+									{
+										"_id": "310dcbb",
+										"network": "aparat",
+										"link": {
+											"url": "#",
+											"is_external": "",
+											"nofollow": ""
+										}
+									}
+								]
+							},
+							"elements": []
+						}
+					]
+				},
+				{
+					"id": "357a6fd",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 55
+						}
+					},
+					"elements": [
+						{
+							"id": "6855456",
+							"elType": "widget",
+							"widgetType": "um-contact-form",
+							"settings": {
+								"title": "Send us a message",
+								"button": "Send"
+							},
+							"elements": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

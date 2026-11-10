@@ -1,0 +1,169 @@
+{
+	"title": "Store header with categories",
+	"description": "Logo, wide search, account and cart; categories and menu below. The classic big-store header.",
+	"devices": {
+		"desktop": true,
+		"tablet": false,
+		"mobile": false
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "8f14e45",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 24,
+					"column": "24",
+					"row": "24"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "14",
+					"right": "0",
+					"bottom": "14",
+					"left": "0",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff"
+			},
+			"elements": [
+				{
+					"id": "c4ca423",
+					"elType": "widget",
+					"widgetType": "um-logo",
+					"settings": {
+						"size": "md"
+					},
+					"elements": []
+				},
+				{
+					"id": "c81e728",
+					"elType": "widget",
+					"widgetType": "um-search",
+					"settings": {
+						"layout": "field",
+						"placeholder": "Search the store",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				},
+				{
+					"id": "eccbc87",
+					"elType": "widget",
+					"widgetType": "um-account",
+					"settings": {
+						"look": "button",
+						"guest_text": "Log in | Sign up",
+						"user_text": "My account"
+					},
+					"elements": []
+				},
+				{
+					"id": "a87ff67",
+					"elType": "widget",
+					"widgetType": "um-divider",
+					"settings": {},
+					"elements": []
+				},
+				{
+					"id": "e4da3b7",
+					"elType": "widget",
+					"widgetType": "um-wishlist",
+					"settings": {
+						"look": "icon",
+						"text": "Wishlist"
+					},
+					"elements": []
+				},
+				{
+					"id": "1679091",
+					"elType": "widget",
+					"widgetType": "um-cart",
+					"settings": {
+						"look": "icon",
+						"text": "Cart"
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "6512bd4",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "center",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 20,
+					"column": "20",
+					"row": "20"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"isLinked": false
+				},
+				"background_background": "classic",
+				"background_color": "#ffffff",
+				"box_shadow_box_shadow_type": "yes",
+				"box_shadow_box_shadow": {
+					"horizontal": 0,
+					"vertical": 1,
+					"blur": 0,
+					"spread": 0,
+					"color": "rgba(21,22,28,0.08)"
+				}
+			},
+			"elements": [
+				{
+					"id": "c9f0f89",
+					"elType": "widget",
+					"widgetType": "um-category-menu",
+					"settings": {
+						"label": "Product categories",
+						"promo": "yes",
+						"promo_title": "Up to 30% off"
+					},
+					"elements": []
+				},
+				{
+					"id": "45c48cc",
+					"elType": "widget",
+					"widgetType": "um-divider",
+					"settings": {},
+					"elements": []
+				},
+				{
+					"id": "d3d9446",
+					"elType": "widget",
+					"widgetType": "um-nav-menu",
+					"settings": {
+						"menu": "",
+						"align": "start",
+						"size": "sm",
+						"label": "Main menu",
+						"_flex_size": "grow"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}

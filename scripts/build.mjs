@@ -24,6 +24,7 @@ import { prefixPackages } from './lib/prefix.mjs';
 import { dumpAutoload } from './lib/composer.mjs';
 import { wpGlobalsPlugin } from './lib/wp-globals.mjs';
 import { writeScopedPreflight } from './lib/scoped-preflight.mjs';
+import { layerMedia } from './lib/layer-media.mjs';
 
 const args = process.argv.slice( 2 );
 const watch = args.includes( '--watch' );
@@ -44,18 +45,62 @@ export const entries = [
 	{ name: 'ui/storefront', js: 'packages/ui/storefront/index.ts', css: 'packages/ui/storefront/storefront.css', shared: true },
 	{ name: 'ui/admin', css: 'packages/ui/admin/admin.css', shared: true },
 	// Switchable storefront modules (PERF-02): each loads only when it is on.
-	...[ 'notice-bar', 'contact-buttons', 'back-to-top' ].map( ( module ) => ( {
+	...[ 'notice-bar', 'contact-buttons', 'back-to-top', 'smart-header', 'bottom-nav' ].map( ( module ) => optional( {
 		name: `ui/modules/${ module }`,
 		js: `packages/ui/modules/${ module }.ts`,
 		css: `packages/ui/modules/${ module }.css`,
 		shared: true,
 	} ) ),
+	// Widget assets (BLD-12): one per folder of packages/ui/widgets, loaded only where a widget is used.
+	...widgetFolders().map( ( widget ) => optional( {
+		name: `ui/widgets/${ widget }`,
+		js: `packages/ui/widgets/${ widget }/index.ts`,
+		css: `packages/ui/widgets/${ widget }/index.css`,
+		shared: true,
+	} ) ),
+	// Elementor editor and preview helpers (HOME-13, search control).
+	{ name: 'core/elementor-editor', js: 'plugins/ultra-max-core/assets/src/elementor/editor.ts', css: 'plugins/ultra-max-core/assets/src/elementor/editor.css', product: 'plugins/ultra-max-core' },
+	{ name: 'core/elementor-preview', js: 'plugins/ultra-max-core/assets/src/elementor/preview.ts', product: 'plugins/ultra-max-core' },
 	// Admin screens bundle React 19: shadcn/ui needs it and WordPress 7.1 still ships React 18.
 	{ name: 'catalog/admin', js: 'tools/catalog/assets/src/admin.tsx', product: 'tools/catalog' },
 	// The Ultra Max panel (ADM-01 to ADM-07): React 19 bundled, like the catalog.
 	{ name: 'core/admin', js: 'plugins/ultra-max-core/assets/src/admin/index.tsx', product: 'plugins/ultra-max-core' },
 	{ name: 'acceptance/flowbite', js: 'packages/ui/acceptance/flowbite/fixture.ts', css: 'packages/ui/acceptance/flowbite/fixture.css' },
 ];
+
+/**
+ * Folders of packages/ui/widgets: each is one widget asset.
+ *
+ * @return {string[]} Folder names.
+ */
+export function widgetFolders() {
+	const dir = path.join( root, 'packages', 'ui', 'widgets' );
+	if ( ! fs.existsSync( dir ) ) {
+		return [];
+	}
+	return fs
+		.readdirSync( dir, { withFileTypes: true } )
+		.filter( ( entry ) => entry.isDirectory() && ( fs.existsSync( path.join( dir, entry.name, 'index.css' ) ) || fs.existsSync( path.join( dir, entry.name, 'index.ts' ) ) ) )
+		.map( ( entry ) => entry.name )
+		.sort();
+}
+
+/**
+ * Drops the script or stylesheet of an entry when its file does not exist,
+ * so an asset may have only one of them.
+ *
+ * @param {{name: string, js?: string, css?: string, shared?: boolean}} entry Entry.
+ * @return {{name: string, js?: string, css?: string, shared?: boolean}} Entry.
+ */
+function optional( entry ) {
+	const out = { ...entry };
+	for ( const key of [ 'js', 'css' ] ) {
+		if ( out[ key ] && ! fs.existsSync( path.join( root, out[ key ] ) ) ) {
+			delete out[ key ];
+		}
+	}
+	return out;
+}
 
 /**
  * Writes a file, creating its folder.
@@ -78,7 +123,9 @@ function write( file, content ) {
 async function buildCss( source, out ) {
 	const from = path.join( root, source );
 	const input = fs.readFileSync( from, 'utf8' );
-	const result = await postcss( [ tailwind( { base: root, optimize: ! dev } ) ] ).process( input, { from, to: out + '.css' } );
+	const tailwound = await postcss( [ tailwind( { base: root, optimize: ! dev } ) ] ).process( input, { from, to: out + '.css' } );
+	// Admin styles are one file; storefront, module and widget files share layers (see lib/layer-media.mjs).
+	const result = source.includes( 'admin' ) ? tailwound : await postcss( [ layerMedia() ] ).process( tailwound.css, { from: undefined } );
 	const ltr = rtlcss.process( result.css );
 	write( out + '.css', result.css );
 	write( out + '-ltr.css', ltr );

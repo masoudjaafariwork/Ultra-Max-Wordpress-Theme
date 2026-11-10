@@ -25,7 +25,46 @@ final class Assets {
 
 	public const STOREFRONT = 'ultra-max-ui';
 	public const ADMIN      = 'ultra-max-ui-admin';
-	public const MODULES    = array( 'notice-bar', 'contact-buttons', 'back-to-top' );
+	public const MODULES    = array( 'notice-bar', 'contact-buttons', 'back-to-top', 'smart-header', 'bottom-nav' );
+
+	/**
+	 * Widget assets (BLD-12): one stylesheet and script per folder of
+	 * packages/ui/widgets, loaded only by pages that show the widget.
+	 */
+	public const WIDGETS = array(
+		'header',
+		'category-menu',
+		'carousel',
+		'hero-slider',
+		'stories',
+		'product-card',
+		'countdown',
+		'deals',
+		'banners',
+		'category-circles',
+		'quick-links',
+		'ranked-list',
+		'brand-tiles',
+		'post-tiles',
+		'trust-marks',
+		'discount-picks',
+		'icon-box',
+		'counter',
+		'pricing-table',
+		'testimonials',
+		'team',
+		'timeline',
+		'gallery',
+		'video',
+		'hotspots',
+		'image-compare',
+		'animated-text',
+		'data-table',
+		'icon-list',
+		'social',
+		'forms',
+		'footer',
+	);
 
 	/**
 	 * Registers the handles from one product's build folder.
@@ -41,6 +80,10 @@ final class Assets {
 			foreach ( self::MODULES as $module ) {
 				$registrar->register_style( self::STOREFRONT . '-' . $module, 'ui/modules/' . $module, array( self::STOREFRONT ) );
 				$registrar->register_script( self::STOREFRONT . '-' . $module, 'ui/modules/' . $module, array( self::STOREFRONT ) );
+			}
+			foreach ( self::WIDGETS as $widget ) {
+				$registrar->register_style( self::widget_handle( $widget ), 'ui/widgets/' . $widget, array( self::STOREFRONT ) );
+				$registrar->register_script( self::widget_handle( $widget ), 'ui/widgets/' . $widget, array( self::STOREFRONT ) );
 			}
 		}
 		if ( ! wp_style_is( self::ADMIN, 'registered' ) ) {
@@ -65,6 +108,28 @@ final class Assets {
 		if ( in_array( $module, self::MODULES, true ) ) {
 			wp_enqueue_style( self::STOREFRONT . '-' . $module );
 			wp_enqueue_script( self::STOREFRONT . '-' . $module );
+		}
+	}
+
+	/**
+	 * Handle of a widget asset.
+	 *
+	 * @param string $widget Widget asset name, one of WIDGETS.
+	 * @return non-empty-string
+	 */
+	public static function widget_handle( string $widget ): string {
+		return self::STOREFRONT . '-w-' . $widget;
+	}
+
+	/**
+	 * Enqueues one widget asset's stylesheet and script.
+	 *
+	 * @param string $widget Widget asset name, one of WIDGETS.
+	 */
+	public static function enqueue_widget( string $widget ): void {
+		if ( in_array( $widget, self::WIDGETS, true ) ) {
+			wp_enqueue_style( self::widget_handle( $widget ) );
+			wp_enqueue_script( self::widget_handle( $widget ) );
 		}
 	}
 

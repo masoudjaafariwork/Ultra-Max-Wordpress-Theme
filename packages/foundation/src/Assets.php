@@ -94,7 +94,10 @@ final class Assets {
 		if ( null === $manifest || ! is_readable( $this->build_dir . '/' . $file ) ) {
 			return false;
 		}
-		return wp_register_style( $handle, $this->build_url . '/' . $file, self::handles( $deps ), $manifest['version'] );
+		$registered = wp_register_style( $handle, $this->build_url . '/' . $file, self::handles( $deps ), $manifest['version'] );
+		// Small stylesheets are printed inside the page by WordPress itself (wp_maybe_inline_styles).
+		wp_style_add_data( $handle, 'path', $this->build_dir . '/' . $file );
+		return $registered;
 	}
 
 	/**

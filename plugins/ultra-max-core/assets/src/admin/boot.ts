@@ -97,13 +97,66 @@ export interface WizardPlugin {
 
 export type Values = Record<string, unknown>;
 
+export type Devices = { desktop: boolean; tablet: boolean; mobile: boolean };
+
+export interface Rule {
+	target: string;
+	values?: ( string | number )[];
+}
+
+export interface Conditions {
+	include: Rule[];
+	exclude: Rule[];
+	roles: string[];
+	devices: Devices;
+	priority: number;
+	sticky: 'none' | 'sticky' | 'smart';
+}
+
+export interface Layout {
+	id: number;
+	type: string;
+	title: string;
+	status: string;
+	conditions: Conditions;
+	modified: number;
+	editUrl: string;
+	builtWithElementor: boolean;
+}
+
+export interface LayoutType {
+	id: string;
+	label: string;
+	plural: string;
+	description: string;
+	icon: string;
+	sticky: boolean;
+}
+
+export interface LayoutTarget {
+	id: string;
+	label: string;
+	group: 'general' | 'blog' | 'store';
+	values: '' | 'post' | 'page' | 'product' | 'term' | 'product_type';
+}
+
+export interface LibraryTemplate {
+	id: string;
+	kind: string;
+	title: string;
+	description: string;
+	devices: Devices;
+	preview: string;
+	tags: string[];
+}
+
 export interface Boot {
-	page: 'dashboard' | 'settings' | 'modules' | 'wizard' | 'help';
+	page: 'dashboard' | 'settings' | 'layouts' | 'modules' | 'wizard' | 'help';
 	rest: { root: string; nonce: string };
 	brand: { name: string; version: string };
 	locale: string;
 	strings: Record<string, string>;
-	urls: { dashboard: string; settings: string; modules: string; wizard: string; help: string; site: string; menus: string; widgets: string; plugins: string; demoImage: string };
+	urls: { dashboard: string; settings: string; layouts: string; modules: string; wizard: string; help: string; site: string; menus: string; widgets: string; plugins: string; demoImage: string };
 	tour: boolean;
 	settings?: {
 		sections: Section[];
@@ -137,6 +190,14 @@ export interface Boot {
 		presets: Option[];
 	};
 	help?: { id: string; title: string; html: string }[];
+	layouts?: {
+		types: LayoutType[];
+		items: Layout[];
+		targets: LayoutTarget[];
+		roles: Option[];
+		templates: LibraryTemplate[];
+		elementor: boolean;
+	};
 }
 
 declare global {
@@ -183,7 +244,7 @@ export class ApiError extends Error {}
  * @param method HTTP method.
  * @param body   JSON body.
  */
-export async function api<T>( path: string, method: 'GET' | 'POST' = 'GET', body?: unknown ): Promise<T> {
+export async function api<T>( path: string, method: 'GET' | 'POST' | 'DELETE' = 'GET', body?: unknown ): Promise<T> {
 	const response = await fetch( boot.rest.root + path, {
 		method,
 		credentials: 'same-origin',

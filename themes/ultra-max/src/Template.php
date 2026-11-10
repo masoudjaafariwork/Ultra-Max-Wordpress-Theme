@@ -183,9 +183,64 @@ final class Template {
 	}
 
 	/**
-	 * The site header and the mobile menu drawer.
+	 * Prints a page location from a designed layout, if there is one.
+	 *
+	 * Elementor Pro's Theme Builder is asked first (BLD-09), then the Ultra
+	 * Max layout builder through the `ultra_max_do_location` filter. The
+	 * builder may cover only some devices, for example a mobile header; the
+	 * theme then prints its own part for the other devices.
+	 *
+	 * @param string $location header, footer, single or archive.
+	 * @return array{desktop: bool, tablet: bool, mobile: bool} Devices that still need the theme's own part.
 	 */
-	public static function header(): void {
+	public static function location( string $location ): array {
+		$none = array(
+			'desktop' => false,
+			'tablet'  => false,
+			'mobile'  => false,
+		);
+		if ( function_exists( 'elementor_theme_do_location' ) && elementor_theme_do_location( $location ) ) {
+			return $none;
+		}
+		/**
+		 * Prints designed layouts for a location and returns the devices they cover.
+		 *
+		 * @param array{desktop: bool, tablet: bool, mobile: bool} $covered  Devices already covered.
+		 * @param string                                            $location Location.
+		 */
+		$covered = apply_filters( 'ultra_max_do_location', $none, $location );
+		$covered = is_array( $covered ) ? $covered : array();
+		return array(
+			'desktop' => true !== ( $covered['desktop'] ?? false ),
+			'tablet'  => true !== ( $covered['tablet'] ?? false ),
+			'mobile'  => true !== ( $covered['mobile'] ?? false ),
+		);
+	}
+
+	/**
+	 * Whether any device is left for the theme's own part.
+	 *
+	 * @param array{desktop: bool, tablet: bool, mobile: bool} $devices Devices left.
+	 */
+	public static function any( array $devices ): bool {
+		return $devices['desktop'] || $devices['tablet'] || $devices['mobile'];
+	}
+
+	/**
+	 * Visibility classes for the devices left, or none when all are.
+	 *
+	 * @param array{desktop: bool, tablet: bool, mobile: bool} $devices Devices left.
+	 */
+	public static function only( array $devices ): string {
+		return UI::visibility( $devices );
+	}
+
+	/**
+	 * The site header and the mobile menu drawer.
+	 *
+	 * @param array{desktop: bool, tablet: bool, mobile: bool}|null $devices Devices to show it on; all when null.
+	 */
+	public static function header( ?array $devices = null ): void {
 		$items   = self::menu_items( 'primary' );
 		$actions = array();
 		if ( function_exists( 'wc_get_page_permalink' ) ) {
@@ -206,6 +261,7 @@ final class Template {
 			),
 			'actions'    => $actions,
 			'sticky'     => Store::bool( 'sticky_header' ),
+			'class'      => null === $devices ? '' : self::only( $devices ),
 		);
 		if ( array() !== $items ) {
 			$props['drawer'] = 'um-menu-drawer';
@@ -218,6 +274,7 @@ final class Template {
 					'id'       => 'um-menu-drawer',
 					'title'    => self::logo(),
 					'side'     => 'start',
+					'class'    => 'um-mobile-drawer',
 					'children' => UI::menu(
 						array(
 							'label'   => __( 'Main menu', 'ultra-max' ),
@@ -232,8 +289,10 @@ final class Template {
 
 	/**
 	 * The site footer.
+	 *
+	 * @param array{desktop: bool, tablet: bool, mobile: bool}|null $devices Devices to show it on; all when null.
 	 */
-	public static function footer(): void {
+	public static function footer( ?array $devices = null ): void {
 		$columns = array();
 		for ( $i = 1; $i <= 4; $i++ ) {
 			if ( is_active_sidebar( 'footer-' . $i ) ) {
@@ -260,6 +319,7 @@ final class Template {
 					wp_date( 'Y' ),
 					get_bloginfo( 'name' )
 				),
+				'class'     => null === $devices ? '' : self::only( $devices ),
 			)
 		)->print();
 	}

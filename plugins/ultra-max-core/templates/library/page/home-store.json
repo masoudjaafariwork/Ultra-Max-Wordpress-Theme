@@ -1,0 +1,1003 @@
+{
+	"title": "Big store home page",
+	"description": "Stories, hero slider, offers, banners, categories, product tabs, best sellers, brands, discount picks, blog and trust badges.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "0402595",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "4",
+					"right": "0",
+					"bottom": "4",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "40008b9",
+					"elType": "widget",
+					"widgetType": "um-stories",
+					"settings": {
+						"duration": 5,
+						"stories": [
+							{
+								"_id": "577ef11",
+								"title": "Wireless sound",
+								"cover": {
+									"id": 0,
+									"url": "{library}/headphones.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/headphones.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "01161aa",
+								"title": "Autumn scents",
+								"cover": {
+									"id": 0,
+									"url": "{library}/perfume.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/perfume.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "539fd53",
+								"title": "Comfortable shoes",
+								"cover": {
+									"id": 0,
+									"url": "{library}/sneaker.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/sneaker.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "ac1dd20",
+								"title": "Smart watches",
+								"cover": {
+									"id": 0,
+									"url": "{library}/watch.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/watch.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "555d670",
+								"title": "Fresh coffee",
+								"cover": {
+									"id": 0,
+									"url": "{library}/coffee.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/coffee.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "335f535",
+								"title": "Kitchen",
+								"cover": {
+									"id": 0,
+									"url": "{library}/kettle.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/kettle.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "f340f1b",
+								"title": "Photography",
+								"cover": {
+									"id": 0,
+									"url": "{library}/camera.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/camera.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							},
+							{
+								"_id": "e4a6222",
+								"title": "Back to school",
+								"cover": {
+									"id": 0,
+									"url": "{library}/backpack.svg"
+								},
+								"media": {
+									"id": 0,
+									"url": "{library}/backpack.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"link_label": "View"
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "3dd48ab",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "58238e9",
+					"elType": "widget",
+					"widgetType": "um-hero-slider",
+					"settings": {
+						"height": "md",
+						"autoplay": 5,
+						"slides": [
+							{
+								"_id": "0266e33",
+								"title": "New phones with up to 25% off",
+								"kicker": "Autumn festival",
+								"text": "Instalments without a down payment and free delivery",
+								"button": "Shop now",
+								"from": "#3d34ad",
+								"to": "#7f78f0",
+								"image": {
+									"id": 0,
+									"url": "{library}/phone.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"photo": {
+									"id": 0,
+									"url": ""
+								},
+								"photo_mobile": {
+									"id": 0,
+									"url": ""
+								},
+								"dark": ""
+							},
+							{
+								"_id": "38db3ae",
+								"title": "Headphones and speakers from 990,000 toman",
+								"kicker": "Pure sound",
+								"text": "18-month warranty on every item",
+								"button": "View",
+								"from": "#0a4f51",
+								"to": "#35aeb0",
+								"image": {
+									"id": 0,
+									"url": "{library}/headphones.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"photo": {
+									"id": 0,
+									"url": ""
+								},
+								"photo_mobile": {
+									"id": 0,
+									"url": ""
+								},
+								"dark": ""
+							},
+							{
+								"_id": "3cec07e",
+								"title": "Weekly groceries delivered the same day",
+								"kicker": "Supermarket",
+								"text": "Fresh, fast and always discounted",
+								"button": "Order now",
+								"from": "#b86400",
+								"to": "#ffb347",
+								"image": {
+									"id": 0,
+									"url": "{library}/juice.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"photo": {
+									"id": 0,
+									"url": ""
+								},
+								"photo_mobile": {
+									"id": 0,
+									"url": ""
+								},
+								"dark": ""
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "3ad7c2e",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "b3967a0",
+					"elType": "widget",
+					"widgetType": "um-quick-links",
+					"settings": {
+						"items": [
+							{
+								"_id": "6c9882b",
+								"label": "Amazing offers",
+								"icon": "fire",
+								"color": "#ff9a1f",
+								"link": {
+									"url": "#deals",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "19f3cd3",
+								"label": "Supermarket",
+								"icon": "store",
+								"color": "#0e9f6e",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "03c6b06",
+								"label": "Discounts",
+								"icon": "percent",
+								"color": "#4c42d3",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "c24cd76",
+								"label": "Best sellers",
+								"icon": "star",
+								"color": "#1c74d0",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "c52f1bd",
+								"label": "Gifts",
+								"icon": "gift",
+								"color": "#c46aa0",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "fe131d7",
+								"label": "New arrivals",
+								"icon": "sparkles",
+								"color": "#c98a00",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "f718499",
+								"label": "Track order",
+								"icon": "box",
+								"color": "#4f5361",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							},
+							{
+								"_id": "d96409b",
+								"label": "More",
+								"icon": "dots",
+								"color": "#6f7381",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								}
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "d81f9c1",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				},
+				"_element_id": "deals"
+			},
+			"elements": [
+				{
+					"id": "13f9896",
+					"elType": "widget",
+					"widgetType": "um-deals",
+					"settings": {
+						"title": "Amazing offers",
+						"end": "",
+						"image": {
+							"id": 0,
+							"url": "{library}/speaker.svg"
+						},
+						"more_label": "All offers",
+						"more_link": {
+							"url": "",
+							"is_external": "",
+							"nofollow": ""
+						},
+						"source": "sale",
+						"count": 10,
+						"in_stock": "yes"
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "c5ff254",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "01386bd",
+					"elType": "widget",
+					"widgetType": "um-banners",
+					"settings": {
+						"columns": "4",
+						"banners": [
+							{
+								"_id": "36660e5",
+								"title": "Up to 12% off",
+								"kicker": "Work laptops",
+								"from": "#e1e0fe",
+								"to": "#c4c1fb",
+								"image": {
+									"id": 0,
+									"url": "{library}/laptop.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"button": "",
+								"light": ""
+							},
+							{
+								"_id": "8c19f57",
+								"title": "Buy in instalments",
+								"kicker": "Smart watches",
+								"from": "#ffe8c2",
+								"to": "#ffb347",
+								"image": {
+									"id": 0,
+									"url": "{library}/watch.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"button": "",
+								"light": ""
+							},
+							{
+								"_id": "d6baf65",
+								"title": "Buy 2, get 1 free",
+								"kicker": "Skin care",
+								"from": "#cbeedb",
+								"to": "#9bddb9",
+								"image": {
+									"id": 0,
+									"url": "{library}/cream.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"button": "",
+								"light": ""
+							},
+							{
+								"_id": "e56954b",
+								"title": "The newest models",
+								"kicker": "Cameras and accessories",
+								"from": "#d3e6ff",
+								"to": "#a8ccff",
+								"image": {
+									"id": 0,
+									"url": "{library}/camera.svg"
+								},
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"button": "",
+								"light": ""
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "0bb4aec",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "9de6d14",
+					"elType": "widget",
+					"widgetType": "um-category-circles",
+					"settings": {
+						"title": "Shop by category",
+						"count": 8,
+						"layout": "grid",
+						"shape": "circle",
+						"more_link": {
+							"url": "",
+							"is_external": "",
+							"nofollow": ""
+						}
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "efe9377",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "371bce7",
+					"elType": "widget",
+					"widgetType": "um-product-tabs",
+					"settings": {
+						"title": "Recommended for you",
+						"boxed": "yes",
+						"count": 10,
+						"design": "hover",
+						"layout": "carousel",
+						"tabs": [
+							{
+								"_id": "3905972",
+								"label": "Newest",
+								"source": "recent"
+							},
+							{
+								"_id": "7f100b7",
+								"label": "Best selling",
+								"source": "best_selling"
+							},
+							{
+								"_id": "7a614fd",
+								"label": "On sale",
+								"source": "sale"
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "138bb06",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "8dd48d6",
+					"elType": "widget",
+					"widgetType": "um-banners",
+					"settings": {
+						"columns": "2",
+						"banners": [
+							{
+								"_id": "63923f4",
+								"title": "Free delivery on your first order",
+								"kicker": "Log in with a one-time code",
+								"from": "#2e2783",
+								"to": "#6158e6",
+								"image": {
+									"id": 0,
+									"url": "{library}/backpack.svg"
+								},
+								"button": "Sign up",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"light": "yes"
+							},
+							{
+								"_id": "db8e1af",
+								"title": "Kitchen appliances up to 30% off",
+								"kicker": "Smart kitchen",
+								"from": "#0a4f51",
+								"to": "#149a9c",
+								"image": {
+									"id": 0,
+									"url": "{library}/kettle.svg"
+								},
+								"button": "View",
+								"link": {
+									"url": "",
+									"is_external": "",
+									"nofollow": ""
+								},
+								"light": "yes"
+							}
+						]
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "82cec96",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "6c524f9",
+					"elType": "widget",
+					"widgetType": "um-products",
+					"settings": {
+						"title": "Supermarket",
+						"boxed": "yes",
+						"source": "recent",
+						"count": 10,
+						"design": "mini",
+						"layout": "carousel",
+						"columns": 6,
+						"columns_tablet": 4,
+						"columns_mobile": 2
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "fb7b9ff",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "aa942ab",
+					"elType": "widget",
+					"widgetType": "um-bestsellers",
+					"settings": {
+						"title": "Best selling products",
+						"title_icon": "fire",
+						"boxed": "yes",
+						"source": "best_selling",
+						"count": 9
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "c058f54",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "e7b24b1",
+					"elType": "widget",
+					"widgetType": "um-brands",
+					"settings": {
+						"title": "Popular brands",
+						"boxed": "yes",
+						"count": 8
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "52720e0",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "c3e878e",
+					"elType": "widget",
+					"widgetType": "um-discount-picks",
+					"settings": {
+						"title": "Discount picks",
+						"all_label": "All",
+						"count": 8,
+						"columns": 4
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "0041146",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "bac9162",
+					"elType": "widget",
+					"widgetType": "um-posts",
+					"settings": {
+						"title": "Worth reading",
+						"more_label": "More articles",
+						"count": 4,
+						"columns": "4"
+					},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "9be40ce",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "12",
+					"right": "0",
+					"bottom": "12",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "5ef698c",
+					"elType": "widget",
+					"widgetType": "um-trust-marks",
+					"settings": {
+						"title": "Secure payment with every Shetab card",
+						"text": "Add your trust badges and payment gateways in the widget settings.",
+						"marks": [
+							{
+								"_id": "839ab46",
+								"label": "Payment gateway 1"
+							},
+							{
+								"_id": "f90f2ac",
+								"label": "Payment gateway 2"
+							},
+							{
+								"_id": "9c838d2",
+								"label": "Trust badge"
+							},
+							{
+								"_id": "1700002",
+								"label": "Shetab network"
+							}
+						],
+						"perks": []
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}
