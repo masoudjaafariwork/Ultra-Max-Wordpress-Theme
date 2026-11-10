@@ -28,6 +28,9 @@
 	--color-accent-hover: var(--um-accent-400);
 	--color-accent-soft: var(--um-accent-100);
 	--color-accent-strong: var(--um-accent-700);
+
+	/* Accent text on light accent backgrounds: darkened so small text passes WCAG AA (4.5:1). */
+	--color-accent-text: color-mix(in srgb, var(--um-accent-700) 72%, #000);
 	--color-accent-faint: var(--um-accent-50);
 	--color-brand-strong: var(--um-brand-800);
 	--color-brand-soft: var(--um-brand-100);

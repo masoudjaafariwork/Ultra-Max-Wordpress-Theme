@@ -40,7 +40,9 @@ $old = get_posts(
 		'fields'         => 'ids',
 	)
 );
-foreach ( $old as $id ) {
+// Every layout goes, including ones made by hand or by tests, so the seeded ones always win.
+$old = array_merge( $old, get_posts( array( 'post_type' => Layouts::POST_TYPE, 'post_status' => 'any', 'posts_per_page' => -1, 'fields' => 'ids' ) ) );
+foreach ( array_unique( $old ) as $id ) {
 	'attachment' === get_post_type( $id ) ? wp_delete_attachment( (int) $id, true ) : wp_delete_post( (int) $id, true );
 }
 foreach ( array( 'product_cat', 'product_brand', 'category' ) as $taxonomy ) {

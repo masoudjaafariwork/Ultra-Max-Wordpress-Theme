@@ -175,11 +175,20 @@ final class Catalog {
 			return $out;
 		}
 		_prime_post_caches( $ids );
+		$images = array();
 		foreach ( $ids as $id ) {
 			$product = wc_get_product( $id );
 			if ( $product instanceof \WC_Product && $product->is_visible() ) {
-				$out[] = $product;
+				$out[]    = $product;
+				$images[] = (int) $product->get_image_id();
+				$gallery  = $product->get_gallery_image_ids();
+				$images[] = isset( $gallery[0] ) ? (int) $gallery[0] : 0;
 			}
+		}
+		// One query for every image of the list instead of one per card.
+		$images = array_values( array_filter( array_unique( $images ) ) );
+		if ( array() !== $images ) {
+			_prime_post_caches( $images );
 		}
 		return $out;
 	}

@@ -146,6 +146,7 @@ final class Widgets {
 		Forms::register();
 		Categories::register();
 		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue_page' ), 20 );
+		add_filter( 'styles_inline_size_limit', array( self::class, 'inline_limit' ) );
 	}
 
 	/**
@@ -183,6 +184,18 @@ final class Widgets {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Lets WordPress print more small stylesheets inside the page. Widget
+	 * styles are a few kilobytes each; printing them saves a round trip per
+	 * file before the page can draw (PERF-01).
+	 *
+	 * @param mixed $limit Bytes.
+	 * @return mixed
+	 */
+	public static function inline_limit( mixed $limit ): mixed {
+		return is_int( $limit ) ? max( $limit, 120000 ) : $limit;
 	}
 
 	/**

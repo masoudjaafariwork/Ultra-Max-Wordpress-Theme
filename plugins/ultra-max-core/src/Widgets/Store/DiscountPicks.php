@@ -80,7 +80,7 @@ final class DiscountPicks extends StoreWidget {
 						'type'     => 'terms',
 						'taxonomy' => 'product_cat',
 						'label'    => __( 'Filter categories', 'ultra-max-core' ),
-						'help'     => __( 'Each category becomes a chip above the products.', 'ultra-max-core' ),
+						'help'     => __( 'Each category becomes a chip above the products. Leave empty to use the main categories of the products shown.', 'ultra-max-core' ),
 					),
 					array(
 						'id'      => 'all_label',
@@ -125,13 +125,17 @@ final class DiscountPicks extends StoreWidget {
 			)
 		);
 		$items      = array();
+		$roots      = array();
 		foreach ( $products as $product ) {
 			$keys = array();
 			foreach ( $product->get_category_ids() as $term_id ) {
-				$keys[] = 'c' . (int) $term_id;
-				foreach ( get_ancestors( (int) $term_id, 'product_cat', 'taxonomy' ) as $ancestor ) {
+				$keys[]    = 'c' . (int) $term_id;
+				$ancestors = get_ancestors( (int) $term_id, 'product_cat', 'taxonomy' );
+				foreach ( $ancestors as $ancestor ) {
 					$keys[] = 'c' . (int) $ancestor;
 				}
+				$root           = (int) ( array() === $ancestors ? $term_id : end( $ancestors ) );
+				$roots[ $root ] = ( $roots[ $root ] ?? 0 ) + 1;
 			}
 			$items[] = array(
 				'card' => Cards::card( $product, 'classic' ),
@@ -145,6 +149,11 @@ final class DiscountPicks extends StoreWidget {
 				'label' => $settings->string( 'all_label' ),
 			),
 		);
+		if ( array() === $categories ) {
+			// No categories chosen: offer the main categories of the products shown, most common first.
+			arsort( $roots );
+			$categories = array_slice( array_keys( $roots ), 0, 5 );
+		}
 		foreach ( $categories as $term_id ) {
 			$term = get_term( $term_id, 'product_cat' );
 			if ( $term instanceof \WP_Term ) {

@@ -91,7 +91,7 @@ final class ProductCard {
 		};
 		$top = '';
 		if ( 'deal' === $variant && isset( $props['deal'] ) ) {
-			$top = sprintf( '<div class="flex items-center justify-between gap-1.5 px-1 pt-1 text-xs font-bold text-accent-strong">%1$s%2$s</div>', Icon::render( 'clock', 'size-4' ), $props['deal']['countdown'] );
+			$top = sprintf( '<div class="flex items-center justify-between gap-1.5 px-1 pt-1 text-xs font-bold text-accent-text">%1$s%2$s</div>', Icon::render( 'clock', 'size-4' ), $props['deal']['countdown'] );
 		}
 		$labels = self::badges( $props );
 		$quick  = 'hover' === $variant && isset( $props['add'] ) ? sprintf(

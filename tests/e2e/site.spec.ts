@@ -56,7 +56,8 @@ test.describe( 'storefront', () => {
 		// The storefront stylesheet is printed inline as critical CSS (PERF-02), or linked when that setting is off.
 		await expect( page.locator( 'link#ultra-max-ui-css, style#ultra-max-ui-css' ) ).toHaveCount( 1 );
 		await expect( page.locator( 'script#ultra-max-ui-js' ) ).toHaveCount( 1 );
-		await expect( page.locator( 'header.um-site-header' ) ).toBeVisible();
+		// The theme's own header, or a header designed with the layout builder (phase 3).
+		await expect( page.locator( 'header.um-site-header:visible, header.um-layout-header:visible' ).first() ).toBeVisible();
 		expect( errors ).toEqual( [] );
 	} );
 

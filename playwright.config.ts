@@ -21,7 +21,8 @@ export default defineConfig( {
 	retries: process.env.CI ? 1 : 0,
 	workers: process.env.CI ? 2 : undefined,
 	reporter: process.env.CI ? [ [ 'github' ], [ 'html', { open: 'never' } ] ] : [ [ 'list' ] ],
-	timeout: 30_000,
+	// The seeded demo store makes the development server slower; WP-CLI calls in tests add a few seconds each.
+	timeout: 60_000,
 	expect: { toHaveScreenshot: { maxDiffPixelRatio: 0.01, animations: 'disabled' } },
 	snapshotPathTemplate: '{testDir}/__screenshots__/{projectName}/{arg}{ext}',
 	use: { baseURL, trace: 'retain-on-failure' },

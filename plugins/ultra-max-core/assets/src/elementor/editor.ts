@@ -249,13 +249,16 @@ function addLibraryButton(): void {
 	template.innerHTML = template.innerHTML.replace( /(<[^>]+elementor-add-template-button[\s\S]*?<\/(?:div|button)>)/, `$1${ button }` );
 }
 
+const listening = new WeakSet<Document>();
+
 /** Listens for clicks on our button inside the preview frame. */
 function listenInPreview( elementor: Elementor ): void {
-	const frame = elementor.$preview?.[ 0 ];
+	const frame = elementor.$preview?.[ 0 ] ?? document.querySelector<HTMLIFrameElement>( '#elementor-preview-iframe' );
 	const doc = frame?.contentDocument;
-	if ( ! doc ) {
+	if ( ! doc || listening.has( doc ) ) {
 		return;
 	}
+	listening.add( doc );
 	doc.addEventListener( 'click', ( event ) => {
 		const target = event.target instanceof Element ? event.target.closest( '.um-library-button' ) : null;
 		if ( ! target ) {
@@ -278,6 +281,8 @@ function start(): void {
 	registerSearchControl( elementor );
 	addLibraryButton();
 	elementor.on( 'preview:loaded', () => listenInPreview( elementor ) );
+	listenInPreview( elementor );
+	document.querySelector( '#elementor-preview-iframe' )?.addEventListener( 'load', () => listenInPreview( elementor ) );
 }
 
 if ( window.elementor ) {

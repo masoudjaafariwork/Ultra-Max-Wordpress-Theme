@@ -126,9 +126,9 @@ final class CategoryMenu {
 			);
 		}
 		return sprintf(
-			'<div id="%1$s" class="absolute inset-0 overflow-y-auto p-5 %2$s" data-pane-body><a href="%3$s" class="mb-4 inline-flex items-center gap-1 text-sm font-bold text-primary no-underline hover:underline">%4$s%5$s</a><div class="max-w-155 columns-3 gap-6">%6$s</div>%7$s</div>',
+			'<div id="%1$s" class="absolute inset-0 overflow-y-auto p-5"%2$s data-pane-body><a href="%3$s" class="mb-4 inline-flex items-center gap-1 text-sm font-bold text-primary no-underline hover:underline">%4$s%5$s</a><div class="max-w-155 columns-3 gap-6">%6$s</div>%7$s</div>',
 			esc_attr( $id ),
-			$shown ? '' : 'hidden',
+			$shown ? '' : ' hidden',
 			esc_url( $category['href'] ),
 			esc_html( sprintf( $all_label, $category['label'] ) ),
 			Icon::render( 'chevron-left', 'size-4 ltr:rotate-180' ),

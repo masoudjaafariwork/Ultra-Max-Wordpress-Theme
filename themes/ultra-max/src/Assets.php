@@ -45,6 +45,8 @@ final class Assets {
 		add_filter( 'style_loader_tag', array( self::class, 'inline_critical' ), 10, 2 );
 		add_filter( 'wp_lazy_loading_enabled', array( self::class, 'lazy' ), 10, 1 );
 		add_action( 'wp_head', array( self::class, 'preload_image' ), 3 );
+		add_filter( 'woocommerce_enqueue_styles', array( self::class, 'woocommerce_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( self::class, 'woocommerce_scripts' ), 99 );
 	}
 
 	/**
@@ -101,6 +103,52 @@ final class Assets {
 		$base = get_template_directory_uri() . '/assets/build/';
 		$css  = str_replace( array( 'url(../fonts/', 'url("../fonts/' ), array( 'url(' . $base . 'fonts/', 'url("' . $base . 'fonts/' ), $css );
 		return sprintf( "<style id=\"%s-css\">%s</style>\n", esc_attr( UiAssets::STOREFRONT ), wp_strip_all_tags( $css ) );
+	}
+
+	/**
+	 * WooCommerce's own stylesheets only where WooCommerce shows its parts:
+	 * shop pages, the cart, checkout, the account, and pages whose content
+	 * holds a WooCommerce shortcode or block. Elsewhere, such as a home page
+	 * made of our widgets, they would only delay the first paint (PERF-01).
+	 *
+	 * @param mixed $styles Styles by handle.
+	 * @return mixed
+	 */
+	public static function woocommerce_styles( mixed $styles ): mixed {
+		if ( ! is_array( $styles ) || is_admin() ) {
+			return $styles;
+		}
+		return self::shop_page() ? $styles : array();
+	}
+
+	/**
+	 * WooCommerce's general and add-to-cart scripts load in the head of
+	 * every page. Pages without WooCommerce parts do not need them: our
+	 * product cards add to the cart with their own small script.
+	 */
+	public static function woocommerce_scripts(): void {
+		if ( ! self::shop_page() ) {
+			wp_dequeue_script( 'wc-add-to-cart' );
+			wp_dequeue_script( 'woocommerce' );
+		}
+	}
+
+	/**
+	 * Whether the page shows WooCommerce's own parts.
+	 */
+	public static function shop_page(): bool {
+		if ( ! is_singular() ) {
+			return true;
+		}
+		$shop = ( function_exists( 'is_woocommerce' ) && is_woocommerce() )
+			|| ( function_exists( 'is_cart' ) && is_cart() )
+			|| ( function_exists( 'is_checkout' ) && is_checkout() )
+			|| ( function_exists( 'is_account_page' ) && is_account_page() );
+		if ( ! $shop && is_singular() ) {
+			$post = get_post();
+			$shop = $post instanceof \WP_Post && ( str_contains( $post->post_content, '[woocommerce_' ) || str_contains( $post->post_content, '[product' ) || str_contains( $post->post_content, '<!-- wp:woocommerce/' ) );
+		}
+		return $shop;
 	}
 
 	/**

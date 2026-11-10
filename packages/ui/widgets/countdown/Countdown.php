@@ -59,7 +59,7 @@ final class Countdown {
 				default => 'h-7.5 min-w-7.5 text-md',
 			},
 			match ( $tone ) {
-				'deal'  => 'bg-accent-soft text-accent-strong',
+				'deal'  => 'bg-accent-soft text-accent-text',
 				'light' => 'bg-white/20 text-white',
 				default => 'bg-surface text-fg shadow-xs',
 			}

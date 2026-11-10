@@ -60,8 +60,11 @@ final class Data {
 		\Elementor\Core\Files\CSS\Post::create( $id )->enqueue();
 		$assets = get_post_meta( $id, '_elementor_page_assets', true );
 		$clean  = array();
+		// Only styles: Elementor queues a design's scripts when it is actually printed,
+		// together with their settings. Pages that never print it, such as the
+		// maintenance page, must not get them.
 		foreach ( is_array( $assets ) ? $assets : array() as $type => $handles ) {
-			if ( is_string( $type ) && is_array( $handles ) ) {
+			if ( 'styles' === $type && is_array( $handles ) ) {
 				$clean[ $type ] = array_values( array_filter( $handles, 'is_string' ) );
 			}
 		}

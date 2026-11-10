@@ -186,6 +186,8 @@ final class Kit {
 		update_option( 'elementor_google_font', '0' );
 		// Our backgrounds are light gradients, not heavy photos; hiding them until they scroll in only makes them flash.
 		update_option( 'elementor_lazy_load_background_images', '0' );
+		// Small per-page CSS inside the page instead of one more file to wait for.
+		update_option( 'elementor_css_print_method', 'internal' );
 		self::sync();
 	}
 }

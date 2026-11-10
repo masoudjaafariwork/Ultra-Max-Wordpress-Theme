@@ -39,7 +39,8 @@ final class Catalog {
 	 */
 	public static function boot( string $file ): void {
 		self::$file = $file;
-		add_action( 'template_redirect', array( self::class, 'maybe_render' ) );
+		// After Elementor's own template_redirect handler, which prepares its frontend scripts.
+		add_action( 'template_redirect', array( self::class, 'maybe_render' ), 20 );
 		add_action( 'admin_menu', array( self::class, 'admin_menu' ) );
 	}
 

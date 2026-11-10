@@ -30,16 +30,20 @@ final class Cards {
 	 * @return ProductCardProps
 	 */
 	public static function props( \WC_Product $product, string $variant = 'classic', array $options = array() ): array {
-		$priority = $options['priority'] ?? false;
-		$image    = $product->get_image(
+		static $shown = 0;
+		// The first cards of a page are usually in view: they load at once, the very first with high priority (PERF-03).
+		$priority = $options['priority'] ?? ( $shown < 2 );
+		$first    = 0 === $shown;
+		++$shown;
+		$image = $product->get_image(
 			'woocommerce_thumbnail',
 			array(
 				'loading'       => $priority ? 'eager' : 'lazy',
-				'fetchpriority' => $priority ? 'high' : 'auto',
+				'fetchpriority' => $priority && $first ? 'high' : 'auto',
 				'decoding'      => 'async',
 			)
 		);
-		$props    = array(
+		$props = array(
 			'title'    => wp_strip_all_tags( $product->get_name() ),
 			'href'     => (string) $product->get_permalink(),
 			'image'    => Html::wp( is_string( $image ) ? $image : '' ),
