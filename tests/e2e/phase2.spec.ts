@@ -203,8 +203,14 @@ test.describe.serial( 'panel', () => {
 		await page.getByRole( 'radio', { name: 'زمردی' } ).click();
 		await expect( page.getByText( /تغییر ذخیره نشده/ ) ).toBeVisible();
 		await page.getByRole( 'button', { name: 'ذخیره تغییرات' } ).click();
-		await expect( page.getByText( 'تنظیمات ذخیره شد' ) ).toBeVisible();
-		expect( getOption( 'ultra_max_settings' ) ).toContain( '"color_preset":"emerald"' );
+		try {
+			// Saving also writes the colours into Elementor's kit (BLD-11), which is slow on the development server.
+			await expect( page.getByText( 'تنظیمات ذخیره شد' ) ).toBeVisible( { timeout: 30000 } );
+			expect( getOption( 'ultra_max_settings' ) ).toContain( '"color_preset":"emerald"' );
+		} finally {
+			// Later suites, such as the component screenshots, expect the default colours.
+			setOptions( {} );
+		}
 	} );
 
 	test( 'settings: backups restore the previous values (ADM-02)', async ( { page } ) => {

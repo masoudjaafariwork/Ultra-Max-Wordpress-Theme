@@ -70,6 +70,8 @@ final class Assets {
 	 */
 	public static function enqueue(): void {
 		UiAssets::register( self::build_dir(), get_template_directory_uri() . '/assets/build' );
+		// The theme alone decides whether the storefront stylesheet is printed inline (the "Inline critical CSS" setting), so WordPress's own size-based inlining leaves it alone.
+		wp_style_add_data( UiAssets::STOREFRONT, 'path', false );
 		UiAssets::enqueue();
 		foreach ( array_unique( self::$modules ) as $module ) {
 			UiAssets::enqueue_module( $module );
