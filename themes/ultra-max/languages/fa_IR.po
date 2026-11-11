@@ -30,16 +30,16 @@ msgstr "قالب فروشگاهی سریع و فارسی برای ووکامرس
 msgid "The Ultra Max theme is missing its build files. Run \"npm run build\" in the development repository, or install the release package."
 msgstr "فایل‌های ساخته‌شده قالب الترا مکس پیدا نشد. در مخزن توسعه \"npm run build\" را اجرا کنید یا بسته انتشار را نصب کنید."
 
-#: src/Template.php:414
+#: src/Template.php:474
 msgid "Skip to content"
 msgstr "رفتن به محتوا"
 
-#: src/Theme.php:88
+#: src/Theme.php:89
 msgid "Primary menu"
 msgstr "فهرست اصلی"
 
-#: src/Template.php:251
-#: src/Theme.php:89
+#: src/Template.php:310
+#: src/Theme.php:90
 msgid "Footer menu"
 msgstr "فهرست پابرگ"
 
@@ -75,7 +75,7 @@ msgstr "شاید پیوند خراب باشد یا صفحه جابه‌جا شد
 
 #. translators: %s: number of comments.
 #: comments.php:25
-#: src/Template.php:340
+#: src/Template.php:400
 #, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
@@ -87,34 +87,36 @@ msgid "Comments are closed."
 msgstr "امکان ثبت دیدگاه بسته شده است."
 
 #. translators: %s: search terms.
-#: index.php:19
+#: index.php:21
 #: src/Breadcrumbs.php:93
 #, php-format
 msgid "Search results for \"%s\""
 msgstr "نتیجه جستجوی «%s»"
 
-#: index.php:23
+#: index.php:25
 #: src/Breadcrumbs.php:42
 msgid "Blog"
 msgstr "وبلاگ"
 
-#: index.php:45
+#: index.php:47
 msgid "Nothing matched your search"
 msgstr "چیزی با جستجوی شما پیدا نشد"
 
-#: index.php:45
+#: index.php:47
 msgid "Nothing has been published here yet"
 msgstr "هنوز چیزی اینجا منتشر نشده است"
 
-#: index.php:46
+#: index.php:48
 msgid "Check the spelling or try fewer or more general words."
 msgstr "املای کلمه‌ها را بررسی کنید یا کلمه‌های کمتر و کلی‌تری بنویسید."
 
 #: sidebar.php:16
-#: src/Theme.php:102
+#: src/Theme.php:103
 msgid "Sidebar"
 msgstr "ستون کناری"
 
+#: src/BottomNav.php:29
+#: src/BottomNav.php:121
 #: src/Breadcrumbs.php:27
 msgid "Home"
 msgstr "خانه"
@@ -461,7 +463,7 @@ msgid "On wide screens the sidebar follows the page while it fits on screen."
 msgstr "در صفحه‌های پهن، ستون کناری تا وقتی در صفحه جا شود همراه صفحه می‌آید."
 
 #: src/Options.php:468
-#: src/Options.php:762
+#: src/Options.php:818
 msgid "Back to top button"
 msgstr "دکمه بازگشت به بالا"
 
@@ -498,7 +500,7 @@ msgid "Centre"
 msgstr "وسط"
 
 #: src/Options.php:528
-#: src/Template.php:281
+#: src/Template.php:341
 msgid "Breadcrumbs"
 msgstr "مسیر راهنما"
 
@@ -507,7 +509,7 @@ msgid "The path from the home page to the current page. Untick every device to h
 msgstr "مسیر صفحه اصلی تا صفحه فعلی. برای پنهان کردن، تیک همه دستگاه‌ها را بردارید."
 
 #: src/Options.php:542
-#: src/Options.php:742
+#: src/Options.php:788
 msgid "Announcement bar"
 msgstr "نوار اطلاع‌رسانی"
 
@@ -581,7 +583,7 @@ msgid "Contact buttons"
 msgstr "دکمه‌های تماس"
 
 #: src/Options.php:628
-#: src/Options.php:752
+#: src/Options.php:798
 msgid "Floating contact buttons"
 msgstr "دکمه‌های تماس شناور"
 
@@ -602,6 +604,7 @@ msgid "Number, username or link"
 msgstr "شماره، نام کاربری یا پیوند"
 
 #: src/Options.php:656
+#: src/Options.php:717
 msgid "Label (optional)"
 msgstr "عنوان (اختیاری)"
 
@@ -609,54 +612,56 @@ msgstr "عنوان (اختیاری)"
 msgid "Position"
 msgstr "جای دکمه"
 
-#: src/Options.php:687
+#: src/Options.php:733
 msgid "Performance"
 msgstr "کارایی"
 
-#: src/Options.php:693
+#: src/Options.php:739
 msgid "Loading"
 msgstr "بارگذاری"
 
-#: src/Options.php:700
+#: src/Options.php:746
 msgid "Lazy-load images and embeds"
 msgstr "بارگذاری تنبل تصویر و ویدئو"
 
-#: src/Options.php:701
+#: src/Options.php:747
 msgid "Images and videos below the fold load only when visitors scroll to them."
 msgstr "تصویرها و ویدئوهای پایین صفحه فقط وقتی بارگذاری می‌شوند که بازدیدکننده به آن‌ها برسد."
 
-#: src/Options.php:707
+#: src/Options.php:753
 msgid "Preload the main image"
 msgstr "پیش‌بارگذاری تصویر اصلی"
 
-#: src/Options.php:708
+#: src/Options.php:754
 msgid "The featured image at the top of a post loads first, so the page looks ready sooner."
 msgstr "تصویر شاخص بالای نوشته زودتر از همه بارگذاری می‌شود تا صفحه زودتر آماده دیده شود."
 
-#: src/Options.php:714
+#: src/Options.php:760
 msgid "Preload the body font"
 msgstr "پیش‌بارگذاری فونت متن"
 
-#: src/Options.php:720
+#: src/Options.php:766
 msgid "Inline critical CSS"
 msgstr "CSS بحرانی درون صفحه"
 
-#: src/Options.php:721
+#: src/Options.php:767
 msgid "Puts the styles the top of the page needs into the page itself, so it draws without waiting for a file."
 msgstr "استایل‌هایی که بالای صفحه لازم دارد داخل خود صفحه قرار می‌گیرد تا بدون انتظار برای یک فایل نمایش داده شود."
 
-#: src/Options.php:743
+#: src/Options.php:789
 msgid "A bar above the header with a message, a button and optional dates."
 msgstr "نواری بالای سربرگ با پیام، دکمه و بازه زمانی اختیاری."
 
-#: src/Options.php:753
+#: src/Options.php:799
 msgid "WhatsApp, Telegram, Eitaa, Bale and phone buttons in a corner of every page."
 msgstr "دکمه‌های واتساپ، تلگرام، ایتا، بله و تلفن در گوشه همه صفحه‌ها."
 
-#: src/Options.php:763
+#: src/Options.php:819
 msgid "A round button that appears after scrolling and returns to the top."
 msgstr "دکمه گردی که پس از پیمایش ظاهر می‌شود و به بالای صفحه برمی‌گرداند."
 
+#: src/BottomNav.php:34
+#: src/BottomNav.php:145
 #: src/Template.php:157
 #: src/Template.php:176
 #: src/Template.php:177
@@ -667,68 +672,72 @@ msgstr "جستجو"
 msgid "Search the store…"
 msgstr "جستجو در فروشگاه…"
 
-#: src/Template.php:192
+#: src/BottomNav.php:32
+#: src/BottomNav.php:134
+#: src/Template.php:247
 msgid "My account"
 msgstr "حساب من"
 
-#: src/Template.php:194
+#: src/BottomNav.php:31
+#: src/BottomNav.php:177
+#: src/Template.php:249
 msgid "Cart"
 msgstr "سبد خرید"
 
-#: src/Template.php:199
+#: src/Template.php:254
 msgid "Menu"
 msgstr "منو"
 
-#: src/Template.php:203
-#: src/Template.php:223
+#: src/Template.php:258
+#: src/Template.php:280
 msgid "Main menu"
 msgstr "منوی اصلی"
 
 #. translators: 1: year, 2: site name.
-#: src/Template.php:259
+#: src/Template.php:318
 #, php-format
 msgid "© %1$s %2$s. All rights reserved."
 msgstr "© %1$s %2$s. همه حقوق محفوظ است."
 
-#: src/Template.php:314
+#: src/Template.php:374
 msgid "Published on"
 msgstr "تاریخ انتشار"
 
-#: src/Template.php:322
+#: src/Template.php:382
 #: vendor-prefixed/ui/components/comments/Comments.php:54
 msgid "Author"
 msgstr "نویسنده"
 
-#: src/Template.php:332
+#: src/Template.php:392
 msgid "Category"
 msgstr "دسته"
 
-#: src/Template.php:360
+#: src/Template.php:420
 msgid "(no title)"
 msgstr "(بدون عنوان)"
 
-#: src/Template.php:365
+#: src/Template.php:425
 msgid "Featured"
 msgstr "ویژه"
 
-#: src/Template.php:381
+#: src/Template.php:441
 msgid "Pages"
 msgstr "صفحه‌ها"
 
-#: src/Template.php:386
+#: src/Template.php:446
 msgid "Previous"
 msgstr "قبلی"
 
-#: src/Template.php:387
+#: src/Template.php:447
 msgid "Next"
 msgstr "بعدی"
 
-#: src/Theme.php:103
+#: src/Theme.php:104
 msgid "Shown next to posts, pages and archives when the layout settings allow a sidebar."
 msgstr "کنار نوشته‌ها، برگه‌ها و بایگانی‌ها نمایش داده می‌شود، اگر تنظیمات چیدمان ستون کناری را اجازه دهد."
 
 #. translators: %d: footer column number.
-#: src/Theme.php:114
+#: src/Theme.php:115
 #, php-format
 msgid "Footer column %d"
 msgstr "ستون پابرگ %d"
@@ -904,3 +913,64 @@ msgstr "نام و ایمیل من را برای دیدگاه بعدی در ای�
 #: vendor-prefixed/ui/components/comments/Comments.php:131
 msgid "Comment"
 msgstr "دیدگاه"
+
+#: src/BottomNav.php:30
+msgid "Categories (opens the menu)"
+msgstr "دسته‌بندی‌ها (منو را باز می‌کند)"
+
+#: src/BottomNav.php:33
+#: src/BottomNav.php:140
+msgid "Wishlist"
+msgstr "علاقه‌مندی"
+
+#: src/BottomNav.php:35
+msgid "Another link"
+msgstr "پیوند دیگر"
+
+#: src/BottomNav.php:127
+msgid "Categories"
+msgstr "دسته‌بندی"
+
+#: src/BottomNav.php:151
+msgid "Link"
+msgstr "پیوند"
+
+#: src/BottomNav.php:193
+msgid "Bottom navigation"
+msgstr "ناوبری پایین صفحه"
+
+#: src/Options.php:687
+msgid "Bottom bar"
+msgstr "نوار پایین"
+
+#: src/Options.php:693
+msgid "App-like bottom bar on phones"
+msgstr "نوار پایین اپ‌مانند در گوشی"
+
+#: src/Options.php:697
+msgid "A row of icons fixed at the bottom of phones and tablets, like a shopping app."
+msgstr "یک ردیف آیکون ثابت در پایین گوشی و تبلت، مثل اپ‌های خرید."
+
+#: src/Options.php:702
+msgid "Items"
+msgstr "آیتم‌ها"
+
+#: src/Options.php:703
+msgid "Up to six. Drag to change the order."
+msgstr "حداکثر شش. برای تغییر ترتیب بکشید."
+
+#: src/Options.php:710
+msgid "Item"
+msgstr "آیتم"
+
+#: src/Options.php:722
+msgid "Link (for wishlist or another link)"
+msgstr "پیوند (برای علاقه‌مندی یا پیوند دیگر)"
+
+#: src/Options.php:808
+msgid "Bottom bar on phones"
+msgstr "نوار پایین در گوشی"
+
+#: src/Options.php:809
+msgid "An app-like row of icons at the bottom of phones: home, categories, cart, wishlist and account."
+msgstr "ردیفی از آیکون‌ها در پایین گوشی، مثل اپ: خانه، دسته‌بندی، سبد خرید، علاقه‌مندی و حساب کاربری."

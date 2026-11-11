@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-09T18:54:02+00:00\n"
+"POT-Creation-Date: 2026-11-10T15:11:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ultra-max-core\n"
@@ -30,43 +30,55 @@ msgstr ""
 msgid "Ultra Max"
 msgstr ""
 
-#: src/Admin/Admin.php:67
+#: src/Admin/Admin.php:74
 #: src/Admin/Strings.php:133
 msgid "Dashboard"
 msgstr ""
 
-#: src/Admin/Admin.php:68
-#: src/Admin/Admin.php:119
+#: src/Admin/Admin.php:75
+#: src/Admin/Admin.php:130
 #: src/Admin/Strings.php:53
 #: src/Admin/Strings.php:201
 msgid "Settings"
 msgstr ""
 
-#: src/Admin/Admin.php:69
+#: src/Admin/Admin.php:76
+#: src/Admin/Strings.php:258
+#: src/Builder/Layouts.php:55
+msgid "Layouts"
+msgstr ""
+
+#: src/Admin/Admin.php:77
 #: src/Admin/Strings.php:185
 msgid "Modules"
 msgstr ""
 
-#: src/Admin/Admin.php:70
+#: src/Admin/Admin.php:78
 #: src/Admin/Strings.php:206
 msgid "Setup wizard"
 msgstr ""
 
-#: src/Admin/Admin.php:71
+#: src/Admin/Admin.php:79
 #: src/Admin/Strings.php:182
 msgid "Help"
 msgstr ""
 
-#: src/Admin/Admin.php:155
+#: src/Admin/Admin.php:166
+#: src/Admin/Strings.php:299
+#: src/Elementor/Integration.php:143
 msgid "Loading…"
 msgstr ""
 
-#: src/Admin/Admin.php:175
+#: src/Admin/Admin.php:186
 msgid "Every setting has a short explanation next to it. The help page explains each part of the store step by step, without leaving your dashboard."
 msgstr ""
 
-#: src/Admin/Admin.php:177
+#: src/Admin/Admin.php:188
 msgid "Open the help page"
+msgstr ""
+
+#: src/Admin/Admin.php:370
+msgid "Visitors who are not logged in"
 msgstr ""
 
 #: src/Admin/Products.php:132
@@ -91,6 +103,7 @@ msgid "Unknown module."
 msgstr ""
 
 #: src/Admin/Strings.php:27
+#: src/Elementor/Integration.php:147
 msgid "Something went wrong. Please try again."
 msgstr ""
 
@@ -103,6 +116,7 @@ msgid "On"
 msgstr ""
 
 #: src/Admin/Strings.php:30
+#: src/Admin/Strings.php:282
 #: src/Admin/SystemStatus.php:73
 msgid "Off"
 msgstr ""
@@ -191,6 +205,7 @@ msgid "Search all settings… for example \"font\" or \"sidebar\""
 msgstr ""
 
 #: src/Admin/Strings.php:57
+#: src/Admin/Strings.php:298
 msgid "Nothing found."
 msgstr ""
 
@@ -275,6 +290,7 @@ msgid "Corners, colours and fonts follow your settings."
 msgstr ""
 
 #: src/Admin/Strings.php:79
+#: src/Store/Cards.php:117
 msgid "Add to cart"
 msgstr ""
 
@@ -291,6 +307,10 @@ msgid "Most relevant"
 msgstr ""
 
 #: src/Admin/Strings.php:83
+#: src/Builder/library-strings.php:139
+#: src/Store/Catalog.php:32
+#: src/Widgets/Store/ProductTabs.php:91
+#: src/Widgets/Store/ProductTabs.php:114
 msgid "Newest"
 msgstr ""
 
@@ -382,6 +402,7 @@ msgid "Reason"
 msgstr ""
 
 #: src/Admin/Strings.php:109
+#: src/Elementor/Tags/JalaliDate.php:74
 msgid "Date"
 msgstr ""
 
@@ -406,6 +427,7 @@ msgid "Backup restored"
 msgstr ""
 
 #: src/Admin/Strings.php:117
+#: src/Elementor/Integration.php:139
 msgid "Sections"
 msgstr ""
 
@@ -438,6 +460,7 @@ msgid "Changes apply only after you save. You can reset a section; a backup is t
 msgstr ""
 
 #: src/Admin/Strings.php:125
+#: src/Widgets/Store/StoreWidget.php:150
 msgid "Next"
 msgstr ""
 
@@ -639,6 +662,8 @@ msgid "A module that is off loads no CSS or JS file and runs no extra query."
 msgstr ""
 
 #: src/Admin/Strings.php:187
+#: src/Elementor/Tags/ProductStock.php:83
+#: src/Widgets/Header/MenuToggle.php:74
 msgid "Show"
 msgstr ""
 
@@ -792,10 +817,13 @@ msgid "You can change all of these later in Settings."
 msgstr ""
 
 #: src/Admin/Strings.php:234
+#: src/Elementor/Tags/StoreInfo.php:78
 msgid "Store name"
 msgstr ""
 
 #: src/Admin/Strings.php:235
+#: src/Widgets/Header/Logo.php:33
+#: src/Widgets/Header/Logo.php:59
 msgid "Logo"
 msgstr ""
 
@@ -832,6 +860,9 @@ msgid "Skip this step"
 msgstr ""
 
 #: src/Admin/Strings.php:245
+#: src/Widgets/General/Heading.php:77
+#: src/Widgets/General/IconBox.php:102
+#: src/Widgets/Header/NavMenu.php:86
 msgid "Start"
 msgstr ""
 
@@ -865,6 +896,227 @@ msgstr ""
 
 #: src/Admin/Strings.php:255
 msgid "The help articles are missing from this build."
+msgstr ""
+
+#: src/Admin/Strings.php:259
+msgid "Design your header, footer and reusable blocks with Elementor, and choose where each one shows."
+msgstr ""
+
+#: src/Admin/Strings.php:260
+msgid "Elementor is not active. Layouts still work with the block editor, but the ready-made designs need Elementor (the free version is enough)."
+msgstr ""
+
+#: src/Admin/Strings.php:261
+msgid "New layout"
+msgstr ""
+
+#. translators: %s: kind of layout, such as Header.
+#: src/Admin/Strings.php:263
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: src/Admin/Strings.php:264
+#: src/Widgets/General/Team.php:66
+#: src/Widgets/General/Testimonials.php:76
+#: src/Widgets/Store/TrustMarks.php:106
+#: vendor-prefixed/ui/components/comments/Comments.php:126
+msgid "Name"
+msgstr ""
+
+#: src/Admin/Strings.php:265
+msgid "Start from"
+msgstr ""
+
+#: src/Admin/Strings.php:266
+msgid "Blank"
+msgstr ""
+
+#: src/Admin/Strings.php:267
+msgid "An empty layout to design from scratch."
+msgstr ""
+
+#: src/Admin/Strings.php:268
+msgid "Create and edit"
+msgstr ""
+
+#: src/Admin/Strings.php:269
+msgid "The layout was made. Opening the editor…"
+msgstr ""
+
+#: src/Admin/Strings.php:270
+msgid "Edit design"
+msgstr ""
+
+#: src/Admin/Strings.php:271
+msgid "Display conditions"
+msgstr ""
+
+#: src/Admin/Strings.php:272
+#: src/Duplicate.php:83
+msgid "Duplicate"
+msgstr ""
+
+#: src/Admin/Strings.php:273
+msgid "Move to trash"
+msgstr ""
+
+#. translators: %s: layout name.
+#: src/Admin/Strings.php:275
+#, php-format
+msgid "Move \"%s\" to the trash? You can restore it from the trash later."
+msgstr ""
+
+#: src/Admin/Strings.php:276
+msgid "The layout was moved to the trash."
+msgstr ""
+
+#: src/Admin/Strings.php:277
+msgid "A copy was made. It stays off until you switch it on."
+msgstr ""
+
+#: src/Admin/Strings.php:278
+msgid "Conditions saved."
+msgstr ""
+
+#. translators: %s: layout name.
+#: src/Admin/Strings.php:280
+#, php-format
+msgid "Show \"%s\" on the site"
+msgstr ""
+
+#: src/Admin/Strings.php:281
+#: src/Admin/SystemStatus.php:154
+msgid "Shown"
+msgstr ""
+
+#: src/Admin/Strings.php:283
+msgid "No layout of this kind yet. Until you make one, the theme shows its own."
+msgstr ""
+
+#: src/Admin/Strings.php:284
+msgid "Not shown anywhere yet"
+msgstr ""
+
+#: src/Admin/Strings.php:285
+#: src/Builder/Rules.php:51
+msgid "Entire site"
+msgstr ""
+
+#. translators: %s: list of excluded places.
+#: src/Admin/Strings.php:287
+#, php-format
+msgid "except %s"
+msgstr ""
+
+#. translators: %s: number.
+#: src/Admin/Strings.php:289
+#, php-format
+msgid "Priority %s"
+msgstr ""
+
+#: src/Admin/Strings.php:290
+msgid "Show on"
+msgstr ""
+
+#: src/Admin/Strings.php:291
+msgid "The layout shows where any of these match."
+msgstr ""
+
+#: src/Admin/Strings.php:292
+msgid "But not on"
+msgstr ""
+
+#: src/Admin/Strings.php:293
+msgid "These places never show it, even if a rule above matches."
+msgstr ""
+
+#: src/Admin/Strings.php:294
+msgid "Add a rule"
+msgstr ""
+
+#: src/Admin/Strings.php:295
+msgid "Remove rule"
+msgstr ""
+
+#: src/Admin/Strings.php:296
+msgid "Choose"
+msgstr ""
+
+#: src/Admin/Strings.php:297
+#: src/Elementor/Integration.php:145
+msgid "Type to search"
+msgstr ""
+
+#. translators: %s: item name.
+#: src/Admin/Strings.php:301
+#, php-format
+msgid "Remove %s"
+msgstr ""
+
+#: src/Admin/Strings.php:302
+msgid "Choose at least one item for this rule, or remove it."
+msgstr ""
+
+#: src/Admin/Strings.php:303
+msgid "Who sees it"
+msgstr ""
+
+#: src/Admin/Strings.php:304
+msgid "Leave all unticked to show it to everyone."
+msgstr ""
+
+#: src/Admin/Strings.php:305
+msgid "Devices"
+msgstr ""
+
+#: src/Admin/Strings.php:306
+msgid "Make one header for desktop and another for phones by switching devices off here."
+msgstr ""
+
+#: src/Admin/Strings.php:307
+msgid "Priority"
+msgstr ""
+
+#: src/Admin/Strings.php:308
+msgid "When two layouts match the same page, the higher number wins. On equal numbers the more specific rule wins."
+msgstr ""
+
+#: src/Admin/Strings.php:309
+msgid "While scrolling"
+msgstr ""
+
+#: src/Admin/Strings.php:310
+msgid "Scrolls away"
+msgstr ""
+
+#: src/Admin/Strings.php:311
+msgid "Always on top"
+msgstr ""
+
+#: src/Admin/Strings.php:312
+msgid "Hides going down, returns going up"
+msgstr ""
+
+#: src/Admin/Strings.php:313
+msgid "Save conditions"
+msgstr ""
+
+#: src/Admin/Strings.php:314
+msgid "General"
+msgstr ""
+
+#: src/Admin/Strings.php:315
+#: src/Builder/library-strings.php:50
+msgid "Blog"
+msgstr ""
+
+#: src/Admin/Strings.php:316
+msgid "Store"
+msgstr ""
+
+#: src/Admin/Strings.php:317
+msgid "Shortcode"
 msgstr ""
 
 #: src/Admin/SystemStatus.php:52
@@ -1001,10 +1253,6 @@ msgid "Errors are not shown to visitors."
 msgstr ""
 
 #: src/Admin/SystemStatus.php:154
-msgid "Shown"
-msgstr ""
-
-#: src/Admin/SystemStatus.php:154
 msgid "Hidden"
 msgstr ""
 
@@ -1105,11 +1353,1250 @@ msgid "Brand, scent and skin type"
 msgstr ""
 
 #: src/Admin/Wizard.php:216
+#: src/Builder/library-strings.php:200
+#: src/Widgets/Store/QuickLinks.php:107
 msgid "Supermarket"
 msgstr ""
 
 #: src/Admin/Wizard.php:217
 msgid "Fast shopping with compact cards"
+msgstr ""
+
+#: src/Builder/Layouts.php:56
+#: src/Widgets/General/IconBox.php:89
+#: src/Widgets/General/IconList.php:94
+#: src/Widgets/Store/CategoryCircles.php:94
+#: src/Widgets/Store/Products.php:92
+msgid "Layout"
+msgstr ""
+
+#: src/Builder/Layouts.php:57
+msgid "Add a layout"
+msgstr ""
+
+#: src/Builder/Layouts.php:58
+msgid "Edit layout"
+msgstr ""
+
+#: src/Builder/Layouts.php:180
+msgid "(no title)"
+msgstr ""
+
+#: src/Builder/Layouts.php:222
+msgid "This kind of layout is not available yet."
+msgstr ""
+
+#: src/Builder/library-strings.php:18
+msgid "18-month warranty on every item"
+msgstr ""
+
+#: src/Builder/library-strings.php:19
+#: src/Widgets/Store/TrustMarks.php:165
+msgid "7-day returns"
+msgstr ""
+
+#: src/Builder/library-strings.php:20
+msgid "A coloured band with a countdown and a slider of discounted products."
+msgstr ""
+
+#: src/Builder/library-strings.php:21
+msgid "A customer from Isfahan"
+msgstr ""
+
+#: src/Builder/library-strings.php:22
+msgid "A customer from Shiraz"
+msgstr ""
+
+#: src/Builder/library-strings.php:23
+msgid "A customer from Tehran"
+msgstr ""
+
+#: src/Builder/library-strings.php:24
+msgid "A large search field in the middle for stores with many products."
+msgstr ""
+
+#: src/Builder/library-strings.php:25
+msgid "A product launch page with plans, reviews, questions and a contact form."
+msgstr ""
+
+#: src/Builder/library-strings.php:26
+msgid "A row of brand tiles."
+msgstr ""
+
+#: src/Builder/library-strings.php:27
+msgid "A search field and labelled icons, like a shopping app. Pairs with the bottom bar."
+msgstr ""
+
+#: src/Builder/library-strings.php:28
+msgid "A slider of what customers say."
+msgstr ""
+
+#: src/Builder/library-strings.php:29
+msgid "A thin dark bar with a message and social links above the store header."
+msgstr ""
+
+#: src/Builder/library-strings.php:30
+msgid "A title and an accordion of common questions."
+msgstr ""
+
+#: src/Builder/library-strings.php:31
+msgid "About the store"
+msgstr ""
+
+#: src/Builder/library-strings.php:32
+msgid "About us"
+msgstr ""
+
+#: src/Builder/library-strings.php:33
+#: src/Widgets/Footer/AppLinks.php:112
+msgid "Add to home screen"
+msgstr ""
+
+#: src/Builder/library-strings.php:34
+msgid "Add your trust badges and payment gateways in the widget settings."
+msgstr ""
+
+#: src/Builder/library-strings.php:35
+msgid "Advantages, link columns, newsletter, social links, trust badges, app links and copyright."
+msgstr ""
+
+#: src/Builder/library-strings.php:36
+#: src/Widgets/Store/DiscountPicks.php:89
+msgid "All"
+msgstr ""
+
+#: src/Builder/library-strings.php:37
+#: src/Widgets/Store/Deals.php:107
+msgid "All offers"
+msgstr ""
+
+#: src/Builder/library-strings.php:38
+#: src/Widgets/Store/TrustMarks.php:163
+msgid "All over the country"
+msgstr ""
+
+#: src/Builder/library-strings.php:39
+#: src/Widgets/Footer/Copyright.php:84
+msgid "All rights reserved for {site}. {year}"
+msgstr ""
+
+#: src/Builder/library-strings.php:40
+#: src/Widgets/Store/Deals.php:39
+#: src/Widgets/Store/Deals.php:89
+#: src/Widgets/Store/QuickLinks.php:106
+msgid "Amazing offers"
+msgstr ""
+
+#: src/Builder/library-strings.php:41
+msgid "Ask for a return from your account within seven days of delivery."
+msgstr ""
+
+#: src/Builder/library-strings.php:42
+#: src/Widgets/Store/HeroSlider.php:95
+msgid "Autumn festival"
+msgstr ""
+
+#: src/Builder/library-strings.php:43
+msgid "Autumn scents"
+msgstr ""
+
+#: src/Builder/library-strings.php:44
+msgid "Back to school"
+msgstr ""
+
+#: src/Builder/library-strings.php:45
+msgid "Basic"
+msgstr ""
+
+#: src/Builder/library-strings.php:46
+#: src/Widgets/Header/MenuToggle.php:127
+#: src/Widgets/Store/QuickLinks.php:109
+msgid "Best sellers"
+msgstr ""
+
+#: src/Builder/library-strings.php:47
+#: src/Store/Catalog.php:33
+#: src/Widgets/Store/ProductTabs.php:115
+msgid "Best selling"
+msgstr ""
+
+#: src/Builder/library-strings.php:48
+#: src/Widgets/Store/Bestsellers.php:66
+#: src/Widgets/Store/Bestsellers.php:102
+msgid "Best selling products"
+msgstr ""
+
+#: src/Builder/library-strings.php:49
+msgid "Big store home page"
+msgstr ""
+
+#: src/Builder/library-strings.php:51
+#: src/Widgets/Store/Posts.php:33
+#: src/Widgets/Store/Posts.php:159
+msgid "Blog posts"
+msgstr ""
+
+#: src/Builder/library-strings.php:52
+msgid "Brand coloured menu"
+msgstr ""
+
+#: src/Builder/library-strings.php:53
+msgid "Business licence"
+msgstr ""
+
+#: src/Builder/library-strings.php:54
+msgid "Buy 2, get 1 free"
+msgstr ""
+
+#: src/Builder/library-strings.php:55
+#: src/Widgets/Store/Banners.php:148
+msgid "Buy in instalments"
+msgstr ""
+
+#: src/Builder/library-strings.php:56
+#: src/Widgets/Store/TrustMarks.php:167
+msgid "By phone and chat"
+msgstr ""
+
+#: src/Builder/library-strings.php:57
+msgid "Cameras and accessories"
+msgstr ""
+
+#: src/Builder/library-strings.php:58
+msgid "Can I pay on delivery?"
+msgstr ""
+
+#: src/Builder/library-strings.php:59
+#: src/Builder/Types.php:59
+#: src/Widgets/Header/Cart.php:35
+#: src/Widgets/Header/Cart.php:87
+#: src/Widgets/Header/Cart.php:94
+#: src/Widgets/Header/Cart.php:113
+msgid "Cart"
+msgstr ""
+
+#: src/Builder/library-strings.php:60
+#: src/Widgets/Store/TrustMarks.php:164
+msgid "Cash on delivery"
+msgstr ""
+
+#: src/Builder/library-strings.php:61
+msgid "Categories beside the logo"
+msgstr ""
+
+#: src/Builder/library-strings.php:62
+msgid "Categories button first, search in its own row below."
+msgstr ""
+
+#: src/Builder/library-strings.php:63
+msgid "Centred logo"
+msgstr ""
+
+#: src/Builder/library-strings.php:64
+#: src/Widgets/General/PricingTable.php:112
+msgid "Choose this plan"
+msgstr ""
+
+#: src/Builder/library-strings.php:65
+msgid "Comfortable shoes"
+msgstr ""
+
+#: src/Builder/library-strings.php:66
+msgid "Common questions"
+msgstr ""
+
+#: src/Builder/library-strings.php:67
+msgid "Compact footer"
+msgstr ""
+
+#: src/Builder/library-strings.php:68
+#: src/Widgets/Header/Compare.php:29
+msgid "Compare"
+msgstr ""
+
+#: src/Builder/library-strings.php:69
+msgid "Contact"
+msgstr ""
+
+#: src/Builder/library-strings.php:70
+msgid "Contact details beside a contact form."
+msgstr ""
+
+#: src/Builder/library-strings.php:71
+msgid "Contact us"
+msgstr ""
+
+#: src/Builder/library-strings.php:72
+#: src/Widgets/General/Testimonials.php:35
+#: src/Widgets/General/Testimonials.php:141
+msgid "Customer reviews"
+msgstr ""
+
+#: src/Builder/library-strings.php:73
+msgid "Customer service"
+msgstr ""
+
+#: src/Builder/library-strings.php:74
+msgid "Delivery"
+msgstr ""
+
+#: src/Builder/library-strings.php:75
+msgid "Diamond"
+msgstr ""
+
+#: src/Builder/library-strings.php:76
+#: src/Widgets/Footer/AppLinks.php:113
+msgid "Direct download"
+msgstr ""
+
+#: src/Builder/library-strings.php:77
+#: src/Widgets/Store/DiscountPicks.php:36
+#: src/Widgets/Store/DiscountPicks.php:72
+#: src/Widgets/Store/DiscountPicks.php:166
+msgid "Discount picks"
+msgstr ""
+
+#: src/Builder/library-strings.php:78
+msgid "Discounted products with category filters."
+msgstr ""
+
+#: src/Builder/library-strings.php:79
+#: src/Widgets/Header/MenuToggle.php:126
+#: src/Widgets/Store/QuickLinks.php:108
+msgid "Discounts"
+msgstr ""
+
+#: src/Builder/library-strings.php:80
+#: src/Widgets/General/PricingTable.php:105
+msgid "Early access to offers"
+msgstr ""
+
+#: src/Builder/library-strings.php:81
+msgid "Easy returns"
+msgstr ""
+
+#: src/Builder/library-strings.php:82
+msgid "Eight coloured icons for the most used places."
+msgstr ""
+
+#: src/Builder/library-strings.php:83
+#: src/Widgets/General/ContactForm.php:106
+#: src/Widgets/General/Newsletter.php:70
+#: src/Widgets/General/Newsletter.php:97
+msgid "Email or mobile number"
+msgstr ""
+
+#: src/Builder/library-strings.php:84
+msgid "Every day from 9 to 21"
+msgstr ""
+
+#: src/Builder/library-strings.php:85
+#: src/Widgets/General/IconBox.php:73
+#: src/Widgets/Store/TrustMarks.php:163
+msgid "Fast delivery"
+msgstr ""
+
+#: src/Builder/library-strings.php:86
+msgid "Four advantages"
+msgstr ""
+
+#: src/Builder/library-strings.php:87
+msgid "Four banners"
+msgstr ""
+
+#: src/Builder/library-strings.php:88
+msgid "Four icon boxes in a row."
+msgstr ""
+
+#: src/Builder/library-strings.php:89
+msgid "Four small promotional banners in a row."
+msgstr ""
+
+#: src/Builder/library-strings.php:90
+#: src/Widgets/General/PricingTable.php:94
+#: src/Widgets/General/PricingTable.php:104
+msgid "Free delivery"
+msgstr ""
+
+#: src/Builder/library-strings.php:91
+msgid "Free delivery on orders over 500,000 toman"
+msgstr ""
+
+#: src/Builder/library-strings.php:92
+msgid "Free delivery on your first order"
+msgstr ""
+
+#: src/Builder/library-strings.php:93
+msgid "Frequently asked questions"
+msgstr ""
+
+#: src/Builder/library-strings.php:94
+msgid "Fresh coffee"
+msgstr ""
+
+#: src/Builder/library-strings.php:95
+msgid "Fresh, fast and always discounted"
+msgstr ""
+
+#: src/Builder/library-strings.php:96
+#: src/Widgets/Store/TrustMarks.php:166
+msgid "From the brand or its agent"
+msgstr ""
+
+#: src/Builder/library-strings.php:97
+msgid "Full store footer"
+msgstr ""
+
+#: src/Builder/library-strings.php:98
+#: src/Widgets/Store/TrustMarks.php:166
+msgid "Genuine products"
+msgstr ""
+
+#: src/Builder/library-strings.php:99
+msgid "Get in touch"
+msgstr ""
+
+#: src/Builder/library-strings.php:100
+msgid "Gifts"
+msgstr ""
+
+#: src/Builder/library-strings.php:101
+msgid "Gold"
+msgstr ""
+
+#: src/Builder/library-strings.php:102
+msgid "Headphones and speakers from 990,000 toman"
+msgstr ""
+
+#: src/Builder/library-strings.php:103
+#: src/Widgets/General/Newsletter.php:64
+msgid "Hear about offers and new arrivals first"
+msgstr ""
+
+#: src/Builder/library-strings.php:104
+#: src/Widgets/Store/HeroSlider.php:33
+msgid "Hero slider"
+msgstr ""
+
+#: src/Builder/library-strings.php:105
+msgid "Hero slider, advantages, categories, products and reviews."
+msgstr ""
+
+#: src/Builder/library-strings.php:106
+msgid "How do I return an item?"
+msgstr ""
+
+#: src/Builder/library-strings.php:107
+#: src/Widgets/General/Accordion.php:59
+#: src/Widgets/General/Accordion.php:69
+msgid "How long does delivery take?"
+msgstr ""
+
+#: src/Builder/library-strings.php:108
+msgid "How to order"
+msgstr ""
+
+#: src/Builder/library-strings.php:109
+#: src/Widgets/Store/TrustMarks.php:164
+msgid "In selected cities"
+msgstr ""
+
+#: src/Builder/library-strings.php:110
+msgid "Instalments without a down payment and free delivery"
+msgstr ""
+
+#: src/Builder/library-strings.php:111
+#: src/Widgets/General/Newsletter.php:76
+msgid "Join"
+msgstr ""
+
+#: src/Builder/library-strings.php:112
+msgid "Just the logo, search and cart, for small stores."
+msgstr ""
+
+#: src/Builder/library-strings.php:113
+msgid "Kitchen"
+msgstr ""
+
+#: src/Builder/library-strings.php:114
+msgid "Kitchen appliances up to 30% off"
+msgstr ""
+
+#: src/Builder/library-strings.php:115
+msgid "Landing page"
+msgstr ""
+
+#: src/Builder/library-strings.php:116
+msgid "Log in with a one-time code"
+msgstr ""
+
+#: src/Builder/library-strings.php:117
+#: src/Widgets/Header/Account.php:57
+msgid "Log in | Sign up"
+msgstr ""
+
+#: src/Builder/library-strings.php:118
+msgid "Logo and menu button, with the search field below."
+msgstr ""
+
+#: src/Builder/library-strings.php:119
+msgid "Logo and short text, three link columns, social links and copyright."
+msgstr ""
+
+#: src/Builder/library-strings.php:120
+msgid "Logo at the start, search icon, cart and menu at the end."
+msgstr ""
+
+#: src/Builder/library-strings.php:121
+msgid "Logo, menu and icons in a single compact row."
+msgstr ""
+
+#: src/Builder/library-strings.php:122
+msgid "Logo, wide search, account and cart; categories and menu below. The classic big-store header."
+msgstr ""
+
+#: src/Builder/library-strings.php:123
+#: src/Widgets/Header/NavMenu.php:105
+msgid "Main menu"
+msgstr ""
+
+#: src/Builder/library-strings.php:124
+msgid "Menu at the start, logo in the middle, account and cart at the end."
+msgstr ""
+
+#: src/Builder/library-strings.php:125
+msgid "Menu button, a search field filling the row, and the cart."
+msgstr ""
+
+#: src/Builder/library-strings.php:126
+msgid "Menu button, logo and cart, with the search field below."
+msgstr ""
+
+#: src/Builder/library-strings.php:127
+msgid "Menu on one side, logo in the middle, actions on the other."
+msgstr ""
+
+#: src/Builder/library-strings.php:128
+msgid "Menu, logo, then search, account and cart icons."
+msgstr ""
+
+#: src/Builder/library-strings.php:129
+msgid "Minimal"
+msgstr ""
+
+#: src/Builder/library-strings.php:130
+msgid "Minimal footer"
+msgstr ""
+
+#: src/Builder/library-strings.php:131
+msgid "More"
+msgstr ""
+
+#: src/Builder/library-strings.php:132
+msgid "More articles"
+msgstr ""
+
+#: src/Builder/library-strings.php:133
+msgid "Most popular"
+msgstr ""
+
+#: src/Builder/library-strings.php:134
+#: src/Builder/Types.php:65
+#: src/Widgets/Header/Account.php:63
+#: src/Widgets/Header/Account.php:81
+#: src/Widgets/Header/MenuToggle.php:223
+msgid "My account"
+msgstr ""
+
+#: src/Builder/library-strings.php:135
+#: src/Widgets/General/Testimonials.php:71
+msgid "My order arrived quickly and well packed. I will buy again."
+msgstr ""
+
+#: src/Builder/library-strings.php:136
+#: src/Widgets/Store/TrustMarks.php:129
+msgid "National registration"
+msgstr ""
+
+#: src/Builder/library-strings.php:137
+#: src/Widgets/Store/Stories.php:80
+#: src/Widgets/Store/Stories.php:113
+msgid "New arrivals"
+msgstr ""
+
+#: src/Builder/library-strings.php:138
+#: src/Widgets/Store/HeroSlider.php:89
+#: src/Widgets/Store/HeroSlider.php:151
+msgid "New phones with up to 25% off"
+msgstr ""
+
+#: src/Builder/library-strings.php:140
+msgid "Newest, best selling and discounted products in tabs."
+msgstr ""
+
+#: src/Builder/library-strings.php:141
+#: src/Widgets/Store/TrustMarks.php:165
+msgid "No questions asked"
+msgstr ""
+
+#: src/Builder/library-strings.php:142
+#: src/Widgets/Store/Bestsellers.php:34
+msgid "Numbered best sellers"
+msgstr ""
+
+#: src/Builder/library-strings.php:143
+#: src/Widgets/Header/MenuToggle.php:125
+#: src/Widgets/Store/QuickLinks.php:85
+msgid "Offers"
+msgstr ""
+
+#: src/Builder/library-strings.php:144
+#: src/Store/Catalog.php:34
+#: src/Widgets/Store/ProductTabs.php:116
+msgid "On sale"
+msgstr ""
+
+#: src/Builder/library-strings.php:145
+msgid "One line with the copyright and social links."
+msgstr ""
+
+#: src/Builder/library-strings.php:146
+msgid "One row"
+msgstr ""
+
+#: src/Builder/library-strings.php:147
+msgid "Order now"
+msgstr ""
+
+#: src/Builder/library-strings.php:148
+#: src/Widgets/General/IconBox.php:79
+msgid "Orders placed before 2 pm leave the same day."
+msgstr ""
+
+#: src/Builder/library-strings.php:149
+#: src/Widgets/General/Accordion.php:65
+msgid "Orders reach most cities in two to four working days."
+msgstr ""
+
+#: src/Builder/library-strings.php:150
+msgid "Pay with any Shetab card through a bank gateway."
+msgstr ""
+
+#: src/Builder/library-strings.php:151
+msgid "Payment gateway 1"
+msgstr ""
+
+#: src/Builder/library-strings.php:152
+msgid "Payment gateway 2"
+msgstr ""
+
+#: src/Builder/library-strings.php:153
+msgid "Payment methods"
+msgstr ""
+
+#: src/Builder/library-strings.php:154
+msgid "People who answer, every day of the week."
+msgstr ""
+
+#: src/Builder/library-strings.php:155
+msgid "Phone: all icons"
+msgstr ""
+
+#: src/Builder/library-strings.php:156
+msgid "Phone: app-like"
+msgstr ""
+
+#: src/Builder/library-strings.php:157
+msgid "Phone: brand coloured"
+msgstr ""
+
+#: src/Builder/library-strings.php:158
+msgid "Phone: centred logo"
+msgstr ""
+
+#: src/Builder/library-strings.php:159
+msgid "Phone: logo and icons"
+msgstr ""
+
+#: src/Builder/library-strings.php:160
+msgid "Phone: logo with search below"
+msgstr ""
+
+#: src/Builder/library-strings.php:161
+msgid "Phone: menu, logo, cart and search"
+msgstr ""
+
+#: src/Builder/library-strings.php:162
+msgid "Phone: search in the bar"
+msgstr ""
+
+#: src/Builder/library-strings.php:163
+msgid "Photography"
+msgstr ""
+
+#: src/Builder/library-strings.php:164
+#: src/Widgets/Store/Brands.php:70
+msgid "Popular brands"
+msgstr ""
+
+#: src/Builder/library-strings.php:165
+msgid "Prices are fair and the products are genuine."
+msgstr ""
+
+#: src/Builder/library-strings.php:166
+msgid "Priority support"
+msgstr ""
+
+#: src/Builder/library-strings.php:167
+msgid "Privacy"
+msgstr ""
+
+#: src/Builder/library-strings.php:168
+#: src/Widgets/Header/CategoryMenu.php:77
+#: src/Widgets/Header/MenuToggle.php:77
+#: src/Widgets/Header/MenuToggle.php:93
+msgid "Product categories"
+msgstr ""
+
+#: src/Builder/library-strings.php:169
+#: src/Widgets/Store/ProductTabs.php:35
+msgid "Product tabs"
+msgstr ""
+
+#: src/Builder/library-strings.php:170
+msgid "Pure sound"
+msgstr ""
+
+#: src/Builder/library-strings.php:171
+msgid "Questions and answers"
+msgstr ""
+
+#: src/Builder/library-strings.php:172
+#: src/Widgets/Header/MenuToggle.php:104
+#: src/Widgets/Store/QuickLinks.php:33
+#: src/Widgets/Store/QuickLinks.php:134
+msgid "Quick links"
+msgstr ""
+
+#: src/Builder/library-strings.php:173
+msgid "Real support"
+msgstr ""
+
+#: src/Builder/library-strings.php:174
+#: src/Widgets/Store/Products.php:120
+#: src/Widgets/Store/ProductTabs.php:75
+msgid "Recommended for you"
+msgstr ""
+
+#: src/Builder/library-strings.php:175
+msgid "Returns"
+msgstr ""
+
+#: src/Builder/library-strings.php:176
+msgid "Round category tiles with their images."
+msgstr ""
+
+#: src/Builder/library-strings.php:177
+msgid "Round covers that open full-screen stories."
+msgstr ""
+
+#: src/Builder/library-strings.php:178
+msgid "Search first"
+msgstr ""
+
+#: src/Builder/library-strings.php:179
+msgid "Search the store"
+msgstr ""
+
+#: src/Builder/library-strings.php:180
+msgid "Secure payment"
+msgstr ""
+
+#: src/Builder/library-strings.php:181
+msgid "Secure payment text with trust and payment badges."
+msgstr ""
+
+#: src/Builder/library-strings.php:182
+#: src/Widgets/Store/TrustMarks.php:89
+msgid "Secure payment with every Shetab card"
+msgstr ""
+
+#: src/Builder/library-strings.php:183
+#: src/Widgets/General/ContactForm.php:70
+msgid "Send"
+msgstr ""
+
+#: src/Builder/library-strings.php:184
+#: src/Widgets/General/ContactForm.php:64
+msgid "Send us a message"
+msgstr ""
+
+#: src/Builder/library-strings.php:185
+msgid "Seven days to return what you do not like."
+msgstr ""
+
+#: src/Builder/library-strings.php:186
+#: src/Widgets/Store/TrustMarks.php:130
+msgid "Shetab network"
+msgstr ""
+
+#: src/Builder/library-strings.php:187
+#: src/Widgets/Store/CategoryCircles.php:70
+msgid "Shop by category"
+msgstr ""
+
+#: src/Builder/library-strings.php:188
+#: src/Widgets/General/Button.php:54
+#: src/Widgets/Store/HeroSlider.php:106
+msgid "Shop now"
+msgstr ""
+
+#: src/Builder/library-strings.php:189
+msgid "Shopping guide"
+msgstr ""
+
+#: src/Builder/library-strings.php:190
+msgid "Sign up"
+msgstr ""
+
+#: src/Builder/library-strings.php:191
+msgid "Simple store home page"
+msgstr ""
+
+#: src/Builder/library-strings.php:192
+msgid "Skin care"
+msgstr ""
+
+#: src/Builder/library-strings.php:193
+msgid "Small product cards with a round add button."
+msgstr ""
+
+#: src/Builder/library-strings.php:194
+msgid "Smart kitchen"
+msgstr ""
+
+#: src/Builder/library-strings.php:195
+msgid "Smart watches"
+msgstr ""
+
+#: src/Builder/library-strings.php:196
+#: src/Widgets/Footer/AppLinks.php:86
+msgid "Store app:"
+msgstr ""
+
+#: src/Builder/library-strings.php:197
+msgid "Store header with categories"
+msgstr ""
+
+#: src/Builder/library-strings.php:198
+#: src/Widgets/Store/Stories.php:33
+#: src/Widgets/Store/Stories.php:68
+#: src/Widgets/Store/Stories.php:73
+#: src/Widgets/Store/Stories.php:162
+msgid "Stories"
+msgstr ""
+
+#: src/Builder/library-strings.php:199
+msgid "Stories, hero slider, offers, banners, categories, product tabs, best sellers, brands, discount picks, blog and trust badges."
+msgstr ""
+
+#: src/Builder/library-strings.php:201
+msgid "Supermarket row"
+msgstr ""
+
+#: src/Builder/library-strings.php:202
+#: src/Widgets/Store/TrustMarks.php:167
+msgid "Support 7 days a week"
+msgstr ""
+
+#: src/Builder/library-strings.php:203
+msgid "Support: your store phone number"
+msgstr ""
+
+#: src/Builder/library-strings.php:204
+msgid "Terms of use"
+msgstr ""
+
+#: src/Builder/library-strings.php:205
+msgid "The best selling products in a numbered list."
+msgstr ""
+
+#: src/Builder/library-strings.php:206
+msgid "The first phone header on your brand colour."
+msgstr ""
+
+#: src/Builder/library-strings.php:207
+msgid "The four newest articles."
+msgstr ""
+
+#: src/Builder/library-strings.php:208
+msgid "The newest models"
+msgstr ""
+
+#: src/Builder/library-strings.php:209
+msgid "The support team answered all my questions patiently."
+msgstr ""
+
+#: src/Builder/library-strings.php:210
+msgid "Three large slides with text, a button and a product image."
+msgstr ""
+
+#: src/Builder/library-strings.php:211
+msgid "Three plans"
+msgstr ""
+
+#: src/Builder/library-strings.php:212
+msgid "Three pricing tables side by side, the middle one highlighted."
+msgstr ""
+
+#: src/Builder/library-strings.php:213
+#: src/Widgets/Header/MenuToggle.php:128
+msgid "Track order"
+msgstr ""
+
+#: src/Builder/library-strings.php:214
+msgid "Track your order"
+msgstr ""
+
+#: src/Builder/library-strings.php:215
+#: src/Widgets/Store/TrustMarks.php:107
+msgid "Trust badge"
+msgstr ""
+
+#: src/Builder/library-strings.php:216
+#: src/Widgets/Store/TrustMarks.php:83
+msgid "Trust badges"
+msgstr ""
+
+#: src/Builder/library-strings.php:217
+msgid "Two large banners with a button."
+msgstr ""
+
+#: src/Builder/library-strings.php:218
+msgid "Two wide banners"
+msgstr ""
+
+#: src/Builder/library-strings.php:219
+#: src/Widgets/Store/Banners.php:92
+#: src/Widgets/Store/Banners.php:146
+msgid "Up to 12% off"
+msgstr ""
+
+#: src/Builder/library-strings.php:220
+#: src/Widgets/Header/CategoryMenu.php:96
+msgid "Up to 30% off"
+msgstr ""
+
+#: src/Builder/library-strings.php:221
+#: src/Widgets/Store/Stories.php:109
+msgid "View"
+msgstr ""
+
+#: src/Builder/library-strings.php:222
+msgid "Weekly groceries delivered the same day"
+msgstr ""
+
+#: src/Builder/library-strings.php:223
+msgid "What our customers say"
+msgstr ""
+
+#: src/Builder/library-strings.php:224
+msgid "White top row and a menu row in your brand colour."
+msgstr ""
+
+#: src/Builder/library-strings.php:225
+msgid "Wireless sound"
+msgstr ""
+
+#: src/Builder/library-strings.php:226
+#: src/Widgets/Header/Wishlist.php:34
+msgid "Wishlist"
+msgstr ""
+
+#: src/Builder/library-strings.php:227
+msgid "With a dark top bar"
+msgstr ""
+
+#: src/Builder/library-strings.php:228
+#: src/Widgets/Store/Banners.php:98
+msgid "Work laptops"
+msgstr ""
+
+#: src/Builder/library-strings.php:229
+msgid "Work with us"
+msgstr ""
+
+#: src/Builder/library-strings.php:230
+#: src/Widgets/Store/Posts.php:69
+msgid "Worth reading"
+msgstr ""
+
+#: src/Builder/library-strings.php:231
+msgid "Write a sentence about your store here."
+msgstr ""
+
+#: src/Builder/library-strings.php:232
+msgid "Write a short description of your store, its guarantees and delivery here. Search engines read it too."
+msgstr ""
+
+#: src/Builder/library-strings.php:233
+msgid "Yes, in the cities shown at checkout."
+msgstr ""
+
+#: src/Builder/library-strings.php:234
+msgid "Your store address"
+msgstr ""
+
+#: src/Builder/library-strings.php:235
+msgid "Your store email"
+msgstr ""
+
+#: src/Builder/library-strings.php:236
+msgid "Your store phone number"
+msgstr ""
+
+#: src/Builder/library-strings.php:237
+#: src/Widgets/Store/TrustMarks.php:128
+msgid "e-Namad trust badge"
+msgstr ""
+
+#: src/Builder/library-strings.php:238
+#: src/Widgets/General/PricingTable.php:82
+msgid "month"
+msgstr ""
+
+#: src/Builder/Rest.php:115
+msgid "This layout no longer exists."
+msgstr ""
+
+#: src/Builder/Rest.php:129
+msgid "Choose what kind of layout to make."
+msgstr ""
+
+#: src/Builder/Rest.php:136
+#: src/Elementor/Integration.php:279
+msgid "This template could not be found."
+msgstr ""
+
+#. translators: %s: layout name.
+#. translators: %s: original title.
+#: src/Builder/Rest.php:229
+#: src/Duplicate.php:122
+#, php-format
+msgid "%s (copy)"
+msgstr ""
+
+#: src/Builder/Rest.php:262
+msgid "Unknown condition."
+msgstr ""
+
+#: src/Builder/Rules.php:56
+msgid "Front page"
+msgstr ""
+
+#: src/Builder/Rules.php:61
+msgid "Search results"
+msgstr ""
+
+#: src/Builder/Rules.php:66
+msgid "Page not found (404)"
+msgstr ""
+
+#: src/Builder/Rules.php:71
+msgid "All pages"
+msgstr ""
+
+#: src/Builder/Rules.php:76
+msgid "Specific pages"
+msgstr ""
+
+#: src/Builder/Rules.php:81
+msgid "Blog and post archives"
+msgstr ""
+
+#: src/Builder/Rules.php:86
+msgid "All posts"
+msgstr ""
+
+#: src/Builder/Rules.php:91
+msgid "Specific posts"
+msgstr ""
+
+#: src/Builder/Rules.php:96
+msgid "Post category"
+msgstr ""
+
+#: src/Builder/Rules.php:102
+msgid "Post tag"
+msgstr ""
+
+#: src/Builder/Rules.php:108
+msgid "Shop and product archives"
+msgstr ""
+
+#: src/Builder/Rules.php:113
+msgid "All products"
+msgstr ""
+
+#: src/Builder/Rules.php:118
+msgid "Specific products"
+msgstr ""
+
+#: src/Builder/Rules.php:123
+msgid "Product category"
+msgstr ""
+
+#: src/Builder/Rules.php:129
+msgid "Product tag"
+msgstr ""
+
+#: src/Builder/Rules.php:135
+#: src/Elementor/Kit.php:125
+msgid "Brand"
+msgstr ""
+
+#: src/Builder/Rules.php:141
+msgid "Product type"
+msgstr ""
+
+#: src/Builder/Rules.php:172
+msgid "Simple product"
+msgstr ""
+
+#: src/Builder/Rules.php:173
+msgid "Variable product"
+msgstr ""
+
+#: src/Builder/Rules.php:174
+msgid "Grouped product"
+msgstr ""
+
+#: src/Builder/Rules.php:175
+msgid "External/Affiliate product"
+msgstr ""
+
+#: src/Builder/Types.php:30
+msgid "Header"
+msgstr ""
+
+#: src/Builder/Types.php:31
+msgid "Headers"
+msgstr ""
+
+#: src/Builder/Types.php:32
+msgid "The top of every page: logo, menus, search and cart. Make one for desktop and one for mobile, or one for both."
+msgstr ""
+
+#: src/Builder/Types.php:39
+msgid "Footer"
+msgstr ""
+
+#: src/Builder/Types.php:40
+msgid "Footers"
+msgstr ""
+
+#: src/Builder/Types.php:41
+msgid "The bottom of every page: links, trust badges, payment marks and app links."
+msgstr ""
+
+#: src/Builder/Types.php:48
+msgid "Reusable block"
+msgstr ""
+
+#: src/Builder/Types.php:49
+msgid "Reusable blocks"
+msgstr ""
+
+#: src/Builder/Types.php:50
+msgid "A piece of design you can show in a mega menu, a slider or anywhere with a shortcode."
+msgstr ""
+
+#: src/Builder/Types.php:56
+msgid "Single product"
+msgstr ""
+
+#: src/Builder/Types.php:56
+msgid "Single products"
+msgstr ""
+
+#: src/Builder/Types.php:57
+msgid "Shop archive"
+msgstr ""
+
+#: src/Builder/Types.php:57
+msgid "Shop archives"
+msgstr ""
+
+#: src/Builder/Types.php:58
+msgid "Product card"
+msgstr ""
+
+#: src/Builder/Types.php:58
+msgid "Product cards"
+msgstr ""
+
+#: src/Builder/Types.php:59
+msgid "Carts"
+msgstr ""
+
+#: src/Builder/Types.php:60
+msgid "Checkout form"
+msgstr ""
+
+#: src/Builder/Types.php:60
+msgid "Checkout forms"
+msgstr ""
+
+#: src/Builder/Types.php:61
+msgid "Checkout content"
+msgstr ""
+
+#: src/Builder/Types.php:61
+msgid "Checkout contents"
+msgstr ""
+
+#: src/Builder/Types.php:62
+msgid "Thank you page"
+msgstr ""
+
+#: src/Builder/Types.php:62
+msgid "Thank you pages"
+msgstr ""
+
+#: src/Builder/Types.php:63
+msgid "Login and register"
+msgstr ""
+
+#: src/Builder/Types.php:63
+msgid "Login and register pages"
+msgstr ""
+
+#: src/Builder/Types.php:64
+msgid "Lost password"
+msgstr ""
+
+#: src/Builder/Types.php:64
+msgid "Lost password pages"
+msgstr ""
+
+#: src/Builder/Types.php:65
+msgid "Account pages"
+msgstr ""
+
+#: src/Builder/Types.php:66
+msgid "Single post"
+msgstr ""
+
+#: src/Builder/Types.php:66
+msgid "Single posts"
+msgstr ""
+
+#: src/Builder/Types.php:67
+msgid "Blog archive"
+msgstr ""
+
+#: src/Builder/Types.php:67
+msgid "Blog archives"
 msgstr ""
 
 #: src/CustomCode.php:101
@@ -1134,10 +2621,6 @@ msgstr ""
 msgid "Duplicate \"%s\""
 msgstr ""
 
-#: src/Duplicate.php:83
-msgid "Duplicate"
-msgstr ""
-
 #: src/Duplicate.php:96
 msgid "You cannot duplicate this item."
 msgstr ""
@@ -1146,10 +2629,215 @@ msgstr ""
 msgid "The copy could not be created."
 msgstr ""
 
-#. translators: %s: original title.
-#: src/Duplicate.php:122
+#: src/Elementor/Controls.php:237
+#: src/Store/Menus.php:246
+#: src/Store/Menus.php:271
+msgid "None"
+msgstr ""
+
+#: src/Elementor/DynamicTags.php:112
+msgid "In stock"
+msgstr ""
+
+#: src/Elementor/DynamicTags.php:112
+#: src/Store/Cards.php:101
+msgid "Out of stock"
+msgstr ""
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:67
 #, php-format
-msgid "%s (copy)"
+msgid "%s: header and footer"
+msgstr ""
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:69
+#, php-format
+msgid "%s: store"
+msgstr ""
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:71
+#, php-format
+msgid "%s: general"
+msgstr ""
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:73
+#, php-format
+msgid "%s: footer"
+msgstr ""
+
+#: src/Elementor/Integration.php:138
+msgid "Ready-made designs"
+msgstr ""
+
+#: src/Elementor/Integration.php:140
+msgid "Pages"
+msgstr ""
+
+#: src/Elementor/Integration.php:141
+msgid "Insert"
+msgstr ""
+
+#: src/Elementor/Integration.php:142
+#: src/Widgets/General/Gallery.php:125
+#: src/Widgets/Store/Stories.php:164
+#: vendor-prefixed/ui/components/dialog/Overlay.php:58
+msgid "Close"
+msgstr ""
+
+#: src/Elementor/Integration.php:144
+msgid "Nothing here yet."
+msgstr ""
+
+#: src/Elementor/Integration.php:146
+msgid "The design was added to the page."
+msgstr ""
+
+#: src/Elementor/Kit.php:51
+msgid "Theme fonts"
+msgstr ""
+
+#: src/Elementor/Kit.php:130
+#: src/Elementor/Kit.php:140
+msgid "Accent"
+msgstr ""
+
+#: src/Elementor/Kit.php:135
+#: src/Elementor/Kit.php:147
+#: src/Widgets/Footer/AppLinks.php:97
+#: src/Widgets/Footer/Copyright.php:82
+#: src/Widgets/General/AnimatedText.php:56
+#: src/Widgets/General/Button.php:53
+#: src/Widgets/General/Hotspots.php:103
+#: src/Widgets/General/IconBox.php:78
+#: src/Widgets/General/IconList.php:73
+#: src/Widgets/General/Text.php:48
+#: src/Widgets/General/Text.php:53
+#: src/Widgets/General/Timeline.php:78
+#: src/Widgets/Header/Cart.php:93
+#: src/Widgets/Header/MenuToggle.php:110
+#: src/Widgets/Header/StickyNav.php:62
+#: src/Widgets/Header/Wishlist.php:71
+#: src/Widgets/Store/HeroSlider.php:100
+#: src/Widgets/Store/QuickLinks.php:84
+#: src/Widgets/Store/TrustMarks.php:94
+#: src/Widgets/Store/TrustMarks.php:159
+msgid "Text"
+msgstr ""
+
+#: src/Elementor/Kit.php:145
+msgid "Headings"
+msgstr ""
+
+#: src/Elementor/Kit.php:146
+msgid "Subheadings"
+msgstr ""
+
+#: src/Elementor/Kit.php:148
+msgid "Buttons"
+msgstr ""
+
+#: src/Elementor/Tags/CustomField.php:34
+msgid "Custom field"
+msgstr ""
+
+#: src/Elementor/Tags/CustomField.php:74
+msgid "Field name"
+msgstr ""
+
+#: src/Elementor/Tags/JalaliDate.php:34
+msgid "Jalali date"
+msgstr ""
+
+#: src/Elementor/Tags/JalaliDate.php:78
+msgid "Today"
+msgstr ""
+
+#: src/Elementor/Tags/JalaliDate.php:79
+msgid "Publish date of the post"
+msgstr ""
+
+#: src/Elementor/Tags/JalaliDate.php:80
+msgid "Last update of the post"
+msgstr ""
+
+#: src/Elementor/Tags/JalaliDate.php:87
+msgid "Format"
+msgstr ""
+
+#: src/Elementor/Tags/JalaliDate.php:90
+msgid "For example j F Y shows 19 Aban 1405."
+msgstr ""
+
+#: src/Elementor/Tags/ProductPrice.php:34
+msgid "Product price"
+msgstr ""
+
+#: src/Elementor/Tags/ProductPrice.php:74
+#: src/Elementor/Tags/ProductStock.php:74
+#: src/Widgets/General/Hotspots.php:92
+msgid "Product"
+msgstr ""
+
+#: src/Elementor/Tags/ProductPrice.php:78
+#: src/Elementor/Tags/ProductStock.php:78
+msgid "Leave empty to use the product of the page."
+msgstr ""
+
+#: src/Elementor/Tags/ProductPrice.php:83
+#: src/Widgets/General/PricingTable.php:74
+msgid "Price"
+msgstr ""
+
+#: src/Elementor/Tags/ProductPrice.php:87
+msgid "Current price"
+msgstr ""
+
+#: src/Elementor/Tags/ProductPrice.php:88
+msgid "Regular price"
+msgstr ""
+
+#: src/Elementor/Tags/ProductPrice.php:89
+msgid "Sale price"
+msgstr ""
+
+#: src/Elementor/Tags/ProductStock.php:34
+msgid "Product stock"
+msgstr ""
+
+#: src/Elementor/Tags/ProductStock.php:87
+msgid "In stock or out of stock"
+msgstr ""
+
+#: src/Elementor/Tags/ProductStock.php:88
+msgid "Quantity left"
+msgstr ""
+
+#: src/Elementor/Tags/StoreInfo.php:34
+msgid "Store details"
+msgstr ""
+
+#: src/Elementor/Tags/StoreInfo.php:74
+msgid "Detail"
+msgstr ""
+
+#: src/Elementor/Tags/StoreInfo.php:79
+msgid "Tagline"
+msgstr ""
+
+#: src/Elementor/Tags/StoreInfo.php:80
+#: vendor-prefixed/ui/components/comments/Comments.php:127
+msgid "Email"
+msgstr ""
+
+#: src/Elementor/Tags/StoreInfo.php:81
+msgid "Address"
+msgstr ""
+
+#: src/Elementor/Tags/StoreInfo.php:82
+msgid "City"
 msgstr ""
 
 #: src/Options.php:36
@@ -1206,11 +2894,1662 @@ msgid "Your own CSS, JavaScript and head or footer code, for the whole site and 
 msgstr ""
 
 #: src/Options.php:139
-msgid "Duplicate posts and pages"
+msgid "Layout builder"
 msgstr ""
 
 #: src/Options.php:140
+msgid "Design the header, footer and reusable blocks with Elementor, and choose where each one shows."
+msgstr ""
+
+#: src/Options.php:147
+msgid "Store widgets"
+msgstr ""
+
+#: src/Options.php:148
+msgid "Header, home page and general widgets for Elementor, also usable as shortcodes. Each widget loads its files only on pages that use it."
+msgstr ""
+
+#: src/Options.php:155
+msgid "Duplicate posts and pages"
+msgstr ""
+
+#: src/Options.php:156
 msgid "A \"Duplicate\" link in the lists of posts and pages makes a draft copy with all its settings."
+msgstr ""
+
+#: src/Store/Cards.php:62
+msgid "Call for price"
+msgstr ""
+
+#. translators: %s: rating such as 4.5.
+#: src/Store/Cards.php:75
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#. translators: %s: number of items left.
+#: src/Store/Cards.php:105
+#, php-format
+msgid "Only %s left in stock"
+msgstr ""
+
+#: src/Store/Cards.php:132
+msgid "Time left for this offer"
+msgstr ""
+
+#. translators: %s: percent such as 60%.
+#: src/Store/Cards.php:140
+#, php-format
+msgid "%s sold"
+msgstr ""
+
+#. translators: %s: percent such as 40%.
+#: src/Store/Cards.php:142
+#, php-format
+msgid "%s left"
+msgstr ""
+
+#: src/Store/Cards.php:159
+#: src/Store/Menus.php:220
+#: src/Store/Menus.php:272
+msgid "New"
+msgstr ""
+
+#: src/Store/Cards.php:165
+msgid "Special"
+msgstr ""
+
+#: src/Store/Catalog.php:35
+msgid "Most viewed"
+msgstr ""
+
+#: src/Store/Catalog.php:36
+msgid "Featured"
+msgstr ""
+
+#: src/Store/Catalog.php:37
+msgid "Top rated"
+msgstr ""
+
+#: src/Store/Catalog.php:38
+msgid "From categories"
+msgstr ""
+
+#: src/Store/Catalog.php:39
+msgid "Hand-picked"
+msgstr ""
+
+#: src/Store/Forms.php:95
+msgid "Thank you. Your message was sent and we will answer soon."
+msgstr ""
+
+#: src/Store/Forms.php:96
+msgid "Thank you. You will hear about our offers first."
+msgstr ""
+
+#: src/Store/Forms.php:97
+msgid "Please fill in the fields correctly."
+msgstr ""
+
+#: src/Store/Forms.php:98
+msgid "Too many tries. Please wait a minute and try again."
+msgstr ""
+
+#: src/Store/Forms.php:99
+msgid "The form could not be sent. Please try again."
+msgstr ""
+
+#. translators: 1: store name, 2: sender name.
+#: src/Store/Forms.php:173
+#, php-format
+msgid "[%1$s] New message from %2$s"
+msgstr ""
+
+#: src/Store/Menus.php:64
+msgid "Menu at the \"Primary menu\" location"
+msgstr ""
+
+#: src/Store/Menus.php:224
+#: src/Store/Menus.php:273
+msgid "Hot"
+msgstr ""
+
+#: src/Store/Menus.php:250
+msgid "None (normal sub-menu)"
+msgstr ""
+
+#: src/Store/Menus.php:265
+#: src/Widgets/Footer/AppLinks.php:102
+#: src/Widgets/General/Button.php:89
+#: src/Widgets/General/Counter.php:86
+#: src/Widgets/General/Heading.php:59
+#: src/Widgets/General/IconBox.php:61
+#: src/Widgets/General/IconList.php:79
+#: src/Widgets/General/Team.php:94
+#: src/Widgets/General/Timeline.php:83
+#: src/Widgets/Header/HeaderWidget.php:57
+#: src/Widgets/Header/MenuToggle.php:115
+#: src/Widgets/Store/QuickLinks.php:90
+#: src/Widgets/Store/TrustMarks.php:148
+msgid "Icon"
+msgstr ""
+
+#: src/Store/Menus.php:269
+msgid "Badge"
+msgstr ""
+
+#: src/Store/Menus.php:274
+msgid "Custom text"
+msgstr ""
+
+#: src/Store/Menus.php:280
+msgid "Badge text (optional)"
+msgstr ""
+
+#: src/Store/Menus.php:286
+msgid "Small image"
+msgstr ""
+
+#: src/Store/Menus.php:288
+msgid "Choose image"
+msgstr ""
+
+#: src/Store/Menus.php:291
+msgid "Mega menu (a reusable block)"
+msgstr ""
+
+#: src/Store/Menus.php:295
+msgid "Mega menu width"
+msgstr ""
+
+#: src/Store/Menus.php:297
+msgid "Content width"
+msgstr ""
+
+#: src/Store/Menus.php:298
+#: src/Widgets/General/Button.php:94
+msgid "Full width"
+msgstr ""
+
+#: src/Store/Menus.php:299
+msgid "As wide as its content"
+msgstr ""
+
+#: src/Widgets/Footer/AppLinks.php:34
+msgid "App links"
+msgstr ""
+
+#: src/Widgets/Footer/AppLinks.php:80
+msgid "Apps"
+msgstr ""
+
+#: src/Widgets/Footer/AppLinks.php:85
+#: src/Widgets/General/Counter.php:69
+msgid "Label"
+msgstr ""
+
+#: src/Widgets/Footer/AppLinks.php:91
+#: src/Widgets/General/Social.php:120
+#: src/Widgets/General/Team.php:83
+#: src/Widgets/Header/StickyNav.php:51
+#: src/Widgets/Header/StickyNav.php:56
+#: src/Widgets/Store/QuickLinks.php:73
+#: src/Widgets/Store/QuickLinks.php:78
+msgid "Links"
+msgstr ""
+
+#: src/Widgets/Footer/AppLinks.php:108
+#: src/Widgets/General/Button.php:59
+#: src/Widgets/General/Hotspots.php:108
+#: src/Widgets/General/IconBox.php:84
+#: src/Widgets/General/IconList.php:84
+#: src/Widgets/General/Team.php:100
+#: src/Widgets/Header/MenuToggle.php:121
+#: src/Widgets/Header/Wishlist.php:77
+#: src/Widgets/Store/Banners.php:108
+#: src/Widgets/Store/HeroSlider.php:111
+#: src/Widgets/Store/QuickLinks.php:102
+#: src/Widgets/Store/TrustMarks.php:117
+msgid "Link"
+msgstr ""
+
+#: src/Widgets/Footer/Copyright.php:35
+#: src/Widgets/Footer/Copyright.php:77
+msgid "Copyright line"
+msgstr ""
+
+#: src/Widgets/Footer/Copyright.php:83
+msgid "{year} is replaced with the current year and {site} with the store name."
+msgstr ""
+
+#: src/Widgets/Footer/Copyright.php:89
+msgid "Show \"back to top\""
+msgstr ""
+
+#: src/Widgets/Footer/Copyright.php:113
+msgid "Back to top"
+msgstr ""
+
+#: src/Widgets/Footer/Perks.php:34
+#: src/Widgets/Store/TrustMarks.php:137
+msgid "Store advantages"
+msgstr ""
+
+#: src/Widgets/General/Accordion.php:32
+msgid "Store accordion"
+msgstr ""
+
+#: src/Widgets/General/Accordion.php:47
+#: src/Widgets/General/Accordion.php:52
+msgid "Items"
+msgstr ""
+
+#: src/Widgets/General/Accordion.php:58
+msgid "Question or title"
+msgstr ""
+
+#: src/Widgets/General/Accordion.php:64
+msgid "Answer"
+msgstr ""
+
+#: src/Widgets/General/Accordion.php:75
+msgid "Open the first item"
+msgstr ""
+
+#: src/Widgets/General/Accordion.php:81
+msgid "Allow several open at once"
+msgstr ""
+
+#: src/Widgets/General/AnimatedText.php:32
+msgid "Animated text"
+msgstr ""
+
+#: src/Widgets/General/AnimatedText.php:61
+msgid "Before the words"
+msgstr ""
+
+#: src/Widgets/General/AnimatedText.php:62
+msgid "Shopping that is"
+msgstr ""
+
+#: src/Widgets/General/AnimatedText.php:67
+msgid "Changing words, one per line"
+msgstr ""
+
+#: src/Widgets/General/AnimatedText.php:68
+msgid ""
+"fast\n"
+"genuine\n"
+"affordable"
+msgstr ""
+
+#: src/Widgets/General/AnimatedText.php:73
+msgid "After the words"
+msgstr ""
+
+#: src/Widgets/General/AnimatedText.php:78
+#: src/Widgets/General/Heading.php:64
+msgid "Heading level"
+msgstr ""
+
+#: src/Widgets/General/AnimatedText.php:83
+msgid "Paragraph"
+msgstr ""
+
+#: src/Widgets/General/Button.php:33
+msgid "Store button"
+msgstr ""
+
+#: src/Widgets/General/Button.php:48
+msgid "Button"
+msgstr ""
+
+#: src/Widgets/General/Button.php:64
+msgid "Style"
+msgstr ""
+
+#: src/Widgets/General/Button.php:67
+msgid "Brand colour"
+msgstr ""
+
+#: src/Widgets/General/Button.php:68
+msgid "Accent colour"
+msgstr ""
+
+#: src/Widgets/General/Button.php:69
+msgid "Outlined"
+msgstr ""
+
+#: src/Widgets/General/Button.php:70
+msgid "Soft"
+msgstr ""
+
+#: src/Widgets/General/Button.php:71
+msgid "White"
+msgstr ""
+
+#: src/Widgets/General/Button.php:72
+msgid "Text only"
+msgstr ""
+
+#: src/Widgets/General/Button.php:78
+#: src/Widgets/General/Countdown.php:76
+#: src/Widgets/General/Social.php:144
+#: src/Widgets/Header/Logo.php:70
+msgid "Size"
+msgstr ""
+
+#: src/Widgets/General/Button.php:81
+#: src/Widgets/General/Countdown.php:79
+#: src/Widgets/General/Social.php:147
+#: src/Widgets/Header/NavMenu.php:97
+msgid "Small"
+msgstr ""
+
+#: src/Widgets/General/Button.php:82
+#: src/Widgets/General/Countdown.php:80
+#: src/Widgets/General/Social.php:148
+#: src/Widgets/Header/Logo.php:73
+#: src/Widgets/Header/NavMenu.php:98
+#: src/Widgets/Store/HeroSlider.php:172
+msgid "Medium"
+msgstr ""
+
+#: src/Widgets/General/Button.php:83
+#: src/Widgets/General/Countdown.php:81
+#: src/Widgets/Header/Logo.php:74
+msgid "Large"
+msgstr ""
+
+#: src/Widgets/General/ContactForm.php:34
+msgid "Contact form"
+msgstr ""
+
+#: src/Widgets/General/ContactForm.php:58
+#: src/Widgets/General/Newsletter.php:58
+msgid "Form"
+msgstr ""
+
+#: src/Widgets/General/ContactForm.php:63
+#: src/Widgets/General/Countdown.php:64
+#: src/Widgets/General/Heading.php:48
+#: src/Widgets/General/Heading.php:53
+#: src/Widgets/General/IconBox.php:72
+#: src/Widgets/General/IconList.php:62
+#: src/Widgets/General/Newsletter.php:63
+#: src/Widgets/General/Timeline.php:72
+#: src/Widgets/Store/Banners.php:91
+#: src/Widgets/Store/Deals.php:88
+#: src/Widgets/Store/HeroSlider.php:88
+#: src/Widgets/Store/StoreWidget.php:47
+#: src/Widgets/Store/Stories.php:79
+#: src/Widgets/Store/TrustMarks.php:88
+#: src/Widgets/Store/TrustMarks.php:154
+msgid "Title"
+msgstr ""
+
+#: src/Widgets/General/ContactForm.php:69
+#: src/Widgets/General/Newsletter.php:75
+#: src/Widgets/General/PricingTable.php:111
+#: src/Widgets/Header/CategoryMenu.php:76
+#: src/Widgets/Store/Banners.php:103
+#: src/Widgets/Store/HeroSlider.php:105
+msgid "Button text"
+msgstr ""
+
+#: src/Widgets/General/ContactForm.php:100
+msgid "Your name"
+msgstr ""
+
+#: src/Widgets/General/ContactForm.php:113
+msgid "Message"
+msgstr ""
+
+#: src/Widgets/General/Countdown.php:35
+#: src/Widgets/General/Countdown.php:59
+msgid "Countdown"
+msgstr ""
+
+#: src/Widgets/General/Countdown.php:65
+msgid "The sale ends in"
+msgstr ""
+
+#: src/Widgets/General/Countdown.php:70
+msgid "Ends"
+msgstr ""
+
+#: src/Widgets/General/Countdown.php:71
+msgid "Leave empty to count to midnight."
+msgstr ""
+
+#: src/Widgets/General/Countdown.php:87
+msgid "Text when time is up"
+msgstr ""
+
+#: src/Widgets/General/Countdown.php:88
+msgid "This offer has ended."
+msgstr ""
+
+#: src/Widgets/General/Counter.php:33
+#: src/Widgets/General/Counter.php:57
+msgid "Counter"
+msgstr ""
+
+#: src/Widgets/General/Counter.php:62
+msgid "Number"
+msgstr ""
+
+#: src/Widgets/General/Counter.php:70
+msgid "Happy customers"
+msgstr ""
+
+#: src/Widgets/General/Counter.php:75
+msgid "Before the number"
+msgstr ""
+
+#: src/Widgets/General/Counter.php:80
+msgid "After the number"
+msgstr ""
+
+#: src/Widgets/General/Gallery.php:32
+#: src/Widgets/General/Gallery.php:116
+msgid "Gallery"
+msgstr ""
+
+#: src/Widgets/General/Gallery.php:56
+#: src/Widgets/General/Gallery.php:61
+#: src/Widgets/General/ImageCompare.php:56
+msgid "Images"
+msgstr ""
+
+#: src/Widgets/General/Gallery.php:67
+#: src/Widgets/General/Hotspots.php:63
+#: src/Widgets/Store/Deals.php:101
+#: src/Widgets/Store/TrustMarks.php:112
+msgid "Image"
+msgstr ""
+
+#: src/Widgets/General/Gallery.php:72
+msgid "Caption"
+msgstr ""
+
+#: src/Widgets/General/Gallery.php:80
+#: src/Widgets/Store/DiscountPicks.php:102
+#: src/Widgets/Store/Posts.php:92
+#: src/Widgets/Store/Products.php:106
+msgid "Columns on desktop"
+msgstr ""
+
+#: src/Widgets/General/Gallery.php:126
+msgid "Previous image"
+msgstr ""
+
+#: src/Widgets/General/Gallery.php:127
+msgid "Next image"
+msgstr ""
+
+#: src/Widgets/General/Heading.php:33
+#: src/Widgets/General/Heading.php:54
+msgid "Section title"
+msgstr ""
+
+#: src/Widgets/General/Heading.php:74
+#: src/Widgets/General/IconBox.php:99
+#: src/Widgets/Header/NavMenu.php:83
+msgid "Alignment"
+msgstr ""
+
+#: src/Widgets/General/Heading.php:78
+#: src/Widgets/General/IconBox.php:103
+#: src/Widgets/Header/NavMenu.php:87
+msgid "Centre"
+msgstr ""
+
+#: src/Widgets/General/Heading.php:84
+#: src/Widgets/Store/Deals.php:106
+#: src/Widgets/Store/StoreWidget.php:59
+msgid "\"See all\" text"
+msgstr ""
+
+#: src/Widgets/General/Heading.php:85
+#: src/Widgets/Store/StoreWidget.php:60
+msgid "See all"
+msgstr ""
+
+#: src/Widgets/General/Heading.php:90
+#: src/Widgets/Store/Deals.php:112
+#: src/Widgets/Store/StoreWidget.php:65
+msgid "\"See all\" link"
+msgstr ""
+
+#: src/Widgets/General/Hotspots.php:34
+msgid "Image hotspots"
+msgstr ""
+
+#: src/Widgets/General/Hotspots.php:58
+msgid "Image and points"
+msgstr ""
+
+#: src/Widgets/General/Hotspots.php:68
+msgid "Points"
+msgstr ""
+
+#: src/Widgets/General/Hotspots.php:74
+msgid "From the left (percent)"
+msgstr ""
+
+#: src/Widgets/General/Hotspots.php:82
+msgid "From the top (percent)"
+msgstr ""
+
+#: src/Widgets/General/Hotspots.php:93
+msgid "Its name, price and link fill the card."
+msgstr ""
+
+#: src/Widgets/General/Hotspots.php:98
+msgid "Or a title"
+msgstr ""
+
+#: src/Widgets/General/Hotspots.php:141
+msgid "View product"
+msgstr ""
+
+#: src/Widgets/General/Hotspots.php:154
+msgid "Image with points"
+msgstr ""
+
+#: src/Widgets/General/IconBox.php:32
+#: src/Widgets/General/IconBox.php:56
+msgid "Icon box"
+msgstr ""
+
+#: src/Widgets/General/IconBox.php:67
+msgid "Or an image"
+msgstr ""
+
+#: src/Widgets/General/IconBox.php:92
+msgid "Icon above"
+msgstr ""
+
+#: src/Widgets/General/IconBox.php:93
+msgid "Icon beside"
+msgstr ""
+
+#: src/Widgets/General/IconBox.php:109
+msgid "In a frame"
+msgstr ""
+
+#: src/Widgets/General/IconList.php:33
+msgid "List with icons"
+msgstr ""
+
+#: src/Widgets/General/IconList.php:57
+msgid "List"
+msgstr ""
+
+#: src/Widgets/General/IconList.php:67
+msgid "Lines"
+msgstr ""
+
+#: src/Widgets/General/IconList.php:74
+#: src/Widgets/General/IconList.php:88
+msgid "A line"
+msgstr ""
+
+#: src/Widgets/General/IconList.php:97
+msgid "One under another"
+msgstr ""
+
+#: src/Widgets/General/IconList.php:98
+msgid "In a row"
+msgstr ""
+
+#: src/Widgets/General/ImageCompare.php:32
+msgid "Before and after"
+msgstr ""
+
+#: src/Widgets/General/ImageCompare.php:61
+#: src/Widgets/General/ImageCompare.php:72
+msgid "Before"
+msgstr ""
+
+#: src/Widgets/General/ImageCompare.php:66
+#: src/Widgets/General/ImageCompare.php:78
+msgid "After"
+msgstr ""
+
+#: src/Widgets/General/ImageCompare.php:71
+msgid "Before label"
+msgstr ""
+
+#: src/Widgets/General/ImageCompare.php:77
+msgid "After label"
+msgstr ""
+
+#: src/Widgets/General/ImageCompare.php:83
+msgid "Handle position (percent)"
+msgstr ""
+
+#: src/Widgets/General/ImageCompare.php:107
+msgid "Slide to compare the images"
+msgstr ""
+
+#: src/Widgets/General/Newsletter.php:34
+msgid "Newsletter"
+msgstr ""
+
+#: src/Widgets/General/Newsletter.php:69
+#: src/Widgets/Header/Search.php:69
+msgid "Placeholder"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:34
+msgid "Pricing table"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:58
+msgid "Plan"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:63
+msgid "Plan name"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:64
+msgid "Gold membership"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:69
+msgid "Short text"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:81
+msgid "Period"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:87
+msgid "What it includes"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:93
+msgid "Line"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:99
+msgid "Included"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:117
+msgid "Button link"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:122
+msgid "Ribbon"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:123
+msgid "For example \"Most popular\"."
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:128
+msgid "Highlight this plan"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:164
+msgid "Included:"
+msgstr ""
+
+#: src/Widgets/General/PricingTable.php:165
+msgid "Not included:"
+msgstr ""
+
+#: src/Widgets/General/Slider.php:39
+msgid "Content slider"
+msgstr ""
+
+#: src/Widgets/General/Slider.php:63
+#: src/Widgets/General/Slider.php:121
+#: src/Widgets/Store/HeroSlider.php:77
+#: src/Widgets/Store/HeroSlider.php:82
+msgid "Slides"
+msgstr ""
+
+#: src/Widgets/General/Slider.php:69
+msgid "Slides (reusable blocks)"
+msgstr ""
+
+#: src/Widgets/General/Slider.php:70
+msgid "Make each slide in Ultra Max > Layouts > Reusable blocks, then choose them here in order."
+msgstr ""
+
+#: src/Widgets/General/Slider.php:75
+msgid "Slides per view on desktop"
+msgstr ""
+
+#: src/Widgets/General/Slider.php:83
+#: src/Widgets/Store/HeroSlider.php:179
+msgid "Seconds per slide"
+msgstr ""
+
+#: src/Widgets/General/Slider.php:84
+#: src/Widgets/Store/HeroSlider.php:180
+msgid "0 stops automatic sliding."
+msgstr ""
+
+#: src/Widgets/General/Slider.php:92
+msgid "Show dots"
+msgstr ""
+
+#: src/Widgets/General/Social.php:29
+msgid "Instagram"
+msgstr ""
+
+#: src/Widgets/General/Social.php:33
+msgid "Telegram"
+msgstr ""
+
+#: src/Widgets/General/Social.php:37
+msgid "WhatsApp"
+msgstr ""
+
+#: src/Widgets/General/Social.php:41
+msgid "Eitaa"
+msgstr ""
+
+#: src/Widgets/General/Social.php:45
+msgid "Bale"
+msgstr ""
+
+#: src/Widgets/General/Social.php:49
+msgid "Aparat"
+msgstr ""
+
+#: src/Widgets/General/Social.php:53
+msgid "LinkedIn"
+msgstr ""
+
+#: src/Widgets/General/Social.php:57
+msgid "X"
+msgstr ""
+
+#: src/Widgets/General/Social.php:61
+#: vendor-prefixed/ui/components/comments/Comments.php:128
+msgid "Website"
+msgstr ""
+
+#: src/Widgets/General/Social.php:78
+msgid "Social networks"
+msgstr ""
+
+#: src/Widgets/General/Social.php:115
+msgid "Networks"
+msgstr ""
+
+#: src/Widgets/General/Social.php:126
+msgid "Network"
+msgstr ""
+
+#: src/Widgets/General/Social.php:133
+msgid "Link to your page"
+msgstr ""
+
+#: src/Widgets/General/Social.php:175
+msgid "Our pages on social networks"
+msgstr ""
+
+#: src/Widgets/General/Table.php:33
+#: src/Widgets/General/Table.php:57
+msgid "Table"
+msgstr ""
+
+#: src/Widgets/General/Table.php:62
+msgid "Table name"
+msgstr ""
+
+#: src/Widgets/General/Table.php:63
+msgid "Size chart"
+msgstr ""
+
+#: src/Widgets/General/Table.php:68
+msgid "Show the name above the table"
+msgstr ""
+
+#: src/Widgets/General/Table.php:74
+msgid "Rows"
+msgstr ""
+
+#: src/Widgets/General/Table.php:75
+msgid "One row per line, cells separated by |. The first line is the head."
+msgstr ""
+
+#: src/Widgets/General/Table.php:77
+msgid ""
+"Size | Chest | Length\n"
+"S | 96 | 68\n"
+"M | 102 | 70\n"
+"L | 108 | 72"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:35
+msgid "Store tabs"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:50
+#: src/Widgets/General/Tabs.php:55
+#: src/Widgets/General/Tabs.php:121
+#: src/Widgets/Store/ProductTabs.php:79
+#: src/Widgets/Store/ProductTabs.php:84
+msgid "Tabs"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:61
+#: src/Widgets/Store/ProductTabs.php:90
+msgid "Tab name"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:62
+msgid "Tab"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:67
+msgid "Content"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:74
+msgid "Or a reusable block"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:78
+msgid "Description"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:79
+msgid "Specifications"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:85
+msgid "Look"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:88
+msgid "Underlined"
+msgstr ""
+
+#: src/Widgets/General/Tabs.php:89
+msgid "Pills"
+msgstr ""
+
+#: src/Widgets/General/Team.php:32
+#: src/Widgets/General/Team.php:67
+msgid "Team member"
+msgstr ""
+
+#: src/Widgets/General/Team.php:56
+msgid "Person"
+msgstr ""
+
+#: src/Widgets/General/Team.php:61
+#: src/Widgets/General/Testimonials.php:87
+msgid "Photo"
+msgstr ""
+
+#: src/Widgets/General/Team.php:72
+msgid "Role"
+msgstr ""
+
+#: src/Widgets/General/Team.php:73
+msgid "Customer support"
+msgstr ""
+
+#: src/Widgets/General/Team.php:78
+msgid "Short bio"
+msgstr ""
+
+#: src/Widgets/General/Team.php:89
+msgid "Name of the network"
+msgstr ""
+
+#: src/Widgets/General/Testimonials.php:59
+#: src/Widgets/General/Testimonials.php:64
+msgid "Reviews"
+msgstr ""
+
+#: src/Widgets/General/Testimonials.php:70
+msgid "Words"
+msgstr ""
+
+#: src/Widgets/General/Testimonials.php:77
+#: src/Widgets/General/Testimonials.php:99
+msgid "A happy customer"
+msgstr ""
+
+#: src/Widgets/General/Testimonials.php:82
+msgid "City or role"
+msgstr ""
+
+#: src/Widgets/General/Testimonials.php:92
+msgid "Stars"
+msgstr ""
+
+#: src/Widgets/General/Testimonials.php:100
+msgid "A returning customer"
+msgstr ""
+
+#: src/Widgets/General/Testimonials.php:101
+msgid "A new customer"
+msgstr ""
+
+#: src/Widgets/General/Testimonials.php:107
+msgid "Reviews per row on desktop"
+msgstr ""
+
+#. translators: %s: number of stars.
+#: src/Widgets/General/Testimonials.php:133
+#, php-format
+msgid "%s out of 5 stars"
+msgstr ""
+
+#: src/Widgets/General/Text.php:33
+msgid "Store text"
+msgstr ""
+
+#: src/Widgets/General/Text.php:54
+msgid "Write about your store here."
+msgstr ""
+
+#: src/Widgets/General/Timeline.php:32
+#: src/Widgets/General/Timeline.php:120
+msgid "Timeline"
+msgstr ""
+
+#: src/Widgets/General/Timeline.php:56
+#: src/Widgets/General/Timeline.php:61
+msgid "Steps"
+msgstr ""
+
+#: src/Widgets/General/Timeline.php:67
+msgid "Date or step"
+msgstr ""
+
+#: src/Widgets/General/Timeline.php:73
+#: src/Widgets/General/Timeline.php:88
+msgid "Order placed"
+msgstr ""
+
+#: src/Widgets/General/Timeline.php:90
+msgid "Packed"
+msgstr ""
+
+#: src/Widgets/General/Timeline.php:94
+msgid "Delivered"
+msgstr ""
+
+#: src/Widgets/General/Video.php:33
+#: src/Widgets/General/Video.php:57
+msgid "Video"
+msgstr ""
+
+#: src/Widgets/General/Video.php:62
+msgid "Video file (MP4)"
+msgstr ""
+
+#: src/Widgets/General/Video.php:67
+msgid "Or the embed address"
+msgstr ""
+
+#: src/Widgets/General/Video.php:68
+msgid "The address inside the embed code of the video site, starting with https."
+msgstr ""
+
+#: src/Widgets/General/Video.php:73
+#: src/Widgets/Store/Stories.php:85
+msgid "Cover image"
+msgstr ""
+
+#: src/Widgets/General/Video.php:78
+msgid "Video title"
+msgstr ""
+
+#: src/Widgets/General/Video.php:79
+msgid "Introduction video"
+msgstr ""
+
+#: src/Widgets/General/Video.php:84
+#: src/Widgets/Store/CategoryCircles.php:104
+msgid "Shape"
+msgstr ""
+
+#: src/Widgets/General/Video.php:87
+msgid "Wide (16:9)"
+msgstr ""
+
+#: src/Widgets/General/Video.php:89
+msgid "Square"
+msgstr ""
+
+#: src/Widgets/General/Video.php:90
+msgid "Tall (phone)"
+msgstr ""
+
+#. translators: %s: video title.
+#: src/Widgets/General/Video.php:116
+#, php-format
+msgid "Play: %s"
+msgstr ""
+
+#: src/Widgets/Header/Account.php:33
+#: src/Widgets/Header/Account.php:50
+msgid "Account"
+msgstr ""
+
+#: src/Widgets/Header/Account.php:56
+msgid "Text for visitors"
+msgstr ""
+
+#: src/Widgets/Header/Account.php:62
+msgid "Text for customers"
+msgstr ""
+
+#: src/Widgets/Header/Account.php:81
+#: src/Widgets/Header/MenuToggle.php:228
+msgid "Log in or sign up"
+msgstr ""
+
+#: src/Widgets/Header/CategoryMenu.php:36
+msgid "Categories menu"
+msgstr ""
+
+#: src/Widgets/Header/CategoryMenu.php:71
+#: src/Widgets/Store/CategoryCircles.php:74
+#: src/Widgets/Store/CategoryCircles.php:80
+#: src/Widgets/Store/CategoryCircles.php:176
+msgid "Categories"
+msgstr ""
+
+#: src/Widgets/Header/CategoryMenu.php:83
+msgid "Main categories"
+msgstr ""
+
+#: src/Widgets/Header/CategoryMenu.php:84
+msgid "Leave empty to show all top categories."
+msgstr ""
+
+#: src/Widgets/Header/CategoryMenu.php:89
+msgid "Show the category image as a promotion"
+msgstr ""
+
+#: src/Widgets/Header/CategoryMenu.php:95
+msgid "Promotion title"
+msgstr ""
+
+#. translators: %s: category name.
+#: src/Widgets/Header/CategoryMenu.php:162
+#, php-format
+msgid "All products in %s"
+msgstr ""
+
+#: src/Widgets/Header/Divider.php:32
+msgid "Header divider"
+msgstr ""
+
+#: src/Widgets/Header/HeaderWidget.php:54
+#: src/Widgets/Header/Language.php:55
+#: src/Widgets/Header/Search.php:59
+msgid "Show as"
+msgstr ""
+
+#: src/Widgets/Header/HeaderWidget.php:58
+msgid "Button with text"
+msgstr ""
+
+#: src/Widgets/Header/HeaderWidget.php:59
+msgid "Icon above text"
+msgstr ""
+
+#: src/Widgets/Header/Html.php:33
+#: src/Widgets/Header/Html.php:59
+msgid "HTML"
+msgstr ""
+
+#: src/Widgets/Header/Html.php:64
+msgid "HTML code"
+msgstr ""
+
+#: src/Widgets/Header/Html.php:65
+msgid "Scripts are removed. For tracking codes use Ultra Max > Settings > Custom code."
+msgstr ""
+
+#: src/Widgets/Header/Language.php:33
+msgid "Language switcher"
+msgstr ""
+
+#: src/Widgets/Header/Language.php:50
+msgid "Languages"
+msgstr ""
+
+#: src/Widgets/Header/Language.php:56
+msgid "Needs a translation plugin such as Polylang or WPML."
+msgstr ""
+
+#: src/Widgets/Header/Language.php:59
+msgid "Drop-down list"
+msgstr ""
+
+#: src/Widgets/Header/Language.php:60
+msgid "All in a row"
+msgstr ""
+
+#: src/Widgets/Header/Language.php:112
+msgid "Language"
+msgstr ""
+
+#: src/Widgets/Header/Logo.php:64
+msgid "Another logo image"
+msgstr ""
+
+#: src/Widgets/Header/Logo.php:65
+msgid "Leave empty to use the site logo."
+msgstr ""
+
+#: src/Widgets/Header/MenuToggle.php:39
+#: src/Widgets/Header/MenuToggle.php:212
+msgid "Mobile menu"
+msgstr ""
+
+#: src/Widgets/Header/MenuToggle.php:69
+#: src/Widgets/Header/MenuToggle.php:84
+#: src/Widgets/Header/MenuToggle.php:236
+#: src/Widgets/Header/NavMenu.php:35
+#: src/Widgets/Header/NavMenu.php:70
+#: src/Widgets/Header/NavMenu.php:75
+msgid "Menu"
+msgstr ""
+
+#: src/Widgets/Header/MenuToggle.php:78
+msgid "A menu"
+msgstr ""
+
+#: src/Widgets/Header/MenuToggle.php:92
+msgid "Heading above the list"
+msgstr ""
+
+#: src/Widgets/Header/MenuToggle.php:98
+msgid "Show the account link"
+msgstr ""
+
+#. translators: %s: category or menu item name.
+#: src/Widgets/Header/MenuToggle.php:215
+#, php-format
+msgid "All of %s"
+msgstr ""
+
+#: src/Widgets/Header/MenuToggle.php:229
+msgid "To follow your orders, log in to your account"
+msgstr ""
+
+#: src/Widgets/Header/NavMenu.php:76
+msgid "Icons, badges and mega panels are set for each item in Appearance > Menus."
+msgstr ""
+
+#: src/Widgets/Header/NavMenu.php:88
+msgid "End"
+msgstr ""
+
+#: src/Widgets/Header/NavMenu.php:94
+msgid "Text size"
+msgstr ""
+
+#: src/Widgets/Header/NavMenu.php:104
+msgid "Name for screen readers"
+msgstr ""
+
+#: src/Widgets/Header/Search.php:37
+#: src/Widgets/Header/Search.php:54
+#: src/Widgets/Header/Search.php:96
+#: src/Widgets/Header/Search.php:97
+#: src/Widgets/Header/Search.php:113
+#: src/Widgets/Header/Search.php:121
+msgid "Search"
+msgstr ""
+
+#: src/Widgets/Header/Search.php:62
+msgid "Search field"
+msgstr ""
+
+#: src/Widgets/Header/Search.php:63
+msgid "Icon that opens the field (mobile search)"
+msgstr ""
+
+#. translators: %s: store name.
+#: src/Widgets/Header/Search.php:71
+#, php-format
+msgid "Search in %s"
+msgstr ""
+
+#: src/Widgets/Header/Search.php:76
+msgid "Search products only"
+msgstr ""
+
+#: src/Widgets/Header/Spacer.php:33
+msgid "Header spacer"
+msgstr ""
+
+#: src/Widgets/Header/Spacer.php:50
+msgid "Space"
+msgstr ""
+
+#: src/Widgets/Header/Spacer.php:55
+msgid "Take all free space"
+msgstr ""
+
+#: src/Widgets/Header/Spacer.php:61
+msgid "Width in pixels"
+msgstr ""
+
+#: src/Widgets/Header/StickyNav.php:34
+msgid "Sticky navigation"
+msgstr ""
+
+#: src/Widgets/Header/StickyNav.php:63
+#: src/Widgets/Store/Bestsellers.php:71
+#: src/Widgets/Store/Brands.php:69
+#: src/Widgets/Store/CategoryCircles.php:69
+#: src/Widgets/Store/DiscountPicks.php:71
+#: src/Widgets/Store/Posts.php:68
+#: src/Widgets/Store/Products.php:119
+#: src/Widgets/Store/ProductTabs.php:74
+msgid "Section"
+msgstr ""
+
+#: src/Widgets/Header/StickyNav.php:68
+msgid "Section id"
+msgstr ""
+
+#: src/Widgets/Header/StickyNav.php:97
+msgid "On this page"
+msgstr ""
+
+#: src/Widgets/Header/Wishlist.php:78
+msgid "Leave empty for the account page."
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:33
+#: src/Widgets/Store/Banners.php:68
+#: src/Widgets/Store/Banners.php:85
+msgid "Banners"
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:73
+msgid "Banners per row"
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:97
+msgid "Small line"
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:113
+#: src/Widgets/Store/HeroSlider.php:116
+msgid "Background photo"
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:118
+#: src/Widgets/Store/HeroSlider.php:122
+msgid "Background photo for phones"
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:123
+#: src/Widgets/Store/HeroSlider.php:128
+msgid "Colour 1"
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:129
+#: src/Widgets/Store/HeroSlider.php:134
+msgid "Colour 2"
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:135
+#: src/Widgets/Store/HeroSlider.php:140
+msgid "Product image"
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:140
+msgid "White text"
+msgstr ""
+
+#: src/Widgets/Store/Banners.php:141
+msgid "For dark backgrounds."
+msgstr ""
+
+#: src/Widgets/Store/Bestsellers.php:76
+#: src/Widgets/Store/Deals.php:118
+#: src/Widgets/Store/DiscountPicks.php:76
+#: src/Widgets/Store/Products.php:37
+#: src/Widgets/Store/Products.php:124
+#: src/Widgets/Store/Products.php:192
+#: src/Widgets/Store/ProductTabs.php:96
+#: src/Widgets/Store/ProductTabs.php:186
+#: src/Widgets/Store/StoreWidget.php:89
+msgid "Products"
+msgstr ""
+
+#: src/Widgets/Store/Brands.php:34
+msgid "Shop by brand"
+msgstr ""
+
+#: src/Widgets/Store/Brands.php:74
+#: src/Widgets/Store/Brands.php:80
+#: src/Widgets/Store/Brands.php:140
+msgid "Brands"
+msgstr ""
+
+#: src/Widgets/Store/Brands.php:81
+msgid "Leave empty to show the brands with the most products."
+msgstr ""
+
+#: src/Widgets/Store/Brands.php:86
+#: src/Widgets/Store/CategoryCircles.php:86
+msgid "How many"
+msgstr ""
+
+#: src/Widgets/Store/CategoryCircles.php:34
+msgid "Category circles"
+msgstr ""
+
+#: src/Widgets/Store/CategoryCircles.php:81
+msgid "Leave empty to show the main categories."
+msgstr ""
+
+#: src/Widgets/Store/CategoryCircles.php:97
+#: src/Widgets/Store/Products.php:96
+msgid "Grid"
+msgstr ""
+
+#: src/Widgets/Store/CategoryCircles.php:98
+msgid "One scrolling row"
+msgstr ""
+
+#: src/Widgets/Store/CategoryCircles.php:107
+msgid "Circle"
+msgstr ""
+
+#: src/Widgets/Store/CategoryCircles.php:108
+msgid "Rounded square"
+msgstr ""
+
+#: src/Widgets/Store/CategoryCircles.php:114
+msgid "Show the number of products"
+msgstr ""
+
+#. translators: %s: number of products.
+#: src/Widgets/Store/CategoryCircles.php:167
+#, php-format
+msgid "%s product"
+msgid_plural "%s products"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Widgets/Store/Deals.php:83
+msgid "Band"
+msgstr ""
+
+#: src/Widgets/Store/Deals.php:94
+msgid "Offers end"
+msgstr ""
+
+#: src/Widgets/Store/Deals.php:95
+msgid "Leave empty for daily offers that end at midnight."
+msgstr ""
+
+#: src/Widgets/Store/Deals.php:165
+msgid "Time left for these offers"
+msgstr ""
+
+#: src/Widgets/Store/Deals.php:169
+msgid "Ends in"
+msgstr ""
+
+#: src/Widgets/Store/DiscountPicks.php:82
+msgid "Filter categories"
+msgstr ""
+
+#: src/Widgets/Store/DiscountPicks.php:83
+msgid "Each category becomes a chip above the products. Leave empty to use the main categories of the products shown."
+msgstr ""
+
+#: src/Widgets/Store/DiscountPicks.php:88
+msgid "\"All\" chip text"
+msgstr ""
+
+#: src/Widgets/Store/DiscountPicks.php:94
+#: src/Widgets/Store/StoreWidget.php:111
+msgid "Number of products"
+msgstr ""
+
+#: src/Widgets/Store/DiscountPicks.php:185
+msgid "Filter by category"
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:94
+msgid "Small label"
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:117
+msgid "Optional. Without a photo the two colours below make the background."
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:123
+msgid "Optional. A taller photo that phones download instead of the large one."
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:145
+msgid "Dark text"
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:146
+msgid "For light backgrounds."
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:153
+msgid "Headphones and speakers"
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:163
+msgid "Options"
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:168
+msgid "Height"
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:171
+msgid "Short"
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:173
+msgid "Tall"
+msgstr ""
+
+#: src/Widgets/Store/HeroSlider.php:227
+msgid "Featured offers"
+msgstr ""
+
+#: src/Widgets/Store/Posts.php:73
+msgid "Posts"
+msgstr ""
+
+#: src/Widgets/Store/Posts.php:79
+#: src/Widgets/Store/ProductTabs.php:104
+#: src/Widgets/Store/StoreWidget.php:97
+msgid "Only from these categories"
+msgstr ""
+
+#: src/Widgets/Store/Posts.php:84
+msgid "Number of posts"
+msgstr ""
+
+#. translators: %s: number of minutes.
+#: src/Widgets/Store/Posts.php:151
+#, php-format
+msgid "%s minute read"
+msgid_plural "%s minutes read"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Widgets/Store/Products.php:95
+msgid "Slider"
+msgstr ""
+
+#: src/Widgets/Store/Products.php:102
+msgid "Card design"
+msgstr ""
+
+#: src/Widgets/Store/Products.php:107
+msgid "Columns on tablet"
+msgstr ""
+
+#: src/Widgets/Store/Products.php:108
+msgid "Columns on mobile"
+msgstr ""
+
+#: src/Widgets/Store/Products.php:129
+#: src/Widgets/Store/ProductTabs.php:137
+msgid "Display"
+msgstr ""
+
+#: src/Widgets/Store/ProductTabs.php:110
+#: src/Widgets/Store/StoreWidget.php:105
+msgid "Choose products"
+msgstr ""
+
+#: src/Widgets/Store/ProductTabs.php:122
+msgid "Products per tab"
+msgstr ""
+
+#: src/Widgets/Store/ProductTabs.php:130
+#: src/Widgets/Store/StoreWidget.php:119
+msgid "Hide out of stock products"
+msgstr ""
+
+#: src/Widgets/Store/QuickLinks.php:96
+msgid "Colour"
+msgstr ""
+
+#: src/Widgets/Store/StoreWidget.php:53
+msgid "Title icon"
+msgstr ""
+
+#: src/Widgets/Store/StoreWidget.php:66
+msgid "Leave empty to hide the link."
+msgstr ""
+
+#: src/Widgets/Store/StoreWidget.php:71
+msgid "Show in a white box"
+msgstr ""
+
+#: src/Widgets/Store/StoreWidget.php:98
+msgid "Leave empty for all categories."
+msgstr ""
+
+#: src/Widgets/Store/StoreWidget.php:149
+msgid "Previous"
+msgstr ""
+
+#. translators: 1: slide number, 2: number of slides.
+#: src/Widgets/Store/StoreWidget.php:152
+#, php-format
+msgid "%1$s of %2$s"
+msgstr ""
+
+#: src/Widgets/Store/StoreWidget.php:163
+msgid "Framed, second image on hover"
+msgstr ""
+
+#: src/Widgets/Store/StoreWidget.php:164
+msgid "Classic with lines"
+msgstr ""
+
+#: src/Widgets/Store/StoreWidget.php:165
+msgid "Small, supermarket"
+msgstr ""
+
+#: src/Widgets/Store/StoreWidget.php:166
+msgid "Offer with countdown"
+msgstr ""
+
+#: src/Widgets/Store/Stories.php:90
+msgid "Story image or video"
+msgstr ""
+
+#: src/Widgets/Store/Stories.php:91
+msgid "A tall image or an MP4 video. Without it the cover is shown."
+msgstr ""
+
+#: src/Widgets/Store/Stories.php:98
+msgid "Link to a product"
+msgstr ""
+
+#: src/Widgets/Store/Stories.php:103
+msgid "Or link to an address"
+msgstr ""
+
+#: src/Widgets/Store/Stories.php:108
+msgid "Link button text"
+msgstr ""
+
+#: src/Widgets/Store/Stories.php:119
+msgid "Seconds per image"
+msgstr ""
+
+#: src/Widgets/Store/Stories.php:165
+msgid "Previous story"
+msgstr ""
+
+#: src/Widgets/Store/Stories.php:166
+msgid "Next story"
+msgstr ""
+
+#: src/Widgets/Store/TrustMarks.php:34
+msgid "Trust badges and advantages"
+msgstr ""
+
+#: src/Widgets/Store/TrustMarks.php:100
+msgid "Badges"
+msgstr ""
+
+#: src/Widgets/Store/TrustMarks.php:122
+msgid "Or the badge code"
+msgstr ""
+
+#: src/Widgets/Store/TrustMarks.php:123
+msgid "Paste the HTML code the service gives you, for example the e-Namad code. Only administrators who may add code can save it."
+msgstr ""
+
+#: src/Widgets/Store/TrustMarks.php:142
+msgid "Advantages"
+msgstr ""
+
+#: src/Widgets/Store/WooHook.php:60
+msgid "WooCommerce hook"
+msgstr ""
+
+#: src/Widgets/Store/WooHook.php:95
+msgid "Hook"
+msgstr ""
+
+#: src/Widgets/Store/WooHook.php:100
+msgid "WooCommerce action"
+msgstr ""
+
+#: src/Widgets/Store/WooHook.php:101
+msgid "Whatever other plugins print at this place appears here."
+msgstr ""
+
+#: src/Widgets/Store/WooHook.php:102
+msgid "Another action"
+msgstr ""
+
+#: src/Widgets/Store/WooHook.php:108
+msgid "Action name"
 msgstr ""
 
 #: ultra-max-core.php:31
@@ -1353,26 +4692,10 @@ msgstr ""
 msgid "Your email address will not be published."
 msgstr ""
 
-#: vendor-prefixed/ui/components/comments/Comments.php:126
-msgid "Name"
-msgstr ""
-
-#: vendor-prefixed/ui/components/comments/Comments.php:127
-msgid "Email"
-msgstr ""
-
-#: vendor-prefixed/ui/components/comments/Comments.php:128
-msgid "Website"
-msgstr ""
-
 #: vendor-prefixed/ui/components/comments/Comments.php:129
 msgid "Save my name and email in this browser for the next time I comment."
 msgstr ""
 
 #: vendor-prefixed/ui/components/comments/Comments.php:131
 msgid "Comment"
-msgstr ""
-
-#: vendor-prefixed/ui/components/dialog/Overlay.php:58
-msgid "Close"
 msgstr ""

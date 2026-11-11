@@ -144,7 +144,7 @@ final class Assets {
 			|| ( function_exists( 'is_cart' ) && is_cart() )
 			|| ( function_exists( 'is_checkout' ) && is_checkout() )
 			|| ( function_exists( 'is_account_page' ) && is_account_page() );
-		if ( ! $shop && is_singular() ) {
+		if ( ! $shop ) {
 			$post = get_post();
 			$shop = $post instanceof \WP_Post && ( str_contains( $post->post_content, '[woocommerce_' ) || str_contains( $post->post_content, '[product' ) || str_contains( $post->post_content, '<!-- wp:woocommerce/' ) );
 		}

@@ -47,6 +47,7 @@
 
 - **آیکون‌ها:** همین مجموعه در `packages/ui/icons/shapes.ts` (پنل) و `packages/ui/components/icon/Icon.php` (فروشگاه) به کار رفته است.
 - **تصاویر محصول:** پنج تصویر `phone`، `headphones`، `tshirt`، `perfume` و `juice` در `plugins/ultra-max-core/assets/img/demos` برای کارت‌های دموی جادوی راه‌اندازی کپی شده‌اند.
+- **تصاویر طرح‌های آماده (فاز ۳):** هر چهارده تصویر بالا بدون تغییر در `plugins/ultra-max-core/assets/img/library` کپی شده‌اند و در اسلایدر، بنرها و استوری طرح‌های آماده المنتور به کار می‌روند.
 - **فونت استعداد ۸.۵:** فایل متغیر از انتشار رسمی مخزن Estedad در گیت‌هاب، با مجوز SIL OFL 1.1، در `themes/ultra-max/assets/fonts/estedad` همراه متن مجوز.
 
 ## نام‌ها و برندهای نمونه

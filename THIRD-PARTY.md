@@ -20,6 +20,7 @@
 | tw-animate-css | 1.4.0 | MIT | انیمیشن باز و بسته شدن اجزای پنل |
 | sonner | 2.0.8 | MIT | پیام‌های کوتاه پنل، از طریق جزء Toaster در `packages/ui/admin`. وابستگی next-themes جزء رسمی shadcn حذف شد چون پیشخوان همیشه روشن است |
 | cmdk | 1.1.1 | MIT | وابستگی جزء command در shadcn؛ فعلاً در صفحه‌ها استفاده نمی‌شود |
+| Embla Carousel و embla-carousel-autoplay | 8.6.0، 8.6.0 | MIT | رفتار اسلایدرهای فروشگاه (اسلایدر اصلی، کالاها، استوری و اسلایدر محتوا). فقط داخل `carousel.behavior.ts` در `packages/ui`؛ اسلایدر Flowbite در فاز ۱ کنار گذاشته شد |
 
 ## فقط ابزار توسعه (در بسته خریدار نیست)
 

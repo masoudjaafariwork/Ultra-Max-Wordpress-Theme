@@ -46,46 +46,51 @@ msgstr "%1$s به PHP نسخه %2$s یا بالاتر نیاز دارد. این 
 msgid "%1$s needs WordPress %2$s or later. This site runs WordPress %3$s."
 msgstr "%1$s به وردپرس نسخه %2$s یا بالاتر نیاز دارد. این سایت وردپرس نسخه %3$s دارد."
 
+#: src/Elementor/Integration.php:142
+#: src/Widgets/General/Gallery.php:125
+#: src/Widgets/Store/Stories.php:164
 #: vendor-prefixed/ui/components/dialog/Overlay.php:58
 msgid "Close"
 msgstr "بستن"
 
-#: src/Admin/Admin.php:67
+#: src/Admin/Admin.php:74
 #: src/Admin/Strings.php:133
 msgid "Dashboard"
 msgstr "داشبورد"
 
-#: src/Admin/Admin.php:68
-#: src/Admin/Admin.php:119
+#: src/Admin/Admin.php:75
+#: src/Admin/Admin.php:130
 #: src/Admin/Strings.php:53
 #: src/Admin/Strings.php:201
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: src/Admin/Admin.php:69
+#: src/Admin/Admin.php:77
 #: src/Admin/Strings.php:185
 msgid "Modules"
 msgstr "ماژول‌ها"
 
-#: src/Admin/Admin.php:70
+#: src/Admin/Admin.php:78
 #: src/Admin/Strings.php:206
 msgid "Setup wizard"
 msgstr "جادوی راه‌اندازی"
 
-#: src/Admin/Admin.php:71
+#: src/Admin/Admin.php:79
 #: src/Admin/Strings.php:182
 msgid "Help"
 msgstr "راهنما"
 
-#: src/Admin/Admin.php:155
+#: src/Admin/Admin.php:166
+#: src/Admin/Strings.php:299
+#: src/Elementor/Integration.php:143
 msgid "Loading…"
 msgstr "در حال بارگذاری…"
 
-#: src/Admin/Admin.php:175
+#: src/Admin/Admin.php:186
 msgid "Every setting has a short explanation next to it. The help page explains each part of the store step by step, without leaving your dashboard."
 msgstr "کنار هر تنظیم توضیح کوتاهی آمده است. صفحه راهنما هر بخش فروشگاه را قدم‌به‌قدم توضیح می‌دهد، بدون اینکه پیشخوان را ترک کنید."
 
-#: src/Admin/Admin.php:177
+#: src/Admin/Admin.php:188
 msgid "Open the help page"
 msgstr "باز کردن صفحه راهنما"
 
@@ -111,6 +116,7 @@ msgid "Unknown module."
 msgstr "ماژول ناشناخته."
 
 #: src/Admin/Strings.php:27
+#: src/Elementor/Integration.php:147
 msgid "Something went wrong. Please try again."
 msgstr "مشکلی پیش آمد. لطفاً دوباره امتحان کنید."
 
@@ -123,6 +129,7 @@ msgid "On"
 msgstr "فعال"
 
 #: src/Admin/Strings.php:30
+#: src/Admin/Strings.php:282
 #: src/Admin/SystemStatus.php:73
 msgid "Off"
 msgstr "غیرفعال"
@@ -211,6 +218,7 @@ msgid "Search all settings… for example \"font\" or \"sidebar\""
 msgstr "جستجو در همه تنظیمات… مثلاً «فونت» یا «ستون کناری»"
 
 #: src/Admin/Strings.php:57
+#: src/Admin/Strings.php:298
 msgid "Nothing found."
 msgstr "نتیجه‌ای پیدا نشد."
 
@@ -295,6 +303,7 @@ msgid "Corners, colours and fonts follow your settings."
 msgstr "گوشه‌ها، رنگ‌ها و فونت از تنظیمات شما پیروی می‌کنند."
 
 #: src/Admin/Strings.php:79
+#: src/Store/Cards.php:117
 msgid "Add to cart"
 msgstr "افزودن به سبد"
 
@@ -311,6 +320,10 @@ msgid "Most relevant"
 msgstr "مرتبط‌ترین"
 
 #: src/Admin/Strings.php:83
+#: src/Builder/library-strings.php:139
+#: src/Store/Catalog.php:32
+#: src/Widgets/Store/ProductTabs.php:91
+#: src/Widgets/Store/ProductTabs.php:114
 msgid "Newest"
 msgstr "جدیدترین"
 
@@ -402,6 +415,7 @@ msgid "Reason"
 msgstr "دلیل"
 
 #: src/Admin/Strings.php:109
+#: src/Elementor/Tags/JalaliDate.php:74
 msgid "Date"
 msgstr "تاریخ"
 
@@ -426,6 +440,7 @@ msgid "Backup restored"
 msgstr "پشتیبان بازگردانی شد"
 
 #: src/Admin/Strings.php:117
+#: src/Elementor/Integration.php:139
 msgid "Sections"
 msgstr "بخش‌ها"
 
@@ -458,6 +473,7 @@ msgid "Changes apply only after you save. You can reset a section; a backup is t
 msgstr "تغییرات فقط پس از ذخیره اعمال می‌شوند. می‌توانید یک بخش را بازنشانی کنید؛ اول پشتیبان گرفته می‌شود."
 
 #: src/Admin/Strings.php:125
+#: src/Widgets/Store/StoreWidget.php:150
 msgid "Next"
 msgstr "بعدی"
 
@@ -659,6 +675,8 @@ msgid "A module that is off loads no CSS or JS file and runs no extra query."
 msgstr "هر ماژول خاموش هیچ فایل CSS یا JS و هیچ کوئری اضافه‌ای بار نمی‌کند."
 
 #: src/Admin/Strings.php:187
+#: src/Elementor/Tags/ProductStock.php:83
+#: src/Widgets/Header/MenuToggle.php:74
 msgid "Show"
 msgstr "نمایش"
 
@@ -812,10 +830,13 @@ msgid "You can change all of these later in Settings."
 msgstr "می‌توانید بعداً همه این‌ها را از تنظیمات عوض کنید."
 
 #: src/Admin/Strings.php:234
+#: src/Elementor/Tags/StoreInfo.php:78
 msgid "Store name"
 msgstr "نام فروشگاه"
 
 #: src/Admin/Strings.php:235
+#: src/Widgets/Header/Logo.php:33
+#: src/Widgets/Header/Logo.php:59
 msgid "Logo"
 msgstr "لوگو"
 
@@ -852,6 +873,9 @@ msgid "Skip this step"
 msgstr "رد کردن این مرحله"
 
 #: src/Admin/Strings.php:245
+#: src/Widgets/General/Heading.php:77
+#: src/Widgets/General/IconBox.php:102
+#: src/Widgets/Header/NavMenu.php:86
 msgid "Start"
 msgstr "شروع"
 
@@ -1020,6 +1044,7 @@ msgstr "خطاهای PHP به بازدیدکننده نشان داده می‌ش
 msgid "Errors are not shown to visitors."
 msgstr "خطاها به بازدیدکننده نشان داده نمی‌شود."
 
+#: src/Admin/Strings.php:281
 #: src/Admin/SystemStatus.php:154
 msgid "Shown"
 msgstr "نمایش داده می‌شود"
@@ -1125,6 +1150,8 @@ msgid "Brand, scent and skin type"
 msgstr "برند، رایحه و نوع پوست"
 
 #: src/Admin/Wizard.php:216
+#: src/Builder/library-strings.php:200
+#: src/Widgets/Store/QuickLinks.php:107
 msgid "Supermarket"
 msgstr "سوپرمارکت"
 
@@ -1154,6 +1181,7 @@ msgstr "فقط در همین صفحه و پس از کد کل سایت بارگذ
 msgid "Duplicate \"%s\""
 msgstr "کپی «%s»"
 
+#: src/Admin/Strings.php:272
 #: src/Duplicate.php:83
 msgid "Duplicate"
 msgstr "کپی"
@@ -1166,7 +1194,9 @@ msgstr "اجازه کپی این مورد را ندارید."
 msgid "The copy could not be created."
 msgstr "کپی ساخته نشد."
 
+#. translators: %s: layout name.
 #. translators: %s: original title.
+#: src/Builder/Rest.php:229
 #: src/Duplicate.php:122
 #, php-format
 msgid "%s (copy)"
@@ -1225,11 +1255,11 @@ msgstr "کد پیش از پایان body"
 msgid "Your own CSS, JavaScript and head or footer code, for the whole site and for each page."
 msgstr "CSS، جاوااسکریپت و کد سربرگ و پابرگ دلخواه، برای کل سایت و هر صفحه."
 
-#: src/Options.php:139
+#: src/Options.php:155
 msgid "Duplicate posts and pages"
 msgstr "کپی نوشته و برگه"
 
-#: src/Options.php:140
+#: src/Options.php:156
 msgid "A \"Duplicate\" link in the lists of posts and pages makes a draft copy with all its settings."
 msgstr "پیوند «کپی» در فهرست نوشته‌ها و برگه‌ها، یک پیش‌نویس با همه تنظیمات می‌سازد."
 
@@ -1357,14 +1387,20 @@ msgstr "ویرایش"
 msgid "Your email address will not be published."
 msgstr "نشانی ایمیل شما منتشر نمی‌شود."
 
+#: src/Admin/Strings.php:264
+#: src/Widgets/General/Team.php:66
+#: src/Widgets/General/Testimonials.php:76
+#: src/Widgets/Store/TrustMarks.php:106
 #: vendor-prefixed/ui/components/comments/Comments.php:126
 msgid "Name"
 msgstr "نام"
 
+#: src/Elementor/Tags/StoreInfo.php:80
 #: vendor-prefixed/ui/components/comments/Comments.php:127
 msgid "Email"
 msgstr "ایمیل"
 
+#: src/Widgets/General/Social.php:61
 #: vendor-prefixed/ui/components/comments/Comments.php:128
 msgid "Website"
 msgstr "وب‌سایت"
@@ -1376,3 +1412,3297 @@ msgstr "نام و ایمیل من را برای دیدگاه بعدی در ای�
 #: vendor-prefixed/ui/components/comments/Comments.php:131
 msgid "Comment"
 msgstr "دیدگاه"
+
+#: src/Admin/Admin.php:76
+#: src/Admin/Strings.php:258
+#: src/Builder/Layouts.php:55
+msgid "Layouts"
+msgstr "چیدمان‌ها"
+
+#: src/Admin/Admin.php:370
+msgid "Visitors who are not logged in"
+msgstr "بازدیدکننده‌هایی که وارد نشده‌اند"
+
+#: src/Admin/Strings.php:259
+msgid "Design your header, footer and reusable blocks with Elementor, and choose where each one shows."
+msgstr "سربرگ، پابرگ و بلوک‌های تکرارپذیر را با المنتور طراحی کنید و تعیین کنید هر کدام کجا نمایش داده شود."
+
+#: src/Admin/Strings.php:260
+msgid "Elementor is not active. Layouts still work with the block editor, but the ready-made designs need Elementor (the free version is enough)."
+msgstr "المنتور فعال نیست. چیدمان‌ها با ویرایشگر بلوک هم کار می‌کنند، ولی طرح‌های آماده به المنتور نیاز دارند (نسخه رایگان کافی است)."
+
+#: src/Admin/Strings.php:261
+msgid "New layout"
+msgstr "چیدمان تازه"
+
+#. translators: %s: kind of layout, such as Header.
+#: src/Admin/Strings.php:263
+#, php-format
+msgid "New %s"
+msgstr "%s تازه"
+
+#: src/Admin/Strings.php:265
+msgid "Start from"
+msgstr "شروع از"
+
+#: src/Admin/Strings.php:266
+msgid "Blank"
+msgstr "خالی"
+
+#: src/Admin/Strings.php:267
+msgid "An empty layout to design from scratch."
+msgstr "یک چیدمان خالی برای طراحی از صفر."
+
+#: src/Admin/Strings.php:268
+msgid "Create and edit"
+msgstr "ساخت و ویرایش"
+
+#: src/Admin/Strings.php:269
+msgid "The layout was made. Opening the editor…"
+msgstr "چیدمان ساخته شد. ویرایشگر باز می‌شود…"
+
+#: src/Admin/Strings.php:270
+msgid "Edit design"
+msgstr "ویرایش طرح"
+
+#: src/Admin/Strings.php:271
+msgid "Display conditions"
+msgstr "شرط‌های نمایش"
+
+#: src/Admin/Strings.php:273
+msgid "Move to trash"
+msgstr "انتقال به زباله‌دان"
+
+#. translators: %s: layout name.
+#: src/Admin/Strings.php:275
+#, php-format
+msgid "Move \"%s\" to the trash? You can restore it from the trash later."
+msgstr "«%s» به زباله‌دان برود؟ بعداً می‌توانید آن را از زباله‌دان برگردانید."
+
+#: src/Admin/Strings.php:276
+msgid "The layout was moved to the trash."
+msgstr "چیدمان به زباله‌دان رفت."
+
+#: src/Admin/Strings.php:277
+msgid "A copy was made. It stays off until you switch it on."
+msgstr "یک نسخه کپی ساخته شد. تا وقتی روشنش نکنید خاموش می‌ماند."
+
+#: src/Admin/Strings.php:278
+msgid "Conditions saved."
+msgstr "شرط‌ها ذخیره شد."
+
+#. translators: %s: layout name.
+#: src/Admin/Strings.php:280
+#, php-format
+msgid "Show \"%s\" on the site"
+msgstr "نمایش «%s» در سایت"
+
+#: src/Admin/Strings.php:283
+msgid "No layout of this kind yet. Until you make one, the theme shows its own."
+msgstr "هنوز چیدمانی از این نوع نساخته‌اید. تا آن موقع، قالب نسخه خودش را نشان می‌دهد."
+
+#: src/Admin/Strings.php:284
+msgid "Not shown anywhere yet"
+msgstr "هنوز هیچ‌جا نمایش داده نمی‌شود"
+
+#: src/Admin/Strings.php:285
+#: src/Builder/Rules.php:51
+msgid "Entire site"
+msgstr "کل سایت"
+
+#. translators: %s: list of excluded places.
+#: src/Admin/Strings.php:287
+#, php-format
+msgid "except %s"
+msgstr "به‌جز %s"
+
+#. translators: %s: number.
+#: src/Admin/Strings.php:289
+#, php-format
+msgid "Priority %s"
+msgstr "اولویت %s"
+
+#: src/Admin/Strings.php:290
+msgid "Show on"
+msgstr "نمایش در"
+
+#: src/Admin/Strings.php:291
+msgid "The layout shows where any of these match."
+msgstr "چیدمان هر جا که یکی از این‌ها برقرار باشد نمایش داده می‌شود."
+
+#: src/Admin/Strings.php:292
+msgid "But not on"
+msgstr "ولی نه در"
+
+#: src/Admin/Strings.php:293
+msgid "These places never show it, even if a rule above matches."
+msgstr "این جاها هرگز آن را نشان نمی‌دهند، حتی اگر شرطی در بالا برقرار باشد."
+
+#: src/Admin/Strings.php:294
+msgid "Add a rule"
+msgstr "افزودن شرط"
+
+#: src/Admin/Strings.php:295
+msgid "Remove rule"
+msgstr "حذف شرط"
+
+#: src/Admin/Strings.php:296
+msgid "Choose"
+msgstr "انتخاب"
+
+#: src/Admin/Strings.php:297
+#: src/Elementor/Integration.php:145
+msgid "Type to search"
+msgstr "برای جستجو بنویسید"
+
+#. translators: %s: item name.
+#: src/Admin/Strings.php:301
+#, php-format
+msgid "Remove %s"
+msgstr "حذف %s"
+
+#: src/Admin/Strings.php:302
+msgid "Choose at least one item for this rule, or remove it."
+msgstr "برای این شرط دست‌کم یک مورد انتخاب کنید یا آن را حذف کنید."
+
+#: src/Admin/Strings.php:303
+msgid "Who sees it"
+msgstr "چه کسانی ببینند"
+
+#: src/Admin/Strings.php:304
+msgid "Leave all unticked to show it to everyone."
+msgstr "برای نمایش به همه، هیچ‌کدام را انتخاب نکنید."
+
+#: src/Admin/Strings.php:305
+msgid "Devices"
+msgstr "دستگاه‌ها"
+
+#: src/Admin/Strings.php:306
+msgid "Make one header for desktop and another for phones by switching devices off here."
+msgstr "با خاموش کردن دستگاه‌ها در اینجا، یک سربرگ برای دسکتاپ و یکی برای گوشی بسازید."
+
+#: src/Admin/Strings.php:307
+msgid "Priority"
+msgstr "اولویت"
+
+#: src/Admin/Strings.php:308
+msgid "When two layouts match the same page, the higher number wins. On equal numbers the more specific rule wins."
+msgstr "وقتی دو چیدمان برای یک صفحه برقرار باشند، عدد بزرگ‌تر برنده است. در عدد برابر، شرط دقیق‌تر برنده است."
+
+#: src/Admin/Strings.php:309
+msgid "While scrolling"
+msgstr "هنگام اسکرول"
+
+#: src/Admin/Strings.php:310
+msgid "Scrolls away"
+msgstr "همراه صفحه بالا می‌رود"
+
+#: src/Admin/Strings.php:311
+msgid "Always on top"
+msgstr "همیشه بالای صفحه"
+
+#: src/Admin/Strings.php:312
+msgid "Hides going down, returns going up"
+msgstr "با پایین رفتن پنهان، با بالا آمدن نمایان"
+
+#: src/Admin/Strings.php:313
+msgid "Save conditions"
+msgstr "ذخیره شرط‌ها"
+
+#: src/Admin/Strings.php:314
+msgid "General"
+msgstr "عمومی"
+
+#: src/Admin/Strings.php:315
+#: src/Builder/library-strings.php:50
+msgid "Blog"
+msgstr "وبلاگ"
+
+#: src/Admin/Strings.php:316
+msgid "Store"
+msgstr "فروشگاه"
+
+#: src/Admin/Strings.php:317
+msgid "Shortcode"
+msgstr "کد کوتاه"
+
+#: src/Builder/Layouts.php:56
+#: src/Widgets/General/IconBox.php:89
+#: src/Widgets/General/IconList.php:94
+#: src/Widgets/Store/CategoryCircles.php:94
+#: src/Widgets/Store/Products.php:92
+msgid "Layout"
+msgstr "چیدمان"
+
+#: src/Builder/Layouts.php:57
+msgid "Add a layout"
+msgstr "افزودن چیدمان"
+
+#: src/Builder/Layouts.php:58
+msgid "Edit layout"
+msgstr "ویرایش چیدمان"
+
+#: src/Builder/Layouts.php:180
+msgid "(no title)"
+msgstr "(بدون عنوان)"
+
+#: src/Builder/Layouts.php:222
+msgid "This kind of layout is not available yet."
+msgstr "این نوع چیدمان هنوز در دسترس نیست."
+
+#: src/Builder/library-strings.php:18
+msgid "18-month warranty on every item"
+msgstr "گارانتی ۱۸ ماهه برای همه کالاها"
+
+#: src/Builder/library-strings.php:19
+#: src/Widgets/Store/TrustMarks.php:165
+msgid "7-day returns"
+msgstr "۷ روز ضمانت بازگشت"
+
+#: src/Builder/library-strings.php:20
+msgid "A coloured band with a countdown and a slider of discounted products."
+msgstr "نواری رنگی با شمارش معکوس و اسلایدر کالاهای تخفیف‌دار."
+
+#: src/Builder/library-strings.php:21
+msgid "A customer from Isfahan"
+msgstr "مشتری از اصفهان"
+
+#: src/Builder/library-strings.php:22
+msgid "A customer from Shiraz"
+msgstr "مشتری از شیراز"
+
+#: src/Builder/library-strings.php:23
+msgid "A customer from Tehran"
+msgstr "مشتری از تهران"
+
+#: src/Builder/library-strings.php:24
+msgid "A large search field in the middle for stores with many products."
+msgstr "یک کادر جستجوی بزرگ در وسط، برای فروشگاه‌هایی با کالای زیاد."
+
+#: src/Builder/library-strings.php:25
+msgid "A product launch page with plans, reviews, questions and a contact form."
+msgstr "صفحه معرفی محصول با طرح‌ها، نظر مشتریان، پرسش‌ها و فرم تماس."
+
+#: src/Builder/library-strings.php:26
+msgid "A row of brand tiles."
+msgstr "یک ردیف کاشی برند."
+
+#: src/Builder/library-strings.php:27
+msgid "A search field and labelled icons, like a shopping app. Pairs with the bottom bar."
+msgstr "کادر جستجو و آیکون‌های برچسب‌دار، مثل اپ خرید. همراه نوار پایین مناسب است."
+
+#: src/Builder/library-strings.php:28
+msgid "A slider of what customers say."
+msgstr "اسلایدری از گفته‌های مشتریان."
+
+#: src/Builder/library-strings.php:29
+msgid "A thin dark bar with a message and social links above the store header."
+msgstr "نواری باریک و تیره با یک پیام و شبکه‌های اجتماعی بالای سربرگ فروشگاه."
+
+#: src/Builder/library-strings.php:30
+msgid "A title and an accordion of common questions."
+msgstr "یک عنوان و آکاردئونی از پرسش‌های رایج."
+
+#: src/Builder/library-strings.php:31
+msgid "About the store"
+msgstr "درباره فروشگاه"
+
+#: src/Builder/library-strings.php:32
+msgid "About us"
+msgstr "درباره ما"
+
+#: src/Builder/library-strings.php:33
+#: src/Widgets/Footer/AppLinks.php:112
+msgid "Add to home screen"
+msgstr "افزودن به صفحه گوشی"
+
+#: src/Builder/library-strings.php:34
+msgid "Add your trust badges and payment gateways in the widget settings."
+msgstr "نمادهای اعتماد و درگاه‌های پرداخت را در تنظیمات ابزارک اضافه کنید."
+
+#: src/Builder/library-strings.php:35
+msgid "Advantages, link columns, newsletter, social links, trust badges, app links and copyright."
+msgstr "مزایا، ستون‌های پیوند، خبرنامه، شبکه‌های اجتماعی، نمادهای اعتماد، پیوند اپ و حق نشر."
+
+#: src/Builder/library-strings.php:36
+#: src/Widgets/Store/DiscountPicks.php:89
+msgid "All"
+msgstr "همه"
+
+#: src/Builder/library-strings.php:37
+#: src/Widgets/Store/Deals.php:107
+msgid "All offers"
+msgstr "همه پیشنهادها"
+
+#: src/Builder/library-strings.php:38
+#: src/Widgets/Store/TrustMarks.php:163
+msgid "All over the country"
+msgstr "به سراسر کشور"
+
+#: src/Builder/library-strings.php:39
+#: src/Widgets/Footer/Copyright.php:84
+msgid "All rights reserved for {site}. {year}"
+msgstr "تمام حقوق برای {site} محفوظ است. {year}"
+
+#: src/Builder/library-strings.php:40
+#: src/Widgets/Store/Deals.php:39
+#: src/Widgets/Store/Deals.php:89
+#: src/Widgets/Store/QuickLinks.php:106
+msgid "Amazing offers"
+msgstr "پیشنهاد شگفت‌انگیز"
+
+#: src/Builder/library-strings.php:41
+msgid "Ask for a return from your account within seven days of delivery."
+msgstr "تا هفت روز پس از تحویل، از حساب کاربری درخواست بازگشت بدهید."
+
+#: src/Builder/library-strings.php:42
+#: src/Widgets/Store/HeroSlider.php:95
+msgid "Autumn festival"
+msgstr "جشنواره پاییز"
+
+#: src/Builder/library-strings.php:43
+msgid "Autumn scents"
+msgstr "عطر پاییزی"
+
+#: src/Builder/library-strings.php:44
+msgid "Back to school"
+msgstr "بازگشت به مدرسه"
+
+#: src/Builder/library-strings.php:45
+msgid "Basic"
+msgstr "پایه"
+
+#: src/Builder/library-strings.php:46
+#: src/Widgets/Header/MenuToggle.php:127
+#: src/Widgets/Store/QuickLinks.php:109
+msgid "Best sellers"
+msgstr "پرفروش‌ها"
+
+#: src/Builder/library-strings.php:47
+#: src/Store/Catalog.php:33
+#: src/Widgets/Store/ProductTabs.php:115
+msgid "Best selling"
+msgstr "پرفروش"
+
+#: src/Builder/library-strings.php:48
+#: src/Widgets/Store/Bestsellers.php:66
+#: src/Widgets/Store/Bestsellers.php:102
+msgid "Best selling products"
+msgstr "پرفروش‌ترین کالاها"
+
+#: src/Builder/library-strings.php:49
+msgid "Big store home page"
+msgstr "صفحه اصلی فروشگاه بزرگ"
+
+#: src/Builder/library-strings.php:51
+#: src/Widgets/Store/Posts.php:33
+#: src/Widgets/Store/Posts.php:159
+msgid "Blog posts"
+msgstr "نوشته‌های وبلاگ"
+
+#: src/Builder/library-strings.php:52
+msgid "Brand coloured menu"
+msgstr "منو به رنگ برند"
+
+#: src/Builder/library-strings.php:53
+msgid "Business licence"
+msgstr "مجوز کسب‌وکار"
+
+#: src/Builder/library-strings.php:54
+msgid "Buy 2, get 1 free"
+msgstr "خرید ۲، هدیه ۱"
+
+#: src/Builder/library-strings.php:55
+#: src/Widgets/Store/Banners.php:148
+msgid "Buy in instalments"
+msgstr "قسطی بخرید"
+
+#: src/Builder/library-strings.php:56
+#: src/Widgets/Store/TrustMarks.php:167
+msgid "By phone and chat"
+msgstr "تلفن و گفتگو"
+
+#: src/Builder/library-strings.php:57
+msgid "Cameras and accessories"
+msgstr "دوربین و لوازم"
+
+#: src/Builder/library-strings.php:58
+msgid "Can I pay on delivery?"
+msgstr "می‌توانم هنگام تحویل پرداخت کنم؟"
+
+#: src/Builder/library-strings.php:59
+#: src/Builder/Types.php:59
+#: src/Widgets/Header/Cart.php:35
+#: src/Widgets/Header/Cart.php:87
+#: src/Widgets/Header/Cart.php:94
+#: src/Widgets/Header/Cart.php:113
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: src/Builder/library-strings.php:60
+#: src/Widgets/Store/TrustMarks.php:164
+msgid "Cash on delivery"
+msgstr "پرداخت در محل"
+
+#: src/Builder/library-strings.php:61
+msgid "Categories beside the logo"
+msgstr "دسته‌بندی کنار لوگو"
+
+#: src/Builder/library-strings.php:62
+msgid "Categories button first, search in its own row below."
+msgstr "اول دکمه دسته‌بندی، جستجو در ردیف جدا پایین آن."
+
+#: src/Builder/library-strings.php:63
+msgid "Centred logo"
+msgstr "لوگوی وسط"
+
+#: src/Builder/library-strings.php:64
+#: src/Widgets/General/PricingTable.php:112
+msgid "Choose this plan"
+msgstr "انتخاب این طرح"
+
+#: src/Builder/library-strings.php:65
+msgid "Comfortable shoes"
+msgstr "کفش راحتی"
+
+#: src/Builder/library-strings.php:66
+msgid "Common questions"
+msgstr "پرسش‌های رایج"
+
+#: src/Builder/library-strings.php:67
+msgid "Compact footer"
+msgstr "پابرگ فشرده"
+
+#: src/Builder/library-strings.php:68
+#: src/Widgets/Header/Compare.php:29
+msgid "Compare"
+msgstr "مقایسه"
+
+#: src/Builder/library-strings.php:69
+msgid "Contact"
+msgstr "تماس"
+
+#: src/Builder/library-strings.php:70
+msgid "Contact details beside a contact form."
+msgstr "راه‌های تماس کنار فرم تماس."
+
+#: src/Builder/library-strings.php:71
+msgid "Contact us"
+msgstr "تماس با ما"
+
+#: src/Builder/library-strings.php:72
+#: src/Widgets/General/Testimonials.php:35
+#: src/Widgets/General/Testimonials.php:141
+msgid "Customer reviews"
+msgstr "نظر مشتریان"
+
+#: src/Builder/library-strings.php:73
+msgid "Customer service"
+msgstr "خدمات مشتریان"
+
+#: src/Builder/library-strings.php:74
+msgid "Delivery"
+msgstr "رویه ارسال"
+
+#: src/Builder/library-strings.php:75
+msgid "Diamond"
+msgstr "الماس"
+
+#: src/Builder/library-strings.php:76
+#: src/Widgets/Footer/AppLinks.php:113
+msgid "Direct download"
+msgstr "دریافت مستقیم"
+
+#: src/Builder/library-strings.php:77
+#: src/Widgets/Store/DiscountPicks.php:36
+#: src/Widgets/Store/DiscountPicks.php:72
+#: src/Widgets/Store/DiscountPicks.php:166
+msgid "Discount picks"
+msgstr "منتخب تخفیف‌ها"
+
+#: src/Builder/library-strings.php:78
+msgid "Discounted products with category filters."
+msgstr "کالاهای تخفیف‌دار با فیلتر دسته‌بندی."
+
+#: src/Builder/library-strings.php:79
+#: src/Widgets/Header/MenuToggle.php:126
+#: src/Widgets/Store/QuickLinks.php:108
+msgid "Discounts"
+msgstr "تخفیف‌ها"
+
+#: src/Builder/library-strings.php:80
+#: src/Widgets/General/PricingTable.php:105
+msgid "Early access to offers"
+msgstr "دسترسی زودتر به پیشنهادها"
+
+#: src/Builder/library-strings.php:81
+msgid "Easy returns"
+msgstr "بازگشت آسان"
+
+#: src/Builder/library-strings.php:82
+msgid "Eight coloured icons for the most used places."
+msgstr "هشت آیکون رنگی برای پرکاربردترین بخش‌ها."
+
+#: src/Builder/library-strings.php:83
+#: src/Widgets/General/ContactForm.php:106
+#: src/Widgets/General/Newsletter.php:70
+#: src/Widgets/General/Newsletter.php:97
+msgid "Email or mobile number"
+msgstr "ایمیل یا شماره موبایل"
+
+#: src/Builder/library-strings.php:84
+msgid "Every day from 9 to 21"
+msgstr "هر روز ساعت ۹ تا ۲۱"
+
+#: src/Builder/library-strings.php:85
+#: src/Widgets/General/IconBox.php:73
+#: src/Widgets/Store/TrustMarks.php:163
+msgid "Fast delivery"
+msgstr "ارسال سریع"
+
+#: src/Builder/library-strings.php:86
+msgid "Four advantages"
+msgstr "چهار مزیت"
+
+#: src/Builder/library-strings.php:87
+msgid "Four banners"
+msgstr "چهار بنر"
+
+#: src/Builder/library-strings.php:88
+msgid "Four icon boxes in a row."
+msgstr "چهار جعبه آیکون در یک ردیف."
+
+#: src/Builder/library-strings.php:89
+msgid "Four small promotional banners in a row."
+msgstr "چهار بنر کوچک تبلیغاتی در یک ردیف."
+
+#: src/Builder/library-strings.php:90
+#: src/Widgets/General/PricingTable.php:94
+#: src/Widgets/General/PricingTable.php:104
+msgid "Free delivery"
+msgstr "ارسال رایگان"
+
+#: src/Builder/library-strings.php:91
+msgid "Free delivery on orders over 500,000 toman"
+msgstr "ارسال رایگان برای سفارش‌های بالای ۵۰۰ هزار تومان"
+
+#: src/Builder/library-strings.php:92
+msgid "Free delivery on your first order"
+msgstr "اولین خرید، ارسال رایگان"
+
+#: src/Builder/library-strings.php:93
+msgid "Frequently asked questions"
+msgstr "پرسش‌های متداول"
+
+#: src/Builder/library-strings.php:94
+msgid "Fresh coffee"
+msgstr "قهوه تازه"
+
+#: src/Builder/library-strings.php:95
+msgid "Fresh, fast and always discounted"
+msgstr "تازه، سریع و با تخفیف همیشگی"
+
+#: src/Builder/library-strings.php:96
+#: src/Widgets/Store/TrustMarks.php:166
+msgid "From the brand or its agent"
+msgstr "از برند یا نماینده رسمی"
+
+#: src/Builder/library-strings.php:97
+msgid "Full store footer"
+msgstr "پابرگ کامل فروشگاهی"
+
+#: src/Builder/library-strings.php:98
+#: src/Widgets/Store/TrustMarks.php:166
+msgid "Genuine products"
+msgstr "ضمانت اصل بودن کالا"
+
+#: src/Builder/library-strings.php:99
+msgid "Get in touch"
+msgstr "با ما در ارتباط باشید"
+
+#: src/Builder/library-strings.php:100
+msgid "Gifts"
+msgstr "هدیه"
+
+#: src/Builder/library-strings.php:101
+msgid "Gold"
+msgstr "طلایی"
+
+#: src/Builder/library-strings.php:102
+msgid "Headphones and speakers from 990,000 toman"
+msgstr "هدفون و اسپیکر از ۹۹۰ هزار تومان"
+
+#: src/Builder/library-strings.php:103
+#: src/Widgets/General/Newsletter.php:64
+msgid "Hear about offers and new arrivals first"
+msgstr "از تخفیف‌ها و جدیدترین‌ها باخبر شوید"
+
+#: src/Builder/library-strings.php:104
+#: src/Widgets/Store/HeroSlider.php:33
+msgid "Hero slider"
+msgstr "اسلایدر اصلی"
+
+#: src/Builder/library-strings.php:105
+msgid "Hero slider, advantages, categories, products and reviews."
+msgstr "اسلایدر اصلی، مزایا، دسته‌بندی‌ها، کالاها و نظر مشتریان."
+
+#: src/Builder/library-strings.php:106
+msgid "How do I return an item?"
+msgstr "چطور کالا را برگردانم؟"
+
+#: src/Builder/library-strings.php:107
+#: src/Widgets/General/Accordion.php:59
+#: src/Widgets/General/Accordion.php:69
+msgid "How long does delivery take?"
+msgstr "ارسال چقدر طول می‌کشد؟"
+
+#: src/Builder/library-strings.php:108
+msgid "How to order"
+msgstr "نحوه ثبت سفارش"
+
+#: src/Builder/library-strings.php:109
+#: src/Widgets/Store/TrustMarks.php:164
+msgid "In selected cities"
+msgstr "در شهرهای منتخب"
+
+#: src/Builder/library-strings.php:110
+msgid "Instalments without a down payment and free delivery"
+msgstr "اقساط بدون پیش‌پرداخت و ارسال رایگان"
+
+#: src/Builder/library-strings.php:111
+#: src/Widgets/General/Newsletter.php:76
+msgid "Join"
+msgstr "عضویت"
+
+#: src/Builder/library-strings.php:112
+msgid "Just the logo, search and cart, for small stores."
+msgstr "فقط لوگو، جستجو و سبد، برای فروشگاه‌های کوچک."
+
+#: src/Builder/library-strings.php:113
+msgid "Kitchen"
+msgstr "آشپزخانه"
+
+#: src/Builder/library-strings.php:114
+msgid "Kitchen appliances up to 30% off"
+msgstr "لوازم برقی آشپزخانه تا ۳۰٪ ارزان‌تر"
+
+#: src/Builder/library-strings.php:115
+msgid "Landing page"
+msgstr "صفحه فرود"
+
+#: src/Builder/library-strings.php:116
+msgid "Log in with a one-time code"
+msgstr "ورود با کد یک‌بارمصرف"
+
+#: src/Builder/library-strings.php:117
+#: src/Widgets/Header/Account.php:57
+msgid "Log in | Sign up"
+msgstr "ورود | ثبت‌نام"
+
+#: src/Builder/library-strings.php:118
+msgid "Logo and menu button, with the search field below."
+msgstr "لوگو و دکمه منو، با کادر جستجو در پایین."
+
+#: src/Builder/library-strings.php:119
+msgid "Logo and short text, three link columns, social links and copyright."
+msgstr "لوگو و متن کوتاه، سه ستون پیوند، شبکه‌های اجتماعی و حق نشر."
+
+#: src/Builder/library-strings.php:120
+msgid "Logo at the start, search icon, cart and menu at the end."
+msgstr "لوگو در ابتدا، آیکون جستجو، سبد و منو در انتها."
+
+#: src/Builder/library-strings.php:121
+msgid "Logo, menu and icons in a single compact row."
+msgstr "لوگو، منو و آیکون‌ها در یک ردیف فشرده."
+
+#: src/Builder/library-strings.php:122
+msgid "Logo, wide search, account and cart; categories and menu below. The classic big-store header."
+msgstr "لوگو، جستجوی پهن، حساب و سبد؛ دسته‌بندی و منو در ردیف پایین. سربرگ کلاسیک فروشگاه‌های بزرگ."
+
+#: src/Builder/library-strings.php:123
+#: src/Widgets/Header/NavMenu.php:105
+msgid "Main menu"
+msgstr "منوی اصلی"
+
+#: src/Builder/library-strings.php:124
+msgid "Menu at the start, logo in the middle, account and cart at the end."
+msgstr "منو در ابتدا، لوگو در وسط، حساب و سبد در انتها."
+
+#: src/Builder/library-strings.php:125
+msgid "Menu button, a search field filling the row, and the cart."
+msgstr "دکمه منو، کادر جستجو در تمام ردیف و سبد خرید."
+
+#: src/Builder/library-strings.php:126
+msgid "Menu button, logo and cart, with the search field below."
+msgstr "دکمه منو، لوگو و سبد، با کادر جستجو در پایین."
+
+#: src/Builder/library-strings.php:127
+msgid "Menu on one side, logo in the middle, actions on the other."
+msgstr "منو در یک طرف، لوگو در وسط، دکمه‌ها در طرف دیگر."
+
+#: src/Builder/library-strings.php:128
+msgid "Menu, logo, then search, account and cart icons."
+msgstr "منو، لوگو و بعد آیکون‌های جستجو، حساب و سبد."
+
+#: src/Builder/library-strings.php:129
+msgid "Minimal"
+msgstr "ساده"
+
+#: src/Builder/library-strings.php:130
+msgid "Minimal footer"
+msgstr "پابرگ ساده"
+
+#: src/Builder/library-strings.php:131
+msgid "More"
+msgstr "بیشتر"
+
+#: src/Builder/library-strings.php:132
+msgid "More articles"
+msgstr "مطالب بیشتر"
+
+#: src/Builder/library-strings.php:133
+msgid "Most popular"
+msgstr "محبوب‌ترین"
+
+#: src/Builder/library-strings.php:134
+#: src/Builder/Types.php:65
+#: src/Widgets/Header/Account.php:63
+#: src/Widgets/Header/Account.php:81
+#: src/Widgets/Header/MenuToggle.php:223
+msgid "My account"
+msgstr "حساب من"
+
+#: src/Builder/library-strings.php:135
+#: src/Widgets/General/Testimonials.php:71
+msgid "My order arrived quickly and well packed. I will buy again."
+msgstr "سفارشم سریع و با بسته‌بندی خوب رسید. دوباره خرید می‌کنم."
+
+#: src/Builder/library-strings.php:136
+#: src/Widgets/Store/TrustMarks.php:129
+msgid "National registration"
+msgstr "نشان ملی ثبت"
+
+#: src/Builder/library-strings.php:137
+#: src/Widgets/Store/Stories.php:80
+#: src/Widgets/Store/Stories.php:113
+msgid "New arrivals"
+msgstr "تازه‌ها"
+
+#: src/Builder/library-strings.php:138
+#: src/Widgets/Store/HeroSlider.php:89
+#: src/Widgets/Store/HeroSlider.php:151
+msgid "New phones with up to 25% off"
+msgstr "گوشی‌های جدید با تا ۲۵٪ تخفیف"
+
+#: src/Builder/library-strings.php:140
+msgid "Newest, best selling and discounted products in tabs."
+msgstr "جدیدترین، پرفروش‌ترین و تخفیف‌دارترین کالاها در زبانه‌ها."
+
+#: src/Builder/library-strings.php:141
+#: src/Widgets/Store/TrustMarks.php:165
+msgid "No questions asked"
+msgstr "بدون پرسش"
+
+#: src/Builder/library-strings.php:142
+#: src/Widgets/Store/Bestsellers.php:34
+msgid "Numbered best sellers"
+msgstr "پرفروش‌های شماره‌دار"
+
+#: src/Builder/library-strings.php:143
+#: src/Widgets/Header/MenuToggle.php:125
+#: src/Widgets/Store/QuickLinks.php:85
+msgid "Offers"
+msgstr "پیشنهادها"
+
+#: src/Builder/library-strings.php:144
+#: src/Store/Catalog.php:34
+#: src/Widgets/Store/ProductTabs.php:116
+msgid "On sale"
+msgstr "تخفیف‌دار"
+
+#: src/Builder/library-strings.php:145
+msgid "One line with the copyright and social links."
+msgstr "یک خط با حق نشر و شبکه‌های اجتماعی."
+
+#: src/Builder/library-strings.php:146
+msgid "One row"
+msgstr "یک ردیف"
+
+#: src/Builder/library-strings.php:147
+msgid "Order now"
+msgstr "سفارش دهید"
+
+#: src/Builder/library-strings.php:148
+#: src/Widgets/General/IconBox.php:79
+msgid "Orders placed before 2 pm leave the same day."
+msgstr "سفارش‌های پیش از ساعت ۱۴ همان روز ارسال می‌شوند."
+
+#: src/Builder/library-strings.php:149
+#: src/Widgets/General/Accordion.php:65
+msgid "Orders reach most cities in two to four working days."
+msgstr "سفارش‌ها در دو تا چهار روز کاری به بیشتر شهرها می‌رسند."
+
+#: src/Builder/library-strings.php:150
+msgid "Pay with any Shetab card through a bank gateway."
+msgstr "با هر کارت عضو شتاب از درگاه بانکی پرداخت کنید."
+
+#: src/Builder/library-strings.php:151
+msgid "Payment gateway 1"
+msgstr "درگاه پرداخت ۱"
+
+#: src/Builder/library-strings.php:152
+msgid "Payment gateway 2"
+msgstr "درگاه پرداخت ۲"
+
+#: src/Builder/library-strings.php:153
+msgid "Payment methods"
+msgstr "شیوه‌های پرداخت"
+
+#: src/Builder/library-strings.php:154
+msgid "People who answer, every day of the week."
+msgstr "آدم‌هایی که پاسخ می‌دهند، همه روزهای هفته."
+
+#: src/Builder/library-strings.php:155
+msgid "Phone: all icons"
+msgstr "گوشی: همه آیکون‌ها"
+
+#: src/Builder/library-strings.php:156
+msgid "Phone: app-like"
+msgstr "گوشی: مثل اپ"
+
+#: src/Builder/library-strings.php:157
+msgid "Phone: brand coloured"
+msgstr "گوشی: به رنگ برند"
+
+#: src/Builder/library-strings.php:158
+msgid "Phone: centred logo"
+msgstr "گوشی: لوگوی وسط"
+
+#: src/Builder/library-strings.php:159
+msgid "Phone: logo and icons"
+msgstr "گوشی: لوگو و آیکون‌ها"
+
+#: src/Builder/library-strings.php:160
+msgid "Phone: logo with search below"
+msgstr "گوشی: لوگو و جستجوی پایین"
+
+#: src/Builder/library-strings.php:161
+msgid "Phone: menu, logo, cart and search"
+msgstr "گوشی: منو، لوگو، سبد و جستجو"
+
+#: src/Builder/library-strings.php:162
+msgid "Phone: search in the bar"
+msgstr "گوشی: جستجو در نوار"
+
+#: src/Builder/library-strings.php:163
+msgid "Photography"
+msgstr "عکاسی"
+
+#: src/Builder/library-strings.php:164
+#: src/Widgets/Store/Brands.php:70
+msgid "Popular brands"
+msgstr "محبوب‌ترین برندها"
+
+#: src/Builder/library-strings.php:165
+msgid "Prices are fair and the products are genuine."
+msgstr "قیمت‌ها منصفانه و کالاها اصل هستند."
+
+#: src/Builder/library-strings.php:166
+msgid "Priority support"
+msgstr "پشتیبانی با اولویت"
+
+#: src/Builder/library-strings.php:167
+msgid "Privacy"
+msgstr "حریم خصوصی"
+
+#: src/Builder/library-strings.php:168
+#: src/Widgets/Header/CategoryMenu.php:77
+#: src/Widgets/Header/MenuToggle.php:77
+#: src/Widgets/Header/MenuToggle.php:93
+msgid "Product categories"
+msgstr "دسته‌بندی کالاها"
+
+#: src/Builder/library-strings.php:169
+#: src/Widgets/Store/ProductTabs.php:35
+msgid "Product tabs"
+msgstr "زبانه‌های کالا"
+
+#: src/Builder/library-strings.php:170
+msgid "Pure sound"
+msgstr "صدای خالص"
+
+#: src/Builder/library-strings.php:171
+msgid "Questions and answers"
+msgstr "پرسش و پاسخ"
+
+#: src/Builder/library-strings.php:172
+#: src/Widgets/Header/MenuToggle.php:104
+#: src/Widgets/Store/QuickLinks.php:33
+#: src/Widgets/Store/QuickLinks.php:134
+msgid "Quick links"
+msgstr "دسترسی سریع"
+
+#: src/Builder/library-strings.php:173
+msgid "Real support"
+msgstr "پشتیبانی واقعی"
+
+#: src/Builder/library-strings.php:174
+#: src/Widgets/Store/Products.php:120
+#: src/Widgets/Store/ProductTabs.php:75
+msgid "Recommended for you"
+msgstr "پیشنهاد برای شما"
+
+#: src/Builder/library-strings.php:175
+msgid "Returns"
+msgstr "رویه بازگرداندن کالا"
+
+#: src/Builder/library-strings.php:176
+msgid "Round category tiles with their images."
+msgstr "کاشی‌های گرد دسته‌بندی با تصویرشان."
+
+#: src/Builder/library-strings.php:177
+msgid "Round covers that open full-screen stories."
+msgstr "جلدهای گردی که استوری تمام‌صفحه باز می‌کنند."
+
+#: src/Builder/library-strings.php:178
+msgid "Search first"
+msgstr "اول جستجو"
+
+#: src/Builder/library-strings.php:179
+msgid "Search the store"
+msgstr "جستجو در فروشگاه"
+
+#: src/Builder/library-strings.php:180
+msgid "Secure payment"
+msgstr "پرداخت امن"
+
+#: src/Builder/library-strings.php:181
+msgid "Secure payment text with trust and payment badges."
+msgstr "متن پرداخت امن همراه نمادهای اعتماد و پرداخت."
+
+#: src/Builder/library-strings.php:182
+#: src/Widgets/Store/TrustMarks.php:89
+msgid "Secure payment with every Shetab card"
+msgstr "پرداخت امن با همه کارت‌های عضو شتاب"
+
+#: src/Builder/library-strings.php:183
+#: src/Widgets/General/ContactForm.php:70
+msgid "Send"
+msgstr "ارسال"
+
+#: src/Builder/library-strings.php:184
+#: src/Widgets/General/ContactForm.php:64
+msgid "Send us a message"
+msgstr "برای ما پیام بفرستید"
+
+#: src/Builder/library-strings.php:185
+msgid "Seven days to return what you do not like."
+msgstr "هفت روز فرصت برای برگرداندن آنچه نپسندیدید."
+
+#: src/Builder/library-strings.php:186
+#: src/Widgets/Store/TrustMarks.php:130
+msgid "Shetab network"
+msgstr "شبکه شتاب"
+
+#: src/Builder/library-strings.php:187
+#: src/Widgets/Store/CategoryCircles.php:70
+msgid "Shop by category"
+msgstr "خرید بر اساس دسته‌بندی"
+
+#: src/Builder/library-strings.php:188
+#: src/Widgets/General/Button.php:54
+#: src/Widgets/Store/HeroSlider.php:106
+msgid "Shop now"
+msgstr "خرید کنید"
+
+#: src/Builder/library-strings.php:189
+msgid "Shopping guide"
+msgstr "راهنمای خرید"
+
+#: src/Builder/library-strings.php:190
+msgid "Sign up"
+msgstr "ثبت‌نام"
+
+#: src/Builder/library-strings.php:191
+msgid "Simple store home page"
+msgstr "صفحه اصلی فروشگاه ساده"
+
+#: src/Builder/library-strings.php:192
+msgid "Skin care"
+msgstr "مراقبت پوست"
+
+#: src/Builder/library-strings.php:193
+msgid "Small product cards with a round add button."
+msgstr "کارت‌های کوچک کالا با دکمه گرد افزودن."
+
+#: src/Builder/library-strings.php:194
+msgid "Smart kitchen"
+msgstr "آشپزخانه هوشمند"
+
+#: src/Builder/library-strings.php:195
+msgid "Smart watches"
+msgstr "ساعت هوشمند"
+
+#: src/Builder/library-strings.php:196
+#: src/Widgets/Footer/AppLinks.php:86
+msgid "Store app:"
+msgstr "اپلیکیشن فروشگاه:"
+
+#: src/Builder/library-strings.php:197
+msgid "Store header with categories"
+msgstr "سربرگ فروشگاهی با دسته‌بندی"
+
+#: src/Builder/library-strings.php:198
+#: src/Widgets/Store/Stories.php:33
+#: src/Widgets/Store/Stories.php:68
+#: src/Widgets/Store/Stories.php:73
+#: src/Widgets/Store/Stories.php:162
+msgid "Stories"
+msgstr "استوری‌ها"
+
+#: src/Builder/library-strings.php:199
+msgid "Stories, hero slider, offers, banners, categories, product tabs, best sellers, brands, discount picks, blog and trust badges."
+msgstr "استوری، اسلایدر اصلی، پیشنهادها، بنرها، دسته‌بندی‌ها، زبانه‌های کالا، پرفروش‌ها، برندها، منتخب تخفیف‌ها، وبلاگ و نمادهای اعتماد."
+
+#: src/Builder/library-strings.php:201
+msgid "Supermarket row"
+msgstr "ردیف سوپرمارکت"
+
+#: src/Builder/library-strings.php:202
+#: src/Widgets/Store/TrustMarks.php:167
+msgid "Support 7 days a week"
+msgstr "پشتیبانی ۷ روز هفته"
+
+#: src/Builder/library-strings.php:203
+msgid "Support: your store phone number"
+msgstr "پشتیبانی: شماره تماس فروشگاه شما"
+
+#: src/Builder/library-strings.php:204
+msgid "Terms of use"
+msgstr "شرایط استفاده"
+
+#: src/Builder/library-strings.php:205
+msgid "The best selling products in a numbered list."
+msgstr "پرفروش‌ترین کالاها در فهرستی شماره‌دار."
+
+#: src/Builder/library-strings.php:206
+msgid "The first phone header on your brand colour."
+msgstr "اولین سربرگ گوشی، به رنگ برند شما."
+
+#: src/Builder/library-strings.php:207
+msgid "The four newest articles."
+msgstr "چهار نوشته تازه."
+
+#: src/Builder/library-strings.php:208
+msgid "The newest models"
+msgstr "جدیدترین مدل‌ها"
+
+#: src/Builder/library-strings.php:209
+msgid "The support team answered all my questions patiently."
+msgstr "تیم پشتیبانی با حوصله به همه پرسش‌هایم پاسخ داد."
+
+#: src/Builder/library-strings.php:210
+msgid "Three large slides with text, a button and a product image."
+msgstr "سه اسلاید بزرگ با متن، دکمه و تصویر کالا."
+
+#: src/Builder/library-strings.php:211
+msgid "Three plans"
+msgstr "سه طرح"
+
+#: src/Builder/library-strings.php:212
+msgid "Three pricing tables side by side, the middle one highlighted."
+msgstr "سه جدول قیمت کنار هم، با برجسته شدن طرح وسط."
+
+#: src/Builder/library-strings.php:213
+#: src/Widgets/Header/MenuToggle.php:128
+msgid "Track order"
+msgstr "پیگیری سفارش"
+
+#: src/Builder/library-strings.php:214
+msgid "Track your order"
+msgstr "پیگیری سفارش"
+
+#: src/Builder/library-strings.php:215
+#: src/Widgets/Store/TrustMarks.php:107
+msgid "Trust badge"
+msgstr "نماد اعتماد"
+
+#: src/Builder/library-strings.php:216
+#: src/Widgets/Store/TrustMarks.php:83
+msgid "Trust badges"
+msgstr "نمادهای اعتماد"
+
+#: src/Builder/library-strings.php:217
+msgid "Two large banners with a button."
+msgstr "دو بنر بزرگ با دکمه."
+
+#: src/Builder/library-strings.php:218
+msgid "Two wide banners"
+msgstr "دو بنر پهن"
+
+#: src/Builder/library-strings.php:219
+#: src/Widgets/Store/Banners.php:92
+#: src/Widgets/Store/Banners.php:146
+msgid "Up to 12% off"
+msgstr "تا ۱۲٪ تخفیف"
+
+#: src/Builder/library-strings.php:220
+#: src/Widgets/Header/CategoryMenu.php:96
+msgid "Up to 30% off"
+msgstr "تا ۳۰٪ تخفیف"
+
+#: src/Builder/library-strings.php:221
+#: src/Widgets/Store/Stories.php:109
+msgid "View"
+msgstr "مشاهده"
+
+#: src/Builder/library-strings.php:222
+msgid "Weekly groceries delivered the same day"
+msgstr "خرید هفتگی، تحویل همان روز"
+
+#: src/Builder/library-strings.php:223
+msgid "What our customers say"
+msgstr "مشتریان ما چه می‌گویند"
+
+#: src/Builder/library-strings.php:224
+msgid "White top row and a menu row in your brand colour."
+msgstr "ردیف بالای سفید و ردیف منو به رنگ برند شما."
+
+#: src/Builder/library-strings.php:225
+msgid "Wireless sound"
+msgstr "صدای بی‌سیم"
+
+#: src/Builder/library-strings.php:226
+#: src/Widgets/Header/Wishlist.php:34
+msgid "Wishlist"
+msgstr "علاقه‌مندی"
+
+#: src/Builder/library-strings.php:227
+msgid "With a dark top bar"
+msgstr "با نوار بالای تیره"
+
+#: src/Builder/library-strings.php:228
+#: src/Widgets/Store/Banners.php:98
+msgid "Work laptops"
+msgstr "لپ‌تاپ کاری"
+
+#: src/Builder/library-strings.php:229
+msgid "Work with us"
+msgstr "همکاری با ما"
+
+#: src/Builder/library-strings.php:230
+#: src/Widgets/Store/Posts.php:69
+msgid "Worth reading"
+msgstr "خواندنی‌ها"
+
+#: src/Builder/library-strings.php:231
+msgid "Write a sentence about your store here."
+msgstr "یک جمله درباره فروشگاه خود اینجا بنویسید."
+
+#: src/Builder/library-strings.php:232
+msgid "Write a short description of your store, its guarantees and delivery here. Search engines read it too."
+msgstr "توضیح کوتاهی از فروشگاه، ضمانت‌ها و ارسال آن اینجا بنویسید. موتورهای جستجو هم آن را می‌خوانند."
+
+#: src/Builder/library-strings.php:233
+msgid "Yes, in the cities shown at checkout."
+msgstr "بله، در شهرهایی که هنگام تسویه نشان داده می‌شوند."
+
+#: src/Builder/library-strings.php:234
+msgid "Your store address"
+msgstr "نشانی فروشگاه شما"
+
+#: src/Builder/library-strings.php:235
+msgid "Your store email"
+msgstr "ایمیل فروشگاه شما"
+
+#: src/Builder/library-strings.php:236
+msgid "Your store phone number"
+msgstr "شماره تماس فروشگاه شما"
+
+#: src/Builder/library-strings.php:237
+#: src/Widgets/Store/TrustMarks.php:128
+msgid "e-Namad trust badge"
+msgstr "نماد اعتماد الکترونیکی"
+
+#: src/Builder/library-strings.php:238
+#: src/Widgets/General/PricingTable.php:82
+msgid "month"
+msgstr "ماه"
+
+#: src/Builder/Rest.php:115
+msgid "This layout no longer exists."
+msgstr "این چیدمان دیگر وجود ندارد."
+
+#: src/Builder/Rest.php:129
+msgid "Choose what kind of layout to make."
+msgstr "نوع چیدمانی را که می‌خواهید بسازید انتخاب کنید."
+
+#: src/Builder/Rest.php:136
+#: src/Elementor/Integration.php:279
+msgid "This template could not be found."
+msgstr "این طرح پیدا نشد."
+
+#: src/Builder/Rest.php:262
+msgid "Unknown condition."
+msgstr "شرط ناشناخته."
+
+#: src/Builder/Rules.php:56
+msgid "Front page"
+msgstr "صفحه اصلی"
+
+#: src/Builder/Rules.php:61
+msgid "Search results"
+msgstr "نتایج جستجو"
+
+#: src/Builder/Rules.php:66
+msgid "Page not found (404)"
+msgstr "صفحه پیدا نشد (۴۰۴)"
+
+#: src/Builder/Rules.php:71
+msgid "All pages"
+msgstr "همه برگه‌ها"
+
+#: src/Builder/Rules.php:76
+msgid "Specific pages"
+msgstr "برگه‌های مشخص"
+
+#: src/Builder/Rules.php:81
+msgid "Blog and post archives"
+msgstr "وبلاگ و بایگانی نوشته‌ها"
+
+#: src/Builder/Rules.php:86
+msgid "All posts"
+msgstr "همه نوشته‌ها"
+
+#: src/Builder/Rules.php:91
+msgid "Specific posts"
+msgstr "نوشته‌های مشخص"
+
+#: src/Builder/Rules.php:96
+msgid "Post category"
+msgstr "دسته نوشته"
+
+#: src/Builder/Rules.php:102
+msgid "Post tag"
+msgstr "برچسب نوشته"
+
+#: src/Builder/Rules.php:108
+msgid "Shop and product archives"
+msgstr "فروشگاه و بایگانی کالاها"
+
+#: src/Builder/Rules.php:113
+msgid "All products"
+msgstr "همه کالاها"
+
+#: src/Builder/Rules.php:118
+msgid "Specific products"
+msgstr "کالاهای مشخص"
+
+#: src/Builder/Rules.php:123
+msgid "Product category"
+msgstr "دسته کالا"
+
+#: src/Builder/Rules.php:129
+msgid "Product tag"
+msgstr "برچسب کالا"
+
+#: src/Builder/Rules.php:135
+#: src/Elementor/Kit.php:125
+msgid "Brand"
+msgstr "برند"
+
+#: src/Builder/Rules.php:141
+msgid "Product type"
+msgstr "نوع کالا"
+
+#: src/Builder/Rules.php:172
+msgid "Simple product"
+msgstr "کالای ساده"
+
+#: src/Builder/Rules.php:173
+msgid "Variable product"
+msgstr "کالای متغیر"
+
+#: src/Builder/Rules.php:174
+msgid "Grouped product"
+msgstr "کالای گروهی"
+
+#: src/Builder/Rules.php:175
+msgid "External/Affiliate product"
+msgstr "کالای خارجی/همکاری"
+
+#: src/Builder/Types.php:30
+msgid "Header"
+msgstr "سربرگ"
+
+#: src/Builder/Types.php:31
+msgid "Headers"
+msgstr "سربرگ‌ها"
+
+#: src/Builder/Types.php:32
+msgid "The top of every page: logo, menus, search and cart. Make one for desktop and one for mobile, or one for both."
+msgstr "بالای همه صفحه‌ها: لوگو، منوها، جستجو و سبد خرید. یکی برای دسکتاپ و یکی برای موبایل بسازید، یا یکی برای هر دو."
+
+#: src/Builder/Types.php:39
+msgid "Footer"
+msgstr "پابرگ"
+
+#: src/Builder/Types.php:40
+msgid "Footers"
+msgstr "پابرگ‌ها"
+
+#: src/Builder/Types.php:41
+msgid "The bottom of every page: links, trust badges, payment marks and app links."
+msgstr "پایین همه صفحه‌ها: پیوندها، نمادهای اعتماد، نشان‌های پرداخت و پیوند اپ."
+
+#: src/Builder/Types.php:48
+msgid "Reusable block"
+msgstr "بلوک تکرارپذیر"
+
+#: src/Builder/Types.php:49
+msgid "Reusable blocks"
+msgstr "بلوک‌های تکرارپذیر"
+
+#: src/Builder/Types.php:50
+msgid "A piece of design you can show in a mega menu, a slider or anywhere with a shortcode."
+msgstr "تکه‌ای از طراحی که می‌توانید در مگامنو، اسلایدر یا هر جای دیگر با کد کوتاه نمایش دهید."
+
+#: src/Builder/Types.php:56
+msgid "Single product"
+msgstr "صفحه کالا"
+
+#: src/Builder/Types.php:56
+msgid "Single products"
+msgstr "صفحه‌های کالا"
+
+#: src/Builder/Types.php:57
+msgid "Shop archive"
+msgstr "بایگانی فروشگاه"
+
+#: src/Builder/Types.php:57
+msgid "Shop archives"
+msgstr "بایگانی‌های فروشگاه"
+
+#: src/Builder/Types.php:58
+msgid "Product card"
+msgstr "کارت کالا"
+
+#: src/Builder/Types.php:58
+msgid "Product cards"
+msgstr "کارت‌های کالا"
+
+#: src/Builder/Types.php:59
+msgid "Carts"
+msgstr "سبدهای خرید"
+
+#: src/Builder/Types.php:60
+msgid "Checkout form"
+msgstr "فرم تسویه حساب"
+
+#: src/Builder/Types.php:60
+msgid "Checkout forms"
+msgstr "فرم‌های تسویه حساب"
+
+#: src/Builder/Types.php:61
+msgid "Checkout content"
+msgstr "محتوای تسویه حساب"
+
+#: src/Builder/Types.php:61
+msgid "Checkout contents"
+msgstr "محتواهای تسویه حساب"
+
+#: src/Builder/Types.php:62
+msgid "Thank you page"
+msgstr "صفحه تشکر"
+
+#: src/Builder/Types.php:62
+msgid "Thank you pages"
+msgstr "صفحه‌های تشکر"
+
+#: src/Builder/Types.php:63
+msgid "Login and register"
+msgstr "ورود و ثبت‌نام"
+
+#: src/Builder/Types.php:63
+msgid "Login and register pages"
+msgstr "صفحه‌های ورود و ثبت‌نام"
+
+#: src/Builder/Types.php:64
+msgid "Lost password"
+msgstr "فراموشی رمز"
+
+#: src/Builder/Types.php:64
+msgid "Lost password pages"
+msgstr "صفحه‌های فراموشی رمز"
+
+#: src/Builder/Types.php:65
+msgid "Account pages"
+msgstr "صفحه‌های حساب کاربری"
+
+#: src/Builder/Types.php:66
+msgid "Single post"
+msgstr "صفحه نوشته"
+
+#: src/Builder/Types.php:66
+msgid "Single posts"
+msgstr "صفحه‌های نوشته"
+
+#: src/Builder/Types.php:67
+msgid "Blog archive"
+msgstr "بایگانی وبلاگ"
+
+#: src/Builder/Types.php:67
+msgid "Blog archives"
+msgstr "بایگانی‌های وبلاگ"
+
+#: src/Elementor/Controls.php:237
+#: src/Store/Menus.php:246
+#: src/Store/Menus.php:271
+msgid "None"
+msgstr "هیچ"
+
+#: src/Elementor/DynamicTags.php:112
+msgid "In stock"
+msgstr "موجود"
+
+#: src/Elementor/DynamicTags.php:112
+#: src/Store/Cards.php:101
+msgid "Out of stock"
+msgstr "ناموجود"
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:67
+#, php-format
+msgid "%s: header and footer"
+msgstr "%s: سربرگ و پابرگ"
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:69
+#, php-format
+msgid "%s: store"
+msgstr "%s: فروشگاه"
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:71
+#, php-format
+msgid "%s: general"
+msgstr "%s: عمومی"
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:73
+#, php-format
+msgid "%s: footer"
+msgstr "%s: پابرگ"
+
+#: src/Elementor/Integration.php:138
+msgid "Ready-made designs"
+msgstr "طرح‌های آماده"
+
+#: src/Elementor/Integration.php:140
+msgid "Pages"
+msgstr "صفحه‌ها"
+
+#: src/Elementor/Integration.php:141
+msgid "Insert"
+msgstr "درج"
+
+#: src/Elementor/Integration.php:144
+msgid "Nothing here yet."
+msgstr "هنوز چیزی اینجا نیست."
+
+#: src/Elementor/Integration.php:146
+msgid "The design was added to the page."
+msgstr "طرح به صفحه اضافه شد."
+
+#: src/Elementor/Kit.php:51
+msgid "Theme fonts"
+msgstr "فونت‌های قالب"
+
+#: src/Elementor/Kit.php:130
+#: src/Elementor/Kit.php:140
+msgid "Accent"
+msgstr "رنگ تأکید"
+
+#: src/Elementor/Kit.php:135
+#: src/Elementor/Kit.php:147
+#: src/Widgets/Footer/AppLinks.php:97
+#: src/Widgets/Footer/Copyright.php:82
+#: src/Widgets/General/AnimatedText.php:56
+#: src/Widgets/General/Button.php:53
+#: src/Widgets/General/Hotspots.php:103
+#: src/Widgets/General/IconBox.php:78
+#: src/Widgets/General/IconList.php:73
+#: src/Widgets/General/Text.php:48
+#: src/Widgets/General/Text.php:53
+#: src/Widgets/General/Timeline.php:78
+#: src/Widgets/Header/Cart.php:93
+#: src/Widgets/Header/MenuToggle.php:110
+#: src/Widgets/Header/StickyNav.php:62
+#: src/Widgets/Header/Wishlist.php:71
+#: src/Widgets/Store/HeroSlider.php:100
+#: src/Widgets/Store/QuickLinks.php:84
+#: src/Widgets/Store/TrustMarks.php:94
+#: src/Widgets/Store/TrustMarks.php:159
+msgid "Text"
+msgstr "متن"
+
+#: src/Elementor/Kit.php:145
+msgid "Headings"
+msgstr "عنوان‌ها"
+
+#: src/Elementor/Kit.php:146
+msgid "Subheadings"
+msgstr "زیرعنوان‌ها"
+
+#: src/Elementor/Kit.php:148
+msgid "Buttons"
+msgstr "دکمه‌ها"
+
+#: src/Elementor/Tags/CustomField.php:34
+msgid "Custom field"
+msgstr "زمینه دلخواه"
+
+#: src/Elementor/Tags/CustomField.php:74
+msgid "Field name"
+msgstr "نام زمینه"
+
+#: src/Elementor/Tags/JalaliDate.php:34
+msgid "Jalali date"
+msgstr "تاریخ شمسی"
+
+#: src/Elementor/Tags/JalaliDate.php:78
+msgid "Today"
+msgstr "امروز"
+
+#: src/Elementor/Tags/JalaliDate.php:79
+msgid "Publish date of the post"
+msgstr "تاریخ انتشار نوشته"
+
+#: src/Elementor/Tags/JalaliDate.php:80
+msgid "Last update of the post"
+msgstr "آخرین به‌روزرسانی نوشته"
+
+#: src/Elementor/Tags/JalaliDate.php:87
+msgid "Format"
+msgstr "قالب نمایش"
+
+#: src/Elementor/Tags/JalaliDate.php:90
+msgid "For example j F Y shows 19 Aban 1405."
+msgstr "برای نمونه j F Y تاریخ را به شکل ۱۹ آبان ۱۴۰۵ نشان می‌دهد."
+
+#: src/Elementor/Tags/ProductPrice.php:34
+msgid "Product price"
+msgstr "قیمت کالا"
+
+#: src/Elementor/Tags/ProductPrice.php:74
+#: src/Elementor/Tags/ProductStock.php:74
+#: src/Widgets/General/Hotspots.php:92
+msgid "Product"
+msgstr "کالا"
+
+#: src/Elementor/Tags/ProductPrice.php:78
+#: src/Elementor/Tags/ProductStock.php:78
+msgid "Leave empty to use the product of the page."
+msgstr "برای استفاده از کالای همین صفحه خالی بگذارید."
+
+#: src/Elementor/Tags/ProductPrice.php:83
+#: src/Widgets/General/PricingTable.php:74
+msgid "Price"
+msgstr "قیمت"
+
+#: src/Elementor/Tags/ProductPrice.php:87
+msgid "Current price"
+msgstr "قیمت فعلی"
+
+#: src/Elementor/Tags/ProductPrice.php:88
+msgid "Regular price"
+msgstr "قیمت عادی"
+
+#: src/Elementor/Tags/ProductPrice.php:89
+msgid "Sale price"
+msgstr "قیمت با تخفیف"
+
+#: src/Elementor/Tags/ProductStock.php:34
+msgid "Product stock"
+msgstr "موجودی کالا"
+
+#: src/Elementor/Tags/ProductStock.php:87
+msgid "In stock or out of stock"
+msgstr "موجود یا ناموجود"
+
+#: src/Elementor/Tags/ProductStock.php:88
+msgid "Quantity left"
+msgstr "تعداد باقی‌مانده"
+
+#: src/Elementor/Tags/StoreInfo.php:34
+msgid "Store details"
+msgstr "اطلاعات فروشگاه"
+
+#: src/Elementor/Tags/StoreInfo.php:74
+msgid "Detail"
+msgstr "مورد"
+
+#: src/Elementor/Tags/StoreInfo.php:79
+msgid "Tagline"
+msgstr "شعار"
+
+#: src/Elementor/Tags/StoreInfo.php:81
+msgid "Address"
+msgstr "نشانی"
+
+#: src/Elementor/Tags/StoreInfo.php:82
+msgid "City"
+msgstr "شهر"
+
+#: src/Options.php:139
+msgid "Layout builder"
+msgstr "سازنده چیدمان"
+
+#: src/Options.php:140
+msgid "Design the header, footer and reusable blocks with Elementor, and choose where each one shows."
+msgstr "سربرگ، پابرگ و بلوک‌های تکرارپذیر را با المنتور طراحی کنید و تعیین کنید هر کدام کجا نمایش داده شود."
+
+#: src/Options.php:147
+msgid "Store widgets"
+msgstr "ابزارک‌های فروشگاه"
+
+#: src/Options.php:148
+msgid "Header, home page and general widgets for Elementor, also usable as shortcodes. Each widget loads its files only on pages that use it."
+msgstr "ابزارک‌های سربرگ، صفحه اصلی و عمومی برای المنتور که با کد کوتاه هم کار می‌کنند. هر ابزارک فایل‌هایش را فقط در صفحه‌هایی بارگذاری می‌کند که از آن استفاده می‌کنند."
+
+#: src/Store/Cards.php:62
+msgid "Call for price"
+msgstr "برای قیمت تماس بگیرید"
+
+#. translators: %s: rating such as 4.5.
+#: src/Store/Cards.php:75
+#, php-format
+msgid "Rated %s out of 5"
+msgstr "امتیاز %s از ۵"
+
+#. translators: %s: number of items left.
+#: src/Store/Cards.php:105
+#, php-format
+msgid "Only %s left in stock"
+msgstr "فقط %s عدد در انبار باقی مانده"
+
+#: src/Store/Cards.php:132
+msgid "Time left for this offer"
+msgstr "زمان باقی‌مانده این پیشنهاد"
+
+#. translators: %s: percent such as 60%.
+#: src/Store/Cards.php:140
+#, php-format
+msgid "%s sold"
+msgstr "%s فروخته شده"
+
+#. translators: %s: percent such as 40%.
+#: src/Store/Cards.php:142
+#, php-format
+msgid "%s left"
+msgstr "%s باقی مانده"
+
+#: src/Store/Cards.php:159
+#: src/Store/Menus.php:220
+#: src/Store/Menus.php:272
+msgid "New"
+msgstr "جدید"
+
+#: src/Store/Cards.php:165
+msgid "Special"
+msgstr "ویژه"
+
+#: src/Store/Catalog.php:35
+msgid "Most viewed"
+msgstr "پربازدیدترین"
+
+#: src/Store/Catalog.php:36
+msgid "Featured"
+msgstr "منتخب"
+
+#: src/Store/Catalog.php:37
+msgid "Top rated"
+msgstr "بیشترین امتیاز"
+
+#: src/Store/Catalog.php:38
+msgid "From categories"
+msgstr "از دسته‌بندی‌ها"
+
+#: src/Store/Catalog.php:39
+msgid "Hand-picked"
+msgstr "دست‌چین"
+
+#: src/Store/Forms.php:95
+msgid "Thank you. Your message was sent and we will answer soon."
+msgstr "سپاس. پیام شما فرستاده شد و به‌زودی پاسخ می‌دهیم."
+
+#: src/Store/Forms.php:96
+msgid "Thank you. You will hear about our offers first."
+msgstr "سپاس. از این پس اول از همه از پیشنهادهای ما باخبر می‌شوید."
+
+#: src/Store/Forms.php:97
+msgid "Please fill in the fields correctly."
+msgstr "لطفاً زمینه‌ها را درست پر کنید."
+
+#: src/Store/Forms.php:98
+msgid "Too many tries. Please wait a minute and try again."
+msgstr "تلاش‌ها بیش از حد بود. لطفاً یک دقیقه صبر کنید و دوباره امتحان کنید."
+
+#: src/Store/Forms.php:99
+msgid "The form could not be sent. Please try again."
+msgstr "فرم فرستاده نشد. لطفاً دوباره امتحان کنید."
+
+#. translators: 1: store name, 2: sender name.
+#: src/Store/Forms.php:173
+#, php-format
+msgid "[%1$s] New message from %2$s"
+msgstr "[%1$s] پیام تازه از %2$s"
+
+#: src/Store/Menus.php:64
+msgid "Menu at the \"Primary menu\" location"
+msgstr "منوی جایگاه «منوی اصلی»"
+
+#: src/Store/Menus.php:224
+#: src/Store/Menus.php:273
+msgid "Hot"
+msgstr "داغ"
+
+#: src/Store/Menus.php:250
+msgid "None (normal sub-menu)"
+msgstr "هیچ (زیرمنوی معمولی)"
+
+#: src/Store/Menus.php:265
+#: src/Widgets/Footer/AppLinks.php:102
+#: src/Widgets/General/Button.php:89
+#: src/Widgets/General/Counter.php:86
+#: src/Widgets/General/Heading.php:59
+#: src/Widgets/General/IconBox.php:61
+#: src/Widgets/General/IconList.php:79
+#: src/Widgets/General/Team.php:94
+#: src/Widgets/General/Timeline.php:83
+#: src/Widgets/Header/HeaderWidget.php:57
+#: src/Widgets/Header/MenuToggle.php:115
+#: src/Widgets/Store/QuickLinks.php:90
+#: src/Widgets/Store/TrustMarks.php:148
+msgid "Icon"
+msgstr "آیکون"
+
+#: src/Store/Menus.php:269
+msgid "Badge"
+msgstr "نشان"
+
+#: src/Store/Menus.php:274
+msgid "Custom text"
+msgstr "متن دلخواه"
+
+#: src/Store/Menus.php:280
+msgid "Badge text (optional)"
+msgstr "متن نشان (اختیاری)"
+
+#: src/Store/Menus.php:286
+msgid "Small image"
+msgstr "تصویر کوچک"
+
+#: src/Store/Menus.php:288
+msgid "Choose image"
+msgstr "انتخاب تصویر"
+
+#: src/Store/Menus.php:291
+msgid "Mega menu (a reusable block)"
+msgstr "مگامنو (یک بلوک تکرارپذیر)"
+
+#: src/Store/Menus.php:295
+msgid "Mega menu width"
+msgstr "پهنای مگامنو"
+
+#: src/Store/Menus.php:297
+msgid "Content width"
+msgstr "پهنای محتوا"
+
+#: src/Store/Menus.php:298
+#: src/Widgets/General/Button.php:94
+msgid "Full width"
+msgstr "تمام‌عرض"
+
+#: src/Store/Menus.php:299
+msgid "As wide as its content"
+msgstr "به اندازه محتوایش"
+
+#: src/Widgets/Footer/AppLinks.php:34
+msgid "App links"
+msgstr "پیوند اپلیکیشن"
+
+#: src/Widgets/Footer/AppLinks.php:80
+msgid "Apps"
+msgstr "اپلیکیشن‌ها"
+
+#: src/Widgets/Footer/AppLinks.php:85
+#: src/Widgets/General/Counter.php:69
+msgid "Label"
+msgstr "برچسب"
+
+#: src/Widgets/Footer/AppLinks.php:91
+#: src/Widgets/General/Social.php:120
+#: src/Widgets/General/Team.php:83
+#: src/Widgets/Header/StickyNav.php:51
+#: src/Widgets/Header/StickyNav.php:56
+#: src/Widgets/Store/QuickLinks.php:73
+#: src/Widgets/Store/QuickLinks.php:78
+msgid "Links"
+msgstr "پیوندها"
+
+#: src/Widgets/Footer/AppLinks.php:108
+#: src/Widgets/General/Button.php:59
+#: src/Widgets/General/Hotspots.php:108
+#: src/Widgets/General/IconBox.php:84
+#: src/Widgets/General/IconList.php:84
+#: src/Widgets/General/Team.php:100
+#: src/Widgets/Header/MenuToggle.php:121
+#: src/Widgets/Header/Wishlist.php:77
+#: src/Widgets/Store/Banners.php:108
+#: src/Widgets/Store/HeroSlider.php:111
+#: src/Widgets/Store/QuickLinks.php:102
+#: src/Widgets/Store/TrustMarks.php:117
+msgid "Link"
+msgstr "پیوند"
+
+#: src/Widgets/Footer/Copyright.php:35
+#: src/Widgets/Footer/Copyright.php:77
+msgid "Copyright line"
+msgstr "خط حق نشر"
+
+#: src/Widgets/Footer/Copyright.php:83
+msgid "{year} is replaced with the current year and {site} with the store name."
+msgstr "{year} با سال جاری و {site} با نام فروشگاه جایگزین می‌شود."
+
+#: src/Widgets/Footer/Copyright.php:89
+msgid "Show \"back to top\""
+msgstr "نمایش «بازگشت به بالا»"
+
+#: src/Widgets/Footer/Copyright.php:113
+msgid "Back to top"
+msgstr "بازگشت به بالا"
+
+#: src/Widgets/Footer/Perks.php:34
+#: src/Widgets/Store/TrustMarks.php:137
+msgid "Store advantages"
+msgstr "مزایای فروشگاه"
+
+#: src/Widgets/General/Accordion.php:32
+msgid "Store accordion"
+msgstr "آکاردئون فروشگاه"
+
+#: src/Widgets/General/Accordion.php:47
+#: src/Widgets/General/Accordion.php:52
+msgid "Items"
+msgstr "آیتم‌ها"
+
+#: src/Widgets/General/Accordion.php:58
+msgid "Question or title"
+msgstr "پرسش یا عنوان"
+
+#: src/Widgets/General/Accordion.php:64
+msgid "Answer"
+msgstr "پاسخ"
+
+#: src/Widgets/General/Accordion.php:75
+msgid "Open the first item"
+msgstr "باز بودن آیتم اول"
+
+#: src/Widgets/General/Accordion.php:81
+msgid "Allow several open at once"
+msgstr "اجازه باز بودن چند آیتم با هم"
+
+#: src/Widgets/General/AnimatedText.php:32
+msgid "Animated text"
+msgstr "متن متحرک"
+
+#: src/Widgets/General/AnimatedText.php:61
+msgid "Before the words"
+msgstr "پیش از واژه‌ها"
+
+#: src/Widgets/General/AnimatedText.php:62
+msgid "Shopping that is"
+msgstr "خریدی که"
+
+#: src/Widgets/General/AnimatedText.php:67
+msgid "Changing words, one per line"
+msgstr "واژه‌های چرخان، هر کدام در یک خط"
+
+#: src/Widgets/General/AnimatedText.php:68
+msgid ""
+"fast\n"
+"genuine\n"
+"affordable"
+msgstr ""
+"سریع است\n"
+"اصل است\n"
+"به‌صرفه است"
+
+#: src/Widgets/General/AnimatedText.php:73
+msgid "After the words"
+msgstr "پس از واژه‌ها"
+
+#: src/Widgets/General/AnimatedText.php:78
+#: src/Widgets/General/Heading.php:64
+msgid "Heading level"
+msgstr "سطح عنوان"
+
+#: src/Widgets/General/AnimatedText.php:83
+msgid "Paragraph"
+msgstr "پاراگراف"
+
+#: src/Widgets/General/Button.php:33
+msgid "Store button"
+msgstr "دکمه فروشگاه"
+
+#: src/Widgets/General/Button.php:48
+msgid "Button"
+msgstr "دکمه"
+
+#: src/Widgets/General/Button.php:64
+msgid "Style"
+msgstr "سبک"
+
+#: src/Widgets/General/Button.php:67
+msgid "Brand colour"
+msgstr "رنگ برند"
+
+#: src/Widgets/General/Button.php:68
+msgid "Accent colour"
+msgstr "رنگ تأکید"
+
+#: src/Widgets/General/Button.php:69
+msgid "Outlined"
+msgstr "حاشیه‌دار"
+
+#: src/Widgets/General/Button.php:70
+msgid "Soft"
+msgstr "ملایم"
+
+#: src/Widgets/General/Button.php:71
+msgid "White"
+msgstr "سفید"
+
+#: src/Widgets/General/Button.php:72
+msgid "Text only"
+msgstr "فقط متن"
+
+#: src/Widgets/General/Button.php:78
+#: src/Widgets/General/Countdown.php:76
+#: src/Widgets/General/Social.php:144
+#: src/Widgets/Header/Logo.php:70
+msgid "Size"
+msgstr "اندازه"
+
+#: src/Widgets/General/Button.php:81
+#: src/Widgets/General/Countdown.php:79
+#: src/Widgets/General/Social.php:147
+#: src/Widgets/Header/NavMenu.php:97
+msgid "Small"
+msgstr "کوچک"
+
+#: src/Widgets/General/Button.php:82
+#: src/Widgets/General/Countdown.php:80
+#: src/Widgets/General/Social.php:148
+#: src/Widgets/Header/Logo.php:73
+#: src/Widgets/Header/NavMenu.php:98
+#: src/Widgets/Store/HeroSlider.php:172
+msgid "Medium"
+msgstr "متوسط"
+
+#: src/Widgets/General/Button.php:83
+#: src/Widgets/General/Countdown.php:81
+#: src/Widgets/Header/Logo.php:74
+msgid "Large"
+msgstr "بزرگ"
+
+#: src/Widgets/General/ContactForm.php:34
+msgid "Contact form"
+msgstr "فرم تماس"
+
+#: src/Widgets/General/ContactForm.php:58
+#: src/Widgets/General/Newsletter.php:58
+msgid "Form"
+msgstr "فرم"
+
+#: src/Widgets/General/ContactForm.php:63
+#: src/Widgets/General/Countdown.php:64
+#: src/Widgets/General/Heading.php:48
+#: src/Widgets/General/Heading.php:53
+#: src/Widgets/General/IconBox.php:72
+#: src/Widgets/General/IconList.php:62
+#: src/Widgets/General/Newsletter.php:63
+#: src/Widgets/General/Timeline.php:72
+#: src/Widgets/Store/Banners.php:91
+#: src/Widgets/Store/Deals.php:88
+#: src/Widgets/Store/HeroSlider.php:88
+#: src/Widgets/Store/StoreWidget.php:47
+#: src/Widgets/Store/Stories.php:79
+#: src/Widgets/Store/TrustMarks.php:88
+#: src/Widgets/Store/TrustMarks.php:154
+msgid "Title"
+msgstr "عنوان"
+
+#: src/Widgets/General/ContactForm.php:69
+#: src/Widgets/General/Newsletter.php:75
+#: src/Widgets/General/PricingTable.php:111
+#: src/Widgets/Header/CategoryMenu.php:76
+#: src/Widgets/Store/Banners.php:103
+#: src/Widgets/Store/HeroSlider.php:105
+msgid "Button text"
+msgstr "متن دکمه"
+
+#: src/Widgets/General/ContactForm.php:100
+msgid "Your name"
+msgstr "نام شما"
+
+#: src/Widgets/General/ContactForm.php:113
+msgid "Message"
+msgstr "پیام"
+
+#: src/Widgets/General/Countdown.php:35
+#: src/Widgets/General/Countdown.php:59
+msgid "Countdown"
+msgstr "شمارش معکوس"
+
+#: src/Widgets/General/Countdown.php:65
+msgid "The sale ends in"
+msgstr "پایان حراج تا"
+
+#: src/Widgets/General/Countdown.php:70
+msgid "Ends"
+msgstr "پایان"
+
+#: src/Widgets/General/Countdown.php:71
+msgid "Leave empty to count to midnight."
+msgstr "برای شمارش تا نیمه‌شب خالی بگذارید."
+
+#: src/Widgets/General/Countdown.php:87
+msgid "Text when time is up"
+msgstr "متن پس از پایان زمان"
+
+#: src/Widgets/General/Countdown.php:88
+msgid "This offer has ended."
+msgstr "این پیشنهاد به پایان رسیده است."
+
+#: src/Widgets/General/Counter.php:33
+#: src/Widgets/General/Counter.php:57
+msgid "Counter"
+msgstr "شمارنده"
+
+#: src/Widgets/General/Counter.php:62
+msgid "Number"
+msgstr "عدد"
+
+#: src/Widgets/General/Counter.php:70
+msgid "Happy customers"
+msgstr "مشتری راضی"
+
+#: src/Widgets/General/Counter.php:75
+msgid "Before the number"
+msgstr "پیش از عدد"
+
+#: src/Widgets/General/Counter.php:80
+msgid "After the number"
+msgstr "پس از عدد"
+
+#: src/Widgets/General/Gallery.php:32
+#: src/Widgets/General/Gallery.php:116
+msgid "Gallery"
+msgstr "گالری"
+
+#: src/Widgets/General/Gallery.php:56
+#: src/Widgets/General/Gallery.php:61
+#: src/Widgets/General/ImageCompare.php:56
+msgid "Images"
+msgstr "تصویرها"
+
+#: src/Widgets/General/Gallery.php:67
+#: src/Widgets/General/Hotspots.php:63
+#: src/Widgets/Store/Deals.php:101
+#: src/Widgets/Store/TrustMarks.php:112
+msgid "Image"
+msgstr "تصویر"
+
+#: src/Widgets/General/Gallery.php:72
+msgid "Caption"
+msgstr "زیرنویس"
+
+#: src/Widgets/General/Gallery.php:80
+#: src/Widgets/Store/DiscountPicks.php:102
+#: src/Widgets/Store/Posts.php:92
+#: src/Widgets/Store/Products.php:106
+msgid "Columns on desktop"
+msgstr "ستون‌ها در دسکتاپ"
+
+#: src/Widgets/General/Gallery.php:126
+msgid "Previous image"
+msgstr "تصویر قبلی"
+
+#: src/Widgets/General/Gallery.php:127
+msgid "Next image"
+msgstr "تصویر بعدی"
+
+#: src/Widgets/General/Heading.php:33
+#: src/Widgets/General/Heading.php:54
+msgid "Section title"
+msgstr "عنوان بخش"
+
+#: src/Widgets/General/Heading.php:74
+#: src/Widgets/General/IconBox.php:99
+#: src/Widgets/Header/NavMenu.php:83
+msgid "Alignment"
+msgstr "چینش"
+
+#: src/Widgets/General/Heading.php:78
+#: src/Widgets/General/IconBox.php:103
+#: src/Widgets/Header/NavMenu.php:87
+msgid "Centre"
+msgstr "وسط"
+
+#: src/Widgets/General/Heading.php:84
+#: src/Widgets/Store/Deals.php:106
+#: src/Widgets/Store/StoreWidget.php:59
+msgid "\"See all\" text"
+msgstr "متن «مشاهده همه»"
+
+#: src/Widgets/General/Heading.php:85
+#: src/Widgets/Store/StoreWidget.php:60
+msgid "See all"
+msgstr "مشاهده همه"
+
+#: src/Widgets/General/Heading.php:90
+#: src/Widgets/Store/Deals.php:112
+#: src/Widgets/Store/StoreWidget.php:65
+msgid "\"See all\" link"
+msgstr "پیوند «مشاهده همه»"
+
+#: src/Widgets/General/Hotspots.php:34
+msgid "Image hotspots"
+msgstr "نقاط روی تصویر"
+
+#: src/Widgets/General/Hotspots.php:58
+msgid "Image and points"
+msgstr "تصویر و نقطه‌ها"
+
+#: src/Widgets/General/Hotspots.php:68
+msgid "Points"
+msgstr "نقطه‌ها"
+
+#: src/Widgets/General/Hotspots.php:74
+msgid "From the left (percent)"
+msgstr "فاصله از چپ (درصد)"
+
+#: src/Widgets/General/Hotspots.php:82
+msgid "From the top (percent)"
+msgstr "فاصله از بالا (درصد)"
+
+#: src/Widgets/General/Hotspots.php:93
+msgid "Its name, price and link fill the card."
+msgstr "نام، قیمت و پیوند آن کارت را پر می‌کند."
+
+#: src/Widgets/General/Hotspots.php:98
+msgid "Or a title"
+msgstr "یا یک عنوان"
+
+#: src/Widgets/General/Hotspots.php:141
+msgid "View product"
+msgstr "مشاهده کالا"
+
+#: src/Widgets/General/Hotspots.php:154
+msgid "Image with points"
+msgstr "تصویر با نقطه‌ها"
+
+#: src/Widgets/General/IconBox.php:32
+#: src/Widgets/General/IconBox.php:56
+msgid "Icon box"
+msgstr "جعبه آیکون"
+
+#: src/Widgets/General/IconBox.php:67
+msgid "Or an image"
+msgstr "یا یک تصویر"
+
+#: src/Widgets/General/IconBox.php:92
+msgid "Icon above"
+msgstr "آیکون در بالا"
+
+#: src/Widgets/General/IconBox.php:93
+msgid "Icon beside"
+msgstr "آیکون در کنار"
+
+#: src/Widgets/General/IconBox.php:109
+msgid "In a frame"
+msgstr "در قاب"
+
+#: src/Widgets/General/IconList.php:33
+msgid "List with icons"
+msgstr "فهرست با آیکون"
+
+#: src/Widgets/General/IconList.php:57
+msgid "List"
+msgstr "فهرست"
+
+#: src/Widgets/General/IconList.php:67
+msgid "Lines"
+msgstr "خط‌ها"
+
+#: src/Widgets/General/IconList.php:74
+#: src/Widgets/General/IconList.php:88
+msgid "A line"
+msgstr "یک خط"
+
+#: src/Widgets/General/IconList.php:97
+msgid "One under another"
+msgstr "زیر هم"
+
+#: src/Widgets/General/IconList.php:98
+msgid "In a row"
+msgstr "در یک ردیف"
+
+#: src/Widgets/General/ImageCompare.php:32
+msgid "Before and after"
+msgstr "قبل و بعد"
+
+#: src/Widgets/General/ImageCompare.php:61
+#: src/Widgets/General/ImageCompare.php:72
+msgid "Before"
+msgstr "قبل"
+
+#: src/Widgets/General/ImageCompare.php:66
+#: src/Widgets/General/ImageCompare.php:78
+msgid "After"
+msgstr "بعد"
+
+#: src/Widgets/General/ImageCompare.php:71
+msgid "Before label"
+msgstr "برچسب قبل"
+
+#: src/Widgets/General/ImageCompare.php:77
+msgid "After label"
+msgstr "برچسب بعد"
+
+#: src/Widgets/General/ImageCompare.php:83
+msgid "Handle position (percent)"
+msgstr "جای دستگیره (درصد)"
+
+#: src/Widgets/General/ImageCompare.php:107
+msgid "Slide to compare the images"
+msgstr "برای مقایسه تصویرها بکشید"
+
+#: src/Widgets/General/Newsletter.php:34
+msgid "Newsletter"
+msgstr "خبرنامه"
+
+#: src/Widgets/General/Newsletter.php:69
+#: src/Widgets/Header/Search.php:69
+msgid "Placeholder"
+msgstr "متن راهنمای کادر"
+
+#: src/Widgets/General/PricingTable.php:34
+msgid "Pricing table"
+msgstr "جدول قیمت"
+
+#: src/Widgets/General/PricingTable.php:58
+msgid "Plan"
+msgstr "طرح"
+
+#: src/Widgets/General/PricingTable.php:63
+msgid "Plan name"
+msgstr "نام طرح"
+
+#: src/Widgets/General/PricingTable.php:64
+msgid "Gold membership"
+msgstr "عضویت طلایی"
+
+#: src/Widgets/General/PricingTable.php:69
+msgid "Short text"
+msgstr "متن کوتاه"
+
+#: src/Widgets/General/PricingTable.php:81
+msgid "Period"
+msgstr "دوره"
+
+#: src/Widgets/General/PricingTable.php:87
+msgid "What it includes"
+msgstr "آنچه شامل می‌شود"
+
+#: src/Widgets/General/PricingTable.php:93
+msgid "Line"
+msgstr "خط"
+
+#: src/Widgets/General/PricingTable.php:99
+msgid "Included"
+msgstr "شامل است"
+
+#: src/Widgets/General/PricingTable.php:117
+msgid "Button link"
+msgstr "پیوند دکمه"
+
+#: src/Widgets/General/PricingTable.php:122
+msgid "Ribbon"
+msgstr "روبان"
+
+#: src/Widgets/General/PricingTable.php:123
+msgid "For example \"Most popular\"."
+msgstr "برای نمونه «محبوب‌ترین»."
+
+#: src/Widgets/General/PricingTable.php:128
+msgid "Highlight this plan"
+msgstr "برجسته کردن این طرح"
+
+#: src/Widgets/General/PricingTable.php:164
+msgid "Included:"
+msgstr "شامل:"
+
+#: src/Widgets/General/PricingTable.php:165
+msgid "Not included:"
+msgstr "شامل نیست:"
+
+#: src/Widgets/General/Slider.php:39
+msgid "Content slider"
+msgstr "اسلایدر محتوا"
+
+#: src/Widgets/General/Slider.php:63
+#: src/Widgets/General/Slider.php:121
+#: src/Widgets/Store/HeroSlider.php:77
+#: src/Widgets/Store/HeroSlider.php:82
+msgid "Slides"
+msgstr "اسلایدها"
+
+#: src/Widgets/General/Slider.php:69
+msgid "Slides (reusable blocks)"
+msgstr "اسلایدها (بلوک‌های تکرارپذیر)"
+
+#: src/Widgets/General/Slider.php:70
+msgid "Make each slide in Ultra Max > Layouts > Reusable blocks, then choose them here in order."
+msgstr "هر اسلاید را در «الترا مکس > چیدمان‌ها > بلوک‌های تکرارپذیر» بسازید و بعد به ترتیب اینجا انتخاب کنید."
+
+#: src/Widgets/General/Slider.php:75
+msgid "Slides per view on desktop"
+msgstr "تعداد اسلاید در دید، در دسکتاپ"
+
+#: src/Widgets/General/Slider.php:83
+#: src/Widgets/Store/HeroSlider.php:179
+msgid "Seconds per slide"
+msgstr "ثانیه برای هر اسلاید"
+
+#: src/Widgets/General/Slider.php:84
+#: src/Widgets/Store/HeroSlider.php:180
+msgid "0 stops automatic sliding."
+msgstr "عدد ۰ چرخش خودکار را خاموش می‌کند."
+
+#: src/Widgets/General/Slider.php:92
+msgid "Show dots"
+msgstr "نمایش نقطه‌ها"
+
+#: src/Widgets/General/Social.php:29
+msgid "Instagram"
+msgstr "اینستاگرام"
+
+#: src/Widgets/General/Social.php:33
+msgid "Telegram"
+msgstr "تلگرام"
+
+#: src/Widgets/General/Social.php:37
+msgid "WhatsApp"
+msgstr "واتس‌اپ"
+
+#: src/Widgets/General/Social.php:41
+msgid "Eitaa"
+msgstr "ایتا"
+
+#: src/Widgets/General/Social.php:45
+msgid "Bale"
+msgstr "بله"
+
+#: src/Widgets/General/Social.php:49
+msgid "Aparat"
+msgstr "آپارات"
+
+#: src/Widgets/General/Social.php:53
+msgid "LinkedIn"
+msgstr "لینکدین"
+
+#: src/Widgets/General/Social.php:57
+msgid "X"
+msgstr "ایکس"
+
+#: src/Widgets/General/Social.php:78
+msgid "Social networks"
+msgstr "شبکه‌های اجتماعی"
+
+#: src/Widgets/General/Social.php:115
+msgid "Networks"
+msgstr "شبکه‌ها"
+
+#: src/Widgets/General/Social.php:126
+msgid "Network"
+msgstr "شبکه"
+
+#: src/Widgets/General/Social.php:133
+msgid "Link to your page"
+msgstr "پیوند صفحه شما"
+
+#: src/Widgets/General/Social.php:175
+msgid "Our pages on social networks"
+msgstr "صفحه‌های ما در شبکه‌های اجتماعی"
+
+#: src/Widgets/General/Table.php:33
+#: src/Widgets/General/Table.php:57
+msgid "Table"
+msgstr "جدول"
+
+#: src/Widgets/General/Table.php:62
+msgid "Table name"
+msgstr "نام جدول"
+
+#: src/Widgets/General/Table.php:63
+msgid "Size chart"
+msgstr "جدول سایز"
+
+#: src/Widgets/General/Table.php:68
+msgid "Show the name above the table"
+msgstr "نمایش نام بالای جدول"
+
+#: src/Widgets/General/Table.php:74
+msgid "Rows"
+msgstr "ردیف‌ها"
+
+#: src/Widgets/General/Table.php:75
+msgid "One row per line, cells separated by |. The first line is the head."
+msgstr "هر ردیف در یک خط، خانه‌ها با | جدا می‌شوند. خط اول سرستون است."
+
+#: src/Widgets/General/Table.php:77
+msgid ""
+"Size | Chest | Length\n"
+"S | 96 | 68\n"
+"M | 102 | 70\n"
+"L | 108 | 72"
+msgstr ""
+"سایز | دور سینه | قد\n"
+"S | 96 | 68\n"
+"M | 102 | 70\n"
+"L | 108 | 72"
+
+#: src/Widgets/General/Tabs.php:35
+msgid "Store tabs"
+msgstr "زبانه‌های فروشگاه"
+
+#: src/Widgets/General/Tabs.php:50
+#: src/Widgets/General/Tabs.php:55
+#: src/Widgets/General/Tabs.php:121
+#: src/Widgets/Store/ProductTabs.php:79
+#: src/Widgets/Store/ProductTabs.php:84
+msgid "Tabs"
+msgstr "زبانه‌ها"
+
+#: src/Widgets/General/Tabs.php:61
+#: src/Widgets/Store/ProductTabs.php:90
+msgid "Tab name"
+msgstr "نام زبانه"
+
+#: src/Widgets/General/Tabs.php:62
+msgid "Tab"
+msgstr "زبانه"
+
+#: src/Widgets/General/Tabs.php:67
+msgid "Content"
+msgstr "محتوا"
+
+#: src/Widgets/General/Tabs.php:74
+msgid "Or a reusable block"
+msgstr "یا یک بلوک تکرارپذیر"
+
+#: src/Widgets/General/Tabs.php:78
+msgid "Description"
+msgstr "توضیحات"
+
+#: src/Widgets/General/Tabs.php:79
+msgid "Specifications"
+msgstr "مشخصات"
+
+#: src/Widgets/General/Tabs.php:85
+msgid "Look"
+msgstr "ظاهر"
+
+#: src/Widgets/General/Tabs.php:88
+msgid "Underlined"
+msgstr "زیرخط‌دار"
+
+#: src/Widgets/General/Tabs.php:89
+msgid "Pills"
+msgstr "دکمه‌ای"
+
+#: src/Widgets/General/Team.php:32
+#: src/Widgets/General/Team.php:67
+msgid "Team member"
+msgstr "عضو تیم"
+
+#: src/Widgets/General/Team.php:56
+msgid "Person"
+msgstr "شخص"
+
+#: src/Widgets/General/Team.php:61
+#: src/Widgets/General/Testimonials.php:87
+msgid "Photo"
+msgstr "عکس"
+
+#: src/Widgets/General/Team.php:72
+msgid "Role"
+msgstr "سمت"
+
+#: src/Widgets/General/Team.php:73
+msgid "Customer support"
+msgstr "پشتیبانی مشتریان"
+
+#: src/Widgets/General/Team.php:78
+msgid "Short bio"
+msgstr "معرفی کوتاه"
+
+#: src/Widgets/General/Team.php:89
+msgid "Name of the network"
+msgstr "نام شبکه"
+
+#: src/Widgets/General/Testimonials.php:59
+#: src/Widgets/General/Testimonials.php:64
+msgid "Reviews"
+msgstr "نظرها"
+
+#: src/Widgets/General/Testimonials.php:70
+msgid "Words"
+msgstr "متن نظر"
+
+#: src/Widgets/General/Testimonials.php:77
+#: src/Widgets/General/Testimonials.php:99
+msgid "A happy customer"
+msgstr "یک مشتری راضی"
+
+#: src/Widgets/General/Testimonials.php:82
+msgid "City or role"
+msgstr "شهر یا سمت"
+
+#: src/Widgets/General/Testimonials.php:92
+msgid "Stars"
+msgstr "ستاره‌ها"
+
+#: src/Widgets/General/Testimonials.php:100
+msgid "A returning customer"
+msgstr "یک مشتری همیشگی"
+
+#: src/Widgets/General/Testimonials.php:101
+msgid "A new customer"
+msgstr "یک مشتری تازه"
+
+#: src/Widgets/General/Testimonials.php:107
+msgid "Reviews per row on desktop"
+msgstr "تعداد نظر در هر ردیف، در دسکتاپ"
+
+#. translators: %s: number of stars.
+#: src/Widgets/General/Testimonials.php:133
+#, php-format
+msgid "%s out of 5 stars"
+msgstr "%s ستاره از ۵"
+
+#: src/Widgets/General/Text.php:33
+msgid "Store text"
+msgstr "متن فروشگاه"
+
+#: src/Widgets/General/Text.php:54
+msgid "Write about your store here."
+msgstr "درباره فروشگاه خود اینجا بنویسید."
+
+#: src/Widgets/General/Timeline.php:32
+#: src/Widgets/General/Timeline.php:120
+msgid "Timeline"
+msgstr "خط زمانی"
+
+#: src/Widgets/General/Timeline.php:56
+#: src/Widgets/General/Timeline.php:61
+msgid "Steps"
+msgstr "مرحله‌ها"
+
+#: src/Widgets/General/Timeline.php:67
+msgid "Date or step"
+msgstr "تاریخ یا مرحله"
+
+#: src/Widgets/General/Timeline.php:73
+#: src/Widgets/General/Timeline.php:88
+msgid "Order placed"
+msgstr "ثبت سفارش"
+
+#: src/Widgets/General/Timeline.php:90
+msgid "Packed"
+msgstr "بسته‌بندی شد"
+
+#: src/Widgets/General/Timeline.php:94
+msgid "Delivered"
+msgstr "تحویل شد"
+
+#: src/Widgets/General/Video.php:33
+#: src/Widgets/General/Video.php:57
+msgid "Video"
+msgstr "ویدیو"
+
+#: src/Widgets/General/Video.php:62
+msgid "Video file (MP4)"
+msgstr "فایل ویدیو (MP4)"
+
+#: src/Widgets/General/Video.php:67
+msgid "Or the embed address"
+msgstr "یا نشانی جاسازی"
+
+#: src/Widgets/General/Video.php:68
+msgid "The address inside the embed code of the video site, starting with https."
+msgstr "نشانی داخل کد جاسازی سایت ویدیو که با https شروع می‌شود."
+
+#: src/Widgets/General/Video.php:73
+#: src/Widgets/Store/Stories.php:85
+msgid "Cover image"
+msgstr "تصویر کاور"
+
+#: src/Widgets/General/Video.php:78
+msgid "Video title"
+msgstr "عنوان ویدیو"
+
+#: src/Widgets/General/Video.php:79
+msgid "Introduction video"
+msgstr "ویدیوی معرفی"
+
+#: src/Widgets/General/Video.php:84
+#: src/Widgets/Store/CategoryCircles.php:104
+msgid "Shape"
+msgstr "شکل"
+
+#: src/Widgets/General/Video.php:87
+msgid "Wide (16:9)"
+msgstr "پهن (۱۶:۹)"
+
+#: src/Widgets/General/Video.php:89
+msgid "Square"
+msgstr "مربع"
+
+#: src/Widgets/General/Video.php:90
+msgid "Tall (phone)"
+msgstr "بلند (گوشی)"
+
+#. translators: %s: video title.
+#: src/Widgets/General/Video.php:116
+#, php-format
+msgid "Play: %s"
+msgstr "پخش: %s"
+
+#: src/Widgets/Header/Account.php:33
+#: src/Widgets/Header/Account.php:50
+msgid "Account"
+msgstr "حساب کاربری"
+
+#: src/Widgets/Header/Account.php:56
+msgid "Text for visitors"
+msgstr "متن برای بازدیدکننده‌ها"
+
+#: src/Widgets/Header/Account.php:62
+msgid "Text for customers"
+msgstr "متن برای مشتریان"
+
+#: src/Widgets/Header/Account.php:81
+#: src/Widgets/Header/MenuToggle.php:228
+msgid "Log in or sign up"
+msgstr "ورود یا ثبت‌نام"
+
+#: src/Widgets/Header/CategoryMenu.php:36
+msgid "Categories menu"
+msgstr "منوی دسته‌بندی"
+
+#: src/Widgets/Header/CategoryMenu.php:71
+#: src/Widgets/Store/CategoryCircles.php:74
+#: src/Widgets/Store/CategoryCircles.php:80
+#: src/Widgets/Store/CategoryCircles.php:176
+msgid "Categories"
+msgstr "دسته‌بندی‌ها"
+
+#: src/Widgets/Header/CategoryMenu.php:83
+msgid "Main categories"
+msgstr "دسته‌بندی‌های اصلی"
+
+#: src/Widgets/Header/CategoryMenu.php:84
+msgid "Leave empty to show all top categories."
+msgstr "برای نمایش همه دسته‌بندی‌های سطح اول خالی بگذارید."
+
+#: src/Widgets/Header/CategoryMenu.php:89
+msgid "Show the category image as a promotion"
+msgstr "نمایش تصویر دسته‌بندی به‌عنوان تبلیغ"
+
+#: src/Widgets/Header/CategoryMenu.php:95
+msgid "Promotion title"
+msgstr "عنوان تبلیغ"
+
+#. translators: %s: category name.
+#: src/Widgets/Header/CategoryMenu.php:162
+#, php-format
+msgid "All products in %s"
+msgstr "همه کالاهای %s"
+
+#: src/Widgets/Header/Divider.php:32
+msgid "Header divider"
+msgstr "جداکننده سربرگ"
+
+#: src/Widgets/Header/HeaderWidget.php:54
+#: src/Widgets/Header/Language.php:55
+#: src/Widgets/Header/Search.php:59
+msgid "Show as"
+msgstr "نمایش به شکل"
+
+#: src/Widgets/Header/HeaderWidget.php:58
+msgid "Button with text"
+msgstr "دکمه با متن"
+
+#: src/Widgets/Header/HeaderWidget.php:59
+msgid "Icon above text"
+msgstr "آیکون بالای متن"
+
+#: src/Widgets/Header/Html.php:33
+#: src/Widgets/Header/Html.php:59
+msgid "HTML"
+msgstr "HTML"
+
+#: src/Widgets/Header/Html.php:64
+msgid "HTML code"
+msgstr "کد HTML"
+
+#: src/Widgets/Header/Html.php:65
+msgid "Scripts are removed. For tracking codes use Ultra Max > Settings > Custom code."
+msgstr "اسکریپت‌ها حذف می‌شوند. برای کدهای رهگیری از «الترا مکس > تنظیمات > کد دلخواه» استفاده کنید."
+
+#: src/Widgets/Header/Language.php:33
+msgid "Language switcher"
+msgstr "تغییر زبان"
+
+#: src/Widgets/Header/Language.php:50
+msgid "Languages"
+msgstr "زبان‌ها"
+
+#: src/Widgets/Header/Language.php:56
+msgid "Needs a translation plugin such as Polylang or WPML."
+msgstr "به افزونه ترجمه‌ای مثل Polylang یا WPML نیاز دارد."
+
+#: src/Widgets/Header/Language.php:59
+msgid "Drop-down list"
+msgstr "فهرست بازشو"
+
+#: src/Widgets/Header/Language.php:60
+msgid "All in a row"
+msgstr "همه در یک ردیف"
+
+#: src/Widgets/Header/Language.php:112
+msgid "Language"
+msgstr "زبان"
+
+#: src/Widgets/Header/Logo.php:64
+msgid "Another logo image"
+msgstr "تصویر لوگوی دیگر"
+
+#: src/Widgets/Header/Logo.php:65
+msgid "Leave empty to use the site logo."
+msgstr "برای استفاده از لوگوی سایت خالی بگذارید."
+
+#: src/Widgets/Header/MenuToggle.php:39
+#: src/Widgets/Header/MenuToggle.php:212
+msgid "Mobile menu"
+msgstr "منوی موبایل"
+
+#: src/Widgets/Header/MenuToggle.php:69
+#: src/Widgets/Header/MenuToggle.php:84
+#: src/Widgets/Header/MenuToggle.php:236
+#: src/Widgets/Header/NavMenu.php:35
+#: src/Widgets/Header/NavMenu.php:70
+#: src/Widgets/Header/NavMenu.php:75
+msgid "Menu"
+msgstr "منو"
+
+#: src/Widgets/Header/MenuToggle.php:78
+msgid "A menu"
+msgstr "یک منو"
+
+#: src/Widgets/Header/MenuToggle.php:92
+msgid "Heading above the list"
+msgstr "عنوان بالای فهرست"
+
+#: src/Widgets/Header/MenuToggle.php:98
+msgid "Show the account link"
+msgstr "نمایش پیوند حساب کاربری"
+
+#. translators: %s: category or menu item name.
+#: src/Widgets/Header/MenuToggle.php:215
+#, php-format
+msgid "All of %s"
+msgstr "همه %s"
+
+#: src/Widgets/Header/MenuToggle.php:229
+msgid "To follow your orders, log in to your account"
+msgstr "برای پیگیری سفارش‌ها وارد حساب خود شوید"
+
+#: src/Widgets/Header/NavMenu.php:76
+msgid "Icons, badges and mega panels are set for each item in Appearance > Menus."
+msgstr "آیکون، نشان و پنل مگامنو برای هر آیتم در «نمایش > فهرست‌ها» تنظیم می‌شود."
+
+#: src/Widgets/Header/NavMenu.php:88
+msgid "End"
+msgstr "انتها"
+
+#: src/Widgets/Header/NavMenu.php:94
+msgid "Text size"
+msgstr "اندازه متن"
+
+#: src/Widgets/Header/NavMenu.php:104
+msgid "Name for screen readers"
+msgstr "نام برای صفحه‌خوان‌ها"
+
+#: src/Widgets/Header/Search.php:37
+#: src/Widgets/Header/Search.php:54
+#: src/Widgets/Header/Search.php:96
+#: src/Widgets/Header/Search.php:97
+#: src/Widgets/Header/Search.php:113
+#: src/Widgets/Header/Search.php:121
+msgid "Search"
+msgstr "جستجو"
+
+#: src/Widgets/Header/Search.php:62
+msgid "Search field"
+msgstr "کادر جستجو"
+
+#: src/Widgets/Header/Search.php:63
+msgid "Icon that opens the field (mobile search)"
+msgstr "آیکونی که کادر را باز می‌کند (جستجوی موبایل)"
+
+#. translators: %s: store name.
+#: src/Widgets/Header/Search.php:71
+#, php-format
+msgid "Search in %s"
+msgstr "جستجو در %s"
+
+#: src/Widgets/Header/Search.php:76
+msgid "Search products only"
+msgstr "جستجو فقط در کالاها"
+
+#: src/Widgets/Header/Spacer.php:33
+msgid "Header spacer"
+msgstr "فاصله‌دهنده سربرگ"
+
+#: src/Widgets/Header/Spacer.php:50
+msgid "Space"
+msgstr "فاصله"
+
+#: src/Widgets/Header/Spacer.php:55
+msgid "Take all free space"
+msgstr "گرفتن همه فضای خالی"
+
+#: src/Widgets/Header/Spacer.php:61
+msgid "Width in pixels"
+msgstr "پهنا به پیکسل"
+
+#: src/Widgets/Header/StickyNav.php:34
+msgid "Sticky navigation"
+msgstr "ناوبری چسبان"
+
+#: src/Widgets/Header/StickyNav.php:63
+#: src/Widgets/Store/Bestsellers.php:71
+#: src/Widgets/Store/Brands.php:69
+#: src/Widgets/Store/CategoryCircles.php:69
+#: src/Widgets/Store/DiscountPicks.php:71
+#: src/Widgets/Store/Posts.php:68
+#: src/Widgets/Store/Products.php:119
+#: src/Widgets/Store/ProductTabs.php:74
+msgid "Section"
+msgstr "بخش"
+
+#: src/Widgets/Header/StickyNav.php:68
+msgid "Section id"
+msgstr "شناسه بخش"
+
+#: src/Widgets/Header/StickyNav.php:97
+msgid "On this page"
+msgstr "در این صفحه"
+
+#: src/Widgets/Header/Wishlist.php:78
+msgid "Leave empty for the account page."
+msgstr "برای صفحه حساب کاربری خالی بگذارید."
+
+#: src/Widgets/Store/Banners.php:33
+#: src/Widgets/Store/Banners.php:68
+#: src/Widgets/Store/Banners.php:85
+msgid "Banners"
+msgstr "بنرها"
+
+#: src/Widgets/Store/Banners.php:73
+msgid "Banners per row"
+msgstr "تعداد بنر در هر ردیف"
+
+#: src/Widgets/Store/Banners.php:97
+msgid "Small line"
+msgstr "خط کوچک"
+
+#: src/Widgets/Store/Banners.php:113
+#: src/Widgets/Store/HeroSlider.php:116
+msgid "Background photo"
+msgstr "عکس پس‌زمینه"
+
+#: src/Widgets/Store/Banners.php:118
+#: src/Widgets/Store/HeroSlider.php:122
+msgid "Background photo for phones"
+msgstr "عکس پس‌زمینه برای گوشی"
+
+#: src/Widgets/Store/Banners.php:123
+#: src/Widgets/Store/HeroSlider.php:128
+msgid "Colour 1"
+msgstr "رنگ ۱"
+
+#: src/Widgets/Store/Banners.php:129
+#: src/Widgets/Store/HeroSlider.php:134
+msgid "Colour 2"
+msgstr "رنگ ۲"
+
+#: src/Widgets/Store/Banners.php:135
+#: src/Widgets/Store/HeroSlider.php:140
+msgid "Product image"
+msgstr "تصویر کالا"
+
+#: src/Widgets/Store/Banners.php:140
+msgid "White text"
+msgstr "متن سفید"
+
+#: src/Widgets/Store/Banners.php:141
+msgid "For dark backgrounds."
+msgstr "برای پس‌زمینه‌های تیره."
+
+#: src/Widgets/Store/Bestsellers.php:76
+#: src/Widgets/Store/Deals.php:118
+#: src/Widgets/Store/DiscountPicks.php:76
+#: src/Widgets/Store/Products.php:37
+#: src/Widgets/Store/Products.php:124
+#: src/Widgets/Store/Products.php:192
+#: src/Widgets/Store/ProductTabs.php:96
+#: src/Widgets/Store/ProductTabs.php:186
+#: src/Widgets/Store/StoreWidget.php:89
+msgid "Products"
+msgstr "کالاها"
+
+#: src/Widgets/Store/Brands.php:34
+msgid "Shop by brand"
+msgstr "خرید بر اساس برند"
+
+#: src/Widgets/Store/Brands.php:74
+#: src/Widgets/Store/Brands.php:80
+#: src/Widgets/Store/Brands.php:140
+msgid "Brands"
+msgstr "برندها"
+
+#: src/Widgets/Store/Brands.php:81
+msgid "Leave empty to show the brands with the most products."
+msgstr "برای نمایش برندهایی با بیشترین کالا خالی بگذارید."
+
+#: src/Widgets/Store/Brands.php:86
+#: src/Widgets/Store/CategoryCircles.php:86
+msgid "How many"
+msgstr "تعداد"
+
+#: src/Widgets/Store/CategoryCircles.php:34
+msgid "Category circles"
+msgstr "دایره‌های دسته‌بندی"
+
+#: src/Widgets/Store/CategoryCircles.php:81
+msgid "Leave empty to show the main categories."
+msgstr "برای نمایش دسته‌بندی‌های اصلی خالی بگذارید."
+
+#: src/Widgets/Store/CategoryCircles.php:97
+#: src/Widgets/Store/Products.php:96
+msgid "Grid"
+msgstr "شبکه‌ای"
+
+#: src/Widgets/Store/CategoryCircles.php:98
+msgid "One scrolling row"
+msgstr "یک ردیف اسکرولی"
+
+#: src/Widgets/Store/CategoryCircles.php:107
+msgid "Circle"
+msgstr "دایره"
+
+#: src/Widgets/Store/CategoryCircles.php:108
+msgid "Rounded square"
+msgstr "مربع گوشه‌گرد"
+
+#: src/Widgets/Store/CategoryCircles.php:114
+msgid "Show the number of products"
+msgstr "نمایش تعداد کالاها"
+
+#. translators: %s: number of products.
+#: src/Widgets/Store/CategoryCircles.php:167
+#, php-format
+msgid "%s product"
+msgid_plural "%s products"
+msgstr[0] "%s کالا"
+msgstr[1] "%s کالا"
+
+#: src/Widgets/Store/Deals.php:83
+msgid "Band"
+msgstr "نوار"
+
+#: src/Widgets/Store/Deals.php:94
+msgid "Offers end"
+msgstr "پایان پیشنهادها"
+
+#: src/Widgets/Store/Deals.php:95
+msgid "Leave empty for daily offers that end at midnight."
+msgstr "برای پیشنهادهای روزانه‌ای که نیمه‌شب تمام می‌شوند خالی بگذارید."
+
+#: src/Widgets/Store/Deals.php:165
+msgid "Time left for these offers"
+msgstr "زمان باقی‌مانده این پیشنهادها"
+
+#: src/Widgets/Store/Deals.php:169
+msgid "Ends in"
+msgstr "پایان تا"
+
+#: src/Widgets/Store/DiscountPicks.php:82
+msgid "Filter categories"
+msgstr "دسته‌بندی‌های فیلتر"
+
+#: src/Widgets/Store/DiscountPicks.php:83
+msgid "Each category becomes a chip above the products. Leave empty to use the main categories of the products shown."
+msgstr "هر دسته‌بندی یک دکمه کوچک بالای کالاها می‌شود. برای استفاده از دسته‌بندی اصلی کالاهای نمایش‌داده‌شده خالی بگذارید."
+
+#: src/Widgets/Store/DiscountPicks.php:88
+msgid "\"All\" chip text"
+msgstr "متن دکمه «همه»"
+
+#: src/Widgets/Store/DiscountPicks.php:94
+#: src/Widgets/Store/StoreWidget.php:111
+msgid "Number of products"
+msgstr "تعداد کالاها"
+
+#: src/Widgets/Store/DiscountPicks.php:185
+msgid "Filter by category"
+msgstr "فیلتر بر اساس دسته‌بندی"
+
+#: src/Widgets/Store/HeroSlider.php:94
+msgid "Small label"
+msgstr "برچسب کوچک"
+
+#: src/Widgets/Store/HeroSlider.php:117
+msgid "Optional. Without a photo the two colours below make the background."
+msgstr "اختیاری. بدون عکس، دو رنگ پایین پس‌زمینه را می‌سازند."
+
+#: src/Widgets/Store/HeroSlider.php:123
+msgid "Optional. A taller photo that phones download instead of the large one."
+msgstr "اختیاری. عکسی بلندتر که گوشی‌ها به‌جای عکس بزرگ دریافت می‌کنند."
+
+#: src/Widgets/Store/HeroSlider.php:145
+msgid "Dark text"
+msgstr "متن تیره"
+
+#: src/Widgets/Store/HeroSlider.php:146
+msgid "For light backgrounds."
+msgstr "برای پس‌زمینه‌های روشن."
+
+#: src/Widgets/Store/HeroSlider.php:153
+msgid "Headphones and speakers"
+msgstr "هدفون و اسپیکر"
+
+#: src/Widgets/Store/HeroSlider.php:163
+msgid "Options"
+msgstr "گزینه‌ها"
+
+#: src/Widgets/Store/HeroSlider.php:168
+msgid "Height"
+msgstr "ارتفاع"
+
+#: src/Widgets/Store/HeroSlider.php:171
+msgid "Short"
+msgstr "کوتاه"
+
+#: src/Widgets/Store/HeroSlider.php:173
+msgid "Tall"
+msgstr "بلند"
+
+#: src/Widgets/Store/HeroSlider.php:227
+msgid "Featured offers"
+msgstr "پیشنهادهای ویژه"
+
+#: src/Widgets/Store/Posts.php:73
+msgid "Posts"
+msgstr "نوشته‌ها"
+
+#: src/Widgets/Store/Posts.php:79
+#: src/Widgets/Store/ProductTabs.php:104
+#: src/Widgets/Store/StoreWidget.php:97
+msgid "Only from these categories"
+msgstr "فقط از این دسته‌ها"
+
+#: src/Widgets/Store/Posts.php:84
+msgid "Number of posts"
+msgstr "تعداد نوشته‌ها"
+
+#. translators: %s: number of minutes.
+#: src/Widgets/Store/Posts.php:151
+#, php-format
+msgid "%s minute read"
+msgid_plural "%s minutes read"
+msgstr[0] "%s دقیقه مطالعه"
+msgstr[1] "%s دقیقه مطالعه"
+
+#: src/Widgets/Store/Products.php:95
+msgid "Slider"
+msgstr "اسلایدر"
+
+#: src/Widgets/Store/Products.php:102
+msgid "Card design"
+msgstr "طرح کارت"
+
+#: src/Widgets/Store/Products.php:107
+msgid "Columns on tablet"
+msgstr "ستون‌ها در تبلت"
+
+#: src/Widgets/Store/Products.php:108
+msgid "Columns on mobile"
+msgstr "ستون‌ها در موبایل"
+
+#: src/Widgets/Store/Products.php:129
+#: src/Widgets/Store/ProductTabs.php:137
+msgid "Display"
+msgstr "نمایش"
+
+#: src/Widgets/Store/ProductTabs.php:110
+#: src/Widgets/Store/StoreWidget.php:105
+msgid "Choose products"
+msgstr "انتخاب کالاها"
+
+#: src/Widgets/Store/ProductTabs.php:122
+msgid "Products per tab"
+msgstr "تعداد کالا در هر زبانه"
+
+#: src/Widgets/Store/ProductTabs.php:130
+#: src/Widgets/Store/StoreWidget.php:119
+msgid "Hide out of stock products"
+msgstr "پنهان کردن کالاهای ناموجود"
+
+#: src/Widgets/Store/QuickLinks.php:96
+msgid "Colour"
+msgstr "رنگ"
+
+#: src/Widgets/Store/StoreWidget.php:53
+msgid "Title icon"
+msgstr "آیکون عنوان"
+
+#: src/Widgets/Store/StoreWidget.php:66
+msgid "Leave empty to hide the link."
+msgstr "برای پنهان کردن پیوند خالی بگذارید."
+
+#: src/Widgets/Store/StoreWidget.php:71
+msgid "Show in a white box"
+msgstr "نمایش در جعبه سفید"
+
+#: src/Widgets/Store/StoreWidget.php:98
+msgid "Leave empty for all categories."
+msgstr "برای همه دسته‌بندی‌ها خالی بگذارید."
+
+#: src/Widgets/Store/StoreWidget.php:149
+msgid "Previous"
+msgstr "قبلی"
+
+#. translators: 1: slide number, 2: number of slides.
+#: src/Widgets/Store/StoreWidget.php:152
+#, php-format
+msgid "%1$s of %2$s"
+msgstr "%1$s از %2$s"
+
+#: src/Widgets/Store/StoreWidget.php:163
+msgid "Framed, second image on hover"
+msgstr "قاب‌دار، تصویر دوم با نشانگر"
+
+#: src/Widgets/Store/StoreWidget.php:164
+msgid "Classic with lines"
+msgstr "کلاسیک با خط‌ها"
+
+#: src/Widgets/Store/StoreWidget.php:165
+msgid "Small, supermarket"
+msgstr "کوچک، سوپرمارکتی"
+
+#: src/Widgets/Store/StoreWidget.php:166
+msgid "Offer with countdown"
+msgstr "پیشنهاد با شمارش معکوس"
+
+#: src/Widgets/Store/Stories.php:90
+msgid "Story image or video"
+msgstr "تصویر یا ویدیوی استوری"
+
+#: src/Widgets/Store/Stories.php:91
+msgid "A tall image or an MP4 video. Without it the cover is shown."
+msgstr "یک تصویر بلند یا ویدیوی MP4. بدون آن، کاور نمایش داده می‌شود."
+
+#: src/Widgets/Store/Stories.php:98
+msgid "Link to a product"
+msgstr "پیوند به یک کالا"
+
+#: src/Widgets/Store/Stories.php:103
+msgid "Or link to an address"
+msgstr "یا پیوند به یک نشانی"
+
+#: src/Widgets/Store/Stories.php:108
+msgid "Link button text"
+msgstr "متن دکمه پیوند"
+
+#: src/Widgets/Store/Stories.php:119
+msgid "Seconds per image"
+msgstr "ثانیه برای هر تصویر"
+
+#: src/Widgets/Store/Stories.php:165
+msgid "Previous story"
+msgstr "استوری قبلی"
+
+#: src/Widgets/Store/Stories.php:166
+msgid "Next story"
+msgstr "استوری بعدی"
+
+#: src/Widgets/Store/TrustMarks.php:34
+msgid "Trust badges and advantages"
+msgstr "نمادهای اعتماد و مزایا"
+
+#: src/Widgets/Store/TrustMarks.php:100
+msgid "Badges"
+msgstr "نمادها"
+
+#: src/Widgets/Store/TrustMarks.php:122
+msgid "Or the badge code"
+msgstr "یا کد نماد"
+
+#: src/Widgets/Store/TrustMarks.php:123
+msgid "Paste the HTML code the service gives you, for example the e-Namad code. Only administrators who may add code can save it."
+msgstr "کد HTML که سرویس به شما می‌دهد را اینجا بگذارید، مثلاً کد اینماد. فقط مدیرانی که اجازه افزودن کد دارند می‌توانند آن را ذخیره کنند."
+
+#: src/Widgets/Store/TrustMarks.php:142
+msgid "Advantages"
+msgstr "مزایا"
+
+#: src/Widgets/Store/WooHook.php:60
+msgid "WooCommerce hook"
+msgstr "قلاب ووکامرس"
+
+#: src/Widgets/Store/WooHook.php:95
+msgid "Hook"
+msgstr "قلاب"
+
+#: src/Widgets/Store/WooHook.php:100
+msgid "WooCommerce action"
+msgstr "اکشن ووکامرس"
+
+#: src/Widgets/Store/WooHook.php:101
+msgid "Whatever other plugins print at this place appears here."
+msgstr "هر چه افزونه‌های دیگر در این جایگاه چاپ کنند اینجا نمایش داده می‌شود."
+
+#: src/Widgets/Store/WooHook.php:102
+msgid "Another action"
+msgstr "اکشن دیگر"
+
+#: src/Widgets/Store/WooHook.php:108
+msgid "Action name"
+msgstr "نام اکشن"

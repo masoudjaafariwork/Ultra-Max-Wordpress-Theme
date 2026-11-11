@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-09T18:53:45+00:00\n"
+"POT-Creation-Date: 2026-11-10T15:11:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ultra-max\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 #. translators: %s: number of comments.
 #: comments.php:25
-#: src/Template.php:340
+#: src/Template.php:400
 #, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
@@ -58,36 +58,83 @@ msgid "The Ultra Max theme is missing its build files. Run \"npm run build\" in 
 msgstr ""
 
 #. translators: %s: search terms.
-#: index.php:19
+#: index.php:21
 #: src/Breadcrumbs.php:93
 #, php-format
 msgid "Search results for \"%s\""
 msgstr ""
 
-#: index.php:23
+#: index.php:25
 #: src/Breadcrumbs.php:42
 msgid "Blog"
 msgstr ""
 
-#: index.php:45
+#: index.php:47
 msgid "Nothing matched your search"
 msgstr ""
 
-#: index.php:45
+#: index.php:47
 msgid "Nothing has been published here yet"
 msgstr ""
 
-#: index.php:46
+#: index.php:48
 msgid "Check the spelling or try fewer or more general words."
 msgstr ""
 
 #: sidebar.php:16
-#: src/Theme.php:102
+#: src/Theme.php:103
 msgid "Sidebar"
 msgstr ""
 
+#: src/BottomNav.php:29
+#: src/BottomNav.php:121
 #: src/Breadcrumbs.php:27
 msgid "Home"
+msgstr ""
+
+#: src/BottomNav.php:30
+msgid "Categories (opens the menu)"
+msgstr ""
+
+#: src/BottomNav.php:31
+#: src/BottomNav.php:177
+#: src/Template.php:249
+msgid "Cart"
+msgstr ""
+
+#: src/BottomNav.php:32
+#: src/BottomNav.php:134
+#: src/Template.php:247
+msgid "My account"
+msgstr ""
+
+#: src/BottomNav.php:33
+#: src/BottomNav.php:140
+msgid "Wishlist"
+msgstr ""
+
+#: src/BottomNav.php:34
+#: src/BottomNav.php:145
+#: src/Template.php:157
+#: src/Template.php:176
+#: src/Template.php:177
+msgid "Search"
+msgstr ""
+
+#: src/BottomNav.php:35
+msgid "Another link"
+msgstr ""
+
+#: src/BottomNav.php:127
+msgid "Categories"
+msgstr ""
+
+#: src/BottomNav.php:151
+msgid "Link"
+msgstr ""
+
+#: src/BottomNav.php:193
+msgid "Bottom navigation"
 msgstr ""
 
 #: src/Breadcrumbs.php:98
@@ -432,7 +479,7 @@ msgid "On wide screens the sidebar follows the page while it fits on screen."
 msgstr ""
 
 #: src/Options.php:468
-#: src/Options.php:762
+#: src/Options.php:818
 msgid "Back to top button"
 msgstr ""
 
@@ -469,7 +516,7 @@ msgid "Centre"
 msgstr ""
 
 #: src/Options.php:528
-#: src/Template.php:281
+#: src/Template.php:341
 msgid "Breadcrumbs"
 msgstr ""
 
@@ -478,7 +525,7 @@ msgid "The path from the home page to the current page. Untick every device to h
 msgstr ""
 
 #: src/Options.php:542
-#: src/Options.php:742
+#: src/Options.php:788
 msgid "Announcement bar"
 msgstr ""
 
@@ -552,7 +599,7 @@ msgid "Contact buttons"
 msgstr ""
 
 #: src/Options.php:628
-#: src/Options.php:752
+#: src/Options.php:798
 msgid "Floating contact buttons"
 msgstr ""
 
@@ -573,6 +620,7 @@ msgid "Number, username or link"
 msgstr ""
 
 #: src/Options.php:656
+#: src/Options.php:717
 msgid "Label (optional)"
 msgstr ""
 
@@ -581,138 +629,160 @@ msgid "Position"
 msgstr ""
 
 #: src/Options.php:687
-msgid "Performance"
+msgid "Bottom bar"
 msgstr ""
 
 #: src/Options.php:693
+msgid "App-like bottom bar on phones"
+msgstr ""
+
+#: src/Options.php:697
+msgid "A row of icons fixed at the bottom of phones and tablets, like a shopping app."
+msgstr ""
+
+#: src/Options.php:702
+msgid "Items"
+msgstr ""
+
+#: src/Options.php:703
+msgid "Up to six. Drag to change the order."
+msgstr ""
+
+#: src/Options.php:710
+msgid "Item"
+msgstr ""
+
+#: src/Options.php:722
+msgid "Link (for wishlist or another link)"
+msgstr ""
+
+#: src/Options.php:733
+msgid "Performance"
+msgstr ""
+
+#: src/Options.php:739
 msgid "Loading"
 msgstr ""
 
-#: src/Options.php:700
+#: src/Options.php:746
 msgid "Lazy-load images and embeds"
 msgstr ""
 
-#: src/Options.php:701
+#: src/Options.php:747
 msgid "Images and videos below the fold load only when visitors scroll to them."
 msgstr ""
 
-#: src/Options.php:707
+#: src/Options.php:753
 msgid "Preload the main image"
 msgstr ""
 
-#: src/Options.php:708
+#: src/Options.php:754
 msgid "The featured image at the top of a post loads first, so the page looks ready sooner."
 msgstr ""
 
-#: src/Options.php:714
+#: src/Options.php:760
 msgid "Preload the body font"
 msgstr ""
 
-#: src/Options.php:720
+#: src/Options.php:766
 msgid "Inline critical CSS"
 msgstr ""
 
-#: src/Options.php:721
+#: src/Options.php:767
 msgid "Puts the styles the top of the page needs into the page itself, so it draws without waiting for a file."
 msgstr ""
 
-#: src/Options.php:743
+#: src/Options.php:789
 msgid "A bar above the header with a message, a button and optional dates."
 msgstr ""
 
-#: src/Options.php:753
+#: src/Options.php:799
 msgid "WhatsApp, Telegram, Eitaa, Bale and phone buttons in a corner of every page."
 msgstr ""
 
-#: src/Options.php:763
-msgid "A round button that appears after scrolling and returns to the top."
+#: src/Options.php:808
+msgid "Bottom bar on phones"
 msgstr ""
 
-#: src/Template.php:157
-#: src/Template.php:176
-#: src/Template.php:177
-msgid "Search"
+#: src/Options.php:809
+msgid "An app-like row of icons at the bottom of phones: home, categories, cart, wishlist and account."
+msgstr ""
+
+#: src/Options.php:819
+msgid "A round button that appears after scrolling and returns to the top."
 msgstr ""
 
 #: src/Template.php:179
 msgid "Search the store…"
 msgstr ""
 
-#: src/Template.php:192
-msgid "My account"
-msgstr ""
-
-#: src/Template.php:194
-msgid "Cart"
-msgstr ""
-
-#: src/Template.php:199
+#: src/Template.php:254
 msgid "Menu"
 msgstr ""
 
-#: src/Template.php:203
-#: src/Template.php:223
+#: src/Template.php:258
+#: src/Template.php:280
 msgid "Main menu"
 msgstr ""
 
-#: src/Template.php:251
-#: src/Theme.php:89
+#: src/Template.php:310
+#: src/Theme.php:90
 msgid "Footer menu"
 msgstr ""
 
 #. translators: 1: year, 2: site name.
-#: src/Template.php:259
+#: src/Template.php:318
 #, php-format
 msgid "© %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: src/Template.php:314
+#: src/Template.php:374
 msgid "Published on"
 msgstr ""
 
-#: src/Template.php:322
+#: src/Template.php:382
 #: vendor-prefixed/ui/components/comments/Comments.php:54
 msgid "Author"
 msgstr ""
 
-#: src/Template.php:332
+#: src/Template.php:392
 msgid "Category"
 msgstr ""
 
-#: src/Template.php:360
+#: src/Template.php:420
 msgid "(no title)"
 msgstr ""
 
-#: src/Template.php:365
+#: src/Template.php:425
 msgid "Featured"
 msgstr ""
 
-#: src/Template.php:381
+#: src/Template.php:441
 msgid "Pages"
 msgstr ""
 
-#: src/Template.php:386
+#: src/Template.php:446
 msgid "Previous"
 msgstr ""
 
-#: src/Template.php:387
+#: src/Template.php:447
 msgid "Next"
 msgstr ""
 
-#: src/Template.php:414
+#: src/Template.php:474
 msgid "Skip to content"
 msgstr ""
 
-#: src/Theme.php:88
+#: src/Theme.php:89
 msgid "Primary menu"
 msgstr ""
 
-#: src/Theme.php:103
+#: src/Theme.php:104
 msgid "Shown next to posts, pages and archives when the layout settings allow a sidebar."
 msgstr ""
 
 #. translators: %d: footer column number.
-#: src/Theme.php:114
+#: src/Theme.php:115
 #, php-format
 msgid "Footer column %d"
 msgstr ""
