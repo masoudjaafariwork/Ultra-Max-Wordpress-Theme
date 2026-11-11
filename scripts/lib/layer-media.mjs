@@ -108,3 +108,71 @@ export function layerMedia() {
 	};
 }
 layerMedia.postcss = true;
+
+/**
+ * Identity of one rule: its at-rule ancestors, selector and declarations.
+ *
+ * @param {import('postcss').Rule} rule Rule.
+ * @return {string} Key.
+ */
+function ruleKey( rule ) {
+	const parts = [];
+	for ( let node = rule.parent; node && node.type === 'atrule'; node = node.parent ) {
+		parts.unshift( `@${ node.name } ${ node.params }` );
+	}
+	const body = rule.nodes.map( ( node ) => node.toString() ).join( ';' );
+	return `${ parts.join( '>' ) }>${ rule.selector }{${ body }}`;
+}
+
+/**
+ * Keys of every rule inside cascade layers of a stylesheet.
+ *
+ * @param {import('postcss').Root} root Parsed stylesheet.
+ * @return {Set<string>} Keys.
+ */
+export function layeredRuleKeys( root ) {
+	const keys = new Set();
+	root.walkRules( ( rule ) => {
+		if ( rule.parent?.type === 'atrule' ) {
+			keys.add( ruleKey( rule ) );
+		}
+	} );
+	return keys;
+}
+
+/**
+ * Drops the layered rules a stylesheet shares with the storefront file.
+ *
+ * Module and widget files load after the storefront file. A repeated
+ * utility there, such as `border-0`, would come later in the same layer
+ * and beat a different utility of the storefront file on the same element,
+ * such as `border-b-3`. The storefront file always loads first, so the
+ * copy is never needed.
+ *
+ * @param {Set<string>} known Keys of the storefront file's layered rules.
+ * @return {import('postcss').Plugin} Plugin.
+ */
+export function dropKnown( known ) {
+	return {
+		postcssPlugin: 'um-drop-known',
+		Once( root ) {
+			root.walkRules( ( rule ) => {
+				if ( rule.parent?.type === 'atrule' && rule.parent.name !== 'keyframes' && known.has( ruleKey( rule ) ) ) {
+					rule.remove();
+				}
+			} );
+			// Remove at-rules left empty, innermost first.
+			let removed = true;
+			while ( removed ) {
+				removed = false;
+				root.walkAtRules( ( atRule ) => {
+					if ( atRule.nodes && atRule.nodes.length === 0 ) {
+						atRule.remove();
+						removed = true;
+					}
+				} );
+			}
+		},
+	};
+}
+dropKnown.postcss = true;

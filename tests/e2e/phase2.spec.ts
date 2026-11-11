@@ -225,7 +225,10 @@ test.describe.serial( 'panel', () => {
 		wp( 'user', 'meta', 'delete', 'admin', 'ultra_max_tours_seen' );
 		await page.goto( '/wp-admin/admin.php?page=ultra-max-settings' );
 		await expect( page.getByText( 'قدم ۱ از ۴' ).or( page.getByText( 'قدم 1 از 4' ) ) ).toBeVisible();
+		// The panel records the dismissal in the background; reload only after it is saved.
+		const saved = page.waitForResponse( ( response ) => /\/tour/.test( response.url() ) && response.request().method() === 'POST' );
 		await page.getByRole( 'button', { name: 'رد کردن راهنما' } ).click();
+		await saved;
 		await page.reload();
 		await expect( page.getByRole( 'button', { name: 'رد کردن راهنما' } ) ).toHaveCount( 0 );
 	} );

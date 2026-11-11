@@ -41,6 +41,11 @@ final class Catalog {
 		self::$file = $file;
 		// After Elementor's own template_redirect handler, which prepares its frontend scripts.
 		add_action( 'template_redirect', array( self::class, 'maybe_render' ), 20 );
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only page switch.
+		if ( isset( $_GET['um-catalog'] ) ) {
+			// The theme's own page frame, not the template of a static front page made with Elementor, so screenshots stay comparable.
+			add_filter( 'pre_option_show_on_front', static fn (): string => 'posts' );
+		}
 		add_action( 'admin_menu', array( self::class, 'admin_menu' ) );
 	}
 

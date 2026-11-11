@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import postcss from 'postcss';
 import { describe, expect, it } from 'vitest';
-import { LAYER_ORDER, layerFor, layerMedia } from '../../scripts/lib/layer-media.mjs';
+import { dropKnown, LAYER_ORDER, layeredRuleKeys, layerFor, layerMedia } from '../../scripts/lib/layer-media.mjs';
 import { pad, split } from '../../packages/ui/widgets/countdown/countdown.behavior';
 import { formatNumber } from '../../packages/ui/widgets/counter/counter.behavior';
 import { matches } from '../../packages/ui/widgets/discount-picks/filter-chips.behavior';
@@ -33,6 +33,17 @@ describe( 'responsive rules keep winning across stylesheets (BLD-12)', () => {
 		expect( css.startsWith( `@layer ${ LAYER_ORDER.join( ', ' ) };` ) ).toBe( true );
 		expect( css ).toContain( '@layer utilities-min-64{@media (min-width:64rem)' );
 		expect( css.match( /@layer theme, base/g ) ?? [] ).toHaveLength( 0 );
+	} );
+
+	it( 'leaves out of later files the rules the storefront file already has', async () => {
+		const storefront = await postcss( [ layerMedia() ] ).process( '@layer utilities{.border-0{border-width:0}.border-b-3{border-bottom-width:3px}}', { from: undefined } );
+		const known = layeredRuleKeys( storefront.root );
+		const widget = await postcss( [ layerMedia(), dropKnown( known ) ] ).process( '@layer utilities{.border-0{border-width:0}.gap-2{gap:.5rem}}@layer utilities{@media (min-width:64rem){.lg\\:hidden{display:none}}}@keyframes um-spin{0%{opacity:0}}', { from: undefined } );
+		expect( widget.css ).not.toContain( '.border-0' );
+		expect( widget.css ).toContain( '.gap-2{gap:.5rem}' );
+		expect( widget.css ).toContain( '.lg\\:hidden' );
+		expect( widget.css ).toContain( '0%{opacity:0}' );
+		expect( widget.css.startsWith( `@layer ${ LAYER_ORDER.join( ', ' ) };` ) ).toBe( true );
 	} );
 
 	it( 'is applied to every built widget stylesheet', () => {

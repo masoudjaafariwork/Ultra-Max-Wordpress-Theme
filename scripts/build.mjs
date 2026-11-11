@@ -24,7 +24,10 @@ import { prefixPackages } from './lib/prefix.mjs';
 import { dumpAutoload } from './lib/composer.mjs';
 import { wpGlobalsPlugin } from './lib/wp-globals.mjs';
 import { writeScopedPreflight } from './lib/scoped-preflight.mjs';
-import { layerMedia } from './lib/layer-media.mjs';
+import { dropKnown, layeredRuleKeys, layerMedia } from './lib/layer-media.mjs';
+
+/** Layered rules of the storefront file, dropped from module and widget files (see lib/layer-media.mjs). */
+let storefrontRules = new Set();
 
 const args = process.argv.slice( 2 );
 const watch = args.includes( '--watch' );
@@ -125,11 +128,18 @@ async function buildCss( source, out ) {
 	const input = fs.readFileSync( from, 'utf8' );
 	const tailwound = await postcss( [ tailwind( { base: root, optimize: ! dev } ) ] ).process( input, { from, to: out + '.css' } );
 	// Admin styles are one file; storefront, module and widget files share layers (see lib/layer-media.mjs).
-	const result = source.includes( 'admin' ) ? tailwound : await postcss( [ layerMedia() ] ).process( tailwound.css, { from: undefined } );
-	const ltr = rtlcss.process( result.css );
-	write( out + '.css', result.css );
+	const loadsAfterStorefront = /packages\/ui\/(modules|widgets)\//.test( source );
+	const plugins = loadsAfterStorefront ? [ layerMedia(), dropKnown( storefrontRules ) ] : [ layerMedia() ];
+	const result = source.includes( 'admin' ) ? tailwound : await postcss( plugins ).process( tailwound.css, { from: undefined } );
+	if ( source === 'packages/ui/storefront/storefront.css' ) {
+		storefrontRules = layeredRuleKeys( result.root );
+	}
+	// One line ending only: Theme Check rejects files that mix them, and new layer rules use LF.
+	const css = result.css.replace( /\r\n/g, '\n' );
+	const ltr = rtlcss.process( css );
+	write( out + '.css', css );
 	write( out + '-ltr.css', ltr );
-	return result.css;
+	return css;
 }
 
 /**
@@ -261,7 +271,9 @@ async function buildAll( withPhp ) {
 		buildPhp();
 	}
 	writeScopedPreflight();
-	await Promise.all( entries.map( buildEntry ) );
+	// The storefront file first: module and widget files leave out what it already has.
+	await buildEntry( entries[ 0 ] );
+	await Promise.all( entries.slice( 1 ).map( buildEntry ) );
 	copyToProducts();
 	buildHelp();
 	console.log( `Built in ${ ( ( Date.now() - started ) / 1000 ).toFixed( 1 ) }s${ dev ? ' (development)' : '' }.` );
