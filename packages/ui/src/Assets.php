@@ -67,6 +67,7 @@ final class Assets {
 		'shop',
 		'search',
 		'product',
+		'reviews',
 	);
 
 	/**

@@ -497,6 +497,29 @@ final class Options {
 						),
 					),
 				),
+				array(
+					'id'          => 'product_reviews',
+					'title'       => __( 'Reviews and questions', 'ultra-max-core' ),
+					'icon'        => 'star',
+					'features'    => array( 'PDP-07', 'PDP-08', 'PDP-09', 'PDP-10' ),
+					'module'      => Product\Product::MODULE,
+					'description' => __( 'Whether reviews are on, need a rating or come only from buyers is set in WooCommerce, Settings, Products. Questions wait in Products, Questions.', 'ultra-max-core' ),
+					'fields'      => array(
+						array(
+							'id'      => 'product_review_criteria',
+							'type'    => 'textarea',
+							'label'   => __( 'What shoppers score', 'ultra-max-core' ),
+							'help'    => __( 'One per line, at most six. Leave empty to ask only for stars.', 'ultra-max-core' ),
+							'default' => implode( "\n", array( __( 'Build quality', 'ultra-max-core' ), __( 'Value for money', 'ultra-max-core' ), __( 'Features', 'ultra-max-core' ), __( 'Ease of use', 'ultra-max-core' ) ) ),
+						),
+						self::toggle( 'product_review_images', __( 'Let logged in shoppers add photos to reviews', 'ultra-max-core' ) ),
+						self::range( 'product_review_per_page', __( 'Reviews shown at first', 'ultra-max-core' ), 5, 3, 20 ),
+						self::toggle( 'product_questions', __( 'Questions and answers', 'ultra-max-core' ) ),
+						self::toggle( 'product_questions_guests', __( 'Let shoppers who are not logged in ask', 'ultra-max-core' ), false ),
+						self::toggle( 'product_questions_moderate', __( 'Hold new questions and answers for approval', 'ultra-max-core' ) ),
+						self::toggle( 'product_answers_users', __( 'Let logged in shoppers answer questions', 'ultra-max-core' ), true, __( 'Answers from buyers show a "Buyer" badge; the store\'s show "Store".', 'ultra-max-core' ) ),
+					),
+				),
 			)
 		);
 		return array(

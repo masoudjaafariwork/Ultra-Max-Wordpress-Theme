@@ -1,0 +1,17 @@
+/*
+ * Styles of the reviews widget asset (BLD-12): reviews and questions.
+ * Built from its components' own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../reviews";
+
+/* While another page of reviews loads, the list fades a little. */
+.um-review-list[aria-busy="true"] [data-um-reviews-items] {
+	opacity: 0.55;
+	transition: opacity 150ms;
+}
