@@ -11,7 +11,8 @@
 // phpcs:ignoreFile -- Test fixture run by WP-CLI.
 
 $product_id = wc_get_product_id_by_sku( 'UM-001' );
-foreach ( get_comments( array( 'meta_key' => '_um_fixture', 'status' => 'all' ) ) as $old ) {
+// WooCommerce leaves product comments out of queries that do not name the post type.
+foreach ( get_comments( array( 'meta_key' => '_um_fixture', 'status' => 'all', 'post_type' => 'product' ) ) as $old ) {
 	wp_delete_comment( (int) $old->comment_ID, true );
 }
 if ( in_array( 'remove', $args ?? array(), true ) || ! $product_id ) {

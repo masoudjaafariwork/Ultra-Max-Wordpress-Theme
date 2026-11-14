@@ -135,7 +135,7 @@ final class Page {
 		return Html::trusted(
 			sprintf(
 				'<div class="%1$s" data-um-product="%2$d">%3$s</div>%4$s',
-				esc_attr( trim( 'grid min-w-0 gap-6 max-md:gap-4 ' . $classes ) ),
+				esc_attr( trim( 'grid min-w-0 grid-cols-[minmax(0,1fr)] gap-6 max-md:gap-4 ' . $classes ) ),
 				$product->get_id(),
 				Html::from( $parts ),
 				Html::from( $after )

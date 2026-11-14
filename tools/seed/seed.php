@@ -362,6 +362,31 @@ Catalog::flush();
 Categories::flush();
 WP_CLI::log( count( $products ) . ' products.' );
 
+/* ------------------------------------------------------------------ product page (PDP-01 to PDP-26) */
+
+// Specification groups and key features of the attributes.
+Terms::set_spec( $memory_tax, 'حافظه', true );
+Terms::set_spec( $size_tax, '', true );
+Terms::set_spec( $color_tax, 'ظاهر', false );
+$phone = wc_get_product( wc_get_product_id_by_sku( 'UM-001' ) );
+if ( $phone ) {
+	$phone->update_meta_data( \UltraMax\Core\Product\Meta::LATIN, 'Novix X12 Dual SIM 256GB And 8GB RAM Mobile Phone' );
+	$phone->update_meta_data( \UltraMax\Core\Product\Meta::WARRANTY, 'گارانتی ۱۸ ماهه نوویکس' );
+	$phone->set_weight( '0.195' );
+	$phone->set_length( '16.2' );
+	$phone->set_width( '7.5' );
+	$phone->set_height( '0.82' );
+	$phone->set_description( '<p>گوشی نوویکس X12 با صفحه‌نمایش ۶٫۷ اینچی و باتری ۵۰۰۰ میلی‌آمپرساعتی، تصویری روان و شارژی طولانی دارد.</p><p>این محصول ساختگی است و فقط برای نمایش ظاهر فروشگاه ساخته شده است. توضیح واقعی هر محصول در ویرایشگر محصول ووکامرس نوشته می‌شود.</p>' );
+	$phone->set_upsell_ids( array_filter( array( wc_get_product_id_by_sku( 'UM-002' ), wc_get_product_id_by_sku( 'UM-012' ) ) ) );
+	$phone->set_cross_sell_ids( array_filter( array( wc_get_product_id_by_sku( 'UM-015' ) ) ) );
+	$phone->save();
+}
+// Delivery days, free shipping, a bundle, a size guide and a store tab; reviews and a question.
+foreach ( array( 'product-extras', 'product-discussion' ) as $fixture ) {
+	$args = array();
+	require dirname( __DIR__, 2 ) . '/tests/e2e/fixtures/' . $fixture . '.php';
+}
+
 /* ------------------------------------------------------------------ posts */
 
 $blog = $term( 'راهنمای خرید', 'category' );

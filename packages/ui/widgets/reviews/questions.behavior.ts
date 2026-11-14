@@ -21,7 +21,8 @@ export const questions: Behavior = ( element ) => {
 		const button = form.querySelector<HTMLButtonElement>( 'button[type="submit"]' );
 		button?.setAttribute( 'aria-busy', 'true' );
 		try {
-			const response = await fetch( form.action, {
+			// A field named "action" hides form.action, so the attribute is read.
+			const response = await fetch( form.getAttribute( 'action' ) ?? '', {
 				method: 'POST',
 				credentials: 'same-origin',
 				headers: { Accept: 'application/json' },

@@ -418,7 +418,7 @@ final class Delivery {
 		$state   = $request->get_param( 'state' );
 		$product = wc_get_product( is_numeric( $id ) ? (int) $id : 0 );
 		$places  = self::places();
-		if ( ! $product instanceof \WC_Product || 'publish' !== $product->get_status() || ! $product->is_visible() ) {
+		if ( ! $product instanceof \WC_Product || 'publish' !== $product->get_status() || ! $product->is_visible() || '' !== (string) get_post_field( 'post_password', $product->get_id() ) ) {
 			return new \WP_Error( 'ultra_max_no_product', __( 'This product could not be found.', 'ultra-max-core' ), array( 'status' => 404 ) );
 		}
 		$state = is_string( $state ) && isset( $places['states'][ $state ] ) ? $state : WC()->countries->get_base_state();
