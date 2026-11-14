@@ -1,0 +1,107 @@
+/*
+ * Styles of the account asset (ACC-01 to ACC-09): the customer account and
+ * the order tracking page. Built from its components' own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../account";
+
+/*
+ * The address and account detail forms are WooCommerce's own, so other
+ * plugins' fields keep working. Inside the account they take the look of
+ * our Field component.
+ */
+@layer components {
+	.um-account-form .form-row {
+		display: grid;
+		gap: 6px;
+		margin: 0 0 16px;
+		padding: 0;
+		float: none;
+		width: auto;
+	}
+
+	@media (width >= 768px) {
+		.um-account-form :is(.woocommerce-address-fields__field-wrapper, .um-account-fields) {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			column-gap: 16px;
+		}
+
+		.um-account-form :is(.form-row-wide, fieldset, .clear) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.um-account-form label {
+		font-size: var(--um-fs-sm);
+		font-weight: 500;
+		color: var(--um-text-2);
+	}
+
+	.um-account-form :is(input.input-text, input[type="text"], input[type="email"], input[type="tel"], input[type="password"], select, textarea) {
+		width: 100%;
+		min-height: 44px;
+		padding: 8px 14px;
+		border: 1px solid var(--um-border-strong);
+		border-radius: var(--um-radius-md);
+		background: var(--um-surface);
+		color: var(--um-text);
+		font: inherit;
+		font-size: var(--um-fs-md);
+	}
+
+	.um-account-form :is(input, select, textarea):focus {
+		border-color: var(--um-primary);
+		box-shadow: var(--um-focus);
+		outline: none;
+	}
+
+	.um-account-form fieldset {
+		margin: 8px 0 16px;
+		padding: 16px;
+		border: 1px solid var(--um-border);
+		border-radius: var(--um-radius-lg);
+	}
+
+	.um-account-form legend {
+		padding: 0 6px;
+		font-weight: 700;
+	}
+
+	.um-account-form :is(button[type="submit"], .button) {
+		display: inline-flex;
+		min-height: 44px;
+		align-items: center;
+		justify-content: center;
+		padding: 0 20px;
+		border: 0;
+		border-radius: var(--um-radius-sm);
+		background: var(--um-primary);
+		color: var(--um-on-primary);
+		font: inherit;
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	.um-account-form :is(button[type="submit"], .button):hover {
+		background: var(--um-primary-hover);
+	}
+
+	.um-account-form .required {
+		color: color-mix(in srgb, var(--um-danger) 85%, #000);
+		text-decoration: none;
+	}
+
+	.um-account-form em,
+	.um-account-form .description {
+		display: block;
+		font-size: var(--um-fs-xs);
+		font-style: normal;
+		color: var(--um-text-3);
+	}
+}

@@ -19,6 +19,10 @@ final class Content {
 
 	/**
 	 * The current post's content inside Prose, with its page links.
+	 *
+	 * Store pages, such as the cart, checkout and account, and the pages of
+	 * the store plugin's modules hold components, not writing: they skip
+	 * Prose, whose text styles would change the components' look.
 	 */
 	public static function body(): void {
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WordPress core filter.
@@ -31,6 +35,17 @@ final class Content {
 				'echo'   => false,
 			)
 		);
+		$store   = ( function_exists( 'is_cart' ) && is_cart() ) || ( function_exists( 'is_checkout' ) && is_checkout() ) || ( function_exists( 'is_account_page' ) && is_account_page() );
+		/**
+		 * Filters whether a page's content is styled as writing (Prose).
+		 *
+		 * @param bool $prose Whether to use Prose.
+		 */
+		$prose = apply_filters( 'ultra_max_content_prose', ! $store );
+		if ( false === $prose ) {
+			Html::trusted( sprintf( '<div class="um-store-content min-w-0">%s</div>', Html::wp( $content . $pages ) ) )->print();
+			return;
+		}
 		UI::prose( array( 'children' => Html::wp( $content . $pages ) ) )->print();
 	}
 

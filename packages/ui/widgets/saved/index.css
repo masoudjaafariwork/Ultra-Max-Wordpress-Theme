@@ -1,0 +1,12 @@
+/*
+ * Styles of the saved asset (SAVE-01 to SAVE-05): save buttons, the toast,
+ * the compare table and the quick view window. Built from its components'
+ * own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../saved";

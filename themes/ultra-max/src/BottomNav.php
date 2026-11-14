@@ -137,9 +137,13 @@ final class BottomNav {
 					'current' => function_exists( 'is_account_page' ) && is_account_page(),
 				) : null,
 				'wishlist'   => array(
-					'label' => __( 'Wishlist', 'ultra-max' ),
-					'href'  => '' !== $url ? $url : ( $woo ? wc_get_page_permalink( 'myaccount' ) : home_url( '/' ) ),
-					'icon'  => 'heart',
+					'label'     => __( 'Wishlist', 'ultra-max' ),
+					'href'      => '' !== $url ? $url : self::wishlist_url( $woo ),
+					'icon'      => 'heart',
+					'current'   => false,
+					// The wishlist's script fills the number in the shopper's browser, so pages stay cacheable.
+					'count'     => 0,
+					'count_key' => 'wishlist',
 				),
 				'search'     => array(
 					'label'   => __( 'Search', 'ultra-max' ),
@@ -166,6 +170,23 @@ final class BottomNav {
 			$items[] = $item;
 		}
 		return $items;
+	}
+
+	/**
+	 * Where the wishlist item goes: the wishlist page of Ultra Max Core when
+	 * it has one, otherwise the account page.
+	 *
+	 * @param bool $woo Whether WooCommerce is active.
+	 */
+	private static function wishlist_url( bool $woo ): string {
+		$fallback = $woo ? wc_get_page_permalink( 'myaccount' ) : home_url( '/' );
+		/**
+		 * Filters the address of the wishlist.
+		 *
+		 * @param string $url Address.
+		 */
+		$url = apply_filters( 'ultra_max_wishlist_url', $fallback );
+		return is_string( $url ) && '' !== $url ? $url : $fallback;
 	}
 
 	/**

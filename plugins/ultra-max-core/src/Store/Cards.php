@@ -343,6 +343,17 @@ final class Cards {
 				'id'    => $product->get_id(),
 				'ajax'  => $simple && $product->supports( 'ajax_add_to_cart' ),
 			);
+			if ( ! $simple ) {
+				/**
+				 * Filters whether "Choose options" of a card opens the quick view
+				 * window instead of the product page (SAVE-05). The link still
+				 * goes to the product page without JavaScript.
+				 *
+				 * @param bool        $quick   Whether to open the quick view.
+				 * @param \WC_Product $product Product.
+				 */
+				$props['add']['quick'] = true === apply_filters( 'ultra_max_card_quick_buy', false, $product );
+			}
 		}
 
 		/**

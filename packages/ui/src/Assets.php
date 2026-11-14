@@ -68,6 +68,8 @@ final class Assets {
 		'search',
 		'product',
 		'reviews',
+		'saved',
+		'account',
 	);
 
 	/**

@@ -72,6 +72,8 @@ final class Integration {
 			/* translators: %s: product name. */
 			'product' => sprintf( __( '%s: product', 'ultra-max-core' ), $name ),
 			/* translators: %s: product name. */
+			'account' => sprintf( __( '%s: customer account', 'ultra-max-core' ), $name ),
+			/* translators: %s: product name. */
 			'general' => sprintf( __( '%s: general', 'ultra-max-core' ), $name ),
 			/* translators: %s: product name. */
 			'footer'  => sprintf( __( '%s: footer', 'ultra-max-core' ), $name ),

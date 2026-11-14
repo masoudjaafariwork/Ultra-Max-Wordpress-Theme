@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace UltraMax\Core\Widgets\Header;
 
 /**
- * A link to the compare page. Comparing products arrives with SAVE-02 in
- * phase 4; until then the link goes to the page chosen here.
+ * A link to the compare page (SAVE-02) with the number of products in the
+ * comparison, or to the page chosen here.
  */
 final class Compare extends Wishlist {
 

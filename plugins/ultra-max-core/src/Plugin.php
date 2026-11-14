@@ -19,7 +19,9 @@ use UltraMax\Core\Admin\Wizard;
 use UltraMax\Core\Builder\Builder;
 use UltraMax\Core\Elementor\Integration;
 use UltraMax\Core\Product\Product;
+use UltraMax\Core\Saved\Saved;
 use UltraMax\Core\Search\Search;
+use UltraMax\Core\Store\Pages;
 use UltraMax\Core\Shop\Shop;
 use UltraMax\Core\Widgets\Widgets;
 
@@ -72,6 +74,8 @@ final class Plugin {
 		CustomCode::register();
 		Shop::register();
 		Product::register();
+		Pages::register();
+		Saved::register();
 		Search::register();
 		Builder::register();
 		Widgets::register();
@@ -116,8 +120,10 @@ final class Plugin {
 		$off = array(
 			'shop'    => ! Shop::enabled(),
 			'search'  => ! Search::enabled(),
-			'product' => ! Product::enabled(),
+			// The quick view window shows the product page's pieces (SAVE-04).
+			'product' => ! Product::enabled() && ! Saved::enabled( Saved::QUICK ),
 			'reviews' => ! Product::enabled(),
+			'saved'   => ! Saved::lists() && ! Saved::enabled( Saved::QUICK ),
 		);
 		foreach ( $off as $asset => $drop ) {
 			if ( $drop ) {

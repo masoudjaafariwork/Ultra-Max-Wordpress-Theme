@@ -97,6 +97,7 @@ final class Options {
 
 		$sections['shop']    = self::shop();
 		$sections['product'] = self::product();
+		$sections['saved']   = self::saved();
 
 		$sections['backup'] = array(
 			'title'  => __( 'Backup and reset', 'ultra-max-core' ),
@@ -644,6 +645,57 @@ final class Options {
 	}
 
 	/**
+	 * The wishlist, compare and quick view section (SAVE-01 to SAVE-05).
+	 *
+	 * @return array<string, mixed>
+	 */
+	private static function saved(): array {
+		return array(
+			'title'  => __( 'Wishlist and compare', 'ultra-max-core' ),
+			'icon'   => 'heart',
+			'order'  => 57,
+			'groups' => array(
+				array(
+					'id'          => 'saved_wishlist',
+					'title'       => __( 'Wishlist', 'ultra-max-core' ),
+					'icon'        => 'heart',
+					'features'    => array( 'SAVE-01' ),
+					'module'      => Saved\Saved::WISHLIST,
+					'description' => __( 'Guests keep their list in their browser; it joins their account when they log in. The "Wishlist" page is made for you and can be renamed or designed with Elementor.', 'ultra-max-core' ),
+					'fields'      => array(
+						self::toggle( 'wishlist_card', __( 'Heart button on product cards', 'ultra-max-core' ) ),
+						self::toggle( 'wishlist_product', __( 'Heart button on the product page', 'ultra-max-core' ) ),
+					),
+				),
+				array(
+					'id'          => 'saved_compare',
+					'title'       => __( 'Compare', 'ultra-max-core' ),
+					'icon'        => 'compare',
+					'features'    => array( 'SAVE-02', 'SAVE-03' ),
+					'module'      => Saved\Saved::COMPARE,
+					'description' => __( 'Up to four products side by side, with their specifications and the differences marked. The "Compare products" page is made for you.', 'ultra-max-core' ),
+					'fields'      => array(
+						self::toggle( 'compare_card', __( 'Compare button on product cards', 'ultra-max-core' ) ),
+						self::toggle( 'compare_product', __( 'Compare button on the product page', 'ultra-max-core' ) ),
+						self::toggle( 'compare_same_category', __( 'Compare only products of one category', 'ultra-max-core' ), true, __( 'A product from another category starts a new comparison, after the shopper agrees.', 'ultra-max-core' ) ),
+					),
+				),
+				array(
+					'id'       => 'saved_quick',
+					'title'    => __( 'Quick view', 'ultra-max-core' ),
+					'icon'     => 'eye',
+					'features' => array( 'SAVE-04', 'SAVE-05' ),
+					'module'   => Saved\Saved::QUICK,
+					'fields'   => array(
+						self::toggle( 'quick_card', __( 'Quick view button on product cards', 'ultra-max-core' ) ),
+						self::toggle( 'quick_choose', __( '"Choose options" opens the choices over the list', 'ultra-max-core' ), true, __( 'Shoppers pick a colour or size and add the product without leaving the list.', 'ultra-max-core' ) ),
+					),
+				),
+			),
+		);
+	}
+
+	/**
 	 * Adds the core modules.
 	 *
 	 * @param mixed $modules Modules keyed by id.
@@ -705,6 +757,36 @@ final class Options {
 			'default'     => true,
 			'section'     => 'shop',
 			'assets'      => array( 'search' ),
+			'product'     => 'ultra-max-core',
+		);
+		$modules['wishlist']       = array(
+			'title'       => __( 'Wishlist', 'ultra-max-core' ),
+			'description' => __( 'A heart on cards and product pages, a wishlist page and a counter in the header. Guests\' lists join their account when they log in.', 'ultra-max-core' ),
+			'icon'        => 'heart',
+			'features'    => array( 'SAVE-01' ),
+			'default'     => true,
+			'section'     => 'saved',
+			'assets'      => array( 'saved' ),
+			'product'     => 'ultra-max-core',
+		);
+		$modules['compare']        = array(
+			'title'       => __( 'Compare products', 'ultra-max-core' ),
+			'description' => __( 'Up to four products of one category side by side, with their specifications and the differences marked.', 'ultra-max-core' ),
+			'icon'        => 'compare',
+			'features'    => array( 'SAVE-02', 'SAVE-03' ),
+			'default'     => true,
+			'section'     => 'saved',
+			'assets'      => array( 'saved' ),
+			'product'     => 'ultra-max-core',
+		);
+		$modules['quick-view']     = array(
+			'title'       => __( 'Quick view', 'ultra-max-core' ),
+			'description' => __( 'A product in a window over the list: pictures, price and choices, and adding to the cart without leaving the list.', 'ultra-max-core' ),
+			'icon'        => 'eye',
+			'features'    => array( 'SAVE-04', 'SAVE-05' ),
+			'default'     => true,
+			'section'     => 'saved',
+			'assets'      => array( 'saved' ),
 			'product'     => 'ultra-max-core',
 		);
 		$modules['duplicate']      = array(

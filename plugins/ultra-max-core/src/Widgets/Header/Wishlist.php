@@ -14,9 +14,10 @@ use UltraMax\Core\Lib\UI\Html;
 use UltraMax\Core\Widgets\Values;
 
 /**
- * A link to the wishlist page. The wishlist itself and its count arrive
- * with the wishlist feature (SAVE-01, phase 4); until then the link goes to
- * the page chosen here, or to the account page.
+ * A link to the wishlist page (SAVE-01), or to the page chosen here. The
+ * wishlist's script fills the number in the shopper's browser, so the
+ * header stays the same for everyone and pages stay cacheable. Without the
+ * wishlist module the link goes to the account page.
  */
 class Wishlist extends HeaderWidget {
 
@@ -75,7 +76,7 @@ class Wishlist extends HeaderWidget {
 						'id'    => 'link',
 						'type'  => 'url',
 						'label' => __( 'Link', 'ultra-max-core' ),
-						'help'  => __( 'Leave empty for the account page.', 'ultra-max-core' ),
+						'help'  => __( 'Leave empty for the store\'s own page.', 'ultra-max-core' ),
 					),
 				),
 			),
@@ -91,6 +92,15 @@ class Wishlist extends HeaderWidget {
 		$href = $settings->href( 'link' );
 		if ( '' === $href ) {
 			$href = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/' );
+			/**
+			 * Filters where a header link goes when the widget has no link,
+			 * such as the wishlist page (SAVE-01).
+			 *
+			 * @param string $href Address.
+			 * @param string $key  wishlist or compare.
+			 */
+			$found = apply_filters( 'ultra_max_header_link', $href, $this->count_key() );
+			$href  = is_string( $found ) && '' !== $found ? $found : $href;
 		}
 		/**
 		 * Filters the number shown on a header link, such as the wishlist.

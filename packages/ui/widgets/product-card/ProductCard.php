@@ -50,7 +50,7 @@ namespace UltraMax\UI;
  *     note?: string,
  *     note_tone?: 'danger'|'muted',
  *     unit?: string,
- *     add?: array{href: string, label: string, id: int, ajax: bool},
+ *     add?: array{href: string, label: string, id: int, ajax: bool, quick?: bool},
  *     deal?: array{countdown: Html, sold: int, sold_label: string, left_label: string},
  *     colors?: list<array{color: string, label: string}>,
  *     colors_label?: string,
@@ -115,7 +115,7 @@ final class ProductCard {
 		$quick  = 'hover' === $variant && isset( $props['add'] ) ? sprintf(
 			'<a href="%1$s" class="absolute inset-x-2 bottom-2 z-2 inline-flex h-9 items-center justify-center gap-1.5 rounded-sm bg-primary text-sm font-bold text-on-primary no-underline opacity-0 transition duration-200 group-hover/card:translate-y-0 group-hover/card:opacity-100 max-lg:hidden translate-y-2 focus-visible:opacity-100 focus-visible:translate-y-0"%2$s rel="nofollow">%3$s%4$s</a>',
 			esc_url( $props['add']['href'] ),
-			$props['add']['ajax'] ? sprintf( ' data-um-add="%d"', $props['add']['id'] ) : '',
+			self::add_attrs( $props['add'] ),
 			Icon::render( 'cart', 'size-4' ),
 			esc_html( $props['add']['label'] )
 		) : '';
@@ -340,6 +340,19 @@ final class ProductCard {
 	}
 
 	/**
+	 * Data attributes of an add button: in place adding for simple products,
+	 * the quick view window for products with choices (SAVE-05).
+	 *
+	 * @param array{href: string, label: string, id: int, ajax: bool, quick?: bool} $add Add button props.
+	 */
+	private static function add_attrs( array $add ): string {
+		if ( $add['ajax'] ) {
+			return sprintf( ' data-um-add="%d"', $add['id'] );
+		}
+		return ( $add['quick'] ?? false ) ? sprintf( ' data-um-quick="%d"', $add['id'] ) : '';
+	}
+
+	/**
 	 * A full width add button: always on the swatch card, in the row look
 	 * of the others.
 	 *
@@ -356,7 +369,7 @@ final class ProductCard {
 			$always ? 'mt-1' : 'um-pc-buy mt-1',
 			esc_url( $props['add']['href'] ),
 			$always ? 'border-primary bg-surface text-primary hover:bg-primary-soft' : 'border-primary bg-primary text-on-primary hover:bg-primary-hover',
-			$props['add']['ajax'] ? sprintf( ' data-um-add="%d"', $props['add']['id'] ) : '',
+			self::add_attrs( $props['add'] ),
 			Icon::render( 'cart', 'size-4' ),
 			esc_html( $props['add']['label'] )
 		);
@@ -475,7 +488,7 @@ final class ProductCard {
 			'<a href="%1$s" class="grid size-9 shrink-0 place-items-center rounded-full bg-primary text-on-primary no-underline hover:bg-primary-hover focus-visible:outline-3 focus-visible:outline-primary/40" aria-label="%2$s" rel="nofollow"%3$s>%4$s</a>',
 			esc_url( $props['add']['href'] ),
 			esc_attr( $props['add']['label'] . ': ' . $props['title'] ),
-			$props['add']['ajax'] ? sprintf( ' data-um-add="%d"', $props['add']['id'] ) : '',
+			self::add_attrs( $props['add'] ),
 			Icon::render( 'plus', 'size-5' )
 		);
 	}
