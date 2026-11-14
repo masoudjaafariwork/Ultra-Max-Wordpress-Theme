@@ -108,17 +108,25 @@ final class Cart extends HeaderWidget {
 			return Html::none();
 		}
 		$count = self::count();
-		return HeaderAction::render(
-			array(
-				'label'      => __( 'Cart', 'ultra-max-core' ),
-				'text'       => $settings->string( 'text' ),
-				'icon'       => 'cart',
-				'href'       => wc_get_cart_url(),
-				'count'      => $count,
-				'count_text' => Format::number( $count ),
-				'count_key'  => 'cart',
-				'variant'    => self::look( $settings->string( 'look' ) ),
-			)
+		/**
+		 * Filters the id of the drawer the cart button opens; empty for none.
+		 *
+		 * @param string $id Drawer id.
+		 */
+		$drawer = apply_filters( 'ultra_max_side_cart', '' );
+		$props  = array(
+			'label'      => __( 'Cart', 'ultra-max-core' ),
+			'text'       => $settings->string( 'text' ),
+			'icon'       => 'cart',
+			'href'       => wc_get_cart_url(),
+			'count'      => $count,
+			'count_text' => Format::number( $count ),
+			'count_key'  => 'cart',
+			'variant'    => self::look( $settings->string( 'look' ) ),
 		);
+		if ( is_string( $drawer ) && '' !== $drawer ) {
+			$props['open'] = $drawer;
+		}
+		return HeaderAction::render( $props );
 	}
 }

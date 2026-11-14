@@ -98,6 +98,7 @@ final class Options {
 		$sections['shop']    = self::shop();
 		$sections['product'] = self::product();
 		$sections['saved']   = self::saved();
+		$sections['cart']    = self::cart();
 
 		$sections['backup'] = array(
 			'title'  => __( 'Backup and reset', 'ultra-max-core' ),
@@ -696,6 +697,246 @@ final class Options {
 	}
 
 	/**
+	 * The cart and checkout section (CART-01 to CART-10, CHK-01 to CHK-10, SHIP-01, SHIP-02).
+	 *
+	 * @return array<string, mixed>
+	 */
+	private static function cart(): array {
+		$show   = self::options(
+			array(
+				'required' => __( 'Required', 'ultra-max-core' ),
+				'optional' => __( 'Optional', 'ultra-max-core' ),
+				'hidden'   => __( 'Hidden', 'ultra-max-core' ),
+			)
+		);
+		$amount = static fn ( string $id, string $label, string $help ): array => array_merge( self::range( $id, $label, 0, 0, 1000000000, $help ), array( 'type' => 'number' ) );
+		return array(
+			'title'  => __( 'Cart and checkout', 'ultra-max-core' ),
+			'icon'   => 'cart',
+			'order'  => 57,
+			'groups' => array(
+				array(
+					'id'       => 'cart_page',
+					'title'    => __( 'Cart', 'ultra-max-core' ),
+					'icon'     => 'cart',
+					'features' => array( 'CART-01', 'CART-02', 'CART-03', 'CART-04', 'CART-05', 'CART-07' ),
+					'module'   => Cart\Cart::MODULE,
+					'fields'   => array(
+						array(
+							'id'      => 'cart_design',
+							'type'    => 'segmented',
+							'label'   => __( 'Cart and checkout pages', 'ultra-max-core' ),
+							'help'    => __( 'WooCommerce\'s own pages still get the saving, the free shipping bar, the buy later list, the Iranian fields and the saved addresses.', 'ultra-max-core' ),
+							'default' => 'ultra-max',
+							'options' => self::options(
+								array(
+									'ultra-max'   => __( 'Our design', 'ultra-max-core' ),
+									'woocommerce' => __( 'WooCommerce\'s pages (blocks)', 'ultra-max-core' ),
+								)
+							),
+						),
+						self::toggle( 'cart_side', __( 'Side cart', 'ultra-max-core' ), true, __( 'The header\'s cart button opens the cart beside the page.', 'ultra-max-core' ) ),
+						self::toggle( 'cart_open_on_add', __( 'Open the side cart after adding a product', 'ultra-max-core' ) ),
+						self::toggle( 'cart_later', __( '"Buy later" list', 'ultra-max-core' ), true, __( 'Shoppers move items out of the cart to keep them for another time. A logged in shopper\'s list follows them to every device.', 'ultra-max-core' ) ),
+						self::toggle( 'cart_savings', __( 'Show "your saving"', 'ultra-max-core' ) ),
+						self::toggle( 'cart_free_bar', __( 'Show how far the cart is from free shipping', 'ultra-max-core' ), true, __( 'The amount is set in Product page, Delivery.', 'ultra-max-core' ) ),
+						self::toggle( 'cart_suggestions', __( 'Suggest products that go with the cart', 'ultra-max-core' ) ),
+						self::range( 'cart_suggestions_count', __( 'Suggested products', 'ultra-max-core' ), 10, 4, 24 ),
+						array(
+							'id'      => 'cart_note',
+							'type'    => 'text',
+							'label'   => __( 'Note under the cart totals', 'ultra-max-core' ),
+							'default' => __( 'Items in your cart are not reserved. Finish your order to get them.', 'ultra-max-core' ),
+						),
+					),
+				),
+				array(
+					'id'          => 'cart_limits',
+					'title'       => __( 'Order limits', 'ultra-max-core' ),
+					'icon'        => 'alert',
+					'features'    => array( 'CART-10' ),
+					'module'      => Cart\Cart::MODULE,
+					'description' => __( 'The cart total before shipping. The cart says clearly how much is missing or over, and no checkout lets the order through.', 'ultra-max-core' ),
+					'fields'      => array(
+						$amount( 'cart_min', __( 'Smallest order (store currency)', 'ultra-max-core' ), __( '0 for no limit.', 'ultra-max-core' ) ),
+						$amount( 'cart_max', __( 'Largest order (store currency)', 'ultra-max-core' ), __( '0 for no limit.', 'ultra-max-core' ) ),
+					),
+				),
+				array(
+					'id'       => 'checkout_form',
+					'title'    => __( 'Checkout', 'ultra-max-core' ),
+					'icon'     => 'card',
+					'features' => array( 'CHK-01', 'CHK-02', 'CHK-03', 'CHK-08', 'CHK-09' ),
+					'module'   => Checkout\Checkout::MODULE,
+					'fields'   => array(
+						array(
+							'id'      => 'checkout_mode',
+							'type'    => 'segmented',
+							'label'   => __( 'Checkout', 'ultra-max-core' ),
+							'default' => 'steps',
+							'options' => self::options(
+								array(
+									'steps'  => __( 'In steps', 'ultra-max-core' ),
+									'single' => __( 'On one page', 'ultra-max-core' ),
+								)
+							),
+						),
+						self::toggle( 'checkout_address_book', __( 'Saved addresses', 'ultra-max-core' ), true, __( 'Every order keeps its address on the shopper\'s account to choose next time.', 'ultra-max-core' ) ),
+						self::toggle( 'checkout_city_list', __( 'Choose the city from the province\'s list', 'ultra-max-core' ) ),
+						array(
+							'id'          => 'checkout_cities',
+							'type'        => 'textarea',
+							'label'       => __( 'More cities', 'ultra-max-core' ),
+							'help'        => __( 'One per line as "province: city", for cities missing from the list.', 'ultra-max-core' ),
+							'placeholder' => __( 'Tehran: Lavasan', 'ultra-max-core' ),
+						),
+						self::toggle( 'checkout_marketing', __( 'Ask for consent to marketing messages', 'ultra-max-core' ) ),
+						array(
+							'id'          => 'checkout_marketing_text',
+							'type'        => 'text',
+							'label'       => __( 'Text of the consent box', 'ultra-max-core' ),
+							'placeholder' => __( 'Send me offers and discounts by text message.', 'ultra-max-core' ),
+						),
+					),
+				),
+				array(
+					'id'          => 'checkout_buyer_group',
+					'title'       => __( 'Buyer and invoice', 'ultra-max-core' ),
+					'icon'        => 'building',
+					'features'    => array( 'CHK-04', 'CHK-05' ),
+					'module'      => Checkout\Checkout::MODULE,
+					'description' => __( 'Mobile numbers, postal codes, national codes and company ids are checked by their Iranian rules; digits typed in Persian are saved in Latin.', 'ultra-max-core' ),
+					'fields'      => array(
+						self::toggle( 'checkout_buyer', __( 'Ask whether the buyer is a person or a company', 'ultra-max-core' ), true, __( 'A company gives its name, national id, economic code and registration number for the invoice.', 'ultra-max-core' ) ),
+						array(
+							'id'      => 'checkout_national_code',
+							'type'    => 'segmented',
+							'label'   => __( 'National code of a person', 'ultra-max-core' ),
+							'default' => 'optional',
+							'options' => $show,
+						),
+						array(
+							'id'      => 'checkout_economic_code',
+							'type'    => 'segmented',
+							'label'   => __( 'Economic code of a company', 'ultra-max-core' ),
+							'default' => 'required',
+							'options' => array_slice( $show, 0, 2 ),
+						),
+					),
+				),
+				array(
+					'id'          => 'checkout_editor',
+					'title'       => __( 'Checkout fields', 'ultra-max-core' ),
+					'icon'        => 'sliders',
+					'features'    => array( 'CHK-06' ),
+					'module'      => Checkout\Checkout::MODULE,
+					'description' => __( 'The block checkout always asks for the email, and shows its fields in its own order of sections.', 'ultra-max-core' ),
+					'fields'      => array(
+						array(
+							'id'       => 'checkout_fields',
+							'type'     => 'repeater',
+							'label'    => __( 'Address fields and their order', 'ultra-max-core' ),
+							'help'     => __( 'Drag to change the order. Leave the label empty for the usual one.', 'ultra-max-core' ),
+							'max_rows' => 10,
+							'default'  => Checkout\Fields::default_rows(),
+							'fields'   => array(
+								array(
+									'id'      => 'field',
+									'type'    => 'select',
+									'label'   => __( 'Field', 'ultra-max-core' ),
+									'default' => 'first_name',
+									'options' => self::options( Checkout\Fields::core_labels() ),
+								),
+								array(
+									'id'    => 'label',
+									'type'  => 'text',
+									'label' => __( 'Label', 'ultra-max-core' ),
+								),
+								array(
+									'id'      => 'show',
+									'type'    => 'select',
+									'label'   => __( 'Shown as', 'ultra-max-core' ),
+									'default' => 'required',
+									'options' => $show,
+								),
+							),
+						),
+						array(
+							'id'       => 'checkout_custom',
+							'type'     => 'repeater',
+							'label'    => __( 'Your own fields', 'ultra-max-core' ),
+							'max_rows' => 15,
+							'fields'   => array(
+								array(
+									'id'    => 'label',
+									'type'  => 'text',
+									'label' => __( 'Label', 'ultra-max-core' ),
+								),
+								array(
+									'id'          => 'key',
+									'type'        => 'text',
+									'label'       => __( 'Name in the data (Latin letters, optional)', 'ultra-max-core' ),
+									'placeholder' => 'gift_note',
+								),
+								array(
+									'id'      => 'type',
+									'type'    => 'select',
+									'label'   => __( 'Type', 'ultra-max-core' ),
+									'default' => 'text',
+									'options' => self::options(
+										array(
+											'text'     => __( 'Text', 'ultra-max-core' ),
+											'textarea' => __( 'Long text', 'ultra-max-core' ),
+											'select'   => __( 'List', 'ultra-max-core' ),
+											'checkbox' => __( 'Tick box', 'ultra-max-core' ),
+										)
+									),
+								),
+								array(
+									'id'    => 'options',
+									'type'  => 'text',
+									'label' => __( 'Choices of a list, separated by commas', 'ultra-max-core' ),
+								),
+								array(
+									'id'      => 'place',
+									'type'    => 'select',
+									'label'   => __( 'Shown with', 'ultra-max-core' ),
+									'default' => 'order',
+									'options' => self::options(
+										array(
+											'contact' => __( 'Buyer details', 'ultra-max-core' ),
+											'address' => __( 'The address', 'ultra-max-core' ),
+											'order'   => __( 'Order notes', 'ultra-max-core' ),
+										)
+									),
+								),
+								array(
+									'id'      => 'when',
+									'type'    => 'select',
+									'label'   => __( 'Shown to', 'ultra-max-core' ),
+									'default' => 'always',
+									'options' => self::options(
+										array(
+											'always'  => __( 'Every buyer', 'ultra-max-core' ),
+											'person'  => __( 'People only', 'ultra-max-core' ),
+											'company' => __( 'Companies only', 'ultra-max-core' ),
+										)
+									),
+								),
+								array(
+									'id'      => 'required',
+									'type'    => 'toggle',
+									'label'   => __( 'Required', 'ultra-max-core' ),
+									'default' => false,
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+	}
+	/**
 	 * Adds the core modules.
 	 *
 	 * @param mixed $modules Modules keyed by id.
@@ -787,6 +1028,35 @@ final class Options {
 			'default'     => true,
 			'section'     => 'saved',
 			'assets'      => array( 'saved' ),
+			'product'     => 'ultra-max-core',
+		);
+		$modules['cart']           = array(
+			'title'       => __( 'Cart', 'ultra-max-core' ),
+			'description' => __( 'A side cart on every page, a cart page with a buy later list, the saving, a free shipping bar, suggestions and order limits. Off, WooCommerce\'s own cart shows.', 'ultra-max-core' ),
+			'icon'        => 'cart',
+			'features'    => array( 'CART-01', 'CART-02', 'CART-03', 'CART-04', 'CART-05', 'CART-07', 'CART-10', 'BLD-06' ),
+			'default'     => true,
+			'section'     => 'cart',
+			'assets'      => array( 'cart' ),
+			'product'     => 'ultra-max-core',
+		);
+		$modules['checkout']       = array(
+			'title'       => __( 'Checkout', 'ultra-max-core' ),
+			'description' => __( 'A checkout in steps or on one page, provinces and cities of Iran, mobile, postal and national code checks, buyer type, saved addresses and a field editor; for WooCommerce\'s classic and block checkout.', 'ultra-max-core' ),
+			'icon'        => 'card',
+			'features'    => array( 'CHK-01', 'CHK-02', 'CHK-03', 'CHK-04', 'CHK-05', 'CHK-06', 'CHK-08', 'CHK-09', 'CHK-10', 'BLD-06' ),
+			'default'     => true,
+			'section'     => 'cart',
+			'assets'      => array( 'checkout' ),
+			'product'     => 'ultra-max-core',
+		);
+		$modules['iran-shipping']  = array(
+			'title'       => __( 'Iranian shipping', 'ultra-max-core' ),
+			'description' => __( 'Iran Post priced by weight and province, and your own courier for chosen cities, as WooCommerce shipping methods.', 'ultra-max-core' ),
+			'icon'        => 'truck',
+			'features'    => array( 'SHIP-01', 'SHIP-02' ),
+			'default'     => true,
+			'section'     => 'cart',
 			'product'     => 'ultra-max-core',
 		);
 		$modules['duplicate']      = array(

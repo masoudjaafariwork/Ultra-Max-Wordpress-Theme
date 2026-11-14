@@ -26,7 +26,7 @@ final class Types {
 	 */
 	public static function all(): array {
 		$types = array(
-			'header'           => array(
+			'header'         => array(
 				'label'       => __( 'Header', 'ultra-max-core' ),
 				'plural'      => __( 'Headers', 'ultra-max-core' ),
 				'description' => __( 'The top of every page: logo, menus, search and cart. Make one for desktop and one for mobile, or one for both.', 'ultra-max-core' ),
@@ -35,7 +35,7 @@ final class Types {
 				'ready'       => true,
 				'sticky'      => true,
 			),
-			'footer'           => array(
+			'footer'         => array(
 				'label'       => __( 'Footer', 'ultra-max-core' ),
 				'plural'      => __( 'Footers', 'ultra-max-core' ),
 				'description' => __( 'The bottom of every page: links, trust badges, payment marks and app links.', 'ultra-max-core' ),
@@ -44,7 +44,7 @@ final class Types {
 				'ready'       => true,
 				'sticky'      => false,
 			),
-			'block'            => array(
+			'block'          => array(
 				'label'       => __( 'Reusable block', 'ultra-max-core' ),
 				'plural'      => __( 'Reusable blocks', 'ultra-max-core' ),
 				'description' => __( 'A piece of design you can show in a mega menu, a slider or anywhere with a shortcode.', 'ultra-max-core' ),
@@ -53,18 +53,17 @@ final class Types {
 				'ready'       => true,
 				'sticky'      => false,
 			),
-			'single-product'   => self::later( __( 'Single product', 'ultra-max-core' ), __( 'Single products', 'ultra-max-core' ), 'single-product', __( 'The product page: gallery, buy box, specifications, reviews and questions. Use the product widgets; a category or a single product can have its own design.', 'ultra-max-core' ) ),
-			'shop-archive'     => self::later( __( 'Shop archive', 'ultra-max-core' ), __( 'Shop archives', 'ultra-max-core' ), 'shop-archive', __( 'The product lists: the shop, categories, brands and product search. Use the shop widgets for filters, sorting and products.', 'ultra-max-core' ) ),
-			'product-card'     => self::later( __( 'Product card', 'ultra-max-core' ), __( 'Product cards', 'ultra-max-core' ), '', __( 'One product in lists and sliders. Choose it as the card design in the shop settings or in a products widget.', 'ultra-max-core' ) ),
-			'cart'             => self::later( __( 'Cart', 'ultra-max-core' ), __( 'Carts', 'ultra-max-core' ), '' ),
-			'checkout-form'    => self::later( __( 'Checkout form', 'ultra-max-core' ), __( 'Checkout forms', 'ultra-max-core' ), '' ),
-			'checkout-content' => self::later( __( 'Checkout content', 'ultra-max-core' ), __( 'Checkout contents', 'ultra-max-core' ), '' ),
-			'thank-you'        => self::later( __( 'Thank you page', 'ultra-max-core' ), __( 'Thank you pages', 'ultra-max-core' ), '' ),
-			'login'            => self::later( __( 'Login and register', 'ultra-max-core' ), __( 'Login and register pages', 'ultra-max-core' ), '' ),
-			'lost-password'    => self::later( __( 'Lost password', 'ultra-max-core' ), __( 'Lost password pages', 'ultra-max-core' ), '' ),
-			'account'          => self::later( __( 'My account', 'ultra-max-core' ), __( 'Account pages', 'ultra-max-core' ), '' ),
-			'single-post'      => self::later( __( 'Single post', 'ultra-max-core' ), __( 'Single posts', 'ultra-max-core' ), 'single' ),
-			'blog-archive'     => self::later( __( 'Blog archive', 'ultra-max-core' ), __( 'Blog archives', 'ultra-max-core' ), 'archive' ),
+			'single-product' => self::later( __( 'Single product', 'ultra-max-core' ), __( 'Single products', 'ultra-max-core' ), 'single-product', __( 'The product page: gallery, buy box, specifications, reviews and questions. Use the product widgets; a category or a single product can have its own design.', 'ultra-max-core' ) ),
+			'shop-archive'   => self::later( __( 'Shop archive', 'ultra-max-core' ), __( 'Shop archives', 'ultra-max-core' ), 'shop-archive', __( 'The product lists: the shop, categories, brands and product search. Use the shop widgets for filters, sorting and products.', 'ultra-max-core' ) ),
+			'product-card'   => self::later( __( 'Product card', 'ultra-max-core' ), __( 'Product cards', 'ultra-max-core' ), '', __( 'One product in lists and sliders. Choose it as the card design in the shop settings or in a products widget.', 'ultra-max-core' ) ),
+			'cart'           => self::later( __( 'Cart', 'ultra-max-core' ), __( 'Carts', 'ultra-max-core' ), 'cart', __( 'The cart page: the items, the totals, the discount code, the buy later list and suggestions. Use the cart widgets.', 'ultra-max-core' ) ),
+			'checkout-form'  => self::later( __( 'Checkout form', 'ultra-max-core' ), __( 'Checkout forms', 'ultra-max-core' ), 'checkout', __( 'The checkout: steps, address, buyer, shipping, payment and the order summary. Use the checkout widgets; the whole layout is one form.', 'ultra-max-core' ) ),
+			'thank-you'      => self::later( __( 'Thank you page', 'ultra-max-core' ), __( 'Thank you pages', 'ultra-max-core' ), 'thank-you', __( 'The page after an order: the thanks, the payment instructions, the items and the customer\'s details. Use the order widgets.', 'ultra-max-core' ) ),
+			'login'          => self::later( __( 'Login and register', 'ultra-max-core' ), __( 'Login and register pages', 'ultra-max-core' ), '' ),
+			'lost-password'  => self::later( __( 'Lost password', 'ultra-max-core' ), __( 'Lost password pages', 'ultra-max-core' ), '' ),
+			'account'        => self::later( __( 'My account', 'ultra-max-core' ), __( 'Account pages', 'ultra-max-core' ), 'account', __( 'The customer account: menu, dashboard, orders and lists. Use the account widgets.', 'ultra-max-core' ) ),
+			'single-post'    => self::later( __( 'Single post', 'ultra-max-core' ), __( 'Single posts', 'ultra-max-core' ), 'single' ),
+			'blog-archive'   => self::later( __( 'Blog archive', 'ultra-max-core' ), __( 'Blog archives', 'ultra-max-core' ), 'archive' ),
 		);
 		/**
 		 * Filters the layout types. A later phase marks its types ready.

@@ -17,6 +17,9 @@ use UltraMax\Core\Admin\Products;
 use UltraMax\Core\Admin\Rest;
 use UltraMax\Core\Admin\Wizard;
 use UltraMax\Core\Builder\Builder;
+use UltraMax\Core\Cart\Cart;
+use UltraMax\Core\Checkout\Checkout;
+use UltraMax\Core\Shipping\Shipping;
 use UltraMax\Core\Elementor\Integration;
 use UltraMax\Core\Product\Product;
 use UltraMax\Core\Saved\Saved;
@@ -76,6 +79,9 @@ final class Plugin {
 		Product::register();
 		Pages::register();
 		Saved::register();
+		Cart::register();
+		Checkout::register();
+		Shipping::register();
 		Search::register();
 		Builder::register();
 		Widgets::register();
@@ -118,12 +124,14 @@ final class Plugin {
 	 */
 	public function drop_off_assets(): void {
 		$off = array(
-			'shop'    => ! Shop::enabled(),
-			'search'  => ! Search::enabled(),
+			'shop'     => ! Shop::enabled(),
+			'search'   => ! Search::enabled(),
 			// The quick view window shows the product page's pieces (SAVE-04).
-			'product' => ! Product::enabled() && ! Saved::enabled( Saved::QUICK ),
-			'reviews' => ! Product::enabled(),
-			'saved'   => ! Saved::lists() && ! Saved::enabled( Saved::QUICK ),
+			'product'  => ! Product::enabled() && ! Saved::enabled( Saved::QUICK ),
+			'reviews'  => ! Product::enabled(),
+			'saved'    => ! Saved::lists() && ! Saved::enabled( Saved::QUICK ),
+			'cart'     => ! Cart::enabled(),
+			'checkout' => ! Checkout::enabled(),
 		);
 		foreach ( $off as $asset => $drop ) {
 			if ( $drop ) {

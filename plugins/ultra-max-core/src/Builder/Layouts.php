@@ -99,7 +99,7 @@ final class Layouts {
 	 */
 	public static function defaults( string $type ): array {
 		$include = match ( true ) {
-			in_array( $type, array( 'header', 'footer', 'shop-archive' ), true ) => array( array( 'target' => 'all' ) ),
+			in_array( $type, array( 'header', 'footer', 'shop-archive', 'cart', 'checkout-form', 'thank-you' ), true ) => array( array( 'target' => 'all' ) ),
 			'single-product' === $type => array( array( 'target' => 'products' ) ),
 			default => array(),
 		};

@@ -1,0 +1,288 @@
+/*
+ * Styles of the checkout widget asset (BLD-06, BLD-12): the checkout, its
+ * widgets and the thank you page. Built from its components' own classes.
+ *
+ * The rules below give WooCommerce's own checkout fields (rendered by
+ * woocommerce_form_field(), which payment gateways and other plugins add
+ * to) the store's field look, and switch the steps and the buyer type
+ * with CSS alone, so the form works before and without JavaScript.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../checkout";
+
+/*
+ * Unlayered on purpose: these must win over the utilities of the buttons and
+ * boxes they hide, and over other plugins' styles of WooCommerce's fields.
+ */
+.um-checkout-form .um-fields {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.um-checkout-form .form-row {
+	display: grid;
+	gap: 6px;
+	margin: 0;
+	padding: 0;
+	grid-column: 1 / -1;
+}
+
+.um-checkout-form .form-row-first,
+.um-checkout-form .form-row-last {
+	grid-column: auto;
+}
+
+.um-checkout-form .form-row > label {
+	font-size: var(--text-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-fg);
+}
+
+.um-checkout-form .form-row .required,
+.um-checkout-form label.um-required::after {
+	color: var(--color-danger);
+	text-decoration: none;
+	border: 0;
+}
+
+.um-checkout-form label.um-required::after {
+	content: " *";
+}
+
+.um-checkout-form .form-row .optional {
+	color: var(--color-fg-3);
+	font-weight: var(--font-weight-regular);
+}
+
+.um-checkout-form .input-text,
+.um-checkout-form .form-row select,
+.um-checkout-form .form-row textarea {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 44px;
+	padding: 0 14px;
+	border: 1px solid var(--color-border-strong);
+	border-radius: var(--radius-md);
+	background: var(--color-surface);
+	color: var(--color-fg);
+	font: inherit;
+	font-size: var(--text-md);
+	outline: none;
+	transition: border-color 150ms;
+}
+
+.um-checkout-form .form-row textarea {
+	min-height: 96px;
+	padding: 12px 14px;
+	line-height: 1.8;
+}
+
+.um-checkout-form .input-text:hover,
+.um-checkout-form .form-row select:hover {
+	border-color: var(--color-fg-3);
+}
+
+.um-checkout-form .input-text:focus,
+.um-checkout-form .form-row select:focus,
+.um-checkout-form .form-row textarea:focus {
+	border-color: var(--color-primary);
+	box-shadow: var(--um-focus);
+}
+
+/* A field in error wins over its hover look. */
+/* stylelint-disable no-descending-specificity */
+.um-checkout-form .woocommerce-invalid .input-text,
+.um-checkout-form .woocommerce-invalid select,
+.um-checkout-form .um-invalid .input-text {
+	border-color: var(--color-danger);
+}
+/* stylelint-enable no-descending-specificity */
+
+.um-checkout-form .um-ltr .input-text {
+	direction: ltr;
+	text-align: right;
+	font-family: var(--font-num);
+}
+
+.um-checkout-form .um-field-error,
+.um-checkout-form .checkout-inline-error-message {
+	display: flex;
+	gap: 4px;
+	margin: 0;
+	font-size: var(--text-xs);
+	color: var(--color-danger-text);
+}
+
+/* WooCommerce's radio list, such as the buyer type: a segmented switch. */
+.um-checkout-form .form-row .woocommerce-input-wrapper:has(.input-radio) {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	width: fit-content;
+	padding: 4px;
+	border-radius: var(--radius-md);
+	background: var(--color-surface-3);
+}
+
+.um-checkout-form .woocommerce-input-wrapper .input-radio {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.um-checkout-form .woocommerce-input-wrapper label.radio {
+	display: inline-flex;
+	align-items: center;
+	min-height: 36px;
+	margin: 0;
+	padding: 0 16px;
+	border-radius: var(--radius-sm);
+	font-size: var(--text-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-fg-2);
+	cursor: pointer;
+}
+
+.um-checkout-form .woocommerce-input-wrapper .input-radio:checked + label.radio {
+	background: var(--color-surface);
+	color: var(--color-fg);
+	font-weight: var(--font-weight-bold);
+	box-shadow: var(--shadow-xs);
+}
+
+.um-checkout-form .woocommerce-input-wrapper .input-radio:focus-visible + label.radio {
+	outline: 3px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+.um-checkout-form .form-row input[type="checkbox"] {
+	width: 18px;
+	height: 18px;
+	margin: 0;
+	margin-inline-end: 8px;
+	vertical-align: middle;
+	accent-color: var(--color-primary);
+}
+
+.um-checkout-form .form-row .checkbox,
+.um-checkout-form .woocommerce-form__label-for-checkbox {
+	display: inline-flex;
+	align-items: center;
+	font-size: var(--text-sm);
+	font-weight: var(--font-weight-regular);
+	color: var(--color-fg-2);
+	cursor: pointer;
+}
+
+/* A store that sells only in Iran needs no country row. */
+[id="billing_country_field"]:has(input[type="hidden"]),
+[id="shipping_country_field"]:has(input[type="hidden"]),
+[id="billing_country_field"]:has(option:only-child),
+[id="shipping_country_field"]:has(option:only-child) {
+	display: none;
+}
+
+/* The buyer type always has a value; WooCommerce marks each choice anyway. */
+/* stylelint-disable no-descending-specificity */
+[id="um_customer_type_field"] label .optional,
+[id="um_customer_type_field"] label .required {
+	display: none;
+}
+/* stylelint-enable no-descending-specificity */
+
+/* The buyer type shows its own fields, without JavaScript (CHK-05). */
+.um-checkout-form:has([id="um_customer_type_company"]:checked) .um-when-person,
+.um-checkout-form:not(:has([id="um_customer_type_company"]:checked)) .um-when-company {
+	display: none;
+}
+
+/* The multi-step checkout shows one step's boxes at a time (CHK-01). */
+.um-checkout-form[data-step="shipping"] [data-um-step="payment"],
+.um-checkout-form[data-step="payment"] [data-um-step="shipping"],
+.um-checkout-form[data-step="shipping"] [data-um-only="payment"],
+.um-checkout-form[data-step="payment"] [data-um-only="shipping"],
+.um-checkout-form[data-step="shipping"] [data-um-checkout-part]:has(> [data-um-step="payment"]:only-child),
+.um-checkout-form[data-step="payment"] [data-um-checkout-part]:has(> [data-um-step="shipping"]:only-child),
+.um-checkout-form:not([data-step]) [data-um-next],
+.um-checkout-form:not([data-step]) [data-um-back] {
+	display: none;
+}
+
+/* A chosen saved address folds the address fields away (CHK-02). */
+.um-checkout-form[data-address="saved"] .um-address-fields {
+	display: none;
+}
+
+.um-checkout-form .woocommerce-terms-and-conditions-wrapper {
+	display: grid;
+	gap: 8px;
+	font-size: var(--text-sm);
+}
+
+.um-checkout-form .woocommerce-privacy-policy-text p {
+	margin: 0;
+	color: var(--color-fg-3);
+	font-size: var(--text-xs);
+}
+
+.um-checkout-form .woocommerce-NoticeGroup,
+.um-checkout-page .woocommerce-error,
+.um-checkout-page .woocommerce-message,
+.um-checkout-page .woocommerce-info {
+	grid-column: 1 / -1;
+}
+
+.um-checkout-page .woocommerce-error,
+.um-checkout-page .woocommerce-message,
+.um-checkout-page .woocommerce-info {
+	margin: 0;
+	padding: 12px 16px;
+	list-style: none;
+	border-radius: var(--radius-md);
+	font-size: var(--text-sm);
+}
+
+.um-checkout-page .woocommerce-error {
+	background: var(--color-danger-soft);
+	color: var(--color-danger-text);
+}
+
+.um-checkout-page .woocommerce-message {
+	background: var(--color-success-soft);
+	color: var(--color-success-text);
+}
+
+.um-checkout-page .woocommerce-info {
+	background: var(--color-info-soft);
+	color: var(--color-info-text);
+}
+
+.um-checkout-page .woocommerce-error li + li {
+	margin-top: 4px;
+}
+
+.um-checkout-page .woocommerce-error a,
+.um-checkout-page .woocommerce-info a {
+	color: inherit;
+	font-weight: var(--font-weight-bold);
+}
+
+@media (width < 768px) {
+	.um-checkout-form .um-fields {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.um-checkout-form .form-row-first,
+	.um-checkout-form .form-row-last {
+		grid-column: 1 / -1;
+	}
+
+	body:has(.um-checkout-bar) {
+		padding-bottom: calc(72px + env(safe-area-inset-bottom));
+	}
+}

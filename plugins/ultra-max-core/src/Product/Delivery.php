@@ -190,7 +190,7 @@ final class Delivery {
 	 * @param \DateTimeImmutable $from First day.
 	 * @param \DateTimeImmutable $to   Last day.
 	 */
-	private static function span( \DateTimeImmutable $from, \DateTimeImmutable $to ): string {
+	public static function span( \DateTimeImmutable $from, \DateTimeImmutable $to ): string {
 		if ( $from->format( 'Y-m-d' ) === $to->format( 'Y-m-d' ) ) {
 			return self::day( $from );
 		}

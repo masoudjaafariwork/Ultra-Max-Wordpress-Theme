@@ -73,6 +73,18 @@ final class HeaderAction {
 			'class'      => Attributes::classes( 'um-header-action', $classes, $props['class'] ?? null ),
 			'aria-label' => '' === $text ? $props['label'] : null,
 		);
+		if ( isset( $props['open'], $props['href'] ) ) {
+			// A link that opens a drawer, and still goes to its page without JavaScript.
+			$attrs = array_merge(
+				array(
+					'href'          => esc_url( $props['href'] ),
+					'data-um-open'  => $props['open'],
+					'aria-haspopup' => 'dialog',
+				),
+				$attrs
+			);
+			return Html::trusted( sprintf( '<a%1$s>%2$s%3$s%4$s</a>', Attributes::render( $attrs ), $icon, $text, 'button' === $variant ? $badge : '' ) );
+		}
 		if ( isset( $props['open'] ) ) {
 			$attrs = array_merge(
 				array(

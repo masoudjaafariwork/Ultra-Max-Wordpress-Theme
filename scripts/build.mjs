@@ -66,6 +66,8 @@ export const entries = [
 	{ name: 'core/elementor-preview', js: 'plugins/ultra-max-core/assets/src/elementor/preview.ts', product: 'plugins/ultra-max-core' },
 	// Product screen: picture choosers for variations and attribute values, rows of the product's tabs (PDP-03, PDP-04, PDP-14).
 	{ name: 'core/product-admin', js: 'plugins/ultra-max-core/assets/src/product-admin/index.ts', product: 'plugins/ultra-max-core' },
+	// Our additions to WooCommerce's block cart and checkout (CART-03, CART-04, CHK-02, CHK-03, CHK-10); uses WordPress's globals only.
+	{ name: 'core/wc-blocks', js: 'plugins/ultra-max-core/assets/src/wc-blocks/index.ts', product: 'plugins/ultra-max-core' },
 	// Admin screens bundle React 19: shadcn/ui needs it and WordPress 7.1 still ships React 18.
 	{ name: 'catalog/admin', js: 'tools/catalog/assets/src/admin.tsx', product: 'tools/catalog' },
 	// The Ultra Max panel (ADM-01 to ADM-07): React 19 bundled, like the catalog.

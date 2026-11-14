@@ -1,0 +1,42 @@
+/*
+ * Styles of the cart widget asset (BLD-06, BLD-12): the cart page, the
+ * cart widgets and the side cart. Built from its components' own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../cart";
+@source "../product/ProgressNote.php";
+
+/*
+ * The phone checkout bar sits above the bottom navigation when the store
+ * shows one (HDR-10), and the page leaves room for both.
+ */
+@media (width < 768px) {
+	body:has(.um-checkout-bar) {
+		padding-bottom: calc(72px + env(safe-area-inset-bottom));
+	}
+
+	body.um-has-bottom-nav:has(.um-checkout-bar) {
+		padding-bottom: calc(var(--um-bottom-nav-h) + 72px + env(safe-area-inset-bottom));
+	}
+
+	body.um-has-bottom-nav .um-checkout-bar {
+		bottom: calc(var(--um-bottom-nav-h) + env(safe-area-inset-bottom));
+		padding-bottom: 10px;
+	}
+
+	body:has(.um-checkout-bar) :is([data-um-component="contact-buttons"], [data-um-component="back-to-top"]) {
+		bottom: calc(88px + env(safe-area-inset-bottom));
+	}
+}
+
+/* A line being changed fades until the store answers. */
+[data-um-component="cart"][aria-busy="true"] [data-um-cart-part],
+[data-um-component="side-cart"][aria-busy="true"] [data-um-cart-part] {
+	opacity: 0.6;
+	transition: opacity 150ms;
+}
