@@ -1,0 +1,221 @@
+{
+	"title": "Store cart",
+	"description": "The items beside the totals and the discount code; the buy later list and suggestions below, and a checkout bar on phones.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "9461cce",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 16,
+					"column": "16",
+					"row": "16"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "6ea2ef7",
+					"elType": "widget",
+					"widgetType": "um-cart-empty",
+					"settings": {},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "a516a87",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "flex-start",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 20,
+					"column": "20",
+					"row": "20"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "0",
+					"bottom": "8",
+					"left": "0",
+					"isLinked": false
+				},
+				"flex_direction_tablet": "column",
+				"flex_direction_mobile": "column"
+			},
+			"elements": [
+				{
+					"id": "e1e32e2",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 16,
+							"column": "16",
+							"row": "16"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 70
+						},
+						"width_tablet": {
+							"unit": "%",
+							"size": 100
+						},
+						"width_mobile": {
+							"unit": "%",
+							"size": 100
+						}
+					},
+					"elements": [
+						{
+							"id": "f770b62",
+							"elType": "widget",
+							"widgetType": "um-cart-items",
+							"settings": {
+								"heading": "h1"
+							},
+							"elements": []
+						}
+					]
+				},
+				{
+					"id": "7d04bbb",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 30
+						},
+						"width_tablet": {
+							"unit": "%",
+							"size": 100
+						},
+						"width_mobile": {
+							"unit": "%",
+							"size": 100
+						}
+					},
+					"elements": [
+						{
+							"id": "eba0dc3",
+							"elType": "widget",
+							"widgetType": "um-cart-totals",
+							"settings": {
+								"sticky": "yes"
+							},
+							"elements": []
+						},
+						{
+							"id": "218a0ae",
+							"elType": "widget",
+							"widgetType": "um-cart-coupon",
+							"settings": {},
+							"elements": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "559cb99",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 20,
+					"column": "20",
+					"row": "20"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "0",
+					"bottom": "24",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "c3c59e5",
+					"elType": "widget",
+					"widgetType": "um-cart-later",
+					"settings": {},
+					"elements": []
+				},
+				{
+					"id": "854d9fc",
+					"elType": "widget",
+					"widgetType": "um-cart-suggestions",
+					"settings": {
+						"count": 10
+					},
+					"elements": []
+				},
+				{
+					"id": "c410003",
+					"elType": "widget",
+					"widgetType": "um-cart-bar",
+					"settings": {},
+					"elements": []
+				}
+			]
+		}
+	]
+}

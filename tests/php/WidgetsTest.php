@@ -26,14 +26,14 @@ use UltraMax\Core\Widgets\Widgets;
 final class WidgetsTest extends WP_UnitTestCase {
 
 	public function test_every_listed_widget_class_exists(): void {
-		$this->assertCount( 108, Widgets::all(), 'Every class listed in Widgets::classes() exists.' );
+		$this->assertCount( 127, Widgets::all(), 'Every class listed in Widgets::classes() exists.' );
 	}
 
 	public function test_every_widget_renders_its_defaults_without_notices(): void {
 		foreach ( Widgets::all() as $id => $widget ) {
 			$this->assertSame( $id, $widget->id() );
 			$this->assertNotSame( '', $widget->title() );
-			$this->assertContains( $widget->group(), array( 'header', 'store', 'shop', 'product', 'account', 'general', 'footer' ) );
+			$this->assertContains( $widget->group(), array( 'header', 'store', 'shop', 'product', 'account', 'cart', 'general', 'footer' ) );
 			foreach ( $widget->assets() as $asset ) {
 				$this->assertContains( $asset, Assets::WIDGETS, "$id asks for an unknown asset $asset." );
 			}

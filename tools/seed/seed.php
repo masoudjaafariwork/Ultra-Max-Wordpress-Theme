@@ -383,8 +383,9 @@ if ( $phone ) {
 	$phone->set_cross_sell_ids( array_filter( array( wc_get_product_id_by_sku( 'UM-015' ) ) ) );
 	$phone->save();
 }
-// Delivery days, free shipping, a bundle, a size guide and a store tab; reviews and a question.
-foreach ( array( 'product-extras', 'product-discussion' ) as $fixture ) {
+// Delivery days, free shipping, a bundle, a size guide and a store tab; reviews and a question;
+// pay on delivery, bank transfer, Iran Post, the Tehran courier and a discount code (CART, CHK, SHIP).
+foreach ( array( 'product-extras', 'product-discussion', 'checkout-setup' ) as $fixture ) {
 	$args = array();
 	require dirname( __DIR__, 2 ) . '/tests/e2e/fixtures/' . $fixture . '.php';
 }

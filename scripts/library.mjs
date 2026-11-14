@@ -758,6 +758,45 @@ const singleProducts = {
 
 write( 'single-product', singleProducts );
 
+/* ------------------------------------------------------------------ cart, checkout and thank you (BLD-06) */
+
+const side = ( elements ) => col( { width: 30, gap: 12, extra: { width_tablet: full, width_mobile: full } }, elements );
+const main = ( elements ) => col( { width: 70, gap: 16, extra: { width_tablet: full, width_mobile: full } }, elements );
+
+write( 'cart', {
+	store: {
+		title: T( 'Store cart' ),
+		description: T( 'The items beside the totals and the discount code; the buy later list and suggestions below, and a checkout bar on phones.' ),
+		content: [
+			section( [ w( 'cart-empty' ) ], { gap: 16, padding: box( 8, 0, 0 ) } ),
+			row( { align: 'flex-start', gap: 20, padding: box( 8, 0 ), ...stack }, [ main( [ w( 'cart-items', { heading: 'h1' } ) ] ), side( [ w( 'cart-totals', { sticky: 'yes' } ), w( 'cart-coupon' ) ] ) ] ),
+			section( [ w( 'cart-later' ), w( 'cart-suggestions', { count: 10 } ), w( 'cart-bar' ) ], { gap: 20, padding: box( 8, 0, 24 ) } ),
+		],
+	},
+} );
+
+write( 'checkout-form', {
+	steps: {
+		title: T( 'Checkout in steps' ),
+		description: T( 'Steps on top; address, buyer, shipping and notes, then payment and the discount code, beside the order review.' ),
+		content: [
+			section( [ w( 'checkout-steps' ) ], { gap: 16, padding: box( 8, 0, 0 ) } ),
+			row( { align: 'flex-start', gap: 20, padding: box( 8, 0, 24 ), ...stack }, [ main( [ w( 'checkout-billing' ), w( 'checkout-buyer' ), w( 'checkout-shipping' ), w( 'checkout-notes' ), w( 'checkout-payment' ), w( 'checkout-coupon' ) ] ), side( [ w( 'checkout-review' ) ] ) ] ),
+		],
+	},
+} );
+
+write( 'thank-you', {
+	store: {
+		title: T( 'Store thank you page' ),
+		description: T( 'The thanks and the order\'s facts on top; payment instructions and the items beside the delivery details.' ),
+		content: [
+			section( [ w( 'order-summary' ) ], { gap: 16, padding: box( 8, 0, 0 ) } ),
+			row( { align: 'flex-start', gap: 20, padding: box( 8, 0, 24 ), ...stack }, [ main( [ w( 'order-instructions' ), w( 'order-details' ) ] ), side( [ w( 'order-customer' ) ] ) ] ),
+		],
+	},
+} );
+
 const php = [
 	'<?php',
 	'/**',

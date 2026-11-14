@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-14T13:50:39+00:00\n"
+"POT-Creation-Date: 2026-11-14T17:27:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ultra-max\n"
@@ -97,7 +97,7 @@ msgid "Categories (opens the menu)"
 msgstr ""
 
 #: src/BottomNav.php:31
-#: src/BottomNav.php:179
+#: src/BottomNav.php:200
 #: src/Template.php:265
 msgid "Cart"
 msgstr ""
@@ -114,7 +114,7 @@ msgid "Wishlist"
 msgstr ""
 
 #: src/BottomNav.php:34
-#: src/BottomNav.php:145
+#: src/BottomNav.php:149
 #: src/Template.php:157
 #: src/Template.php:175
 #: src/Template.php:176
@@ -129,11 +129,11 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: src/BottomNav.php:153
+#: src/BottomNav.php:157
 msgid "Link"
 msgstr ""
 
-#: src/BottomNav.php:195
+#: src/BottomNav.php:216
 msgid "Bottom navigation"
 msgstr ""
 
@@ -175,7 +175,7 @@ msgstr ""
 msgid "Contact us"
 msgstr ""
 
-#: src/Content.php:29
+#: src/Content.php:33
 msgid "Pages:"
 msgstr ""
 

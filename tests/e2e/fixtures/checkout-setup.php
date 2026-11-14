@@ -76,6 +76,15 @@ if ( $zone instanceof WC_Shipping_Zone ) {
 }
 WC_Cache_Helper::invalidate_cache_group( 'shipping_zones' );
 
+// Tests buy these; keep enough in stock for every run.
+foreach ( array( 'UM-003', 'UM-013', 'UM-015' ) as $sku ) {
+	$stocked = wc_get_product( wc_get_product_id_by_sku( $sku ) );
+	if ( $stocked ) {
+		$stocked->set_stock_quantity( 50 );
+		$stocked->save();
+	}
+}
+
 $coupon = new WC_Coupon();
 $coupon->set_code( 'um-test10' );
 $coupon->set_discount_type( 'percent' );

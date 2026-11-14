@@ -159,7 +159,7 @@ msgstr "ایمیل"
 msgid "Contact us"
 msgstr "تماس با ما"
 
-#: src/Content.php:29
+#: src/Content.php:33
 msgid "Pages:"
 msgstr "صفحه‌ها:"
 
@@ -661,7 +661,7 @@ msgid "A round button that appears after scrolling and returns to the top."
 msgstr "دکمه گردی که پس از پیمایش ظاهر می‌شود و به بالای صفحه برمی‌گرداند."
 
 #: src/BottomNav.php:34
-#: src/BottomNav.php:145
+#: src/BottomNav.php:149
 #: src/Template.php:157
 #: src/Template.php:175
 #: src/Template.php:176
@@ -679,7 +679,7 @@ msgid "My account"
 msgstr "حساب من"
 
 #: src/BottomNav.php:31
-#: src/BottomNav.php:179
+#: src/BottomNav.php:200
 #: src/Template.php:265
 msgid "Cart"
 msgstr "سبد خرید"
@@ -931,11 +931,11 @@ msgstr "پیوند دیگر"
 msgid "Categories"
 msgstr "دسته‌بندی"
 
-#: src/BottomNav.php:153
+#: src/BottomNav.php:157
 msgid "Link"
 msgstr "پیوند"
 
-#: src/BottomNav.php:195
+#: src/BottomNav.php:216
 msgid "Bottom navigation"
 msgstr "ناوبری پایین صفحه"
 

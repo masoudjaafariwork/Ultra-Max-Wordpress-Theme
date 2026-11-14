@@ -46,8 +46,9 @@ msgstr "%1$s به PHP نسخه %2$s یا بالاتر نیاز دارد. این 
 msgid "%1$s needs WordPress %2$s or later. This site runs WordPress %3$s."
 msgstr "%1$s به وردپرس نسخه %2$s یا بالاتر نیاز دارد. این سایت وردپرس نسخه %3$s دارد."
 
-#: src/Elementor/Integration.php:146
+#: src/Elementor/Integration.php:150
 #: src/Product/Page.php:178
+#: src/Saved/Saved.php:158
 #: src/Widgets/General/Gallery.php:125
 #: src/Widgets/Store/Stories.php:164
 #: vendor-prefixed/ui/components/dialog/Overlay.php:58
@@ -83,7 +84,8 @@ msgstr "راهنما"
 
 #: src/Admin/Admin.php:166
 #: src/Admin/Strings.php:299
-#: src/Elementor/Integration.php:147
+#: src/Elementor/Integration.php:151
+#: src/Saved/QuickView.php:139
 msgid "Loading…"
 msgstr "در حال بارگذاری…"
 
@@ -117,7 +119,8 @@ msgid "Unknown module."
 msgstr "ماژول ناشناخته."
 
 #: src/Admin/Strings.php:27
-#: src/Elementor/Integration.php:151
+#: src/Cart/Actions.php:135
+#: src/Elementor/Integration.php:155
 #: src/Product/Bundle.php:155
 #: src/Product/Cart.php:128
 #: src/Product/Purchase.php:430
@@ -151,6 +154,8 @@ msgid "Tablet"
 msgstr "تبلت"
 
 #: src/Admin/Strings.php:34
+#: src/Checkout/Fields.php:102
+#: src/Checkout/ThankYou.php:272
 msgid "Mobile"
 msgstr "موبایل"
 
@@ -182,6 +187,7 @@ msgstr "انتخاب فایل"
 msgid "Replace"
 msgstr "عوض کردن"
 
+#: src/Account/Page.php:888
 #: src/Admin/Strings.php:43
 #: src/Admin/Strings.php:46
 #: src/Product/Fields.php:63
@@ -231,8 +237,8 @@ msgid "Nothing found."
 msgstr "نتیجه‌ای پیدا نشد."
 
 #: src/Admin/Strings.php:58
-#: src/Options.php:102
-#: src/Options.php:108
+#: src/Options.php:105
+#: src/Options.php:111
 msgid "Backup and reset"
 msgstr "پشتیبان و بازنشانی"
 
@@ -331,7 +337,7 @@ msgid "Most relevant"
 msgstr "مرتبط‌ترین"
 
 #: src/Admin/Strings.php:83
-#: src/Builder/library-strings.php:144
+#: src/Builder/library-strings.php:145
 #: src/Product/Reviews.php:728
 #: src/Shop/Query.php:49
 #: src/Store/Catalog.php:32
@@ -407,7 +413,7 @@ msgid "A backup is taken automatically before every reset, import, restore and t
 msgstr "پیش از هر بازنشانی، درون‌ریزی، بازگردانی و جادوی راه‌اندازی خودکار پشتیبان گرفته می‌شود. ده پشتیبان آخر نگه داشته می‌شود."
 
 #: src/Admin/Strings.php:104
-#: src/Options.php:115
+#: src/Options.php:118
 msgid "Backups"
 msgstr "پشتیبان‌ها"
 
@@ -428,6 +434,7 @@ msgid "Reason"
 msgstr "دلیل"
 
 #: src/Admin/Strings.php:109
+#: src/Checkout/ThankYou.php:150
 #: src/Elementor/Tags/JalaliDate.php:74
 msgid "Date"
 msgstr "تاریخ"
@@ -453,7 +460,7 @@ msgid "Backup restored"
 msgstr "پشتیبان بازگردانی شد"
 
 #: src/Admin/Strings.php:117
-#: src/Elementor/Integration.php:143
+#: src/Elementor/Integration.php:147
 msgid "Sections"
 msgstr "بخش‌ها"
 
@@ -485,6 +492,8 @@ msgstr "هر وقت آماده بودید ذخیره کنید"
 msgid "Changes apply only after you save. You can reset a section; a backup is taken first."
 msgstr "تغییرات فقط پس از ذخیره اعمال می‌شوند. می‌توانید یک بخش را بازنشانی کنید؛ اول پشتیبان گرفته می‌شود."
 
+#: src/Account/Page.php:400
+#: src/Account/Page.php:793
 #: src/Admin/Strings.php:125
 #: src/Shop/Archive.php:703
 #: src/Widgets/Store/StoreWidget.php:151
@@ -860,7 +869,7 @@ msgid "A PNG or SVG about 320 by 96 pixels works best."
 msgstr "یک PNG یا SVG در حدود ۳۲۰ در ۹۶ پیکسل بهترین نتیجه را دارد."
 
 #: src/Admin/Strings.php:237
-#: src/Options.php:568
+#: src/Options.php:571
 msgid "Main colour"
 msgstr "رنگ اصلی"
 
@@ -900,6 +909,7 @@ msgid "Install and continue"
 msgstr "نصب و ادامه"
 
 #: src/Admin/Strings.php:247
+#: src/Checkout/Page.php:806
 msgid "Continue"
 msgstr "ادامه"
 
@@ -1066,6 +1076,7 @@ msgid "Shown"
 msgstr "نمایش داده می‌شود"
 
 #: src/Admin/SystemStatus.php:154
+#: src/Options.php:792
 msgid "Hidden"
 msgstr "پنهان"
 
@@ -1166,7 +1177,7 @@ msgid "Brand, scent and skin type"
 msgstr "برند، رایحه و نوع پوست"
 
 #: src/Admin/Wizard.php:216
-#: src/Builder/library-strings.php:210
+#: src/Builder/library-strings.php:214
 #: src/Widgets/Store/QuickLinks.php:107
 msgid "Supermarket"
 msgstr "سوپرمارکت"
@@ -1223,7 +1234,7 @@ msgid "Only administrators who may post unfiltered HTML can change this."
 msgstr "فقط مدیرانی که اجازه درج HTML بدون فیلتر دارند می‌توانند این را تغییر دهند."
 
 #: src/Options.php:41
-#: src/Options.php:656
+#: src/Options.php:1032
 msgid "Custom code"
 msgstr "کد سفارشی"
 
@@ -1267,15 +1278,15 @@ msgstr "کد پس از شروع body"
 msgid "Code before the closing body tag"
 msgstr "کد پیش از پایان body"
 
-#: src/Options.php:657
+#: src/Options.php:1033
 msgid "Your own CSS, JavaScript and head or footer code, for the whole site and for each page."
 msgstr "CSS، جاوااسکریپت و کد سربرگ و پابرگ دلخواه، برای کل سایت و هر صفحه."
 
-#: src/Options.php:711
+#: src/Options.php:1166
 msgid "Duplicate posts and pages"
 msgstr "کپی نوشته و برگه"
 
-#: src/Options.php:712
+#: src/Options.php:1167
 msgid "A \"Duplicate\" link in the lists of posts and pages makes a draft copy with all its settings."
 msgstr "پیوند «کپی» در فهرست نوشته‌ها و برگه‌ها، یک پیش‌نویس با همه تنظیمات می‌سازد."
 
@@ -1395,6 +1406,8 @@ msgstr "نویسنده"
 msgid "Your comment is awaiting moderation."
 msgstr "دیدگاه شما در انتظار بررسی است."
 
+#: src/Account/Page.php:262
+#: src/Account/Page.php:840
 #: vendor-prefixed/ui/components/comments/Comments.php:65
 msgid "Edit"
 msgstr "ویرایش"
@@ -1403,7 +1416,9 @@ msgstr "ویرایش"
 msgid "Your email address will not be published."
 msgstr "نشانی ایمیل شما منتشر نمی‌شود."
 
+#: src/Account/Page.php:290
 #: src/Admin/Strings.php:264
+#: src/Options.php:766
 #: src/Product/Questions.php:269
 #: src/Product/Reviews.php:928
 #: src/Widgets/General/Team.php:66
@@ -1413,6 +1428,9 @@ msgstr "نشانی ایمیل شما منتشر نمی‌شود."
 msgid "Name"
 msgstr "نام"
 
+#: src/Account/Page.php:313
+#: src/Checkout/Fields.php:103
+#: src/Checkout/ThankYou.php:276
 #: src/Elementor/Tags/StoreInfo.php:80
 #: src/Product/Questions.php:270
 #: src/Product/Reviews.php:929
@@ -1567,11 +1585,12 @@ msgid "Remove rule"
 msgstr "حذف شرط"
 
 #: src/Admin/Strings.php:296
+#: src/Checkout/Fields.php:550
 msgid "Choose"
 msgstr "انتخاب"
 
 #: src/Admin/Strings.php:297
-#: src/Elementor/Integration.php:149
+#: src/Elementor/Integration.php:153
 msgid "Type to search"
 msgstr "برای جستجو بنویسید"
 
@@ -1797,6 +1816,7 @@ msgid "Basic"
 msgstr "پایه"
 
 #: src/Builder/library-strings.php:47
+#: src/Cart/Page.php:430
 #: src/Widgets/Header/MenuToggle.php:127
 #: src/Widgets/Store/QuickLinks.php:109
 msgid "Best sellers"
@@ -1857,10 +1877,14 @@ msgstr "می‌توانم هنگام تحویل پرداخت کنم؟"
 
 #: src/Builder/library-strings.php:61
 #: src/Builder/Types.php:59
+#: src/Cart/Page.php:121
+#: src/Checkout/Page.php:222
+#: src/Options.php:803
+#: src/Options.php:1117
 #: src/Widgets/Header/Cart.php:35
 #: src/Widgets/Header/Cart.php:87
 #: src/Widgets/Header/Cart.php:94
-#: src/Widgets/Header/Cart.php:113
+#: src/Widgets/Header/Cart.php:118
 msgid "Cart"
 msgstr "سبد خرید"
 
@@ -1881,606 +1905,614 @@ msgstr "اول دکمه دسته‌بندی، جستجو در ردیف جدا پ
 msgid "Centred logo"
 msgstr "لوگوی وسط"
 
-#: src/Builder/library-strings.php:66
+#: src/Builder/library-strings.php:67
 #: src/Widgets/General/PricingTable.php:112
 msgid "Choose this plan"
 msgstr "انتخاب این طرح"
 
-#: src/Builder/library-strings.php:67
+#: src/Builder/library-strings.php:68
 msgid "Comfortable shoes"
 msgstr "کفش راحتی"
 
-#: src/Builder/library-strings.php:68
+#: src/Builder/library-strings.php:69
 msgid "Common questions"
 msgstr "پرسش‌های رایج"
 
-#: src/Builder/library-strings.php:70
+#: src/Builder/library-strings.php:71
 msgid "Compact footer"
 msgstr "پابرگ فشرده"
 
-#: src/Builder/library-strings.php:71
+#: src/Builder/library-strings.php:72
+#: src/Options.php:674
+#: src/Saved/Buttons.php:48
+#: src/Saved/Buttons.php:49
+#: src/Saved/Endpoint.php:164
 #: src/Widgets/Header/Compare.php:29
+#: src/Widgets/ProductPage/ProductSaveButtons.php:71
 msgid "Compare"
 msgstr "مقایسه"
 
-#: src/Builder/library-strings.php:72
+#: src/Builder/library-strings.php:73
 msgid "Contact"
 msgstr "تماس"
 
-#: src/Builder/library-strings.php:73
+#: src/Builder/library-strings.php:74
 msgid "Contact details beside a contact form."
 msgstr "راه‌های تماس کنار فرم تماس."
 
-#: src/Builder/library-strings.php:74
+#: src/Builder/library-strings.php:75
 msgid "Contact us"
 msgstr "تماس با ما"
 
-#: src/Builder/library-strings.php:75
+#: src/Builder/library-strings.php:76
 #: src/Widgets/General/Testimonials.php:35
 #: src/Widgets/General/Testimonials.php:141
 msgid "Customer reviews"
 msgstr "نظر مشتریان"
 
-#: src/Builder/library-strings.php:76
+#: src/Builder/library-strings.php:77
 msgid "Customer service"
 msgstr "خدمات مشتریان"
 
-#: src/Builder/library-strings.php:77
+#: src/Builder/library-strings.php:78
 msgid "Delivery"
 msgstr "رویه ارسال"
 
-#: src/Builder/library-strings.php:78
+#: src/Builder/library-strings.php:79
 msgid "Diamond"
 msgstr "الماس"
 
-#: src/Builder/library-strings.php:79
+#: src/Builder/library-strings.php:80
 #: src/Widgets/Footer/AppLinks.php:113
 msgid "Direct download"
 msgstr "دریافت مستقیم"
 
-#: src/Builder/library-strings.php:80
+#: src/Builder/library-strings.php:81
 #: src/Widgets/Store/DiscountPicks.php:36
 #: src/Widgets/Store/DiscountPicks.php:72
 #: src/Widgets/Store/DiscountPicks.php:166
 msgid "Discount picks"
 msgstr "منتخب تخفیف‌ها"
 
-#: src/Builder/library-strings.php:81
+#: src/Builder/library-strings.php:82
 msgid "Discounted products with category filters."
 msgstr "کالاهای تخفیف‌دار با فیلتر دسته‌بندی."
 
-#: src/Builder/library-strings.php:82
+#: src/Builder/library-strings.php:83
 #: src/Widgets/Header/MenuToggle.php:126
 #: src/Widgets/Store/QuickLinks.php:108
 msgid "Discounts"
 msgstr "تخفیف‌ها"
 
-#: src/Builder/library-strings.php:83
+#: src/Builder/library-strings.php:84
 #: src/Widgets/General/PricingTable.php:105
 msgid "Early access to offers"
 msgstr "دسترسی زودتر به پیشنهادها"
 
-#: src/Builder/library-strings.php:84
+#: src/Builder/library-strings.php:85
 msgid "Easy returns"
 msgstr "بازگشت آسان"
 
-#: src/Builder/library-strings.php:85
+#: src/Builder/library-strings.php:86
 msgid "Eight coloured icons for the most used places."
 msgstr "هشت آیکون رنگی برای پرکاربردترین بخش‌ها."
 
-#: src/Builder/library-strings.php:86
+#: src/Builder/library-strings.php:87
 #: src/Widgets/General/ContactForm.php:106
 #: src/Widgets/General/Newsletter.php:70
 #: src/Widgets/General/Newsletter.php:97
 msgid "Email or mobile number"
 msgstr "ایمیل یا شماره موبایل"
 
-#: src/Builder/library-strings.php:87
+#: src/Builder/library-strings.php:88
 msgid "Every day from 9 to 21"
 msgstr "هر روز ساعت ۹ تا ۲۱"
 
-#: src/Builder/library-strings.php:89
+#: src/Builder/library-strings.php:90
 #: src/Widgets/General/IconBox.php:73
 #: src/Widgets/Store/TrustMarks.php:163
 msgid "Fast delivery"
 msgstr "ارسال سریع"
 
-#: src/Builder/library-strings.php:90
+#: src/Builder/library-strings.php:91
 msgid "Four advantages"
 msgstr "چهار مزیت"
 
-#: src/Builder/library-strings.php:91
+#: src/Builder/library-strings.php:92
 msgid "Four banners"
 msgstr "چهار بنر"
 
-#: src/Builder/library-strings.php:92
+#: src/Builder/library-strings.php:93
 msgid "Four icon boxes in a row."
 msgstr "چهار جعبه آیکون در یک ردیف."
 
-#: src/Builder/library-strings.php:93
+#: src/Builder/library-strings.php:94
 msgid "Four small promotional banners in a row."
 msgstr "چهار بنر کوچک تبلیغاتی در یک ردیف."
 
-#: src/Builder/library-strings.php:94
+#: src/Builder/library-strings.php:95
 #: src/Widgets/General/PricingTable.php:94
 #: src/Widgets/General/PricingTable.php:104
 msgid "Free delivery"
 msgstr "ارسال رایگان"
 
-#: src/Builder/library-strings.php:95
+#: src/Builder/library-strings.php:96
 msgid "Free delivery on orders over 500,000 toman"
 msgstr "ارسال رایگان برای سفارش‌های بالای ۵۰۰ هزار تومان"
 
-#: src/Builder/library-strings.php:96
+#: src/Builder/library-strings.php:97
 msgid "Free delivery on your first order"
 msgstr "اولین خرید، ارسال رایگان"
 
-#: src/Builder/library-strings.php:97
+#: src/Builder/library-strings.php:98
 msgid "Frequently asked questions"
 msgstr "پرسش‌های متداول"
 
-#: src/Builder/library-strings.php:98
+#: src/Builder/library-strings.php:99
 msgid "Fresh coffee"
 msgstr "قهوه تازه"
 
-#: src/Builder/library-strings.php:99
+#: src/Builder/library-strings.php:100
 msgid "Fresh, fast and always discounted"
 msgstr "تازه، سریع و با تخفیف همیشگی"
 
-#: src/Builder/library-strings.php:100
+#: src/Builder/library-strings.php:101
 #: src/Widgets/Store/TrustMarks.php:166
 msgid "From the brand or its agent"
 msgstr "از برند یا نماینده رسمی"
 
-#: src/Builder/library-strings.php:101
+#: src/Builder/library-strings.php:102
 msgid "Full store footer"
 msgstr "پابرگ کامل فروشگاهی"
 
-#: src/Builder/library-strings.php:103
-#: src/Options.php:376
+#: src/Builder/library-strings.php:104
+#: src/Options.php:379
 #: src/Widgets/Store/TrustMarks.php:166
 msgid "Genuine products"
 msgstr "ضمانت اصل بودن کالا"
 
-#: src/Builder/library-strings.php:104
+#: src/Builder/library-strings.php:105
 msgid "Get in touch"
 msgstr "با ما در ارتباط باشید"
 
-#: src/Builder/library-strings.php:105
+#: src/Builder/library-strings.php:106
 msgid "Gifts"
 msgstr "هدیه"
 
-#: src/Builder/library-strings.php:106
+#: src/Builder/library-strings.php:107
 msgid "Gold"
 msgstr "طلایی"
 
-#: src/Builder/library-strings.php:107
+#: src/Builder/library-strings.php:108
 msgid "Headphones and speakers from 990,000 toman"
 msgstr "هدفون و اسپیکر از ۹۹۰ هزار تومان"
 
-#: src/Builder/library-strings.php:108
+#: src/Builder/library-strings.php:109
 #: src/Widgets/General/Newsletter.php:64
 msgid "Hear about offers and new arrivals first"
 msgstr "از تخفیف‌ها و جدیدترین‌ها باخبر شوید"
 
-#: src/Builder/library-strings.php:109
+#: src/Builder/library-strings.php:110
 #: src/Widgets/Store/HeroSlider.php:33
 msgid "Hero slider"
 msgstr "اسلایدر اصلی"
 
-#: src/Builder/library-strings.php:110
+#: src/Builder/library-strings.php:111
 msgid "Hero slider, advantages, categories, products and reviews."
 msgstr "اسلایدر اصلی، مزایا، دسته‌بندی‌ها، کالاها و نظر مشتریان."
 
-#: src/Builder/library-strings.php:111
+#: src/Builder/library-strings.php:112
 msgid "How do I return an item?"
 msgstr "چطور کالا را برگردانم؟"
 
-#: src/Builder/library-strings.php:112
+#: src/Builder/library-strings.php:113
 #: src/Widgets/General/Accordion.php:59
 #: src/Widgets/General/Accordion.php:69
 msgid "How long does delivery take?"
 msgstr "ارسال چقدر طول می‌کشد؟"
 
-#: src/Builder/library-strings.php:113
+#: src/Builder/library-strings.php:114
 msgid "How to order"
 msgstr "نحوه ثبت سفارش"
 
-#: src/Builder/library-strings.php:114
+#: src/Builder/library-strings.php:115
 #: src/Widgets/Store/TrustMarks.php:164
 msgid "In selected cities"
 msgstr "در شهرهای منتخب"
 
-#: src/Builder/library-strings.php:115
+#: src/Builder/library-strings.php:116
 msgid "Instalments without a down payment and free delivery"
 msgstr "اقساط بدون پیش‌پرداخت و ارسال رایگان"
 
-#: src/Builder/library-strings.php:116
+#: src/Builder/library-strings.php:117
 #: src/Widgets/General/Newsletter.php:76
 msgid "Join"
 msgstr "عضویت"
 
-#: src/Builder/library-strings.php:117
+#: src/Builder/library-strings.php:118
 msgid "Just the logo, search and cart, for small stores."
 msgstr "فقط لوگو، جستجو و سبد، برای فروشگاه‌های کوچک."
 
-#: src/Builder/library-strings.php:118
+#: src/Builder/library-strings.php:119
 msgid "Kitchen"
 msgstr "آشپزخانه"
 
-#: src/Builder/library-strings.php:119
+#: src/Builder/library-strings.php:120
 msgid "Kitchen appliances up to 30% off"
 msgstr "لوازم برقی آشپزخانه تا ۳۰٪ ارزان‌تر"
 
-#: src/Builder/library-strings.php:120
+#: src/Builder/library-strings.php:121
 msgid "Landing page"
 msgstr "صفحه فرود"
 
-#: src/Builder/library-strings.php:121
+#: src/Builder/library-strings.php:122
 msgid "Log in with a one-time code"
 msgstr "ورود با کد یک‌بارمصرف"
 
-#: src/Builder/library-strings.php:122
+#: src/Builder/library-strings.php:123
 #: src/Widgets/Header/Account.php:57
 msgid "Log in | Sign up"
 msgstr "ورود | ثبت‌نام"
 
-#: src/Builder/library-strings.php:123
+#: src/Builder/library-strings.php:124
 msgid "Logo and menu button, with the search field below."
 msgstr "لوگو و دکمه منو، با کادر جستجو در پایین."
 
-#: src/Builder/library-strings.php:124
+#: src/Builder/library-strings.php:125
 msgid "Logo and short text, three link columns, social links and copyright."
 msgstr "لوگو و متن کوتاه، سه ستون پیوند، شبکه‌های اجتماعی و حق نشر."
 
-#: src/Builder/library-strings.php:125
+#: src/Builder/library-strings.php:126
 msgid "Logo at the start, search icon, cart and menu at the end."
 msgstr "لوگو در ابتدا، آیکون جستجو، سبد و منو در انتها."
 
-#: src/Builder/library-strings.php:126
+#: src/Builder/library-strings.php:127
 msgid "Logo, menu and icons in a single compact row."
 msgstr "لوگو، منو و آیکون‌ها در یک ردیف فشرده."
 
-#: src/Builder/library-strings.php:127
+#: src/Builder/library-strings.php:128
 msgid "Logo, wide search, account and cart; categories and menu below. The classic big-store header."
 msgstr "لوگو، جستجوی پهن، حساب و سبد؛ دسته‌بندی و منو در ردیف پایین. سربرگ کلاسیک فروشگاه‌های بزرگ."
 
-#: src/Builder/library-strings.php:128
+#: src/Builder/library-strings.php:129
 #: src/Widgets/Header/NavMenu.php:105
 msgid "Main menu"
 msgstr "منوی اصلی"
 
-#: src/Builder/library-strings.php:129
+#: src/Builder/library-strings.php:130
 msgid "Menu at the start, logo in the middle, account and cart at the end."
 msgstr "منو در ابتدا، لوگو در وسط، حساب و سبد در انتها."
 
-#: src/Builder/library-strings.php:130
+#: src/Builder/library-strings.php:131
 msgid "Menu button, a search field filling the row, and the cart."
 msgstr "دکمه منو، کادر جستجو در تمام ردیف و سبد خرید."
 
-#: src/Builder/library-strings.php:131
+#: src/Builder/library-strings.php:132
 msgid "Menu button, logo and cart, with the search field below."
 msgstr "دکمه منو، لوگو و سبد، با کادر جستجو در پایین."
 
-#: src/Builder/library-strings.php:132
+#: src/Builder/library-strings.php:133
 msgid "Menu on one side, logo in the middle, actions on the other."
 msgstr "منو در یک طرف، لوگو در وسط، دکمه‌ها در طرف دیگر."
 
-#: src/Builder/library-strings.php:133
+#: src/Builder/library-strings.php:134
 msgid "Menu, logo, then search, account and cart icons."
 msgstr "منو، لوگو و بعد آیکون‌های جستجو، حساب و سبد."
 
-#: src/Builder/library-strings.php:134
+#: src/Builder/library-strings.php:135
 msgid "Minimal"
 msgstr "ساده"
 
-#: src/Builder/library-strings.php:135
+#: src/Builder/library-strings.php:136
 msgid "Minimal footer"
 msgstr "پابرگ ساده"
 
-#: src/Builder/library-strings.php:136
+#: src/Builder/library-strings.php:137
 msgid "More"
 msgstr "بیشتر"
 
-#: src/Builder/library-strings.php:137
+#: src/Builder/library-strings.php:138
 msgid "More articles"
 msgstr "مطالب بیشتر"
 
-#: src/Builder/library-strings.php:138
+#: src/Builder/library-strings.php:139
 msgid "Most popular"
 msgstr "محبوب‌ترین"
 
-#: src/Builder/library-strings.php:139
-#: src/Builder/Types.php:65
+#: src/Builder/library-strings.php:140
+#: src/Builder/Types.php:64
+#: src/Options.php:713
 #: src/Widgets/Header/Account.php:63
 #: src/Widgets/Header/Account.php:81
 #: src/Widgets/Header/MenuToggle.php:223
 msgid "My account"
 msgstr "حساب من"
 
-#: src/Builder/library-strings.php:140
+#: src/Builder/library-strings.php:141
 #: src/Widgets/General/Testimonials.php:71
 msgid "My order arrived quickly and well packed. I will buy again."
 msgstr "سفارشم سریع و با بسته‌بندی خوب رسید. دوباره خرید می‌کنم."
 
-#: src/Builder/library-strings.php:141
+#: src/Builder/library-strings.php:142
 #: src/Widgets/Store/TrustMarks.php:129
 msgid "National registration"
 msgstr "نشان ملی ثبت"
 
-#: src/Builder/library-strings.php:142
+#: src/Builder/library-strings.php:143
 #: src/Widgets/Store/Stories.php:80
 #: src/Widgets/Store/Stories.php:113
 msgid "New arrivals"
 msgstr "تازه‌ها"
 
-#: src/Builder/library-strings.php:143
+#: src/Builder/library-strings.php:144
 #: src/Widgets/Store/HeroSlider.php:89
 #: src/Widgets/Store/HeroSlider.php:151
 msgid "New phones with up to 25% off"
 msgstr "گوشی‌های جدید با تا ۲۵٪ تخفیف"
 
-#: src/Builder/library-strings.php:145
+#: src/Builder/library-strings.php:146
 msgid "Newest, best selling and discounted products in tabs."
 msgstr "جدیدترین، پرفروش‌ترین و تخفیف‌دارترین کالاها در زبانه‌ها."
 
-#: src/Builder/library-strings.php:147
+#: src/Builder/library-strings.php:148
 #: src/Widgets/Store/TrustMarks.php:165
 msgid "No questions asked"
 msgstr "بدون پرسش"
 
-#: src/Builder/library-strings.php:148
+#: src/Builder/library-strings.php:149
 #: src/Widgets/Store/Bestsellers.php:34
 msgid "Numbered best sellers"
 msgstr "پرفروش‌های شماره‌دار"
 
-#: src/Builder/library-strings.php:149
+#: src/Builder/library-strings.php:150
 #: src/Widgets/Header/MenuToggle.php:125
 #: src/Widgets/Store/QuickLinks.php:85
 msgid "Offers"
 msgstr "پیشنهادها"
 
-#: src/Builder/library-strings.php:150
+#: src/Builder/library-strings.php:151
 #: src/Store/Catalog.php:34
 #: src/Widgets/Store/ProductTabs.php:116
 msgid "On sale"
 msgstr "تخفیف‌دار"
 
-#: src/Builder/library-strings.php:151
+#: src/Builder/library-strings.php:152
 msgid "One line with the copyright and social links."
 msgstr "یک خط با حق نشر و شبکه‌های اجتماعی."
 
-#: src/Builder/library-strings.php:152
+#: src/Builder/library-strings.php:153
 msgid "One row"
 msgstr "یک ردیف"
 
-#: src/Builder/library-strings.php:153
+#: src/Builder/library-strings.php:154
 msgid "Order now"
 msgstr "سفارش دهید"
 
-#: src/Builder/library-strings.php:154
+#: src/Builder/library-strings.php:155
 #: src/Widgets/General/IconBox.php:79
 msgid "Orders placed before 2 pm leave the same day."
 msgstr "سفارش‌های پیش از ساعت ۱۴ همان روز ارسال می‌شوند."
 
-#: src/Builder/library-strings.php:155
+#: src/Builder/library-strings.php:156
 #: src/Widgets/General/Accordion.php:65
 msgid "Orders reach most cities in two to four working days."
 msgstr "سفارش‌ها در دو تا چهار روز کاری به بیشتر شهرها می‌رسند."
 
-#: src/Builder/library-strings.php:156
+#: src/Builder/library-strings.php:157
 msgid "Pay with any Shetab card through a bank gateway."
 msgstr "با هر کارت عضو شتاب از درگاه بانکی پرداخت کنید."
 
-#: src/Builder/library-strings.php:157
+#: src/Builder/library-strings.php:158
 msgid "Payment gateway 1"
 msgstr "درگاه پرداخت ۱"
 
-#: src/Builder/library-strings.php:158
+#: src/Builder/library-strings.php:159
 msgid "Payment gateway 2"
 msgstr "درگاه پرداخت ۲"
 
-#: src/Builder/library-strings.php:159
+#: src/Builder/library-strings.php:160
+#: src/Checkout/Page.php:624
+#: src/Widgets/Cart/CheckoutPayment.php:30
 msgid "Payment methods"
 msgstr "شیوه‌های پرداخت"
 
-#: src/Builder/library-strings.php:160
+#: src/Builder/library-strings.php:161
 msgid "People who answer, every day of the week."
 msgstr "آدم‌هایی که پاسخ می‌دهند، همه روزهای هفته."
 
-#: src/Builder/library-strings.php:161
+#: src/Builder/library-strings.php:162
 msgid "Phone: all icons"
 msgstr "گوشی: همه آیکون‌ها"
 
-#: src/Builder/library-strings.php:162
+#: src/Builder/library-strings.php:163
 msgid "Phone: app-like"
 msgstr "گوشی: مثل اپ"
 
-#: src/Builder/library-strings.php:163
+#: src/Builder/library-strings.php:164
 msgid "Phone: brand coloured"
 msgstr "گوشی: به رنگ برند"
 
-#: src/Builder/library-strings.php:164
+#: src/Builder/library-strings.php:165
 msgid "Phone: centred logo"
 msgstr "گوشی: لوگوی وسط"
 
-#: src/Builder/library-strings.php:165
+#: src/Builder/library-strings.php:166
 msgid "Phone: logo and icons"
 msgstr "گوشی: لوگو و آیکون‌ها"
 
-#: src/Builder/library-strings.php:166
+#: src/Builder/library-strings.php:167
 msgid "Phone: logo with search below"
 msgstr "گوشی: لوگو و جستجوی پایین"
 
-#: src/Builder/library-strings.php:167
+#: src/Builder/library-strings.php:168
 msgid "Phone: menu, logo, cart and search"
 msgstr "گوشی: منو، لوگو، سبد و جستجو"
 
-#: src/Builder/library-strings.php:168
+#: src/Builder/library-strings.php:169
 msgid "Phone: search in the bar"
 msgstr "گوشی: جستجو در نوار"
 
-#: src/Builder/library-strings.php:169
+#: src/Builder/library-strings.php:170
 msgid "Photography"
 msgstr "عکاسی"
 
-#: src/Builder/library-strings.php:172
+#: src/Builder/library-strings.php:173
 #: src/Widgets/Store/Brands.php:70
 msgid "Popular brands"
 msgstr "محبوب‌ترین برندها"
 
-#: src/Builder/library-strings.php:173
+#: src/Builder/library-strings.php:174
 msgid "Prices are fair and the products are genuine."
 msgstr "قیمت‌ها منصفانه و کالاها اصل هستند."
 
-#: src/Builder/library-strings.php:174
+#: src/Builder/library-strings.php:175
 msgid "Priority support"
 msgstr "پشتیبانی با اولویت"
 
-#: src/Builder/library-strings.php:175
+#: src/Builder/library-strings.php:176
 msgid "Privacy"
 msgstr "حریم خصوصی"
 
-#: src/Builder/library-strings.php:176
+#: src/Builder/library-strings.php:177
 #: src/Widgets/Header/CategoryMenu.php:77
 #: src/Widgets/Header/MenuToggle.php:77
 #: src/Widgets/Header/MenuToggle.php:93
 msgid "Product categories"
 msgstr "دسته‌بندی کالاها"
 
-#: src/Builder/library-strings.php:178
+#: src/Builder/library-strings.php:179
 #: src/Widgets/Store/ProductTabs.php:35
 msgid "Product tabs"
 msgstr "زبانه‌های کالا"
 
-#: src/Builder/library-strings.php:179
+#: src/Builder/library-strings.php:180
 msgid "Pure sound"
 msgstr "صدای خالص"
 
-#: src/Builder/library-strings.php:180
-#: src/Options.php:630
+#: src/Builder/library-strings.php:181
+#: src/Options.php:633
 #: src/Widgets/ProductPage/ProductQuestions.php:32
 msgid "Questions and answers"
 msgstr "پرسش و پاسخ"
 
-#: src/Builder/library-strings.php:181
+#: src/Builder/library-strings.php:182
 #: src/Widgets/Header/MenuToggle.php:104
 #: src/Widgets/Store/QuickLinks.php:33
 #: src/Widgets/Store/QuickLinks.php:134
 msgid "Quick links"
 msgstr "دسترسی سریع"
 
-#: src/Builder/library-strings.php:182
+#: src/Builder/library-strings.php:183
 msgid "Real support"
 msgstr "پشتیبانی واقعی"
 
-#: src/Builder/library-strings.php:183
+#: src/Builder/library-strings.php:184
 #: src/Widgets/Store/Products.php:120
 #: src/Widgets/Store/ProductTabs.php:75
 msgid "Recommended for you"
 msgstr "پیشنهاد برای شما"
 
-#: src/Builder/library-strings.php:184
+#: src/Builder/library-strings.php:185
 msgid "Returns"
 msgstr "رویه بازگرداندن کالا"
 
-#: src/Builder/library-strings.php:185
+#: src/Builder/library-strings.php:186
 msgid "Round category tiles with their images."
 msgstr "کاشی‌های گرد دسته‌بندی با تصویرشان."
 
-#: src/Builder/library-strings.php:186
+#: src/Builder/library-strings.php:187
 msgid "Round covers that open full-screen stories."
 msgstr "جلدهای گردی که استوری تمام‌صفحه باز می‌کنند."
 
-#: src/Builder/library-strings.php:187
+#: src/Builder/library-strings.php:188
 msgid "Search first"
 msgstr "اول جستجو"
 
-#: src/Builder/library-strings.php:188
+#: src/Builder/library-strings.php:189
 msgid "Search the store"
 msgstr "جستجو در فروشگاه"
 
-#: src/Builder/library-strings.php:189
+#: src/Builder/library-strings.php:190
 msgid "Secure payment"
 msgstr "پرداخت امن"
 
-#: src/Builder/library-strings.php:190
+#: src/Builder/library-strings.php:191
 msgid "Secure payment text with trust and payment badges."
 msgstr "متن پرداخت امن همراه نمادهای اعتماد و پرداخت."
 
-#: src/Builder/library-strings.php:191
+#: src/Builder/library-strings.php:192
 #: src/Widgets/Store/TrustMarks.php:89
 msgid "Secure payment with every Shetab card"
 msgstr "پرداخت امن با همه کارت‌های عضو شتاب"
 
-#: src/Builder/library-strings.php:192
+#: src/Builder/library-strings.php:193
 #: src/Widgets/General/ContactForm.php:70
 msgid "Send"
 msgstr "ارسال"
 
-#: src/Builder/library-strings.php:193
+#: src/Builder/library-strings.php:194
 #: src/Widgets/General/ContactForm.php:64
 msgid "Send us a message"
 msgstr "برای ما پیام بفرستید"
 
-#: src/Builder/library-strings.php:194
+#: src/Builder/library-strings.php:195
 msgid "Seven days to return what you do not like."
 msgstr "هفت روز فرصت برای برگرداندن آنچه نپسندیدید."
 
-#: src/Builder/library-strings.php:195
+#: src/Builder/library-strings.php:196
 #: src/Widgets/Store/TrustMarks.php:130
 msgid "Shetab network"
 msgstr "شبکه شتاب"
 
-#: src/Builder/library-strings.php:196
+#: src/Builder/library-strings.php:197
 #: src/Widgets/Store/CategoryCircles.php:70
 msgid "Shop by category"
 msgstr "خرید بر اساس دسته‌بندی"
 
-#: src/Builder/library-strings.php:197
+#: src/Builder/library-strings.php:198
 #: src/Widgets/General/Button.php:54
 #: src/Widgets/Store/HeroSlider.php:106
 msgid "Shop now"
 msgstr "خرید کنید"
 
-#: src/Builder/library-strings.php:198
+#: src/Builder/library-strings.php:199
 msgid "Shopping guide"
 msgstr "راهنمای خرید"
 
-#: src/Builder/library-strings.php:199
+#: src/Builder/library-strings.php:200
 msgid "Sign up"
 msgstr "ثبت‌نام"
 
-#: src/Builder/library-strings.php:200
+#: src/Builder/library-strings.php:201
 msgid "Simple store home page"
 msgstr "صفحه اصلی فروشگاه ساده"
 
-#: src/Builder/library-strings.php:201
+#: src/Builder/library-strings.php:202
 msgid "Skin care"
 msgstr "مراقبت پوست"
 
-#: src/Builder/library-strings.php:202
+#: src/Builder/library-strings.php:203
 msgid "Small product cards with a round add button."
 msgstr "کارت‌های کوچک کالا با دکمه گرد افزودن."
 
-#: src/Builder/library-strings.php:203
+#: src/Builder/library-strings.php:204
 msgid "Smart kitchen"
 msgstr "آشپزخانه هوشمند"
 
-#: src/Builder/library-strings.php:204
+#: src/Builder/library-strings.php:205
 msgid "Smart watches"
 msgstr "ساعت هوشمند"
 
-#: src/Builder/library-strings.php:205
+#: src/Builder/library-strings.php:207
 #: src/Widgets/Footer/AppLinks.php:86
 msgid "Store app:"
 msgstr "اپلیکیشن فروشگاه:"
 
-#: src/Builder/library-strings.php:206
+#: src/Builder/library-strings.php:209
 msgid "Store header with categories"
 msgstr "سربرگ فروشگاهی با دسته‌بندی"
 
-#: src/Builder/library-strings.php:208
+#: src/Builder/library-strings.php:212
 #: src/Widgets/Store/Stories.php:33
 #: src/Widgets/Store/Stories.php:68
 #: src/Widgets/Store/Stories.php:73
@@ -2488,171 +2520,180 @@ msgstr "سربرگ فروشگاهی با دسته‌بندی"
 msgid "Stories"
 msgstr "استوری‌ها"
 
-#: src/Builder/library-strings.php:209
+#: src/Builder/library-strings.php:213
 msgid "Stories, hero slider, offers, banners, categories, product tabs, best sellers, brands, discount picks, blog and trust badges."
 msgstr "استوری، اسلایدر اصلی، پیشنهادها، بنرها، دسته‌بندی‌ها، زبانه‌های کالا، پرفروش‌ها، برندها، منتخب تخفیف‌ها، وبلاگ و نمادهای اعتماد."
 
-#: src/Builder/library-strings.php:211
+#: src/Builder/library-strings.php:215
 msgid "Supermarket row"
 msgstr "ردیف سوپرمارکت"
 
-#: src/Builder/library-strings.php:212
+#: src/Builder/library-strings.php:216
 #: src/Widgets/Store/TrustMarks.php:167
 msgid "Support 7 days a week"
 msgstr "پشتیبانی ۷ روز هفته"
 
-#: src/Builder/library-strings.php:213
+#: src/Builder/library-strings.php:217
 msgid "Support: your store phone number"
 msgstr "پشتیبانی: شماره تماس فروشگاه شما"
 
-#: src/Builder/library-strings.php:214
+#: src/Builder/library-strings.php:218
 msgid "Terms of use"
 msgstr "شرایط استفاده"
 
-#: src/Builder/library-strings.php:215
+#: src/Builder/library-strings.php:219
 msgid "The best selling products in a numbered list."
 msgstr "پرفروش‌ترین کالاها در فهرستی شماره‌دار."
 
-#: src/Builder/library-strings.php:216
+#: src/Builder/library-strings.php:220
 msgid "The first phone header on your brand colour."
 msgstr "اولین سربرگ گوشی، به رنگ برند شما."
 
-#: src/Builder/library-strings.php:217
+#: src/Builder/library-strings.php:221
 msgid "The four newest articles."
 msgstr "چهار نوشته تازه."
 
-#: src/Builder/library-strings.php:218
+#: src/Builder/library-strings.php:223
 msgid "The newest models"
 msgstr "جدیدترین مدل‌ها"
 
-#: src/Builder/library-strings.php:219
+#: src/Builder/library-strings.php:224
 msgid "The support team answered all my questions patiently."
 msgstr "تیم پشتیبانی با حوصله به همه پرسش‌هایم پاسخ داد."
 
-#: src/Builder/library-strings.php:220
+#: src/Builder/library-strings.php:226
 msgid "Three large slides with text, a button and a product image."
 msgstr "سه اسلاید بزرگ با متن، دکمه و تصویر کالا."
 
-#: src/Builder/library-strings.php:221
+#: src/Builder/library-strings.php:227
 msgid "Three plans"
 msgstr "سه طرح"
 
-#: src/Builder/library-strings.php:222
+#: src/Builder/library-strings.php:228
 msgid "Three pricing tables side by side, the middle one highlighted."
 msgstr "سه جدول قیمت کنار هم، با برجسته شدن طرح وسط."
 
-#: src/Builder/library-strings.php:224
+#: src/Builder/library-strings.php:230
 #: src/Widgets/Header/MenuToggle.php:128
 msgid "Track order"
 msgstr "پیگیری سفارش"
 
-#: src/Builder/library-strings.php:225
+#: src/Account/Lookup.php:59
+#: src/Builder/library-strings.php:231
 msgid "Track your order"
 msgstr "پیگیری سفارش"
 
-#: src/Builder/library-strings.php:226
+#: src/Builder/library-strings.php:232
 #: src/Widgets/Store/TrustMarks.php:107
 msgid "Trust badge"
 msgstr "نماد اعتماد"
 
-#: src/Builder/library-strings.php:227
+#: src/Builder/library-strings.php:233
 #: src/Widgets/Store/TrustMarks.php:83
 msgid "Trust badges"
 msgstr "نمادهای اعتماد"
 
-#: src/Builder/library-strings.php:228
+#: src/Builder/library-strings.php:234
 msgid "Two large banners with a button."
 msgstr "دو بنر بزرگ با دکمه."
 
-#: src/Builder/library-strings.php:229
+#: src/Builder/library-strings.php:235
 msgid "Two wide banners"
 msgstr "دو بنر پهن"
 
-#: src/Builder/library-strings.php:230
+#: src/Builder/library-strings.php:236
 #: src/Widgets/Store/Banners.php:92
 #: src/Widgets/Store/Banners.php:146
 msgid "Up to 12% off"
 msgstr "تا ۱۲٪ تخفیف"
 
-#: src/Builder/library-strings.php:231
+#: src/Builder/library-strings.php:237
 #: src/Widgets/Header/CategoryMenu.php:96
 msgid "Up to 30% off"
 msgstr "تا ۳۰٪ تخفیف"
 
-#: src/Builder/library-strings.php:232
+#: src/Builder/library-strings.php:238
 #: src/Widgets/Store/Stories.php:109
 msgid "View"
 msgstr "مشاهده"
 
-#: src/Builder/library-strings.php:233
+#: src/Builder/library-strings.php:239
 msgid "Weekly groceries delivered the same day"
 msgstr "خرید هفتگی، تحویل همان روز"
 
-#: src/Builder/library-strings.php:234
+#: src/Builder/library-strings.php:240
 msgid "What our customers say"
 msgstr "مشتریان ما چه می‌گویند"
 
-#: src/Builder/library-strings.php:235
+#: src/Builder/library-strings.php:241
 msgid "White top row and a menu row in your brand colour."
 msgstr "ردیف بالای سفید و ردیف منو به رنگ برند شما."
 
-#: src/Builder/library-strings.php:237
+#: src/Builder/library-strings.php:243
 msgid "Wireless sound"
 msgstr "صدای بی‌سیم"
 
-#: src/Builder/library-strings.php:238
-#: src/Widgets/Header/Wishlist.php:34
+#: src/Account/Page.php:277
+#: src/Account/Page.php:703
+#: src/Builder/library-strings.php:244
+#: src/Options.php:662
+#: src/Options.php:1087
+#: src/Saved/Buttons.php:49
+#: src/Saved/Saved.php:87
+#: src/Saved/Wishlist.php:128
+#: src/Widgets/Header/Wishlist.php:35
+#: src/Widgets/ProductPage/ProductSaveButtons.php:70
 msgid "Wishlist"
 msgstr "علاقه‌مندی"
 
-#: src/Builder/library-strings.php:239
+#: src/Builder/library-strings.php:245
 msgid "With a dark top bar"
 msgstr "با نوار بالای تیره"
 
-#: src/Builder/library-strings.php:240
+#: src/Builder/library-strings.php:246
 #: src/Widgets/Store/Banners.php:98
 msgid "Work laptops"
 msgstr "لپ‌تاپ کاری"
 
-#: src/Builder/library-strings.php:241
+#: src/Builder/library-strings.php:247
 msgid "Work with us"
 msgstr "همکاری با ما"
 
-#: src/Builder/library-strings.php:242
+#: src/Builder/library-strings.php:248
 #: src/Widgets/Store/Posts.php:69
 msgid "Worth reading"
 msgstr "خواندنی‌ها"
 
-#: src/Builder/library-strings.php:243
+#: src/Builder/library-strings.php:249
 msgid "Write a sentence about your store here."
 msgstr "یک جمله درباره فروشگاه خود اینجا بنویسید."
 
-#: src/Builder/library-strings.php:244
+#: src/Builder/library-strings.php:250
 msgid "Write a short description of your store, its guarantees and delivery here. Search engines read it too."
 msgstr "توضیح کوتاهی از فروشگاه، ضمانت‌ها و ارسال آن اینجا بنویسید. موتورهای جستجو هم آن را می‌خوانند."
 
-#: src/Builder/library-strings.php:245
+#: src/Builder/library-strings.php:251
 msgid "Yes, in the cities shown at checkout."
 msgstr "بله، در شهرهایی که هنگام تسویه نشان داده می‌شوند."
 
-#: src/Builder/library-strings.php:246
+#: src/Builder/library-strings.php:252
 msgid "Your store address"
 msgstr "نشانی فروشگاه شما"
 
-#: src/Builder/library-strings.php:247
+#: src/Builder/library-strings.php:253
 msgid "Your store email"
 msgstr "ایمیل فروشگاه شما"
 
-#: src/Builder/library-strings.php:248
+#: src/Builder/library-strings.php:254
 msgid "Your store phone number"
 msgstr "شماره تماس فروشگاه شما"
 
-#: src/Builder/library-strings.php:249
+#: src/Builder/library-strings.php:255
 #: src/Widgets/Store/TrustMarks.php:128
 msgid "e-Namad trust badge"
 msgstr "نماد اعتماد الکترونیکی"
 
-#: src/Builder/library-strings.php:250
+#: src/Builder/library-strings.php:256
 #: src/Widgets/General/PricingTable.php:82
 msgid "month"
 msgstr "ماه"
@@ -2666,7 +2707,7 @@ msgid "Choose what kind of layout to make."
 msgstr "نوع چیدمانی را که می‌خواهید بسازید انتخاب کنید."
 
 #: src/Builder/Rest.php:136
-#: src/Elementor/Integration.php:283
+#: src/Elementor/Integration.php:287
 msgid "This template could not be found."
 msgstr "این طرح پیدا نشد."
 
@@ -2736,6 +2777,7 @@ msgstr "برچسب کالا"
 
 #: src/Builder/Rules.php:135
 #: src/Elementor/Kit.php:125
+#: src/Saved/Compare.php:97
 #: src/Shop/Filters.php:53
 #: src/Shop/Filters.php:191
 msgid "Brand"
@@ -2834,58 +2876,51 @@ msgid "Checkout forms"
 msgstr "فرم‌های تسویه حساب"
 
 #: src/Builder/Types.php:61
-msgid "Checkout content"
-msgstr "محتوای تسویه حساب"
-
-#: src/Builder/Types.php:61
-msgid "Checkout contents"
-msgstr "محتواهای تسویه حساب"
-
-#: src/Builder/Types.php:62
 msgid "Thank you page"
 msgstr "صفحه تشکر"
 
-#: src/Builder/Types.php:62
+#: src/Builder/Types.php:61
 msgid "Thank you pages"
 msgstr "صفحه‌های تشکر"
 
-#: src/Builder/Types.php:63
+#: src/Builder/Types.php:62
 msgid "Login and register"
 msgstr "ورود و ثبت‌نام"
 
-#: src/Builder/Types.php:63
+#: src/Builder/Types.php:62
 msgid "Login and register pages"
 msgstr "صفحه‌های ورود و ثبت‌نام"
 
-#: src/Builder/Types.php:64
+#: src/Builder/Types.php:63
 msgid "Lost password"
 msgstr "فراموشی رمز"
 
-#: src/Builder/Types.php:64
+#: src/Builder/Types.php:63
 msgid "Lost password pages"
 msgstr "صفحه‌های فراموشی رمز"
 
-#: src/Builder/Types.php:65
+#: src/Builder/Types.php:64
 msgid "Account pages"
 msgstr "صفحه‌های حساب کاربری"
 
-#: src/Builder/Types.php:66
+#: src/Builder/Types.php:65
 msgid "Single post"
 msgstr "صفحه نوشته"
 
-#: src/Builder/Types.php:66
+#: src/Builder/Types.php:65
 msgid "Single posts"
 msgstr "صفحه‌های نوشته"
 
-#: src/Builder/Types.php:67
+#: src/Builder/Types.php:66
 msgid "Blog archive"
 msgstr "بایگانی وبلاگ"
 
-#: src/Builder/Types.php:67
+#: src/Builder/Types.php:66
 msgid "Blog archives"
 msgstr "بایگانی‌های وبلاگ"
 
 #: src/Elementor/Controls.php:237
+#: src/Shipping/PostMethod.php:136
 #: src/Store/Menus.php:246
 #: src/Store/Menus.php:271
 msgid "None"
@@ -2893,6 +2928,7 @@ msgstr "هیچ"
 
 #: src/Elementor/DynamicTags.php:112
 #: src/Product/Purchase.php:337
+#: src/Saved/Compare.php:69
 msgid "In stock"
 msgstr "موجود"
 
@@ -2901,6 +2937,7 @@ msgstr "موجود"
 #: src/Product/Purchase.php:310
 #: src/Product/Purchase.php:317
 #: src/Product/Purchase.php:420
+#: src/Saved/Compare.php:62
 #: src/Store/Cards.php:325
 msgid "Out of stock"
 msgstr "ناموجود"
@@ -2918,35 +2955,36 @@ msgid "%s: store"
 msgstr "%s: فروشگاه"
 
 #. translators: %s: product name.
-#: src/Elementor/Integration.php:75
+#: src/Elementor/Integration.php:79
 #, php-format
 msgid "%s: general"
 msgstr "%s: عمومی"
 
 #. translators: %s: product name.
-#: src/Elementor/Integration.php:77
+#: src/Elementor/Integration.php:81
 #, php-format
 msgid "%s: footer"
 msgstr "%s: پابرگ"
 
-#: src/Elementor/Integration.php:142
+#: src/Elementor/Integration.php:146
 msgid "Ready-made designs"
 msgstr "طرح‌های آماده"
 
-#: src/Elementor/Integration.php:144
+#: src/Account/Page.php:788
+#: src/Elementor/Integration.php:148
 #: src/Shop/Archive.php:697
 msgid "Pages"
 msgstr "صفحه‌ها"
 
-#: src/Elementor/Integration.php:145
+#: src/Elementor/Integration.php:149
 msgid "Insert"
 msgstr "درج"
 
-#: src/Elementor/Integration.php:148
+#: src/Elementor/Integration.php:152
 msgid "Nothing here yet."
 msgstr "هنوز چیزی اینجا نیست."
 
-#: src/Elementor/Integration.php:150
+#: src/Elementor/Integration.php:154
 msgid "The design was added to the page."
 msgstr "طرح به صفحه اضافه شد."
 
@@ -2961,8 +2999,9 @@ msgstr "رنگ تأکید"
 
 #: src/Elementor/Kit.php:135
 #: src/Elementor/Kit.php:147
-#: src/Options.php:494
-#: src/Options.php:539
+#: src/Options.php:497
+#: src/Options.php:542
+#: src/Options.php:971
 #: src/Widgets/Footer/AppLinks.php:97
 #: src/Widgets/Footer/Copyright.php:82
 #: src/Widgets/General/AnimatedText.php:56
@@ -2976,7 +3015,7 @@ msgstr "رنگ تأکید"
 #: src/Widgets/Header/Cart.php:93
 #: src/Widgets/Header/MenuToggle.php:110
 #: src/Widgets/Header/StickyNav.php:62
-#: src/Widgets/Header/Wishlist.php:71
+#: src/Widgets/Header/Wishlist.php:72
 #: src/Widgets/ProductPage/ProductShare.php:63
 #: src/Widgets/Store/HeroSlider.php:100
 #: src/Widgets/Store/QuickLinks.php:84
@@ -2994,7 +3033,7 @@ msgid "Subheadings"
 msgstr "زیرعنوان‌ها"
 
 #: src/Elementor/Kit.php:148
-#: src/Options.php:432
+#: src/Options.php:435
 msgid "Buttons"
 msgstr "دکمه‌ها"
 
@@ -3047,6 +3086,7 @@ msgid "Leave empty to use the product of the page."
 msgstr "برای استفاده از کالای همین صفحه خالی بگذارید."
 
 #: src/Elementor/Tags/ProductPrice.php:83
+#: src/Shipping/CourierMethod.php:92
 #: src/Widgets/General/PricingTable.php:74
 msgid "Price"
 msgstr "قیمت"
@@ -3088,27 +3128,29 @@ msgstr "مورد"
 msgid "Tagline"
 msgstr "شعار"
 
+#: src/Checkout/ThankYou.php:281
 #: src/Elementor/Tags/StoreInfo.php:81
 msgid "Address"
 msgstr "نشانی"
 
+#: src/Checkout/Fields.php:106
 #: src/Elementor/Tags/StoreInfo.php:82
 msgid "City"
 msgstr "شهر"
 
-#: src/Options.php:665
+#: src/Options.php:1041
 msgid "Layout builder"
 msgstr "سازنده چیدمان"
 
-#: src/Options.php:666
+#: src/Options.php:1042
 msgid "Design the header, footer and reusable blocks with Elementor, and choose where each one shows."
 msgstr "سربرگ، پابرگ و بلوک‌های تکرارپذیر را با المنتور طراحی کنید و تعیین کنید هر کدام کجا نمایش داده شود."
 
-#: src/Options.php:673
+#: src/Options.php:1049
 msgid "Store widgets"
 msgstr "ابزارک‌های فروشگاه"
 
-#: src/Options.php:674
+#: src/Options.php:1050
 msgid "Header, home page and general widgets for Elementor, also usable as shortcodes. Each widget loads its files only on pages that use it."
 msgstr "ابزارک‌های سربرگ، صفحه اصلی و عمومی برای المنتور که با کد کوتاه هم کار می‌کنند. هر ابزارک فایل‌هایش را فقط در صفحه‌هایی بارگذاری می‌کند که از آن استفاده می‌کنند."
 
@@ -3117,8 +3159,10 @@ msgstr "ابزارک‌های سربرگ، صفحه اصلی و عمومی بر�
 msgid "Call for price"
 msgstr "برای قیمت تماس بگیرید"
 
+#. translators: %s: rating out of 5.
 #. translators: %s: rating.
 #. translators: %s: rating such as 4.5.
+#: src/Account/Activity.php:111
 #: src/Product/Reviews.php:550
 #: src/Product/Reviews.php:807
 #: src/Store/Cards.php:271
@@ -3128,6 +3172,7 @@ msgstr "امتیاز %s از ۵"
 
 #. translators: %s: number of items left.
 #: src/Product/Purchase.php:326
+#: src/Saved/Compare.php:67
 #: src/Store/Cards.php:329
 #, php-format
 msgid "Only %s left in stock"
@@ -3136,20 +3181,20 @@ msgstr[0] "فقط %s عدد در انبار باقی مانده"
 msgstr[1] ""
 
 #: src/Product/Page.php:522
-#: src/Store/Cards.php:373
+#: src/Store/Cards.php:384
 msgid "Time left for this offer"
 msgstr "زمان باقی‌مانده این پیشنهاد"
 
 #. translators: %s: percent.
 #. translators: %s: percent such as 60%.
 #: src/Product/Sales.php:131
-#: src/Store/Cards.php:381
+#: src/Store/Cards.php:392
 #, php-format
 msgid "%s sold"
 msgstr "%s فروخته شده"
 
 #. translators: %s: percent such as 40%.
-#: src/Store/Cards.php:383
+#: src/Store/Cards.php:394
 #, php-format
 msgid "%s left"
 msgstr "%s باقی مانده"
@@ -3225,7 +3270,7 @@ msgstr "داغ"
 msgid "None (normal sub-menu)"
 msgstr "هیچ (زیرمنوی معمولی)"
 
-#: src/Options.php:487
+#: src/Options.php:490
 #: src/Store/Menus.php:265
 #: src/Widgets/Footer/AppLinks.php:102
 #: src/Widgets/General/Button.php:89
@@ -3292,6 +3337,8 @@ msgstr "پیوند اپلیکیشن"
 msgid "Apps"
 msgstr "اپلیکیشن‌ها"
 
+#: src/Options.php:936
+#: src/Options.php:956
 #: src/Widgets/Footer/AppLinks.php:85
 #: src/Widgets/General/Counter.php:69
 msgid "Label"
@@ -3314,7 +3361,7 @@ msgstr "پیوندها"
 #: src/Widgets/General/IconList.php:84
 #: src/Widgets/General/Team.php:100
 #: src/Widgets/Header/MenuToggle.php:121
-#: src/Widgets/Header/Wishlist.php:77
+#: src/Widgets/Header/Wishlist.php:78
 #: src/Widgets/Store/Banners.php:108
 #: src/Widgets/Store/HeroSlider.php:111
 #: src/Widgets/Store/QuickLinks.php:102
@@ -3427,7 +3474,7 @@ msgstr "سبک"
 msgid "Brand colour"
 msgstr "رنگ برند"
 
-#: src/Options.php:569
+#: src/Options.php:572
 #: src/Widgets/General/Button.php:68
 msgid "Accent colour"
 msgstr "رنگ تأکید"
@@ -3490,7 +3537,7 @@ msgstr "فرم تماس"
 msgid "Form"
 msgstr "فرم"
 
-#: src/Options.php:596
+#: src/Options.php:599
 #: src/Product/Reviews.php:904
 #: src/Widgets/General/ContactForm.php:63
 #: src/Widgets/General/Countdown.php:64
@@ -3573,7 +3620,7 @@ msgstr "پیش از عدد"
 msgid "After the number"
 msgstr "پس از عدد"
 
-#: src/Options.php:398
+#: src/Options.php:401
 #: src/Widgets/General/Gallery.php:32
 #: src/Widgets/General/Gallery.php:116
 msgid "Gallery"
@@ -3596,7 +3643,7 @@ msgstr "تصویر"
 msgid "Caption"
 msgstr "زیرنویس"
 
-#: src/Options.php:181
+#: src/Options.php:184
 #: src/Widgets/General/Gallery.php:80
 #: src/Widgets/Shop/ArchiveProducts.php:85
 #: src/Widgets/Store/DiscountPicks.php:102
@@ -3636,6 +3683,8 @@ msgstr "وسط"
 msgid "\"See all\" text"
 msgstr "متن «مشاهده همه»"
 
+#: src/Account/Page.php:231
+#: src/Account/Page.php:250
 #: src/Widgets/General/Heading.php:85
 #: src/Widgets/Store/StoreWidget.php:61
 msgid "See all"
@@ -3708,6 +3757,7 @@ msgstr "در قاب"
 msgid "List with icons"
 msgstr "فهرست با آیکون"
 
+#: src/Options.php:973
 #: src/Widgets/General/IconList.php:57
 msgid "List"
 msgstr "فهرست"
@@ -3936,8 +3986,8 @@ msgstr "جدول سایز"
 msgid "Show the name above the table"
 msgstr "نمایش نام بالای جدول"
 
-#: src/Options.php:190
-#: src/Options.php:218
+#: src/Options.php:193
+#: src/Options.php:221
 #: src/Shop/Archive.php:499
 #: src/Widgets/General/Table.php:74
 msgid "Rows"
@@ -3963,8 +4013,8 @@ msgstr ""
 msgid "Store tabs"
 msgstr "زبانه‌های فروشگاه"
 
-#: src/Options.php:419
-#: src/Options.php:590
+#: src/Options.php:422
+#: src/Options.php:593
 #: src/Widgets/General/Tabs.php:50
 #: src/Widgets/General/Tabs.php:55
 #: src/Widgets/General/Tabs.php:121
@@ -3983,7 +4033,7 @@ msgstr "نام زبانه"
 msgid "Tab"
 msgstr "زبانه"
 
-#: src/Options.php:601
+#: src/Options.php:604
 #: src/Product/Fields.php:66
 #: src/Widgets/General/Tabs.php:67
 msgid "Content"
@@ -4005,6 +4055,7 @@ msgid "Specifications"
 msgstr "مشخصات"
 
 #: src/Widgets/General/Tabs.php:85
+#: src/Widgets/ProductPage/ProductSaveButtons.php:74
 msgid "Look"
 msgstr "ظاهر"
 
@@ -4021,6 +4072,7 @@ msgstr "دکمه‌ای"
 msgid "Team member"
 msgstr "عضو تیم"
 
+#: src/Checkout/Fields.php:348
 #: src/Widgets/General/Team.php:56
 msgid "Person"
 msgstr "شخص"
@@ -4110,6 +4162,7 @@ msgstr "مرحله‌ها"
 msgid "Date or step"
 msgstr "تاریخ یا مرحله"
 
+#: src/Account/Orders.php:279
 #: src/Widgets/General/Timeline.php:73
 #: src/Widgets/General/Timeline.php:88
 msgid "Order placed"
@@ -4119,6 +4172,7 @@ msgstr "ثبت سفارش"
 msgid "Packed"
 msgstr "بسته‌بندی شد"
 
+#: src/Account/Orders.php:54
 #: src/Widgets/General/Timeline.php:94
 msgid "Delivered"
 msgstr "تحویل شد"
@@ -4345,7 +4399,7 @@ msgstr "اندازه متن"
 msgid "Name for screen readers"
 msgstr "نام برای صفحه‌خوان‌ها"
 
-#: src/Options.php:272
+#: src/Options.php:275
 #: src/Search/Search.php:131
 #: src/Search/Search.php:132
 #: src/Search/Search.php:145
@@ -4418,10 +4472,6 @@ msgstr "شناسه بخش"
 msgid "On this page"
 msgstr "در این صفحه"
 
-#: src/Widgets/Header/Wishlist.php:78
-msgid "Leave empty for the account page."
-msgstr "برای صفحه حساب کاربری خالی بگذارید."
-
 #: src/Widgets/Store/Banners.php:33
 #: src/Widgets/Store/Banners.php:68
 #: src/Widgets/Store/Banners.php:85
@@ -4470,6 +4520,8 @@ msgstr "متن سفید"
 msgid "For dark backgrounds."
 msgstr "برای پس‌زمینه‌های تیره."
 
+#: src/Account/Lookup.php:304
+#: src/Account/Page.php:683
 #: src/Search/Live.php:116
 #: src/Widgets/ProductPage/ProductRelated.php:61
 #: src/Widgets/Shop/ArchiveProducts.php:76
@@ -4514,7 +4566,7 @@ msgstr "دایره‌های دسته‌بندی"
 msgid "Leave empty to show the main categories."
 msgstr "برای نمایش دسته‌بندی‌های اصلی خالی بگذارید."
 
-#: src/Options.php:217
+#: src/Options.php:220
 #: src/Shop/Archive.php:498
 #: src/Widgets/Store/CategoryCircles.php:97
 #: src/Widgets/Store/Products.php:96
@@ -4579,6 +4631,7 @@ msgstr "هر دسته‌بندی یک دکمه کوچک بالای کالاها 
 msgid "\"All\" chip text"
 msgstr "متن دکمه «همه»"
 
+#: src/Widgets/Cart/CartSuggestions.php:77
 #: src/Widgets/ProductPage/ProductRelated.php:72
 #: src/Widgets/Store/DiscountPicks.php:94
 #: src/Widgets/Store/StoreWidget.php:112
@@ -4655,20 +4708,20 @@ msgid_plural "%s minutes read"
 msgstr[0] "%s دقیقه مطالعه"
 msgstr[1] "%s دقیقه مطالعه"
 
-#: src/Options.php:406
+#: src/Options.php:409
 #: src/Widgets/ProductPage/ProductGallery.php:66
 #: src/Widgets/Store/Products.php:95
 msgid "Slider"
 msgstr "اسلایدر"
 
-#: src/Options.php:176
+#: src/Options.php:179
 #: src/Widgets/ProductPage/ProductRelated.php:77
 #: src/Widgets/Shop/ArchiveProducts.php:81
 #: src/Widgets/Store/Products.php:102
 msgid "Card design"
 msgstr "طرح کارت"
 
-#: src/Options.php:182
+#: src/Options.php:185
 #: src/Widgets/Shop/ArchiveProducts.php:86
 #: src/Widgets/Store/Products.php:107
 msgid "Columns on tablet"
@@ -4698,7 +4751,7 @@ msgstr "تعداد کالا در هر زبانه"
 msgid "Hide out of stock products"
 msgstr "پنهان کردن کالاهای ناموجود"
 
-#: src/Options.php:564
+#: src/Options.php:567
 #: src/Shop/Terms.php:284
 #: src/Shop/Terms.php:301
 #: src/Widgets/Store/QuickLinks.php:96
@@ -4721,6 +4774,8 @@ msgstr "نمایش در جعبه سفید"
 msgid "Leave empty for all categories."
 msgstr "برای همه دسته‌بندی‌ها خالی بگذارید."
 
+#: src/Account/Page.php:399
+#: src/Account/Page.php:792
 #: src/Shop/Archive.php:702
 #: src/Widgets/Store/StoreWidget.php:150
 msgid "Previous"
@@ -4830,31 +4885,31 @@ msgstr "نام اکشن"
 msgid "Card with brand and add button"
 msgstr "کارت با برند و دکمه افزودن"
 
-#: src/Builder/library-strings.php:69
+#: src/Builder/library-strings.php:70
 msgid "Compact card"
 msgstr "کارت فشرده"
 
-#: src/Builder/library-strings.php:146
+#: src/Builder/library-strings.php:147
 msgid "No filter column: five products a row, sorting and a filter button above them."
 msgstr "بدون ستون فیلتر: پنج کالا در هر ردیف، مرتب‌سازی و دکمه فیلتر بالای آن‌ها."
 
-#: src/Builder/library-strings.php:170
+#: src/Builder/library-strings.php:171
 msgid "Picture with the second picture on hover, badges, title, brand and rating, price and an add button."
 msgstr "تصویر با تصویر دوم هنگام هاور، برچسب‌ها، عنوان، برند و امتیاز، قیمت و دکمه افزودن."
 
-#: src/Builder/library-strings.php:171
+#: src/Builder/library-strings.php:172
 msgid "Picture, title, stock note and price only."
 msgstr "فقط تصویر، عنوان، وضعیت موجودی و قیمت."
 
-#: src/Builder/library-strings.php:177
+#: src/Builder/library-strings.php:178
 msgid "Product list with a filter column"
 msgstr "فهرست کالا با ستون فیلتر"
 
-#: src/Builder/library-strings.php:223
+#: src/Builder/library-strings.php:229
 msgid "Title and subcategories on top; filters beside the products, sorting above them and the category guide below."
 msgstr "عنوان و زیردسته‌ها در بالا؛ فیلترها کنار کالاها، مرتب‌سازی بالای آن‌ها و راهنمای دسته در پایین."
 
-#: src/Builder/library-strings.php:236
+#: src/Builder/library-strings.php:242
 msgid "Wide product list"
 msgstr "فهرست کالای تمام‌عرض"
 
@@ -4878,121 +4933,121 @@ msgstr "%s: فهرست کالا"
 msgid "%s: product"
 msgstr "%s: کالا"
 
-#: src/Options.php:162
+#: src/Options.php:165
 msgid "Product lists and search"
 msgstr "فهرست کالا و جستجو"
 
-#: src/Options.php:168
-#: src/Options.php:681
+#: src/Options.php:171
+#: src/Options.php:1057
 msgid "Product lists"
 msgstr "فهرست کالا"
 
-#: src/Options.php:177
+#: src/Options.php:180
 msgid "A card you designed with Elementor (Layouts, Product card) is offered here too."
 msgstr "کارتی که با المنتور طراحی کرده‌ای (چیدمان‌ها، کارت محصول) هم این‌جا هست."
 
-#: src/Options.php:186
+#: src/Options.php:189
 msgid "On phones"
 msgstr "در گوشی"
 
-#: src/Options.php:191
+#: src/Options.php:194
 msgid "Two columns"
 msgstr "دو ستون"
 
-#: src/Options.php:195
+#: src/Options.php:198
 #: src/Shop/Archive.php:534
 #: src/Widgets/Shop/PerPage.php:33
 #: src/Widgets/Shop/PerPage.php:48
 msgid "Products per page"
 msgstr "تعداد کالا در هر صفحه"
 
-#: src/Options.php:199
+#: src/Options.php:202
 msgid "More products"
 msgstr "کالاهای بیشتر"
 
-#: src/Options.php:200
+#: src/Options.php:203
 msgid "Page links always stay under the list for search engines."
 msgstr "پیوند صفحه‌ها همیشه برای موتورهای جستجو زیر فهرست می‌ماند."
 
-#: src/Options.php:204
+#: src/Options.php:207
 msgid "\"Show more\" button"
 msgstr "دکمه «نمایش بیشتر»"
 
-#: src/Options.php:205
+#: src/Options.php:208
 msgid "Load while scrolling"
 msgstr "بارگذاری هنگام اسکرول"
 
-#: src/Options.php:206
+#: src/Options.php:209
 msgid "Page links"
 msgstr "پیوند صفحه‌ها"
 
-#: src/Options.php:213
+#: src/Options.php:216
 #: src/Shop/Archive.php:497
 msgid "Show products as"
 msgstr "نمایش کالاها به‌صورت"
 
-#: src/Options.php:225
+#: src/Options.php:228
 msgid "Let shoppers switch between grid and rows"
 msgstr "خریدار بتواند بین شبکه و فهرست جابه‌جا شود"
 
-#: src/Options.php:231
+#: src/Options.php:234
 msgid "Show subcategories with pictures above the list"
 msgstr "نمایش زیردسته‌ها با تصویر بالای فهرست"
 
-#: src/Options.php:238
+#: src/Options.php:241
 #: src/Shop/Archive.php:391
 #: src/Shop/Archive.php:754
 #: src/Widgets/Shop/FilterArea.php:57
 msgid "Filters"
 msgstr "فیلترها"
 
-#: src/Options.php:242
+#: src/Options.php:245
 msgid "A category can choose its own filters on its edit screen; its subcategories follow it."
 msgstr "هر دسته می‌تواند در صفحه ویرایش خودش فیلترهای خودش را انتخاب کند؛ زیردسته‌هایش هم از آن پیروی می‌کنند."
 
-#: src/Options.php:247
+#: src/Options.php:250
 msgid "Filters and their order"
 msgstr "فیلترها و ترتیب آن‌ها"
 
-#: src/Options.php:248
+#: src/Options.php:251
 msgid "Drag to change the order. Filters with nothing to choose in a list are hidden there."
 msgstr "برای تغییر ترتیب بکش. فیلتری که در یک فهرست گزینه‌ای ندارد، آن‌جا پنهان می‌شود."
 
-#: src/Options.php:255
+#: src/Options.php:258
 #: src/Shop/Archive.php:552
 msgid "Filter"
 msgstr "فیلتر"
 
-#: src/Options.php:264
+#: src/Options.php:267
 msgid "Let search engines index a list with one chosen value"
 msgstr "موتورهای جستجو فهرستی با یک گزینه انتخاب‌شده را ایندکس کنند"
 
-#: src/Options.php:265
+#: src/Options.php:268
 msgid "Such as \"headphones, brand Lumo\". Other filter combinations are never indexed."
 msgstr "مثل «هدفون، برند لومو». ترکیب‌های دیگر فیلتر هیچ‌وقت ایندکس نمی‌شوند."
 
-#: src/Options.php:277
+#: src/Options.php:280
 msgid "Products in suggestions"
 msgstr "تعداد کالا در پیشنهادها"
 
-#: src/Options.php:278
+#: src/Options.php:281
 msgid "Letters before suggestions show"
 msgstr "تعداد حرف پیش از نمایش پیشنهادها"
 
-#: src/Options.php:282
+#: src/Options.php:285
 msgid "Suggest blog posts too"
 msgstr "نوشته‌های وبلاگ هم پیشنهاد شوند"
 
-#: src/Options.php:288
+#: src/Options.php:291
 #: src/Search/Search.php:154
 msgid "Popular searches"
 msgstr "جستجوهای پرطرفدار"
 
-#: src/Options.php:289
+#: src/Options.php:292
 msgid "One per line. The phone search shows them before the shopper types."
 msgstr "هر کدام در یک خط. جستجوی گوشی پیش از تایپ خریدار آن‌ها را نشان می‌دهد."
 
-#: src/Options.php:290
+#: src/Options.php:293
 msgid ""
 "Headphones\n"
 "Smart watch"
@@ -5000,15 +5055,15 @@ msgstr ""
 "هدفون\n"
 "ساعت هوشمند"
 
-#: src/Options.php:682
+#: src/Options.php:1058
 msgid "Shop, category, brand and search pages with instant filters, sorting, a grid or rows, \"show more\" and phone sheets. Off, WooCommerce's own list shows."
 msgstr "صفحه فروشگاه، دسته، برند و جستجو با فیلتر فوری، مرتب‌سازی، نمای شبکه یا فهرست، «نمایش بیشتر» و برگه‌های پایین گوشی. اگر خاموش باشد، فهرست خود ووکامرس نمایش داده می‌شود."
 
-#: src/Options.php:701
+#: src/Options.php:1077
 msgid "Live search"
 msgstr "جستجوی زنده"
 
-#: src/Options.php:702
+#: src/Options.php:1078
 msgid "Suggestions while typing, search by product code and attributes, Persian letter and digit matching, and a full screen phone search."
 msgstr "پیشنهاد هنگام تایپ، جستجو با شناسه کالا و ویژگی‌ها، یکسان‌سازی حروف و ارقام فارسی، و جستجوی تمام‌صفحه گوشی."
 
@@ -5480,15 +5535,15 @@ msgstr "انتخاب خریدار در مرورگر خودش به خاطر سپ�
 msgid "A large picture grid beside the name, colours and sizes with the size guide, price and add button; tabs and similar products below."
 msgstr "شبکه بزرگ تصاویر کنار نام، رنگ‌ها و سایزها با راهنمای سایز، قیمت و دکمه افزودن؛ زبانه‌ها و کالاهای مشابه پایین صفحه."
 
-#: src/Builder/library-strings.php:88
+#: src/Builder/library-strings.php:89
 msgid "Fashion product page"
 msgstr "صفحه محصول پوشاک"
 
-#: src/Builder/library-strings.php:102
+#: src/Builder/library-strings.php:103
 msgid "Gallery, name and choices, and the buy box on top; the store's promises, bought together, sections with a small buy box, related products and recent views."
 msgstr "گالری، نام و گزینه‌ها و جعبه خرید در بالا؛ تعهدهای فروشگاه، خرید همراه، بخش‌ها با جعبه خرید کوچک، کالاهای مرتبط و بازدیدهای اخیر."
 
-#: src/Builder/library-strings.php:207
+#: src/Builder/library-strings.php:210
 msgid "Store product page"
 msgstr "صفحه محصول فروشگاهی"
 
@@ -5496,373 +5551,378 @@ msgstr "صفحه محصول فروشگاهی"
 msgid "The product page: gallery, buy box, specifications, reviews and questions. Use the product widgets; a category or a single product can have its own design."
 msgstr "صفحه محصول: گالری، جعبه خرید، مشخصات، دیدگاه‌ها و پرسش‌ها. از ابزارک‌های محصول استفاده کنید؛ هر دسته یا هر محصول می‌تواند طرح خودش را داشته باشد."
 
-#: src/Options.php:360
+#: src/Options.php:363
 msgid "Express delivery"
 msgstr "امکان تحویل اکسپرس"
 
-#: src/Options.php:364
+#: src/Options.php:367
 msgid "Pay on delivery"
 msgstr "امکان پرداخت در محل"
 
-#: src/Options.php:368
+#: src/Options.php:371
 msgid "Support every day"
 msgstr "پشتیبانی همه روزه"
 
-#: src/Options.php:372
+#: src/Options.php:375
 msgid "Seven days to return"
 msgstr "هفت روز ضمانت بازگشت"
 
-#: src/Options.php:390
-#: src/Options.php:639
-#: src/Options.php:691
+#: src/Options.php:393
+#: src/Options.php:642
+#: src/Options.php:1067
 #: src/Product/Fields.php:84
 msgid "Product page"
 msgstr "صفحه محصول"
 
-#: src/Options.php:399
+#: src/Options.php:402
 msgid "Phones always swipe through the pictures."
 msgstr "در گوشی تصاویر همیشه با کشیدن انگشت ورق می‌خورند."
 
-#: src/Options.php:403
+#: src/Options.php:406
 #: src/Widgets/ProductPage/ProductGallery.php:63
 msgid "Thumbnails beside"
 msgstr "تصاویر کوچک در کنار"
 
-#: src/Options.php:404
+#: src/Options.php:407
 #: src/Widgets/ProductPage/ProductGallery.php:64
 msgid "Thumbnails under"
 msgstr "تصاویر کوچک در پایین"
 
-#: src/Options.php:405
+#: src/Options.php:408
 #: src/Widgets/ProductPage/ProductGallery.php:65
 msgid "All in a grid"
 msgstr "همه در یک شبکه"
 
-#: src/Options.php:410
+#: src/Options.php:413
 msgid "Zoom pictures under the mouse"
 msgstr "بزرگ‌نمایی تصویر زیر نشانگر"
 
-#: src/Options.php:414
+#: src/Options.php:417
 msgid "Introduction, specifications and reviews"
 msgstr "معرفی، مشخصات و دیدگاه‌ها"
 
-#: src/Options.php:418
+#: src/Options.php:421
 #: src/Widgets/ProductPage/ProductSections.php:63
 msgid "One page with sticky links"
 msgstr "یک صفحه با پیوندهای چسبان"
 
-#: src/Options.php:420
+#: src/Options.php:423
 #: src/Widgets/ProductPage/ProductSections.php:65
 msgid "Folding panels"
 msgstr "پنل‌های تاشو"
 
-#: src/Options.php:427
+#: src/Options.php:430
 msgid "Show options as"
 msgstr "نمایش گزینه‌ها به شکل"
 
-#: src/Options.php:428
+#: src/Options.php:431
 msgid "Colour and picture attributes always show as swatches."
 msgstr "ویژگی‌های رنگی و تصویری همیشه به شکل نمونه نشان داده می‌شوند."
 
-#: src/Options.php:433
+#: src/Options.php:436
 msgid "Dropdowns"
 msgstr "فهرست کشویی"
 
-#: src/Options.php:437
+#: src/Options.php:440
 msgid "Key features at the top"
 msgstr "ویژگی‌های کلیدی در بالای صفحه"
 
-#: src/Options.php:437
+#: src/Options.php:440
 msgid "Attributes marked as key features show first; without any, the first attributes show."
 msgstr "ویژگی‌هایی که «ویژگی کلیدی» علامت خورده‌اند نشان داده می‌شوند؛ اگر هیچ‌کدام علامت نخورده باشد، اولین ویژگی‌ها."
 
-#: src/Options.php:438
+#: src/Options.php:441
 msgid "Show weight and size in the specifications"
 msgstr "نمایش وزن و ابعاد در مشخصات"
 
-#: src/Options.php:442
+#: src/Options.php:445
 msgid "Note under the key features"
 msgstr "یادداشت زیر ویژگی‌های کلیدی"
 
-#: src/Options.php:443
+#: src/Options.php:446
 msgid "Such as your return rules. Leave empty to show none."
 msgstr "مثلاً شرایط بازگرداندن کالا. خالی بگذارید تا چیزی نشان داده نشود."
 
-#: src/Options.php:444
+#: src/Options.php:447
 msgid "Opened products can be returned only when faulty."
 msgstr "کالای باز شده فقط در صورت خرابی قابل بازگشت است."
 
-#: src/Options.php:446
+#: src/Options.php:449
 msgid "Keep the buy button in reach"
 msgstr "دکمه خرید همیشه در دسترس"
 
-#: src/Options.php:446
+#: src/Options.php:449
 msgid "A bar at the bottom of phones and a small box beside the sections on desktop."
 msgstr "یک نوار پایین صفحه در گوشی و یک جعبه کوچک کنار بخش‌ها در دسکتاپ."
 
-#: src/Options.php:447
+#: src/Options.php:450
 #: src/Widgets/ProductPage/ProductShare.php:34
 msgid "Share button"
 msgstr "دکمه اشتراک‌گذاری"
 
-#: src/Options.php:448
+#: src/Options.php:451
 msgid "Similar and complementary products"
 msgstr "کالاهای مشابه و مکمل"
 
-#: src/Options.php:449
+#: src/Options.php:452
 msgid "Products in each slider"
 msgstr "تعداد کالا در هر اسلایدر"
 
-#: src/Options.php:450
+#: src/Options.php:453
 msgid "The shopper's recent views"
 msgstr "بازدیدهای اخیر خریدار"
 
-#: src/Options.php:450
+#: src/Options.php:453
+#: src/Options.php:720
 msgid "Kept only in the shopper's browser."
 msgstr "فقط در مرورگر خود خریدار نگه داشته می‌شود."
 
-#: src/Options.php:455
+#: src/Options.php:458
 #: src/Widgets/ProductPage/ProductBuyBox.php:32
 msgid "Buy box"
 msgstr "جعبه خرید"
 
-#: src/Options.php:460
+#: src/Options.php:463
 msgid "Show the store as the seller"
 msgstr "نمایش فروشگاه به‌عنوان فروشنده"
 
-#: src/Options.php:464
+#: src/Options.php:467
 msgid "Line under the store name"
 msgstr "خط زیر نام فروشگاه"
 
-#: src/Options.php:465
+#: src/Options.php:468
 msgid "Sold and shipped by us"
 msgstr "فروش و ارسال توسط خود فروشگاه"
 
-#: src/Options.php:470
+#: src/Options.php:473
 msgid "Default warranty"
 msgstr "گارانتی پیش‌فرض"
 
-#: src/Options.php:471
+#: src/Options.php:474
 msgid "A product can set its own on its edit screen."
 msgstr "هر محصول می‌تواند در صفحه ویرایش خودش مقدار جداگانه داشته باشد."
 
-#: src/Options.php:472
+#: src/Options.php:475
 msgid "Seven day guarantee of genuine goods"
 msgstr "هفت روز ضمانت اصل بودن کالا"
 
-#: src/Options.php:474
+#: src/Options.php:477
 msgid "Warn \"only a few left\" from"
 msgstr "هشدار «فقط چند عدد مانده» از"
 
-#: src/Options.php:475
+#: src/Options.php:478
 msgid "\"Buy now\" button that goes straight to checkout"
 msgstr "دکمه «خرید سریع» که مستقیم به تسویه حساب می‌رود"
 
-#: src/Options.php:476
+#: src/Options.php:479
 msgid "Most of one product in an order"
 msgstr "بیشترین تعداد یک کالا در هر سفارش"
 
-#: src/Options.php:476
+#: src/Options.php:479
 msgid "0 for no limit. A product can set its own minimum, maximum and step."
 msgstr "۰ یعنی بدون محدودیت. هر محصول می‌تواند حداقل، حداکثر و گام خودش را داشته باشد."
 
-#: src/Options.php:480
+#: src/Options.php:483
 msgid "Promises under the buy box"
 msgstr "تعهدهای زیر جعبه خرید"
 
-#: src/Options.php:502
+#: src/Options.php:505
 msgid "Delivery, badges and offers"
 msgstr "ارسال، برچسب‌ها و پیشنهادها"
 
-#: src/Options.php:506
+#: src/Options.php:509
 msgid "Each shipping method gets \"delivery from\" and \"delivery to\" working days in WooCommerce, Settings, Shipping. A product can set its own preparation days."
 msgstr "هر روش ارسال در ووکامرس، پیکربندی، حمل و نقل دو فیلد «تحویل از» و «تحویل تا» (روز کاری) دارد. هر محصول می‌تواند روزهای آماده‌سازی خودش را داشته باشد."
 
-#: src/Options.php:508
+#: src/Options.php:511
 msgid "Delivery dates by province"
 msgstr "تاریخ تحویل بر اساس استان"
 
-#: src/Options.php:509
+#: src/Options.php:512
 msgid "Days to prepare an order"
 msgstr "روزهای آماده‌سازی سفارش"
 
-#: src/Options.php:510
+#: src/Options.php:513
 msgid "Thursdays are not working days"
 msgstr "پنجشنبه‌ها روز کاری نیستند"
 
-#: src/Options.php:510
+#: src/Options.php:513
 msgid "Fridays never are."
 msgstr "جمعه‌ها هیچ‌وقت روز کاری نیستند."
 
-#: src/Options.php:514
+#: src/Options.php:517
 msgid "Holidays"
 msgstr "تعطیلات"
 
-#: src/Options.php:515
+#: src/Options.php:518
 msgid "One Jalali date per line, such as 1405/01/01. Delivery dates skip them."
 msgstr "هر خط یک تاریخ شمسی، مثل 1405/01/01. این روزها در تاریخ تحویل شمرده نمی‌شوند."
 
-#: src/Options.php:519
+#: src/Options.php:522
 msgid "Free shipping from (store currency)"
 msgstr "ارسال رایگان از مبلغ (به واحد پول فروشگاه)"
 
-#: src/Options.php:519
+#: src/Options.php:522
 msgid "0 uses the minimum of WooCommerce's free shipping method in your own zone."
 msgstr "۰ یعنی حداقل مبلغ روش «ارسال رایگان» ووکامرس در منطقه خود فروشگاه."
 
-#: src/Options.php:522
+#: src/Options.php:525
+#: src/Options.php:825
 msgid "Show how far the cart is from free shipping"
 msgstr "نمایش فاصله سبد تا ارسال رایگان"
 
-#: src/Options.php:523
+#: src/Options.php:526
 msgid "Show how many were sold lately"
 msgstr "نمایش تعداد فروش اخیر"
 
-#: src/Options.php:524
+#: src/Options.php:527
 msgid "Count sales of the last days"
 msgstr "شمارش فروش چند روز گذشته"
 
-#: src/Options.php:525
+#: src/Options.php:528
 msgid "Show the count from"
 msgstr "نمایش شمارنده از تعداد"
 
-#: src/Options.php:526
+#: src/Options.php:529
 msgid "Show how much of an offer is sold"
 msgstr "نمایش مقدار فروخته‌شده از پیشنهاد"
 
-#: src/Options.php:527
+#: src/Options.php:530
 msgid "\"New\" badge for days after publishing"
 msgstr "برچسب «جدید» تا چند روز پس از انتشار"
 
-#: src/Options.php:527
+#: src/Options.php:530
 msgid "0 for no \"New\" badge."
 msgstr "۰ یعنی بدون برچسب «جدید»."
 
-#: src/Options.php:528
+#: src/Options.php:531
 msgid "\"Special sale\" badge from a discount of (%)"
 msgstr "برچسب «فروش ویژه» از تخفیف (درصد)"
 
-#: src/Options.php:528
+#: src/Options.php:531
 msgid "0 for no such badge."
 msgstr "۰ یعنی بدون این برچسب."
 
-#: src/Options.php:529
+#: src/Options.php:532
 msgid "\"Free shipping\" badge when the price alone ships free"
 msgstr "برچسب «ارسال رایگان» وقتی قیمت کالا به‌تنهایی به ارسال رایگان می‌رسد"
 
-#: src/Options.php:533
+#: src/Options.php:536
 msgid "Your own badges"
 msgstr "برچسب‌های دلخواه"
 
-#: src/Options.php:544
+#: src/Options.php:547
 msgid "Shows on"
 msgstr "نمایش روی"
 
-#: src/Options.php:548
+#: src/Options.php:551
 msgid "Products of categories"
 msgstr "کالاهای دسته‌ها"
 
-#: src/Options.php:549
+#: src/Options.php:552
 msgid "Products with tags"
 msgstr "کالاهای دارای برچسب"
 
-#: src/Options.php:550
+#: src/Options.php:553
 msgid "Products on sale"
 msgstr "کالاهای تخفیف‌دار"
 
-#: src/Options.php:551
+#: src/Options.php:554
 msgid "Featured products"
 msgstr "کالاهای ویژه"
 
-#: src/Options.php:552
+#: src/Options.php:555
 msgid "Products with few left"
 msgstr "کالاهای رو به اتمام"
 
-#: src/Options.php:559
+#: src/Options.php:562
 msgid "Category or tag slugs, separated by commas"
 msgstr "نامک دسته‌ها یا برچسب‌ها، جدا با ویرگول"
 
-#: src/Options.php:570
+#: src/Options.php:573
 msgid "Green"
 msgstr "سبز"
 
-#: src/Options.php:571
+#: src/Options.php:574
 msgid "Grey"
 msgstr "خاکستری"
 
-#: src/Options.php:581
+#: src/Options.php:584
 msgid "Your own tabs"
 msgstr "زبانه‌های دلخواه"
 
-#: src/Options.php:585
+#: src/Options.php:588
 msgid "Tabs for every product, such as shipping or returns. A product adds its own on its edit screen. Size guides are written in Products, Size guides."
 msgstr "زبانه‌هایی برای همه محصولات، مثل ارسال یا بازگشت کالا. هر محصول در صفحه ویرایش خودش زبانه اضافه می‌کند. راهنمای سایز در محصولات، راهنماهای سایز نوشته می‌شود."
 
-#: src/Options.php:602
+#: src/Options.php:605
 msgid "Text and shortcodes, such as a reusable block."
 msgstr "متن و کد کوتاه، مثل یک بلوک تکرارپذیر."
 
-#: src/Options.php:607
+#: src/Options.php:610
 msgid "Only for category slugs, separated by commas"
 msgstr "فقط برای این نامک‌های دسته، جدا با ویرگول"
 
-#: src/Options.php:615
+#: src/Account/Endpoints.php:79
+#: src/Account/Endpoints.php:112
+#: src/Account/Page.php:800
+#: src/Options.php:618
 msgid "Reviews and questions"
 msgstr "دیدگاه‌ها و پرسش‌ها"
 
-#: src/Options.php:619
+#: src/Options.php:622
 msgid "Whether reviews are on, need a rating or come only from buyers is set in WooCommerce, Settings, Products. Questions wait in Products, Questions."
 msgstr "روشن بودن دیدگاه‌ها، الزام امتیاز و پذیرش دیدگاه فقط از خریداران در ووکامرس، پیکربندی، محصولات تنظیم می‌شود. پرسش‌ها در محصولات، پرسش‌ها منتظر می‌مانند."
 
-#: src/Options.php:624
+#: src/Options.php:627
 msgid "What shoppers score"
 msgstr "معیارهای امتیازدهی خریداران"
 
-#: src/Options.php:625
+#: src/Options.php:628
 msgid "One per line, at most six. Leave empty to ask only for stars."
 msgstr "هر خط یک معیار، حداکثر شش. خالی بگذارید تا فقط ستاره پرسیده شود."
 
-#: src/Options.php:626
+#: src/Options.php:629
 msgid "Build quality"
 msgstr "کیفیت ساخت"
 
-#: src/Options.php:626
+#: src/Options.php:629
 msgid "Value for money"
 msgstr "ارزش خرید"
 
-#: src/Options.php:626
+#: src/Options.php:629
 msgid "Features"
 msgstr "امکانات"
 
-#: src/Options.php:626
+#: src/Options.php:629
 msgid "Ease of use"
 msgstr "سهولت استفاده"
 
-#: src/Options.php:628
+#: src/Options.php:631
 msgid "Let logged in shoppers add photos to reviews"
 msgstr "خریداران واردشده بتوانند به دیدگاه عکس اضافه کنند"
 
-#: src/Options.php:629
+#: src/Options.php:632
 msgid "Reviews shown at first"
 msgstr "تعداد دیدگاه‌های نمایش اولیه"
 
-#: src/Options.php:631
+#: src/Options.php:634
 msgid "Let shoppers who are not logged in ask"
 msgstr "خریداران واردنشده هم بتوانند بپرسند"
 
-#: src/Options.php:632
+#: src/Options.php:635
 msgid "Hold new questions and answers for approval"
 msgstr "پرسش‌ها و پاسخ‌های تازه منتظر تأیید بمانند"
 
-#: src/Options.php:633
+#: src/Options.php:636
 msgid "Let logged in shoppers answer questions"
 msgstr "خریداران واردشده بتوانند به پرسش‌ها پاسخ دهند"
 
-#: src/Options.php:633
+#: src/Options.php:636
 msgid "Answers from buyers show a \"Buyer\" badge; the store's show \"Store\"."
 msgstr "پاسخ خریداران نشان «خریدار» و پاسخ فروشگاه نشان «فروشگاه» دارد."
 
-#: src/Options.php:692
+#: src/Options.php:1068
 msgid "Gallery with zoom and video, colour and size choices, a buy box with delivery time, specifications, reviews with photos, questions, and a buy button that stays in reach. Off, WooCommerce's own product page shows."
 msgstr "گالری با بزرگ‌نمایی و ویدئو، انتخاب رنگ و سایز، جعبه خرید با زمان تحویل، مشخصات، دیدگاه با عکس، پرسش و پاسخ و دکمه خرید همیشه در دسترس. خاموش که باشد، صفحه محصول خود ووکامرس نشان داده می‌شود."
 
@@ -5896,6 +5956,7 @@ msgstr "افزودن %s به بسته"
 msgid "Added to your cart."
 msgstr "به سبد خرید اضافه شد."
 
+#: src/Cart/SideCart.php:148
 #: src/Product/Bundle.php:153
 #: src/Product/Purchase.php:428
 msgid "View cart"
@@ -5975,20 +6036,24 @@ msgstr "ارسال از فروشگاه در %s"
 msgid "Delivery to"
 msgstr "ارسال به"
 
+#: src/Cart/Totals.php:184
 #: src/Product/Delivery.php:356
 msgid "This order ships free"
 msgstr "این سفارش ارسال رایگان دارد"
 
+#: src/Cart/Totals.php:186
 #: src/Product/Delivery.php:358
 msgid "Free shipping reached"
 msgstr "ارسال رایگان شد"
 
 #. translators: %s: amount of money.
+#: src/Cart/Totals.php:197
 #: src/Product/Delivery.php:369
 #, php-format
 msgid "Add %s more to ship free"
 msgstr "با %s خرید بیشتر، ارسال رایگان می‌شود"
 
+#: src/Cart/Totals.php:202
 #: src/Product/Delivery.php:374
 msgid "On the way to free shipping"
 msgstr "در مسیر ارسال رایگان"
@@ -6241,14 +6306,17 @@ msgstr "این ترکیب موجود نیست. لطفاً گزینه دیگری 
 msgid "This choice is out of stock."
 msgstr "این گزینه ناموجود است."
 
+#: src/Cart/Lines.php:38
 #: src/Product/Purchase.php:442
 msgid "Quantity"
 msgstr "تعداد"
 
+#: src/Cart/Lines.php:39
 #: src/Product/Purchase.php:443
 msgid "One more"
 msgstr "یکی بیشتر"
 
+#: src/Cart/Lines.php:40
 #: src/Product/Purchase.php:444
 msgid "One less"
 msgstr "یکی کمتر"
@@ -6275,6 +6343,7 @@ msgstr "از «%1$s» حداکثر %2$s عدد در هر سفارش می‌تو�
 msgid "\"%1$s\" is sold in steps of %2$s."
 msgstr "«%1$s» در بسته‌های %2$s تایی فروخته می‌شود."
 
+#: src/Checkout/Fields.php:342
 #: src/Product/Questions.php:155
 #: src/Product/Reviews.php:562
 msgid "Buyer"
@@ -6287,11 +6356,13 @@ msgid "Shopper"
 msgstr "کاربر"
 
 #. translators: %s: number of answers.
+#: src/Account/Activity.php:123
 #: src/Product/Questions.php:207
 msgid "No answer yet"
 msgstr "هنوز پاسخی ندارد"
 
 #. translators: %s: number of answers.
+#: src/Account/Activity.php:123
 #: src/Product/Questions.php:207
 #, php-format
 msgid "%s answer"
@@ -6354,6 +6425,7 @@ msgstr "برای پرسیدن وارد حساب خود شوید."
 
 #: src/Product/Questions.php:285
 #: src/Product/Reviews.php:867
+#: src/Saved/Wishlist.php:119
 msgid "Log in"
 msgstr "ورود"
 
@@ -6513,6 +6585,7 @@ msgstr "پاسخ فروشگاه"
 msgid "No review matches this choice yet."
 msgstr "هنوز دیدگاهی با این انتخاب وجود ندارد."
 
+#: src/Account/Activity.php:102
 #: src/Product/Reviews.php:670
 msgid "Waiting for approval"
 msgstr "در انتظار تأیید"
@@ -6563,6 +6636,7 @@ msgid_plural "From %s ratings"
 msgstr[0] "از مجموع %s امتیاز"
 msgstr[1] "از مجموع %s امتیاز"
 
+#: src/Account/Page.php:467
 #: src/Product/Reviews.php:813
 #: src/Product/Reviews.php:897
 msgid "Write a review"
@@ -6794,6 +6868,7 @@ msgstr "محصول همین صفحه را نشان می‌دهد."
 msgid "Product breadcrumbs"
 msgstr "مسیر راهنمای محصول"
 
+#: src/Widgets/Cart/CartTotals.php:73
 #: src/Widgets/ProductPage/ProductBuyBox.php:58
 msgid "Stay in view while scrolling on desktop"
 msgstr "در دسکتاپ هنگام پیمایش در دید بماند"
@@ -6871,6 +6946,9 @@ msgstr "تعداد پرسش‌های نمایش اولیه"
 msgid "Related products"
 msgstr "کالاهای مرتبط"
 
+#: src/Account/Endpoints.php:81
+#: src/Account/Endpoints.php:119
+#: src/Account/Page.php:340
 #: src/Widgets/ProductPage/ProductRelated.php:65
 msgid "Recent views"
 msgstr "بازدیدهای اخیر"
@@ -6906,3 +6984,1790 @@ msgstr "جعبه کوچک"
 #: src/Widgets/ProductPage/ProductStockBar.php:32
 msgid "Offer stock bar"
 msgstr "نوار موجودی پیشنهاد"
+
+#: src/Account/Account.php:149
+msgid "The address was removed."
+msgstr "آدرس حذف شد."
+
+#: src/Account/Activity.php:98
+msgid "Published"
+msgstr "منتشرشده"
+
+#: src/Account/Activity.php:129
+msgid "Your questions"
+msgstr "پرسش‌های شما"
+
+#: src/Account/Activity.php:129
+msgid "Your reviews"
+msgstr "دیدگاه‌های شما"
+
+#: src/Account/Details.php:119
+#: src/Account/Page.php:297
+msgid "Mobile number"
+msgstr "شماره موبایل"
+
+#: src/Account/Details.php:122
+msgid "Change it with a code sent to the new number."
+msgstr "با کدی که به شماره تازه فرستاده می‌شود عوضش کنید."
+
+#: src/Account/Details.php:129
+#: src/Account/Page.php:306
+#: src/Checkout/Fields.php:354
+msgid "National code"
+msgstr "کد ملی"
+
+#: src/Account/Details.php:150
+#: src/Account/Page.php:319
+msgid "Birthday"
+msgstr "تاریخ تولد"
+
+#: src/Account/Details.php:151
+msgid "Day"
+msgstr "روز"
+
+#: src/Account/Details.php:152
+msgid "Month"
+msgstr "ماه"
+
+#: src/Account/Details.php:153
+msgid "Year"
+msgstr "سال"
+
+#: src/Account/Details.php:191
+msgid "Enter a mobile number such as 09121234567."
+msgstr "شماره موبایل را مثل ۰۹۱۲۱۲۳۴۵۶۷ وارد کنید."
+
+#: src/Account/Details.php:197
+msgid "This national code is not valid."
+msgstr "این کد ملی معتبر نیست."
+
+#: src/Account/Details.php:201
+msgid "Choose the day, month and year of your birthday."
+msgstr "روز، ماه و سال تولد را انتخاب کنید."
+
+#: src/Account/Endpoints.php:76
+msgid "Activity summary"
+msgstr "خلاصه فعالیت‌ها"
+
+#: src/Account/Endpoints.php:77
+#: src/Account/Page.php:407
+msgid "Orders"
+msgstr "سفارش‌ها"
+
+#: src/Account/Endpoints.php:78
+#: src/Account/Endpoints.php:105
+#: src/Account/Page.php:247
+#: src/Account/Page.php:733
+#: src/Account/Page.php:740
+msgid "My lists"
+msgstr "لیست‌های من"
+
+#: src/Account/Endpoints.php:80
+#: src/Account/Page.php:851
+msgid "Addresses"
+msgstr "آدرس‌ها"
+
+#: src/Account/Endpoints.php:82
+#: src/Account/Page.php:259
+#: src/Account/Page.php:922
+msgid "Account details"
+msgstr "اطلاعات حساب کاربری"
+
+#. translators: %s: name of the shopper.
+#: src/Account/Forms.php:34
+#, php-format
+msgid "You are logged in as %s."
+msgstr "شما با نام %s وارد شده‌اید."
+
+#: src/Account/Forms.php:36
+msgid "Go to your account"
+msgstr "رفتن به حساب کاربری"
+
+#: src/Account/Lookup.php:187
+msgid "The form has expired. Please try again."
+msgstr "فرم منقضی شده است. لطفاً دوباره امتحان کنید."
+
+#: src/Account/Lookup.php:189
+#: src/Account/Lookup.php:194
+msgid "No order was found with this number and mobile number."
+msgstr "سفارشی با این شماره سفارش و شماره موبایل پیدا نشد."
+
+#: src/Account/Lookup.php:191
+msgid "Too many tries. Please wait fifteen minutes and try again."
+msgstr "تلاش‌ها زیاد شد. پانزده دقیقه صبر کنید و دوباره امتحان کنید."
+
+#: src/Account/Lookup.php:205
+#: src/Account/Orders.php:246
+#: src/Account/Page.php:573
+#: src/Checkout/ThankYou.php:146
+msgid "Order number"
+msgstr "شماره سفارش"
+
+#: src/Account/Lookup.php:217
+msgid "Mobile number of the order"
+msgstr "شماره موبایل سفارش"
+
+#: src/Account/Lookup.php:228
+msgid "Track"
+msgstr "پیگیری"
+
+#: src/Account/Lookup.php:232
+msgid "Leave this empty"
+msgstr "این را خالی بگذارید"
+
+#: src/Account/Lookup.php:240
+msgid "Find your order"
+msgstr "سفارش خود را پیدا کنید"
+
+#: src/Account/Lookup.php:243
+msgid "Enter the order number from your confirmation and the mobile number you ordered with."
+msgstr "شماره سفارش را از پیام تأیید و شماره موبایلی را که با آن خرید کرده‌اید وارد کنید."
+
+#. translators: 1: product name, 2: quantity.
+#: src/Account/Lookup.php:279
+#, php-format
+msgid "%1$s × %2$s"
+msgstr "%1$s × %2$s"
+
+#. translators: %s: order number.
+#: src/Account/Lookup.php:285
+#: src/Account/Orders.php:238
+#, php-format
+msgid "Order %s"
+msgstr "سفارش %s"
+
+#: src/Account/Lookup.php:295
+#: src/Account/Page.php:578
+msgid "Placed on"
+msgstr "تاریخ ثبت"
+
+#: src/Account/Lookup.php:299
+#: src/Account/Orders.php:251
+#: src/Account/Page.php:582
+msgid "Total"
+msgstr "مبلغ"
+
+#: src/Account/Orders.php:48
+msgid "Current"
+msgstr "جاری"
+
+#: src/Account/Orders.php:60
+msgid "Returned"
+msgstr "مرجوعی"
+
+#: src/Account/Orders.php:66
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#: src/Account/Orders.php:169
+msgid "Sent"
+msgstr "ارسال‌شده"
+
+#: src/Account/Orders.php:285
+msgid "Payment confirmed"
+msgstr "تأیید پرداخت"
+
+#: src/Account/Orders.php:291
+msgid "Being prepared"
+msgstr "آماده‌سازی"
+
+#: src/Account/Orders.php:296
+msgid "Handed to the carrier"
+msgstr "تحویل به حمل‌کننده"
+
+#: src/Account/Orders.php:302
+msgid "Delivered to you"
+msgstr "تحویل به شما"
+
+#: src/Account/Page.php:112
+msgid "Edit your details"
+msgstr "ویرایش اطلاعات"
+
+#: src/Account/Page.php:143
+#: src/Widgets/Account/AccountNavigation.php:32
+msgid "Account menu"
+msgstr "منوی حساب"
+
+#. translators: %s: number of orders.
+#: src/Account/Page.php:177
+#, php-format
+msgid "%s order"
+msgid_plural "%s orders"
+msgstr[0] "%s سفارش"
+msgstr[1] "%s سفارش"
+
+#: src/Account/Page.php:185
+msgid "Your orders by status"
+msgstr "سفارش‌های شما به تفکیک وضعیت"
+
+#. translators: %s: group of orders, such as Cancelled.
+#: src/Account/Page.php:202
+#: src/Account/Page.php:378
+#, php-format
+msgid "No orders here: %s"
+msgstr "سفارشی در «%s» ندارید"
+
+#: src/Account/Page.php:215
+#: src/Account/Page.php:238
+msgid "Latest orders"
+msgstr "آخرین سفارش‌ها"
+
+#: src/Account/Page.php:228
+msgid "My orders"
+msgstr "سفارش‌های من"
+
+#: src/Account/Page.php:326
+msgid "Not given"
+msgstr "وارد نشده"
+
+#: src/Account/Page.php:382
+#: src/Cart/Page.php:422
+#: src/Cart/SideCart.php:106
+#: src/Saved/Compare.php:168
+#: src/Saved/Wishlist.php:78
+msgid "Go to the shop"
+msgstr "رفتن به فروشگاه"
+
+#: src/Account/Page.php:389
+#: src/Widgets/Account/AccountOrders.php:32
+msgid "Orders by status"
+msgstr "سفارش‌ها به تفکیک وضعیت"
+
+#: src/Account/Page.php:395
+msgid "Pages of orders"
+msgstr "صفحه‌های سفارش‌ها"
+
+#. translators: %s: quantity.
+#: src/Account/Page.php:453
+#: src/Checkout/ThankYou.php:225
+#, php-format
+msgid "Quantity: %s"
+msgstr "تعداد: %s"
+
+#: src/Account/Page.php:477
+msgid "Buy again"
+msgstr "خرید دوباره"
+
+#: src/Account/Page.php:500
+msgid "Products of this order"
+msgstr "کالاهای این سفارش"
+
+#. translators: %s: order status, such as Cancelled.
+#: src/Account/Page.php:520
+#, php-format
+msgid "This order is %s."
+msgstr "وضعیت این سفارش: %s."
+
+#: src/Account/Page.php:530
+#: src/Account/Page.php:543
+msgid "Order progress"
+msgstr "مراحل سفارش"
+
+#: src/Account/Page.php:563
+msgid "This order cannot be found."
+msgstr "این سفارش پیدا نشد."
+
+#: src/Account/Page.php:587
+#: src/Checkout/Page.php:657
+#: src/Checkout/ThankYou.php:158
+msgid "Payment method"
+msgstr "روش پرداخت"
+
+#: src/Account/Page.php:601
+msgid "Back to the orders"
+msgstr "بازگشت به سفارش‌ها"
+
+#: src/Account/Page.php:629
+#: src/Checkout/ThankYou.php:268
+msgid "Recipient"
+msgstr "گیرنده"
+
+#: src/Account/Page.php:635
+msgid "Payment details"
+msgstr "جزئیات پرداخت"
+
+#: src/Account/Page.php:652
+msgid "Updates from the store"
+msgstr "پیام‌های فروشگاه"
+
+#: src/Account/Page.php:673
+#: src/Widgets/Cart/OrderSummary.php:31
+msgid "Order summary"
+msgstr "خلاصه سفارش"
+
+#: src/Account/Page.php:727
+msgid "No lists yet"
+msgstr "هنوز فهرستی ندارید"
+
+#: src/Account/Page.php:758
+msgid "My reviews"
+msgstr "دیدگاه‌های من"
+
+#: src/Account/Page.php:759
+msgid "My questions"
+msgstr "پرسش‌های من"
+
+#: src/Account/Page.php:775
+msgid "You have not asked a question yet"
+msgstr "هنوز پرسشی نپرسیده‌اید"
+
+#: src/Account/Page.php:775
+msgid "You have not written a review yet"
+msgstr "هنوز دیدگاهی ننوشته‌اید"
+
+#: src/Account/Page.php:776
+msgid "Your words help other shoppers choose."
+msgstr "نظر شما به خریداران دیگر در انتخاب کمک می‌کند."
+
+#: src/Account/Page.php:781
+msgid "Reviews or questions"
+msgstr "دیدگاه‌ها یا پرسش‌ها"
+
+#: src/Account/Page.php:817
+#: src/Account/Page.php:824
+msgid "Shipping address"
+msgstr "آدرس ارسال"
+
+#: src/Account/Page.php:817
+#: src/Account/Page.php:822
+msgid "Billing address"
+msgstr "آدرس صورت‌حساب"
+
+#: src/Account/Page.php:844
+msgid "You have not saved this address yet."
+msgstr "هنوز این آدرس را ثبت نکرده‌اید."
+
+#: src/Account/Page.php:875
+msgid "Saved address"
+msgstr "آدرس ذخیره‌شده"
+
+#: src/Account/Page.php:903
+msgid "Address book"
+msgstr "دفترچه آدرس"
+
+#: src/Account/Page.php:906
+msgid "Addresses you used at checkout. Choose one of them in your next order."
+msgstr "آدرس‌هایی که در تسویه استفاده کرده‌اید. در سفارش بعدی یکی از آن‌ها را انتخاب کنید."
+
+#: src/Account/Page.php:937
+msgid "Recent views are off"
+msgstr "بازدیدهای اخیر خاموش است"
+
+#: src/Account/Page.php:943
+msgid "Products you open show here. They are kept only in this browser."
+msgstr "کالاهایی که باز می‌کنید اینجا می‌آیند. فقط در همین مرورگر نگه داشته می‌شوند."
+
+#. translators: %s: carrier name, such as Post.
+#: src/Account/Tracking.php:97
+#: src/Account/Tracking.php:168
+msgid "Tracking code"
+msgstr "کد رهگیری"
+
+#. translators: %s: carrier name, such as Post.
+#: src/Account/Tracking.php:97
+#, php-format
+msgid "%s tracking code"
+msgstr "کد رهگیری %s"
+
+#. translators: 1: carrier name, 2: tracking code.
+#: src/Account/Tracking.php:128
+#, php-format
+msgid "Parcel handed to %1$s. Tracking code: %2$s"
+msgstr "مرسوله به %1$s تحویل شد. کد رهگیری: %2$s"
+
+#. translators: 1: carrier name, 2: tracking code.
+#: src/Account/Tracking.php:128
+msgid "the carrier"
+msgstr "حمل‌کننده"
+
+#: src/Account/Tracking.php:145
+#: src/Options.php:728
+msgid "Parcel tracking"
+msgstr "پیگیری مرسوله"
+
+#: src/Account/Tracking.php:161
+msgid "Carrier"
+msgstr "حمل‌کننده"
+
+#: src/Account/Tracking.php:170
+msgid "The shopper sees it in their account and in the order emails. Carriers and their links are set in Ultra Max, Settings, Customer account."
+msgstr "خریدار آن را در حساب کاربری و ایمیل‌های سفارش می‌بیند. حمل‌کننده‌ها و پیوندهایشان در الترا مکس، تنظیمات، حساب کاربری تنظیم می‌شوند."
+
+#: src/Account/Tracking.php:207
+msgid "Copy"
+msgstr "کپی"
+
+#: src/Account/Tracking.php:208
+msgid "Copied"
+msgstr "کپی شد"
+
+#: src/Account/Tracking.php:212
+#: src/Account/Tracking.php:245
+msgid "Follow the parcel"
+msgstr "پیگیری مرسوله"
+
+#: src/Builder/library-strings.php:66
+msgid "Checkout in steps"
+msgstr "تسویه مرحله‌ای"
+
+#: src/Builder/library-strings.php:206
+msgid "Steps on top; address, buyer, shipping and notes, then payment and the discount code, beside the order review."
+msgstr "مراحل در بالا؛ آدرس، خریدار، ارسال و یادداشت، سپس پرداخت و کد تخفیف، کنار مرور سفارش."
+
+#: src/Builder/library-strings.php:208
+msgid "Store cart"
+msgstr "سبد خرید فروشگاهی"
+
+#: src/Builder/library-strings.php:211
+msgid "Store thank you page"
+msgstr "صفحه تشکر فروشگاهی"
+
+#: src/Builder/library-strings.php:222
+msgid "The items beside the totals and the discount code; the buy later list and suggestions below, and a checkout bar on phones."
+msgstr "کالاها کنار جمع سبد و کد تخفیف؛ لیست خرید بعدی و پیشنهادها در پایین، و نوار ادامه خرید در گوشی."
+
+#: src/Builder/library-strings.php:225
+msgid "The thanks and the order's facts on top; payment instructions and the items beside the delivery details."
+msgstr "تشکر و مشخصات سفارش در بالا؛ دستور پرداخت و کالاها کنار اطلاعات ارسال."
+
+#: src/Builder/Types.php:59
+msgid "The cart page: the items, the totals, the discount code, the buy later list and suggestions. Use the cart widgets."
+msgstr "صفحه سبد خرید: کالاها، جمع سبد، کد تخفیف، لیست خرید بعدی و پیشنهادها. از ابزارک‌های سبد استفاده کنید."
+
+#: src/Builder/Types.php:60
+msgid "The checkout: steps, address, buyer, shipping, payment and the order summary. Use the checkout widgets; the whole layout is one form."
+msgstr "تسویه حساب: مراحل، آدرس، خریدار، ارسال، پرداخت و خلاصه سفارش. از ابزارک‌های تسویه استفاده کنید؛ کل چیدمان یک فرم است."
+
+#: src/Builder/Types.php:61
+msgid "The page after an order: the thanks, the payment instructions, the items and the customer's details. Use the order widgets."
+msgstr "صفحه پس از ثبت سفارش: تشکر، دستور پرداخت، کالاها و اطلاعات مشتری. از ابزارک‌های سفارش استفاده کنید."
+
+#: src/Builder/Types.php:64
+msgid "The customer account: menu, dashboard, orders and lists. Use the account widgets."
+msgstr "حساب کاربری مشتری: منو، پیشخوان، سفارش‌ها و لیست‌ها. از ابزارک‌های حساب استفاده کنید."
+
+#: src/Cart/Actions.php:73
+#: src/Cart/Actions.php:96
+#: src/Cart/Actions.php:101
+msgid "This item is no longer in your cart."
+msgstr "این کالا دیگر در سبد شما نیست."
+
+#. translators: %s: number.
+#: src/Cart/Actions.php:82
+#: src/Cart/Lines.php:152
+#, php-format
+msgid "Only %s left."
+msgstr "فقط %s عدد باقی مانده است."
+
+#: src/Cart/Actions.php:90
+msgid "This quantity cannot be ordered."
+msgstr "این تعداد قابل سفارش نیست."
+
+#: src/Cart/Actions.php:93
+msgid "Your cart was updated."
+msgstr "سبد خرید شما به‌روز شد."
+
+#: src/Cart/Actions.php:98
+msgid "The item was removed from your cart."
+msgstr "کالا از سبد خرید حذف شد."
+
+#: src/Cart/Actions.php:103
+msgid "The item was moved to your buy later list."
+msgstr "کالا به لیست خرید بعدی منتقل شد."
+
+#: src/Cart/Actions.php:106
+msgid "The item was moved to your cart."
+msgstr "کالا به سبد خرید منتقل شد."
+
+#: src/Cart/Actions.php:115
+msgid "Every item was moved to your cart."
+msgstr "همه کالاها به سبد خرید منتقل شدند."
+
+#: src/Cart/Actions.php:118
+msgid "The item was removed from your list."
+msgstr "کالا از لیست حذف شد."
+
+#: src/Cart/Actions.php:122
+#: src/Checkout/Page.php:111
+msgid "Enter a discount code."
+msgstr "کد تخفیف را وارد کنید."
+
+#: src/Cart/Actions.php:127
+msgid "The discount code was applied."
+msgstr "کد تخفیف اعمال شد."
+
+#: src/Cart/Actions.php:127
+msgid "This discount code cannot be used."
+msgstr "این کد تخفیف قابل استفاده نیست."
+
+#: src/Cart/Actions.php:131
+msgid "The discount code was removed."
+msgstr "کد تخفیف حذف شد."
+
+#: src/Cart/Actions.php:170
+msgid "This page was open for too long. Please try again."
+msgstr "این صفحه مدت زیادی باز مانده بود. لطفاً دوباره تلاش کنید."
+
+#: src/Cart/Blocks.php:92
+msgid "The saving, free shipping progress and order limit of the cart, as markup."
+msgstr "سود خرید، فاصله تا ارسال رایگان و محدودیت سفارش سبد، به شکل نشانه‌گذاری."
+
+#: src/Cart/Blocks.php:111
+#: src/Cart/Page.php:251
+#: src/Cart/SideCart.php:126
+#: src/Checkout/Page.php:750
+msgid "Your saving"
+msgstr "سود شما از این خرید"
+
+#: src/Cart/Cart.php:88
+#: src/Cart/Page.php:125
+#: src/Cart/Page.php:362
+msgid "Buy later"
+msgstr "خرید بعدی"
+
+#: src/Cart/Later.php:174
+msgid "This product is no longer in your list."
+msgstr "این کالا دیگر در لیست شما نیست."
+
+#. translators: 1: least order amount, 2: amount still missing.
+#: src/Cart/Limits.php:43
+#, php-format
+msgid "The smallest order is %1$s. Add %2$s more to place it."
+msgstr "حداقل مبلغ سفارش %1$s است. برای ثبت سفارش %2$s دیگر به سبد اضافه کنید."
+
+#. translators: 1: largest order amount, 2: amount over it.
+#: src/Cart/Limits.php:51
+#, php-format
+msgid "The largest order is %1$s. Remove %2$s to place it."
+msgstr "حداکثر مبلغ سفارش %1$s است. برای ثبت سفارش %2$s از سبد کم کنید."
+
+#: src/Cart/Lines.php:41
+msgid "Remove from cart"
+msgstr "حذف از سبد"
+
+#: src/Cart/Lines.php:42
+msgid "Move to buy later"
+msgstr "انتقال به خرید بعدی"
+
+#. translators: %s: amount of money.
+#: src/Cart/Lines.php:116
+#, php-format
+msgid "%s off"
+msgstr "%s تخفیف"
+
+#: src/Cart/Lines.php:148
+msgid "Out of stock. Remove it to go on."
+msgstr "ناموجود است. برای ادامه آن را حذف کنید."
+
+#: src/Cart/Lines.php:211
+msgid "Ships today"
+msgstr "ارسال امروز"
+
+#. translators: %s: number of working days.
+#: src/Cart/Lines.php:213
+#, php-format
+msgid "Ships in %s working day"
+msgid_plural "Ships in %s working days"
+msgstr[0] "ارسال از %s روز کاری آینده"
+msgstr[1] "ارسال از %s روز کاری آینده"
+
+#: src/Cart/Page.php:118
+msgid "Cart and buy later"
+msgstr "سبد خرید و خرید بعدی"
+
+#: src/Cart/Page.php:216
+#: src/Cart/SideCart.php:76
+msgid "Your cart"
+msgstr "سبد خرید شما"
+
+#. translators: %s: number of items.
+#: src/Cart/Page.php:218
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] "%s کالا"
+msgstr[1] "%s کالا"
+
+#: src/Cart/Page.php:223
+msgid "Update cart"
+msgstr "به‌روزرسانی سبد"
+
+#. translators: %s: number of items.
+#: src/Cart/Page.php:238
+#: src/Checkout/Page.php:713
+#, php-format
+msgid "Items (%s)"
+msgstr "قیمت کالاها (%s)"
+
+#: src/Cart/Page.php:243
+#: src/Cart/Page.php:386
+#: src/Cart/SideCart.php:120
+#: src/Checkout/Page.php:718
+msgid "Cart total"
+msgstr "جمع سبد خرید"
+
+#: src/Cart/Page.php:289
+msgid "Shipping is worked out from the address, delivery time, weight and size of the parcel."
+msgstr "هزینه ارسال بر اساس آدرس، زمان تحویل، وزن و حجم مرسوله محاسبه می‌شود."
+
+#: src/Cart/Page.php:291
+#: src/Widgets/Cart/CartTotals.php:31
+msgid "Cart totals"
+msgstr "جمع سبد خرید"
+
+#: src/Cart/Page.php:325
+#: src/Cart/Page.php:326
+#: src/Checkout/Page.php:683
+#: src/Checkout/Page.php:689
+#: src/Widgets/Cart/CartCoupon.php:30
+msgid "Discount code"
+msgstr "کد تخفیف"
+
+#: src/Cart/Page.php:327
+#: src/Checkout/Page.php:690
+msgid "Apply"
+msgstr "ثبت"
+
+#. translators: %s: coupon code.
+#: src/Cart/Page.php:329
+#: src/Checkout/Page.php:692
+#, php-format
+msgid "Remove code %s"
+msgstr "حذف کد %s"
+
+#: src/Cart/Page.php:363
+msgid "Products you set aside for another time"
+msgstr "کالاهایی که برای خرید بعدی نگه داشته‌اید"
+
+#: src/Cart/Page.php:367
+msgid "Move to cart"
+msgstr "انتقال به سبد"
+
+#: src/Cart/Page.php:368
+msgid "Remove from the list"
+msgstr "حذف از لیست"
+
+#: src/Cart/Page.php:369
+msgid "Move all to cart"
+msgstr "انتقال همه به سبد"
+
+#: src/Cart/Page.php:370
+msgid "Nothing here yet. Use \"Move to buy later\" on a cart item to keep it for another time."
+msgstr "هنوز کالایی این‌جا نیست. با «انتقال به خرید بعدی» روی کالای سبد، آن را برای خرید بعدی نگه دارید."
+
+#: src/Cart/Page.php:400
+msgid "Confirm and check out"
+msgstr "تأیید و تکمیل سفارش"
+
+#: src/Cart/Page.php:443
+#: src/Cart/SideCart.php:102
+msgid "Your cart is empty!"
+msgstr "سبد خرید شما خالی است!"
+
+#: src/Cart/Page.php:444
+msgid "You can find more products on these pages:"
+msgstr "می‌توانید برای دیدن محصولات بیشتر به این صفحه‌ها بروید:"
+
+#: src/Cart/SideCart.php:81
+msgid "Loading your cart…"
+msgstr "در حال بارگذاری سبد خرید…"
+
+#: src/Cart/SideCart.php:82
+msgid "Your cart could not be loaded. Open the cart page instead."
+msgstr "سبد خرید بارگذاری نشد. صفحه سبد خرید را باز کنید."
+
+#: src/Cart/SideCart.php:132
+msgid "Check out"
+msgstr "تکمیل سفارش"
+
+#: src/Cart/Suggestions.php:90
+#: src/Widgets/Cart/CartSuggestions.php:31
+msgid "Goes with your cart"
+msgstr "مکمل خرید شما"
+
+#. translators: %s: postal code.
+#: src/Checkout/AddressBook.php:165
+#, php-format
+msgid "Postal code %s"
+msgstr "کد پستی %s"
+
+#: src/Checkout/AddressBook.php:211
+#: src/Checkout/Blocks.php:54
+msgid "Your saved addresses"
+msgstr "آدرس‌های ذخیره‌شده شما"
+
+#: src/Checkout/AddressBook.php:212
+msgid "Chosen"
+msgstr "انتخاب شده"
+
+#: src/Checkout/AddressBook.php:215
+msgid "Add a new address"
+msgstr "افزودن آدرس جدید"
+
+#: src/Checkout/Fields.php:100
+msgid "First name"
+msgstr "نام"
+
+#: src/Checkout/Fields.php:101
+msgid "Last name"
+msgstr "نام خانوادگی"
+
+#: src/Checkout/Fields.php:104
+#: src/Checkout/Fields.php:349
+msgid "Company"
+msgstr "شرکت"
+
+#: src/Checkout/Fields.php:105
+#: src/Shipping/CourierMethod.php:79
+msgid "Province"
+msgstr "استان"
+
+#: src/Checkout/Fields.php:107
+msgid "Postal address"
+msgstr "نشانی پستی"
+
+#: src/Checkout/Fields.php:108
+msgid "Unit, floor (optional)"
+msgstr "واحد، طبقه (اختیاری)"
+
+#: src/Checkout/Fields.php:109
+#: src/Checkout/ThankYou.php:285
+msgid "Postal code"
+msgstr "کد پستی"
+
+#: src/Checkout/Fields.php:172
+msgid "Street, alley, building number"
+msgstr "خیابان، کوچه، پلاک"
+
+#: src/Checkout/Fields.php:319
+#: src/Checkout/Page.php:110
+msgid "Choose a city"
+msgstr "شهر را انتخاب کنید"
+
+#: src/Checkout/Fields.php:356
+msgid "Company name"
+msgstr "نام شرکت"
+
+#: src/Checkout/Fields.php:357
+msgid "National id of the company"
+msgstr "شناسه ملی شرکت"
+
+#: src/Checkout/Fields.php:358
+msgid "Economic code"
+msgstr "کد اقتصادی"
+
+#: src/Checkout/Fields.php:359
+msgid "Registration number"
+msgstr "شماره ثبت"
+
+#: src/Checkout/Fields.php:385
+#: src/Options.php:881
+msgid "Send me offers and discounts by text message."
+msgstr "مایلم از تخفیف‌ها و پیشنهادهای ویژه با پیامک باخبر شوم."
+
+#: src/Checkout/Fields.php:582
+#: src/Checkout/Page.php:106
+msgid "The national code is not valid. Check its ten digits again."
+msgstr "کد ملی وارد شده معتبر نیست. ده رقم آن را دوباره بررسی کنید."
+
+#: src/Checkout/Fields.php:583
+#: src/Checkout/Page.php:107
+msgid "The national id of the company is not valid. It has eleven digits."
+msgstr "شناسه ملی شرکت معتبر نیست. شناسه ملی یازده رقم دارد."
+
+#: src/Checkout/Fields.php:584
+#: src/Checkout/Page.php:108
+msgid "The economic code is not valid. Enter its digits only."
+msgstr "کد اقتصادی معتبر نیست. فقط ارقام آن را وارد کنید."
+
+#. translators: %s: field label.
+#: src/Checkout/Fields.php:586
+#, php-format
+msgid "%s may contain digits only."
+msgstr "%s فقط می‌تواند رقم داشته باشد."
+
+#: src/Checkout/Fields.php:601
+msgid "The mobile number is not valid. Enter it as 09123456789."
+msgstr "شماره موبایل معتبر نیست. آن را به شکل ۰۹۱۲۳۴۵۶۷۸۹ وارد کنید."
+
+#: src/Checkout/Fields.php:604
+msgid "The postal code must be ten digits, without dashes."
+msgstr "کد پستی باید ۱۰ رقم و بدون خط تیره باشد."
+
+#. translators: %s: field label.
+#: src/Checkout/Fields.php:654
+#, php-format
+msgid "%s is a required field."
+msgstr "%s الزامی است."
+
+#: src/Checkout/Page.php:87
+#: src/Options.php:850
+#: src/Options.php:858
+#: src/Options.php:1127
+msgid "Checkout"
+msgstr "تسویه حساب"
+
+#: src/Checkout/Page.php:103
+msgid "Fill in this field."
+msgstr "این فیلد را پر کنید."
+
+#: src/Checkout/Page.php:109
+msgid "Enter digits only."
+msgstr "فقط رقم وارد کنید."
+
+#: src/Checkout/Page.php:201
+msgid "Back to the cart"
+msgstr "بازگشت به سبد خرید"
+
+#: src/Checkout/Page.php:218
+#: src/Widgets/Cart/CheckoutSteps.php:30
+msgid "Checkout steps"
+msgstr "مراحل تسویه حساب"
+
+#: src/Checkout/Page.php:229
+msgid "Shipping details"
+msgstr "اطلاعات ارسال"
+
+#: src/Checkout/Page.php:235
+msgid "Payment"
+msgstr "پرداخت"
+
+#: src/Checkout/Page.php:329
+msgid "Edit the address"
+msgstr "تغییر یا ویرایش آدرس"
+
+#: src/Checkout/Page.php:336
+msgid "Delivery address"
+msgstr "آدرس تحویل سفارش"
+
+#: src/Checkout/Page.php:379
+msgid "Ship to a different address"
+msgstr "ارسال به آدرس دیگر"
+
+#: src/Checkout/Page.php:411
+msgid "Create an account"
+msgstr "ساخت حساب کاربری"
+
+#: src/Checkout/Page.php:436
+#: src/Options.php:887
+#: src/Widgets/Cart/CheckoutBuyer.php:30
+msgid "Buyer and invoice"
+msgstr "نوع خریدار و فاکتور"
+
+#. translators: %s: delivery dates.
+#: src/Checkout/Page.php:466
+#, php-format
+msgid "Delivery %s"
+msgstr "تحویل %s"
+
+#: src/Checkout/Page.php:501
+#: src/Checkout/Page.php:737
+msgid "Free"
+msgstr "رایگان"
+
+#: src/Checkout/Page.php:515
+msgid "Shipping methods"
+msgstr "روش‌های ارسال"
+
+#: src/Checkout/Page.php:517
+msgid "No shipping method reaches this address. Check the province and city, or contact us."
+msgstr "هیچ روش ارسالی به این آدرس نمی‌رسد. استان و شهر را بررسی کنید یا با ما تماس بگیرید."
+
+#: src/Checkout/Page.php:518
+msgid "Enter your address to see the shipping methods."
+msgstr "برای دیدن روش‌های ارسال، آدرس خود را وارد کنید."
+
+#: src/Checkout/Page.php:524
+msgid "Shipping method"
+msgstr "روش ارسال"
+
+#. translators: %s: number of items.
+#: src/Checkout/Page.php:555
+#, php-format
+msgid "Your parcel (%s item)"
+msgid_plural "Your parcel (%s items)"
+msgstr[0] "مرسوله شما (%s کالا)"
+msgstr[1] "مرسوله شما (%s کالا)"
+
+#: src/Checkout/Page.php:582
+msgid "Notes"
+msgstr "یادداشت"
+
+#: src/Checkout/Page.php:620
+msgid "No payment method is available for this order. Please contact us."
+msgstr "برای این سفارش روش پرداختی در دسترس نیست. لطفاً با ما تماس بگیرید."
+
+#: src/Checkout/Page.php:620
+msgid "Fill in your details above to see the payment methods."
+msgstr "برای دیدن روش‌های پرداخت، اطلاعات بالا را کامل کنید."
+
+#: src/Checkout/Page.php:630
+msgid "Update totals"
+msgstr "به‌روزرسانی مبلغ"
+
+#: src/Checkout/Page.php:736
+msgid "Shipping"
+msgstr "هزینه ارسال"
+
+#: src/Checkout/Page.php:737
+msgid "After the address"
+msgstr "پس از ثبت آدرس"
+
+#: src/Checkout/Page.php:757
+#: src/Checkout/Page.php:913
+msgid "To pay"
+msgstr "مبلغ قابل پرداخت"
+
+#: src/Checkout/Page.php:772
+#: src/Checkout/Page.php:773
+#: src/Checkout/Page.php:825
+#: src/Checkout/Page.php:852
+msgid "Place order"
+msgstr "ثبت سفارش و پرداخت"
+
+#: src/Checkout/Page.php:806
+msgid "Continue to payment"
+msgstr "ادامه و انتخاب روش پرداخت"
+
+#: src/Checkout/Page.php:864
+msgid "Back to shipping details"
+msgstr "بازگشت به اطلاعات ارسال"
+
+#: src/Checkout/Page.php:898
+msgid "Card details are entered only on the bank's payment page."
+msgstr "اطلاعات کارت بانکی فقط در صفحه درگاه بانک وارد می‌شود."
+
+#: src/Checkout/Page.php:901
+#: src/Checkout/ThankYou.php:248
+msgid "Your order"
+msgstr "سفارش شما"
+
+#: src/Checkout/ThankYou.php:115
+msgid "Pay now"
+msgstr "پرداخت دوباره"
+
+#: src/Checkout/ThankYou.php:123
+msgid "See the order"
+msgstr "مشاهده سفارش"
+
+#: src/Checkout/ThankYou.php:131
+msgid "Back to the shop"
+msgstr "بازگشت به فروشگاه"
+
+#: src/Checkout/ThankYou.php:139
+msgid "The payment did not go through"
+msgstr "پرداخت انجام نشد"
+
+#: src/Checkout/ThankYou.php:139
+msgid "Your order was placed and waits for payment"
+msgstr "سفارش شما ثبت شد و در انتظار پرداخت است"
+
+#: src/Checkout/ThankYou.php:139
+msgid "Thank you! Your order was placed"
+msgstr "سپاس‌گزاریم! سفارش شما ثبت شد"
+
+#: src/Checkout/ThankYou.php:141
+msgid "Your bank declined the payment or it was cancelled. You can try again; your order is kept."
+msgstr "بانک پرداخت را نپذیرفت یا پرداخت لغو شد. می‌توانید دوباره تلاش کنید؛ سفارش شما نگه داشته شده است."
+
+#: src/Checkout/ThankYou.php:142
+msgid "We sent the details to you. You can follow the order on your account page."
+msgstr "جزئیات سفارش برای شما فرستاده شد. می‌توانید سفارش را در حساب کاربری خود پیگیری کنید."
+
+#: src/Checkout/ThankYou.php:154
+msgid "Amount"
+msgstr "مبلغ"
+
+#: src/Checkout/ThankYou.php:195
+msgid "How to pay"
+msgstr "نحوه پرداخت"
+
+#: src/Checkout/ThankYou.php:304
+msgid "Note"
+msgstr "یادداشت"
+
+#: src/Checkout/ThankYou.php:310
+msgid "Delivery details"
+msgstr "اطلاعات ارسال"
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:75
+#, php-format
+msgid "%s: customer account"
+msgstr "%s: حساب کاربری"
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:77
+#, php-format
+msgid "%s: cart and checkout"
+msgstr "%s: سبد و تسویه"
+
+#: src/Options.php:656
+msgid "Wishlist and compare"
+msgstr "علاقه‌مندی و مقایسه"
+
+#: src/Options.php:666
+msgid "Guests keep their list in their browser; it joins their account when they log in. The \"Wishlist\" page is made for you and can be renamed or designed with Elementor."
+msgstr "فهرست مهمان‌ها در مرورگرشان می‌ماند و پس از ورود به حسابشان اضافه می‌شود. برگه «علاقه‌مندی» خودکار ساخته می‌شود و می‌توانید نامش را عوض کنید یا با المنتور طراحی‌اش کنید."
+
+#: src/Options.php:668
+msgid "Heart button on product cards"
+msgstr "دکمه قلب روی کارت کالا"
+
+#: src/Options.php:669
+msgid "Heart button on the product page"
+msgstr "دکمه قلب در صفحه محصول"
+
+#: src/Options.php:678
+msgid "Up to four products side by side, with their specifications and the differences marked. The \"Compare products\" page is made for you."
+msgstr "حداکثر چهار کالا کنار هم، با مشخصات و تفاوت‌های علامت‌خورده. برگه «مقایسه کالاها» خودکار ساخته می‌شود."
+
+#: src/Options.php:680
+msgid "Compare button on product cards"
+msgstr "دکمه مقایسه روی کارت کالا"
+
+#: src/Options.php:681
+msgid "Compare button on the product page"
+msgstr "دکمه مقایسه در صفحه محصول"
+
+#: src/Options.php:682
+msgid "Compare only products of one category"
+msgstr "فقط کالاهای یک دسته مقایسه شوند"
+
+#: src/Options.php:682
+msgid "A product from another category starts a new comparison, after the shopper agrees."
+msgstr "کالای دسته دیگر پس از موافقت خریدار مقایسه تازه‌ای شروع می‌کند."
+
+#: src/Options.php:687
+#: src/Options.php:1107
+#: src/Saved/QuickView.php:73
+#: src/Saved/QuickView.php:137
+msgid "Quick view"
+msgstr "نمایش سریع"
+
+#: src/Options.php:692
+msgid "Quick view button on product cards"
+msgstr "دکمه نمایش سریع روی کارت کالا"
+
+#: src/Options.php:693
+msgid "\"Choose options\" opens the choices over the list"
+msgstr "«انتخاب گزینه‌ها» گزینه‌ها را روی همان فهرست باز کند"
+
+#: src/Options.php:693
+msgid "Shoppers pick a colour or size and add the product without leaving the list."
+msgstr "خریدار رنگ یا سایز را انتخاب می‌کند و بدون ترک فهرست کالا را به سبد اضافه می‌کند."
+
+#: src/Options.php:707
+#: src/Options.php:1146
+msgid "Customer account"
+msgstr "حساب کاربری"
+
+#: src/Options.php:717
+msgid "The menu, dashboard, orders, lists, reviews, addresses and account details of WooCommerce's account page. Its addresses are set in WooCommerce, Settings, Advanced."
+msgstr "منو، داشبورد، سفارش‌ها، لیست‌ها، دیدگاه‌ها، آدرس‌ها و اطلاعات حساب در برگه حساب ووکامرس. نشانی‌های آن در ووکامرس، پیکربندی، پیشرفته تنظیم می‌شود."
+
+#: src/Options.php:719
+msgid "Orders on a page"
+msgstr "تعداد سفارش در هر صفحه"
+
+#: src/Options.php:720
+msgid "Show the shopper's recent views"
+msgstr "نمایش بازدیدهای اخیر خریدار"
+
+#: src/Options.php:721
+msgid "Ask for a mobile number in the account details"
+msgstr "شماره موبایل در اطلاعات حساب"
+
+#: src/Options.php:722
+msgid "Ask for a national code in the account details"
+msgstr "کد ملی در اطلاعات حساب"
+
+#: src/Options.php:723
+msgid "Ask for a birthday in the account details"
+msgstr "تاریخ تولد در اطلاعات حساب"
+
+#: src/Options.php:732
+msgid "Each order gets a \"Parcel tracking\" box on its edit screen. The shopper sees the code with a link to follow the parcel."
+msgstr "هر سفارش در صفحه ویرایشش کادر «پیگیری مرسوله» دارد. خریدار کد را با پیوند پیگیری می‌بیند."
+
+#: src/Options.php:737
+msgid "Carriers"
+msgstr "حمل‌کننده‌ها"
+
+#: src/Options.php:738
+msgid "Put {code} in the link where the tracking code goes. Leave the link empty for a carrier without one."
+msgstr "در پیوند، {code} را جای کد رهگیری بگذارید. برای حمل‌کننده بدون پیوند، خالی بگذارید."
+
+#: src/Options.php:742
+msgid "Post"
+msgstr "پست"
+
+#: src/Options.php:746
+msgid "Tipax"
+msgstr "تیپاکس"
+
+#: src/Options.php:750
+msgid "Chapar"
+msgstr "چاپار"
+
+#: src/Options.php:754
+msgid "Courier"
+msgstr "پیک"
+
+#: src/Options.php:758
+msgid "Other"
+msgstr "دیگر"
+
+#: src/Options.php:771
+msgid "Tracking link"
+msgstr "پیوند پیگیری"
+
+#: src/Options.php:790
+#: src/Options.php:1012
+msgid "Required"
+msgstr "اجباری"
+
+#: src/Options.php:791
+msgid "Optional"
+msgstr "اختیاری"
+
+#: src/Options.php:797
+msgid "Cart and checkout"
+msgstr "سبد و تسویه"
+
+#: src/Options.php:811
+msgid "Cart and checkout pages"
+msgstr "صفحه‌های سبد و تسویه"
+
+#: src/Options.php:812
+msgid "WooCommerce's own pages still get the saving, the free shipping bar, the buy later list, the Iranian fields and the saved addresses."
+msgstr "صفحه‌های خود ووکامرس هم سود خرید، نوار ارسال رایگان، لیست خرید بعدی، فیلدهای ایرانی و آدرس‌های ذخیره‌شده را دارند."
+
+#: src/Options.php:816
+msgid "Our design"
+msgstr "طرح قالب"
+
+#: src/Options.php:817
+msgid "WooCommerce's pages (blocks)"
+msgstr "صفحه‌های ووکامرس (بلوک‌ها)"
+
+#: src/Options.php:821
+msgid "Side cart"
+msgstr "سبد کناری"
+
+#: src/Options.php:821
+msgid "The header's cart button opens the cart beside the page."
+msgstr "دکمه سبد در سربرگ، سبد را کنار صفحه باز می‌کند."
+
+#: src/Options.php:822
+msgid "Open the side cart after adding a product"
+msgstr "باز شدن سبد کناری پس از افزودن کالا"
+
+#: src/Options.php:823
+msgid "\"Buy later\" list"
+msgstr "لیست «خرید بعدی»"
+
+#: src/Options.php:823
+msgid "Shoppers move items out of the cart to keep them for another time. A logged in shopper's list follows them to every device."
+msgstr "خریدار کالا را از سبد بیرون می‌برد تا برای خرید بعدی نگه دارد. لیست کاربر واردشده در همه دستگاه‌های او یکی است."
+
+#: src/Options.php:824
+msgid "Show \"your saving\""
+msgstr "نمایش «سود شما از این خرید»"
+
+#: src/Options.php:825
+msgid "The amount is set in Product page, Delivery."
+msgstr "مبلغ آن در «صفحه محصول»، «ارسال، برچسب‌ها و پیشنهادها» تعیین می‌شود."
+
+#: src/Options.php:826
+msgid "Suggest products that go with the cart"
+msgstr "پیشنهاد کالاهای مکمل سبد"
+
+#: src/Options.php:827
+msgid "Suggested products"
+msgstr "تعداد کالاهای پیشنهادی"
+
+#: src/Options.php:831
+msgid "Note under the cart totals"
+msgstr "یادداشت زیر جمع سبد"
+
+#: src/Options.php:832
+msgid "Items in your cart are not reserved. Finish your order to get them."
+msgstr "کالاهای سبد شما ثبت و رزرو نشده‌اند. برای ثبت سفارش مراحل بعدی را تکمیل کنید."
+
+#: src/Options.php:838
+msgid "Order limits"
+msgstr "محدودیت سفارش"
+
+#: src/Options.php:842
+msgid "The cart total before shipping. The cart says clearly how much is missing or over, and no checkout lets the order through."
+msgstr "جمع سبد پیش از هزینه ارسال. سبد به‌روشنی می‌گوید چقدر کم یا زیاد است و هیچ تسویه‌ای سفارش را نمی‌پذیرد."
+
+#: src/Options.php:844
+msgid "Smallest order (store currency)"
+msgstr "حداقل مبلغ سفارش (واحد پول فروشگاه)"
+
+#: src/Options.php:844
+#: src/Options.php:845
+msgid "0 for no limit."
+msgstr "۰ یعنی بدون محدودیت."
+
+#: src/Options.php:845
+msgid "Largest order (store currency)"
+msgstr "حداکثر مبلغ سفارش (واحد پول فروشگاه)"
+
+#: src/Options.php:862
+msgid "In steps"
+msgstr "مرحله‌ای"
+
+#: src/Options.php:863
+msgid "On one page"
+msgstr "یک‌صفحه‌ای"
+
+#: src/Options.php:867
+msgid "Saved addresses"
+msgstr "آدرس‌های ذخیره‌شده"
+
+#: src/Options.php:867
+msgid "Every order keeps its address on the shopper's account to choose next time."
+msgstr "آدرس هر سفارش روی حساب خریدار می‌ماند تا دفعه بعد انتخاب شود."
+
+#: src/Options.php:868
+msgid "Choose the city from the province's list"
+msgstr "انتخاب شهر از فهرست شهرهای استان"
+
+#: src/Options.php:872
+msgid "More cities"
+msgstr "شهرهای بیشتر"
+
+#: src/Options.php:873
+msgid "One per line as \"province: city\", for cities missing from the list."
+msgstr "هر خط یک شهر به شکل «استان: شهر»، برای شهرهایی که در فهرست نیستند."
+
+#: src/Options.php:874
+msgid "Tehran: Lavasan"
+msgstr "تهران: لواسان"
+
+#: src/Options.php:876
+msgid "Ask for consent to marketing messages"
+msgstr "درخواست رضایت برای پیام‌های تبلیغاتی"
+
+#: src/Options.php:880
+msgid "Text of the consent box"
+msgstr "متن گزینه رضایت"
+
+#: src/Options.php:891
+msgid "Mobile numbers, postal codes, national codes and company ids are checked by their Iranian rules; digits typed in Persian are saved in Latin."
+msgstr "شماره موبایل، کد پستی، کد ملی و شناسه ملی شرکت با قاعده‌های ایرانی خودشان بررسی می‌شوند؛ ارقام فارسی به لاتین ذخیره می‌شوند."
+
+#: src/Options.php:893
+msgid "Ask whether the buyer is a person or a company"
+msgstr "پرسیدن نوع خریدار: حقیقی یا حقوقی"
+
+#: src/Options.php:893
+msgid "A company gives its name, national id, economic code and registration number for the invoice."
+msgstr "خریدار حقوقی نام، شناسه ملی، کد اقتصادی و شماره ثبت شرکت را برای فاکتور وارد می‌کند."
+
+#: src/Options.php:897
+msgid "National code of a person"
+msgstr "کد ملی خریدار حقیقی"
+
+#: src/Options.php:904
+msgid "Economic code of a company"
+msgstr "کد اقتصادی خریدار حقوقی"
+
+#: src/Options.php:912
+msgid "Checkout fields"
+msgstr "فیلدهای تسویه"
+
+#: src/Options.php:916
+msgid "The block checkout always asks for the email, and shows its fields in its own order of sections."
+msgstr "تسویه بلوکی همیشه ایمیل را می‌خواهد و فیلدها را در بخش‌های خودش می‌چیند."
+
+#: src/Options.php:921
+msgid "Address fields and their order"
+msgstr "فیلدهای آدرس و ترتیب آن‌ها"
+
+#: src/Options.php:922
+msgid "Drag to change the order. Leave the label empty for the usual one."
+msgstr "برای تغییر ترتیب بکشید. برچسب را خالی بگذارید تا برچسب معمول نشان داده شود."
+
+#: src/Options.php:929
+msgid "Field"
+msgstr "فیلد"
+
+#: src/Options.php:941
+msgid "Shown as"
+msgstr "حالت"
+
+#: src/Options.php:950
+msgid "Your own fields"
+msgstr "فیلدهای شما"
+
+#: src/Options.php:961
+msgid "Name in the data (Latin letters, optional)"
+msgstr "نام در داده‌ها (حروف لاتین، اختیاری)"
+
+#: src/Options.php:967
+msgid "Type"
+msgstr "نوع"
+
+#: src/Options.php:972
+msgid "Long text"
+msgstr "متن بلند"
+
+#: src/Options.php:974
+msgid "Tick box"
+msgstr "گزینه تیک‌دار"
+
+#: src/Options.php:981
+msgid "Choices of a list, separated by commas"
+msgstr "گزینه‌های فهرست، جدا با ویرگول"
+
+#: src/Options.php:986
+msgid "Shown with"
+msgstr "نمایش کنار"
+
+#: src/Options.php:990
+msgid "Buyer details"
+msgstr "اطلاعات خریدار"
+
+#: src/Options.php:991
+msgid "The address"
+msgstr "آدرس"
+
+#: src/Options.php:992
+#: src/Widgets/Cart/CheckoutNotes.php:30
+msgid "Order notes"
+msgstr "یادداشت سفارش"
+
+#: src/Options.php:999
+msgid "Shown to"
+msgstr "نمایش برای"
+
+#: src/Options.php:1003
+msgid "Every buyer"
+msgstr "همه خریداران"
+
+#: src/Options.php:1004
+msgid "People only"
+msgstr "فقط حقیقی"
+
+#: src/Options.php:1005
+msgid "Companies only"
+msgstr "فقط حقوقی"
+
+#: src/Options.php:1088
+msgid "A heart on cards and product pages, a wishlist page and a counter in the header. Guests' lists join their account when they log in."
+msgstr "قلب روی کارت‌ها و صفحه محصول، برگه علاقه‌مندی و شمارنده در سربرگ. فهرست مهمان پس از ورود به حسابش اضافه می‌شود."
+
+#: src/Options.php:1097
+#: src/Saved/Saved.php:94
+msgid "Compare products"
+msgstr "مقایسه کالاها"
+
+#: src/Options.php:1098
+msgid "Up to four products of one category side by side, with their specifications and the differences marked."
+msgstr "حداکثر چهار کالای یک دسته کنار هم، با مشخصات و تفاوت‌های علامت‌خورده."
+
+#: src/Options.php:1108
+msgid "A product in a window over the list: pictures, price and choices, and adding to the cart without leaving the list."
+msgstr "کالا در پنجره‌ای روی فهرست: تصاویر، قیمت و گزینه‌ها، و افزودن به سبد بدون ترک فهرست."
+
+#: src/Options.php:1118
+msgid "A side cart on every page, a cart page with a buy later list, the saving, a free shipping bar, suggestions and order limits. Off, WooCommerce's own cart shows."
+msgstr "سبد کناری در همه صفحه‌ها، صفحه سبد با لیست خرید بعدی، سود خرید، نوار ارسال رایگان، کالاهای مکمل و محدودیت سفارش. خاموش باشد، سبد خود ووکامرس نشان داده می‌شود."
+
+#: src/Options.php:1128
+msgid "A checkout in steps or on one page, provinces and cities of Iran, mobile, postal and national code checks, buyer type, saved addresses and a field editor; for WooCommerce's classic and block checkout."
+msgstr "تسویه مرحله‌ای یا یک‌صفحه‌ای، استان و شهرهای ایران، بررسی موبایل و کد پستی و کد ملی، نوع خریدار، آدرس‌های ذخیره‌شده و ویرایشگر فیلدها؛ برای تسویه کلاسیک و بلوکی ووکامرس."
+
+#: src/Options.php:1137
+msgid "Iranian shipping"
+msgstr "حمل و نقل ایران"
+
+#: src/Options.php:1138
+msgid "Iran Post priced by weight and province, and your own courier for chosen cities, as WooCommerce shipping methods."
+msgstr "پست ایران با قیمت بر اساس وزن و استان، و پیک خودتان برای شهرهای انتخابی، به‌صورت روش‌های ارسال ووکامرس."
+
+#: src/Options.php:1147
+msgid "Dashboard with orders by status, order details with progress and parcel tracking, lists, reviews and questions, addresses, account details and recent views. Off, WooCommerce's own account shows."
+msgstr "داشبورد با سفارش‌ها به تفکیک وضعیت، جزئیات سفارش با مراحل و پیگیری مرسوله، لیست‌ها، دیدگاه‌ها و پرسش‌ها، آدرس‌ها، اطلاعات حساب و بازدیدهای اخیر. خاموش که باشد، حساب خود ووکامرس نشان داده می‌شود."
+
+#: src/Options.php:1156
+msgid "Order tracking for guests"
+msgstr "پیگیری سفارش مهمان"
+
+#: src/Options.php:1157
+msgid "A page where anyone follows an order with its number and mobile number, without logging in."
+msgstr "برگه‌ای که هر کسی بدون ورود، سفارش را با شماره سفارش و شماره موبایل پیگیری می‌کند."
+
+#: src/Saved/Buttons.php:48
+msgid "Add to wishlist"
+msgstr "افزودن به علاقه‌مندی"
+
+#. translators: 1: rating such as 4.5, 2: number of reviews.
+#: src/Saved/Compare.php:83
+#, php-format
+msgid "%1$s out of 5 (%2$s reviews)"
+msgstr "%1$s از ۵ (%2$s دیدگاه)"
+
+#: src/Saved/Compare.php:101
+msgid "Shoppers' rating"
+msgstr "امتیاز خریداران"
+
+#: src/Saved/Compare.php:105
+msgid "Availability"
+msgstr "موجودی"
+
+#: src/Saved/Compare.php:163
+msgid "Nothing to compare yet"
+msgstr "هنوز کالایی برای مقایسه نیست"
+
+#: src/Saved/Compare.php:164
+msgid "Press the compare button on up to four products of one kind to see them side by side."
+msgstr "دکمه مقایسه را روی حداکثر چهار کالای هم‌نوع بزنید تا آن‌ها را کنار هم ببینید."
+
+#. translators: %s: product name.
+#: src/Saved/Compare.php:203
+#, php-format
+msgid "Remove %s from the comparison"
+msgstr "حذف %s از مقایسه"
+
+#: src/Saved/Compare.php:211
+msgid "Products side by side"
+msgstr "کالاها کنار هم"
+
+#: src/Saved/Compare.php:214
+msgid "Only show differences"
+msgstr "فقط تفاوت‌ها"
+
+#: src/Saved/Compare.php:218
+msgid "Add a product"
+msgstr "افزودن کالا"
+
+#: src/Saved/Endpoint.php:128
+msgid "Removed from your wishlist."
+msgstr "از علاقه‌مندی‌ها حذف شد."
+
+#: src/Saved/Endpoint.php:128
+msgid "Removed from the comparison."
+msgstr "از مقایسه حذف شد."
+
+#: src/Saved/Endpoint.php:134
+msgid "This product cannot be saved."
+msgstr "این کالا ذخیره نمی‌شود."
+
+#: src/Saved/Endpoint.php:144
+msgid "Only products of one category can be compared."
+msgstr "فقط کالاهای یک دسته با هم مقایسه می‌شوند."
+
+#: src/Saved/Endpoint.php:145
+msgid "Start a new comparison"
+msgstr "شروع مقایسه تازه"
+
+#. translators: %s: number of products, such as 4.
+#: src/Saved/Endpoint.php:151
+#, php-format
+msgid "Up to %s products can be compared. Remove one first."
+msgstr "حداکثر %s کالا مقایسه می‌شود. اول یکی را حذف کنید."
+
+#: src/Saved/Endpoint.php:153
+msgid "See the comparison"
+msgstr "دیدن مقایسه"
+
+#: src/Saved/Endpoint.php:162
+msgid "Added to the comparison."
+msgstr "به مقایسه اضافه شد."
+
+#: src/Saved/Endpoint.php:172
+msgid "Added to your wishlist."
+msgstr "به علاقه‌مندی‌ها اضافه شد."
+
+#: src/Saved/Endpoint.php:174
+msgid "See the list"
+msgstr "دیدن فهرست"
+
+#: src/Saved/Endpoint.php:179
+msgid "Added to your wishlist. Log in to keep it on every device."
+msgstr "به علاقه‌مندی‌ها اضافه شد. وارد شوید تا در همه دستگاه‌ها بماند."
+
+#: src/Saved/Endpoint.php:201
+msgid "Your session has expired. Reload the page and try again."
+msgstr "نشست شما منقضی شده است. صفحه را دوباره باز کنید و دوباره امتحان کنید."
+
+#: src/Saved/QuickView.php:140
+msgid "This product cannot be shown now. Open its page instead."
+msgstr "این کالا الان نمایش داده نمی‌شود. صفحه آن را باز کنید."
+
+#: src/Saved/QuickView.php:161
+msgid "See all details"
+msgstr "دیدن همه جزئیات"
+
+#: src/Saved/Wishlist.php:87
+msgid "Log in to see your saved list"
+msgstr "برای دیدن فهرست ذخیره‌شده وارد شوید"
+
+#: src/Saved/Wishlist.php:94
+msgid "Your wishlist is empty"
+msgstr "فهرست علاقه‌مندی شما خالی است"
+
+#: src/Saved/Wishlist.php:95
+msgid "Press the heart on any product to keep it here for later."
+msgstr "قلب هر کالا را بزنید تا برای بعد اینجا بماند."
+
+#. translators: %s: number of products.
+#: src/Saved/Wishlist.php:107
+#, php-format
+msgid "%s product in your wishlist"
+msgid_plural "%s products in your wishlist"
+msgstr[0] "%s کالا در فهرست علاقه‌مندی شما"
+msgstr[1] "%s کالا در فهرست علاقه‌مندی شما"
+
+#. translators: %s: link to log in.
+#: src/Saved/Wishlist.php:118
+#, php-format
+msgid "This list is kept in this browser only. %s to keep it on every device."
+msgstr "این فهرست فقط در همین مرورگر می‌ماند. %s تا در همه دستگاه‌ها بماند."
+
+#. translators: %s: product name.
+#: src/Shipping/CourierMethod.php:33
+#, php-format
+msgid "City courier (%s)"
+msgstr "پیک درون‌شهری (%s)"
+
+#: src/Shipping/CourierMethod.php:34
+msgid "Your own courier, only in the cities you choose, each at its own price."
+msgstr "پیک خودتان، فقط در شهرهایی که انتخاب می‌کنید و هر کدام با قیمت خودش."
+
+#: src/Shipping/CourierMethod.php:44
+#: src/Shipping/CourierMethod.php:76
+msgid "Store courier"
+msgstr "پیک فروشگاه"
+
+#: src/Shipping/CourierMethod.php:74
+#: src/Shipping/PostMethod.php:74
+msgid "Name shown to shoppers"
+msgstr "نام قابل نمایش به خریدار"
+
+#: src/Shipping/CourierMethod.php:82
+#: src/Shipping/PostMethod.php:91
+msgid "The store's province"
+msgstr "استان فروشگاه"
+
+#: src/Shipping/CourierMethod.php:85
+msgid "Cities"
+msgstr "شهرها"
+
+#: src/Shipping/CourierMethod.php:88
+msgid "One city per line, with its own price if it differs: \"Tehran = 90000\". Leave empty for every city of the province."
+msgstr "هر خط یک شهر، و اگر قیمتش فرق دارد با قیمت خودش: «تهران = 90000». خالی بگذارید تا همه شهرهای استان را شامل شود."
+
+#: src/Shipping/CourierMethod.php:97
+#: src/Shipping/PostMethod.php:124
+msgid "Free from an order of"
+msgstr "رایگان از سفارش بالای"
+
+#: src/Shipping/CourierMethod.php:100
+#: src/Shipping/PostMethod.php:127
+msgid "Leave empty for never free."
+msgstr "خالی بگذارید تا هیچ‌وقت رایگان نشود."
+
+#. translators: %s: product name.
+#: src/Shipping/PostMethod.php:33
+#, php-format
+msgid "Iran Post (%s)"
+msgstr "پست ایران (%s)"
+
+#: src/Shipping/PostMethod.php:34
+msgid "Express or registered post, priced by weight and by whether the parcel stays in your province."
+msgstr "پست پیشتاز یا سفارشی، با قیمت بر اساس وزن و این‌که مرسوله در استان شما بماند یا نه."
+
+#: src/Shipping/PostMethod.php:44
+#: src/Shipping/PostMethod.php:76
+msgid "Express post"
+msgstr "پست پیشتاز"
+
+#: src/Shipping/PostMethod.php:79
+msgid "Service"
+msgstr "خدمت"
+
+#: src/Shipping/PostMethod.php:83
+msgid "Express post (Pishtaz)"
+msgstr "پست پیشتاز"
+
+#: src/Shipping/PostMethod.php:84
+msgid "Registered post (Sefareshi)"
+msgstr "پست سفارشی"
+
+#: src/Shipping/PostMethod.php:88
+msgid "Sent from province"
+msgstr "ارسال از استان"
+
+#: src/Shipping/PostMethod.php:92
+msgid "Parcels to this province pay the \"in the province\" price."
+msgstr "مرسوله‌های همین استان قیمت «داخل استان» را می‌پردازند."
+
+#: src/Shipping/PostMethod.php:96
+msgid "Prices by weight"
+msgstr "قیمت بر اساس وزن"
+
+#: src/Shipping/PostMethod.php:99
+msgid "One line per weight: up to how many kilograms = price in the province | price to other provinces. Check today's post tariff before you sell."
+msgstr "هر خط یک وزن: تا چند کیلوگرم = قیمت داخل استان | قیمت به استان‌های دیگر. پیش از فروش، تعرفه روز پست را بررسی کنید."
+
+#: src/Shipping/PostMethod.php:103
+msgid "Every kilogram above the table"
+msgstr "هر کیلوگرم بیشتر از جدول"
+
+#: src/Shipping/PostMethod.php:106
+msgid "Added for every kilogram started beyond the last line."
+msgstr "برای هر کیلوگرم شروع‌شده بیشتر از آخرین خط اضافه می‌شود."
+
+#: src/Shipping/PostMethod.php:110
+msgid "Packing price"
+msgstr "هزینه بسته‌بندی"
+
+#: src/Shipping/PostMethod.php:113
+msgid "Added to every parcel."
+msgstr "به هر مرسوله اضافه می‌شود."
+
+#: src/Shipping/PostMethod.php:117
+msgid "Weight of a product without one (kg)"
+msgstr "وزن کالای بدون وزن (کیلوگرم)"
+
+#: src/Shipping/PostMethod.php:120
+msgid "Used for products whose weight is not filled in."
+msgstr "برای کالاهایی که وزنشان وارد نشده است."
+
+#: src/Shipping/PostMethod.php:131
+msgid "Tax status"
+msgstr "وضعیت مالیات"
+
+#: src/Shipping/PostMethod.php:135
+msgid "Taxable"
+msgstr "مشمول مالیات"
+
+#: src/Widgets/Account/AccountContent.php:32
+msgid "Account page content"
+msgstr "محتوای صفحه حساب"
+
+#: src/Widgets/Account/AccountLogin.php:32
+msgid "Login and register forms"
+msgstr "فرم ورود و ثبت‌نام"
+
+#: src/Widgets/Account/AccountLostPassword.php:32
+msgid "Lost password form"
+msgstr "فرم فراموشی رمز"
+
+#: src/Widgets/Account/AccountNavigation.php:61
+msgid "Show the shopper's name"
+msgstr "نمایش نام خریدار"
+
+#: src/Widgets/Account/AccountOrders.php:61
+msgid "Show the latest orders"
+msgstr "نمایش آخرین سفارش‌ها"
+
+#: src/Widgets/Account/AccountWidget.php:78
+msgid "Shows the logged in shopper's own account."
+msgstr "حساب همان خریدار واردشده را نشان می‌دهد."
+
+#: src/Widgets/Account/ComparePage.php:32
+msgid "Product comparison"
+msgstr "مقایسه کالاها"
+
+#: src/Widgets/Account/ComparePage.php:64
+msgid "Shows the products the shopper compares."
+msgstr "کالاهایی را که خریدار مقایسه می‌کند نشان می‌دهد."
+
+#: src/Widgets/Account/OrderTracking.php:34
+msgid "Order tracking"
+msgstr "پیگیری سفارش"
+
+#: src/Widgets/Account/WishlistPage.php:32
+msgid "Wishlist products"
+msgstr "کالاهای علاقه‌مندی"
+
+#: src/Widgets/Account/WishlistPage.php:70
+msgid "Cards in a row on desktop"
+msgstr "تعداد کارت در هر ردیف دسکتاپ"
+
+#: src/Widgets/Cart/CartBar.php:30
+msgid "Phone checkout bar"
+msgstr "نوار ادامه خرید گوشی"
+
+#: src/Widgets/Cart/CartEmpty.php:30
+msgid "Empty cart"
+msgstr "سبد خالی"
+
+#: src/Widgets/Cart/CartItems.php:31
+msgid "Cart items"
+msgstr "کالاهای سبد"
+
+#: src/Widgets/Cart/CartItems.php:77
+msgid "Title tag"
+msgstr "تگ عنوان"
+
+#: src/Widgets/Cart/CartLater.php:30
+msgid "Buy later list"
+msgstr "لیست خرید بعدی"
+
+#: src/Widgets/Cart/CartWidget.php:85
+msgid "For a cart layout. Shows the shopper's cart."
+msgstr "برای چیدمان سبد خرید. سبد خریدار را نشان می‌دهد."
+
+#: src/Widgets/Cart/CheckoutBilling.php:30
+msgid "Address form"
+msgstr "فرم آدرس"
+
+#: src/Widgets/Cart/CheckoutCoupon.php:30
+msgid "Checkout discount code"
+msgstr "کد تخفیف تسویه"
+
+#: src/Widgets/Cart/CheckoutReview.php:30
+msgid "Order review"
+msgstr "مرور سفارش"
+
+#: src/Widgets/Cart/CheckoutShipping.php:30
+msgid "Shipping form"
+msgstr "روش ارسال"
+
+#: src/Widgets/Cart/CheckoutWidget.php:37
+msgid "For a checkout layout. Shows a part of the checkout form."
+msgstr "برای چیدمان فرم تسویه. بخشی از فرم تسویه را نشان می‌دهد."
+
+#: src/Widgets/Cart/OrderCustomer.php:31
+msgid "Customer details"
+msgstr "اطلاعات مشتری"
+
+#: src/Widgets/Cart/OrderDetails.php:31
+msgid "Order details"
+msgstr "جزئیات سفارش"
+
+#: src/Widgets/Cart/OrderInstructions.php:31
+msgid "Payment instructions"
+msgstr "دستور پرداخت"
+
+#: src/Widgets/Cart/OrderWidget.php:37
+msgid "For a thank you layout. Shows the order just placed."
+msgstr "برای چیدمان صفحه تشکر. سفارش تازه ثبت‌شده را نشان می‌دهد."
+
+#: src/Widgets/Header/Wishlist.php:79
+msgid "Leave empty for the store's own page."
+msgstr "برای برگه خود فروشگاه خالی بگذارید."
+
+#: src/Widgets/ProductPage/ProductSaveButtons.php:35
+msgid "Wishlist and compare buttons"
+msgstr "دکمه علاقه‌مندی و مقایسه"
+
+#: src/Widgets/ProductPage/ProductSaveButtons.php:76
+msgid "Buttons with text"
+msgstr "دکمه با متن"
+
+#: src/Widgets/ProductPage/ProductSaveButtons.php:77
+msgid "Round icons"
+msgstr "آیکون گرد"
+
+#: templates/woocommerce/form-checkout.php:27
+msgid "You must be logged in to check out."
+msgstr "برای تکمیل خرید باید وارد حساب کاربری شوید."

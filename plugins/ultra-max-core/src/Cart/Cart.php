@@ -69,6 +69,26 @@ final class Cart {
 		add_action( 'wp_enqueue_scripts', array( self::class, 'assets' ), 20 );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'drop_woocommerce_assets' ), 100 );
 		add_filter( 'body_class', array( self::class, 'body_class' ) );
+		add_filter( 'ultra_max_account_lists', array( self::class, 'account_list' ) );
+	}
+
+	/**
+	 * The "buy later" list as a tab of the account's lists page (CART-02, ACC-04).
+	 *
+	 * @param mixed $tabs Tabs, each with a label and its content.
+	 * @return mixed
+	 */
+	public static function account_list( mixed $tabs ): mixed {
+		if ( ! is_array( $tabs ) || ! Later::enabled() || null === WC()->cart ) {
+			return $tabs;
+		}
+		Assets::enqueue_widget( 'cart' );
+		Assets::enqueue_widget( 'product-card' );
+		$tabs[] = array(
+			'label'   => __( 'Buy later', 'ultra-max-core' ),
+			'content' => Page::root( Page::part( 'later', array( 'always' => true ) ) ),
+		);
+		return $tabs;
 	}
 
 	/**

@@ -112,6 +112,9 @@ final class Checkout {
 		if ( ! self::ours() ) {
 			return $template;
 		}
+		if ( 'checkout/cart-errors.php' === $name ) {
+			return plugin_dir_path( ULTRA_MAX_CORE_FILE ) . 'templates/woocommerce/cart-errors.php';
+		}
 		if ( 'checkout/form-checkout.php' === $name ) {
 			return plugin_dir_path( ULTRA_MAX_CORE_FILE ) . 'templates/woocommerce/form-checkout.php';
 		}

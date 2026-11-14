@@ -172,7 +172,7 @@ final class Page {
 			'lines'       => self::lines( $args ),
 			'summary'     => self::summary( (bool) ( $args['sticky'] ?? true ) ),
 			'coupon'      => self::coupon(),
-			'later'       => self::later(),
+			'later'       => self::later( true === ( $args['always'] ?? false ) ),
 			'suggestions' => Suggestions::section( is_numeric( $args['count'] ?? null ) ? (int) $args['count'] : 0 ),
 			'bar'         => self::bar(),
 			'tab-cart'    => self::count_badge( (int) WC()->cart->get_cart_contents_count(), 'neutral' ),
@@ -338,8 +338,10 @@ final class Page {
 
 	/**
 	 * The "buy later" list (CART-02).
+	 *
+	 * @param bool $always Show it even when it and the cart are empty, as on the account page.
 	 */
-	public static function later(): Html {
+	public static function later( bool $always = false ): Html {
 		if ( ! Later::enabled() ) {
 			return Html::none();
 		}
@@ -352,7 +354,7 @@ final class Page {
 				'remove'  => Lines::action_url( 'forget', $saved['key'] ),
 			);
 		}
-		if ( array() === $items && WC()->cart->is_empty() ) {
+		if ( array() === $items && WC()->cart->is_empty() && ! $always ) {
 			return Html::none();
 		}
 		return SavedItems::render(

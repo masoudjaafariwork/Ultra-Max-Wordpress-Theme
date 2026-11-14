@@ -13,6 +13,7 @@ use UltraMax\Core\Builder\Builder;
 use UltraMax\Core\Cart\Limits;
 use UltraMax\Core\Cart\Totals;
 use UltraMax\Core\Lib\Settings\Store;
+use UltraMax\Core\Lib\UI\Alert;
 use UltraMax\Core\Lib\UI\Button;
 use UltraMax\Core\Lib\UI\CartSummary;
 use UltraMax\Core\Lib\UI\CheckoutBar;
@@ -172,6 +173,37 @@ final class Page {
 			'bar'      => self::bar(),
 			default    => Html::none(),
 		};
+	}
+
+	/**
+	 * Why the cart cannot be ordered, with the way back to the cart.
+	 */
+	public static function cart_errors(): Html {
+		$reasons = array();
+		foreach ( wc_get_notices( 'error' ) as $notice ) {
+			$text = is_array( $notice ) && is_string( $notice['notice'] ?? null ) ? wp_strip_all_tags( $notice['notice'] ) : '';
+			if ( '' !== $text ) {
+				$reasons[] = Alert::render(
+					array(
+						'tone'     => 'warning',
+						'children' => $text,
+					)
+				);
+			}
+		}
+		wc_clear_notices();
+		return Html::trusted(
+			sprintf(
+				'<div class="um-checkout-page grid min-w-0 justify-items-start gap-3">%1$s%2$s</div>',
+				Html::from( $reasons ),
+				Button::render(
+					array(
+						'children' => __( 'Back to the cart', 'ultra-max-core' ),
+						'href'     => wc_get_cart_url(),
+					)
+				)
+			)
+		);
 	}
 
 	/**
