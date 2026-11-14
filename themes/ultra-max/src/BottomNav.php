@@ -146,6 +146,8 @@ final class BottomNav {
 					'href'    => add_query_arg( 's', '', home_url( '/' ) ),
 					'icon'    => 'search',
 					'current' => is_search(),
+					// The full screen search window of the live search, when the page has it (SRCH-04).
+					'opens'   => '.um-search-dialog',
 				),
 				'link'       => '' === $url ? null : array(
 					'label'   => '' === $label ? __( 'Link', 'ultra-max' ) : $label,

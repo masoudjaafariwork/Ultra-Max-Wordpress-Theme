@@ -48,8 +48,34 @@ export function applyFragments( fragments: Record<string, string> ): void {
 	} );
 }
 
+/**
+ * Shows the picture of a colour on its card (swatch card, PLP-07).
+ *
+ * @param card   Card element.
+ * @param swatch The pressed colour button.
+ */
+export function showSwatch( card: HTMLElement, swatch: HTMLElement ): void {
+	card.querySelectorAll( '[data-um-swatch]' ).forEach( ( other ) => other.setAttribute( 'aria-pressed', String( other === swatch ) ) );
+	const image = card.querySelector<HTMLImageElement>( '[data-um-card-image] img' );
+	const src = swatch.dataset.src;
+	if ( ! image || ! src ) {
+		return;
+	}
+	image.src = src;
+	if ( swatch.dataset.srcset ) {
+		image.srcset = swatch.dataset.srcset;
+	} else {
+		image.removeAttribute( 'srcset' );
+	}
+}
+
 export const productCard: Behavior = ( element ) => {
 	const onClick = async ( event: MouseEvent ): Promise<void> => {
+		const swatch = event.target instanceof Element ? event.target.closest<HTMLElement>( '[data-um-swatch]' ) : null;
+		if ( swatch ) {
+			showSwatch( element, swatch );
+			return;
+		}
 		const button = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>( '[data-um-add]' ) : null;
 		if ( ! button || event.ctrlKey || event.metaKey || event.shiftKey ) {
 			return;

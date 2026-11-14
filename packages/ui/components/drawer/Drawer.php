@@ -21,13 +21,13 @@ namespace UltraMax\UI;
  *     title: string|Html,
  *     children: string|Html|array<int, string|Html>,
  *     footer?: string|Html|array<int, string|Html>,
- *     side?: 'start'|'end',
+ *     side?: 'start'|'end'|'bottom',
  *     class?: string,
  * }
  */
 final class Drawer {
 
-	public const SIDES = array( 'start', 'end' );
+	public const SIDES = array( 'start', 'end', 'bottom' );
 
 	/**
 	 * Renders the drawer.
@@ -46,8 +46,12 @@ final class Drawer {
 					array(
 						'id'                => $id,
 						'class'             => Attributes::classes(
-							'um-scope um-drawer fixed inset-y-0 m-0 h-dvh max-h-none w-[min(400px,92vw)] max-w-none flex-col border-0 bg-surface p-0 text-fg shadow-lg open:flex',
-							'start' === $side ? 'start-0 end-auto um-drawer-start' : 'end-0 start-auto um-drawer-end',
+							'um-scope um-drawer fixed m-0 max-w-none flex-col border-0 bg-surface p-0 text-fg shadow-lg open:flex',
+							match ( $side ) {
+								'start'  => 'inset-y-0 h-dvh max-h-none w-[min(400px,92vw)] start-0 end-auto um-drawer-start',
+								'end'    => 'inset-y-0 h-dvh max-h-none w-[min(400px,92vw)] end-0 start-auto um-drawer-end',
+								default  => 'inset-x-0 top-auto bottom-0 h-auto max-h-[88dvh] w-full rounded-t-xl um-drawer-bottom',
+							},
 							$props['class'] ?? null
 						),
 						'aria-labelledby'   => $id . '-title',

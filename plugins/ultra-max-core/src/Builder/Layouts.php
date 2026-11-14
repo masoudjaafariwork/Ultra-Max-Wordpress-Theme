@@ -91,14 +91,15 @@ final class Layouts {
 
 	/**
 	 * Default conditions of a new layout: headers and footers show on the
-	 * whole site, blocks only where they are placed.
+	 * whole site, shop list layouts on every product list, blocks and cards
+	 * only where they are placed.
 	 *
 	 * @param string $type Layout type.
 	 * @return Conditions
 	 */
 	public static function defaults( string $type ): array {
 		return array(
-			'include'  => in_array( $type, array( 'header', 'footer' ), true ) ? array( array( 'target' => 'all' ) ) : array(),
+			'include'  => in_array( $type, array( 'header', 'footer', 'shop-archive' ), true ) ? array( array( 'target' => 'all' ) ) : array(),
 			'exclude'  => array(),
 			'roles'    => array(),
 			'devices'  => array(

@@ -1,0 +1,125 @@
+{
+	"title": "Card with brand and add button",
+	"description": "Picture with the second picture on hover, badges, title, brand and rating, price and an add button.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "fccb60f",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "full",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 6,
+					"column": "6",
+					"row": "6"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "8",
+					"bottom": "8",
+					"left": "8",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "8d7d8ee",
+					"elType": "widget",
+					"widgetType": "um-product-badges",
+					"settings": {},
+					"elements": []
+				},
+				{
+					"id": "75fc093",
+					"elType": "widget",
+					"widgetType": "um-product-image",
+					"settings": {
+						"hover": "yes"
+					},
+					"elements": []
+				},
+				{
+					"id": "f74909a",
+					"elType": "widget",
+					"widgetType": "um-product-title",
+					"settings": {
+						"tag": "h3"
+					},
+					"elements": []
+				},
+				{
+					"id": "019d385",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "boxed",
+						"flex_direction": "row",
+						"flex_align_items": "center",
+						"flex_justify_content": "space-between",
+						"flex_gap": {
+							"unit": "px",
+							"size": 8,
+							"column": "8",
+							"row": "8"
+						},
+						"flex_wrap": "nowrap",
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						}
+					},
+					"elements": [
+						{
+							"id": "6636827",
+							"elType": "widget",
+							"widgetType": "um-product-brand",
+							"settings": {},
+							"elements": []
+						},
+						{
+							"id": "248e844",
+							"elType": "widget",
+							"widgetType": "um-product-rating",
+							"settings": {},
+							"elements": []
+						}
+					]
+				},
+				{
+					"id": "a49e941",
+					"elType": "widget",
+					"widgetType": "um-product-colors",
+					"settings": {},
+					"elements": []
+				},
+				{
+					"id": "ddb3068",
+					"elType": "widget",
+					"widgetType": "um-product-price",
+					"settings": {},
+					"elements": []
+				},
+				{
+					"id": "2421fcb",
+					"elType": "widget",
+					"widgetType": "um-product-add-to-cart",
+					"settings": {},
+					"elements": []
+				}
+			]
+		}
+	]
+}

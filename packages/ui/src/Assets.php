@@ -64,6 +64,8 @@ final class Assets {
 		'social',
 		'forms',
 		'footer',
+		'shop',
+		'search',
 	);
 
 	/**

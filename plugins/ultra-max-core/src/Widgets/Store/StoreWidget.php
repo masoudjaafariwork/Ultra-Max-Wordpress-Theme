@@ -13,6 +13,7 @@ use UltraMax\Core\Lib\UI\Box;
 use UltraMax\Core\Lib\UI\Html;
 use UltraMax\Core\Lib\UI\Image;
 use UltraMax\Core\Lib\UI\SectionHead;
+use UltraMax\Core\Store\Cards;
 use UltraMax\Core\Store\Catalog;
 use UltraMax\Core\Widgets\Values;
 use UltraMax\Core\Widgets\Widget;
@@ -159,12 +160,7 @@ abstract class StoreWidget extends Widget {
 	 * @return array<string, string>
 	 */
 	protected function designs(): array {
-		return array(
-			'hover'   => __( 'Framed, second image on hover', 'ultra-max-core' ),
-			'classic' => __( 'Classic with lines', 'ultra-max-core' ),
-			'mini'    => __( 'Small, supermarket', 'ultra-max-core' ),
-			'deal'    => __( 'Offer with countdown', 'ultra-max-core' ),
-		);
+		return array_merge( Cards::designs(), Cards::layouts() );
 	}
 
 	/**

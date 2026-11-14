@@ -30,7 +30,7 @@ msgstr "قالب فروشگاهی سریع و فارسی برای ووکامرس
 msgid "The Ultra Max theme is missing its build files. Run \"npm run build\" in the development repository, or install the release package."
 msgstr "فایل‌های ساخته‌شده قالب الترا مکس پیدا نشد. در مخزن توسعه \"npm run build\" را اجرا کنید یا بسته انتشار را نصب کنید."
 
-#: src/Template.php:474
+#: src/Template.php:490
 msgid "Skip to content"
 msgstr "رفتن به محتوا"
 
@@ -38,7 +38,7 @@ msgstr "رفتن به محتوا"
 msgid "Primary menu"
 msgstr "فهرست اصلی"
 
-#: src/Template.php:310
+#: src/Template.php:326
 #: src/Theme.php:90
 msgid "Footer menu"
 msgstr "فهرست پابرگ"
@@ -75,7 +75,7 @@ msgstr "شاید پیوند خراب باشد یا صفحه جابه‌جا شد
 
 #. translators: %s: number of comments.
 #: comments.php:25
-#: src/Template.php:400
+#: src/Template.php:416
 #, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
@@ -500,7 +500,7 @@ msgid "Centre"
 msgstr "وسط"
 
 #: src/Options.php:528
-#: src/Template.php:341
+#: src/Template.php:357
 msgid "Breadcrumbs"
 msgstr "مسیر راهنما"
 
@@ -663,72 +663,72 @@ msgstr "دکمه گردی که پس از پیمایش ظاهر می‌شود و 
 #: src/BottomNav.php:34
 #: src/BottomNav.php:145
 #: src/Template.php:157
+#: src/Template.php:175
 #: src/Template.php:176
-#: src/Template.php:177
 msgid "Search"
 msgstr "جستجو"
 
-#: src/Template.php:179
+#: src/Template.php:178
 msgid "Search the store…"
 msgstr "جستجو در فروشگاه…"
 
 #: src/BottomNav.php:32
 #: src/BottomNav.php:134
-#: src/Template.php:247
+#: src/Template.php:263
 msgid "My account"
 msgstr "حساب من"
 
 #: src/BottomNav.php:31
-#: src/BottomNav.php:177
-#: src/Template.php:249
+#: src/BottomNav.php:179
+#: src/Template.php:265
 msgid "Cart"
 msgstr "سبد خرید"
 
-#: src/Template.php:254
+#: src/Template.php:270
 msgid "Menu"
 msgstr "منو"
 
-#: src/Template.php:258
-#: src/Template.php:280
+#: src/Template.php:274
+#: src/Template.php:296
 msgid "Main menu"
 msgstr "منوی اصلی"
 
 #. translators: 1: year, 2: site name.
-#: src/Template.php:318
+#: src/Template.php:334
 #, php-format
 msgid "© %1$s %2$s. All rights reserved."
 msgstr "© %1$s %2$s. همه حقوق محفوظ است."
 
-#: src/Template.php:374
+#: src/Template.php:390
 msgid "Published on"
 msgstr "تاریخ انتشار"
 
-#: src/Template.php:382
+#: src/Template.php:398
 #: vendor-prefixed/ui/components/comments/Comments.php:54
 msgid "Author"
 msgstr "نویسنده"
 
-#: src/Template.php:392
+#: src/Template.php:408
 msgid "Category"
 msgstr "دسته"
 
-#: src/Template.php:420
+#: src/Template.php:436
 msgid "(no title)"
 msgstr "(بدون عنوان)"
 
-#: src/Template.php:425
+#: src/Template.php:441
 msgid "Featured"
 msgstr "ویژه"
 
-#: src/Template.php:441
+#: src/Template.php:457
 msgid "Pages"
 msgstr "صفحه‌ها"
 
-#: src/Template.php:446
+#: src/Template.php:462
 msgid "Previous"
 msgstr "قبلی"
 
-#: src/Template.php:447
+#: src/Template.php:463
 msgid "Next"
 msgstr "بعدی"
 
@@ -931,11 +931,11 @@ msgstr "پیوند دیگر"
 msgid "Categories"
 msgstr "دسته‌بندی"
 
-#: src/BottomNav.php:151
+#: src/BottomNav.php:153
 msgid "Link"
 msgstr "پیوند"
 
-#: src/BottomNav.php:193
+#: src/BottomNav.php:195
 msgid "Bottom navigation"
 msgstr "ناوبری پایین صفحه"
 

@@ -18,6 +18,8 @@ use UltraMax\Core\Admin\Rest;
 use UltraMax\Core\Admin\Wizard;
 use UltraMax\Core\Builder\Builder;
 use UltraMax\Core\Elementor\Integration;
+use UltraMax\Core\Search\Search;
+use UltraMax\Core\Shop\Shop;
 use UltraMax\Core\Widgets\Widgets;
 
 /**
@@ -60,12 +62,15 @@ final class Plugin {
 		}
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ), 5 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'drop_off_assets' ), 6 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_assets' ), 5 );
 		add_filter( 'upload_mimes', array( $this, 'font_mimes' ) );
 
 		Rest::register();
 		Products::register();
 		CustomCode::register();
+		Shop::register();
+		Search::register();
 		Builder::register();
 		Widgets::register();
 		Integration::register();
@@ -99,6 +104,23 @@ final class Plugin {
 	 */
 	public function register_assets(): void {
 		Assets::register( plugin_dir_path( ULTRA_MAX_CORE_FILE ) . 'assets/build', plugins_url( 'assets/build', ULTRA_MAX_CORE_FILE ) );
+	}
+
+	/**
+	 * A module that is off loads no file (ADM-07), even when a saved Elementor
+	 * design still lists one of its files from the time it was on.
+	 */
+	public function drop_off_assets(): void {
+		$off = array(
+			'shop'   => ! Shop::enabled(),
+			'search' => ! Search::enabled(),
+		);
+		foreach ( $off as $asset => $drop ) {
+			if ( $drop ) {
+				wp_deregister_script( Assets::widget_handle( $asset ) );
+				wp_deregister_style( Assets::widget_handle( $asset ) );
+			}
+		}
 	}
 
 	/**

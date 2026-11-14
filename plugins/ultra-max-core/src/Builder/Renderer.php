@@ -13,6 +13,7 @@ use UltraMax\Core\Elementor\Data;
 use UltraMax\Core\Lib\UI\Assets;
 use UltraMax\Core\Lib\UI\Html;
 use UltraMax\Core\Lib\UI\UI;
+use UltraMax\Core\Shop\Scope;
 use UltraMax\Core\Widgets\Widgets;
 
 /**
@@ -130,7 +131,11 @@ final class Renderer {
 		if ( is_singular( Layouts::POST_TYPE ) ) {
 			return;
 		}
-		foreach ( array( 'header', 'footer' ) as $location ) {
+		$locations = array( 'header', 'footer' );
+		if ( Scope::is_list() ) {
+			$locations[] = 'shop-archive';
+		}
+		foreach ( $locations as $location ) {
 			foreach ( Resolver::location( $location ) as $pick ) {
 				Data::enqueue( $pick['id'] );
 				Widgets::enqueue_for( $pick['id'] );

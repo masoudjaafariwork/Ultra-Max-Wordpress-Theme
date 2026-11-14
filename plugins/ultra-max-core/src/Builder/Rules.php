@@ -206,7 +206,7 @@ final class Rules {
 			case 'posts':
 				return self::singular( $context, 'post' );
 			case 'shop':
-				return 'archive' === $context->kind && 'product' === $context->post_type;
+				return in_array( $context->kind, array( 'archive', 'search' ), true ) && 'product' === $context->post_type;
 			case 'products':
 				return self::singular( $context, 'product' );
 			case 'product-type':

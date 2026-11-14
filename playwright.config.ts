@@ -31,6 +31,7 @@ export default defineConfig( {
 		{ name: 'acceptance', testDir: 'packages/ui/acceptance', testMatch: '**/*.spec.ts', use: desktop },
 		{ name: 'components-desktop', testDir: 'packages/ui/components', testMatch: '**/*.test.ts', use: desktop },
 		{ name: 'components-mobile', testDir: 'packages/ui/components', testMatch: '**/*.test.ts', use: mobile },
-		{ name: 'e2e', testDir: 'tests/e2e', testMatch: '**/*.spec.ts', use: desktop },
+		// One file at a time: the suites share one test site and some fill it with the demo store again.
+		{ name: 'e2e', testDir: 'tests/e2e', testMatch: '**/*.spec.ts', use: desktop, workers: 1 },
 	],
 } );

@@ -1,0 +1,30 @@
+/*
+ * Styles of the shop widget asset (BLD-12): product lists and the shop
+ * widgets. Built from its components' own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../shop";
+
+/* While a new list loads, the old one fades a little. */
+.um-shop-area[aria-busy="true"] [data-um-shop-part="products"] {
+	opacity: 0.55;
+	transition: opacity 150ms;
+}
+
+/* The two sliders of the price range share one track. */
+.um-shop-area input[type="range"][data-um-range] {
+	pointer-events: none;
+}
+
+.um-shop-area input[type="range"][data-um-range]::-webkit-slider-runnable-track {
+	background: transparent;
+}
+
+.um-shop-area input[type="range"][data-um-range]::-moz-range-track {
+	background: transparent;
+}

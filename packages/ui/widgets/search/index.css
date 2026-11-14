@@ -1,0 +1,11 @@
+/*
+ * Styles of the search widget asset (BLD-12): the live search suggestions
+ * and the phone search window. Built from its components' own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../search";

@@ -11,6 +11,10 @@
 	animation: um-drawer-from-end 260ms var(--um-ease);
 }
 
+.um-drawer-bottom[open] {
+	animation: um-drawer-from-bottom 260ms var(--um-ease);
+}
+
 /* Authored for RTL: the start edge is on the right. rtlcss flips these for LTR. */
 @keyframes um-drawer-from-start {
 	from {
@@ -24,9 +28,16 @@
 	}
 }
 
+@keyframes um-drawer-from-bottom {
+	from {
+		transform: translateY(100%);
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.um-drawer-start[open],
-	.um-drawer-end[open] {
+	.um-drawer-end[open],
+	.um-drawer-bottom[open] {
 		animation: none;
 	}
 }

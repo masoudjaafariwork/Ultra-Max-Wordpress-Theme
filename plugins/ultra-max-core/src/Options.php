@@ -11,6 +11,8 @@ namespace UltraMax\Core;
 
 use UltraMax\Core\Lib\Settings\Modules;
 use UltraMax\Core\Lib\Settings\Schema;
+use UltraMax\Core\Shop\Filters;
+use UltraMax\Core\Store\Cards;
 
 /**
  * Declares custom code (ADM-08), backups (ADM-02) and the core modules.
@@ -93,6 +95,8 @@ final class Options {
 			),
 		);
 
+		$sections['shop'] = self::shop();
+
 		$sections['backup'] = array(
 			'title'  => __( 'Backup and reset', 'ultra-max-core' ),
 			'icon'   => 'history',
@@ -115,6 +119,179 @@ final class Options {
 		);
 
 		return $sections;
+	}
+
+	/**
+	 * Options of a select field from a value => label map.
+	 *
+	 * @param array<string, string> $map Values and labels.
+	 * @return list<array{value: string, label: string}>
+	 */
+	private static function options( array $map ): array {
+		$out = array();
+		foreach ( $map as $value => $label ) {
+			$out[] = array(
+				'value' => (string) $value,
+				'label' => $label,
+			);
+		}
+		return $out;
+	}
+
+	/**
+	 * The product list and search section (PLP-01 to PLP-13, SRCH-01 to SRCH-04).
+	 *
+	 * @return array<string, mixed>
+	 */
+	private static function shop(): array {
+		$number = static fn ( string $id, string $label, int $initial, int $min, int $max, int $step = 1, string $help = '' ): array => array_filter(
+			array(
+				'id'      => $id,
+				'type'    => 'range',
+				'label'   => $label,
+				'help'    => $help,
+				'default' => $initial,
+				'min'     => $min,
+				'max'     => $max,
+				'step'    => $step,
+			),
+			static fn ( mixed $value ): bool => '' !== $value
+		);
+		return array(
+			'title'  => __( 'Product lists and search', 'ultra-max-core' ),
+			'icon'   => 'grid',
+			'order'  => 55,
+			'groups' => array(
+				array(
+					'id'       => 'shop_list',
+					'title'    => __( 'Product lists', 'ultra-max-core' ),
+					'icon'     => 'grid',
+					'features' => array( 'PLP-04', 'PLP-05', 'PLP-07', 'PLP-08', 'PLP-09' ),
+					'module'   => 'shop-archive',
+					'fields'   => array(
+						array(
+							'id'      => 'shop_card',
+							'type'    => 'select',
+							'label'   => __( 'Card design', 'ultra-max-core' ),
+							'help'    => __( 'A card you designed with Elementor (Layouts, Product card) is offered here too.', 'ultra-max-core' ),
+							'default' => 'classic',
+							'options' => self::options( array_merge( Cards::designs(), Cards::layouts() ) ),
+						),
+						$number( 'shop_columns', __( 'Columns on desktop', 'ultra-max-core' ), 4, 3, 5 ),
+						$number( 'shop_columns_tablet', __( 'Columns on tablet', 'ultra-max-core' ), 3, 2, 4 ),
+						array(
+							'id'      => 'shop_mobile',
+							'type'    => 'segmented',
+							'label'   => __( 'On phones', 'ultra-max-core' ),
+							'default' => 'list',
+							'options' => self::options(
+								array(
+									'list' => __( 'Rows', 'ultra-max-core' ),
+									'two'  => __( 'Two columns', 'ultra-max-core' ),
+								)
+							),
+						),
+						$number( 'shop_per_page', __( 'Products per page', 'ultra-max-core' ), 24, 8, 96, 4 ),
+						array(
+							'id'      => 'shop_pagination',
+							'type'    => 'segmented',
+							'label'   => __( 'More products', 'ultra-max-core' ),
+							'help'    => __( 'Page links always stay under the list for search engines.', 'ultra-max-core' ),
+							'default' => 'more',
+							'options' => self::options(
+								array(
+									'more'     => __( '"Show more" button', 'ultra-max-core' ),
+									'infinite' => __( 'Load while scrolling', 'ultra-max-core' ),
+									'pages'    => __( 'Page links', 'ultra-max-core' ),
+								)
+							),
+						),
+						array(
+							'id'      => 'shop_view',
+							'type'    => 'segmented',
+							'label'   => __( 'Show products as', 'ultra-max-core' ),
+							'default' => 'grid',
+							'options' => self::options(
+								array(
+									'grid' => __( 'Grid', 'ultra-max-core' ),
+									'list' => __( 'Rows', 'ultra-max-core' ),
+								)
+							),
+						),
+						array(
+							'id'      => 'shop_view_toggle',
+							'type'    => 'toggle',
+							'label'   => __( 'Let shoppers switch between grid and rows', 'ultra-max-core' ),
+							'default' => true,
+						),
+						array(
+							'id'      => 'shop_subcategories',
+							'type'    => 'toggle',
+							'label'   => __( 'Show subcategories with pictures above the list', 'ultra-max-core' ),
+							'default' => true,
+						),
+					),
+				),
+				array(
+					'id'          => 'shop_filters_group',
+					'title'       => __( 'Filters', 'ultra-max-core' ),
+					'icon'        => 'filter',
+					'features'    => array( 'PLP-01', 'PLP-02', 'PLP-06', 'PLP-12' ),
+					'module'      => 'shop-archive',
+					'description' => __( 'A category can choose its own filters on its edit screen; its subcategories follow it.', 'ultra-max-core' ),
+					'fields'      => array(
+						array(
+							'id'       => 'shop_filters',
+							'type'     => 'repeater',
+							'label'    => __( 'Filters and their order', 'ultra-max-core' ),
+							'help'     => __( 'Drag to change the order. Filters with nothing to choose in a list are hidden there.', 'ultra-max-core' ),
+							'max_rows' => 30,
+							'default'  => array_map( static fn ( string $key ): array => array( 'filter' => $key ), Filters::defaults() ),
+							'fields'   => array(
+								array(
+									'id'      => 'filter',
+									'type'    => 'select',
+									'label'   => __( 'Filter', 'ultra-max-core' ),
+									'default' => 'brand',
+									'options' => self::options( Filters::choices() ),
+								),
+							),
+						),
+						array(
+							'id'      => 'shop_index_single',
+							'type'    => 'toggle',
+							'label'   => __( 'Let search engines index a list with one chosen value', 'ultra-max-core' ),
+							'help'    => __( 'Such as "headphones, brand Lumo". Other filter combinations are never indexed.', 'ultra-max-core' ),
+							'default' => true,
+						),
+					),
+				),
+				array(
+					'id'       => 'live_search',
+					'title'    => __( 'Search', 'ultra-max-core' ),
+					'icon'     => 'search',
+					'features' => array( 'SRCH-01', 'SRCH-02', 'SRCH-03', 'SRCH-04' ),
+					'module'   => 'live-search',
+					'fields'   => array(
+						$number( 'search_products', __( 'Products in suggestions', 'ultra-max-core' ), 6, 3, 10 ),
+						$number( 'search_min', __( 'Letters before suggestions show', 'ultra-max-core' ), 2, 1, 4 ),
+						array(
+							'id'      => 'search_posts',
+							'type'    => 'toggle',
+							'label'   => __( 'Suggest blog posts too', 'ultra-max-core' ),
+							'default' => true,
+						),
+						array(
+							'id'          => 'search_popular',
+							'type'        => 'textarea',
+							'label'       => __( 'Popular searches', 'ultra-max-core' ),
+							'help'        => __( 'One per line. The phone search shows them before the shopper types.', 'ultra-max-core' ),
+							'placeholder' => __( "Headphones\nSmart watch", 'ultra-max-core' ),
+						),
+					),
+				),
+			),
+		);
 	}
 
 	/**
@@ -149,6 +326,26 @@ final class Options {
 			'icon'        => 'grid',
 			'features'    => array( 'HDR-02', 'HOME-01', 'HOME-12', 'BLD-08', 'BLD-10', 'BLD-12' ),
 			'default'     => true,
+			'product'     => 'ultra-max-core',
+		);
+		$modules['shop-archive']   = array(
+			'title'       => __( 'Product lists', 'ultra-max-core' ),
+			'description' => __( 'Shop, category, brand and search pages with instant filters, sorting, a grid or rows, "show more" and phone sheets. Off, WooCommerce\'s own list shows.', 'ultra-max-core' ),
+			'icon'        => 'filter',
+			'features'    => array( 'PLP-01', 'PLP-02', 'PLP-03', 'PLP-04', 'PLP-05', 'PLP-06', 'PLP-07', 'PLP-08', 'PLP-09', 'PLP-10', 'PLP-11', 'PLP-12', 'PLP-13', 'BLD-05' ),
+			'default'     => true,
+			'section'     => 'shop',
+			'assets'      => array( 'shop' ),
+			'product'     => 'ultra-max-core',
+		);
+		$modules['live-search']    = array(
+			'title'       => __( 'Live search', 'ultra-max-core' ),
+			'description' => __( 'Suggestions while typing, search by product code and attributes, Persian letter and digit matching, and a full screen phone search.', 'ultra-max-core' ),
+			'icon'        => 'search',
+			'features'    => array( 'SRCH-01', 'SRCH-02', 'SRCH-03', 'SRCH-04' ),
+			'default'     => true,
+			'section'     => 'shop',
+			'assets'      => array( 'search' ),
 			'product'     => 'ultra-max-core',
 		);
 		$modules['duplicate']      = array(

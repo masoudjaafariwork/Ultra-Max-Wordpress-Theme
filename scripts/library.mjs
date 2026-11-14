@@ -680,6 +680,47 @@ write( 'footer', footers );
 write( 'section', sections );
 write( 'page', pages );
 
+/* ------------------------------------------------------------------ product lists and cards (BLD-05, PLP-08) */
+
+const shopArchives = {
+	sidebar: {
+		title: T( 'Product list with a filter column' ),
+		description: T( 'Title and subcategories on top; filters beside the products, sorting above them and the category guide below.' ),
+		content: [
+			section( [ w( 'archive-header', { crumbs: 'yes' } ), w( 'subcategories' ) ], { gap: 16, padding: box( 8, 0 ) } ),
+			row( { align: 'flex-start', gap: 20, padding: box( 0, 0, 24 ) }, [
+				col( { width: 24, hide: [ 'tablet', 'mobile' ] }, [ w( 'filter-area', { show: 'panel' } ) ] ),
+				col( { gap: 12 }, [ w( 'sorting', { count: 'yes', view: 'yes', phone_button: 'yes' } ), w( 'filter-area', { show: 'button' } ), w( 'active-filters' ), w( 'archive-products', { more: 'yes' } ), w( 'archive-description', { where: 'bottom' } ) ] ),
+			] ),
+		],
+	},
+	wide: {
+		title: T( 'Wide product list' ),
+		description: T( 'No filter column: five products a row, sorting and a filter button above them.' ),
+		content: [
+			section( [ w( 'archive-header', { crumbs: 'yes' } ), w( 'subcategories' ), w( 'sorting', { count: 'yes', view: 'yes', phone_button: 'yes' } ), w( 'filter-area', { show: 'button' } ), w( 'active-filters' ), w( 'archive-products', { columns: 5, more: 'yes' } ), w( 'archive-description', { where: 'bottom' } ) ], { gap: 14, padding: box( 8, 0, 24 ) } ),
+		],
+	},
+};
+
+const productCards = {
+	full: {
+		title: T( 'Card with brand and add button' ),
+		description: T( 'Picture with the second picture on hover, badges, title, brand and rating, price and an add button.' ),
+		content: [
+			col( { gap: 6, padding: box( 8 ) }, [ w( 'product-badges' ), w( 'product-image', { hover: 'yes' } ), w( 'product-title', { tag: 'h3' } ), row( { justify: 'space-between', padding: box( 0 ), gap: 8 }, [ w( 'product-brand' ), w( 'product-rating' ) ], true ), w( 'product-colors' ), w( 'product-price' ), w( 'product-add-to-cart' ) ], false ),
+		],
+	},
+	compact: {
+		title: T( 'Compact card' ),
+		description: T( 'Picture, title, stock note and price only.' ),
+		content: [ col( { gap: 6, padding: box( 8 ) }, [ w( 'product-image', { hover: '' } ), w( 'product-title', { tag: 'h3' } ), w( 'product-stock' ), w( 'product-price' ) ], false ) ],
+	},
+};
+
+write( 'shop-archive', shopArchives );
+write( 'product-card', productCards );
+
 const php = [
 	'<?php',
 	'/**',
@@ -707,4 +748,4 @@ const php = [
 	'',
 ];
 fs.writeFileSync( path.join( root, 'plugins', 'ultra-max-core', 'src', 'Builder', 'library-strings.php' ), php.join( '\n' ) );
-console.log( `Wrote ${ Object.keys( headers ).length } headers, ${ Object.keys( footers ).length } footers, ${ Object.keys( sections ).length } sections, ${ Object.keys( pages ).length } pages and ${ strings.size } texts.` );
+console.log( `Wrote ${ Object.keys( headers ).length } headers, ${ Object.keys( footers ).length } footers, ${ Object.keys( sections ).length } sections, ${ Object.keys( pages ).length } pages, ${ Object.keys( shopArchives ).length } product lists, ${ Object.keys( productCards ).length } cards and ${ strings.size } texts.` );

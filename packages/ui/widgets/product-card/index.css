@@ -10,3 +10,102 @@
 
 @source "../product-card";
 @source "../countdown";
+
+/*
+ * The row look of a card (PLP-05, PLP-07): the `list` design, any card of a
+ * grid switched to rows, and the cards of a grid that shows rows on phones.
+ * These rules sit outside the cascade layers on purpose, so they win over
+ * the card's own utilities and the grid's column count.
+ */
+.um-pc-details,
+.um-pc-buy {
+	display: none;
+}
+
+.um-product-grid[data-view="list"] {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) {
+	flex-direction: row;
+	gap: var(--um-space-3, 12px);
+	padding: var(--um-space-3, 12px);
+}
+
+:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) .um-pc-media {
+	flex: none;
+	width: 112px;
+	margin: 0;
+}
+
+:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) .um-pc-body {
+	padding: 0;
+}
+
+:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) .um-pc-title {
+	min-height: 0;
+}
+
+:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) .um-pc-details {
+	display: block;
+}
+
+@media (width >= 48rem) {
+	:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) .um-pc-media {
+		width: 168px;
+	}
+
+	:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) .um-pc-body {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 13rem;
+		grid-template-rows: auto auto 1fr;
+		column-gap: var(--um-space-6, 24px);
+		align-content: start;
+	}
+
+	:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) .um-pc-body > * {
+		grid-column: 1;
+	}
+
+	:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) .um-pc-price {
+		grid-area: 1 / 2 / 3 / 3;
+		align-self: start;
+		margin-top: 0;
+	}
+
+	:is(.um-product-card[data-layout="list"], .um-product-grid[data-view="list"] .um-product-card) .um-pc-buy {
+		display: block;
+		grid-area: 3 / 2 / 4 / 3;
+		align-self: start;
+	}
+}
+
+@media (width < 48rem) {
+	.um-product-grid[data-mobile="list"] {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.um-product-grid[data-mobile="list"] .um-product-card {
+		flex-direction: row;
+		gap: var(--um-space-3, 12px);
+		padding: var(--um-space-3, 12px);
+	}
+
+	.um-product-grid[data-mobile="list"] .um-pc-media {
+		flex: none;
+		width: 112px;
+		margin: 0;
+	}
+
+	.um-product-grid[data-mobile="list"] .um-pc-body {
+		padding: 0;
+	}
+
+	.um-product-grid[data-mobile="list"] .um-pc-title {
+		min-height: 0;
+	}
+
+	.um-product-grid[data-mobile="list"] .um-pc-details {
+		display: block;
+	}
+}

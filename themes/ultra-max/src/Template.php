@@ -169,17 +169,33 @@ final class Template {
 	 * @param 'soft'|'outline' $variant Look.
 	 */
 	public static function search_component( string $id, string $variant ): Html {
-		return UI::search_form(
-			array(
-				'id'          => $id,
-				'action'      => home_url( '/' ),
-				'label'       => __( 'Search', 'ultra-max' ),
-				'submit'      => __( 'Search', 'ultra-max' ),
-				'value'       => get_search_query(),
-				'placeholder' => __( 'Search the store…', 'ultra-max' ),
-				'variant'     => $variant,
-			)
+		$props = array(
+			'id'          => $id,
+			'action'      => home_url( '/' ),
+			'label'       => __( 'Search', 'ultra-max' ),
+			'submit'      => __( 'Search', 'ultra-max' ),
+			'value'       => get_search_query(),
+			'placeholder' => __( 'Search the store…', 'ultra-max' ),
+			'variant'     => $variant,
 		);
+		/**
+		 * Filters the props of the theme's search form, for example to add
+		 * live suggestions (SRCH-01).
+		 *
+		 * @param array<string, mixed> $props SearchForm props.
+		 */
+		$filtered = apply_filters( 'ultra_max_search_form', $props );
+		if ( is_array( $filtered ) && isset( $filtered['live'] ) && is_array( $filtered['live'] ) && is_string( $filtered['live']['endpoint'] ?? null ) && is_string( $filtered['live']['label'] ?? null ) ) {
+			$props['live'] = array(
+				'endpoint' => $filtered['live']['endpoint'],
+				'label'    => $filtered['live']['label'],
+				'min'      => is_int( $filtered['live']['min'] ?? null ) ? $filtered['live']['min'] : 2,
+			);
+		}
+		if ( is_array( $filtered ) && is_array( $filtered['hidden'] ?? null ) ) {
+			$props['hidden'] = array_map( 'strval', array_filter( $filtered['hidden'], 'is_scalar' ) );
+		}
+		return UI::search_form( $props );
 	}
 
 	/**

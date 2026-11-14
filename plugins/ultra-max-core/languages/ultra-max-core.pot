@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T15:11:58+00:00\n"
+"POT-Creation-Date: 2026-11-14T10:05:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ultra-max-core\n"
@@ -65,7 +65,7 @@ msgstr ""
 
 #: src/Admin/Admin.php:166
 #: src/Admin/Strings.php:299
-#: src/Elementor/Integration.php:143
+#: src/Elementor/Integration.php:147
 msgid "Loading…"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgid "Unknown module."
 msgstr ""
 
 #: src/Admin/Strings.php:27
-#: src/Elementor/Integration.php:147
+#: src/Elementor/Integration.php:151
 msgid "Something went wrong. Please try again."
 msgstr ""
 
@@ -210,8 +210,8 @@ msgid "Nothing found."
 msgstr ""
 
 #: src/Admin/Strings.php:58
-#: src/Options.php:97
-#: src/Options.php:103
+#: src/Options.php:101
+#: src/Options.php:107
 msgid "Backup and reset"
 msgstr ""
 
@@ -290,7 +290,7 @@ msgid "Corners, colours and fonts follow your settings."
 msgstr ""
 
 #: src/Admin/Strings.php:79
-#: src/Store/Cards.php:117
+#: src/Store/Cards.php:342
 msgid "Add to cart"
 msgstr ""
 
@@ -303,11 +303,13 @@ msgid "Sort"
 msgstr ""
 
 #: src/Admin/Strings.php:82
+#: src/Shop/Query.php:47
 msgid "Most relevant"
 msgstr ""
 
 #: src/Admin/Strings.php:83
-#: src/Builder/library-strings.php:139
+#: src/Builder/library-strings.php:141
+#: src/Shop/Query.php:49
 #: src/Store/Catalog.php:32
 #: src/Widgets/Store/ProductTabs.php:91
 #: src/Widgets/Store/ProductTabs.php:114
@@ -381,7 +383,7 @@ msgid "A backup is taken automatically before every reset, import, restore and t
 msgstr ""
 
 #: src/Admin/Strings.php:104
-#: src/Options.php:110
+#: src/Options.php:114
 msgid "Backups"
 msgstr ""
 
@@ -427,7 +429,7 @@ msgid "Backup restored"
 msgstr ""
 
 #: src/Admin/Strings.php:117
-#: src/Elementor/Integration.php:139
+#: src/Elementor/Integration.php:143
 msgid "Sections"
 msgstr ""
 
@@ -460,7 +462,8 @@ msgid "Changes apply only after you save. You can reset a section; a backup is t
 msgstr ""
 
 #: src/Admin/Strings.php:125
-#: src/Widgets/Store/StoreWidget.php:150
+#: src/Shop/Archive.php:703
+#: src/Widgets/Store/StoreWidget.php:151
 msgid "Next"
 msgstr ""
 
@@ -664,6 +667,7 @@ msgstr ""
 #: src/Admin/Strings.php:187
 #: src/Elementor/Tags/ProductStock.php:83
 #: src/Widgets/Header/MenuToggle.php:74
+#: src/Widgets/Shop/FilterArea.php:62
 msgid "Show"
 msgstr ""
 
@@ -1044,7 +1048,7 @@ msgid "Choose"
 msgstr ""
 
 #: src/Admin/Strings.php:297
-#: src/Elementor/Integration.php:145
+#: src/Elementor/Integration.php:149
 msgid "Type to search"
 msgstr ""
 
@@ -1353,7 +1357,7 @@ msgid "Brand, scent and skin type"
 msgstr ""
 
 #: src/Admin/Wizard.php:216
-#: src/Builder/library-strings.php:200
+#: src/Builder/library-strings.php:206
 #: src/Widgets/Store/QuickLinks.php:107
 msgid "Supermarket"
 msgstr ""
@@ -1378,11 +1382,11 @@ msgstr ""
 msgid "Edit layout"
 msgstr ""
 
-#: src/Builder/Layouts.php:180
+#: src/Builder/Layouts.php:181
 msgid "(no title)"
 msgstr ""
 
-#: src/Builder/Layouts.php:222
+#: src/Builder/Layouts.php:223
 msgid "This kind of layout is not available yet."
 msgstr ""
 
@@ -1515,6 +1519,7 @@ msgid "Best sellers"
 msgstr ""
 
 #: src/Builder/library-strings.php:47
+#: src/Shop/Query.php:50
 #: src/Store/Catalog.php:33
 #: src/Widgets/Store/ProductTabs.php:115
 msgid "Best selling"
@@ -1567,6 +1572,10 @@ msgid "Can I pay on delivery?"
 msgstr ""
 
 #: src/Builder/library-strings.php:59
+msgid "Card with brand and add button"
+msgstr ""
+
+#: src/Builder/library-strings.php:60
 #: src/Builder/Types.php:59
 #: src/Widgets/Header/Cart.php:35
 #: src/Widgets/Header/Cart.php:87
@@ -1575,332 +1584,336 @@ msgstr ""
 msgid "Cart"
 msgstr ""
 
-#: src/Builder/library-strings.php:60
+#: src/Builder/library-strings.php:61
 #: src/Widgets/Store/TrustMarks.php:164
 msgid "Cash on delivery"
 msgstr ""
 
-#: src/Builder/library-strings.php:61
+#: src/Builder/library-strings.php:62
 msgid "Categories beside the logo"
 msgstr ""
 
-#: src/Builder/library-strings.php:62
+#: src/Builder/library-strings.php:63
 msgid "Categories button first, search in its own row below."
 msgstr ""
 
-#: src/Builder/library-strings.php:63
+#: src/Builder/library-strings.php:64
 msgid "Centred logo"
 msgstr ""
 
-#: src/Builder/library-strings.php:64
+#: src/Builder/library-strings.php:65
 #: src/Widgets/General/PricingTable.php:112
 msgid "Choose this plan"
 msgstr ""
 
-#: src/Builder/library-strings.php:65
+#: src/Builder/library-strings.php:66
 msgid "Comfortable shoes"
 msgstr ""
 
-#: src/Builder/library-strings.php:66
+#: src/Builder/library-strings.php:67
 msgid "Common questions"
 msgstr ""
 
-#: src/Builder/library-strings.php:67
+#: src/Builder/library-strings.php:68
+msgid "Compact card"
+msgstr ""
+
+#: src/Builder/library-strings.php:69
 msgid "Compact footer"
 msgstr ""
 
-#: src/Builder/library-strings.php:68
+#: src/Builder/library-strings.php:70
 #: src/Widgets/Header/Compare.php:29
 msgid "Compare"
 msgstr ""
 
-#: src/Builder/library-strings.php:69
+#: src/Builder/library-strings.php:71
 msgid "Contact"
 msgstr ""
 
-#: src/Builder/library-strings.php:70
+#: src/Builder/library-strings.php:72
 msgid "Contact details beside a contact form."
 msgstr ""
 
-#: src/Builder/library-strings.php:71
+#: src/Builder/library-strings.php:73
 msgid "Contact us"
 msgstr ""
 
-#: src/Builder/library-strings.php:72
+#: src/Builder/library-strings.php:74
 #: src/Widgets/General/Testimonials.php:35
 #: src/Widgets/General/Testimonials.php:141
 msgid "Customer reviews"
 msgstr ""
 
-#: src/Builder/library-strings.php:73
+#: src/Builder/library-strings.php:75
 msgid "Customer service"
 msgstr ""
 
-#: src/Builder/library-strings.php:74
+#: src/Builder/library-strings.php:76
 msgid "Delivery"
 msgstr ""
 
-#: src/Builder/library-strings.php:75
+#: src/Builder/library-strings.php:77
 msgid "Diamond"
 msgstr ""
 
-#: src/Builder/library-strings.php:76
+#: src/Builder/library-strings.php:78
 #: src/Widgets/Footer/AppLinks.php:113
 msgid "Direct download"
 msgstr ""
 
-#: src/Builder/library-strings.php:77
+#: src/Builder/library-strings.php:79
 #: src/Widgets/Store/DiscountPicks.php:36
 #: src/Widgets/Store/DiscountPicks.php:72
 #: src/Widgets/Store/DiscountPicks.php:166
 msgid "Discount picks"
 msgstr ""
 
-#: src/Builder/library-strings.php:78
+#: src/Builder/library-strings.php:80
 msgid "Discounted products with category filters."
 msgstr ""
 
-#: src/Builder/library-strings.php:79
+#: src/Builder/library-strings.php:81
 #: src/Widgets/Header/MenuToggle.php:126
 #: src/Widgets/Store/QuickLinks.php:108
 msgid "Discounts"
 msgstr ""
 
-#: src/Builder/library-strings.php:80
+#: src/Builder/library-strings.php:82
 #: src/Widgets/General/PricingTable.php:105
 msgid "Early access to offers"
 msgstr ""
 
-#: src/Builder/library-strings.php:81
+#: src/Builder/library-strings.php:83
 msgid "Easy returns"
 msgstr ""
 
-#: src/Builder/library-strings.php:82
+#: src/Builder/library-strings.php:84
 msgid "Eight coloured icons for the most used places."
 msgstr ""
 
-#: src/Builder/library-strings.php:83
+#: src/Builder/library-strings.php:85
 #: src/Widgets/General/ContactForm.php:106
 #: src/Widgets/General/Newsletter.php:70
 #: src/Widgets/General/Newsletter.php:97
 msgid "Email or mobile number"
 msgstr ""
 
-#: src/Builder/library-strings.php:84
+#: src/Builder/library-strings.php:86
 msgid "Every day from 9 to 21"
 msgstr ""
 
-#: src/Builder/library-strings.php:85
+#: src/Builder/library-strings.php:87
 #: src/Widgets/General/IconBox.php:73
 #: src/Widgets/Store/TrustMarks.php:163
 msgid "Fast delivery"
 msgstr ""
 
-#: src/Builder/library-strings.php:86
+#: src/Builder/library-strings.php:88
 msgid "Four advantages"
 msgstr ""
 
-#: src/Builder/library-strings.php:87
+#: src/Builder/library-strings.php:89
 msgid "Four banners"
 msgstr ""
 
-#: src/Builder/library-strings.php:88
+#: src/Builder/library-strings.php:90
 msgid "Four icon boxes in a row."
 msgstr ""
 
-#: src/Builder/library-strings.php:89
+#: src/Builder/library-strings.php:91
 msgid "Four small promotional banners in a row."
 msgstr ""
 
-#: src/Builder/library-strings.php:90
+#: src/Builder/library-strings.php:92
 #: src/Widgets/General/PricingTable.php:94
 #: src/Widgets/General/PricingTable.php:104
 msgid "Free delivery"
 msgstr ""
 
-#: src/Builder/library-strings.php:91
+#: src/Builder/library-strings.php:93
 msgid "Free delivery on orders over 500,000 toman"
 msgstr ""
 
-#: src/Builder/library-strings.php:92
+#: src/Builder/library-strings.php:94
 msgid "Free delivery on your first order"
 msgstr ""
 
-#: src/Builder/library-strings.php:93
+#: src/Builder/library-strings.php:95
 msgid "Frequently asked questions"
 msgstr ""
 
-#: src/Builder/library-strings.php:94
+#: src/Builder/library-strings.php:96
 msgid "Fresh coffee"
 msgstr ""
 
-#: src/Builder/library-strings.php:95
-msgid "Fresh, fast and always discounted"
-msgstr ""
-
-#: src/Builder/library-strings.php:96
-#: src/Widgets/Store/TrustMarks.php:166
-msgid "From the brand or its agent"
-msgstr ""
-
 #: src/Builder/library-strings.php:97
-msgid "Full store footer"
+msgid "Fresh, fast and always discounted"
 msgstr ""
 
 #: src/Builder/library-strings.php:98
 #: src/Widgets/Store/TrustMarks.php:166
-msgid "Genuine products"
+msgid "From the brand or its agent"
 msgstr ""
 
 #: src/Builder/library-strings.php:99
-msgid "Get in touch"
+msgid "Full store footer"
 msgstr ""
 
 #: src/Builder/library-strings.php:100
-msgid "Gifts"
+#: src/Widgets/Store/TrustMarks.php:166
+msgid "Genuine products"
 msgstr ""
 
 #: src/Builder/library-strings.php:101
-msgid "Gold"
+msgid "Get in touch"
 msgstr ""
 
 #: src/Builder/library-strings.php:102
-msgid "Headphones and speakers from 990,000 toman"
+msgid "Gifts"
 msgstr ""
 
 #: src/Builder/library-strings.php:103
+msgid "Gold"
+msgstr ""
+
+#: src/Builder/library-strings.php:104
+msgid "Headphones and speakers from 990,000 toman"
+msgstr ""
+
+#: src/Builder/library-strings.php:105
 #: src/Widgets/General/Newsletter.php:64
 msgid "Hear about offers and new arrivals first"
 msgstr ""
 
-#: src/Builder/library-strings.php:104
+#: src/Builder/library-strings.php:106
 #: src/Widgets/Store/HeroSlider.php:33
 msgid "Hero slider"
 msgstr ""
 
-#: src/Builder/library-strings.php:105
+#: src/Builder/library-strings.php:107
 msgid "Hero slider, advantages, categories, products and reviews."
 msgstr ""
 
-#: src/Builder/library-strings.php:106
+#: src/Builder/library-strings.php:108
 msgid "How do I return an item?"
 msgstr ""
 
-#: src/Builder/library-strings.php:107
+#: src/Builder/library-strings.php:109
 #: src/Widgets/General/Accordion.php:59
 #: src/Widgets/General/Accordion.php:69
 msgid "How long does delivery take?"
 msgstr ""
 
-#: src/Builder/library-strings.php:108
+#: src/Builder/library-strings.php:110
 msgid "How to order"
 msgstr ""
 
-#: src/Builder/library-strings.php:109
+#: src/Builder/library-strings.php:111
 #: src/Widgets/Store/TrustMarks.php:164
 msgid "In selected cities"
 msgstr ""
 
-#: src/Builder/library-strings.php:110
+#: src/Builder/library-strings.php:112
 msgid "Instalments without a down payment and free delivery"
 msgstr ""
 
-#: src/Builder/library-strings.php:111
+#: src/Builder/library-strings.php:113
 #: src/Widgets/General/Newsletter.php:76
 msgid "Join"
 msgstr ""
 
-#: src/Builder/library-strings.php:112
+#: src/Builder/library-strings.php:114
 msgid "Just the logo, search and cart, for small stores."
 msgstr ""
 
-#: src/Builder/library-strings.php:113
+#: src/Builder/library-strings.php:115
 msgid "Kitchen"
 msgstr ""
 
-#: src/Builder/library-strings.php:114
+#: src/Builder/library-strings.php:116
 msgid "Kitchen appliances up to 30% off"
 msgstr ""
 
-#: src/Builder/library-strings.php:115
+#: src/Builder/library-strings.php:117
 msgid "Landing page"
 msgstr ""
 
-#: src/Builder/library-strings.php:116
+#: src/Builder/library-strings.php:118
 msgid "Log in with a one-time code"
 msgstr ""
 
-#: src/Builder/library-strings.php:117
+#: src/Builder/library-strings.php:119
 #: src/Widgets/Header/Account.php:57
 msgid "Log in | Sign up"
 msgstr ""
 
-#: src/Builder/library-strings.php:118
+#: src/Builder/library-strings.php:120
 msgid "Logo and menu button, with the search field below."
 msgstr ""
 
-#: src/Builder/library-strings.php:119
+#: src/Builder/library-strings.php:121
 msgid "Logo and short text, three link columns, social links and copyright."
 msgstr ""
 
-#: src/Builder/library-strings.php:120
+#: src/Builder/library-strings.php:122
 msgid "Logo at the start, search icon, cart and menu at the end."
 msgstr ""
 
-#: src/Builder/library-strings.php:121
+#: src/Builder/library-strings.php:123
 msgid "Logo, menu and icons in a single compact row."
 msgstr ""
 
-#: src/Builder/library-strings.php:122
+#: src/Builder/library-strings.php:124
 msgid "Logo, wide search, account and cart; categories and menu below. The classic big-store header."
 msgstr ""
 
-#: src/Builder/library-strings.php:123
+#: src/Builder/library-strings.php:125
 #: src/Widgets/Header/NavMenu.php:105
 msgid "Main menu"
 msgstr ""
 
-#: src/Builder/library-strings.php:124
+#: src/Builder/library-strings.php:126
 msgid "Menu at the start, logo in the middle, account and cart at the end."
 msgstr ""
 
-#: src/Builder/library-strings.php:125
+#: src/Builder/library-strings.php:127
 msgid "Menu button, a search field filling the row, and the cart."
 msgstr ""
 
-#: src/Builder/library-strings.php:126
+#: src/Builder/library-strings.php:128
 msgid "Menu button, logo and cart, with the search field below."
 msgstr ""
 
-#: src/Builder/library-strings.php:127
+#: src/Builder/library-strings.php:129
 msgid "Menu on one side, logo in the middle, actions on the other."
 msgstr ""
 
-#: src/Builder/library-strings.php:128
+#: src/Builder/library-strings.php:130
 msgid "Menu, logo, then search, account and cart icons."
 msgstr ""
 
-#: src/Builder/library-strings.php:129
+#: src/Builder/library-strings.php:131
 msgid "Minimal"
 msgstr ""
 
-#: src/Builder/library-strings.php:130
+#: src/Builder/library-strings.php:132
 msgid "Minimal footer"
 msgstr ""
 
-#: src/Builder/library-strings.php:131
+#: src/Builder/library-strings.php:133
 msgid "More"
 msgstr ""
 
-#: src/Builder/library-strings.php:132
+#: src/Builder/library-strings.php:134
 msgid "More articles"
 msgstr ""
 
-#: src/Builder/library-strings.php:133
+#: src/Builder/library-strings.php:135
 msgid "Most popular"
 msgstr ""
 
-#: src/Builder/library-strings.php:134
+#: src/Builder/library-strings.php:136
 #: src/Builder/Types.php:65
 #: src/Widgets/Header/Account.php:63
 #: src/Widgets/Header/Account.php:81
@@ -1908,287 +1921,303 @@ msgstr ""
 msgid "My account"
 msgstr ""
 
-#: src/Builder/library-strings.php:135
+#: src/Builder/library-strings.php:137
 #: src/Widgets/General/Testimonials.php:71
 msgid "My order arrived quickly and well packed. I will buy again."
 msgstr ""
 
-#: src/Builder/library-strings.php:136
+#: src/Builder/library-strings.php:138
 #: src/Widgets/Store/TrustMarks.php:129
 msgid "National registration"
 msgstr ""
 
-#: src/Builder/library-strings.php:137
+#: src/Builder/library-strings.php:139
 #: src/Widgets/Store/Stories.php:80
 #: src/Widgets/Store/Stories.php:113
 msgid "New arrivals"
 msgstr ""
 
-#: src/Builder/library-strings.php:138
+#: src/Builder/library-strings.php:140
 #: src/Widgets/Store/HeroSlider.php:89
 #: src/Widgets/Store/HeroSlider.php:151
 msgid "New phones with up to 25% off"
 msgstr ""
 
-#: src/Builder/library-strings.php:140
+#: src/Builder/library-strings.php:142
 msgid "Newest, best selling and discounted products in tabs."
 msgstr ""
 
-#: src/Builder/library-strings.php:141
+#: src/Builder/library-strings.php:143
+msgid "No filter column: five products a row, sorting and a filter button above them."
+msgstr ""
+
+#: src/Builder/library-strings.php:144
 #: src/Widgets/Store/TrustMarks.php:165
 msgid "No questions asked"
 msgstr ""
 
-#: src/Builder/library-strings.php:142
+#: src/Builder/library-strings.php:145
 #: src/Widgets/Store/Bestsellers.php:34
 msgid "Numbered best sellers"
 msgstr ""
 
-#: src/Builder/library-strings.php:143
+#: src/Builder/library-strings.php:146
 #: src/Widgets/Header/MenuToggle.php:125
 #: src/Widgets/Store/QuickLinks.php:85
 msgid "Offers"
 msgstr ""
 
-#: src/Builder/library-strings.php:144
+#: src/Builder/library-strings.php:147
 #: src/Store/Catalog.php:34
 #: src/Widgets/Store/ProductTabs.php:116
 msgid "On sale"
 msgstr ""
 
-#: src/Builder/library-strings.php:145
+#: src/Builder/library-strings.php:148
 msgid "One line with the copyright and social links."
 msgstr ""
 
-#: src/Builder/library-strings.php:146
+#: src/Builder/library-strings.php:149
 msgid "One row"
 msgstr ""
 
-#: src/Builder/library-strings.php:147
+#: src/Builder/library-strings.php:150
 msgid "Order now"
 msgstr ""
 
-#: src/Builder/library-strings.php:148
+#: src/Builder/library-strings.php:151
 #: src/Widgets/General/IconBox.php:79
 msgid "Orders placed before 2 pm leave the same day."
 msgstr ""
 
-#: src/Builder/library-strings.php:149
+#: src/Builder/library-strings.php:152
 #: src/Widgets/General/Accordion.php:65
 msgid "Orders reach most cities in two to four working days."
 msgstr ""
 
-#: src/Builder/library-strings.php:150
+#: src/Builder/library-strings.php:153
 msgid "Pay with any Shetab card through a bank gateway."
 msgstr ""
 
-#: src/Builder/library-strings.php:151
+#: src/Builder/library-strings.php:154
 msgid "Payment gateway 1"
 msgstr ""
 
-#: src/Builder/library-strings.php:152
+#: src/Builder/library-strings.php:155
 msgid "Payment gateway 2"
 msgstr ""
 
-#: src/Builder/library-strings.php:153
+#: src/Builder/library-strings.php:156
 msgid "Payment methods"
 msgstr ""
 
-#: src/Builder/library-strings.php:154
+#: src/Builder/library-strings.php:157
 msgid "People who answer, every day of the week."
 msgstr ""
 
-#: src/Builder/library-strings.php:155
+#: src/Builder/library-strings.php:158
 msgid "Phone: all icons"
 msgstr ""
 
-#: src/Builder/library-strings.php:156
+#: src/Builder/library-strings.php:159
 msgid "Phone: app-like"
 msgstr ""
 
-#: src/Builder/library-strings.php:157
+#: src/Builder/library-strings.php:160
 msgid "Phone: brand coloured"
 msgstr ""
 
-#: src/Builder/library-strings.php:158
+#: src/Builder/library-strings.php:161
 msgid "Phone: centred logo"
 msgstr ""
 
-#: src/Builder/library-strings.php:159
+#: src/Builder/library-strings.php:162
 msgid "Phone: logo and icons"
 msgstr ""
 
-#: src/Builder/library-strings.php:160
+#: src/Builder/library-strings.php:163
 msgid "Phone: logo with search below"
 msgstr ""
 
-#: src/Builder/library-strings.php:161
+#: src/Builder/library-strings.php:164
 msgid "Phone: menu, logo, cart and search"
 msgstr ""
 
-#: src/Builder/library-strings.php:162
+#: src/Builder/library-strings.php:165
 msgid "Phone: search in the bar"
 msgstr ""
 
-#: src/Builder/library-strings.php:163
+#: src/Builder/library-strings.php:166
 msgid "Photography"
 msgstr ""
 
-#: src/Builder/library-strings.php:164
+#: src/Builder/library-strings.php:167
+msgid "Picture with the second picture on hover, badges, title, brand and rating, price and an add button."
+msgstr ""
+
+#: src/Builder/library-strings.php:168
+msgid "Picture, title, stock note and price only."
+msgstr ""
+
+#: src/Builder/library-strings.php:169
 #: src/Widgets/Store/Brands.php:70
 msgid "Popular brands"
 msgstr ""
 
-#: src/Builder/library-strings.php:165
+#: src/Builder/library-strings.php:170
 msgid "Prices are fair and the products are genuine."
 msgstr ""
 
-#: src/Builder/library-strings.php:166
+#: src/Builder/library-strings.php:171
 msgid "Priority support"
 msgstr ""
 
-#: src/Builder/library-strings.php:167
+#: src/Builder/library-strings.php:172
 msgid "Privacy"
 msgstr ""
 
-#: src/Builder/library-strings.php:168
+#: src/Builder/library-strings.php:173
 #: src/Widgets/Header/CategoryMenu.php:77
 #: src/Widgets/Header/MenuToggle.php:77
 #: src/Widgets/Header/MenuToggle.php:93
 msgid "Product categories"
 msgstr ""
 
-#: src/Builder/library-strings.php:169
+#: src/Builder/library-strings.php:174
+msgid "Product list with a filter column"
+msgstr ""
+
+#: src/Builder/library-strings.php:175
 #: src/Widgets/Store/ProductTabs.php:35
 msgid "Product tabs"
 msgstr ""
 
-#: src/Builder/library-strings.php:170
+#: src/Builder/library-strings.php:176
 msgid "Pure sound"
 msgstr ""
 
-#: src/Builder/library-strings.php:171
+#: src/Builder/library-strings.php:177
 msgid "Questions and answers"
 msgstr ""
 
-#: src/Builder/library-strings.php:172
+#: src/Builder/library-strings.php:178
 #: src/Widgets/Header/MenuToggle.php:104
 #: src/Widgets/Store/QuickLinks.php:33
 #: src/Widgets/Store/QuickLinks.php:134
 msgid "Quick links"
 msgstr ""
 
-#: src/Builder/library-strings.php:173
+#: src/Builder/library-strings.php:179
 msgid "Real support"
 msgstr ""
 
-#: src/Builder/library-strings.php:174
+#: src/Builder/library-strings.php:180
 #: src/Widgets/Store/Products.php:120
 #: src/Widgets/Store/ProductTabs.php:75
 msgid "Recommended for you"
 msgstr ""
 
-#: src/Builder/library-strings.php:175
+#: src/Builder/library-strings.php:181
 msgid "Returns"
 msgstr ""
 
-#: src/Builder/library-strings.php:176
+#: src/Builder/library-strings.php:182
 msgid "Round category tiles with their images."
 msgstr ""
 
-#: src/Builder/library-strings.php:177
+#: src/Builder/library-strings.php:183
 msgid "Round covers that open full-screen stories."
 msgstr ""
 
-#: src/Builder/library-strings.php:178
+#: src/Builder/library-strings.php:184
 msgid "Search first"
 msgstr ""
 
-#: src/Builder/library-strings.php:179
+#: src/Builder/library-strings.php:185
 msgid "Search the store"
 msgstr ""
 
-#: src/Builder/library-strings.php:180
+#: src/Builder/library-strings.php:186
 msgid "Secure payment"
 msgstr ""
 
-#: src/Builder/library-strings.php:181
+#: src/Builder/library-strings.php:187
 msgid "Secure payment text with trust and payment badges."
 msgstr ""
 
-#: src/Builder/library-strings.php:182
+#: src/Builder/library-strings.php:188
 #: src/Widgets/Store/TrustMarks.php:89
 msgid "Secure payment with every Shetab card"
 msgstr ""
 
-#: src/Builder/library-strings.php:183
+#: src/Builder/library-strings.php:189
 #: src/Widgets/General/ContactForm.php:70
 msgid "Send"
 msgstr ""
 
-#: src/Builder/library-strings.php:184
+#: src/Builder/library-strings.php:190
 #: src/Widgets/General/ContactForm.php:64
 msgid "Send us a message"
 msgstr ""
 
-#: src/Builder/library-strings.php:185
+#: src/Builder/library-strings.php:191
 msgid "Seven days to return what you do not like."
 msgstr ""
 
-#: src/Builder/library-strings.php:186
+#: src/Builder/library-strings.php:192
 #: src/Widgets/Store/TrustMarks.php:130
 msgid "Shetab network"
 msgstr ""
 
-#: src/Builder/library-strings.php:187
+#: src/Builder/library-strings.php:193
 #: src/Widgets/Store/CategoryCircles.php:70
 msgid "Shop by category"
 msgstr ""
 
-#: src/Builder/library-strings.php:188
+#: src/Builder/library-strings.php:194
 #: src/Widgets/General/Button.php:54
 #: src/Widgets/Store/HeroSlider.php:106
 msgid "Shop now"
 msgstr ""
 
-#: src/Builder/library-strings.php:189
+#: src/Builder/library-strings.php:195
 msgid "Shopping guide"
 msgstr ""
 
-#: src/Builder/library-strings.php:190
+#: src/Builder/library-strings.php:196
 msgid "Sign up"
 msgstr ""
 
-#: src/Builder/library-strings.php:191
+#: src/Builder/library-strings.php:197
 msgid "Simple store home page"
 msgstr ""
 
-#: src/Builder/library-strings.php:192
+#: src/Builder/library-strings.php:198
 msgid "Skin care"
 msgstr ""
 
-#: src/Builder/library-strings.php:193
+#: src/Builder/library-strings.php:199
 msgid "Small product cards with a round add button."
 msgstr ""
 
-#: src/Builder/library-strings.php:194
+#: src/Builder/library-strings.php:200
 msgid "Smart kitchen"
 msgstr ""
 
-#: src/Builder/library-strings.php:195
+#: src/Builder/library-strings.php:201
 msgid "Smart watches"
 msgstr ""
 
-#: src/Builder/library-strings.php:196
+#: src/Builder/library-strings.php:202
 #: src/Widgets/Footer/AppLinks.php:86
 msgid "Store app:"
 msgstr ""
 
-#: src/Builder/library-strings.php:197
+#: src/Builder/library-strings.php:203
 msgid "Store header with categories"
 msgstr ""
 
-#: src/Builder/library-strings.php:198
+#: src/Builder/library-strings.php:204
 #: src/Widgets/Store/Stories.php:33
 #: src/Widgets/Store/Stories.php:68
 #: src/Widgets/Store/Stories.php:73
@@ -2196,171 +2225,179 @@ msgstr ""
 msgid "Stories"
 msgstr ""
 
-#: src/Builder/library-strings.php:199
+#: src/Builder/library-strings.php:205
 msgid "Stories, hero slider, offers, banners, categories, product tabs, best sellers, brands, discount picks, blog and trust badges."
 msgstr ""
 
-#: src/Builder/library-strings.php:201
+#: src/Builder/library-strings.php:207
 msgid "Supermarket row"
 msgstr ""
 
-#: src/Builder/library-strings.php:202
+#: src/Builder/library-strings.php:208
 #: src/Widgets/Store/TrustMarks.php:167
 msgid "Support 7 days a week"
 msgstr ""
 
-#: src/Builder/library-strings.php:203
+#: src/Builder/library-strings.php:209
 msgid "Support: your store phone number"
 msgstr ""
 
-#: src/Builder/library-strings.php:204
+#: src/Builder/library-strings.php:210
 msgid "Terms of use"
 msgstr ""
 
-#: src/Builder/library-strings.php:205
+#: src/Builder/library-strings.php:211
 msgid "The best selling products in a numbered list."
 msgstr ""
 
-#: src/Builder/library-strings.php:206
+#: src/Builder/library-strings.php:212
 msgid "The first phone header on your brand colour."
 msgstr ""
 
-#: src/Builder/library-strings.php:207
+#: src/Builder/library-strings.php:213
 msgid "The four newest articles."
 msgstr ""
 
-#: src/Builder/library-strings.php:208
+#: src/Builder/library-strings.php:214
 msgid "The newest models"
 msgstr ""
 
-#: src/Builder/library-strings.php:209
+#: src/Builder/library-strings.php:215
 msgid "The support team answered all my questions patiently."
 msgstr ""
 
-#: src/Builder/library-strings.php:210
+#: src/Builder/library-strings.php:216
 msgid "Three large slides with text, a button and a product image."
 msgstr ""
 
-#: src/Builder/library-strings.php:211
+#: src/Builder/library-strings.php:217
 msgid "Three plans"
 msgstr ""
 
-#: src/Builder/library-strings.php:212
+#: src/Builder/library-strings.php:218
 msgid "Three pricing tables side by side, the middle one highlighted."
 msgstr ""
 
-#: src/Builder/library-strings.php:213
+#: src/Builder/library-strings.php:219
+msgid "Title and subcategories on top; filters beside the products, sorting above them and the category guide below."
+msgstr ""
+
+#: src/Builder/library-strings.php:220
 #: src/Widgets/Header/MenuToggle.php:128
 msgid "Track order"
 msgstr ""
 
-#: src/Builder/library-strings.php:214
+#: src/Builder/library-strings.php:221
 msgid "Track your order"
 msgstr ""
 
-#: src/Builder/library-strings.php:215
+#: src/Builder/library-strings.php:222
 #: src/Widgets/Store/TrustMarks.php:107
 msgid "Trust badge"
 msgstr ""
 
-#: src/Builder/library-strings.php:216
+#: src/Builder/library-strings.php:223
 #: src/Widgets/Store/TrustMarks.php:83
 msgid "Trust badges"
 msgstr ""
 
-#: src/Builder/library-strings.php:217
+#: src/Builder/library-strings.php:224
 msgid "Two large banners with a button."
 msgstr ""
 
-#: src/Builder/library-strings.php:218
+#: src/Builder/library-strings.php:225
 msgid "Two wide banners"
 msgstr ""
 
-#: src/Builder/library-strings.php:219
+#: src/Builder/library-strings.php:226
 #: src/Widgets/Store/Banners.php:92
 #: src/Widgets/Store/Banners.php:146
 msgid "Up to 12% off"
 msgstr ""
 
-#: src/Builder/library-strings.php:220
+#: src/Builder/library-strings.php:227
 #: src/Widgets/Header/CategoryMenu.php:96
 msgid "Up to 30% off"
 msgstr ""
 
-#: src/Builder/library-strings.php:221
+#: src/Builder/library-strings.php:228
 #: src/Widgets/Store/Stories.php:109
 msgid "View"
 msgstr ""
 
-#: src/Builder/library-strings.php:222
+#: src/Builder/library-strings.php:229
 msgid "Weekly groceries delivered the same day"
 msgstr ""
 
-#: src/Builder/library-strings.php:223
+#: src/Builder/library-strings.php:230
 msgid "What our customers say"
 msgstr ""
 
-#: src/Builder/library-strings.php:224
+#: src/Builder/library-strings.php:231
 msgid "White top row and a menu row in your brand colour."
 msgstr ""
 
-#: src/Builder/library-strings.php:225
+#: src/Builder/library-strings.php:232
+msgid "Wide product list"
+msgstr ""
+
+#: src/Builder/library-strings.php:233
 msgid "Wireless sound"
 msgstr ""
 
-#: src/Builder/library-strings.php:226
+#: src/Builder/library-strings.php:234
 #: src/Widgets/Header/Wishlist.php:34
 msgid "Wishlist"
 msgstr ""
 
-#: src/Builder/library-strings.php:227
+#: src/Builder/library-strings.php:235
 msgid "With a dark top bar"
 msgstr ""
 
-#: src/Builder/library-strings.php:228
+#: src/Builder/library-strings.php:236
 #: src/Widgets/Store/Banners.php:98
 msgid "Work laptops"
 msgstr ""
 
-#: src/Builder/library-strings.php:229
+#: src/Builder/library-strings.php:237
 msgid "Work with us"
 msgstr ""
 
-#: src/Builder/library-strings.php:230
+#: src/Builder/library-strings.php:238
 #: src/Widgets/Store/Posts.php:69
 msgid "Worth reading"
 msgstr ""
 
-#: src/Builder/library-strings.php:231
+#: src/Builder/library-strings.php:239
 msgid "Write a sentence about your store here."
 msgstr ""
 
-#: src/Builder/library-strings.php:232
+#: src/Builder/library-strings.php:240
 msgid "Write a short description of your store, its guarantees and delivery here. Search engines read it too."
 msgstr ""
 
-#: src/Builder/library-strings.php:233
+#: src/Builder/library-strings.php:241
 msgid "Yes, in the cities shown at checkout."
 msgstr ""
 
-#: src/Builder/library-strings.php:234
+#: src/Builder/library-strings.php:242
 msgid "Your store address"
 msgstr ""
 
-#: src/Builder/library-strings.php:235
+#: src/Builder/library-strings.php:243
 msgid "Your store email"
 msgstr ""
 
-#: src/Builder/library-strings.php:236
+#: src/Builder/library-strings.php:244
 msgid "Your store phone number"
 msgstr ""
 
-#: src/Builder/library-strings.php:237
+#: src/Builder/library-strings.php:245
 #: src/Widgets/Store/TrustMarks.php:128
 msgid "e-Namad trust badge"
 msgstr ""
 
-#: src/Builder/library-strings.php:238
+#: src/Builder/library-strings.php:246
 #: src/Widgets/General/PricingTable.php:82
 msgid "month"
 msgstr ""
@@ -2374,7 +2411,7 @@ msgid "Choose what kind of layout to make."
 msgstr ""
 
 #: src/Builder/Rest.php:136
-#: src/Elementor/Integration.php:279
+#: src/Elementor/Integration.php:283
 msgid "This template could not be found."
 msgstr ""
 
@@ -2452,6 +2489,8 @@ msgstr ""
 
 #: src/Builder/Rules.php:135
 #: src/Elementor/Kit.php:125
+#: src/Shop/Filters.php:53
+#: src/Shop/Filters.php:191
 msgid "Brand"
 msgstr ""
 
@@ -2527,12 +2566,20 @@ msgstr ""
 msgid "Shop archives"
 msgstr ""
 
+#: src/Builder/Types.php:57
+msgid "The product lists: the shop, categories, brands and product search. Use the shop widgets for filters, sorting and products."
+msgstr ""
+
 #: src/Builder/Types.php:58
 msgid "Product card"
 msgstr ""
 
 #: src/Builder/Types.php:58
 msgid "Product cards"
+msgstr ""
+
+#: src/Builder/Types.php:58
+msgid "One product in lists and sliders. Choose it as the card design in the shop settings or in a products widget."
 msgstr ""
 
 #: src/Builder/Types.php:59
@@ -2640,7 +2687,7 @@ msgid "In stock"
 msgstr ""
 
 #: src/Elementor/DynamicTags.php:112
-#: src/Store/Cards.php:101
+#: src/Store/Cards.php:325
 msgid "Out of stock"
 msgstr ""
 
@@ -2659,39 +2706,52 @@ msgstr ""
 #. translators: %s: product name.
 #: src/Elementor/Integration.php:71
 #, php-format
-msgid "%s: general"
+msgid "%s: product lists"
 msgstr ""
 
 #. translators: %s: product name.
 #: src/Elementor/Integration.php:73
 #, php-format
+msgid "%s: product"
+msgstr ""
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:75
+#, php-format
+msgid "%s: general"
+msgstr ""
+
+#. translators: %s: product name.
+#: src/Elementor/Integration.php:77
+#, php-format
 msgid "%s: footer"
 msgstr ""
 
-#: src/Elementor/Integration.php:138
+#: src/Elementor/Integration.php:142
 msgid "Ready-made designs"
 msgstr ""
 
-#: src/Elementor/Integration.php:140
+#: src/Elementor/Integration.php:144
+#: src/Shop/Archive.php:697
 msgid "Pages"
 msgstr ""
 
-#: src/Elementor/Integration.php:141
+#: src/Elementor/Integration.php:145
 msgid "Insert"
 msgstr ""
 
-#: src/Elementor/Integration.php:142
+#: src/Elementor/Integration.php:146
 #: src/Widgets/General/Gallery.php:125
 #: src/Widgets/Store/Stories.php:164
 #: vendor-prefixed/ui/components/dialog/Overlay.php:58
 msgid "Close"
 msgstr ""
 
-#: src/Elementor/Integration.php:144
+#: src/Elementor/Integration.php:148
 msgid "Nothing here yet."
 msgstr ""
 
-#: src/Elementor/Integration.php:146
+#: src/Elementor/Integration.php:150
 msgid "The design was added to the page."
 msgstr ""
 
@@ -2772,6 +2832,7 @@ msgid "For example j F Y shows 19 Aban 1405."
 msgstr ""
 
 #: src/Elementor/Tags/ProductPrice.php:34
+#: src/Widgets/Product/ProductPrice.php:28
 msgid "Product price"
 msgstr ""
 
@@ -2804,6 +2865,7 @@ msgid "Sale price"
 msgstr ""
 
 #: src/Elementor/Tags/ProductStock.php:34
+#: src/Widgets/Product/ProductStock.php:28
 msgid "Product stock"
 msgstr ""
 
@@ -2840,127 +2902,697 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: src/Options.php:36
+#: src/Options.php:38
 msgid "Only administrators who may post unfiltered HTML can change this."
 msgstr ""
 
-#: src/Options.php:39
-#: src/Options.php:130
+#: src/Options.php:41
+#: src/Options.php:307
 msgid "Custom code"
 msgstr ""
 
-#: src/Options.php:45
+#: src/Options.php:47
 msgid "Code for the whole site"
 msgstr ""
 
-#: src/Options.php:49
+#: src/Options.php:51
 msgid "Each post and page also has its own CSS and JavaScript boxes in the editor."
 msgstr ""
 
-#: src/Options.php:55
+#: src/Options.php:57
 msgid "Custom CSS"
 msgstr ""
 
-#: src/Options.php:56
+#: src/Options.php:58
 msgid "Added to every page after the theme styles."
 msgstr ""
 
-#: src/Options.php:64
+#: src/Options.php:66
 msgid "Custom JavaScript"
 msgstr ""
 
-#: src/Options.php:65
+#: src/Options.php:67
 msgid "Runs at the end of every page. Write plain JavaScript without a script tag."
 msgstr ""
 
-#: src/Options.php:73
+#: src/Options.php:75
 msgid "Code in the page head"
 msgstr ""
 
-#: src/Options.php:74
+#: src/Options.php:76
 msgid "For verification tags and analytics snippets."
 msgstr ""
 
-#: src/Options.php:81
+#: src/Options.php:83
 msgid "Code after the opening body tag"
 msgstr ""
 
-#: src/Options.php:88
+#: src/Options.php:90
 msgid "Code before the closing body tag"
 msgstr ""
 
-#: src/Options.php:131
+#: src/Options.php:161
+msgid "Product lists and search"
+msgstr ""
+
+#: src/Options.php:167
+#: src/Options.php:332
+msgid "Product lists"
+msgstr ""
+
+#: src/Options.php:175
+#: src/Widgets/Shop/ArchiveProducts.php:81
+#: src/Widgets/Store/Products.php:102
+msgid "Card design"
+msgstr ""
+
+#: src/Options.php:176
+msgid "A card you designed with Elementor (Layouts, Product card) is offered here too."
+msgstr ""
+
+#: src/Options.php:180
+#: src/Widgets/General/Gallery.php:80
+#: src/Widgets/Shop/ArchiveProducts.php:85
+#: src/Widgets/Store/DiscountPicks.php:102
+#: src/Widgets/Store/Posts.php:92
+#: src/Widgets/Store/Products.php:106
+msgid "Columns on desktop"
+msgstr ""
+
+#: src/Options.php:181
+#: src/Widgets/Shop/ArchiveProducts.php:86
+#: src/Widgets/Store/Products.php:107
+msgid "Columns on tablet"
+msgstr ""
+
+#: src/Options.php:185
+msgid "On phones"
+msgstr ""
+
+#: src/Options.php:189
+#: src/Options.php:217
+#: src/Shop/Archive.php:499
+#: src/Widgets/General/Table.php:74
+msgid "Rows"
+msgstr ""
+
+#: src/Options.php:190
+msgid "Two columns"
+msgstr ""
+
+#: src/Options.php:194
+#: src/Shop/Archive.php:534
+#: src/Widgets/Shop/PerPage.php:33
+#: src/Widgets/Shop/PerPage.php:48
+msgid "Products per page"
+msgstr ""
+
+#: src/Options.php:198
+msgid "More products"
+msgstr ""
+
+#: src/Options.php:199
+msgid "Page links always stay under the list for search engines."
+msgstr ""
+
+#: src/Options.php:203
+msgid "\"Show more\" button"
+msgstr ""
+
+#: src/Options.php:204
+msgid "Load while scrolling"
+msgstr ""
+
+#: src/Options.php:205
+msgid "Page links"
+msgstr ""
+
+#: src/Options.php:212
+#: src/Shop/Archive.php:497
+msgid "Show products as"
+msgstr ""
+
+#: src/Options.php:216
+#: src/Shop/Archive.php:498
+#: src/Widgets/Store/CategoryCircles.php:97
+#: src/Widgets/Store/Products.php:96
+msgid "Grid"
+msgstr ""
+
+#: src/Options.php:224
+msgid "Let shoppers switch between grid and rows"
+msgstr ""
+
+#: src/Options.php:230
+msgid "Show subcategories with pictures above the list"
+msgstr ""
+
+#: src/Options.php:237
+#: src/Shop/Archive.php:391
+#: src/Shop/Archive.php:754
+#: src/Widgets/Shop/FilterArea.php:57
+msgid "Filters"
+msgstr ""
+
+#: src/Options.php:241
+msgid "A category can choose its own filters on its edit screen; its subcategories follow it."
+msgstr ""
+
+#: src/Options.php:246
+msgid "Filters and their order"
+msgstr ""
+
+#: src/Options.php:247
+msgid "Drag to change the order. Filters with nothing to choose in a list are hidden there."
+msgstr ""
+
+#: src/Options.php:254
+#: src/Shop/Archive.php:552
+msgid "Filter"
+msgstr ""
+
+#: src/Options.php:263
+msgid "Let search engines index a list with one chosen value"
+msgstr ""
+
+#: src/Options.php:264
+msgid "Such as \"headphones, brand Lumo\". Other filter combinations are never indexed."
+msgstr ""
+
+#: src/Options.php:271
+#: src/Search/Search.php:131
+#: src/Search/Search.php:132
+#: src/Search/Search.php:145
+#: src/Shop/Filters.php:401
+#: src/Widgets/Header/Search.php:39
+#: src/Widgets/Header/Search.php:56
+#: src/Widgets/Header/Search.php:116
+#: src/Widgets/Header/Search.php:117
+#: src/Widgets/Header/Search.php:138
+#: src/Widgets/Header/Search.php:152
+#: src/Widgets/Header/Search.php:160
+msgid "Search"
+msgstr ""
+
+#: src/Options.php:276
+msgid "Products in suggestions"
+msgstr ""
+
+#: src/Options.php:277
+msgid "Letters before suggestions show"
+msgstr ""
+
+#: src/Options.php:281
+msgid "Suggest blog posts too"
+msgstr ""
+
+#: src/Options.php:287
+#: src/Search/Search.php:154
+msgid "Popular searches"
+msgstr ""
+
+#: src/Options.php:288
+msgid "One per line. The phone search shows them before the shopper types."
+msgstr ""
+
+#: src/Options.php:289
+msgid ""
+"Headphones\n"
+"Smart watch"
+msgstr ""
+
+#: src/Options.php:308
 msgid "Your own CSS, JavaScript and head or footer code, for the whole site and for each page."
 msgstr ""
 
-#: src/Options.php:139
+#: src/Options.php:316
 msgid "Layout builder"
 msgstr ""
 
-#: src/Options.php:140
+#: src/Options.php:317
 msgid "Design the header, footer and reusable blocks with Elementor, and choose where each one shows."
 msgstr ""
 
-#: src/Options.php:147
+#: src/Options.php:324
 msgid "Store widgets"
 msgstr ""
 
-#: src/Options.php:148
+#: src/Options.php:325
 msgid "Header, home page and general widgets for Elementor, also usable as shortcodes. Each widget loads its files only on pages that use it."
 msgstr ""
 
-#: src/Options.php:155
+#: src/Options.php:333
+msgid "Shop, category, brand and search pages with instant filters, sorting, a grid or rows, \"show more\" and phone sheets. Off, WooCommerce's own list shows."
+msgstr ""
+
+#: src/Options.php:342
+msgid "Live search"
+msgstr ""
+
+#: src/Options.php:343
+msgid "Suggestions while typing, search by product code and attributes, Persian letter and digit matching, and a full screen phone search."
+msgstr ""
+
+#: src/Options.php:352
 msgid "Duplicate posts and pages"
 msgstr ""
 
-#: src/Options.php:156
+#: src/Options.php:353
 msgid "A \"Duplicate\" link in the lists of posts and pages makes a draft copy with all its settings."
 msgstr ""
 
-#: src/Store/Cards.php:62
+#: src/Search/Live.php:116
+#: src/Widgets/Shop/ArchiveProducts.php:76
+#: src/Widgets/Store/Bestsellers.php:76
+#: src/Widgets/Store/Deals.php:118
+#: src/Widgets/Store/DiscountPicks.php:76
+#: src/Widgets/Store/Products.php:37
+#: src/Widgets/Store/Products.php:124
+#: src/Widgets/Store/Products.php:192
+#: src/Widgets/Store/ProductTabs.php:96
+#: src/Widgets/Store/ProductTabs.php:186
+#: src/Widgets/Store/StoreWidget.php:90
+msgid "Products"
+msgstr ""
+
+#: src/Search/Live.php:117
+#: src/Widgets/Header/CategoryMenu.php:71
+#: src/Widgets/Store/CategoryCircles.php:74
+#: src/Widgets/Store/CategoryCircles.php:80
+#: src/Widgets/Store/CategoryCircles.php:176
+msgid "Categories"
+msgstr ""
+
+#: src/Search/Live.php:118
+#: src/Widgets/Store/Brands.php:74
+#: src/Widgets/Store/Brands.php:80
+#: src/Widgets/Store/Brands.php:140
+msgid "Brands"
+msgstr ""
+
+#: src/Search/Live.php:119
+msgid "From the blog"
+msgstr ""
+
+#. translators: %s: search words.
+#: src/Search/Live.php:123
+#, php-format
+msgid "All results for \"%s\""
+msgstr ""
+
+#. translators: %s: search words.
+#: src/Search/Live.php:133
+#, php-format
+msgid "Nothing found for \"%s\"."
+msgstr ""
+
+#: src/Search/Search.php:69
+msgid "Search suggestions"
+msgstr ""
+
+#. translators: %s: store name.
+#: src/Search/Search.php:135
+#: src/Widgets/Header/Search.php:73
+#, php-format
+msgid "Search in %s"
+msgstr ""
+
+#: src/Search/Search.php:152
+msgid "Your recent searches"
+msgstr ""
+
+#: src/Search/Search.php:153
+msgid "Clear"
+msgstr ""
+
+#. translators: %s: number of products.
+#: src/Shop/Archive.php:134
+#: src/Widgets/Store/CategoryCircles.php:167
+#, php-format
+msgid "%s product"
+msgid_plural "%s products"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Shop/Archive.php:224
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr ""
+
+#: src/Shop/Archive.php:240
+msgid "Breadcrumbs"
+msgstr ""
+
+#. translators: %s: search words.
+#: src/Shop/Archive.php:253
+#, php-format
+msgid "Search results for \"%s\""
+msgstr ""
+
+#: src/Shop/Archive.php:260
+#: src/Shop/Archive.php:263
+msgid "Shop"
+msgstr ""
+
+#: src/Shop/Archive.php:368
+#: src/Widgets/Shop/Subcategories.php:32
+#: src/Widgets/Shop/Subcategories.php:56
+msgid "Subcategories"
+msgstr ""
+
+#: src/Shop/Archive.php:393
+msgid "Apply filters"
+msgstr ""
+
+#: src/Shop/Archive.php:398
+#: src/Shop/Archive.php:432
+msgid "Remove all"
+msgstr ""
+
+#: src/Shop/Archive.php:429
+msgid "Chosen filters"
+msgstr ""
+
+#: src/Shop/Archive.php:477
+#: src/Shop/Archive.php:562
+#: src/Shop/Archive.php:790
+#: src/Shop/Archive.php:797
+msgid "Sort by"
+msgstr ""
+
+#. translators: %s: number of chosen filters.
+#: src/Shop/Archive.php:556
+#, php-format
+msgid "%s filter chosen"
+msgid_plural "%s filters chosen"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Shop/Archive.php:652
+msgid "No product matches these filters"
+msgstr ""
+
+#: src/Shop/Archive.php:653
+msgid "Remove a filter or two to see more products."
+msgstr ""
+
+#: src/Shop/Archive.php:658
+msgid "Remove all filters"
+msgstr ""
+
+#: src/Shop/Archive.php:671
+msgid "Nothing matched your search"
+msgstr ""
+
+#: src/Shop/Archive.php:671
+msgid "No products here yet"
+msgstr ""
+
+#: src/Shop/Archive.php:672
+msgid "Check the spelling or try fewer or more general words."
+msgstr ""
+
+#. translators: 1: products shown, 2: all products.
+#: src/Shop/Archive.php:693
+#, php-format
+msgid "%1$s of %2$s products shown"
+msgstr ""
+
+#: src/Shop/Archive.php:694
+msgid "Show more products"
+msgstr ""
+
+#: src/Shop/Archive.php:702
+#: src/Widgets/Store/StoreWidget.php:150
+msgid "Previous"
+msgstr ""
+
+#: src/Shop/Archive.php:736
+msgid "Show more"
+msgstr ""
+
+#: src/Shop/Archive.php:737
+msgid "Show less"
+msgstr ""
+
+#: src/Shop/Archive.php:773
+msgid "Remove filters"
+msgstr ""
+
+#: src/Shop/Filters.php:50
+#: src/Shop/Filters.php:228
+msgid "Only available products"
+msgstr ""
+
+#: src/Shop/Filters.php:51
+#: src/Shop/Filters.php:228
+msgid "Only discounted products"
+msgstr ""
+
+#: src/Shop/Filters.php:52
+#: src/Shop/Filters.php:280
+msgid "Category"
+msgstr ""
+
+#: src/Shop/Filters.php:54
+#: src/Shop/Filters.php:451
+msgid "Price range"
+msgstr ""
+
+#: src/Shop/Filters.php:55
+#: src/Shop/Filters.php:517
+msgid "Buyers' rating"
+msgstr ""
+
+#: src/Shop/Filters.php:56
+msgid "Every product attribute"
+msgstr ""
+
+#. translators: %s: attribute name such as Colour.
+#: src/Shop/Filters.php:72
+#, php-format
+msgid "Attribute: %s"
+msgstr ""
+
+#: src/Shop/Filters.php:401
+msgid "Search brands, in Persian or English"
+msgstr ""
+
+#: src/Shop/Filters.php:459
+msgid "From"
+msgstr ""
+
+#: src/Shop/Filters.php:460
+msgid "To"
+msgstr ""
+
+#. translators: %s: number of stars.
+#: src/Shop/Filters.php:505
+#: src/Shop/Filters.php:579
+#, php-format
+msgid "%s stars and up"
+msgstr ""
+
+#. translators: %s: name of a filter value.
+#: src/Shop/Filters.php:533
+#, php-format
+msgid "Remove filter %s"
+msgstr ""
+
+#: src/Shop/Filters.php:547
+msgid "Only available"
+msgstr ""
+
+#: src/Shop/Filters.php:555
+msgid "Only discounted"
+msgstr ""
+
+#. translators: 1: lowest price, 2: highest price, 3: currency.
+#: src/Shop/Filters.php:565
+#, php-format
+msgid "%1$s to %2$s %3$s"
+msgstr ""
+
+#. translators: 1: lowest price, 2: currency.
+#: src/Shop/Filters.php:567
+#, php-format
+msgid "From %1$s %2$s"
+msgstr ""
+
+#. translators: 1: highest price, 2: currency.
+#: src/Shop/Filters.php:569
+#, php-format
+msgid "Up to %1$s %2$s"
+msgstr ""
+
+#: src/Shop/Query.php:48
+#: src/Shop/Query.php:151
+#: src/Store/Catalog.php:35
+msgid "Most viewed"
+msgstr ""
+
+#: src/Shop/Query.php:51
+msgid "Cheapest"
+msgstr ""
+
+#: src/Shop/Query.php:52
+msgid "Most expensive"
+msgstr ""
+
+#: src/Shop/Terms.php:92
+#: src/Shop/Terms.php:143
+msgid "Latin name"
+msgstr ""
+
+#: src/Shop/Terms.php:94
+#: src/Shop/Terms.php:144
+msgid "The brand name in English letters. Search finds the brand by either name."
+msgstr ""
+
+#: src/Shop/Terms.php:113
+msgid "Filters of this category"
+msgstr ""
+
+#: src/Shop/Terms.php:115
+msgid "Same as the parent category, or the store's filters"
+msgstr ""
+
+#: src/Shop/Terms.php:117
+msgid "Only the filters ticked below"
+msgstr ""
+
+#: src/Shop/Terms.php:119
+msgid "Subcategories use these filters too, unless they choose their own."
+msgstr ""
+
+#: src/Shop/Terms.php:123
+msgid "Text under the list"
+msgstr ""
+
+#: src/Shop/Terms.php:133
+msgid "A buying guide or longer text for search engines, shown under the products and folded to a few lines."
+msgstr ""
+
+#: src/Shop/Terms.php:155
+#: src/Shop/Terms.php:172
+#: src/Widgets/Store/QuickLinks.php:96
+msgid "Colour"
+msgstr ""
+
+#: src/Shop/Terms.php:235
+#: src/Shop/Terms.php:249
+msgid "Show values as colour swatches"
+msgstr ""
+
+#: src/Shop/Terms.php:236
+#: src/Shop/Terms.php:251
+msgid "Each value gets a colour. Filters and product cards show the colours."
+msgstr ""
+
+#: src/Store/Cards.php:36
+msgid "Classic with lines"
+msgstr ""
+
+#: src/Store/Cards.php:37
+msgid "Framed, second image on hover"
+msgstr ""
+
+#: src/Store/Cards.php:38
+msgid "Colour swatches, for fashion"
+msgstr ""
+
+#: src/Store/Cards.php:39
+msgid "Row with features"
+msgstr ""
+
+#: src/Store/Cards.php:40
+msgid "Small, supermarket"
+msgstr ""
+
+#: src/Store/Cards.php:41
+msgid "Offer with countdown"
+msgstr ""
+
+#. translators: %s: name of a card layout.
+#: src/Store/Cards.php:55
+#, php-format
+msgid "Designed card: %s"
+msgstr ""
+
+#. translators: %s: brand name.
+#: src/Store/Cards.php:177
+#, php-format
+msgid "Brand: %s"
+msgstr ""
+
+#. translators: %s: number of reviews.
+#: src/Store/Cards.php:182
+#, php-format
+msgid "%s review"
+msgid_plural "%s reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Store/Cards.php:258
 msgid "Call for price"
 msgstr ""
 
 #. translators: %s: rating such as 4.5.
-#: src/Store/Cards.php:75
+#: src/Store/Cards.php:271
 #, php-format
 msgid "Rated %s out of 5"
 msgstr ""
 
+#. translators: %s: number of colours.
+#: src/Store/Cards.php:286
+#, php-format
+msgid "Available in %s colour"
+msgid_plural "Available in %s colours"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of colours.
+#: src/Store/Cards.php:294
+#, php-format
+msgid "%s colour"
+msgid_plural "%s colours"
+msgstr[0] ""
+msgstr[1] ""
+
 #. translators: %s: number of items left.
-#: src/Store/Cards.php:105
+#: src/Store/Cards.php:329
 #, php-format
 msgid "Only %s left in stock"
 msgstr ""
 
-#: src/Store/Cards.php:132
+#: src/Store/Cards.php:342
+msgid "Choose options"
+msgstr ""
+
+#: src/Store/Cards.php:373
 msgid "Time left for this offer"
 msgstr ""
 
 #. translators: %s: percent such as 60%.
-#: src/Store/Cards.php:140
+#: src/Store/Cards.php:381
 #, php-format
 msgid "%s sold"
 msgstr ""
 
 #. translators: %s: percent such as 40%.
-#: src/Store/Cards.php:142
+#: src/Store/Cards.php:383
 #, php-format
 msgid "%s left"
 msgstr ""
 
-#: src/Store/Cards.php:159
+#: src/Store/Cards.php:400
 #: src/Store/Menus.php:220
 #: src/Store/Menus.php:272
 msgid "New"
 msgstr ""
 
-#: src/Store/Cards.php:165
+#: src/Store/Cards.php:406
 msgid "Special"
-msgstr ""
-
-#: src/Store/Catalog.php:35
-msgid "Most viewed"
 msgstr ""
 
 #: src/Store/Catalog.php:36
@@ -3189,10 +3821,12 @@ msgstr ""
 
 #: src/Widgets/General/AnimatedText.php:78
 #: src/Widgets/General/Heading.php:64
+#: src/Widgets/Product/ProductTitle.php:57
 msgid "Heading level"
 msgstr ""
 
 #: src/Widgets/General/AnimatedText.php:83
+#: src/Widgets/Product/ProductTitle.php:63
 msgid "Paragraph"
 msgstr ""
 
@@ -3281,7 +3915,7 @@ msgstr ""
 #: src/Widgets/Store/Banners.php:91
 #: src/Widgets/Store/Deals.php:88
 #: src/Widgets/Store/HeroSlider.php:88
-#: src/Widgets/Store/StoreWidget.php:47
+#: src/Widgets/Store/StoreWidget.php:48
 #: src/Widgets/Store/Stories.php:79
 #: src/Widgets/Store/TrustMarks.php:88
 #: src/Widgets/Store/TrustMarks.php:154
@@ -3373,13 +4007,6 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
-#: src/Widgets/General/Gallery.php:80
-#: src/Widgets/Store/DiscountPicks.php:102
-#: src/Widgets/Store/Posts.php:92
-#: src/Widgets/Store/Products.php:106
-msgid "Columns on desktop"
-msgstr ""
-
 #: src/Widgets/General/Gallery.php:126
 msgid "Previous image"
 msgstr ""
@@ -3407,18 +4034,18 @@ msgstr ""
 
 #: src/Widgets/General/Heading.php:84
 #: src/Widgets/Store/Deals.php:106
-#: src/Widgets/Store/StoreWidget.php:59
+#: src/Widgets/Store/StoreWidget.php:60
 msgid "\"See all\" text"
 msgstr ""
 
 #: src/Widgets/General/Heading.php:85
-#: src/Widgets/Store/StoreWidget.php:60
+#: src/Widgets/Store/StoreWidget.php:61
 msgid "See all"
 msgstr ""
 
 #: src/Widgets/General/Heading.php:90
 #: src/Widgets/Store/Deals.php:112
-#: src/Widgets/Store/StoreWidget.php:65
+#: src/Widgets/Store/StoreWidget.php:66
 msgid "\"See all\" link"
 msgstr ""
 
@@ -3539,7 +4166,7 @@ msgid "Newsletter"
 msgstr ""
 
 #: src/Widgets/General/Newsletter.php:69
-#: src/Widgets/Header/Search.php:69
+#: src/Widgets/Header/Search.php:71
 msgid "Placeholder"
 msgstr ""
 
@@ -3714,10 +4341,6 @@ msgstr ""
 msgid "Show the name above the table"
 msgstr ""
 
-#: src/Widgets/General/Table.php:74
-msgid "Rows"
-msgstr ""
-
 #: src/Widgets/General/Table.php:75
 msgid "One row per line, cells separated by |. The first line is the head."
 msgstr ""
@@ -3760,6 +4383,7 @@ msgid "Or a reusable block"
 msgstr ""
 
 #: src/Widgets/General/Tabs.php:78
+#: src/Widgets/Shop/ArchiveDescription.php:57
 msgid "Description"
 msgstr ""
 
@@ -3959,13 +4583,6 @@ msgstr ""
 msgid "Categories menu"
 msgstr ""
 
-#: src/Widgets/Header/CategoryMenu.php:71
-#: src/Widgets/Store/CategoryCircles.php:74
-#: src/Widgets/Store/CategoryCircles.php:80
-#: src/Widgets/Store/CategoryCircles.php:176
-msgid "Categories"
-msgstr ""
-
 #: src/Widgets/Header/CategoryMenu.php:83
 msgid "Main categories"
 msgstr ""
@@ -3994,7 +4611,7 @@ msgstr ""
 
 #: src/Widgets/Header/HeaderWidget.php:54
 #: src/Widgets/Header/Language.php:55
-#: src/Widgets/Header/Search.php:59
+#: src/Widgets/Header/Search.php:61
 msgid "Show as"
 msgstr ""
 
@@ -4103,30 +4720,15 @@ msgstr ""
 msgid "Name for screen readers"
 msgstr ""
 
-#: src/Widgets/Header/Search.php:37
-#: src/Widgets/Header/Search.php:54
-#: src/Widgets/Header/Search.php:96
-#: src/Widgets/Header/Search.php:97
-#: src/Widgets/Header/Search.php:113
-#: src/Widgets/Header/Search.php:121
-msgid "Search"
-msgstr ""
-
-#: src/Widgets/Header/Search.php:62
+#: src/Widgets/Header/Search.php:64
 msgid "Search field"
 msgstr ""
 
-#: src/Widgets/Header/Search.php:63
+#: src/Widgets/Header/Search.php:65
 msgid "Icon that opens the field (mobile search)"
 msgstr ""
 
-#. translators: %s: store name.
-#: src/Widgets/Header/Search.php:71
-#, php-format
-msgid "Search in %s"
-msgstr ""
-
-#: src/Widgets/Header/Search.php:76
+#: src/Widgets/Header/Search.php:78
 msgid "Search products only"
 msgstr ""
 
@@ -4173,6 +4775,167 @@ msgstr ""
 msgid "Leave empty for the account page."
 msgstr ""
 
+#: src/Widgets/Product/ProductAddToCart.php:28
+msgid "Add to cart button"
+msgstr ""
+
+#: src/Widgets/Product/ProductBadges.php:28
+msgid "Product badges"
+msgstr ""
+
+#: src/Widgets/Product/ProductBrand.php:28
+msgid "Product brand"
+msgstr ""
+
+#: src/Widgets/Product/ProductColors.php:28
+msgid "Product colours"
+msgstr ""
+
+#: src/Widgets/Product/ProductImage.php:31
+#: src/Widgets/Store/Banners.php:135
+#: src/Widgets/Store/HeroSlider.php:140
+msgid "Product image"
+msgstr ""
+
+#: src/Widgets/Product/ProductImage.php:58
+msgid "Show the second picture on hover"
+msgstr ""
+
+#: src/Widgets/Product/ProductRating.php:28
+msgid "Product rating"
+msgstr ""
+
+#: src/Widgets/Product/ProductTitle.php:30
+msgid "Product title"
+msgstr ""
+
+#: src/Widgets/Product/ProductWidget.php:81
+msgid "Shows the product of the card or page."
+msgstr ""
+
+#: src/Widgets/Shop/ActiveFilters.php:32
+#: src/Widgets/Shop/ActiveFilters.php:56
+msgid "Active filters"
+msgstr ""
+
+#: src/Widgets/Shop/ActiveFilters.php:61
+msgid "Shows only when a filter is chosen."
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveDescription.php:33
+msgid "Archive description"
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveDescription.php:62
+msgid "Which text"
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveDescription.php:65
+msgid "Short text at the top"
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveDescription.php:66
+msgid "Long text under the products"
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveHeader.php:33
+#: src/Widgets/Shop/ArchiveHeader.php:57
+msgid "Archive header"
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveHeader.php:62
+msgid "Show breadcrumbs"
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveProducts.php:34
+msgid "Archive products"
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveProducts.php:70
+msgid "0 uses the shop settings."
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveProducts.php:83
+msgid "As in the shop settings"
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveProducts.php:87
+#: src/Widgets/Store/Products.php:108
+msgid "Columns on mobile"
+msgstr ""
+
+#: src/Widgets/Shop/ArchiveProducts.php:91
+msgid "Show \"show more\" and page links"
+msgstr ""
+
+#: src/Widgets/Shop/FilterArea.php:33
+msgid "Filter area"
+msgstr ""
+
+#: src/Widgets/Shop/FilterArea.php:63
+msgid "The filters a category shows are chosen in its edit screen or in the shop settings."
+msgstr ""
+
+#: src/Widgets/Shop/FilterArea.php:66
+msgid "Panel on desktop, \"Filter\" button on phones and tablets"
+msgstr ""
+
+#: src/Widgets/Shop/FilterArea.php:67
+msgid "Panel on desktop only"
+msgstr ""
+
+#: src/Widgets/Shop/FilterArea.php:68
+msgid "\"Filter\" button on phones and tablets only"
+msgstr ""
+
+#: src/Widgets/Shop/PerPage.php:53
+msgid "Choices"
+msgstr ""
+
+#: src/Widgets/Shop/PerPage.php:54
+msgid "Numbers separated by commas, from 12, 24, 36, 48, 72 and 96."
+msgstr ""
+
+#: src/Widgets/Shop/ResultCount.php:32
+#: src/Widgets/Shop/ResultCount.php:47
+msgid "Result count"
+msgstr ""
+
+#: src/Widgets/Shop/ResultCount.php:52
+msgid "Changes with the filters."
+msgstr ""
+
+#: src/Widgets/Shop/Sorting.php:33
+#: src/Widgets/Shop/Sorting.php:57
+msgid "Sorting"
+msgstr ""
+
+#: src/Widgets/Shop/Sorting.php:62
+#: src/Widgets/Store/CategoryCircles.php:114
+msgid "Show the number of products"
+msgstr ""
+
+#: src/Widgets/Shop/Sorting.php:68
+msgid "Show the grid and rows switch"
+msgstr ""
+
+#: src/Widgets/Shop/Sorting.php:74
+msgid "Show a \"Sort\" button on phones and tablets"
+msgstr ""
+
+#: src/Widgets/Shop/Subcategories.php:61
+msgid "Shows the children of the category, or the top categories on the shop page. Pictures come from each category."
+msgstr ""
+
+#: src/Widgets/Shop/ViewToggle.php:33
+#: src/Widgets/Shop/ViewToggle.php:57
+msgid "View switch"
+msgstr ""
+
+#: src/Widgets/Shop/ViewToggle.php:62
+msgid "The shopper's choice is remembered in their browser."
+msgstr ""
+
 #: src/Widgets/Store/Banners.php:33
 #: src/Widgets/Store/Banners.php:68
 #: src/Widgets/Store/Banners.php:85
@@ -4207,11 +4970,6 @@ msgstr ""
 msgid "Colour 2"
 msgstr ""
 
-#: src/Widgets/Store/Banners.php:135
-#: src/Widgets/Store/HeroSlider.php:140
-msgid "Product image"
-msgstr ""
-
 #: src/Widgets/Store/Banners.php:140
 msgid "White text"
 msgstr ""
@@ -4220,26 +4978,8 @@ msgstr ""
 msgid "For dark backgrounds."
 msgstr ""
 
-#: src/Widgets/Store/Bestsellers.php:76
-#: src/Widgets/Store/Deals.php:118
-#: src/Widgets/Store/DiscountPicks.php:76
-#: src/Widgets/Store/Products.php:37
-#: src/Widgets/Store/Products.php:124
-#: src/Widgets/Store/Products.php:192
-#: src/Widgets/Store/ProductTabs.php:96
-#: src/Widgets/Store/ProductTabs.php:186
-#: src/Widgets/Store/StoreWidget.php:89
-msgid "Products"
-msgstr ""
-
 #: src/Widgets/Store/Brands.php:34
 msgid "Shop by brand"
-msgstr ""
-
-#: src/Widgets/Store/Brands.php:74
-#: src/Widgets/Store/Brands.php:80
-#: src/Widgets/Store/Brands.php:140
-msgid "Brands"
 msgstr ""
 
 #: src/Widgets/Store/Brands.php:81
@@ -4259,11 +4999,6 @@ msgstr ""
 msgid "Leave empty to show the main categories."
 msgstr ""
 
-#: src/Widgets/Store/CategoryCircles.php:97
-#: src/Widgets/Store/Products.php:96
-msgid "Grid"
-msgstr ""
-
 #: src/Widgets/Store/CategoryCircles.php:98
 msgid "One scrolling row"
 msgstr ""
@@ -4275,18 +5010,6 @@ msgstr ""
 #: src/Widgets/Store/CategoryCircles.php:108
 msgid "Rounded square"
 msgstr ""
-
-#: src/Widgets/Store/CategoryCircles.php:114
-msgid "Show the number of products"
-msgstr ""
-
-#. translators: %s: number of products.
-#: src/Widgets/Store/CategoryCircles.php:167
-#, php-format
-msgid "%s product"
-msgid_plural "%s products"
-msgstr[0] ""
-msgstr[1] ""
 
 #: src/Widgets/Store/Deals.php:83
 msgid "Band"
@@ -4321,7 +5044,7 @@ msgid "\"All\" chip text"
 msgstr ""
 
 #: src/Widgets/Store/DiscountPicks.php:94
-#: src/Widgets/Store/StoreWidget.php:111
+#: src/Widgets/Store/StoreWidget.php:112
 msgid "Number of products"
 msgstr ""
 
@@ -4379,7 +5102,7 @@ msgstr ""
 
 #: src/Widgets/Store/Posts.php:79
 #: src/Widgets/Store/ProductTabs.php:104
-#: src/Widgets/Store/StoreWidget.php:97
+#: src/Widgets/Store/StoreWidget.php:98
 msgid "Only from these categories"
 msgstr ""
 
@@ -4399,25 +5122,13 @@ msgstr[1] ""
 msgid "Slider"
 msgstr ""
 
-#: src/Widgets/Store/Products.php:102
-msgid "Card design"
-msgstr ""
-
-#: src/Widgets/Store/Products.php:107
-msgid "Columns on tablet"
-msgstr ""
-
-#: src/Widgets/Store/Products.php:108
-msgid "Columns on mobile"
-msgstr ""
-
 #: src/Widgets/Store/Products.php:129
 #: src/Widgets/Store/ProductTabs.php:137
 msgid "Display"
 msgstr ""
 
 #: src/Widgets/Store/ProductTabs.php:110
-#: src/Widgets/Store/StoreWidget.php:105
+#: src/Widgets/Store/StoreWidget.php:106
 msgid "Choose products"
 msgstr ""
 
@@ -4426,54 +5137,30 @@ msgid "Products per tab"
 msgstr ""
 
 #: src/Widgets/Store/ProductTabs.php:130
-#: src/Widgets/Store/StoreWidget.php:119
+#: src/Widgets/Store/StoreWidget.php:120
 msgid "Hide out of stock products"
 msgstr ""
 
-#: src/Widgets/Store/QuickLinks.php:96
-msgid "Colour"
-msgstr ""
-
-#: src/Widgets/Store/StoreWidget.php:53
+#: src/Widgets/Store/StoreWidget.php:54
 msgid "Title icon"
 msgstr ""
 
-#: src/Widgets/Store/StoreWidget.php:66
+#: src/Widgets/Store/StoreWidget.php:67
 msgid "Leave empty to hide the link."
 msgstr ""
 
-#: src/Widgets/Store/StoreWidget.php:71
+#: src/Widgets/Store/StoreWidget.php:72
 msgid "Show in a white box"
 msgstr ""
 
-#: src/Widgets/Store/StoreWidget.php:98
+#: src/Widgets/Store/StoreWidget.php:99
 msgid "Leave empty for all categories."
 msgstr ""
 
-#: src/Widgets/Store/StoreWidget.php:149
-msgid "Previous"
-msgstr ""
-
 #. translators: 1: slide number, 2: number of slides.
-#: src/Widgets/Store/StoreWidget.php:152
+#: src/Widgets/Store/StoreWidget.php:153
 #, php-format
 msgid "%1$s of %2$s"
-msgstr ""
-
-#: src/Widgets/Store/StoreWidget.php:163
-msgid "Framed, second image on hover"
-msgstr ""
-
-#: src/Widgets/Store/StoreWidget.php:164
-msgid "Classic with lines"
-msgstr ""
-
-#: src/Widgets/Store/StoreWidget.php:165
-msgid "Small, supermarket"
-msgstr ""
-
-#: src/Widgets/Store/StoreWidget.php:166
-msgid "Offer with countdown"
 msgstr ""
 
 #: src/Widgets/Store/Stories.php:90

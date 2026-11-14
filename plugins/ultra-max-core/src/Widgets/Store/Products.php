@@ -142,7 +142,7 @@ final class Products extends StoreWidget {
 	 */
 	public function listing( Values $settings, array $products, string $label ): Html {
 		$design = $settings->string( 'design' );
-		$design = in_array( $design, array( 'classic', 'hover', 'deal', 'mini' ), true ) ? $design : 'hover';
+		$design = '' === $design ? 'hover' : $design;
 		$cards  = array();
 		foreach ( $products as $product ) {
 			$cards[] = Cards::card( $product, $design );

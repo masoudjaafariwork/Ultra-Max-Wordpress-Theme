@@ -22,6 +22,10 @@ use UltraMax\Core\Elementor\Data;
 use UltraMax\Core\Store\Catalog;
 use UltraMax\Core\Store\Categories;
 use UltraMax\Core\Store\Menus;
+use UltraMax\Core\Lib\Settings\Store;
+use UltraMax\Core\Shop\Archive;
+use UltraMax\Core\Shop\Filters;
+use UltraMax\Core\Shop\Terms;
 
 if ( ! function_exists( 'wc_get_product' ) || ! class_exists( Layouts::class ) ) {
 	WP_CLI::error( 'WooCommerce and Ultra Max Core must be active.' );
@@ -33,7 +37,7 @@ $images_dir = WP_CONTENT_DIR . '/ultra-max-dev/.cache/seed';
 
 $old = get_posts(
 	array(
-		'post_type'      => array( 'product', 'post', 'page', 'attachment', Layouts::POST_TYPE, 'nav_menu_item' ),
+		'post_type'      => array( 'product', 'product_variation', 'post', 'page', 'attachment', Layouts::POST_TYPE, 'nav_menu_item' ),
 		'post_status'    => 'any',
 		'posts_per_page' => -1,
 		'meta_key'       => '_um_seed',
@@ -135,9 +139,77 @@ foreach ( $tree as $order => list( $name, $icon, $children ) ) {
 }
 
 $brands = array();
-foreach ( array( 'نوویکس', 'زنترا', 'لومو', 'اوربیس', 'کاویرا', 'سپینو', 'تیرنگ' ) as $brand ) {
+foreach ( array( 'نوویکس' => 'Novix', 'زنترا' => 'Zentra', 'لومو' => 'Lumo', 'اوربیس' => 'Orbis', 'کاویرا' => 'Kavira', 'سپینو' => 'Sepino', 'تیرنگ' => 'Tirang' ) as $brand => $latin ) {
 	$brands[ $brand ] = taxonomy_exists( 'product_brand' ) ? $term( $brand, 'product_brand' ) : 0;
+	if ( $brands[ $brand ] ) {
+		update_term_meta( $brands[ $brand ], Filters::LATIN_META, $latin );
+	}
 }
+
+/* ------------------------------------------------------------------ attributes (PLP-01, PLP-07) */
+
+/**
+ * Makes a global product attribute and registers its taxonomy for this run.
+ *
+ * @param string $slug  Attribute slug.
+ * @param string $label Name.
+ */
+$attribute = static function ( string $slug, string $label ): string {
+	$taxonomy = wc_attribute_taxonomy_name( $slug );
+	if ( ! wc_attribute_taxonomy_id_by_name( $taxonomy ) ) {
+		wc_create_attribute( array( 'name' => $label, 'slug' => $slug, 'type' => 'select', 'order_by' => 'menu_order', 'has_archives' => false ) );
+	}
+	if ( ! taxonomy_exists( $taxonomy ) ) {
+		register_taxonomy( $taxonomy, array( 'product', 'product_variation' ), array( 'hierarchical' => false, 'show_ui' => false, 'query_var' => true, 'rewrite' => false ) );
+	}
+	return $taxonomy;
+};
+$color_tax  = $attribute( 'color', 'رنگ' );
+$memory_tax = $attribute( 'memory', 'حافظه داخلی' );
+$size_tax   = $attribute( 'size', 'سایز' );
+Terms::set_swatch( $color_tax, true );
+$colors = array();
+foreach ( array( 'مشکی' => '#23252e', 'سفید' => '#f4f5f7', 'بنفش' => '#6158e6', 'نارنجی' => '#ff9a1f', 'فیروزه‌ای' => '#149a9c', 'آبی' => '#2c7be5' ) as $name => $hex ) {
+	$colors[ $name ] = $term( $name, $color_tax );
+	update_term_meta( $colors[ $name ], Filters::COLOR_META, $hex );
+}
+$memories = array();
+foreach ( array( '۱۲۸ گیگابایت', '۲۵۶ گیگابایت', '۵۱۲ گیگابایت' ) as $name ) {
+	$memories[ $name ] = $term( $name, $memory_tax );
+}
+$sizes = array();
+foreach ( array( 'S', 'M', 'L', 'XL', '۴۰', '۴۱', '۴۲', '۴۳' ) as $name ) {
+	$sizes[ $name ] = $term( $name, $size_tax );
+}
+
+/**
+ * A product attribute with chosen terms.
+ *
+ * @param string $taxonomy  Attribute taxonomy.
+ * @param array  $ids       Term ids.
+ * @param bool   $variation Whether variations use it.
+ */
+$product_attribute = static function ( string $taxonomy, array $ids, bool $variation = false ): WC_Product_Attribute {
+	$item = new WC_Product_Attribute();
+	$item->set_id( wc_attribute_taxonomy_id_by_name( $taxonomy ) );
+	$item->set_name( $taxonomy );
+	$item->set_options( array_values( array_filter( $ids ) ) );
+	$item->set_visible( true );
+	$item->set_variation( $variation );
+	return $item;
+};
+$product_colors = array(
+	'phone'      => array( 'مشکی', 'بنفش', 'سفید' ),
+	'laptop'     => array( 'مشکی', 'سفید' ),
+	'headphones' => array( 'مشکی', 'نارنجی', 'سفید' ),
+	'watch'      => array( 'فیروزه‌ای', 'مشکی' ),
+	'sneaker'    => array( 'بنفش', 'مشکی', 'سفید' ),
+	'tshirt'     => array( 'نارنجی', 'بنفش', 'سفید', 'مشکی' ),
+	'speaker'    => array( 'نارنجی', 'مشکی' ),
+	'backpack'   => array( 'فیروزه‌ای', 'مشکی' ),
+	'camera'     => array( 'مشکی' ),
+	'kettle'     => array( 'سفید', 'آبی' ),
+);
 
 /* ------------------------------------------------------------------ products */
 
@@ -191,16 +263,81 @@ foreach ( $products as $index => list( $title, $picture, $category, $brand, $reg
 	if ( isset( $units[ $picture ] ) ) {
 		$product->update_meta_data( 'um_unit', $units[ $picture ] );
 	}
+	$product->set_sku( sprintf( 'UM-%03d', $index + 1 ) );
+	$attributes = array();
+	if ( isset( $product_colors[ $picture ] ) ) {
+		$attributes[] = $product_attribute( $color_tax, array_map( static fn ( string $name ): int => $colors[ $name ], $product_colors[ $picture ] ) );
+	}
+	if ( in_array( $picture, array( 'phone', 'laptop' ), true ) ) {
+		$attributes[] = $product_attribute( $memory_tax, array( 'phone' === $picture ? $memories['۲۵۶ گیگابایت'] : $memories['۵۱۲ گیگابایت'] ) );
+	}
+	if ( 'sneaker' === $picture ) {
+		$attributes[] = $product_attribute( $size_tax, array( $sizes['۴۰'], $sizes['۴۱'], $sizes['۴۲'], $sizes['۴۳'] ) );
+	}
+	$product->set_attributes( $attributes );
 	$id = $product->save();
 	if ( $brands[ $brand ] ?? 0 ) {
 		wp_set_object_terms( $id, array( $brands[ $brand ] ), 'product_brand' );
 	}
 }
+// A variable product: colours with their own picture, sizes, one sold-out size (PLP-07 swatch card).
+$variable = new WC_Product_Variable();
+$variable->set_name( 'تی‌شرت ورزشی سپینو مدل Run با پارچه خنک' );
+$variable->set_status( 'publish' );
+$variable->set_category_ids( array_filter( array( $cat['پوشاک ورزشی'] ?? 0 ) ) );
+$variable->set_image_id( $image( 'tshirt' ) );
+$variable->set_sku( 'UM-RUN' );
+$variable->set_short_description( 'محصولی ساختگی برای نمایش طرح فروشگاه.' );
+$variable->set_attributes(
+	array(
+		$product_attribute( $color_tax, array( $colors['نارنجی'], $colors['بنفش'], $colors['مشکی'] ), true ),
+		$product_attribute( $size_tax, array( $sizes['S'], $sizes['M'], $sizes['L'], $sizes['XL'] ), true ),
+	)
+);
+$variable->update_meta_data( '_um_seed', 1 );
+$variable_id = $variable->save();
+foreach ( array( 'نارنجی' => 'tshirt', 'بنفش' => 'sneaker', 'مشکی' => 'backpack' ) as $color => $picture ) {
+	foreach ( array( 'S', 'M', 'L', 'XL' ) as $size ) {
+		$variation = new WC_Product_Variation();
+		$variation->set_parent_id( $variable_id );
+		$variation->set_attributes( array( $color_tax => get_term( $colors[ $color ] )->slug, $size_tax => get_term( $sizes[ $size ] )->slug ) );
+		$variation->set_regular_price( '590000' );
+		$variation->set_sale_price( '449000' );
+		$variation->set_manage_stock( true );
+		$variation->set_stock_quantity( 'S' === $size ? 0 : 12 );
+		$variation->set_image_id( $image( $picture ) );
+		$variation->update_meta_data( '_um_seed', 1 );
+		$variation->save();
+	}
+}
+WC_Product_Variable::sync( $variable_id );
+if ( $brands['سپینو'] ?? 0 ) {
+	wp_set_object_terms( $variable_id, array( $brands['سپینو'] ), 'product_brand' );
+}
+
 foreach ( $brands as $brand_id ) {
 	if ( $brand_id ) {
 		wp_update_term_count_now( array( $brand_id ), 'product_brand' );
 	}
 }
+
+// WooCommerce filters attributes through its lookup table, which a live store fills in the background.
+$lookup = '\Automattic\WooCommerce\Internal\ProductAttributesLookup\LookupDataStore';
+if ( class_exists( $lookup ) && function_exists( 'wc_get_container' ) ) {
+	foreach ( wc_get_products( array( 'limit' => -1, 'return' => 'ids', 'status' => 'publish' ) ) as $product_id ) {
+		wc_get_container()->get( $lookup )->create_data_for_product( (int) $product_id );
+	}
+}
+
+// Category texts (PLP-10) and the search window's popular searches (SRCH-04).
+wp_update_term( $cat['کالای دیجیتال'], 'product_cat', array( 'description' => 'گوشی، لپ‌تاپ، هدفون، ساعت هوشمند و دوربین با ضمانت اصالت کالا.' ) );
+update_term_meta(
+	$cat['کالای دیجیتال'],
+	Archive::BOTTOM_META,
+	'<h2>راهنمای خرید کالای دیجیتال</h2><p>این متن نمونه راهنمای پایین دسته است و فروشنده آن را برای هر دسته جدا می‌نویسد. موتورهای جستجو همه متن را می‌خوانند و خریدار می‌تواند آن را باز و بسته کند.</p><h3>چه هدفونی بخرم؟</h3><p>اگر بیشتر در رفت‌وآمد هستید، حذف نویز فعال و باتری بلند اهمیت بیشتری دارد. برای ورزش، مقاومت در برابر عرق و وزن کم را در نظر بگیرید.</p><h3>لپ‌تاپ کاری یا گیمینگ؟</h3><p>برای کار روزانه، باتری و وزن مهم‌تر است. برای بازی، کارت گرافیک و خنک‌کنندگی را مقایسه کنید.</p>'
+);
+Store::save( array( 'search_popular' => "هدفون بی‌سیم\nساعت هوشمند\nگوشی نوویکس\nقهوه" ) );
+update_option( 'woocommerce_coming_soon', 'no' );
 wc_delete_product_transients();
 Catalog::flush();
 Categories::flush();

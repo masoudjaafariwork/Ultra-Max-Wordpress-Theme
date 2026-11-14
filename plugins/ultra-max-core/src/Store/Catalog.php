@@ -178,7 +178,8 @@ final class Catalog {
 		$images = array();
 		foreach ( $ids as $id ) {
 			$product = wc_get_product( $id );
-			if ( $product instanceof \WC_Product && $product->is_visible() ) {
+			// Password protected products never show in public lists.
+			if ( $product instanceof \WC_Product && $product->is_visible() && '' === $product->get_post_password() ) {
 				$out[]    = $product;
 				$images[] = (int) $product->get_image_id();
 				$gallery  = $product->get_gallery_image_ids();

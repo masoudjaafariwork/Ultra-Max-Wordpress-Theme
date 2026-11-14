@@ -16,12 +16,18 @@ namespace UltraMax\UI;
  * Each item may carry filter keys (`keys`) that a filter above the grid
  * uses to show and hide cards (HOME-09).
  *
+ * `view` shows the cards as rows (PLP-05); the view switch of a product
+ * list changes it in the browser. `mobile: 'list'` shows rows on phones
+ * whatever the view, as product lists do on small screens.
+ *
  * @phpstan-type GridItem array{card: Html, keys?: list<string>}
  * @phpstan-type ProductGridProps array{
  *     items: list<GridItem>,
  *     label: string,
  *     columns?: array{mobile?: int, tablet?: int, desktop?: int},
  *     lined?: bool,
+ *     view?: 'grid'|'list',
+ *     mobile?: 'cards'|'list',
  *     id?: string,
  *     class?: string,
  * }
@@ -70,8 +76,10 @@ final class ProductGrid {
 				'<ul%1$s>%2$s</ul>',
 				Attributes::render(
 					array(
-						'id'         => $props['id'] ?? null,
-						'class'      => Attributes::classes(
+						'id'          => $props['id'] ?? null,
+						'data-view'   => $props['view'] ?? null,
+						'data-mobile' => 'list' === ( $props['mobile'] ?? 'cards' ) ? 'list' : null,
+						'class'       => Attributes::classes(
 							'um-product-grid m-0 grid list-none p-0',
 							$lined ? 'gap-0 overflow-hidden rounded-lg border-e border-t border-border bg-surface' : 'gap-3',
 							$mobile[ max( 1, min( 3, $columns['mobile'] ?? 2 ) ) ],
@@ -79,7 +87,7 @@ final class ProductGrid {
 							$desktop[ max( 3, min( 6, $columns['desktop'] ?? 4 ) ) ],
 							$props['class'] ?? null
 						),
-						'aria-label' => $props['label'],
+						'aria-label'  => $props['label'],
 					)
 				),
 				$items

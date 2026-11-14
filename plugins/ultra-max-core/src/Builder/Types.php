@@ -11,9 +11,9 @@ namespace UltraMax\Core\Builder;
 
 /**
  * Each type names the place of the page it replaces (its location) and
- * whether it can be used yet. Header, footer and reusable blocks work now;
- * the store and blog types become usable in phase 4 together with their
- * widgets (BLD-04 to BLD-07), so the panel does not offer them before.
+ * whether it can be used yet. Header, footer and reusable blocks are always
+ * ready; a module marks its own types ready together with their widgets
+ * (BLD-04 to BLD-07), so the panel never offers a type it cannot fill.
  *
  * @phpstan-type LayoutType array{label: string, plural: string, description: string, icon: string, location: string, ready: bool, sticky: bool}
  */
@@ -54,8 +54,8 @@ final class Types {
 				'sticky'      => false,
 			),
 			'single-product'   => self::later( __( 'Single product', 'ultra-max-core' ), __( 'Single products', 'ultra-max-core' ), 'single' ),
-			'shop-archive'     => self::later( __( 'Shop archive', 'ultra-max-core' ), __( 'Shop archives', 'ultra-max-core' ), 'archive' ),
-			'product-card'     => self::later( __( 'Product card', 'ultra-max-core' ), __( 'Product cards', 'ultra-max-core' ), '' ),
+			'shop-archive'     => self::later( __( 'Shop archive', 'ultra-max-core' ), __( 'Shop archives', 'ultra-max-core' ), 'shop-archive', __( 'The product lists: the shop, categories, brands and product search. Use the shop widgets for filters, sorting and products.', 'ultra-max-core' ) ),
+			'product-card'     => self::later( __( 'Product card', 'ultra-max-core' ), __( 'Product cards', 'ultra-max-core' ), '', __( 'One product in lists and sliders. Choose it as the card design in the shop settings or in a products widget.', 'ultra-max-core' ) ),
 			'cart'             => self::later( __( 'Cart', 'ultra-max-core' ), __( 'Carts', 'ultra-max-core' ), '' ),
 			'checkout-form'    => self::later( __( 'Checkout form', 'ultra-max-core' ), __( 'Checkout forms', 'ultra-max-core' ), '' ),
 			'checkout-content' => self::later( __( 'Checkout content', 'ultra-max-core' ), __( 'Checkout contents', 'ultra-max-core' ), '' ),
@@ -105,14 +105,15 @@ final class Types {
 	 *
 	 * @param string $label    Name.
 	 * @param string $plural   Name of many.
-	 * @param string $location Page location it replaces.
+	 * @param string $location    Page location it replaces.
+	 * @param string $description What it is for.
 	 * @return LayoutType
 	 */
-	private static function later( string $label, string $plural, string $location ): array {
+	private static function later( string $label, string $plural, string $location, string $description = '' ): array {
 		return array(
 			'label'       => $label,
 			'plural'      => $plural,
-			'description' => '',
+			'description' => $description,
 			'icon'        => 'layers',
 			'location'    => $location,
 			'ready'       => false,

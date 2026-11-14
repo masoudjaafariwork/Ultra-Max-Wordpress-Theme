@@ -55,7 +55,8 @@ final class Context {
 		} elseif ( is_404() ) {
 			return new self( '404', roles: $roles );
 		} elseif ( is_search() ) {
-			return new self( 'search', roles: $roles );
+			// A product search is also a product list, for the "shop" rule.
+			return new self( 'search', is_post_type_archive( 'product' ) ? 'product' : '', roles: $roles );
 		} elseif ( is_home() ) {
 			return new self( 'blog', 'post', roles: $roles );
 		} elseif ( is_singular() ) {

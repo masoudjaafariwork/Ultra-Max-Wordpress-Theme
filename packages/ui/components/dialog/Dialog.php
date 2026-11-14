@@ -15,23 +15,27 @@ namespace UltraMax\UI;
  * Open it with a Button whose `opens` prop is the dialog id, or from code
  * with `UltraMaxUI.get( element ).open()`.
  *
+ * `full` fills the screen on phones and is a wide window elsewhere, as the
+ * phone search does (SRCH-04).
+ *
  * @phpstan-type DialogProps array{
  *     id: string,
  *     title: string|Html,
  *     children: string|Html|array<int, string|Html>,
  *     footer?: string|Html|array<int, string|Html>,
- *     size?: 'md'|'sm'|'lg',
+ *     size?: 'md'|'sm'|'lg'|'full',
  *     class?: string,
  * }
  */
 final class Dialog {
 
-	public const SIZES = array( 'md', 'sm', 'lg' );
+	public const SIZES = array( 'md', 'sm', 'lg', 'full' );
 
 	private const SIZE_CLASSES = array(
-		'sm' => 'w-[min(400px,calc(100vw-32px))]',
-		'md' => 'w-[min(560px,calc(100vw-32px))]',
-		'lg' => 'w-[min(800px,calc(100vw-32px))]',
+		'sm'   => 'w-[min(400px,calc(100vw-32px))]',
+		'md'   => 'w-[min(560px,calc(100vw-32px))]',
+		'lg'   => 'w-[min(800px,calc(100vw-32px))]',
+		'full' => 'w-[min(680px,calc(100vw-32px))] max-md:m-0 max-md:h-dvh max-md:max-h-none max-md:w-full max-md:max-w-none max-md:rounded-none',
 	);
 
 	/**

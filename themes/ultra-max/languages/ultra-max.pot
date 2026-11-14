@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T15:11:38+00:00\n"
+"POT-Creation-Date: 2026-11-14T10:04:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ultra-max\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 #. translators: %s: number of comments.
 #: comments.php:25
-#: src/Template.php:400
+#: src/Template.php:416
 #, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
@@ -97,14 +97,14 @@ msgid "Categories (opens the menu)"
 msgstr ""
 
 #: src/BottomNav.php:31
-#: src/BottomNav.php:177
-#: src/Template.php:249
+#: src/BottomNav.php:179
+#: src/Template.php:265
 msgid "Cart"
 msgstr ""
 
 #: src/BottomNav.php:32
 #: src/BottomNav.php:134
-#: src/Template.php:247
+#: src/Template.php:263
 msgid "My account"
 msgstr ""
 
@@ -116,8 +116,8 @@ msgstr ""
 #: src/BottomNav.php:34
 #: src/BottomNav.php:145
 #: src/Template.php:157
+#: src/Template.php:175
 #: src/Template.php:176
-#: src/Template.php:177
 msgid "Search"
 msgstr ""
 
@@ -129,11 +129,11 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: src/BottomNav.php:151
+#: src/BottomNav.php:153
 msgid "Link"
 msgstr ""
 
-#: src/BottomNav.php:193
+#: src/BottomNav.php:195
 msgid "Bottom navigation"
 msgstr ""
 
@@ -516,7 +516,7 @@ msgid "Centre"
 msgstr ""
 
 #: src/Options.php:528
-#: src/Template.php:341
+#: src/Template.php:357
 msgid "Breadcrumbs"
 msgstr ""
 
@@ -712,64 +712,64 @@ msgstr ""
 msgid "A round button that appears after scrolling and returns to the top."
 msgstr ""
 
-#: src/Template.php:179
+#: src/Template.php:178
 msgid "Search the store…"
 msgstr ""
 
-#: src/Template.php:254
+#: src/Template.php:270
 msgid "Menu"
 msgstr ""
 
-#: src/Template.php:258
-#: src/Template.php:280
+#: src/Template.php:274
+#: src/Template.php:296
 msgid "Main menu"
 msgstr ""
 
-#: src/Template.php:310
+#: src/Template.php:326
 #: src/Theme.php:90
 msgid "Footer menu"
 msgstr ""
 
 #. translators: 1: year, 2: site name.
-#: src/Template.php:318
+#: src/Template.php:334
 #, php-format
 msgid "© %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: src/Template.php:374
+#: src/Template.php:390
 msgid "Published on"
 msgstr ""
 
-#: src/Template.php:382
+#: src/Template.php:398
 #: vendor-prefixed/ui/components/comments/Comments.php:54
 msgid "Author"
 msgstr ""
 
-#: src/Template.php:392
+#: src/Template.php:408
 msgid "Category"
 msgstr ""
 
-#: src/Template.php:420
+#: src/Template.php:436
 msgid "(no title)"
 msgstr ""
 
-#: src/Template.php:425
+#: src/Template.php:441
 msgid "Featured"
 msgstr ""
 
-#: src/Template.php:441
+#: src/Template.php:457
 msgid "Pages"
 msgstr ""
 
-#: src/Template.php:446
+#: src/Template.php:462
 msgid "Previous"
 msgstr ""
 
-#: src/Template.php:447
+#: src/Template.php:463
 msgid "Next"
 msgstr ""
 
-#: src/Template.php:474
+#: src/Template.php:490
 msgid "Skip to content"
 msgstr ""
 

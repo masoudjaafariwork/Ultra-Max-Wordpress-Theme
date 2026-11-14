@@ -1,6 +1,6 @@
 <?php
 /**
- * Every Ultra Max widget (HDR-02, HOME-01 to HOME-12, BLD-08, BLD-12).
+ * Every Ultra Max widget (HDR-02, HOME-01 to HOME-12, BLD-05, BLD-08, BLD-12, PLP-08).
  *
  * @package UltraMax\Core
  */
@@ -70,6 +70,25 @@ final class Widgets {
 			Store\TrustMarks::class,
 			Store\QuickLinks::class,
 			Store\WooHook::class,
+			Shop\ArchiveHeader::class,
+			Shop\Subcategories::class,
+			Shop\ArchiveProducts::class,
+			Shop\FilterArea::class,
+			Shop\ActiveFilters::class,
+			Shop\Sorting::class,
+			Shop\PerPage::class,
+			Shop\ResultCount::class,
+			Shop\ViewToggle::class,
+			Shop\ArchiveDescription::class,
+			Product\ProductImage::class,
+			Product\ProductTitle::class,
+			Product\ProductPrice::class,
+			Product\ProductRating::class,
+			Product\ProductBadges::class,
+			Product\ProductColors::class,
+			Product\ProductBrand::class,
+			Product\ProductStock::class,
+			Product\ProductAddToCart::class,
 			General\Heading::class,
 			General\Button::class,
 			General\Text::class,
