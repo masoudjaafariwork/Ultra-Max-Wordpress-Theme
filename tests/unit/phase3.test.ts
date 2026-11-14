@@ -46,6 +46,14 @@ describe( 'responsive rules keep winning across stylesheets (BLD-12)', () => {
 		expect( widget.css.startsWith( `@layer ${ LAYER_ORDER.join( ', ' ) };` ) ).toBe( true );
 	} );
 
+	it( 'also leaves out a selector the storefront file styles in a merged rule', async () => {
+		const storefront = await postcss( [ layerMedia() ] ).process( '@layer utilities{.text-danger,.text-danger-text{color:red}@supports (color:color-mix(in lab, red, red)){.text-danger-text{color:darkred}}}', { from: undefined } );
+		const known = layeredRuleKeys( storefront.root );
+		const widget = await postcss( [ layerMedia(), dropKnown( known ) ] ).process( '@layer utilities{.text-danger-text{color:red}.text-link,.text-danger{color:red}@supports (color:color-mix(in lab, red, red)){.text-danger-text{color:darkred}}}', { from: undefined } );
+		expect( widget.css ).not.toContain( '.text-danger-text' );
+		expect( widget.css ).toContain( '.text-link{color:red}' );
+	} );
+
 	it( 'is applied to every built widget stylesheet', () => {
 		const built = path.join( root, 'plugins/ultra-max-core/assets/build/ui/widgets' );
 		const files = fs.existsSync( built ) ? fs.readdirSync( built ).filter( ( file ) => file.endsWith( '.css' ) ) : [];

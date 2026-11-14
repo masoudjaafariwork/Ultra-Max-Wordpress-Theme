@@ -338,6 +338,25 @@ update_term_meta(
 );
 Store::save( array( 'search_popular' => "هدفون بی‌سیم\nساعت هوشمند\nگوشی نوویکس\nقهوه" ) );
 update_option( 'woocommerce_coming_soon', 'no' );
+// Toman has no decimals.
+update_option( 'woocommerce_price_num_decimals', 0 );
+// WooCommerce made its pages before the site was Persian; their titles show in breadcrumbs.
+foreach ( array(
+	'shop'      => 'فروشگاه',
+	'cart'      => 'سبد خرید',
+	'checkout'  => 'تسویه حساب',
+	'myaccount' => 'حساب کاربری',
+) as $woo_page => $woo_title ) {
+	$woo_id = wc_get_page_id( $woo_page );
+	if ( $woo_id > 0 ) {
+		wp_update_post(
+			array(
+				'ID'         => $woo_id,
+				'post_title' => $woo_title,
+			)
+		);
+	}
+}
 wc_delete_product_transients();
 Catalog::flush();
 Categories::flush();

@@ -112,20 +112,24 @@ layerMedia.postcss = true;
 /**
  * Identity of one rule: its at-rule ancestors, selector and declarations.
  *
- * @param {import('postcss').Rule} rule Rule.
+ * @param {import('postcss').Rule} rule     Rule.
+ * @param {string}                 selector One selector of the rule; all of them by default.
  * @return {string} Key.
  */
-function ruleKey( rule ) {
+function ruleKey( rule, selector = rule.selector ) {
 	const parts = [];
 	for ( let node = rule.parent; node && node.type === 'atrule'; node = node.parent ) {
 		parts.unshift( `@${ node.name } ${ node.params }` );
 	}
 	const body = rule.nodes.map( ( node ) => node.toString() ).join( ';' );
-	return `${ parts.join( '>' ) }>${ rule.selector }{${ body }}`;
+	return `${ parts.join( '>' ) }>${ selector }{${ body }}`;
 }
 
 /**
- * Keys of every rule inside cascade layers of a stylesheet.
+ * Keys of every rule inside cascade layers of a stylesheet, and of each
+ * selector of a rule on its own: the optimizer merges `.text-danger` and
+ * `.text-danger-text` into one rule there, while a widget file may hold
+ * only one of them.
  *
  * @param {import('postcss').Root} root Parsed stylesheet.
  * @return {Set<string>} Keys.
@@ -135,6 +139,9 @@ export function layeredRuleKeys( root ) {
 	root.walkRules( ( rule ) => {
 		if ( rule.parent?.type === 'atrule' ) {
 			keys.add( ruleKey( rule ) );
+			for ( const selector of rule.selectors ) {
+				keys.add( ruleKey( rule, selector ) );
+			}
 		}
 	} );
 	return keys;
@@ -157,8 +164,19 @@ export function dropKnown( known ) {
 		postcssPlugin: 'um-drop-known',
 		Once( root ) {
 			root.walkRules( ( rule ) => {
-				if ( rule.parent?.type === 'atrule' && rule.parent.name !== 'keyframes' && known.has( ruleKey( rule ) ) ) {
+				if ( rule.parent?.type !== 'atrule' || rule.parent.name === 'keyframes' ) {
+					return;
+				}
+				if ( known.has( ruleKey( rule ) ) ) {
 					rule.remove();
+					return;
+				}
+				// Keep only the selectors the storefront file does not already style this way.
+				const left = rule.selectors.filter( ( selector ) => ! known.has( ruleKey( rule, selector ) ) );
+				if ( 0 === left.length ) {
+					rule.remove();
+				} else if ( left.length < rule.selectors.length ) {
+					rule.selectors = left;
 				}
 			} );
 			// Remove at-rules left empty, innermost first.

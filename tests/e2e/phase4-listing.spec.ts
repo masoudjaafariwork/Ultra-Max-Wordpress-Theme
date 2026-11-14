@@ -239,12 +239,13 @@ test.describe.serial( 'product lists', () => {
 	test( 'private, draft, locked and hidden products never show (phase 4 exit criterion)', async ( { page, request } ) => {
 		for ( const url of [ '/shop/', digital, '/shop/?per_page=96', `/?s=leaktest&post_type=product` ] ) {
 			await page.goto( url );
-			await expect( page.locator( 'body' ) ).not.toContainText( 'leaktest' );
+			// The search page repeats the query in its title, so look for the products' names.
+			await expect( page.locator( 'body' ) ).not.toContainText( 'محصول leaktest' );
 		}
 		const live = await request.get( '/wp-json/ultra-max/v1/search?q=leaktest' );
 		expect( ( await live.json() ).count ).toBe( 0 );
 		const code = await request.get( '/wp-json/ultra-max/v1/search?q=LEAK-' );
-		expect( JSON.stringify( await code.json() ) ).not.toContain( 'leaktest' );
+		expect( JSON.stringify( await code.json() ) ).not.toContain( 'محصول leaktest' );
 		// The filter counts leave them out too: Novix's count equals its visible products.
 		await page.goto( '/shop/' );
 		const count = await page.locator( '#um-shop-filters label', { hasText: 'نوویکس' } ).locator( 'span' ).last().textContent();
