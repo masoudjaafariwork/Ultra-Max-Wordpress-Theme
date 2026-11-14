@@ -291,6 +291,8 @@ test.describe.serial( 'customer account', () => {
 
 	test( 'the store adds a tracking code on the order screen; the shopper is told (SHIP-03)', async ( { page } ) => {
 		const order = Number( wp( 'eval', '$o = wc_get_orders( array( "meta_key" => "_um_demo", "meta_value" => "preparing", "limit" => 1 ) ); echo $o[0]->get_id();' ) );
+		const clear = (): string => wp( 'eval', `$o = wc_get_order( ${ order } ); $o->delete_meta_data( "_um_tracking_code" ); $o->delete_meta_data( "_um_tracking_carrier" ); $o->delete_meta_data( "_um_tracking_date" ); $o->save(); foreach ( wc_get_order_notes( array( "order_id" => ${ order } ) ) as $n ) { if ( str_contains( $n->content, "TPX-5566" ) ) { wc_delete_order_note( $n->id ); } }` );
+		clear();
 		await page.goto( '/wp-login.php' );
 		await page.locator( '#user_login' ).fill( 'admin' );
 		await page.locator( '#user_pass' ).fill( 'password' );
@@ -301,8 +303,8 @@ test.describe.serial( 'customer account', () => {
 		await page.locator( 'button.save_order, #publish' ).first().click();
 		await expect( page.locator( '#um-tracking-code' ) ).toHaveValue( 'TPX-5566' );
 		const notes = wp( 'eval', `echo count( wc_get_order_notes( array( "order_id" => ${ order }, "type" => "customer" ) ) );` );
+		clear();
 		expect( Number( notes ) ).toBeGreaterThan( 0 );
-		wp( 'eval', `$o = wc_get_order( ${ order } ); $o->delete_meta_data( "_um_tracking_code" ); $o->delete_meta_data( "_um_tracking_carrier" ); $o->delete_meta_data( "_um_tracking_date" ); $o->save();` );
 	} );
 } );
 
