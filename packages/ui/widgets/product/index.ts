@@ -8,7 +8,12 @@ import { productSections } from './sections.behavior';
 import { stickyBuy } from './sticky-buy.behavior';
 import { share } from './share.behavior';
 import { recentProducts } from './recent.behavior';
+import { delivery } from './delivery.behavior';
+import { bundle } from './bundle.behavior';
 import { seoText } from '../shop/seo-text.behavior';
+
+window.UltraMaxUI?.define( 'delivery', delivery );
+window.UltraMaxUI?.define( 'bundle', bundle );
 
 window.UltraMaxUI?.define( 'product-gallery', productGallery );
 window.UltraMaxUI?.define( 'purchase', purchase );

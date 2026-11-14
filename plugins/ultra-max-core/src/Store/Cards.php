@@ -387,35 +387,14 @@ final class Cards {
 	}
 
 	/**
-	 * Badges of a product: new, best seller, free shipping.
+	 * Badges of a product: new, special sale, featured, free shipping, its
+	 * own label and the store's rules (PDP-15).
 	 *
 	 * @param \WC_Product $product Product.
 	 * @return list<array{label: string, tone: 'hot'|'new'|'brand'|'neutral', icon?: string}>
 	 */
 	public static function badges( \WC_Product $product ): array {
-		$badges  = array();
-		$created = $product->get_date_created();
-		if ( $created instanceof \WC_DateTime && $created->getTimestamp() > time() - 14 * DAY_IN_SECONDS ) {
-			$badges[] = array(
-				'label' => __( 'New', 'ultra-max-core' ),
-				'tone'  => 'new',
-			);
-		}
-		if ( $product->is_featured() ) {
-			$badges[] = array(
-				'label' => __( 'Special', 'ultra-max-core' ),
-				'tone'  => 'hot',
-				'icon'  => 'fire',
-			);
-		}
-		$label = $product->get_meta( 'um_badge' );
-		if ( is_string( $label ) && '' !== $label ) {
-			$badges[] = array(
-				'label' => $label,
-				'tone'  => 'brand',
-			);
-		}
-		return $badges;
+		return Badges::for( $product );
 	}
 
 	/**

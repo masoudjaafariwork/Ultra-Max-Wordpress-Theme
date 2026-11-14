@@ -55,6 +55,11 @@ final class Product {
 		Related::register();
 		Reviews::register();
 		Questions::register();
+		Delivery::register();
+		Sales::register();
+		SizeGuide::register();
+		Tabs::register();
+		Bundle::register();
 		add_filter( 'template_include', array( self::class, 'template' ), 50 );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'assets' ), 20 );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'drop_woocommerce_assets' ), 100 );

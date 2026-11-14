@@ -107,6 +107,7 @@ final class Page {
 		$info  = array(
 			self::heading(),
 			self::picker(),
+			self::size_guide(),
 			self::key_features(),
 			self::notice(),
 		);
@@ -365,6 +366,14 @@ final class Page {
 				'reset'      => __( 'Clear choices', 'ultra-max-core' ),
 			)
 		);
+	}
+
+	/**
+	 * The "Size guide" button (PDP-13).
+	 */
+	public static function size_guide(): Html {
+		$product = self::product();
+		return null === $product ? Html::none() : SizeGuide::button( $product );
 	}
 
 	/**

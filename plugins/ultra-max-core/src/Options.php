@@ -498,6 +498,119 @@ final class Options {
 					),
 				),
 				array(
+					'id'          => 'product_selling',
+					'title'       => __( 'Delivery, badges and offers', 'ultra-max-core' ),
+					'icon'        => 'truck',
+					'features'    => array( 'PDP-15', 'PDP-16', 'PDP-17', 'PDP-18', 'PDP-19' ),
+					'module'      => Product\Product::MODULE,
+					'description' => __( 'Each shipping method gets "delivery from" and "delivery to" working days in WooCommerce, Settings, Shipping. A product can set its own preparation days.', 'ultra-max-core' ),
+					'fields'      => array(
+						self::toggle( 'product_delivery', __( 'Delivery dates by province', 'ultra-max-core' ) ),
+						self::range( 'product_ship_days', __( 'Days to prepare an order', 'ultra-max-core' ), 1, 0, 30 ),
+						self::toggle( 'product_thursday_off', __( 'Thursdays are not working days', 'ultra-max-core' ), false, __( 'Fridays never are.', 'ultra-max-core' ) ),
+						array(
+							'id'          => 'product_holidays',
+							'type'        => 'textarea',
+							'label'       => __( 'Holidays', 'ultra-max-core' ),
+							'help'        => __( 'One Jalali date per line, such as 1405/01/01. Delivery dates skip them.', 'ultra-max-core' ),
+							'placeholder' => "1405/01/01\n1405/01/02",
+						),
+						array_merge(
+							self::range( 'product_free_shipping', __( 'Free shipping from (store currency)', 'ultra-max-core' ), 0, 0, 1000000000, __( '0 uses the minimum of WooCommerce\'s free shipping method in your own zone.', 'ultra-max-core' ) ),
+							array( 'type' => 'number' )
+						),
+						self::toggle( 'product_free_bar', __( 'Show how far the cart is from free shipping', 'ultra-max-core' ) ),
+						self::toggle( 'product_sales', __( 'Show how many were sold lately', 'ultra-max-core' ) ),
+						self::range( 'product_sales_days', __( 'Count sales of the last days', 'ultra-max-core' ), 7, 1, 90 ),
+						self::range( 'product_sales_min', __( 'Show the count from', 'ultra-max-core' ), 3, 1, 100 ),
+						self::toggle( 'product_stock_bar', __( 'Show how much of an offer is sold', 'ultra-max-core' ) ),
+						self::range( 'product_badge_new_days', __( '"New" badge for days after publishing', 'ultra-max-core' ), 14, 0, 90, __( '0 for no "New" badge.', 'ultra-max-core' ) ),
+						self::range( 'product_badge_sale', __( '"Special sale" badge from a discount of (%)', 'ultra-max-core' ), 20, 0, 90, __( '0 for no such badge.', 'ultra-max-core' ) ),
+						self::toggle( 'product_badge_free', __( '"Free shipping" badge when the price alone ships free', 'ultra-max-core' ) ),
+						array(
+							'id'       => 'product_badge_rules',
+							'type'     => 'repeater',
+							'label'    => __( 'Your own badges', 'ultra-max-core' ),
+							'max_rows' => 10,
+							'fields'   => array(
+								array(
+									'id'    => 'label',
+									'type'  => 'text',
+									'label' => __( 'Text', 'ultra-max-core' ),
+								),
+								array(
+									'id'      => 'rule',
+									'type'    => 'select',
+									'label'   => __( 'Shows on', 'ultra-max-core' ),
+									'default' => 'category',
+									'options' => self::options(
+										array(
+											'category'  => __( 'Products of categories', 'ultra-max-core' ),
+											'tag'       => __( 'Products with tags', 'ultra-max-core' ),
+											'sale'      => __( 'Products on sale', 'ultra-max-core' ),
+											'featured'  => __( 'Featured products', 'ultra-max-core' ),
+											'low_stock' => __( 'Products with few left', 'ultra-max-core' ),
+										)
+									),
+								),
+								array(
+									'id'    => 'value',
+									'type'  => 'text',
+									'label' => __( 'Category or tag slugs, separated by commas', 'ultra-max-core' ),
+								),
+								array(
+									'id'      => 'tone',
+									'type'    => 'select',
+									'label'   => __( 'Colour', 'ultra-max-core' ),
+									'default' => 'brand',
+									'options' => self::options(
+										array(
+											'brand'   => __( 'Main colour', 'ultra-max-core' ),
+											'hot'     => __( 'Accent colour', 'ultra-max-core' ),
+											'new'     => __( 'Green', 'ultra-max-core' ),
+											'neutral' => __( 'Grey', 'ultra-max-core' ),
+										)
+									),
+								),
+							),
+						),
+					),
+				),
+				array(
+					'id'          => 'product_tabs_group',
+					'title'       => __( 'Your own tabs', 'ultra-max-core' ),
+					'icon'        => 'file',
+					'features'    => array( 'PDP-14' ),
+					'module'      => Product\Product::MODULE,
+					'description' => __( 'Tabs for every product, such as shipping or returns. A product adds its own on its edit screen. Size guides are written in Products, Size guides.', 'ultra-max-core' ),
+					'fields'      => array(
+						array(
+							'id'       => 'product_tabs',
+							'type'     => 'repeater',
+							'label'    => __( 'Tabs', 'ultra-max-core' ),
+							'max_rows' => 10,
+							'fields'   => array(
+								array(
+									'id'    => 'title',
+									'type'  => 'text',
+									'label' => __( 'Title', 'ultra-max-core' ),
+								),
+								array(
+									'id'    => 'content',
+									'type'  => 'textarea',
+									'label' => __( 'Content', 'ultra-max-core' ),
+									'help'  => __( 'Text and shortcodes, such as a reusable block.', 'ultra-max-core' ),
+								),
+								array(
+									'id'    => 'categories',
+									'type'  => 'text',
+									'label' => __( 'Only for category slugs, separated by commas', 'ultra-max-core' ),
+								),
+							),
+						),
+					),
+				),
+				array(
 					'id'          => 'product_reviews',
 					'title'       => __( 'Reviews and questions', 'ultra-max-core' ),
 					'icon'        => 'star',
