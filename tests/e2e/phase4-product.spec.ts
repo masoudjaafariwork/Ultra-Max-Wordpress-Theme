@@ -100,7 +100,7 @@ test.describe.serial( 'product page', () => {
 		await expect( area.locator( '[data-um-component="product-gallery"]' ) ).toBeVisible();
 		await expect( area.locator( '.um-buy-box form.um-purchase' ) ).toBeVisible();
 		await expect( area.locator( '.um-key-features li' ).first() ).toBeVisible();
-		await expect( area.locator( '#specs dl' ) ).toBeVisible();
+		await expect( area.locator( '#specs dl' ).first() ).toBeVisible();
 		await expect( area.locator( '[data-um-section-link]' ) ).toHaveCount( 5 );
 		await expect( area.locator( '.um-delivery li' ).first() ).toBeVisible();
 		await expect( area.locator( '.um-progress-note' ).first() ).toBeVisible();

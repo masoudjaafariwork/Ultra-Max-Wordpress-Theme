@@ -338,8 +338,10 @@ update_term_meta(
 );
 Store::save( array( 'search_popular' => "هدفون بی‌سیم\nساعت هوشمند\nگوشی نوویکس\nقهوه" ) );
 update_option( 'woocommerce_coming_soon', 'no' );
-// Toman has no decimals.
+// Toman has no decimals; Iranian stores weigh in kilograms and measure in centimetres.
 update_option( 'woocommerce_price_num_decimals', 0 );
+update_option( 'woocommerce_weight_unit', 'kg' );
+update_option( 'woocommerce_dimension_unit', 'cm' );
 // WooCommerce made its pages before the site was Persian; their titles show in breadcrumbs.
 foreach ( array(
 	'shop'      => 'فروشگاه',
