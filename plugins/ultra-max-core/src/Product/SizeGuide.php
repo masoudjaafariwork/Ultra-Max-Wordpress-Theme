@@ -229,10 +229,12 @@ final class SizeGuide {
 	 * @param \WC_Product $product Product.
 	 */
 	public static function dialog( \WC_Product $product ): Html {
-		$guide = self::for( $product );
-		if ( null === $guide ) {
+		static $printed = false;
+		$guide          = self::for( $product );
+		if ( $printed || null === $guide ) {
 			return Html::none();
 		}
+		$printed = true;
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WordPress's own content filter.
 		$content = (string) apply_filters( 'the_content', $guide->post_content );
 		return Dialog::render(

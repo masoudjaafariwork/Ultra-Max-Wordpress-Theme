@@ -721,6 +721,43 @@ const productCards = {
 write( 'shop-archive', shopArchives );
 write( 'product-card', productCards );
 
+/* ------------------------------------------------------------------ product pages (BLD-04) */
+
+const full = { unit: '%', size: 100 };
+const stack = { extra: { flex_direction_tablet: 'column', flex_direction_mobile: 'column' } };
+const column = ( width, gap, elements ) => col( { width, gap, extra: { width_tablet: full, width_mobile: full } }, elements );
+const related = ( source ) => w( 'product-related', { source, count: 10, design: 'hover' } );
+
+const singleProducts = {
+	store: {
+		title: T( 'Store product page' ),
+		description: T( 'Gallery, name and choices, and the buy box on top; the store\'s promises, bought together, sections with a small buy box, related products and recent views.' ),
+		content: [
+			section( [ w( 'product-breadcrumbs' ) ], { gap: 8, padding: box( 8, 0, 0 ) } ),
+			row( { align: 'flex-start', gap: 24, padding: box( 8, 0 ), ...stack }, [
+				column( 38, 12, [ w( 'product-gallery', { layout: '', tools: 'yes' } ) ] ),
+				column( 36, 18, [ w( 'product-heading', { tag: 'h1' } ), w( 'product-options', { guide: 'yes' } ), w( 'product-key-features', { count: 6 } ) ] ),
+				column( 26, 12, [ w( 'product-buy-box', { sticky: 'yes' } ) ] ),
+			] ),
+			section( [ w( 'product-perks' ), w( 'product-bundle' ), w( 'product-sections', { variant: '', mini: 'yes' } ), related( 'similar' ), related( 'complementary' ), w( 'product-related', { source: 'recent' } ), w( 'product-sticky', { variant: 'bar' } ) ], { gap: 24, padding: box( 8, 0, 24 ) } ),
+		],
+	},
+	fashion: {
+		title: T( 'Fashion product page' ),
+		description: T( 'A large picture grid beside the name, colours and sizes with the size guide, price and add button; tabs and similar products below.' ),
+		content: [
+			section( [ w( 'product-breadcrumbs' ) ], { gap: 8, padding: box( 8, 0, 0 ) } ),
+			row( { align: 'flex-start', gap: 32, padding: box( 8, 0 ), ...stack }, [
+				column( 58, 12, [ w( 'product-gallery', { layout: 'grid', tools: 'yes' } ) ] ),
+				column( 42, 18, [ w( 'product-heading', { tag: 'h1' } ), w( 'product-page-price', { size: 'lg' } ), w( 'product-options', { guide: 'yes' } ), w( 'product-purchase', { quick: 'yes' } ), w( 'product-delivery' ), w( 'product-free-shipping' ), w( 'product-short-description' ), w( 'product-meta' ) ] ),
+			] ),
+			section( [ w( 'product-sections', { variant: 'tabs', mini: '' } ), related( 'similar' ), w( 'product-sticky', { variant: 'bar' } ) ], { gap: 24, padding: box( 8, 0, 24 ) } ),
+		],
+	},
+};
+
+write( 'single-product', singleProducts );
+
 const php = [
 	'<?php',
 	'/**',
@@ -748,4 +785,4 @@ const php = [
 	'',
 ];
 fs.writeFileSync( path.join( root, 'plugins', 'ultra-max-core', 'src', 'Builder', 'library-strings.php' ), php.join( '\n' ) );
-console.log( `Wrote ${ Object.keys( headers ).length } headers, ${ Object.keys( footers ).length } footers, ${ Object.keys( sections ).length } sections, ${ Object.keys( pages ).length } pages, ${ Object.keys( shopArchives ).length } product lists, ${ Object.keys( productCards ).length } cards and ${ strings.size } texts.` );
+console.log( `Wrote ${ Object.keys( headers ).length } headers, ${ Object.keys( footers ).length } footers, ${ Object.keys( sections ).length } sections, ${ Object.keys( pages ).length } pages, ${ Object.keys( shopArchives ).length } product lists, ${ Object.keys( productCards ).length } cards, ${ Object.keys( singleProducts ).length } product pages and ${ strings.size } texts.` );

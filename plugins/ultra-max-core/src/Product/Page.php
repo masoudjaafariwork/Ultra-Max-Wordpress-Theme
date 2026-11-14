@@ -91,7 +91,7 @@ final class Page {
 		if ( in_array( true, $left, true ) ) {
 			$parts[] = self::arrangement( UI::visibility( $left ) );
 		}
-		return Html::trusted( sprintf( '<div class="um-product-page grid min-w-0 gap-6">%s</div>', Html::from( $parts ) ) );
+		return Html::trusted( sprintf( '<div class="um-product-page grid min-w-0 grid-cols-[minmax(0,1fr)] gap-6">%s</div>', Html::from( $parts ) ) );
 	}
 
 	/**
@@ -838,10 +838,12 @@ final class Page {
 	 * The share window (PDP-24).
 	 */
 	public static function share_dialog(): Html {
-		$product = self::product();
-		if ( null === $product || ! Store::bool( 'product_share' ) ) {
+		static $printed = false;
+		$product        = self::product();
+		if ( $printed || null === $product || ! Store::bool( 'product_share' ) ) {
 			return Html::none();
 		}
+		$printed = true;
 		return Dialog::render(
 			array(
 				'id'       => self::SHARE,

@@ -60,6 +60,7 @@ final class Product {
 		SizeGuide::register();
 		Tabs::register();
 		Bundle::register();
+		Schema::register();
 		add_filter( 'template_include', array( self::class, 'template' ), 50 );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'assets' ), 20 );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'drop_woocommerce_assets' ), 100 );

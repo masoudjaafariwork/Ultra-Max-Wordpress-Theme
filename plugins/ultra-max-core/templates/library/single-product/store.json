@@ -1,0 +1,320 @@
+{
+	"title": "Store product page",
+	"description": "Gallery, name and choices, and the buy box on top; the store's promises, bought together, sections with a small buy box, related products and recent views.",
+	"devices": {
+		"desktop": true,
+		"tablet": true,
+		"mobile": true
+	},
+	"tags": [],
+	"content": [
+		{
+			"id": "550a141",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 8,
+					"column": "8",
+					"row": "8"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "13f3cf8",
+					"elType": "widget",
+					"widgetType": "um-product-breadcrumbs",
+					"settings": {},
+					"elements": []
+				}
+			]
+		},
+		{
+			"id": "49ae49a",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "row",
+				"flex_align_items": "flex-start",
+				"flex_justify_content": "flex-start",
+				"flex_gap": {
+					"unit": "px",
+					"size": 24,
+					"column": "24",
+					"row": "24"
+				},
+				"flex_wrap": "nowrap",
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "0",
+					"bottom": "8",
+					"left": "0",
+					"isLinked": false
+				},
+				"flex_direction_tablet": "column",
+				"flex_direction_mobile": "column"
+			},
+			"elements": [
+				{
+					"id": "1a5b1e4",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 38
+						},
+						"width_tablet": {
+							"unit": "%",
+							"size": 100
+						},
+						"width_mobile": {
+							"unit": "%",
+							"size": 100
+						}
+					},
+					"elements": [
+						{
+							"id": "67f7fb8",
+							"elType": "widget",
+							"widgetType": "um-product-gallery",
+							"settings": {
+								"layout": "",
+								"tools": "yes"
+							},
+							"elements": []
+						}
+					]
+				},
+				{
+					"id": "f5f8590",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 18,
+							"column": "18",
+							"row": "18"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 36
+						},
+						"width_tablet": {
+							"unit": "%",
+							"size": 100
+						},
+						"width_mobile": {
+							"unit": "%",
+							"size": 100
+						}
+					},
+					"elements": [
+						{
+							"id": "9a96876",
+							"elType": "widget",
+							"widgetType": "um-product-heading",
+							"settings": {
+								"tag": "h1"
+							},
+							"elements": []
+						},
+						{
+							"id": "9b70e8f",
+							"elType": "widget",
+							"widgetType": "um-product-options",
+							"settings": {
+								"guide": "yes"
+							},
+							"elements": []
+						},
+						{
+							"id": "d61e4bb",
+							"elType": "widget",
+							"widgetType": "um-product-key-features",
+							"settings": {
+								"count": 6
+							},
+							"elements": []
+						}
+					]
+				},
+				{
+					"id": "9431c87",
+					"elType": "container",
+					"isInner": true,
+					"settings": {
+						"content_width": "full",
+						"flex_direction": "column",
+						"flex_gap": {
+							"unit": "px",
+							"size": 12,
+							"column": "12",
+							"row": "12"
+						},
+						"padding": {
+							"unit": "px",
+							"top": "0",
+							"right": "0",
+							"bottom": "0",
+							"left": "0",
+							"isLinked": false
+						},
+						"width": {
+							"unit": "%",
+							"size": 26
+						},
+						"width_tablet": {
+							"unit": "%",
+							"size": 100
+						},
+						"width_mobile": {
+							"unit": "%",
+							"size": 100
+						}
+					},
+					"elements": [
+						{
+							"id": "941e1aa",
+							"elType": "widget",
+							"widgetType": "um-product-buy-box",
+							"settings": {
+								"sticky": "yes"
+							},
+							"elements": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "0353ab4",
+			"elType": "container",
+			"isInner": false,
+			"settings": {
+				"content_width": "boxed",
+				"flex_direction": "column",
+				"flex_gap": {
+					"unit": "px",
+					"size": 24,
+					"column": "24",
+					"row": "24"
+				},
+				"padding": {
+					"unit": "px",
+					"top": "8",
+					"right": "0",
+					"bottom": "24",
+					"left": "0",
+					"isLinked": false
+				}
+			},
+			"elements": [
+				{
+					"id": "e44fea3",
+					"elType": "widget",
+					"widgetType": "um-product-perks",
+					"settings": {},
+					"elements": []
+				},
+				{
+					"id": "821fa74",
+					"elType": "widget",
+					"widgetType": "um-product-bundle",
+					"settings": {},
+					"elements": []
+				},
+				{
+					"id": "250cf8b",
+					"elType": "widget",
+					"widgetType": "um-product-sections",
+					"settings": {
+						"variant": "",
+						"mini": "yes"
+					},
+					"elements": []
+				},
+				{
+					"id": "42998cf",
+					"elType": "widget",
+					"widgetType": "um-product-related",
+					"settings": {
+						"source": "similar",
+						"count": 10,
+						"design": "hover"
+					},
+					"elements": []
+				},
+				{
+					"id": "d07e70e",
+					"elType": "widget",
+					"widgetType": "um-product-related",
+					"settings": {
+						"source": "complementary",
+						"count": 10,
+						"design": "hover"
+					},
+					"elements": []
+				},
+				{
+					"id": "7fe1f8a",
+					"elType": "widget",
+					"widgetType": "um-product-related",
+					"settings": {
+						"source": "recent"
+					},
+					"elements": []
+				},
+				{
+					"id": "98b2979",
+					"elType": "widget",
+					"widgetType": "um-product-sticky",
+					"settings": {
+						"variant": "bar"
+					},
+					"elements": []
+				}
+			]
+		}
+	]
+}
