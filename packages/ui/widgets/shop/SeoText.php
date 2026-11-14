@@ -20,8 +20,12 @@ namespace UltraMax\UI;
  *     less: string,
  *     title?: string,
  *     id: string,
+ *     variant?: 'box'|'plain',
  *     class?: string,
  * }
+ *
+ * `plain` drops the frame, for a text inside another box such as a
+ * product's introduction.
  */
 final class SeoText {
 
@@ -42,7 +46,7 @@ final class SeoText {
 				Attributes::render(
 					array(
 						'id'                => $id,
-						'class'             => Attributes::classes( 'um-seo-text rounded-lg border border-border bg-surface p-5 max-md:p-4', $props['class'] ?? null ),
+						'class'             => Attributes::classes( 'um-seo-text', 'plain' === Props::one_of( 'SeoText', $props, 'variant', array( 'box', 'plain' ) ) ? null : 'rounded-lg border border-border bg-surface p-5 max-md:p-4', $props['class'] ?? null ),
 						'data-um-component' => 'seo-text',
 					)
 				),

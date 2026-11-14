@@ -64,6 +64,8 @@ export const entries = [
 	// Elementor editor and preview helpers (HOME-13, search control).
 	{ name: 'core/elementor-editor', js: 'plugins/ultra-max-core/assets/src/elementor/editor.ts', css: 'plugins/ultra-max-core/assets/src/elementor/editor.css', product: 'plugins/ultra-max-core' },
 	{ name: 'core/elementor-preview', js: 'plugins/ultra-max-core/assets/src/elementor/preview.ts', product: 'plugins/ultra-max-core' },
+	// Product screen: picture choosers for variations and attribute values, rows of the product's tabs (PDP-03, PDP-04, PDP-14).
+	{ name: 'core/product-admin', js: 'plugins/ultra-max-core/assets/src/product-admin/index.ts', product: 'plugins/ultra-max-core' },
 	// Admin screens bundle React 19: shadcn/ui needs it and WordPress 7.1 still ships React 18.
 	{ name: 'catalog/admin', js: 'tools/catalog/assets/src/admin.tsx', product: 'tools/catalog' },
 	// The Ultra Max panel (ADM-01 to ADM-07): React 19 bundled, like the catalog.

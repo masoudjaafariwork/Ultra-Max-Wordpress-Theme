@@ -18,6 +18,7 @@ use UltraMax\Core\Admin\Rest;
 use UltraMax\Core\Admin\Wizard;
 use UltraMax\Core\Builder\Builder;
 use UltraMax\Core\Elementor\Integration;
+use UltraMax\Core\Product\Product;
 use UltraMax\Core\Search\Search;
 use UltraMax\Core\Shop\Shop;
 use UltraMax\Core\Widgets\Widgets;
@@ -70,6 +71,7 @@ final class Plugin {
 		Products::register();
 		CustomCode::register();
 		Shop::register();
+		Product::register();
 		Search::register();
 		Builder::register();
 		Widgets::register();
@@ -112,8 +114,10 @@ final class Plugin {
 	 */
 	public function drop_off_assets(): void {
 		$off = array(
-			'shop'   => ! Shop::enabled(),
-			'search' => ! Search::enabled(),
+			'shop'    => ! Shop::enabled(),
+			'search'  => ! Search::enabled(),
+			'product' => ! Product::enabled(),
+			'reviews' => ! Product::enabled(),
 		);
 		foreach ( $off as $asset => $drop ) {
 			if ( $drop ) {

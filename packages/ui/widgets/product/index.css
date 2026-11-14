@@ -1,0 +1,39 @@
+/*
+ * Styles of the product widget asset (BLD-12): product pages and the
+ * product widgets. Built from its components' own classes.
+ */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../../tokens/theme.css";
+
+@source "../product";
+@source "../shop/SeoText.php";
+
+/*
+ * The phone buy bar sits above the bottom navigation when the store shows
+ * one (HDR-10), and the page leaves room for both.
+ */
+@media (width < 1024px) {
+	body:has(.um-sticky-buy) {
+		padding-bottom: calc(72px + env(safe-area-inset-bottom));
+	}
+
+	body.um-has-bottom-nav:has(.um-sticky-buy) {
+		padding-bottom: calc(var(--um-bottom-nav-h) + 72px + env(safe-area-inset-bottom));
+	}
+
+	body.um-has-bottom-nav .um-sticky-buy {
+		bottom: calc(var(--um-bottom-nav-h) + env(safe-area-inset-bottom));
+		padding-bottom: 10px;
+	}
+
+	body:has(.um-sticky-buy) :is([data-um-component="contact-buttons"], [data-um-component="back-to-top"]) {
+		bottom: calc(88px + env(safe-area-inset-bottom));
+	}
+
+	body.um-has-bottom-nav:has(.um-sticky-buy) :is([data-um-component="contact-buttons"], [data-um-component="back-to-top"]) {
+		bottom: calc(var(--um-bottom-nav-h) + 88px + env(safe-area-inset-bottom));
+	}
+}

@@ -17,22 +17,37 @@ namespace UltraMax\Core\Shop;
  * - brands: the Latin name, so "novix" finds نوویکس (SRCH-02); the logo
  *   is WooCommerce's own brand image (PLP-11);
  * - attributes: "show values as colour swatches", and a colour for each
- *   value of such an attribute (PLP-01, PLP-07).
+ *   value of such an attribute (PLP-01, PLP-07); "show values as
+ *   pictures", with a picture for each value (PDP-04); the attribute's
+ *   group in the specification table and whether it is a key feature
+ *   (PDP-06).
  *
  * These are WordPress's classic term forms, so the fields use its markup.
+ * Both the product list and the product page modules use them.
  */
 final class Terms {
 
 	public const NONCE         = 'ultra_max_term_fields';
 	public const SWATCH_OPTION = 'ultra_max_color_attributes';
+	public const IMAGE_OPTION  = 'ultra_max_image_attributes';
+	public const SPECS_OPTION  = 'ultra_max_attribute_specs';
+	public const IMAGE_META    = 'um_image';
+
+	/**
+	 * Whether the fields are hooked already.
+	 *
+	 * @var bool
+	 */
+	private static bool $registered = false;
 
 	/**
 	 * Registers the fields.
 	 */
 	public static function register(): void {
-		if ( ! is_admin() ) {
+		if ( ! is_admin() || self::$registered ) {
 			return;
 		}
+		self::$registered = true;
 		add_action( 'admin_init', array( self::class, 'hooks' ) );
 		add_action( 'woocommerce_after_add_attribute_fields', array( self::class, 'attribute_add_field' ) );
 		add_action( 'woocommerce_after_edit_attribute_fields', array( self::class, 'attribute_edit_field' ) );
@@ -51,6 +66,65 @@ final class Terms {
 	}
 
 	/**
+	 * Attribute taxonomies shown as pictures (PDP-04).
+	 *
+	 * @return list<string>
+	 */
+	public static function image_taxonomies(): array {
+		$stored = get_option( self::IMAGE_OPTION, array() );
+		return array_values( array_filter( is_array( $stored ) ? $stored : array(), 'is_string' ) );
+	}
+
+	/**
+	 * The specification group and key feature mark of each attribute (PDP-06).
+	 *
+	 * @return array<string, array{group: string, key: bool}>
+	 */
+	public static function attribute_specs(): array {
+		$stored = get_option( self::SPECS_OPTION, array() );
+		$out    = array();
+		foreach ( is_array( $stored ) ? $stored : array() as $taxonomy => $spec ) {
+			if ( is_string( $taxonomy ) && is_array( $spec ) ) {
+				$out[ $taxonomy ] = array(
+					'group' => is_string( $spec['group'] ?? null ) ? $spec['group'] : '',
+					'key'   => true === ( $spec['key'] ?? false ),
+				);
+			}
+		}
+		return $out;
+	}
+
+	/**
+	 * Sets the specification group and key mark of an attribute.
+	 *
+	 * @param string $taxonomy Attribute taxonomy.
+	 * @param string $group    Group name; empty for "General".
+	 * @param bool   $key      Whether it is a key feature.
+	 */
+	public static function set_spec( string $taxonomy, string $group, bool $key ): void {
+		$specs              = self::attribute_specs();
+		$specs[ $taxonomy ] = array(
+			'group' => $group,
+			'key'   => $key,
+		);
+		update_option( self::SPECS_OPTION, $specs, true );
+	}
+
+	/**
+	 * Turns pictures for the values of an attribute on or off.
+	 *
+	 * @param string $taxonomy Attribute taxonomy.
+	 * @param bool   $on       Whether its values show as pictures.
+	 */
+	public static function set_images( string $taxonomy, bool $on ): void {
+		$list = array_values( array_diff( self::image_taxonomies(), array( $taxonomy ) ) );
+		if ( $on ) {
+			$list[] = $taxonomy;
+		}
+		update_option( self::IMAGE_OPTION, $list, true );
+	}
+
+	/**
 	 * Hooks the term forms.
 	 */
 	public static function hooks(): void {
@@ -66,6 +140,61 @@ final class Terms {
 			add_action( 'edited_' . $taxonomy, array( self::class, 'save' ) );
 			add_action( 'created_' . $taxonomy, array( self::class, 'save' ) );
 		}
+		foreach ( self::image_taxonomies() as $taxonomy ) {
+			add_action( $taxonomy . '_add_form_fields', array( self::class, 'add_image' ) );
+			add_action( $taxonomy . '_edit_form_fields', array( self::class, 'edit_image' ) );
+			add_action( 'edited_' . $taxonomy, array( self::class, 'save' ) );
+			add_action( 'created_' . $taxonomy, array( self::class, 'save' ) );
+		}
+	}
+
+	/**
+	 * A picture chooser: an attachment id with a preview. The product page
+	 * admin script opens the media library for it.
+	 *
+	 * @param int $image Attachment id.
+	 */
+	public static function image_field( int $image ): string {
+		$preview = $image > 0 ? wp_get_attachment_image( $image, 'thumbnail', false, array( 'style' => 'max-width:80px;height:auto' ) ) : '';
+		return sprintf(
+			'<div data-um-media><input type="hidden" name="um_image" value="%1$s" data-um-media-value><div data-um-media-preview>%2$s</div><button type="button" class="button" data-um-media-choose>%3$s</button> <button type="button" class="button-link" data-um-media-clear%4$s>%5$s</button></div>',
+			esc_attr( $image > 0 ? (string) $image : '' ),
+			$preview,
+			esc_html__( 'Choose picture', 'ultra-max-core' ),
+			$image > 0 ? '' : ' hidden',
+			esc_html__( 'Remove', 'ultra-max-core' )
+		);
+	}
+
+	/**
+	 * The picture field on the "add value" form of a picture attribute.
+	 */
+	public static function add_image(): void {
+		self::nonce();
+		printf(
+			'<div class="form-field"><label>%1$s</label>%2$s<p>%3$s</p></div>',
+			esc_html__( 'Picture', 'ultra-max-core' ),
+			self::image_field( 0 ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in image_field().
+			esc_html__( 'Shown on the product page instead of the name. Without one, the picture of the first variation with this value shows.', 'ultra-max-core' )
+		);
+	}
+
+	/**
+	 * The picture field on the edit screen of a picture attribute value.
+	 *
+	 * @param mixed $term Term.
+	 */
+	public static function edit_image( mixed $term ): void {
+		if ( ! $term instanceof \WP_Term ) {
+			return;
+		}
+		self::nonce();
+		$image = get_term_meta( $term->term_id, self::IMAGE_META, true );
+		printf(
+			'<tr class="form-field"><th scope="row">%1$s</th><td>%2$s</td></tr>',
+			esc_html__( 'Picture', 'ultra-max-core' ),
+			self::image_field( is_numeric( $image ) ? (int) $image : 0 ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in image_field().
+		);
 	}
 
 	/**
@@ -205,6 +334,10 @@ final class Terms {
 		if ( null !== $color ) {
 			update_term_meta( $term_id, Filters::COLOR_META, (string) sanitize_hex_color( $color ) );
 		}
+		$image = self::field( 'um_image' );
+		if ( null !== $image ) {
+			update_term_meta( $term_id, self::IMAGE_META, absint( $image ) );
+		}
 		$mode = self::field( 'um_filters_mode' );
 		if ( 'own' === $mode ) {
 			// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Nonce checked above; each value is compared with the known filters.
@@ -235,6 +368,17 @@ final class Terms {
 			esc_html__( 'Show values as colour swatches', 'ultra-max-core' ),
 			esc_html__( 'Each value gets a colour. Filters and product cards show the colours.', 'ultra-max-core' )
 		);
+		printf(
+			'<div class="form-field"><label for="um-images"><input id="um-images" type="checkbox" name="um_images" value="1"> %1$s</label><p class="description">%2$s</p></div>',
+			esc_html__( 'Show values as pictures on the product page', 'ultra-max-core' ),
+			esc_html__( 'Each value can have a picture, such as a pattern or a design.', 'ultra-max-core' )
+		);
+		printf(
+			'<div class="form-field"><label for="um-spec-group">%1$s</label><input id="um-spec-group" type="text" name="um_spec_group" value=""><p class="description">%2$s</p></div><div class="form-field"><label for="um-spec-key"><input id="um-spec-key" type="checkbox" name="um_spec_key" value="1"> %3$s</label></div>',
+			esc_html__( 'Specification group', 'ultra-max-core' ),
+			esc_html__( 'Such as "Display" or "Camera". The specification table groups attributes by it; leave empty for "General".', 'ultra-max-core' ),
+			esc_html__( 'Show among the key features at the top of the product page', 'ultra-max-core' )
+		);
 	}
 
 	/**
@@ -249,6 +393,24 @@ final class Terms {
 			esc_html__( 'Show values as colour swatches', 'ultra-max-core' ),
 			checked( '' !== $name && in_array( $name, self::swatch_taxonomies(), true ), true, false ),
 			esc_html__( 'Each value gets a colour. Filters and product cards show the colours.', 'ultra-max-core' )
+		);
+		printf(
+			'<tr class="form-field"><th scope="row" valign="top"><label for="um-images">%1$s</label></th><td><input id="um-images" type="checkbox" name="um_images" value="1"%2$s><p class="description">%3$s</p></td></tr>',
+			esc_html__( 'Show values as pictures on the product page', 'ultra-max-core' ),
+			checked( '' !== $name && in_array( $name, self::image_taxonomies(), true ), true, false ),
+			esc_html__( 'Each value can have a picture, such as a pattern or a design.', 'ultra-max-core' )
+		);
+		$spec = self::attribute_specs()[ $name ] ?? array(
+			'group' => '',
+			'key'   => false,
+		);
+		printf(
+			'<tr class="form-field"><th scope="row" valign="top"><label for="um-spec-group">%1$s</label></th><td><input id="um-spec-group" type="text" name="um_spec_group" value="%2$s"><p class="description">%3$s</p></td></tr><tr class="form-field"><th scope="row" valign="top"><label for="um-spec-key">%4$s</label></th><td><input id="um-spec-key" type="checkbox" name="um_spec_key" value="1"%5$s></td></tr>',
+			esc_html__( 'Specification group', 'ultra-max-core' ),
+			esc_attr( $spec['group'] ),
+			esc_html__( 'Such as "Display" or "Camera". The specification table groups attributes by it; leave empty for "General".', 'ultra-max-core' ),
+			esc_html__( 'Show among the key features at the top of the product page', 'ultra-max-core' ),
+			checked( $spec['key'], true, false )
 		);
 	}
 
@@ -267,7 +429,13 @@ final class Terms {
 		if ( '' === $slug ) {
 			return;
 		}
-		self::set_swatch( wc_attribute_taxonomy_name( $slug ), '1' === self::field( 'um_swatch' ) );
+		$taxonomy = wc_attribute_taxonomy_name( $slug );
+		$swatch   = '1' === self::field( 'um_swatch' );
+		$images   = '1' === self::field( 'um_images' );
+		$key      = '1' === self::field( 'um_spec_key' );
+		self::set_swatch( $taxonomy, $swatch );
+		self::set_images( $taxonomy, $images );
+		self::set_spec( $taxonomy, sanitize_text_field( self::field( 'um_spec_group' ) ?? '' ), $key );
 	}
 
 	/**

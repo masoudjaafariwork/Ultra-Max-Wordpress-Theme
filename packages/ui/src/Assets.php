@@ -66,6 +66,7 @@ final class Assets {
 		'footer',
 		'shop',
 		'search',
+		'product',
 	);
 
 	/**

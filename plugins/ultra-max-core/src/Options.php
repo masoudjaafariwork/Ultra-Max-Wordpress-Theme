@@ -95,7 +95,8 @@ final class Options {
 			),
 		);
 
-		$sections['shop'] = self::shop();
+		$sections['shop']    = self::shop();
+		$sections['product'] = self::product();
 
 		$sections['backup'] = array(
 			'title'  => __( 'Backup and reset', 'ultra-max-core' ),
@@ -295,6 +296,218 @@ final class Options {
 	}
 
 	/**
+	 * A range field.
+	 *
+	 * @param string $id      Field id.
+	 * @param string $label   Label.
+	 * @param int    $initial Default.
+	 * @param int    $min     Lowest.
+	 * @param int    $max     Highest.
+	 * @param string $help    Help.
+	 * @return array<string, mixed>
+	 */
+	private static function range( string $id, string $label, int $initial, int $min, int $max, string $help = '' ): array {
+		$field = array(
+			'id'      => $id,
+			'type'    => 'range',
+			'label'   => $label,
+			'default' => $initial,
+			'min'     => $min,
+			'max'     => $max,
+			'step'    => 1,
+		);
+		if ( '' !== $help ) {
+			$field['help'] = $help;
+		}
+		return $field;
+	}
+
+	/**
+	 * A switch.
+	 *
+	 * @param string $id      Field id.
+	 * @param string $label   Label.
+	 * @param bool   $initial Default.
+	 * @param string $help    Help.
+	 * @return array<string, mixed>
+	 */
+	private static function toggle( string $id, string $label, bool $initial = true, string $help = '' ): array {
+		$field = array(
+			'id'      => $id,
+			'type'    => 'toggle',
+			'label'   => $label,
+			'default' => $initial,
+		);
+		if ( '' !== $help ) {
+			$field['help'] = $help;
+		}
+		return $field;
+	}
+
+	/**
+	 * The product page section (PDP-01 to PDP-26).
+	 *
+	 * @return array<string, mixed>
+	 */
+	private static function product(): array {
+		$icons = array();
+		foreach ( array( 'truck', 'cash', 'headset', 'return', 'verified', 'shield', 'gift', 'card', 'store', 'clock', 'box', 'percent', 'check' ) as $icon ) {
+			$icons[ $icon ] = $icon;
+		}
+		$perks = array(
+			array(
+				'icon'  => 'truck',
+				'label' => __( 'Express delivery', 'ultra-max-core' ),
+			),
+			array(
+				'icon'  => 'cash',
+				'label' => __( 'Pay on delivery', 'ultra-max-core' ),
+			),
+			array(
+				'icon'  => 'headset',
+				'label' => __( 'Support every day', 'ultra-max-core' ),
+			),
+			array(
+				'icon'  => 'return',
+				'label' => __( 'Seven days to return', 'ultra-max-core' ),
+			),
+			array(
+				'icon'  => 'verified',
+				'label' => __( 'Genuine products', 'ultra-max-core' ),
+			),
+		);
+		/**
+		 * Filters the groups of the product page section; later parts of the
+		 * page add theirs.
+		 *
+		 * @param list<array<string, mixed>> $groups Groups.
+		 */
+		$groups = apply_filters(
+			'ultra_max_product_settings',
+			array(
+				array(
+					'id'       => 'product_layout',
+					'title'    => __( 'Product page', 'ultra-max-core' ),
+					'icon'     => 'layers',
+					'features' => array( 'PDP-01', 'PDP-06', 'PDP-20', 'PDP-23', 'PDP-24' ),
+					'module'   => Product\Product::MODULE,
+					'fields'   => array(
+						array(
+							'id'      => 'product_gallery',
+							'type'    => 'segmented',
+							'label'   => __( 'Gallery', 'ultra-max-core' ),
+							'help'    => __( 'Phones always swipe through the pictures.', 'ultra-max-core' ),
+							'default' => 'side',
+							'options' => self::options(
+								array(
+									'side'   => __( 'Thumbnails beside', 'ultra-max-core' ),
+									'bottom' => __( 'Thumbnails under', 'ultra-max-core' ),
+									'grid'   => __( 'All in a grid', 'ultra-max-core' ),
+									'slider' => __( 'Slider', 'ultra-max-core' ),
+								)
+							),
+						),
+						self::toggle( 'product_zoom', __( 'Zoom pictures under the mouse', 'ultra-max-core' ) ),
+						array(
+							'id'      => 'product_sections',
+							'type'    => 'segmented',
+							'label'   => __( 'Introduction, specifications and reviews', 'ultra-max-core' ),
+							'default' => 'sections',
+							'options' => self::options(
+								array(
+									'sections'  => __( 'One page with sticky links', 'ultra-max-core' ),
+									'tabs'      => __( 'Tabs', 'ultra-max-core' ),
+									'accordion' => __( 'Folding panels', 'ultra-max-core' ),
+								)
+							),
+						),
+						array(
+							'id'      => 'product_picker',
+							'type'    => 'segmented',
+							'label'   => __( 'Show options as', 'ultra-max-core' ),
+							'help'    => __( 'Colour and picture attributes always show as swatches.', 'ultra-max-core' ),
+							'default' => 'button',
+							'options' => self::options(
+								array(
+									'button' => __( 'Buttons', 'ultra-max-core' ),
+									'select' => __( 'Dropdowns', 'ultra-max-core' ),
+								)
+							),
+						),
+						self::range( 'product_key_count', __( 'Key features at the top', 'ultra-max-core' ), 6, 0, 12, __( 'Attributes marked as key features show first; without any, the first attributes show.', 'ultra-max-core' ) ),
+						self::toggle( 'product_dimensions', __( 'Show weight and size in the specifications', 'ultra-max-core' ) ),
+						array(
+							'id'          => 'product_notice',
+							'type'        => 'textarea',
+							'label'       => __( 'Note under the key features', 'ultra-max-core' ),
+							'help'        => __( 'Such as your return rules. Leave empty to show none.', 'ultra-max-core' ),
+							'placeholder' => __( 'Opened products can be returned only when faulty.', 'ultra-max-core' ),
+						),
+						self::toggle( 'product_sticky', __( 'Keep the buy button in reach', 'ultra-max-core' ), true, __( 'A bar at the bottom of phones and a small box beside the sections on desktop.', 'ultra-max-core' ) ),
+						self::toggle( 'product_share', __( 'Share button', 'ultra-max-core' ) ),
+						self::toggle( 'product_similar', __( 'Similar and complementary products', 'ultra-max-core' ) ),
+						self::range( 'product_related_count', __( 'Products in each slider', 'ultra-max-core' ), 10, 4, 24 ),
+						self::toggle( 'product_recent', __( 'The shopper\'s recent views', 'ultra-max-core' ), true, __( 'Kept only in the shopper\'s browser.', 'ultra-max-core' ) ),
+					),
+				),
+				array(
+					'id'       => 'product_buy',
+					'title'    => __( 'Buy box', 'ultra-max-core' ),
+					'icon'     => 'cart',
+					'features' => array( 'PDP-05', 'PDP-21', 'PDP-25' ),
+					'module'   => Product\Product::MODULE,
+					'fields'   => array(
+						self::toggle( 'product_seller', __( 'Show the store as the seller', 'ultra-max-core' ) ),
+						array(
+							'id'          => 'product_seller_note',
+							'type'        => 'text',
+							'label'       => __( 'Line under the store name', 'ultra-max-core' ),
+							'placeholder' => __( 'Sold and shipped by us', 'ultra-max-core' ),
+						),
+						array(
+							'id'          => 'product_warranty',
+							'type'        => 'text',
+							'label'       => __( 'Default warranty', 'ultra-max-core' ),
+							'help'        => __( 'A product can set its own on its edit screen.', 'ultra-max-core' ),
+							'placeholder' => __( 'Seven day guarantee of genuine goods', 'ultra-max-core' ),
+						),
+						self::range( 'product_low_stock', __( 'Warn "only a few left" from', 'ultra-max-core' ), 5, 0, 50 ),
+						self::toggle( 'product_quick_buy', __( '"Buy now" button that goes straight to checkout', 'ultra-max-core' ) ),
+						self::range( 'product_qty_max', __( 'Most of one product in an order', 'ultra-max-core' ), 0, 0, 1000, __( '0 for no limit. A product can set its own minimum, maximum and step.', 'ultra-max-core' ) ),
+						array(
+							'id'       => 'product_perks',
+							'type'     => 'repeater',
+							'label'    => __( 'Promises under the buy box', 'ultra-max-core' ),
+							'max_rows' => 6,
+							'default'  => $perks,
+							'fields'   => array(
+								array(
+									'id'      => 'icon',
+									'type'    => 'select',
+									'label'   => __( 'Icon', 'ultra-max-core' ),
+									'default' => 'check',
+									'options' => self::options( $icons ),
+								),
+								array(
+									'id'    => 'label',
+									'type'  => 'text',
+									'label' => __( 'Text', 'ultra-max-core' ),
+								),
+							),
+						),
+					),
+				),
+			)
+		);
+		return array(
+			'title'  => __( 'Product page', 'ultra-max-core' ),
+			'icon'   => 'box',
+			'order'  => 56,
+			'groups' => is_array( $groups ) ? array_values( $groups ) : array(),
+		);
+	}
+
+	/**
 	 * Adds the core modules.
 	 *
 	 * @param mixed $modules Modules keyed by id.
@@ -336,6 +549,16 @@ final class Options {
 			'default'     => true,
 			'section'     => 'shop',
 			'assets'      => array( 'shop' ),
+			'product'     => 'ultra-max-core',
+		);
+		$modules['single-product'] = array(
+			'title'       => __( 'Product page', 'ultra-max-core' ),
+			'description' => __( 'Gallery with zoom and video, colour and size choices, a buy box with delivery time, specifications, reviews with photos, questions, and a buy button that stays in reach. Off, WooCommerce\'s own product page shows.', 'ultra-max-core' ),
+			'icon'        => 'box',
+			'features'    => array( 'PDP-01', 'PDP-02', 'PDP-03', 'PDP-04', 'PDP-05', 'PDP-06', 'PDP-07', 'PDP-08', 'PDP-09', 'PDP-10', 'PDP-13', 'PDP-14', 'PDP-15', 'PDP-16', 'PDP-17', 'PDP-18', 'PDP-19', 'PDP-20', 'PDP-21', 'PDP-22', 'PDP-23', 'PDP-24', 'PDP-25', 'PDP-26', 'BLD-04' ),
+			'default'     => true,
+			'section'     => 'product',
+			'assets'      => array( 'product', 'reviews' ),
 			'product'     => 'ultra-max-core',
 		);
 		$modules['live-search']    = array(

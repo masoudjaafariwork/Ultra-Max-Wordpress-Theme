@@ -53,7 +53,7 @@ final class Types {
 				'ready'       => true,
 				'sticky'      => false,
 			),
-			'single-product'   => self::later( __( 'Single product', 'ultra-max-core' ), __( 'Single products', 'ultra-max-core' ), 'single' ),
+			'single-product'   => self::later( __( 'Single product', 'ultra-max-core' ), __( 'Single products', 'ultra-max-core' ), 'single-product', __( 'The product page: gallery, buy box, specifications, reviews and questions. Use the product widgets; a category or a single product can have its own design.', 'ultra-max-core' ) ),
 			'shop-archive'     => self::later( __( 'Shop archive', 'ultra-max-core' ), __( 'Shop archives', 'ultra-max-core' ), 'shop-archive', __( 'The product lists: the shop, categories, brands and product search. Use the shop widgets for filters, sorting and products.', 'ultra-max-core' ) ),
 			'product-card'     => self::later( __( 'Product card', 'ultra-max-core' ), __( 'Product cards', 'ultra-max-core' ), '', __( 'One product in lists and sliders. Choose it as the card design in the shop settings or in a products widget.', 'ultra-max-core' ) ),
 			'cart'             => self::later( __( 'Cart', 'ultra-max-core' ), __( 'Carts', 'ultra-max-core' ), '' ),
