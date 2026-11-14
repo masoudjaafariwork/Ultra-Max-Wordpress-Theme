@@ -154,7 +154,10 @@ final class Rules {
 		 *
 		 * @var array<string, Target> $targets
 		 */
-		$cache[ $locale ] = $targets;
+		// Post types and taxonomies are known only once init has run; an earlier answer is not kept.
+		if ( did_action( 'init' ) && ! doing_action( 'init' ) ) {
+			$cache[ $locale ] = $targets;
+		}
 		return $targets;
 	}
 

@@ -210,7 +210,7 @@ final class ShopTest extends WP_UnitTestCase {
 		$types = Shop::types( Types::all() );
 		$this->assertTrue( $types['shop-archive']['ready'] );
 		$this->assertTrue( $types['product-card']['ready'] );
-		$this->assertFalse( $types['cart']['ready'], 'Other store types wait for their widgets.' );
+		$this->assertFalse( $types['login']['ready'], 'Other types wait for their widgets.' );
 		$this->assertSame( 'shop-archive', Types::all()['shop-archive']['location'], 'Its own place, never the blog archive.' );
 		$this->assertSame( array( array( 'target' => 'all' ) ), Layouts::defaults( 'shop-archive' )['include'] );
 		$this->assertSame( array(), Layouts::defaults( 'product-card' )['include'] );

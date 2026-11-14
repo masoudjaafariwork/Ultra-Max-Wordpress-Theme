@@ -56,7 +56,8 @@ final class Fields {
 		add_action( 'woocommerce_after_checkout_validation', array( self::class, 'validate_classic' ), 10, 2 );
 		add_action( 'woocommerce_checkout_create_order', array( self::class, 'save_classic' ), 10, 2 );
 		add_filter( 'woocommerce_checkout_get_value', array( self::class, 'saved_value' ), 10, 2 );
-		add_action( 'woocommerce_init', array( self::class, 'register_blocks' ) );
+		// After WordPress's init has registered the post types: the settings read here list layouts, whose rules need them.
+		add_action( 'init', array( self::class, 'register_blocks' ), 20 );
 		add_action( 'woocommerce_validate_additional_field', array( self::class, 'validate_block_field' ), 10, 3 );
 		add_action( 'woocommerce_blocks_validate_location_address_fields', array( self::class, 'validate_block_address' ), 10, 2 );
 		add_action( 'woocommerce_store_api_checkout_update_order_from_request', array( self::class, 'check_block_order' ), 20, 1 );

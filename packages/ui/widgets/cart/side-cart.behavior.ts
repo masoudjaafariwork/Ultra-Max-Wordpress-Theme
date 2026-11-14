@@ -3,7 +3,8 @@
  * shell; its content comes from the store when the drawer opens, so
  * cached pages never show an old cart. Quantities change and lines go in
  * place. When a product is added anywhere on the page (`um:cart-updated`),
- * the content is drawn again and, if the store wants it, the drawer opens.
+ * the content is drawn again and, if the store wants it, the drawer opens;
+ * not on a product page, whose buy box confirms the add itself.
  */
 import type { Behavior } from '../../storefront/runtime';
 import { announce, applyParts, bodyOf, changeOf, send, type CartChange } from './cart-actions';
@@ -65,7 +66,9 @@ export const sideCart: Behavior = ( element ) => {
 
 	const onAdded = (): void => {
 		fresh = false;
-		if ( element.hasAttribute( 'data-open-on-add' ) && drawer && ! isOpen() ) {
+		// A product page confirms in its own buy box and keeps "buy now" in reach.
+		const ownPage = document.querySelector( '[data-um-product] form.um-purchase' ) !== null;
+		if ( element.hasAttribute( 'data-open-on-add' ) && ! ownPage && drawer && ! isOpen() ) {
 			window.UltraMaxUI?.get( drawer )?.open?.();
 		} else if ( isOpen() ) {
 			void run( { action: 'view' } );

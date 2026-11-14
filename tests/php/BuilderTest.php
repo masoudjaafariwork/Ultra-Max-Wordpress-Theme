@@ -61,8 +61,9 @@ final class BuilderTest extends WP_UnitTestCase {
 		$this->assertTrue( Types::is_ready( 'footer' ) );
 		$this->assertTrue( Types::is_ready( 'block' ) );
 		$this->assertTrue( Types::is_ready( 'single-product' ), 'Product layouts arrived with their widgets in phase 4, part B.' );
-		$this->assertFalse( Types::is_ready( 'cart' ), 'The cart layout arrives with its widgets in phase 4, part C.' );
-		$this->assertInstanceOf( WP_Error::class, Layouts::create( 'cart', 'X' ) );
+		$this->assertTrue( Types::is_ready( 'cart' ), 'Cart layouts arrived with their widgets in phase 4, part C.' );
+		$this->assertFalse( Types::is_ready( 'login' ), 'The login layout arrives with its widgets in phase 5.' );
+		$this->assertInstanceOf( WP_Error::class, Layouts::create( 'login', 'X' ) );
 	}
 
 	public function test_rules_match_the_right_pages(): void {

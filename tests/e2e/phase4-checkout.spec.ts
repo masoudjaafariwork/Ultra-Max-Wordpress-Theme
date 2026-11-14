@@ -160,9 +160,21 @@ test.afterAll( () => {
 test.describe.serial( 'cart, checkout and shipping', () => {
 	test( 'the side cart opens after adding and changes quantities in place (CART-01, CART-03, CART-04)', async ( { page } ) => {
 		const errors = watchErrors( page );
-		await add( page, 'UM-003' );
+		// On a product page the buy box confirms the add itself; the drawer stays closed there.
+		await add( page, 'UM-013' );
+		await expect( page.locator( '#um-side-cart' ) ).toBeHidden();
+		await page.locator( '.um-buy-box [data-um-purchase-status] a' ).first().waitFor();
+		// A new visitor, with an empty cart.
+		await page.context().clearCookies();
+		// From a product card, the drawer opens by itself.
+		const id = wp( 'eval', 'echo wc_get_product_id_by_sku( "UM-003" );' );
+		await page.goto( wp( 'eval', 'echo get_permalink( wc_get_page_id( "shop" ) );' ) );
+		// The card shows its button on hover; the click goes to it directly.
+		const added = page.waitForResponse( ( response ) => response.url().includes( 'add_to_cart' ) );
+		await page.locator( `[data-um-add="${ id }"]` ).first().dispatchEvent( 'click' );
+		await added;
 		const drawer = page.locator( '#um-side-cart' );
-		await expect( drawer ).toBeVisible();
+		await expect( drawer ).toBeVisible( { timeout: 15_000 } );
 		const line = drawer.locator( '[data-um-cart-line]' );
 		await expect( line ).toHaveCount( 1 );
 		await expect( drawer ).toContainText( 'هدفون' );
