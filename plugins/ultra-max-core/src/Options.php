@@ -98,6 +98,7 @@ final class Options {
 		$sections['shop']    = self::shop();
 		$sections['product'] = self::product();
 		$sections['saved']   = self::saved();
+		$sections['account'] = self::account();
 		$sections['cart']    = self::cart();
 
 		$sections['backup'] = array(
@@ -697,6 +698,88 @@ final class Options {
 	}
 
 	/**
+	 * The account section (ACC-01 to ACC-09, SHIP-03).
+	 *
+	 * @return array<string, mixed>
+	 */
+	private static function account(): array {
+		return array(
+			'title'  => __( 'Customer account', 'ultra-max-core' ),
+			'icon'   => 'user',
+			'order'  => 58,
+			'groups' => array(
+				array(
+					'id'          => 'account_page',
+					'title'       => __( 'My account', 'ultra-max-core' ),
+					'icon'        => 'user',
+					'features'    => array( 'ACC-01', 'ACC-04', 'ACC-05', 'ACC-07', 'ACC-08' ),
+					'module'      => Account\Account::MODULE,
+					'description' => __( 'The menu, dashboard, orders, lists, reviews, addresses and account details of WooCommerce\'s account page. Its addresses are set in WooCommerce, Settings, Advanced.', 'ultra-max-core' ),
+					'fields'      => array(
+						self::range( 'account_orders_per_page', __( 'Orders on a page', 'ultra-max-core' ), 10, 5, 30 ),
+						self::toggle( 'account_recent', __( 'Show the shopper\'s recent views', 'ultra-max-core' ), true, __( 'Kept only in the shopper\'s browser.', 'ultra-max-core' ) ),
+						self::toggle( 'account_mobile', __( 'Ask for a mobile number in the account details', 'ultra-max-core' ) ),
+						self::toggle( 'account_national_code', __( 'Ask for a national code in the account details', 'ultra-max-core' ) ),
+						self::toggle( 'account_birthday', __( 'Ask for a birthday in the account details', 'ultra-max-core' ) ),
+					),
+				),
+				array(
+					'id'          => 'account_shipping',
+					'title'       => __( 'Parcel tracking', 'ultra-max-core' ),
+					'icon'        => 'truck',
+					'features'    => array( 'ACC-02', 'SHIP-03' ),
+					'module'      => Account\Account::MODULE,
+					'description' => __( 'Each order gets a "Parcel tracking" box on its edit screen. The shopper sees the code with a link to follow the parcel.', 'ultra-max-core' ),
+					'fields'      => array(
+						array(
+							'id'       => 'tracking_carriers',
+							'type'     => 'repeater',
+							'label'    => __( 'Carriers', 'ultra-max-core' ),
+							'help'     => __( 'Put {code} in the link where the tracking code goes. Leave the link empty for a carrier without one.', 'ultra-max-core' ),
+							'max_rows' => 10,
+							'default'  => array(
+								array(
+									'name' => __( 'Post', 'ultra-max-core' ),
+									'link' => 'https://tracking.post.ir/',
+								),
+								array(
+									'name' => __( 'Tipax', 'ultra-max-core' ),
+									'link' => '',
+								),
+								array(
+									'name' => __( 'Chapar', 'ultra-max-core' ),
+									'link' => '',
+								),
+								array(
+									'name' => __( 'Courier', 'ultra-max-core' ),
+									'link' => '',
+								),
+								array(
+									'name' => __( 'Other', 'ultra-max-core' ),
+									'link' => '',
+								),
+							),
+							'fields'   => array(
+								array(
+									'id'    => 'name',
+									'type'  => 'text',
+									'label' => __( 'Name', 'ultra-max-core' ),
+								),
+								array(
+									'id'          => 'link',
+									'type'        => 'text',
+									'label'       => __( 'Tracking link', 'ultra-max-core' ),
+									'placeholder' => 'https://example.com/track?code={code}',
+								),
+							),
+						),
+					),
+				),
+			),
+		);
+	}
+
+	/**
 	 * The cart and checkout section (CART-01 to CART-10, CHK-01 to CHK-10, SHIP-01, SHIP-02).
 	 *
 	 * @return array<string, mixed>
@@ -1057,6 +1140,26 @@ final class Options {
 			'features'    => array( 'SHIP-01', 'SHIP-02' ),
 			'default'     => true,
 			'section'     => 'cart',
+			'product'     => 'ultra-max-core',
+		);
+		$modules['account']        = array(
+			'title'       => __( 'Customer account', 'ultra-max-core' ),
+			'description' => __( 'Dashboard with orders by status, order details with progress and parcel tracking, lists, reviews and questions, addresses, account details and recent views. Off, WooCommerce\'s own account shows.', 'ultra-max-core' ),
+			'icon'        => 'user',
+			'features'    => array( 'ACC-01', 'ACC-02', 'ACC-04', 'ACC-05', 'ACC-06', 'ACC-07', 'ACC-08', 'SHIP-03', 'BLD-07' ),
+			'default'     => true,
+			'section'     => 'account',
+			'assets'      => array( 'account' ),
+			'product'     => 'ultra-max-core',
+		);
+		$modules['order-tracking'] = array(
+			'title'       => __( 'Order tracking for guests', 'ultra-max-core' ),
+			'description' => __( 'A page where anyone follows an order with its number and mobile number, without logging in.', 'ultra-max-core' ),
+			'icon'        => 'truck',
+			'features'    => array( 'ACC-09' ),
+			'default'     => true,
+			'section'     => 'account',
+			'assets'      => array( 'account' ),
 			'product'     => 'ultra-max-core',
 		);
 		$modules['duplicate']      = array(

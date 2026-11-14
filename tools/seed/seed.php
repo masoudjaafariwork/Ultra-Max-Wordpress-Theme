@@ -489,4 +489,9 @@ update_option( 'page_on_front', $home );
 if ( class_exists( '\Elementor\Plugin' ) ) {
 	\Elementor\Plugin::instance()->files_manager->clear_cache();
 }
+
+// The wishlist, compare and order tracking pages, and a demo shopper with orders (phase 4, part D).
+\UltraMax\Core\Store\Pages::ensure();
+require __DIR__ . '/account.php';
+
 WP_CLI::success( 'Seeded. Home page: ' . get_permalink( $home ) );

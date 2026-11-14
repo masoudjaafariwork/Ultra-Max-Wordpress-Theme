@@ -11,6 +11,7 @@ namespace UltraMax\Core;
 
 use UltraMax\Core\Lib\Foundation\Requirements;
 use UltraMax\Core\Lib\Foundation\WooCompat;
+use UltraMax\Core\Lib\Settings\Modules;
 use UltraMax\Core\Lib\UI\Assets;
 use UltraMax\Core\Admin\Admin;
 use UltraMax\Core\Admin\Products;
@@ -23,6 +24,7 @@ use UltraMax\Core\Shipping\Shipping;
 use UltraMax\Core\Elementor\Integration;
 use UltraMax\Core\Product\Product;
 use UltraMax\Core\Saved\Saved;
+use UltraMax\Core\Account\Account;
 use UltraMax\Core\Search\Search;
 use UltraMax\Core\Store\Pages;
 use UltraMax\Core\Shop\Shop;
@@ -79,6 +81,7 @@ final class Plugin {
 		Product::register();
 		Pages::register();
 		Saved::register();
+		Account::register();
 		Cart::register();
 		Checkout::register();
 		Shipping::register();
@@ -130,6 +133,7 @@ final class Plugin {
 			'product'  => ! Product::enabled() && ! Saved::enabled( Saved::QUICK ),
 			'reviews'  => ! Product::enabled(),
 			'saved'    => ! Saved::lists() && ! Saved::enabled( Saved::QUICK ),
+			'account'  => ! Account::enabled() && ! Modules::enabled( Account::TRACKING ),
 			'cart'     => ! Cart::enabled(),
 			'checkout' => ! Checkout::enabled(),
 		);

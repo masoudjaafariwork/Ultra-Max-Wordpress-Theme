@@ -68,6 +68,12 @@
 		border-radius: var(--um-radius-lg);
 	}
 
+	.um-account-form .um-birthday-fields {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1.2fr);
+		gap: 8px;
+	}
+
 	.um-account-form legend {
 		padding: 0 6px;
 		font-weight: 700;

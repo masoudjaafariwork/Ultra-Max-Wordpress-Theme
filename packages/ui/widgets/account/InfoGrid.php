@@ -53,7 +53,7 @@ final class InfoGrid {
 		return Html::trusted(
 			sprintf(
 				'<dl class="%1$s">%2$s</dl>',
-				esc_attr( Attributes::classes( 'um-info-grid m-0 grid gap-x-6 gap-y-4', 4 === ( $props['columns'] ?? 2 ) ? 'sm:grid-cols-2 lg:grid-cols-4' : 'sm:grid-cols-2', $props['class'] ?? null ) ),
+				esc_attr( Attributes::classes( 'um-info-grid m-0 grid gap-x-6 gap-y-4', 4 === ( $props['columns'] ?? 2 ) ? 'grid-cols-2 lg:grid-cols-4' : 'sm:grid-cols-2', $props['class'] ?? null ) ),
 				$items
 			)
 		);

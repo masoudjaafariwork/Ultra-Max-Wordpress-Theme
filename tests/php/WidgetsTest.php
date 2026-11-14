@@ -26,7 +26,7 @@ use UltraMax\Core\Widgets\Widgets;
 final class WidgetsTest extends WP_UnitTestCase {
 
 	public function test_every_listed_widget_class_exists(): void {
-		$this->assertCount( 102, Widgets::all(), 'Every class listed in Widgets::classes() exists.' );
+		$this->assertCount( 108, Widgets::all(), 'Every class listed in Widgets::classes() exists.' );
 	}
 
 	public function test_every_widget_renders_its_defaults_without_notices(): void {

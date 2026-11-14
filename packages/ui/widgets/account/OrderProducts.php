@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderItems component.
+ * OrderProducts component.
  *
  * @package UltraMax\UI
  */
@@ -14,20 +14,20 @@ namespace UltraMax\UI;
  * quantity and the chosen colour, the line total and buttons such as
  * "Write a review" and "Buy again".
  *
- * @phpstan-type OrderItem array{title: string, href?: string, image: Html, details: list<string>, total: string, actions?: list<Html>}
- * @phpstan-type OrderItemsProps array{
+ * @phpstan-type OrderProduct array{title: string, href?: string, image: Html, details: list<string>, total: string, actions?: list<Html>}
+ * @phpstan-type OrderProductsProps array{
  *     label: string,
- *     items: list<OrderItem>,
+ *     items: list<OrderProduct>,
  *     class?: string,
  * }
  */
-final class OrderItems {
+final class OrderProducts {
 
 	/**
 	 * Renders the list.
 	 *
 	 * @param array $props Props.
-	 * @phpstan-param OrderItemsProps $props
+	 * @phpstan-param OrderProductsProps $props
 	 */
 	public static function render( array $props ): Html {
 		$items = '';
@@ -49,7 +49,7 @@ final class OrderItems {
 		return Html::trusted(
 			sprintf(
 				'<ul class="%1$s" aria-label="%2$s">%3$s</ul>',
-				esc_attr( Attributes::classes( 'um-order-items m-0 list-none p-0', $props['class'] ?? null ) ),
+				esc_attr( Attributes::classes( 'um-order-products m-0 list-none p-0', $props['class'] ?? null ) ),
 				esc_attr( $props['label'] ),
 				$items
 			)

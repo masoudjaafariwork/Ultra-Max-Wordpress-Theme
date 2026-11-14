@@ -74,10 +74,10 @@ final class OrderCard {
 		}
 		return Html::trusted(
 			sprintf(
-				'<a href="%1$s" class="%2$s" aria-label="%3$s"><div class="flex items-center gap-2">%4$s<span class="flex-1"></span>%5$s</div><div class="flex flex-wrap gap-x-5 gap-y-1 text-xs text-fg-3">%6$s</div>%7$s</a>',
+				'<a href="%1$s" class="%2$s"><span class="sr-only">%3$s</span><div class="flex items-center gap-2">%4$s<span class="flex-1"></span>%5$s</div><div class="flex flex-wrap gap-x-5 gap-y-1 text-xs text-fg-3">%6$s</div>%7$s</a>',
 				esc_url( $props['href'] ),
 				esc_attr( Attributes::classes( 'um-order-card grid gap-3 rounded-lg border border-border bg-surface p-4 text-fg no-underline hover:border-border-strong hover:shadow-sm focus-visible:outline-3 focus-visible:outline-primary/40', $props['class'] ?? null ) ),
-				esc_attr( $props['label'] ),
+				esc_html( $props['label'] ),
 				self::status( $props['status'] ),
 				Icon::render( is_rtl() ? 'chevron-left' : 'chevron-right', 'size-4 text-fg-3' ),
 				$meta,
