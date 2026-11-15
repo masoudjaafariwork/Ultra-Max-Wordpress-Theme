@@ -25,6 +25,7 @@ import { dumpAutoload } from './lib/composer.mjs';
 import { wpGlobalsPlugin } from './lib/wp-globals.mjs';
 import { writeScopedPreflight } from './lib/scoped-preflight.mjs';
 import { dropKnown, layeredRuleKeys, layerMedia } from './lib/layer-media.mjs';
+import { printfPercent } from './lib/printf-percent.mjs';
 
 /** Layered rules of the storefront file, dropped from module and widget files (see lib/layer-media.mjs). */
 let storefrontRules = new Set();
@@ -131,10 +132,12 @@ async function buildCss( source, out ) {
 	const from = path.join( root, source );
 	const input = fs.readFileSync( from, 'utf8' );
 	const tailwound = await postcss( [ tailwind( { base: root, optimize: ! dev } ) ] ).process( input, { from, to: out + '.css' } );
+	// Classes inside PHP sprintf() strings carry `%%` for `%` (see lib/printf-percent.mjs).
+	const compiled = printfPercent( tailwound.css );
 	// Admin styles are one file; storefront, module and widget files share layers (see lib/layer-media.mjs).
 	const loadsAfterStorefront = /packages\/ui\/(modules|widgets)\//.test( source );
 	const plugins = loadsAfterStorefront ? [ layerMedia(), dropKnown( storefrontRules ) ] : [ layerMedia() ];
-	const result = source.includes( 'admin' ) ? tailwound : await postcss( plugins ).process( tailwound.css, { from: undefined } );
+	const result = source.includes( 'admin' ) ? { css: compiled, root: null } : await postcss( plugins ).process( compiled, { from: undefined } );
 	if ( source === 'packages/ui/storefront/storefront.css' ) {
 		storefrontRules = layeredRuleKeys( result.root );
 	}

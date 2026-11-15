@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { checkSource, lookClasses } from '../../scripts/lib/boundaries.mjs';
 import { rewrite } from '../../scripts/lib/prefix.mjs';
 import { scopeSelector } from '../../scripts/lib/scoped-preflight.mjs';
+import { printfPercent } from '../../scripts/lib/printf-percent.mjs';
 
 describe( 'library boundary rule', () => {
 	it( 'allows layout classes and flags look classes', () => {
@@ -47,6 +48,14 @@ describe( 'namespace prefixer', () => {
 
 	it( 'leaves product namespaces alone', () => {
 		expect( rewrite( 'use UltraMax\\Core\\Lib\\UI\\UI;', 'UltraMax\\Core', 'ultra-max-core' ) ).toBe( 'use UltraMax\\Core\\Lib\\UI\\UI;' );
+	} );
+} );
+
+describe( 'sprintf percent signs', () => {
+	it( 'turns the doubled sign of PHP templates into one, in selectors and values', () => {
+		expect( printfPercent( '.w-\\[68\\%\\%\\]{width:68%%}' ) ).toBe( '.w-\\[68\\%\\]{width:68%}' );
+		expect( printfPercent( '.a:before{inset-inline-start:-50%%;height:calc(100%% - 24px)}' ) ).toBe( '.a:before{inset-inline-start:-50%;height:calc(100% - 24px)}' );
+		expect( printfPercent( '.w-1\\/2{width:50%}' ) ).toBe( '.w-1\\/2{width:50%}' );
 	} );
 } );
 
