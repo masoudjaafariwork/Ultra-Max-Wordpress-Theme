@@ -60,25 +60,39 @@ final class Account {
 		add_action( 'template_redirect', array( self::class, 'remove_address' ) );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'assets' ), 20 );
 		add_filter( 'body_class', array( self::class, 'body_class' ) );
-		// WooCommerce's login, register and lost password forms on the account page take our form look.
-		foreach ( array( 'customer_login_form', 'lost_password_form', 'reset_password_form' ) as $form ) {
-			add_action( 'woocommerce_before_' . $form, array( self::class, 'open_form' ), 1 );
-			add_action( 'woocommerce_after_' . $form, array( self::class, 'close_form' ), 99 );
+		add_filter( 'ultra_max_page_header', array( self::class, 'page_header' ) );
+		add_action( 'wp_enqueue_scripts', array( self::class, 'drop_woocommerce_styles' ), 99 );
+	}
+
+	/**
+	 * Every form of the login page is ours, so WooCommerce's general
+	 * styles would only restyle them (PERF-04).
+	 */
+	public static function drop_woocommerce_styles(): void {
+		if ( self::bare_page() ) {
+			foreach ( array( 'woocommerce-general', 'woocommerce-layout', 'woocommerce-smallscreen' ) as $handle ) {
+				wp_dequeue_style( $handle );
+			}
 		}
 	}
 
 	/**
-	 * Opens our form look around a WooCommerce form.
+	 * Whether this is the account page of a shopper who is not logged in:
+	 * the login card stands alone there.
 	 */
-	public static function open_form(): void {
-		echo '<div class="um-scope um-account-form um-account-login">';
+	public static function bare_page(): bool {
+		return function_exists( 'is_account_page' ) && is_account_page() && ! is_user_logged_in();
 	}
 
 	/**
-	 * Closes it.
+	 * Hides the theme's page title and breadcrumbs above the login card,
+	 * whose own title is the page's heading.
+	 *
+	 * @param mixed $show Whether to show the page header.
+	 * @return mixed
 	 */
-	public static function close_form(): void {
-		echo '</div>';
+	public static function page_header( mixed $show ): mixed {
+		return self::bare_page() ? false : $show;
 	}
 
 	/**
@@ -95,7 +109,8 @@ final class Account {
 	}
 
 	/**
-	 * Our frame and dashboard instead of WooCommerce's templates.
+	 * Our frame, dashboard, login and password pages instead of
+	 * WooCommerce's templates.
 	 *
 	 * @param mixed $template Template file.
 	 * @param mixed $name     Template name.
@@ -103,8 +118,12 @@ final class Account {
 	 */
 	public static function template( mixed $template, mixed $name ): mixed {
 		$ours = array(
-			'myaccount/my-account.php' => 'account.php',
-			'myaccount/dashboard.php'  => 'account-dashboard.php',
+			'myaccount/my-account.php'                 => 'account.php',
+			'myaccount/dashboard.php'                  => 'account-dashboard.php',
+			'myaccount/form-login.php'                 => 'account-login.php',
+			'myaccount/form-lost-password.php'         => 'account-lost-password.php',
+			'myaccount/form-reset-password.php'        => 'account-reset-password.php',
+			'myaccount/lost-password-confirmation.php' => 'account-link-sent.php',
 		);
 		if ( is_string( $name ) && isset( $ours[ $name ] ) ) {
 			return plugin_dir_path( ULTRA_MAX_CORE_FILE ) . 'templates/' . $ours[ $name ];

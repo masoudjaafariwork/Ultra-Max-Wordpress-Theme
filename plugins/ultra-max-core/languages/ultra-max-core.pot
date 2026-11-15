@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-14T17:27:32+00:00\n"
+"POT-Creation-Date: 2026-11-15T08:02:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ultra-max-core\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Ultra Max"
 msgstr ""
 
-#: src/Account/Account.php:149
+#: src/Account/Account.php:168
 msgid "The address was removed."
 msgstr ""
 
@@ -88,7 +88,7 @@ msgstr ""
 
 #: src/Account/Details.php:129
 #: src/Account/Page.php:306
-#: src/Checkout/Fields.php:354
+#: src/Checkout/Fields.php:355
 msgid "National code"
 msgstr ""
 
@@ -171,6 +171,116 @@ msgstr ""
 
 #: src/Account/Forms.php:36
 msgid "Go to your account"
+msgstr ""
+
+#: src/Account/Login.php:90
+msgid "Back to the store"
+msgstr ""
+
+#: src/Account/Login.php:128
+#: src/Account/Login.php:280
+msgid "Username or email"
+msgstr ""
+
+#: src/Account/Login.php:141
+#: src/Account/Login.php:207
+msgid "Password"
+msgstr ""
+
+#: src/Account/Login.php:148
+#: src/Account/Login.php:293
+msgid "Forgot your password?"
+msgstr ""
+
+#: src/Account/Login.php:159
+msgid "Remember me"
+msgstr ""
+
+#: src/Account/Login.php:163
+#: src/Account/Login.php:253
+#: src/Product/Questions.php:285
+#: src/Product/Reviews.php:867
+#: src/Saved/Wishlist.php:119
+msgid "Log in"
+msgstr ""
+
+#: src/Account/Login.php:179
+msgid "Username"
+msgstr ""
+
+#: src/Account/Login.php:193
+msgid "Email address"
+msgstr ""
+
+#: src/Account/Login.php:216
+msgid "We will email you a link to set your password."
+msgstr ""
+
+#: src/Account/Login.php:226
+#: src/Account/Login.php:257
+msgid "Create account"
+msgstr ""
+
+#: src/Account/Login.php:239
+#: src/Account/Login.php:249
+msgid "Log in or create an account"
+msgstr ""
+
+#: src/Account/Login.php:239
+msgid "Log in to your account"
+msgstr ""
+
+#: src/Account/Login.php:240
+msgid "Log in to your account, or create one in a minute."
+msgstr ""
+
+#: src/Account/Login.php:240
+msgid "Welcome back! Enter your username or email and your password."
+msgstr ""
+
+#: src/Account/Login.php:288
+msgid "Send the reset link"
+msgstr ""
+
+#: src/Account/Login.php:294
+msgid "Enter your username or email. We will email you a link to make a new password."
+msgstr ""
+
+#: src/Account/Login.php:301
+msgid "Remembered it?"
+msgstr ""
+
+#: src/Account/Login.php:302
+#: src/Account/Login.php:386
+msgid "Back to login"
+msgstr ""
+
+#: src/Account/Login.php:329
+msgid "New password"
+msgstr ""
+
+#: src/Account/Login.php:342
+msgid "Repeat the new password"
+msgstr ""
+
+#: src/Account/Login.php:353
+msgid "Save the password"
+msgstr ""
+
+#: src/Account/Login.php:358
+msgid "Choose a new password"
+msgstr ""
+
+#: src/Account/Login.php:359
+msgid "Choose a strong password that you have not used before."
+msgstr ""
+
+#: src/Account/Login.php:376
+msgid "Check your email"
+msgstr ""
+
+#: src/Account/Login.php:377
+msgid "We sent a reset link to the email of your account. It may take a few minutes to arrive."
 msgstr ""
 
 #: src/Account/Lookup.php:59
@@ -378,7 +488,7 @@ msgid "Name"
 msgstr ""
 
 #: src/Account/Page.php:313
-#: src/Checkout/Fields.php:103
+#: src/Checkout/Fields.php:104
 #: src/Checkout/ThankYou.php:276
 #: src/Elementor/Tags/StoreInfo.php:80
 #: src/Product/Questions.php:270
@@ -723,7 +833,7 @@ msgid "Tablet"
 msgstr ""
 
 #: src/Admin/Strings.php:34
-#: src/Checkout/Fields.php:102
+#: src/Checkout/Fields.php:103
 #: src/Checkout/ThankYou.php:272
 msgid "Mobile"
 msgstr ""
@@ -1622,7 +1732,7 @@ msgid "Remove rule"
 msgstr ""
 
 #: src/Admin/Strings.php:296
-#: src/Checkout/Fields.php:550
+#: src/Checkout/Fields.php:551
 msgid "Choose"
 msgstr ""
 
@@ -3130,19 +3240,19 @@ msgstr ""
 msgid "Product type"
 msgstr ""
 
-#: src/Builder/Rules.php:172
+#: src/Builder/Rules.php:175
 msgid "Simple product"
 msgstr ""
 
-#: src/Builder/Rules.php:173
+#: src/Builder/Rules.php:176
 msgid "Variable product"
 msgstr ""
 
-#: src/Builder/Rules.php:174
+#: src/Builder/Rules.php:177
 msgid "Grouped product"
 msgstr ""
 
-#: src/Builder/Rules.php:175
+#: src/Builder/Rules.php:178
 msgid "External/Affiliate product"
 msgstr ""
 
@@ -3591,114 +3701,114 @@ msgstr ""
 msgid "Add a new address"
 msgstr ""
 
-#: src/Checkout/Fields.php:100
+#: src/Checkout/Fields.php:101
 msgid "First name"
 msgstr ""
 
-#: src/Checkout/Fields.php:101
+#: src/Checkout/Fields.php:102
 msgid "Last name"
 msgstr ""
 
-#: src/Checkout/Fields.php:104
-#: src/Checkout/Fields.php:349
+#: src/Checkout/Fields.php:105
+#: src/Checkout/Fields.php:350
 msgid "Company"
 msgstr ""
 
-#: src/Checkout/Fields.php:105
+#: src/Checkout/Fields.php:106
 #: src/Shipping/CourierMethod.php:79
 msgid "Province"
 msgstr ""
 
-#: src/Checkout/Fields.php:106
+#: src/Checkout/Fields.php:107
 #: src/Elementor/Tags/StoreInfo.php:82
 msgid "City"
 msgstr ""
 
-#: src/Checkout/Fields.php:107
+#: src/Checkout/Fields.php:108
 msgid "Postal address"
 msgstr ""
 
-#: src/Checkout/Fields.php:108
+#: src/Checkout/Fields.php:109
 msgid "Unit, floor (optional)"
 msgstr ""
 
-#: src/Checkout/Fields.php:109
+#: src/Checkout/Fields.php:110
 #: src/Checkout/ThankYou.php:285
 msgid "Postal code"
 msgstr ""
 
-#: src/Checkout/Fields.php:172
+#: src/Checkout/Fields.php:173
 msgid "Street, alley, building number"
 msgstr ""
 
-#: src/Checkout/Fields.php:319
+#: src/Checkout/Fields.php:320
 #: src/Checkout/Page.php:110
 msgid "Choose a city"
 msgstr ""
 
-#: src/Checkout/Fields.php:342
+#: src/Checkout/Fields.php:343
 #: src/Product/Questions.php:155
 #: src/Product/Reviews.php:562
 msgid "Buyer"
 msgstr ""
 
-#: src/Checkout/Fields.php:348
+#: src/Checkout/Fields.php:349
 #: src/Widgets/General/Team.php:56
 msgid "Person"
 msgstr ""
 
-#: src/Checkout/Fields.php:356
+#: src/Checkout/Fields.php:357
 msgid "Company name"
 msgstr ""
 
-#: src/Checkout/Fields.php:357
+#: src/Checkout/Fields.php:358
 msgid "National id of the company"
 msgstr ""
 
-#: src/Checkout/Fields.php:358
+#: src/Checkout/Fields.php:359
 msgid "Economic code"
 msgstr ""
 
-#: src/Checkout/Fields.php:359
+#: src/Checkout/Fields.php:360
 msgid "Registration number"
 msgstr ""
 
-#: src/Checkout/Fields.php:385
+#: src/Checkout/Fields.php:386
 #: src/Options.php:881
 msgid "Send me offers and discounts by text message."
 msgstr ""
 
-#: src/Checkout/Fields.php:582
+#: src/Checkout/Fields.php:583
 #: src/Checkout/Page.php:106
 msgid "The national code is not valid. Check its ten digits again."
 msgstr ""
 
-#: src/Checkout/Fields.php:583
+#: src/Checkout/Fields.php:584
 #: src/Checkout/Page.php:107
 msgid "The national id of the company is not valid. It has eleven digits."
 msgstr ""
 
-#: src/Checkout/Fields.php:584
+#: src/Checkout/Fields.php:585
 #: src/Checkout/Page.php:108
 msgid "The economic code is not valid. Enter its digits only."
 msgstr ""
 
 #. translators: %s: field label.
-#: src/Checkout/Fields.php:586
+#: src/Checkout/Fields.php:587
 #, php-format
 msgid "%s may contain digits only."
 msgstr ""
 
-#: src/Checkout/Fields.php:601
+#: src/Checkout/Fields.php:602
 msgid "The mobile number is not valid. Enter it as 09123456789."
 msgstr ""
 
-#: src/Checkout/Fields.php:604
+#: src/Checkout/Fields.php:605
 msgid "The postal code must be ten digits, without dashes."
 msgstr ""
 
 #. translators: %s: field label.
-#: src/Checkout/Fields.php:654
+#: src/Checkout/Fields.php:655
 #, php-format
 msgid "%s is a required field."
 msgstr ""
@@ -5787,12 +5897,6 @@ msgstr ""
 #: src/Product/Questions.php:284
 #: src/Product/Questions.php:401
 msgid "Log in to ask a question."
-msgstr ""
-
-#: src/Product/Questions.php:285
-#: src/Product/Reviews.php:867
-#: src/Saved/Wishlist.php:119
-msgid "Log in"
 msgstr ""
 
 #. translators: %s: number of questions left.
@@ -8754,4 +8858,8 @@ msgstr ""
 
 #: vendor-prefixed/ui/components/comments/Comments.php:131
 msgid "Comment"
+msgstr ""
+
+#: vendor-prefixed/ui/components/field/Field.php:142
+msgid "Show password"
 msgstr ""

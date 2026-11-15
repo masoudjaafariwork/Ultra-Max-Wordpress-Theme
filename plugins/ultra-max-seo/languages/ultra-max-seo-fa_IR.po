@@ -193,3 +193,7 @@ msgstr "نام و ایمیل من را برای دیدگاه بعدی در ای�
 #: vendor-prefixed/ui/components/comments/Comments.php:131
 msgid "Comment"
 msgstr "دیدگاه"
+
+#: vendor-prefixed/ui/components/field/Field.php:142
+msgid "Show password"
+msgstr "نمایش گذرواژه"

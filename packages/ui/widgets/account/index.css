@@ -111,3 +111,54 @@
 		color: var(--um-text-3);
 	}
 }
+
+/*
+ * WooCommerce's notices above the login card (ACC-01). WooCommerce's own
+ * styles are not loaded on that page.
+ */
+.um-auth-notices :is(.woocommerce-error, .woocommerce-message, .woocommerce-info) {
+	display: grid;
+	gap: 4px;
+	margin: 0 0 12px;
+	padding: 12px 14px;
+	border: 0;
+	border-radius: var(--radius-md);
+	list-style: none;
+	font-size: var(--text-sm);
+	line-height: 1.8;
+}
+
+.um-auth-notices :is(.woocommerce-error, .woocommerce-message, .woocommerce-info):last-child {
+	margin-bottom: 0;
+}
+
+.um-auth-notices .woocommerce-error {
+	background: var(--color-danger-soft);
+	color: var(--color-danger-text);
+}
+
+.um-auth-notices .woocommerce-message {
+	background: var(--color-success-soft);
+	color: var(--color-success-text);
+}
+
+.um-auth-notices .woocommerce-info {
+	background: var(--color-info-soft);
+	color: var(--color-info-text);
+}
+
+.um-auth-notices :is(.woocommerce-error, .woocommerce-message, .woocommerce-info) :is(a, strong) {
+	color: inherit;
+	font-weight: var(--font-weight-bold);
+}
+
+.um-auth-notices [tabindex="-1"]:focus {
+	outline: none;
+}
+
+.um-auth .woocommerce-privacy-policy-text p {
+	margin: 0;
+	color: var(--color-fg-3);
+	font-size: var(--text-xs);
+	line-height: 1.9;
+}

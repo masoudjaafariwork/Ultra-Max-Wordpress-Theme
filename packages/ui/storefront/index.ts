@@ -8,6 +8,7 @@ import { accordion } from '../components/accordion/accordion.behavior';
 import { dialog } from '../components/dialog/dialog.behavior';
 import { drawer } from '../components/drawer/drawer.behavior';
 import { dropdown } from '../components/dropdown/dropdown.behavior';
+import { passwordReveal } from '../components/field/field.behavior';
 import { tabs } from '../components/tabs/tabs.behavior';
 import { tooltip } from '../components/tooltip/tooltip.behavior';
 
@@ -22,6 +23,7 @@ window.UltraMaxUI ??= createRuntime( {
 	dialog,
 	drawer,
 	dropdown,
+	'password-reveal': passwordReveal,
 	tabs,
 	tooltip,
 } );

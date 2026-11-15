@@ -154,7 +154,7 @@ msgid "Tablet"
 msgstr "تبلت"
 
 #: src/Admin/Strings.php:34
-#: src/Checkout/Fields.php:102
+#: src/Checkout/Fields.php:103
 #: src/Checkout/ThankYou.php:272
 msgid "Mobile"
 msgstr "موبایل"
@@ -1429,7 +1429,7 @@ msgid "Name"
 msgstr "نام"
 
 #: src/Account/Page.php:313
-#: src/Checkout/Fields.php:103
+#: src/Checkout/Fields.php:104
 #: src/Checkout/ThankYou.php:276
 #: src/Elementor/Tags/StoreInfo.php:80
 #: src/Product/Questions.php:270
@@ -1585,7 +1585,7 @@ msgid "Remove rule"
 msgstr "حذف شرط"
 
 #: src/Admin/Strings.php:296
-#: src/Checkout/Fields.php:550
+#: src/Checkout/Fields.php:551
 msgid "Choose"
 msgstr "انتخاب"
 
@@ -2787,19 +2787,19 @@ msgstr "برند"
 msgid "Product type"
 msgstr "نوع کالا"
 
-#: src/Builder/Rules.php:172
+#: src/Builder/Rules.php:175
 msgid "Simple product"
 msgstr "کالای ساده"
 
-#: src/Builder/Rules.php:173
+#: src/Builder/Rules.php:176
 msgid "Variable product"
 msgstr "کالای متغیر"
 
-#: src/Builder/Rules.php:174
+#: src/Builder/Rules.php:177
 msgid "Grouped product"
 msgstr "کالای گروهی"
 
-#: src/Builder/Rules.php:175
+#: src/Builder/Rules.php:178
 msgid "External/Affiliate product"
 msgstr "کالای خارجی/همکاری"
 
@@ -3133,7 +3133,7 @@ msgstr "شعار"
 msgid "Address"
 msgstr "نشانی"
 
-#: src/Checkout/Fields.php:106
+#: src/Checkout/Fields.php:107
 #: src/Elementor/Tags/StoreInfo.php:82
 msgid "City"
 msgstr "شهر"
@@ -4072,7 +4072,7 @@ msgstr "دکمه‌ای"
 msgid "Team member"
 msgstr "عضو تیم"
 
-#: src/Checkout/Fields.php:348
+#: src/Checkout/Fields.php:349
 #: src/Widgets/General/Team.php:56
 msgid "Person"
 msgstr "شخص"
@@ -6343,7 +6343,7 @@ msgstr "از «%1$s» حداکثر %2$s عدد در هر سفارش می‌تو�
 msgid "\"%1$s\" is sold in steps of %2$s."
 msgstr "«%1$s» در بسته‌های %2$s تایی فروخته می‌شود."
 
-#: src/Checkout/Fields.php:342
+#: src/Checkout/Fields.php:343
 #: src/Product/Questions.php:155
 #: src/Product/Reviews.php:562
 msgid "Buyer"
@@ -6423,6 +6423,8 @@ msgstr "ارسال نشد. لطفاً دوباره تلاش کنید."
 msgid "Log in to ask a question."
 msgstr "برای پرسیدن وارد حساب خود شوید."
 
+#: src/Account/Login.php:163
+#: src/Account/Login.php:253
 #: src/Product/Questions.php:285
 #: src/Product/Reviews.php:867
 #: src/Saved/Wishlist.php:119
@@ -6985,7 +6987,7 @@ msgstr "جعبه کوچک"
 msgid "Offer stock bar"
 msgstr "نوار موجودی پیشنهاد"
 
-#: src/Account/Account.php:149
+#: src/Account/Account.php:168
 msgid "The address was removed."
 msgstr "آدرس حذف شد."
 
@@ -7012,7 +7014,7 @@ msgstr "با کدی که به شماره تازه فرستاده می‌شود �
 
 #: src/Account/Details.php:129
 #: src/Account/Page.php:306
-#: src/Checkout/Fields.php:354
+#: src/Checkout/Fields.php:355
 msgid "National code"
 msgstr "کد ملی"
 
@@ -7704,98 +7706,98 @@ msgstr "انتخاب شده"
 msgid "Add a new address"
 msgstr "افزودن آدرس جدید"
 
-#: src/Checkout/Fields.php:100
+#: src/Checkout/Fields.php:101
 msgid "First name"
 msgstr "نام"
 
-#: src/Checkout/Fields.php:101
+#: src/Checkout/Fields.php:102
 msgid "Last name"
 msgstr "نام خانوادگی"
 
-#: src/Checkout/Fields.php:104
-#: src/Checkout/Fields.php:349
+#: src/Checkout/Fields.php:105
+#: src/Checkout/Fields.php:350
 msgid "Company"
 msgstr "شرکت"
 
-#: src/Checkout/Fields.php:105
+#: src/Checkout/Fields.php:106
 #: src/Shipping/CourierMethod.php:79
 msgid "Province"
 msgstr "استان"
 
-#: src/Checkout/Fields.php:107
+#: src/Checkout/Fields.php:108
 msgid "Postal address"
 msgstr "نشانی پستی"
 
-#: src/Checkout/Fields.php:108
+#: src/Checkout/Fields.php:109
 msgid "Unit, floor (optional)"
 msgstr "واحد، طبقه (اختیاری)"
 
-#: src/Checkout/Fields.php:109
+#: src/Checkout/Fields.php:110
 #: src/Checkout/ThankYou.php:285
 msgid "Postal code"
 msgstr "کد پستی"
 
-#: src/Checkout/Fields.php:172
+#: src/Checkout/Fields.php:173
 msgid "Street, alley, building number"
 msgstr "خیابان، کوچه، پلاک"
 
-#: src/Checkout/Fields.php:319
+#: src/Checkout/Fields.php:320
 #: src/Checkout/Page.php:110
 msgid "Choose a city"
 msgstr "شهر را انتخاب کنید"
 
-#: src/Checkout/Fields.php:356
+#: src/Checkout/Fields.php:357
 msgid "Company name"
 msgstr "نام شرکت"
 
-#: src/Checkout/Fields.php:357
+#: src/Checkout/Fields.php:358
 msgid "National id of the company"
 msgstr "شناسه ملی شرکت"
 
-#: src/Checkout/Fields.php:358
+#: src/Checkout/Fields.php:359
 msgid "Economic code"
 msgstr "کد اقتصادی"
 
-#: src/Checkout/Fields.php:359
+#: src/Checkout/Fields.php:360
 msgid "Registration number"
 msgstr "شماره ثبت"
 
-#: src/Checkout/Fields.php:385
+#: src/Checkout/Fields.php:386
 #: src/Options.php:881
 msgid "Send me offers and discounts by text message."
 msgstr "مایلم از تخفیف‌ها و پیشنهادهای ویژه با پیامک باخبر شوم."
 
-#: src/Checkout/Fields.php:582
+#: src/Checkout/Fields.php:583
 #: src/Checkout/Page.php:106
 msgid "The national code is not valid. Check its ten digits again."
 msgstr "کد ملی وارد شده معتبر نیست. ده رقم آن را دوباره بررسی کنید."
 
-#: src/Checkout/Fields.php:583
+#: src/Checkout/Fields.php:584
 #: src/Checkout/Page.php:107
 msgid "The national id of the company is not valid. It has eleven digits."
 msgstr "شناسه ملی شرکت معتبر نیست. شناسه ملی یازده رقم دارد."
 
-#: src/Checkout/Fields.php:584
+#: src/Checkout/Fields.php:585
 #: src/Checkout/Page.php:108
 msgid "The economic code is not valid. Enter its digits only."
 msgstr "کد اقتصادی معتبر نیست. فقط ارقام آن را وارد کنید."
 
 #. translators: %s: field label.
-#: src/Checkout/Fields.php:586
+#: src/Checkout/Fields.php:587
 #, php-format
 msgid "%s may contain digits only."
 msgstr "%s فقط می‌تواند رقم داشته باشد."
 
-#: src/Checkout/Fields.php:601
+#: src/Checkout/Fields.php:602
 msgid "The mobile number is not valid. Enter it as 09123456789."
 msgstr "شماره موبایل معتبر نیست. آن را به شکل ۰۹۱۲۳۴۵۶۷۸۹ وارد کنید."
 
-#: src/Checkout/Fields.php:604
+#: src/Checkout/Fields.php:605
 msgid "The postal code must be ten digits, without dashes."
 msgstr "کد پستی باید ۱۰ رقم و بدون خط تیره باشد."
 
 #. translators: %s: field label.
-#: src/Checkout/Fields.php:654
+#: src/Checkout/Fields.php:655
 #, php-format
 msgid "%s is a required field."
 msgstr "%s الزامی است."
@@ -8771,3 +8773,109 @@ msgstr "آیکون گرد"
 #: templates/woocommerce/form-checkout.php:27
 msgid "You must be logged in to check out."
 msgstr "برای تکمیل خرید باید وارد حساب کاربری شوید."
+
+#: src/Account/Login.php:90
+msgid "Back to the store"
+msgstr "بازگشت به فروشگاه"
+
+#: src/Account/Login.php:128
+#: src/Account/Login.php:280
+msgid "Username or email"
+msgstr "نام کاربری یا ایمیل"
+
+#: src/Account/Login.php:141
+#: src/Account/Login.php:207
+msgid "Password"
+msgstr "گذرواژه"
+
+#: src/Account/Login.php:148
+#: src/Account/Login.php:293
+msgid "Forgot your password?"
+msgstr "گذرواژه را فراموش کرده‌اید؟"
+
+#: src/Account/Login.php:159
+msgid "Remember me"
+msgstr "مرا به خاطر بسپار"
+
+#: src/Account/Login.php:179
+msgid "Username"
+msgstr "نام کاربری"
+
+#: src/Account/Login.php:193
+msgid "Email address"
+msgstr "نشانی ایمیل"
+
+#: src/Account/Login.php:216
+msgid "We will email you a link to set your password."
+msgstr "پیوند ساختن گذرواژه به ایمیل شما فرستاده می‌شود."
+
+#: src/Account/Login.php:226
+#: src/Account/Login.php:257
+msgid "Create account"
+msgstr "ساخت حساب"
+
+#: src/Account/Login.php:239
+#: src/Account/Login.php:249
+msgid "Log in or create an account"
+msgstr "ورود یا ساخت حساب"
+
+#: src/Account/Login.php:239
+msgid "Log in to your account"
+msgstr "ورود به حساب کاربری"
+
+#: src/Account/Login.php:240
+msgid "Log in to your account, or create one in a minute."
+msgstr "وارد حساب خود شوید یا در یک دقیقه حساب تازه بسازید."
+
+#: src/Account/Login.php:240
+msgid "Welcome back! Enter your username or email and your password."
+msgstr "خوش آمدید! نام کاربری یا ایمیل و گذرواژه‌ی خود را وارد کنید."
+
+#: src/Account/Login.php:288
+msgid "Send the reset link"
+msgstr "فرستادن پیوند بازیابی"
+
+#: src/Account/Login.php:294
+msgid "Enter your username or email. We will email you a link to make a new password."
+msgstr "نام کاربری یا ایمیل خود را وارد کنید تا پیوند ساختن گذرواژه‌ی تازه برایتان ایمیل شود."
+
+#: src/Account/Login.php:301
+msgid "Remembered it?"
+msgstr "یادتان آمد؟"
+
+#: src/Account/Login.php:302
+#: src/Account/Login.php:386
+msgid "Back to login"
+msgstr "بازگشت به ورود"
+
+#: src/Account/Login.php:329
+msgid "New password"
+msgstr "گذرواژه‌ی تازه"
+
+#: src/Account/Login.php:342
+msgid "Repeat the new password"
+msgstr "تکرار گذرواژه‌ی تازه"
+
+#: src/Account/Login.php:353
+msgid "Save the password"
+msgstr "ذخیره‌ی گذرواژه"
+
+#: src/Account/Login.php:358
+msgid "Choose a new password"
+msgstr "گذرواژه‌ی تازه بسازید"
+
+#: src/Account/Login.php:359
+msgid "Choose a strong password that you have not used before."
+msgstr "یک گذرواژه‌ی قوی که پیش‌تر به کار نبرده‌اید انتخاب کنید."
+
+#: src/Account/Login.php:376
+msgid "Check your email"
+msgstr "ایمیل خود را ببینید"
+
+#: src/Account/Login.php:377
+msgid "We sent a reset link to the email of your account. It may take a few minutes to arrive."
+msgstr "پیوند بازیابی به ایمیل حساب شما فرستاده شد. ممکن است رسیدنش چند دقیقه طول بکشد."
+
+#: vendor-prefixed/ui/components/field/Field.php:142
+msgid "Show password"
+msgstr "نمایش گذرواژه"

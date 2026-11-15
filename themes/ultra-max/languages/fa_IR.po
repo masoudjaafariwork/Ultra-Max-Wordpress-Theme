@@ -30,7 +30,7 @@ msgstr "قالب فروشگاهی سریع و فارسی برای ووکامرس
 msgid "The Ultra Max theme is missing its build files. Run \"npm run build\" in the development repository, or install the release package."
 msgstr "فایل‌های ساخته‌شده قالب الترا مکس پیدا نشد. در مخزن توسعه \"npm run build\" را اجرا کنید یا بسته انتشار را نصب کنید."
 
-#: src/Template.php:490
+#: src/Template.php:499
 msgid "Skip to content"
 msgstr "رفتن به محتوا"
 
@@ -75,7 +75,7 @@ msgstr "شاید پیوند خراب باشد یا صفحه جابه‌جا شد
 
 #. translators: %s: number of comments.
 #: comments.php:25
-#: src/Template.php:416
+#: src/Template.php:425
 #, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
@@ -500,7 +500,7 @@ msgid "Centre"
 msgstr "وسط"
 
 #: src/Options.php:528
-#: src/Template.php:357
+#: src/Template.php:366
 msgid "Breadcrumbs"
 msgstr "مسیر راهنما"
 
@@ -699,36 +699,36 @@ msgstr "منوی اصلی"
 msgid "© %1$s %2$s. All rights reserved."
 msgstr "© %1$s %2$s. همه حقوق محفوظ است."
 
-#: src/Template.php:390
+#: src/Template.php:399
 msgid "Published on"
 msgstr "تاریخ انتشار"
 
-#: src/Template.php:398
+#: src/Template.php:407
 #: vendor-prefixed/ui/components/comments/Comments.php:54
 msgid "Author"
 msgstr "نویسنده"
 
-#: src/Template.php:408
+#: src/Template.php:417
 msgid "Category"
 msgstr "دسته"
 
-#: src/Template.php:436
+#: src/Template.php:445
 msgid "(no title)"
 msgstr "(بدون عنوان)"
 
-#: src/Template.php:441
+#: src/Template.php:450
 msgid "Featured"
 msgstr "ویژه"
 
-#: src/Template.php:457
+#: src/Template.php:466
 msgid "Pages"
 msgstr "صفحه‌ها"
 
-#: src/Template.php:462
+#: src/Template.php:471
 msgid "Previous"
 msgstr "قبلی"
 
-#: src/Template.php:463
+#: src/Template.php:472
 msgid "Next"
 msgstr "بعدی"
 
@@ -974,3 +974,7 @@ msgstr "نوار پایین در گوشی"
 #: src/Options.php:809
 msgid "An app-like row of icons at the bottom of phones: home, categories, cart, wishlist and account."
 msgstr "ردیفی از آیکون‌ها در پایین گوشی، مثل اپ: خانه، دسته‌بندی، سبد خرید، علاقه‌مندی و حساب کاربری."
+
+#: vendor-prefixed/ui/components/field/Field.php:142
+msgid "Show password"
+msgstr "نمایش گذرواژه"

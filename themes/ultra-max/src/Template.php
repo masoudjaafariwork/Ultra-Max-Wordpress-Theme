@@ -349,6 +349,15 @@ final class Template {
 	 * @param bool|null   $show_title  Whether to show the title; the setting when null.
 	 */
 	public static function page_header( string|Html $title, string|Html $description = '', ?Html $meta = null, ?bool $show_title = null ): void {
+		/**
+		 * Whether the page shows its title area. The store plugin hides it
+		 * above the login card, whose own title is the page's heading.
+		 *
+		 * @param bool $show Whether to show it.
+		 */
+		if ( ! (bool) apply_filters( 'ultra_max_page_header', true ) ) {
+			return;
+		}
 		$devices = Store::devices( 'breadcrumbs' );
 		$crumbs  = Html::none();
 		if ( $devices['desktop'] || $devices['tablet'] || $devices['mobile'] ) {

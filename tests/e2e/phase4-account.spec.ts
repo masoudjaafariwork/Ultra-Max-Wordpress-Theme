@@ -217,6 +217,44 @@ test.describe.serial( 'wishlist, compare and quick view', () => {
 	} );
 } );
 
+test.describe.serial( 'login page', () => {
+	test( 'one centred card: show the password, a wrong login, the lost password page (ACC-01)', async ( { page } ) => {
+		const errors = watchErrors( page );
+		await page.goto( '/my-account/' );
+		const card = page.locator( '.um-auth' );
+		await expect( card.locator( 'h1' ) ).toHaveCount( 1 );
+		await expect( page.locator( 'h1' ) ).toHaveCount( 1 );
+		const box = await card.boundingBox();
+		expect( box?.width ?? 0 ).toBeLessThanOrEqual( 440 );
+		await page.locator( '#password' ).fill( 'secret' );
+		const reveal = page.locator( '[data-um-reveal]' );
+		await reveal.click();
+		await expect( page.locator( '#password' ) ).toHaveAttribute( 'type', 'text' );
+		await expect( reveal ).toHaveAttribute( 'aria-pressed', 'true' );
+		await reveal.click();
+		await expect( page.locator( '#password' ) ).toHaveAttribute( 'type', 'password' );
+		await expect( page.locator( '.show-password-input' ) ).toHaveCount( 0 );
+		const axe = await new AxeBuilder( { page } ).include( '.um-auth' ).analyze();
+		expect( axe.violations ).toEqual( [] );
+
+		await page.locator( '#username' ).fill( 'sara' );
+		await page.locator( '#password' ).fill( 'wrong-password' );
+		await page.locator( 'button[name="login"]' ).click();
+		await expect( page.locator( '.um-auth-notices .woocommerce-error' ) ).toBeVisible();
+		await expect( page.locator( '#username' ) ).toHaveValue( 'sara' );
+
+		await page.getByRole( 'link', { name: 'گذرواژه را فراموش کرده‌اید؟' } ).click();
+		await expect( page.locator( '.um-auth h1' ) ).toBeVisible();
+		await expect( page.locator( '#user_login' ) ).toBeVisible();
+		await page.setViewportSize( mobile );
+		await page.goto( '/my-account/' );
+		const narrow = await page.locator( '.um-auth' ).boundingBox();
+		expect( ( narrow?.width ?? 0 ) <= mobile.width ).toBe( true );
+		expect( await page.evaluate( () => document.documentElement.scrollWidth <= window.innerWidth ) ).toBe( true );
+		expect( errors ).toEqual( [] );
+	} );
+} );
+
 test.describe.serial( 'customer account', () => {
 	test( 'the dashboard: orders by status, latest orders, lists and details (ACC-01, ACC-04, ACC-07)', async ( { page } ) => {
 		const errors = watchErrors( page );

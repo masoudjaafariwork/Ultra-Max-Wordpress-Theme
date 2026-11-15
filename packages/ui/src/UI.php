@@ -40,6 +40,7 @@ namespace UltraMax\UI;
  * @phpstan-import-type EmptyStateProps from EmptyState
  * @phpstan-import-type BoxProps from Box
  * @phpstan-import-type FieldProps from Field
+ * @phpstan-import-type CheckboxProps from Checkbox
  * @phpstan-import-type ProseProps from Prose
  * @phpstan-import-type CommentProps from Comments
  * @phpstan-import-type NoticeBarProps from NoticeBar
@@ -277,6 +278,16 @@ final class UI {
 	 */
 	public static function field( array $props ): Html {
 		return Field::render( $props );
+	}
+
+	/**
+	 * Checkbox with its label.
+	 *
+	 * @param array $props Props.
+	 * @phpstan-param CheckboxProps $props
+	 */
+	public static function checkbox( array $props ): Html {
+		return Checkbox::render( $props );
 	}
 
 	/**

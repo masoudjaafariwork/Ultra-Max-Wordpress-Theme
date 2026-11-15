@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-14T17:27:08+00:00\n"
+"POT-Creation-Date: 2026-11-15T08:01:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ultra-max\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 #. translators: %s: number of comments.
 #: comments.php:25
-#: src/Template.php:416
+#: src/Template.php:425
 #, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
@@ -516,7 +516,7 @@ msgid "Centre"
 msgstr ""
 
 #: src/Options.php:528
-#: src/Template.php:357
+#: src/Template.php:366
 msgid "Breadcrumbs"
 msgstr ""
 
@@ -736,40 +736,40 @@ msgstr ""
 msgid "© %1$s %2$s. All rights reserved."
 msgstr ""
 
-#: src/Template.php:390
+#: src/Template.php:399
 msgid "Published on"
 msgstr ""
 
-#: src/Template.php:398
+#: src/Template.php:407
 #: vendor-prefixed/ui/components/comments/Comments.php:54
 msgid "Author"
 msgstr ""
 
-#: src/Template.php:408
+#: src/Template.php:417
 msgid "Category"
 msgstr ""
 
-#: src/Template.php:436
+#: src/Template.php:445
 msgid "(no title)"
 msgstr ""
 
-#: src/Template.php:441
+#: src/Template.php:450
 msgid "Featured"
 msgstr ""
 
-#: src/Template.php:457
+#: src/Template.php:466
 msgid "Pages"
 msgstr ""
 
-#: src/Template.php:462
+#: src/Template.php:471
 msgid "Previous"
 msgstr ""
 
-#: src/Template.php:463
+#: src/Template.php:472
 msgid "Next"
 msgstr ""
 
-#: src/Template.php:490
+#: src/Template.php:499
 msgid "Skip to content"
 msgstr ""
 
@@ -973,4 +973,8 @@ msgstr ""
 
 #: vendor-prefixed/ui/components/dialog/Overlay.php:58
 msgid "Close"
+msgstr ""
+
+#: vendor-prefixed/ui/components/field/Field.php:142
+msgid "Show password"
 msgstr ""

@@ -12,6 +12,7 @@
 
 use UltraMax\Core\Account\Account;
 use UltraMax\Core\Account\Endpoints;
+use UltraMax\Core\Account\Login;
 use UltraMax\Core\Account\Lookup;
 use UltraMax\Core\Account\Tracking;
 use UltraMax\Core\Builder\Types;
@@ -58,7 +59,11 @@ final class AccountTest extends WP_UnitTestCase {
 	public function test_account_templates_and_layout_type(): void {
 		$this->assertStringEndsWith( 'templates/account.php', (string) Account::template( 'theirs.php', 'myaccount/my-account.php' ) );
 		$this->assertStringEndsWith( 'templates/account-dashboard.php', (string) Account::template( 'theirs.php', 'myaccount/dashboard.php' ) );
-		$this->assertSame( 'theirs.php', Account::template( 'theirs.php', 'myaccount/form-login.php' ), 'WooCommerce keeps its forms.' );
+		$this->assertStringEndsWith( 'templates/account-login.php', (string) Account::template( 'theirs.php', 'myaccount/form-login.php' ) );
+		$this->assertStringEndsWith( 'templates/account-lost-password.php', (string) Account::template( 'theirs.php', 'myaccount/form-lost-password.php' ) );
+		$this->assertStringEndsWith( 'templates/account-reset-password.php', (string) Account::template( 'theirs.php', 'myaccount/form-reset-password.php' ) );
+		$this->assertStringEndsWith( 'templates/account-link-sent.php', (string) Account::template( 'theirs.php', 'myaccount/lost-password-confirmation.php' ) );
+		$this->assertSame( 'theirs.php', Account::template( 'theirs.php', 'myaccount/form-edit-address.php' ), 'WooCommerce keeps its other forms.' );
 		$this->assertTrue( Types::is_ready( 'account' ) );
 		$this->assertSame( 'account', Types::all()['account']['location'] );
 	}
@@ -243,5 +248,48 @@ final class AccountTest extends WP_UnitTestCase {
 		);
 		$this->assertStringContainsString( 'Not saved yet', $card );
 		$this->assertStringContainsString( '<address', $card );
+	}
+
+	public function test_login_forms_keep_woocommerce_names_nonces_and_hooks(): void {
+		update_option( 'woocommerce_enable_myaccount_registration', 'no' );
+		$fired = 0;
+		$count = static function () use ( &$fired ): void {
+			++$fired;
+		};
+		foreach ( array( 'woocommerce_before_customer_login_form', 'woocommerce_login_form_start', 'woocommerce_login_form', 'woocommerce_login_form_end', 'woocommerce_after_customer_login_form' ) as $hook ) {
+			add_action( $hook, $count );
+		}
+		$login = (string) Login::login();
+		$this->assertSame( 5, $fired, 'Every WooCommerce login hook runs.' );
+		foreach ( array( 'name="username"', 'name="password"', 'name="rememberme"', 'value="forever"', 'name="woocommerce-login-nonce"', 'name="login"', 'data-um-component="password-reveal"', 'autocomplete="current-password"' ) as $part ) {
+			$this->assertStringContainsString( $part, $login );
+		}
+		$this->assertStringNotContainsString( 'role="tablist"', $login, 'No register tab when the store does not allow it.' );
+		$this->assertStringNotContainsString( 'class="login', $login, "WooCommerce's form box style stays off." );
+
+		update_option( 'woocommerce_enable_myaccount_registration', 'yes' );
+		update_option( 'woocommerce_registration_generate_password', 'no' );
+		$both = (string) Login::login();
+		$this->assertStringContainsString( 'role="tablist"', $both );
+		$this->assertStringContainsString( 'name="woocommerce-register-nonce"', $both );
+		$this->assertStringContainsString( 'name="register"', $both );
+		$this->assertStringContainsString( 'id="reg_password"', $both );
+		update_option( 'woocommerce_enable_myaccount_registration', 'no' );
+		update_option( 'woocommerce_registration_generate_password', 'yes' );
+
+		$lost = (string) Login::lost_password();
+		foreach ( array( 'name="user_login"', 'name="wc_reset_password"', 'name="woocommerce-lost-password-nonce"' ) as $part ) {
+			$this->assertStringContainsString( $part, $lost );
+		}
+		$reset = (string) Login::reset_password(
+			array(
+				'key'   => 'k"ey',
+				'login' => 'sara',
+			)
+		);
+		foreach ( array( 'name="password_1"', 'name="password_2"', 'value="k&quot;ey"', 'name="reset_login" value="sara"', 'name="woocommerce-reset-password-nonce"' ) as $part ) {
+			$this->assertStringContainsString( $part, $reset );
+		}
+		$this->assertStringContainsString( '<h2', (string) Login::link_sent(), 'Outside the account page the card title is not the main heading.' );
 	}
 }
